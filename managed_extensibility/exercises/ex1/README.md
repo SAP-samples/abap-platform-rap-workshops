@@ -318,7 +318,7 @@ To speed up the process we will use the RAP Generator that will generate a start
     - Create, Update and Delete inventory data
    
 This is because all possible behaviors (create, update and delete) have been enabled by default in our generated code.
-You will see that all CRUD operations are working out of the box (beside the calculation of the inventory id which will do in a second).
+You will see that all CRUD operations are working out of the box (apart from calculating the inventory id, which we will do in a second).
 In addition all columns of the table are displayed by default as well since we have generated appropriate UI annoations. 
 If you do not want to see all columns (either on the list- or the object page) you can comment out these annotations.
 This is however much simpler than having to write all these annotations from scratch.
