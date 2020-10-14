@@ -1,8 +1,9 @@
-# DEV268 - SAP Cloud Platform, ABAP Environment Connectivity and Integration
+# RAPCJE - SAP Cloud Platform, ABAP Environment Connectivity and Integration
 
 ## Description
 
-This repository contains the material for the SAP TechEd 2020 session called Session ID - Session Title. 
+This repository contains the material for the ABAP RESTful Application Programming Model workshop:
+RAPCJE - SAP Cloud Platform, ABAP Environment Connectivity and Integration. 
 
 ## Overview
 
