@@ -19,7 +19,7 @@ For a detailed step-by-step description check out our [Onboarding Tutorial](http
 
 ## Workshops
 
-![RAPCJE - SAP Cloud Platform, ABAP Environment Connectivity and Integration](managed_extensibility/README.md)
+![RAPCJE - SAP Cloud Platform, ABAP Environment Connectivity and Integration](/managed_extensibility/README.md#rapcje---sap-cloud-platform-abap-environment-connectivity-and-integration)
 
 ## Download and Installation
 
