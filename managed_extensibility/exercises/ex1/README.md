@@ -350,7 +350,7 @@ define root view entity ZI_RAP_INVENTORY_1234
  }
 </pre>
 
-The behavior impelemenation was generated such that the field **InventoryID** which acts as a semantic key was marked as readonly.
+The behavior implementation was generated such that the field **InventoryID** which acts as a semantic key was marked as readonly.
 
 <pre>
 field ( readonly ) InventoryID;
