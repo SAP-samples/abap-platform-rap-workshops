@@ -218,13 +218,13 @@ To speed up the process we will use the RAP Generator that will generate a start
 {
   "implementationType": "managed_uuid",
   "namespace": "Z",
-  "suffix": "_1234",
+  "suffix": "_####",
   "prefix": "RAP_",
-  "package": "ZRAP_INVENTORY_1234",
+  "package": "ZRAP_INVENTORY_####",
   "datasourcetype": "table",
   "hierarchy": {
     "entityName": "Inventory",
-    "dataSource": "zrap_inven_1234",
+    "dataSource": "zrap_inven_####",
     "objectId": "inventory_id"    
     }
 }
