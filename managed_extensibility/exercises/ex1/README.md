@@ -187,7 +187,7 @@ The table that will be used by our inventory application has the following struc
 
 The key field **`uuid`** is a *Universally Unique Identifier (UUID)*. 
 
-This mandatory for a managed scenario where early numbering is used. That means where the ABAP framework automatically generates values for the key field when creating the data.
+This is mandatory for a managed scenario where early numbering is used. That means where the ABAP framework automatically generates values for the key field when creating the data.
  
 The last four fields
  
