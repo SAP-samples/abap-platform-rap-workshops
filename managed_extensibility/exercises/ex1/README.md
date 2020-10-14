@@ -383,7 +383,7 @@ Please make sure that the determination for the InventoryID acts on field level.
 determination CalculateInventoryID on modify  { field uuid; }
 </pre> 
  
-Last not least you will find it handy that also a Metadata Extension View has been generated that automatically publishes all field on the list page as well as on the object page by setting appropriate **@UI** annotations. Also the administrative fields like created_at as well as the UUID based key field are hidden by setting **@UI.hidden** to true.
+Last but not least, you will find it handy that a Metadata Extension View has also been generated that automatically publishes all field on the list page as well as on the object page by setting appropriate **@UI** annotations. Also the administrative fields like created_at as well as the UUID based key field are hidden by setting **@UI.hidden** to true.
  
  <pre>
    @UI.hidden: true
