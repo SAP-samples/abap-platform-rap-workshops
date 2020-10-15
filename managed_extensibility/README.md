@@ -41,12 +41,11 @@ These are the steps of our hands-ons session:
          - [Implement the query implemenation class](exercises/ex2#implement-the-query-implemenation-class)     
      - [Add the custom entity as a value help](exercises/ex2#add-the-custom-entity-as-a-value-help)
      - [Test the service](exercises/ex2#test-the-service)
-     - [Summary](exercises/ex2#summary)
-     
+     - [Summary](exercises/ex2#summary)   
 
 - [Exercise 3 - Consume a SOAP Web service](exercises/ex3/exercise-3)
-    - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
+    - [Download the WSDL](exercises/ex3#download-the-wsdl)
+    - [Create the Service Consumption Model](exercises/ex2#create-the-service-consumption-model)
 
 
 ## How to obtain support
