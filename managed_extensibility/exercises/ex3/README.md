@@ -79,8 +79,21 @@ When checking the *Project Explorer* you will notice that several objects have b
 
 9. Add the following code in the implementation of the method GetPrice.
 
+> **Coding explained**
+
+> The following code is using large parts of the code snippets provided by the service consumption model.
+> It has however been adjusted to fit our needs.
+> 1. The destination is not retrieved by calling the method `cl_soap_destination_provider=>create_by_cloud_destination( )` but by using the method `cl_soap_destination_provider=>create_by_url( )`. This is because the destination service is not available in the ABAP trial systems in SAP Cloud Platform.
+> 2. Instead of using an inline declaratin for `destination`and `proxy` these variables are defined beforehand. This way we can avoid the destination and proxy object are created several times when multiple inventories are to be created.
+> 3. The data retrieved from the SOAP call is used to updated the inventory data via EML.
+
 <pre>
-  METHOD GetPrice.
+  
+     METHOD GetPrice.
+
+    DATA destination  TYPE REF TO if_soap_destination.
+    DATA proxy TYPE REF TO zrap_####_co_epm_product_soap .
+    DATA reported_inventory_soap LIKE reported-inventory.
     "Ensure idempotence
     READ ENTITIES OF zi_rap_inventory_#### IN LOCAL MODE
       ENTITY Inventory
@@ -94,23 +107,18 @@ When checking the *Project Explorer* you will notice that several objects have b
     DELETE inventories WHERE ProductID =''.
     CHECK inventories IS NOT INITIAL.
 
-    TRY.
-        DATA(destination) = cl_soap_destination_provider=>create_by_url( i_url = 'https://sapes5.sapdevcenter.com/sap/bc/srt/xip/sap/zepm_product_soap/002/epm_product_soap/epm_product_soap' ).
-
-        DATA(proxy) = NEW zrap_####_co_epm_product_soap(
-                        destination = destination
-                      ).
-
-      CATCH cx_soap_destination_error INTO DATA(soap_destination_error).
-        "handle error
-      CATCH cx_ai_system_fault INTO DATA(ai_system_fault).
-        "handle error
-      CATCH zrap_####_cx_fault_msg_type INTO DATA(zrap_####_cx_fault_msg_type).
-        "handle error
-    ENDTRY.
-
     LOOP AT inventories ASSIGNING FIELD-SYMBOL(<inventory>).
+
       TRY.
+
+          IF destination IS INITIAL.
+            destination = cl_soap_destination_provider=>create_by_url( i_url = 'https://sapes5.sapdevcenter.com/sap/bc/srt/xip/sap/zepm_product_soap/002/epm_product_soap/epm_product_soap' ).
+          ENDIF.
+          IF proxy IS INITIAL.
+            proxy = NEW zrap_####_co_epm_product_soap(
+                             destination = destination
+                           ).
+          ENDIF.
 
           DATA(request) = VALUE zrap_####_req_msg_type( req_msg_type-product = <inventory>-ProductID ).
           proxy->get_price(
@@ -123,20 +131,34 @@ When checking the *Project Explorer* you will notice that several objects have b
           <inventory>-Price = response-res_msg_type-price .
           <inventory>-CurrencyCode = response-res_msg_type-currency.
           "handle response
-        CATCH cx_soap_destination_error INTO soap_destination_error.
-          "handle error
-        CATCH cx_ai_system_fault INTO ai_system_fault.
-          "handle error
-        CATCH zrap_1234_cx_fault_msg_type INTO zrap_####_cx_fault_msg_type.
-          "handle error
+
+        CATCH cx_soap_destination_error INTO DATA(soap_destination_error).
+          DATA(error_message) = soap_destination_error->get_text(  ).
+        CATCH cx_ai_system_fault INTO DATA(ai_system_fault).
+          error_message = | code: { ai_system_fault->code  } codetext: { ai_system_fault->codecontext  }  |.
+        CATCH zrap_####_cx_fault_msg_type INTO DATA(soap_exception).
+          error_message = soap_exception->error_text.
+          "fill reported structure to be displayed on the UI
+          APPEND VALUE #( uuid = <inventory>-uuid
+                          %msg = new_message( id = 'ZCM_RAP_GENERATOR'
+                                              number = '016'
+                                              v1 = error_message
+                                              "v2 = messages[ 1 ]-msgv2
+                                              "v3 = messages[ 1 ]-msgv3
+                                              "v4 = messages[ 1 ]-msgv4
+                                              severity = CONV #( 'E' ) )
+                           %element-price = if_abap_behv=>mk-on
+
+
+    ) TO reported_inventory_soap.
+          "inventory entries where no price could be retrieved must not be passed to the MODIFY statement
+          DELETE inventories INDEX sy-tabix.
       ENDTRY.
 
     ENDLOOP.
 
-
-
     "update involved instances
-    MODIFY ENTITIES OF zi_rap_inventory_1234 IN LOCAL MODE
+    MODIFY ENTITIES OF zi_rap_inventory_#### IN LOCAL MODE
       ENTITY Inventory
         UPDATE FIELDS ( Price CurrencyCode )
         WITH VALUE #( FOR inventory IN inventories (
@@ -148,12 +170,40 @@ When checking the *Project Explorer* you will notice that several objects have b
 
     "fill reported
     reported = CORRESPONDING #( DEEP reported_entities ).
-    
+
+    "add reported from SOAP call
+    LOOP AT reported_inventory_soap INTO DATA(reported_inventory).
+      APPEND reported_inventory TO reported-inventory.
+    ENDLOOP.
+
+
   ENDMETHOD.
 
 </pre>
 
+10. Activate your changes.
 
+11. Test service with Fiori Elements preview.
+    - Open the service binding ZUI_RAP_INVENTORY_####_02 (either via Ctrl+Shift+A or via navigation in the Project Explorer)
+    - Select the entity `Ìnventory`.
+    - Press the **Preview** button
+    
+12. Create a new inventory entry and select a valid product id using the value help
 
+    - Select a valid ProductID via the value help (e.g. HT-1000)
+    
+![Create inventory with valid product name](images/2110.png)
 
+    - When pressing the **Create** button the determination for the price will call the SOAP service
+    - The inventory will be created with the price and the currency retrieved from the backend
+
+![Inventory with product price](images/2120.png)
+
+13. Create an inventory entry with an invalid ProductID (e.g. www).
+    - Enter an invalid ProductID, e.g. `www`
+![Inventory with invalid product price](images/2130.png)
+
+   - The SOAP call will not be able to find the ProductId in the backend and will hence respond with the error message `Product not found. Try e.g. HT-1000 :)`.
+   
+![Error message from SOAP call](images/2140.png)
 
