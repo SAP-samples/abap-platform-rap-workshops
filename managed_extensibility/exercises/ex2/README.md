@@ -1,4 +1,6 @@
-# Exercise 2
+# TOC
+[Home](../../README.md#exercises)
+# Exercise 2 - Consume an OData service
 
 When creating a new entry with your inventory application you see that there is no value help for the field ProductId. 
 Since this information resides in a SAP S/4 HANA backend we will it retrieve via OData.
