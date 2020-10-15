@@ -194,7 +194,8 @@ When checking the *Project Explorer* you will notice that several objects have b
     - Select a valid ProductID via the value help (e.g. HT-1000)
     
 ![Create inventory with valid product name](images/2110.png)
-
+ 
+13. Press the **Create** button
     - When pressing the **Create** button the determination for the price will call the SOAP service
     - The inventory will be created with the price and the currency retrieved from the backend
 
