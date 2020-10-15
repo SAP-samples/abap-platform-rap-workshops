@@ -43,10 +43,11 @@ These are the steps of our hands-ons session:
      - [Test the service](exercises/ex2#test-the-service)
      - [Summary](exercises/ex2#summary)   
 
-- [Exercise 3 - Consume a SOAP Web service](exercises/ex3/exercise-3)
+- [Exercise 3 - Consume a SOAP Web service](exercises/ex3/README.md#exercise-3---consume-a-soap-web-service)
     - [Download the WSDL](exercises/ex3#download-the-wsdl)
-    - [Create the Service Consumption Model](exercises/ex2#create-the-service-consumption-model)
-
+    - [Create the Service Consumption Model](exercises/ex3#create-the-service-consumption-model)
+    - [Add and implement a determination](exercises/ex3/README.md#add-and-implement-a-determination)
+    - [Test the service](exercises/ex3/README.md#test-the-service)
 
 ## How to obtain support
 
