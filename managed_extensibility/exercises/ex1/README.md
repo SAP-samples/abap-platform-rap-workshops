@@ -1,3 +1,4 @@
+![Home](../exercises)
 # Exercise 1
 
 In this exercise, we will create a starter application to collect inventory data. Since we want to concentrate on developing an extension scenario we will try to speed up the process to build the basic inventory application.
