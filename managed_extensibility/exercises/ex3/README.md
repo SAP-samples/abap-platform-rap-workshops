@@ -61,7 +61,9 @@ When checking the *Project Explorer* you will notice that several objects have b
 
 ![Web Service Consumption Proxy](images/2060.png)
 
-8. Add a determination in the BDEF
+## Add and implement a determination 
+
+1. Add a determination in the **behavior definition**
 
   - Open your behavior definition `ZI_RAP_INVENTORY_####`
   - Add the following code snippet to add a determination for the field `Price`
@@ -77,7 +79,7 @@ When checking the *Project Explorer* you will notice that several objects have b
 
 ![Web Service Consumption Proxy](images/2070.png)
 
-9. Add the following code in the implementation of the method GetPrice.
+2. Add the following code in the implementation of the method `GetPrice`.
 
 > **Coding explained**
 
@@ -181,27 +183,29 @@ When checking the *Project Explorer* you will notice that several objects have b
 
 </pre>
 
-10. Activate your changes.
+3. Activate your changes.
 
-11. Test service with Fiori Elements preview.
+## Test the service
+
+1. Test service with Fiori Elements preview.
     - Open the service binding ZUI_RAP_INVENTORY_####_02 (either via Ctrl+Shift+A or via navigation in the Project Explorer)
     - Select the entity `Ìnventory`.
     - Press the **Preview** button
     
     ![Open the Fiori Elements preview](images/2080.png)
-12. Create a new inventory entry and select a valid product id using the value help
+2. Create a new inventory entry and select a valid product id using the value help
 
     - Select a valid ProductID via the value help (e.g. HT-1000)
     
 ![Create inventory with valid product name](images/2110.png)
  
-13. Press the **Create** button
+3. Press the **Create** button
     - When pressing the **Create** button the determination for the price will call the SOAP service
     - The inventory will be created with the price and the currency retrieved from the backend
 
 ![Inventory with product price](images/2120.png)
 
-13. Create an inventory entry with an invalid ProductID (e.g. www).
+4. Create an inventory entry with an invalid ProductID (e.g. www).
     - Enter an invalid ProductID, e.g. `www`
 ![Inventory with invalid product price](images/2130.png)
 
