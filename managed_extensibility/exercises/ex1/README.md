@@ -521,5 +521,5 @@ You are now able to:
 -	Use the Fiori Elements preview to test your service
 
 
-Continue to - [Exercise 2 - Exercise 2 Description](../ex2/README.md)
+Continue with - [Exercise 2](../ex2/README.md)
 
