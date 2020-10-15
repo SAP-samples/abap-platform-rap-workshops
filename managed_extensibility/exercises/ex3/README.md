@@ -20,16 +20,15 @@ In this step we will create a service consumption model based on the WSDL file t
 3. The New Service Consumption Model dialogue opens. Here enter the following data:
 
 Name: `ZSC_RAP_GETPRICE_####` <br/>
-Description: `Product price from ES5`
-
-Remote Consumption Model: Web Service (to be selected from the drop down box)
+Description: `Product price from ES5` <br/>
+Remote Consumption Model: `Web Service` (to be selected from the drop down box)
 
   ![Service Consumption Model](images/2020.png)
 
 4. The WSDL file of the SOAP web service that you want to consume must be uploaded in file format. If you have not yet downloaded the WSDL file you have to do this now.
 
-   - Click Browse to select the WSDL file that you have downloaded earlier in this exercise
-   - Prefix: ZRAP_#### _
+   - Click **Browse** to select the WSDL file that you have downloaded earlier in this exercise
+   - Prefix: `ZRAP_####_`
 
   ![Web Service Consumption Proxy](images/2030.png)
 
