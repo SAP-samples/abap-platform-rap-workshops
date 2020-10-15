@@ -35,9 +35,16 @@ These are the steps of our hands-ons session:
     
 - [Exercise 2 - Consume an OData service](exercises/ex2/exercise-2)
     - [Create the service consumption model](exercises/ex2#create-the-service-consumption-model)
-    - [Create a custom entity](exercises/ex2#create-a-custom-entity)
+    - [Create a console application to test the OData service](exercises/ex2#create-a-console-application-to-test-the-odata-service)
+     - [Create a custom entity and implement the query implementation class](exercises/ex2#create-a-custom-entity-and-implement-the-query-implementation-class)
+         - [Create a custom entity](exercises/ex2#create-a-custom-entity)
+         - [Implement the query implemenation class](exercises/ex2#implement-the-query-implemenation-class)     
+     - [Add the custom entity as a value help](exercises/ex2#add-the-custom-entity-as-a-value-help)
+     - [Test the service](exercises/ex2#test-the-service)
+     - [Summary](exercises/ex2#summary)
+     
 
-- [Exercise 3 - Consume a SOAP Web service](exercises/ex2/)
+- [Exercise 3 - Consume a SOAP Web service](exercises/ex3/exercise-3)
     - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
 
