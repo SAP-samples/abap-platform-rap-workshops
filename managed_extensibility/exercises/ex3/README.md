@@ -19,8 +19,9 @@ In this step we will create a service consumption model based on the WSDL file t
   
 3. The New Service Consumption Model dialogue opens. Here enter the following data:
 
-Name: ZSC_RAP_GETPRICE_#### 
-Description: **`Product price from ES5`**
+Name: `ZSC_RAP_GETPRICE_####` <br/>
+Description: `Product price from ES5`
+
 Remote Consumption Model: Web Service (to be selected from the drop down box)
 
   ![Service Consumption Model](images/2020.png)
