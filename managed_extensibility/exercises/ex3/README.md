@@ -188,7 +188,7 @@ When checking the *Project Explorer* you will notice that several objects have b
     - Select the entity `Ìnventory`.
     - Press the **Preview** button
     
-    ![Create inventory with valid product name](images/2090.png)
+    ![Open the Fiori Elements preview](images/2080.png)
 12. Create a new inventory entry and select a valid product id using the value help
 
     - Select a valid ProductID via the value help (e.g. HT-1000)
