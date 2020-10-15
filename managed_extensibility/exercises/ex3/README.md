@@ -84,8 +84,8 @@ When checking the *Project Explorer* you will notice that several objects have b
 > The following code is using large parts of the code snippets provided by the service consumption model.
 > It has however been adjusted to fit our needs.
 > 1. The destination is not retrieved by calling the method `cl_soap_destination_provider=>create_by_cloud_destination( )` but by using the method `cl_soap_destination_provider=>create_by_url( )`. This is because the destination service is not available in the ABAP trial systems in SAP Cloud Platform.
-> 2. Instead of using an inline declaratin for `destination`and `proxy` these variables are defined beforehand. This way we can avoid the destination and proxy object are created several times when multiple inventories are to be created.
-> 3. The data retrieved from the SOAP call is used to updated the inventory data via EML.
+> 2. Instead of using an inline declaration for `destination`and `proxy` these variables are defined beforehand. This way we can avoid that the destination and proxy object are created several times in case multiple inventories are to be created.
+> 3. The data retrieved from the SOAP call is used to update the inventory data via EML.
 
 <pre>
   
@@ -107,7 +107,7 @@ When checking the *Project Explorer* you will notice that several objects have b
     DELETE inventories WHERE ProductID =''.
     CHECK inventories IS NOT INITIAL.
 
-    LOOP AT inventories ASSIGNING FIELD-SYMBOL(<inventory>).
+    LOOP AT inventories ASSIGNING FIELD-SYMBOL(&lt;inventory&gt;).
 
       TRY.
 
@@ -120,7 +120,7 @@ When checking the *Project Explorer* you will notice that several objects have b
                            ).
           ENDIF.
 
-          DATA(request) = VALUE zrap_####_req_msg_type( req_msg_type-product = <inventory>-ProductID ).
+          DATA(request) = VALUE zrap_####_req_msg_type( req_msg_type-product = &lt;inventory&gt;-ProductID ).
           proxy->get_price(
             EXPORTING
               input = request
@@ -128,8 +128,8 @@ When checking the *Project Explorer* you will notice that several objects have b
               output = DATA(response)
           ).
 
-          <inventory>-Price = response-res_msg_type-price .
-          <inventory>-CurrencyCode = response-res_msg_type-currency.
+          &lt;inventory&gt;-Price = response-res_msg_type-price .
+          &lt;inventory&gt;-CurrencyCode = response-res_msg_type-currency.
           "handle response
 
         CATCH cx_soap_destination_error INTO DATA(soap_destination_error).
@@ -139,7 +139,7 @@ When checking the *Project Explorer* you will notice that several objects have b
         CATCH zrap_####_cx_fault_msg_type INTO DATA(soap_exception).
           error_message = soap_exception->error_text.
           "fill reported structure to be displayed on the UI
-          APPEND VALUE #( uuid = <inventory>-uuid
+          APPEND VALUE #( uuid = &lt;inventory&gt;-uuid
                           %msg = new_message( id = 'ZCM_RAP_GENERATOR'
                                               number = '016'
                                               v1 = error_message
