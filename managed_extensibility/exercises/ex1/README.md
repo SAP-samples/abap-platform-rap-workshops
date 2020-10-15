@@ -5,7 +5,7 @@ In this exercise, we will create a starter application to collect inventory data
  
 For this we will use the RAP Generator.
 
-
+[Top](README.md)
 ## Connect to the system
 
 1. Start the ABAP Development Tools (aka ABAP in Eclipse)
