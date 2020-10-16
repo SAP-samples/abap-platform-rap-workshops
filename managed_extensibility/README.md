@@ -24,8 +24,8 @@ The requirements to follow the exercises in this repository are described [here]
 These are the steps of our hands-ons session:
 
 - [Getting Started](exercises/ex0/)
-- [Exercise 1 - Generate a starter application](exercises/ex1#exercise-1)
-    - [Connect to the system](exercises/ex1#connect-to-the-system)
+    - [Connect to the system](exercises/ex0#connect-to-the-system)
+- [Exercise 1 - Generate a starter application](exercises/ex1#exercise-1)    
     - [Create a package](exercises/ex1#create-a-package)
     - [Create a table](exercises/ex1#create-a-table)
     - [Run the RAP Generator](exercises/ex1#generate-a-starter-application)
