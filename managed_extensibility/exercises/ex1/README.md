@@ -5,6 +5,11 @@ In this exercise, we will create a starter application to collect inventory data
  
 For this we will use the RAP Generator.
 
+Before using the RAP Generator you have to do the following:
+
+- Create a table to store the inventory data
+- Create a JSON file locally on your desktop that holds the information about RAP BO that will be generted based on the table that you will create beforehand.
+
 
 
 ## Create a package
