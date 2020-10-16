@@ -1,5 +1,5 @@
 # TOC
-[Home](../../README.md#exercises)
+[Home - RAPCJE](../../README.md#exercises)
 # Exercise 2 - Consume an OData service
 
 When creating a new entry with your inventory application you see that there is no value help for the field ProductId. 
