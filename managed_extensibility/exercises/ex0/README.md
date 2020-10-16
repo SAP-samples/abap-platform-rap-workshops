@@ -1,8 +1,6 @@
 # Getting started
 
-Before starting with the exercise please make sure that you have worked on the prerequisites that can be found in detail here:
-
-- 
+Before starting with the exercise please make sure that you have worked on the prerequisites that can be found in detail [here](../../README.md#requirements)
 
 
 ## Connect to the system
@@ -73,8 +71,12 @@ Before starting with the exercise please make sure that you have worked on the p
 
     ![Project name](images/0100.png)
 
+9. Your ABAP Cloud Project should now look like follows
+
+    ![Project name](images/0105.png)
+
 ## Summary
 
 Now you are ready to start with the first exercise.
 
-Continue to - [Exercise 1 - Exercise 1 Description](../ex1/README.md)
+Continue to - [Exercise 1](../ex1/README.md)
