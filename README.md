@@ -3,6 +3,10 @@
 ## Description
 In this repository we provide materials for customer and community facing sessions that cover topics of the ABAP RESTful Application Programming Model (RAP).
 
+## Workshops
+
+[RAPCJE - SAP Cloud Platform, ABAP Environment Connectivity and Integration](/managed_extensibility/README.md#rapcje---sap-cloud-platform-abap-environment-connectivity-and-integration)
+
 
 ## Requirements
 
@@ -16,10 +20,6 @@ In this repository we provide materials for customer and community facing sessio
   ![Start booster](images/intro_0010.png)
 
 For a detailed step-by-step description check out our [Onboarding Tutorial](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/720c423ef1a8498ab690cf0e5512ba50.html#loio720c423ef1a8498ab690cf0e5512ba50__Create_ABAP_Trial_Instance).
-
-## Workshops
-
-![RAPCJE - SAP Cloud Platform, ABAP Environment Connectivity and Integration](/managed_extensibility/README.md#rapcje---sap-cloud-platform-abap-environment-connectivity-and-integration)
 
 ## Download and Installation
 
