@@ -366,7 +366,7 @@ The interface **if_rap_query_provider interface** only offers one method which i
 
 ![New data definition 2](images/1240.png)
 
-   - Copy the field list from the abstract entity
+   - Copy the field list from the abstract entity `ZRAP_####_SEPMRA_I_PRODUCT_E`
   
   ![Copy field list from the abstract entity](images/1250.png)
   
