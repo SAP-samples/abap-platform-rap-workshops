@@ -7,7 +7,7 @@ Since this information resides in a SAP S/4 HANA backend we will it retrieve via
 
  ![No value help](images/1010.png)
 
-In this exercise you will thus learn how to consume an OData Service of your on premise system in order to fetch business partner data. You will then learn how to expose this data as a value help for the Inventory entity.
+In this exercise you will thus learn how to consume an OData Service from an on premise system in order to fetch business partner data. You will then learn how to expose this data as a value help for the Inventory entity.
 
 In this exercise, we will ...
 
