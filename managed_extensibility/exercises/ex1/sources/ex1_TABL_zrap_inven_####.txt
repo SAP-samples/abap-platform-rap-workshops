@@ -1,0 +1,24 @@
+@EndUserText.label : 'Inventory data'
+@AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zrap_inven_#### {
+  key client      : abap.clnt not null;
+  key uuid        : sysuuid_x16 not null;
+  inventory_id    : abap.numc(6) not null;
+  product_id      : abap.char(10);
+  @Semantics.quantity.unitOfMeasure : 'zrap_inven_####.quantity_unit'
+  quantity        : abap.quan(13,3);
+  quantity_unit   : abap.unit(3);
+  @Semantics.amount.currencyCode : 'zrap_inven_####.currency_code'
+  price           : abap.curr(16,2);
+  currency_code   : abap.cuky;
+  remark          : abap.char(256);
+  not_available   : abap_boolean;
+  created_by      : syuname;
+  created_at      : timestampl;
+  last_changed_by : syuname;
+  last_changed_at : timestampl;
+
+}
