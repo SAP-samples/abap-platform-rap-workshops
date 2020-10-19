@@ -137,3 +137,4 @@ CLASS zcl_ce_rap_products_#### IMPLEMENTATION.
   ENDMETHOD.
 
 ENDCLASS.
+
