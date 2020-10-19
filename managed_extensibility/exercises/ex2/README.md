@@ -344,9 +344,9 @@ The interface **if_rap_query_provider interface** only offers one method which i
 
 > Caution
 
-> If you would press **Finish** instead of **Next** the wizard will use the template that was used the last time when this wizard was used by the developer. 
+> If you were to press **Finish** instead of **Next**, the wizard would use the template that was used the last time when this wizard was used by the developer. 
 
-> In order to be sure which template will be selected we **MUST** press **Next** and not **Finish** which would skip the step of template selection.
+> In order to be sure that the correct template is selected, we **MUST** press **Next** and not **Finish** which would skip the step of template selection.
 
 ![New data definition 2](images/1220.png)
 
