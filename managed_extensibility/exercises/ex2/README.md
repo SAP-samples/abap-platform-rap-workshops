@@ -103,7 +103,7 @@ Click **Next**.
 
 ![ABAP Artifact Genertion List](images/1080.png)
 
-9. Let us shortly investigate the service consumption model. 
+9. Let us briefly investigate the service consumption model. 
 
    For each operation (**Read List**, **Read**, **Create**, **Update** and **Delete**) some sample code has been created that you can use when you want to call the OData Service with one of these operations. Since we want to retrieve a list of Product-IDs, we will select the operation **Read List** and click on the button **Copy to Clipboard**. We will use this code in the following step where we create a console application to test the call to the remote OData service. 
   
