@@ -2,6 +2,15 @@
 
 # Exercise 1
 
+ 
+- [Create a package](#create-a-package)
+- [Create a table](#create-a-table)
+- [Run the RAP Generator](#generate-a-starter-application)
+- [Check the generated repository objects](#check-the-generated-repository-objects)
+- [Behavior Implementation](#behavior-implementation)
+- [Summary](#summary)
+- [Solution](sources)
+
 In this exercise, we will create a starter application to collect inventory data. Since we want to concentrate on developing an extension scenario we will try to speed up the process to build the basic inventory application.
  
 For this we will use the RAP Generator.
