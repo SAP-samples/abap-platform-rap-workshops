@@ -515,4 +515,4 @@ You are now able to:
 ·	Define value helps for OData entities
 
 
-Continue to - [Exercise 3 - Excercise 3 ](../ex3/README.md)
+Continue to - [Exercise 3 - Exercise 3 ](../ex3/README.md)
