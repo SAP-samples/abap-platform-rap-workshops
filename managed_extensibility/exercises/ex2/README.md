@@ -28,8 +28,8 @@ In this exercise, we will ...
 
 In this step we will generate a so called Service Consumption Model.
 This type of object takes an external interface description as its input. 
-Currently *OData* and *SOAP* are supported. With the upcoming release 2011 it is planned to support Service Consumption Modells for RFC based communication  as well.
-Based on the information found in the $metadata file or the wsdl file appropriate repository objects are generated (OData Client proxy or SOAP proxy objects).
+Currently *OData* and *SOAP* are supported. With the upcoming release 2011 it is planned to support Service Consumption Models for RFC based communication  as well.
+Based on the information found in the *$metadata* file or the *wsdl* file appropriate repository objects are generated (OData Client proxy or SOAP proxy objects).
 Using these objects you will be able to write ABAP code that lets you consume remote OData or SOAP services.
  
 We start by creating a service consumption model for an OData service that provides demo product data. This service resides on the public SAP Gateway System ES5 and does not require any authentication
@@ -46,7 +46,7 @@ We start by creating a service consumption model for an OData service that provi
 2. In the New ABAP Repository Object dialogue do the following
 
    -  Start to type **`Service`**
-   -  In the list of objects select **Service Conumption Model**
+   -  In the list of objects select **Service Consumption Model**
    -  Click **Next**
  
   ![New ABAP Repository Object 2](images/1030.png)
@@ -71,20 +71,20 @@ We start by creating a service consumption model for an OData service that provi
 
 > **Please note**
 
-> The prefix that you have entered will be added to the names of the repository objects that are generated, namely the **Service Consumption Model** and the **abstract entity**. 
-> If you don't select a prefix and if the wizard finds out that there would be name clashes the wizard will propse unique names by adding arbritrary characters to the repository object names. In any case you will be able to change the values that will be proposed by this wizard.
+> The prefix that you have entered will be added to the names of the repository objects that are generated, namely the **abstract entity(ies)**. 
+> If you don't select a prefix and if the wizard finds out that there would be name clashes the wizard will propse unique names by adding arbitrary characters to the repository object names. In any case you will be able to change the values that will be proposed by this wizard.
 
  ![OData consumption proxy](images/1050.png)
 
 6. Check the **ABAP Artifact Name** and click **Next**.
 
-   You will notice that the name of the ABAP artifact has been set to **`ZRAP_####_SEPMRA_I_PRODUCT_E`** since we have provided the prefix **`RAP_#### _`** 
+   You will notice that the name of the ABAP artifact has been set to `ZRAP_####_SEPMRA_I_PRODUCT_E` since we have provided the prefix `RAP_####_`. 
 
    Press **Next**.
 
 > Additional Information
 
-> If you have not provided a prefix the ABAP Artifact Name might contain several arbritray characters that have been added to the name **ZSEPMRA_I_PRODUCT**. This can happen if other users in the same system have already imported the same $metadata file. In order to avoid name clashes the wizard then adds arbritrary characters so that a unique name for the ABAP artifact is ensured.
+> If you have not provided a prefix the ABAP Artifact Name might contain several arbritray characters that have been added to the name **ZSEPMRA_I_PRODUCT**. This can happen if other users in the same system have already imported the same $metadata file. In order to avoid name clashes the wizard then adds arbitrary characters so that a unique name for the ABAP artifact is ensured.
 
 ![Define Entity Set](images/1060.png)
 
@@ -151,7 +151,7 @@ ZRAP_CE
    
 5. Add an implementation for the method main
 
-  You will see the warning **Implementation missing for method IF_OO_ADT_CLASSRUN~MAIN IF_OO_ADT_CLASSRUN~MAIN**. 
+  You will see the warning **Implementation missing for method IF_OO_ADT_CLASSRUN~MAIN**. 
 
 ![Selection of transport request](images/1135.png)
 
@@ -358,7 +358,7 @@ The interface **if_rap_query_provider interface** only offers one method which i
 
 > **Please note**
 
-> There is only a template for a custom entity with parameters. But this doesn’t matter. We use this template and remove the statement *with parameters parameter_name : parameter_type*.
+> There is only a template for a custom entity with parameters. But this doesn’t matter. We use this template and remove the statement `with parameters parameter_name : parameter_type`.
 
 ![New data definition 2](images/1230.png)
 
@@ -515,4 +515,4 @@ You are now able to:
 ·	Define value helps for OData entities
 
 
-Continue to - [Exercise 3 - Exercise 3 ](../ex3/README.md)
+Continue to - [Exercise 3 - Excercise 3 ](../ex3/README.md)
