@@ -158,7 +158,7 @@ This is a useful additional step since this way it is easier to check whether th
 6. Implementation
 
     Navigating back to the service consumption model we use the *Copy to clipboard* button to copy the sample code for the **ReadList** operation into the main method of our newly created class.
-Since it is not possible to leverage the destination service in the trial systems, we will use the method **create_by_http_destination** which allows to create a http client object based on the target URL.
+Since it is not possible to leverage the destination service in the trial systems, we will use the method **create_by_http_destination** which allows us to create a http client object based on the target URL.
 Here we take the root URL https://sapes5.sapdevcenter.com of the ES5 system since the relative URL will be added when creating the OData client proxy.
 
 ## CLASS zcl_ce_rap_products_#### DEFINITION
