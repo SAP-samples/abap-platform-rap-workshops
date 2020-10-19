@@ -72,5 +72,4 @@ define custom entity ZCE_RAP_PRODUCTS_####
  Price : abap.curr( 16, 3 ) ; 
  Price_vc : rap_cp_odata_value_control ; 
  
-  
 }
