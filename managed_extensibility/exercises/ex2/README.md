@@ -1,6 +1,6 @@
 # TOC
 [Home - RAPCJE](../../README.md#exercises)
-# Exercise 2 - Consume an OData service
+# Exercise 2
 
 When creating a new entry with your inventory application you see that there is no value help for the field ProductId. 
 Since this information resides in a SAP S/4 HANA backend we will it retrieve via OData.
@@ -147,7 +147,7 @@ This is a useful additional step since this way it is easier to check whether th
    - Click **Finish**
 
 ![Selection of transport request](images/1130.png)
-
+ZRAP_CE
    
 5. Add an implementation for the method main
 
@@ -331,7 +331,7 @@ The interface **if_rap_query_provider interface** only offers one method which i
 1. Let’s start with creating a new data definition zce_rap_agency_#### using the template for a custom entity. 
 
 2. The **New Data Defintion** dialogue opens
-   - Name: ZRAP_CE_PRODUCTS_#### 
+   - Name: ZCE_RAP_PRODUCTS_#### 
    - Description: Custom entity for products from ES5
    
    Press **Next**
@@ -472,7 +472,7 @@ It is mandatory that the response not only contains the retrieved data via the m
   ProductID,
   </pre>
 
-This will add the custom entity `ZRAP_CE_PRODUCTS_####` as a value help for the field `ProductId`.
+This will add the custom entity `ZCE_RAP_PRODUCTS_####` as a value help for the field `ProductId`.
 
 
 ## Test the service 
