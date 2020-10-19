@@ -32,6 +32,7 @@ These are the steps of our hands-ons session:
     - [Check the generated repository objects](exercises/ex1#check-the-generated-repository-objects)
     - [Behavior Implementation](exercises/ex1#behavior-implementation)
     - [Summary](exercises/ex1#summary)
+    - [Solution](exercises/ex1/sources)
     
 - [Exercise 2 - Consume an OData service](exercises/ex2/exercise-2)
     - [Create the service consumption model](exercises/ex2#create-the-service-consumption-model)
@@ -41,12 +42,14 @@ These are the steps of our hands-ons session:
          - [Implement the query implemenation class](exercises/ex2#implement-the-query-implemenation-class)     
      - [Add the custom entity as a value help](exercises/ex2#add-the-custom-entity-as-a-value-help)
      - [Test the service](exercises/ex2#test-the-service)
-     - [Summary](exercises/ex2#summary)   
+     - [Summary](exercises/ex2#summary) 
+     - [Solution](exercises/ex2/sources)
 
 - [Exercise 3 - Consume a SOAP Web service](exercises/ex3/README.md#exercise-3---consume-a-soap-web-service)
     - [Download the WSDL](exercises/ex3#download-the-wsdl)
     - [Create the Service Consumption Model](exercises/ex3#create-the-service-consumption-model)
     - [Add and implement a determination](exercises/ex3/README.md#add-and-implement-a-determination)
     - [Test the service](exercises/ex3/README.md#test-the-service)
+    - [Solution](exercises/ex3/sources)
 
 
