@@ -25,7 +25,7 @@ These are the steps of our hands-ons session:
 
 - [Getting Started](exercises/ex0/)
     - [Connect to the system](exercises/ex0#connect-to-the-system)
-- [Exercise 1 - Generate a starter application](exercises/ex1#exercise-1)    
+- [Exercise 1 - Generate a starter application](exercises/ex1/README.md)    
     - [Create a package](exercises/ex1#create-a-package)
     - [Create a table](exercises/ex1#create-a-table)
     - [Run the RAP Generator](exercises/ex1#generate-a-starter-application)
@@ -34,7 +34,7 @@ These are the steps of our hands-ons session:
     - [Summary](exercises/ex1#summary)
     - [Solution](exercises/ex1/sources)
     
-- [Exercise 2 - Consume an OData service](exercises/ex2/exercise-2)
+- [Exercise 2 - Consume an OData service](exercises/ex2/README.md)
     - [Create the service consumption model](exercises/ex2#create-the-service-consumption-model)
     - [Create a console application to test the OData service](exercises/ex2#create-a-console-application-to-test-the-odata-service)
      - [Create a custom entity and implement the query implementation class](exercises/ex2#create-a-custom-entity-and-implement-the-query-implementation-class)
@@ -45,7 +45,7 @@ These are the steps of our hands-ons session:
      - [Summary](exercises/ex2#summary) 
      - [Solution](exercises/ex2/sources)
 
-- [Exercise 3 - Consume a SOAP Web service](exercises/ex3/README.md#exercise-3---consume-a-soap-web-service)
+- [Exercise 3 - Consume a SOAP Web service](exercises/ex3/README.md)
     - [Download the WSDL](exercises/ex3#download-the-wsdl)
     - [Create the Service Consumption Model](exercises/ex3#create-the-service-consumption-model)
     - [Add and implement a determination](exercises/ex3/README.md#add-and-implement-a-determination)
