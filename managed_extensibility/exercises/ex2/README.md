@@ -7,7 +7,7 @@
 - [Create a custom entity and implement the query implementation class](#create-a-custom-entity-and-implement-the-query-implementation-class)
   - [Create a custom entity](#create-a-custom-entity)
   - [Implement the query implemenation class](#implement-the-query-implemenation-class)     
-[Add the custom entity as a value help](#add-the-custom-entity-as-a-value-help)
+- [Add the custom entity as a value help](#add-the-custom-entity-as-a-value-help)
 - [Test the service](#test-the-service)
 - [Summary](#summary) 
 - [Solution](sources)
