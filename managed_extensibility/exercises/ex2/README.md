@@ -157,15 +157,18 @@ This is a useful additional step since this way it is easier to check whether th
 
 6. Implementation
 
-    Navigating back to the service consumption model we use the *Copy to clipboard* button to copy the sample code for the **ReadList** operation into the main method of our newly created class.
-Since it is not possible to leverage the destination service in the trial systems, we will use the method **create_by_http_destination** which allows us to create a http client object based on the target URL.
-Here we take the root URL https://sapes5.sapdevcenter.com of the ES5 system since the relative URL will be added when creating the OData client proxy.
+    Navigating back to the service consumption model we can use the *Copy to clipboard* button to copy the sample code for the **ReadList** operation to use it in our newly created class.
+
 
 ## CLASS zcl_ce_rap_products_#### DEFINITION
 
-Let's have a look at the implementation of our test class. In the public section we find to **TYPES** definitions. **t_product_range** is used to provide filter conditions for ProductIDs in form of SELECT-OPTIONS to the method **get_products( )**. The second type **t_business_data** is used to retrieve the business data returned by our remote OData service.
+Let's start with the implementation of our test class. 
+
+In the public section we add two **TYPES** definitions. **t_product_range** is used to provide filter conditions for ProductIDs in form of SELECT-OPTIONS to the method **get_products( )**. The second type **t_business_data** is used to retrieve the business data returned by our remote OData service.
 
 The  **get_products( )** method takes filter conditions in form of SELECT-OPTIONS via the importing parameter **it_filter_cond**. In addition it is possible to provide values for **top** and **skip** to leverage client side paging.
+
+So the DEFINITION section of your class should now look like follows:
 
 <pre>
 CLASS zcl_ce_rap_products_#### DEFINITION
@@ -202,7 +205,6 @@ ENDCLASS.
 7. Add the following code into the implementation of your main method
 
 The main method creates a simple filter for products with a name greater or equal **HT-1200**. At the same time we use client side paging to skip the first result and limit the response to 3 products.
-
 
 <pre>
   METHOD if_oo_adt_classrun~main.
