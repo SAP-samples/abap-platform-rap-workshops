@@ -395,6 +395,10 @@ When trying to activate the DDL source code we get the error message
 
  ![Error message class must implement IF_RAP_QUERY_PROVIDER](images/1290.png)
 
+9. The DDL source code should now look like follows
+[Source code ZCE_RAP_PRODUCTS_####](sources/x2_DDLS_ZCE_RAP_PRODUCTS_%23%23%23%23.txt)
+
+
 ### Implement the query implemenation class
 
 After having created the custom entity `ZRAP_CE_PRODUCTS_####` we now have to enhance the query implementation class `ZCL_CE_RAP_PRODUCTS_####`that we have created earlier in this exercise.
@@ -449,6 +453,10 @@ It is mandatory that the response not only contains the retrieved data via the m
  </pre>
 
 3. Activate your changes 
+
+4. Your ABAP source code should now look like follows
+
+[Source code ZCL_CE_RAP_PRODUCTS_####](sources/ex2_CLAS_zcl_ce_rap_products_%23%23%23%23_final.txt)
 
 ## Add the custom entity to your service definition
 
