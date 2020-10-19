@@ -339,7 +339,7 @@ The interface **if_rap_query_provider interface** only offers one method which i
    ![New data definition 2](images/1210.png)
    
 3. Selection of a transport request
-   - Select or create a transport request00
+   - Select or create a transport request.
    - **!!! ONLY!!!** Press *Next*. Do **NOT** press *Finish*.
 
 > Caution
