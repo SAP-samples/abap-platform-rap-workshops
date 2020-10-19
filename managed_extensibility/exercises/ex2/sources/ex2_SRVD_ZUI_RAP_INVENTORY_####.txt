@@ -1,0 +1,4 @@
+define service ZUI_RAP_INVENTORY_#### {
+  expose ZC_RAP_INVENTORY_#### as Inventory;
+  expose ZCE_RAP_PRODUCTS_#### as Products;
+}
