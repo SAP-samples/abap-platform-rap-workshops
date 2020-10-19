@@ -215,3 +215,6 @@ When checking the *Project Explorer* you will notice that several objects have b
    
 ![Error message from SOAP call](images/2140.png)
 
+
+## Solution
+![Source code used in this exercise](sources)
