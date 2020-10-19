@@ -135,5 +135,5 @@ CLASS zcl_ce_rap_products_#### IMPLEMENTATION.
         DATA(exception_message) = cl_message_helper=>get_latest_t100_exception( exception )->if_message~get_longtext( ).
     ENDTRY.
   ENDMETHOD.
-
+ 
 ENDCLASS.
