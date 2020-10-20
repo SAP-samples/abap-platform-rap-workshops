@@ -14,8 +14,7 @@ In the following exercise you will learn how to call a SOAP web service and how 
 
 1. Create a text file with the extension .XML locally on your computer
 2. Copy the content of the WSDL file into that file. The WSDL can be found here: [Link to WSDL](sources/ex3_WSDL.txt)
-ex3_WSDL.txt
-/exercises/ex3/sources/ex3_WSDL.txt
+
 
 ## Create the Service Consumption Model
 
