@@ -75,6 +75,14 @@ Before starting with the exercise please make sure that you have worked on the p
 
     ![Project name](images/0105.png)
 
+## Choose unique number for the suffix
+
+In this script we will use a suffix for the ABAP repository objects that you will create. This suffix you can choose freely but since we are using shared trial systems it might be that already another user has picked the same suffix.
+
+In this blog it is described how you can check upfront whether the suffix of your choice has already been used by another user or not.
+
+![Blog - How do I find out if the suffix of my choice is already used in an ABAP trial system? ](https://blogs.sap.com/2020/10/20/how-do-i-find-out-if-the-suffix-of-my-choice-is-already-used-in-an-abap-trial-system/) 
+
 ## Summary
 
 Now you are ready to start with the first exercise.
