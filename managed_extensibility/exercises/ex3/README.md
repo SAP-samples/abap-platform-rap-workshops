@@ -77,7 +77,7 @@ When checking the *Project Explorer* you will notice that several objects have b
   - Add the following code snippet to add a determination for the field `Price`
   
   <pre>
-  determination GetPrice on modify { field ProductID; }
+  determination GetPrice on modify { create; update; }
   </pre>
 
 ![Web Service Consumption Proxy](images/2065.png)
