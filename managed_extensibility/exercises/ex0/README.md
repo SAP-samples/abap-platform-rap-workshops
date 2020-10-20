@@ -83,7 +83,7 @@ In this script we will use a suffix for the ABAP repository objects that you wil
 
 In this blog it is described how you can check upfront whether the suffix of your choice has already been used by another user or not.
 
-![Blog - How do I find out if the suffix of my choice is already used in an ABAP trial system? ](https://blogs.sap.com/2020/10/20/how-do-i-find-out-if-the-suffix-of-my-choice-is-already-used-in-an-abap-trial-system/) 
+[Blog - How do I find out if the suffix of my choice is already used in an ABAP trial system? ](https://blogs.sap.com/2020/10/20/how-do-i-find-out-if-the-suffix-of-my-choice-is-already-used-in-an-abap-trial-system/) 
 
 ## Summary
 
