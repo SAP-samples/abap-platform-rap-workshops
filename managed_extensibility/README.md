@@ -25,6 +25,7 @@ These are the steps of our hands-ons session:
 
 - [Getting Started](exercises/ex0/)
     - [Connect to the system](exercises/ex0#connect-to-the-system)
+    - [How do I find out if the suffix of my choice is already used in an ABAP trial system?](exercises/ex0#choose-unique-number-for-the-suffix)
 - [Exercise 1 - Generate a starter application](exercises/ex1/README.md)    
     - [Create a package](exercises/ex1#create-a-package)
     - [Create a table](exercises/ex1#create-a-table)
