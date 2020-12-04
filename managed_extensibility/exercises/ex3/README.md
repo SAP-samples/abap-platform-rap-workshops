@@ -1,5 +1,5 @@
 # TOC
-[Home - RAPCJE](../../README.md#exercises)
+[Home](../../README.md#exercises)
 # Exercise 3 - Consume a SOAP Web Service
 
 - [Download the WSDL](#download-the-wsdl)
