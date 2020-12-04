@@ -72,7 +72,7 @@ Remote Consumption Model: `Web Service` (to be selected from the drop down box)
 
 8. Activate your changes
 
-   Press the ![Mass Activation](images/mass_activate.png)
+   Press the ![Mass Activation](images/mass_activate.png) button to start the mass activation of the service consumption model alongside with all generated objects.
 
 ## Add and implement a determination 
 
