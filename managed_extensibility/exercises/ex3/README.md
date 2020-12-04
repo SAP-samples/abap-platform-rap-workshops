@@ -44,7 +44,7 @@ Remote Consumption Model: `Web Service` (to be selected from the drop down box)
   > **Caution**  
   > Opposed to the prefix that we have chosen for **OData Service Consumption Proxy** we have to choose a leading **Z**.   
   > If not, we get an error message that states:  
-  > *Package ZRAP_INVENTORY_1234 is a customer package, object RAP_####_ is in SAP namespace.  Use a valid combination of object name*  
+  > *Package ZRAP_INVENTORY_#### is a customer package, object RAP_####_ is in SAP namespace.  Use a valid combination of object name*  
   > ![Web Service Consumption Proxy](images/2025.png)
    
 
