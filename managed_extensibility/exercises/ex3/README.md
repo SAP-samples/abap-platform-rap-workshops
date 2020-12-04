@@ -41,8 +41,7 @@ Remote Consumption Model: `Web Service` (to be selected from the drop down box)
 
   ![Web Service Consumption Proxy](images/2030.png)
 
-  > ** Caution **
-
+  > **Caution**  
   > Opposed to the prefix that we have chosen for **OData Service Consumption Proxy** we have to choose a leading **Z**.   
   > If not, we get an error message that states:  
   > *Package ZRAP_INVENTORY_1234 is a customer package, object RAP_####_ is in SAP namespace.  Use a valid combination of object name*  
@@ -60,16 +59,20 @@ Remote Consumption Model: `Web Service` (to be selected from the drop down box)
 
 6. Service Consumption Model
 
-The Web Service does only have one service operation `get_price`. Use the **Copy to clipboard** button to copy the code sample for this service operation to the clipboard. We will use it in the following step.
+   The Web Service does only have one service operation `get_price`. Use the **Copy to clipboard** button to copy the code sample for this service operation to the clipboard. We will use it in the following step.
 
 
 ![Web Service Consumption Proxy](images/2050.png)
 
 7. Check generated objects
 
-When checking the *Project Explorer* you will notice that several objects have been generated. For those that are used to the generation of SOAP Web Service proxies in on premise systems they will look familiar.
+   When checking the *Project Explorer* you will notice that several objects have been generated. For those that are used to the generation of SOAP Web Service proxies in on premise systems they will look familiar.
 
-![Web Service Consumption Proxy](images/2060.png)
+   ![Web Service Consumption Proxy](images/2060.png)
+
+8. Activate your changes
+
+   Press the ![Activate](images/activate.png)
 
 ## Add and implement a determination 
 
