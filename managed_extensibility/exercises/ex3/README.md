@@ -37,15 +37,16 @@ Remote Consumption Model: `Web Service` (to be selected from the drop down box)
 4. The WSDL file of the SOAP web service that you want to consume must be uploaded in file format. If you have not yet downloaded the WSDL file you have to do this now.
 
    - Click **Browse** to select the WSDL file that you have downloaded earlier in this exercise
-   - Prefix: `ZRAP_####_`
+   - Prefix: **`ZRAP_####_`**
 
   ![Web Service Consumption Proxy](images/2030.png)
 
-> ** Caution **
+  > ** Caution **
 
-> Opposed to the prefix that we have chosen for **OData Service Consumption Proxy** we have to choose a leading *Z*. If not we get an error message that states: 
-   *Package ZRAP_INVENTORY_1234 is a customer package, object RAP_1234_ is in SAP namespace.  Use a valid combination of object name*
->   ![Web Service Consumption Proxy](images/2025.png)
+  > Opposed to the prefix that we have chosen for **OData Service Consumption Proxy** we have to choose a leading **Z**.   
+  > If not, we get an error message that states:  
+  > *Package ZRAP_INVENTORY_1234 is a customer package, object RAP_####_ is in SAP namespace.  Use a valid combination of object name*  
+  > ![Web Service Consumption Proxy](images/2025.png)
    
 
 
