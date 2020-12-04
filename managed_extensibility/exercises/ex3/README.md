@@ -72,7 +72,7 @@ Remote Consumption Model: `Web Service` (to be selected from the drop down box)
 
 8. Activate your changes
 
-   Press the ![Activate](images/activate.png)
+   Press the ![Mass Activation](images/mass_activate.png)
 
 ## Add and implement a determination 
 
