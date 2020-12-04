@@ -224,4 +224,5 @@ When checking the *Project Explorer* you will notice that several objects have b
 
 
 ## Solution
-![Source code used in this exercise](sources)
+
+[Source code used in this exercise](sources)
