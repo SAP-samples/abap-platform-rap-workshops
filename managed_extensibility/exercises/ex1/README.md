@@ -100,9 +100,9 @@ Now after you have created a package we can start developing a class.
 
     ![Select transport request](images/1020.png)
 
-5. Copy and paste the code from the sources sub folder 
+5. Copy and paste the code from the **sources** sub folder 
 
-    [source code zcl_generate_dev268_###](/sources/zcl_generate_dev268.txt)   
+    [Sources](sources)   
     
     thereby replacing the placeholder **`####`** in the template coding as shown in the following screen shot.    
 
