@@ -265,6 +265,7 @@ CLASS zcl_generate_dev268_#### IMPLEMENTATION.
                  '  "prefix": "RAP_",' && |\r\n|  &&
                  |  "package": "{ package_name }",| && |\r\n|  &&
                  '  "datasourcetype": "table",' && |\r\n|  &&
+                 '  "bindingtype": "odata_v2_ui",' && |\r\n|  &&
                  '  "hierarchy": {' && |\r\n|  &&
                  '    "entityName": "Inventory",' && |\r\n|  &&
                  |    "dataSource": "zrap_inven_{ unique_number }",| && |\r\n|  &&
