@@ -102,7 +102,7 @@ Now after you have created a package we can start developing a class.
 
 5. Copy and paste the code from the **sources** sub folder 
 
-    [Sources](sources)   
+    [zcl_generate_dev269_####](sources/zcl_generate_dev268.txt)   
     
     thereby replacing the placeholder **`####`** in the template coding as shown in the following screen shot.    
 
