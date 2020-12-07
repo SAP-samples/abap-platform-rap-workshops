@@ -65,15 +65,17 @@ Remote Consumption Model: `Web Service` (to be selected from the drop down box)
 
 ![Web Service Consumption Proxy](images/2050.png)
 
-7. Check generated objects
+7. Activate your changes
 
-   When checking the *Project Explorer* you will notice that several objects have been generated. For those that are used to the generation of SOAP Web Service proxies in on premise systems they will look familiar.
+   Press the ![Activate your changes](images/activate.png) button to generate the service consumption model alongside with all dependend objects.
+
+8. Check generated objects
+
+   When refreshing your package in the *Project Explorer* you will notice that several objects have been generated. For those that are used to the generation of SOAP Web Service proxies in on premise systems they will look familiar.
 
    ![Web Service Consumption Proxy](images/2060.png)
 
-8. Activate your changes
 
-   Press the ![Mass Activation](images/mass_activate.png) button to start the mass activation of the service consumption model alongside with all generated objects.
 
 ## Add and implement a determination 
 
