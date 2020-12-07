@@ -184,7 +184,7 @@ In addition all columns of the table are displayed by default as well since we h
 If you do not want to see all columns (either on the list- or the object page) you can comment out these annotations.
 This is however much simpler than having to write all these annotations from scratch.
 
-15. You can try and start entering values for your first inventory item.
+16. You can try and start entering values for your first inventory item.
 However no checks nor any value help have been implemented yet. 
 Especially not for the determination of the semantic key **InventoryId**.
 
@@ -195,7 +195,7 @@ This we will do in the next step.
 
 ## Check the generated repository objects
 
-The interface view was generated such that based on the ABAP field names aliases have been created such that the ABAP field name was converted into camelCase notation.
+The **interface view ZI_RAP_Inventory_####** was generated such that based on the ABAP field names aliases have been created such that the ABAP field name was converted into camelCase notation.
 
 <pre>
 define root view entity ZI_RAP_INVENTORY_1234
@@ -211,7 +211,37 @@ define root view entity ZI_RAP_INVENTORY_1234
  }
 </pre>
 
-The behavior implementation was generated such that the field **InventoryID** which acts as a semantic key was marked as readonly.
+The **projection view ZC_RAP_Inventory_####** was generated such that it contains annotations for **search** and a value help for the field **Currency**.
+
+<pre>
+define root view entity ZC_RAP_INVENTORY_####
+  as projection on ZI_RAP_Inventory_####
+{
+  @Search.defaultSearchElement: true
+  key UUID,
+  
+  @Search.defaultSearchElement: true
+  InventoryID,
+  
+  ProductID,
+  
+  Quantity,
+  
+  QuantityUnit,
+  
+  @Semantics.amount.currencyCode: 'CurrencyCode'
+  Price,
+  
+  @Consumption.valueHelpDefinition: [ {
+    entity: {
+      name: 'I_Currency', 
+      element: 'Currency'
+    }
+  } ]
+  CurrencyCode,
+</pre>
+
+The **behavior definion ZI_RAP_Inventory_####** was generated such that the field **InventoryID** which acts as a semantic key was marked as readonly.
 
 <pre>
 field ( readonly ) InventoryID;
@@ -245,7 +275,7 @@ Please make sure that the determination that is performed during the **'save*** 
 determination CalculateInventoryID on save { create; }
 </pre> 
  
-Last but not least, you will find it handy that a Metadata Extension View has also been generated that automatically publishes all field on the list page as well as on the object page by setting appropriate **@UI** annotations. Also the administrative fields like created_at as well as the UUID based key field are hidden by setting **@UI.hidden** to true.
+Last but not least, you will find it handy that a **Metadata Extension View ZC_RAP_Inventory_####** has also been generated that automatically publishes all field on the list page as well as on the object page by setting appropriate **@UI** annotations. Also the administrative fields like created_at as well as the UUID based key field are hidden by setting **@UI.hidden** to true.
  
  <pre>
    @UI.hidden: true
