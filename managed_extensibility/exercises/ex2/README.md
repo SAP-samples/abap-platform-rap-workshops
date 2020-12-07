@@ -409,7 +409,7 @@ The interface **if_rap_query_provider interface** only offers one method which i
 
 9. The DDL source code should now look like follows
 
-   [Source code ZCE_RAP_PRODUCTS_####](sources/x2_DDLS_ZCE_RAP_PRODUCTS_%23%23%23%23.txt)
+   [Source code ZCE_RAP_PRODUCTS_####](sources/ex2_DDLS_ZCE_RAP_PRODUCTS_%23%23%23%23.txt)
 
 
 ### Implement the query implemenation class
