@@ -168,6 +168,8 @@ Now after you have created a package we can start developing a class.
 
 14. Select the entity **Inventory** and press the **Preview** button to start the *Fiori Elements Preview*.
 
+    (The service also contains an entity I_Currency since the RAP Generator has added a value help for Currencies to the projection view.) 
+
    ![Start Fiori Elements Preview](images/0460.png)
 
 15. Check the Fiori Elements Preview App. You will notice that we got a nearly full fledged UI with capabilities for 
