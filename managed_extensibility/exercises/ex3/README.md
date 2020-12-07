@@ -6,7 +6,8 @@
 - [Create the Service Consumption Model](#create-the-service-consumption-model)
 - [Add and implement a determination](#add-and-implement-a-determination)
 - [Test the service](#test-the-service)
-- [Solution](sources)
+- [Summary](#summary)
+- [Solution](#solution)
 
 In the following exercise you will learn how to call a SOAP web service and how to embed this into your inventory application by using it as part of a determination. The SOAP web service that we are going to use is a demo web service available on the SAP Gateway Demo system ES5.
 
