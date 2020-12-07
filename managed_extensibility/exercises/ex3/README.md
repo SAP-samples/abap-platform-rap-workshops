@@ -214,24 +214,24 @@ In this step we will create a service consumption model based on the WSDL file t
 
    - Select a valid ProductID via the value help (e.g. HT-1000)
     
-![Create inventory with valid product name](images/2110.png)
+     ![Create inventory with valid product name](images/2110.png)
  
 3. Press the **Create** button  
 
    - When pressing the **Create** button the determination for the price will call the SOAP service
    - The inventory will be created with the price and the currency retrieved from the backend
 
-   ![Inventory with product price](images/2120.png)
+     ![Inventory with product price](images/2120.png)
 
 4. Create an inventory entry with an invalid ProductID (e.g. www).  
 
    - Enter an invalid ProductID, e.g. `www`  
    
-   ![Inventory with invalid product price](images/2130.png)
+     ![Inventory with invalid product price](images/2130.png)
 
    - The SOAP call will not be able to find the ProductId in the backend and will hence respond with the error message `Product not found. Try e.g. HT-1000 :)`.
    
-   ![Error message from SOAP call](images/2140.png)
+     ![Error message from SOAP call](images/2140.png)
 
 ## Summary
 
@@ -242,7 +242,7 @@ You have retrieved data from the SAP S/4HANA system using OData and SOAP based c
 - a value help to select a product for an inventory entry
 - a determination for the price of a product
 
-![Extension scenarios](images/2500.png)
+  ![Extension scenarios](images/2500.png)
 
 In a licensed SAP Cloud Platform, ABAP Environment system you would also be able to create a service consumption model for RFC function modules.
 
