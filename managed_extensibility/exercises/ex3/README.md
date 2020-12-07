@@ -226,6 +226,18 @@ Remote Consumption Model: `Web Service` (to be selected from the drop down box)
    
 ![Error message from SOAP call](images/2140.png)
 
+## Summary
+
+In this session you have learned how you can use SAP Cloud Platform, ABAP environment to implement a side-by-side extension scenarios for an SAP S/4 HANA system using the ABAP RESTful Application Programming Model.
+
+You have retrieved data from the SAP S/4HANA system using OData and SOAP based communication to implement
+
+- a value help to select a product for an inventory entry
+- a determination for the price of a product
+
+![Extension scenarios](images/2500.png)
+
+In a licensed SAP Cloud Platform, ABAP Environment system you would also be able to create a service consumption model for RFC function modules.
 
 ## Solution
 
