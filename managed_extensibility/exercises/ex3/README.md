@@ -203,7 +203,8 @@ In this step we will create a service consumption model based on the WSDL file t
 
 ## Test the service
 
-1. Test service with Fiori Elements preview.
+1. Test service with Fiori Elements preview.  
+
    - Open the service binding ZUI_RAP_INVENTORY_####_02 (either via Ctrl+Shift+A or via navigation in the Project Explorer)
    - Select the entity `Ìnventory`.
    - Press the **Preview** button
@@ -215,13 +216,15 @@ In this step we will create a service consumption model based on the WSDL file t
     
 ![Create inventory with valid product name](images/2110.png)
  
-3. Press the **Create** button
+3. Press the **Create** button  
+
    - When pressing the **Create** button the determination for the price will call the SOAP service
    - The inventory will be created with the price and the currency retrieved from the backend
 
    ![Inventory with product price](images/2120.png)
 
-4. Create an inventory entry with an invalid ProductID (e.g. www).
+4. Create an inventory entry with an invalid ProductID (e.g. www).  
+
    - Enter an invalid ProductID, e.g. `www`  
    
    ![Inventory with invalid product price](images/2130.png)
