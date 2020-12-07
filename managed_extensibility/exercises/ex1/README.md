@@ -211,7 +211,7 @@ define root view entity ZI_RAP_INVENTORY_1234
  }
 </pre>
 
-The **projection view ZC_RAP_Inventory_####** was generated such that it contains annotations for **search** and a value help for the field **Currency**.
+The **projection view ZC_RAP_Inventory_####** was generated such that it contains annotations for **search** and a value help for the field **CurrencyCode**.
 
 <pre>
 define root view entity ZC_RAP_INVENTORY_####
