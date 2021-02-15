@@ -3,14 +3,6 @@
 
 # Exercise 1
 
- 
-- [Create a package](#create-a-package)
-- [Run the RAP Generator](#generate-a-starter-application)
-- [Check the generated repository objects](#check-the-generated-repository-objects)
-- [Behavior Implementation](#behavior-implementation)
-- [Summary](#summary)
-- [Solution](sources)
-
 In this exercise, we will create a starter application to collect inventory data. 
 
 The usual process of development would be that you as a developer would now start to manually create the following repository objects for each entity
@@ -34,6 +26,14 @@ Before using the RAP Generator you have to do the following:
 Since this is a green field scenario the application will be implemented using a **managed business object** that is based on the **ABAP RESTful Application Programming Model (RAP)**.
  
 This application will then be enhanced such that it leverages OData service calls and SOAP calls to retrieve data from a SAP S/4HANA backend. These services are either called as a value help or to perform a determination for the price of a product whenthe inventory data is created or updated.
+
+ 
+- [Create a package](#create-a-package)
+- [Run the RAP Generator](#generate-a-starter-application)
+- [Check the generated repository objects](#check-the-generated-repository-objects)
+- [Behavior Implementation](#behavior-implementation)
+- [Summary](#summary)
+- [Solution](sources)
 
 ## Create a package
 
