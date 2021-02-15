@@ -2,17 +2,6 @@
 [Home](../../README.md#exercises)
 # Exercise 2
 
-- [Create the service consumption model](#create-the-service-consumption-model)
-- [Create a console application to test the OData service](#create-a-console-application-to-test-the-odata-service)
-- [Create a custom entity and implement the query implementation class](#create-a-custom-entity-and-implement-the-query-implementation-class)
-  - [Create a custom entity](#create-a-custom-entity)
-  - [Implement the query implemenation class](#implement-the-query-implemenation-class)     
-- [Add the custom entity as a value help](#add-the-custom-entity-as-a-value-help)
-- [Test the service](#test-the-service)
-- [Summary](#summary) 
-- [Solution](sources)
-
-
 When creating a new entry with your inventory application you see that there is no value help for the field **ProductId**. 
 Since this information resides in a SAP S/4 HANA backend we will it retrieve via OData.
 
@@ -28,6 +17,16 @@ In this exercise, we will ...
   - Expose your Custom Entity within your existing OData Service
   - Add the Custom Entity as a value help for the field ProductId in your inventory application
 
+
+- [Create the service consumption model](#create-the-service-consumption-model)
+- [Create a console application to test the OData service](#create-a-console-application-to-test-the-odata-service)
+- [Create a custom entity and implement the query implementation class](#create-a-custom-entity-and-implement-the-query-implementation-class)
+  - [Create a custom entity](#create-a-custom-entity)
+  - [Implement the query implemenation class](#implement-the-query-implemenation-class)     
+- [Add the custom entity as a value help](#add-the-custom-entity-as-a-value-help)
+- [Test the service](#test-the-service)
+- [Summary](#summary) 
+- [Solution](sources)
 
 > **Please note:**
 
