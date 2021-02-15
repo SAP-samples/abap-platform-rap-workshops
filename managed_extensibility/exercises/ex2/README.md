@@ -9,14 +9,7 @@ Since this information resides in a SAP S/4 HANA backend we will it retrieve via
 
 In this exercise you will thus learn how to consume an OData Service from an on premise system in order to fetch business partner data. You will then learn how to expose this data as a value help for the Inventory entity.
 
-In this exercise, we will ...
-
-  - Create a Service Consumption Model for the on premise OData Service
-  - Create a console application to test the OData Service call
-  - Create a Custom Entity and implement its custom query
-  - Expose your Custom Entity within your existing OData Service
-  - Add the Custom Entity as a value help for the field ProductId in your inventory application
-
+In this exercise, we will do the following...
 
 - [Create the service consumption model](#create-the-service-consumption-model)
 - [Create a console application to test the OData service](#create-a-console-application-to-test-the-odata-service)
@@ -25,6 +18,9 @@ In this exercise, we will ...
   - [Implement the query implemenation class](#implement-the-query-implemenation-class)     
 - [Add the custom entity as a value help](#add-the-custom-entity-as-a-value-help)
 - [Test the service](#test-the-service)
+
+  
+  
 - [Summary](#summary) 
 - [Solution](sources)
 
