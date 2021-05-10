@@ -1,7 +1,7 @@
 # Exercises 1 - Build Your transactional UI Service
 
 ## Introduction
-In the current exercise, you will quickly build a RAP service with the managed implementation type that you will use to create different types und ABAP unit Test.
+In the current exercise, you will quickly build a RAP service with the managed implementation type that you will use to create different types and ABAP unit Test.
 
 The data model underlying the RAP service consists of two transactional tables (**travel** and **booking**) as well as some master data that we will re-use from the already existing demo content (**Agency**, **Customer** and **Flight**), as well as a few more.  
  
@@ -49,7 +49,7 @@ Let's get started!
  
    For that, delete the complete source code, insert the code snippet provided in the source code document **`ZRAP400_CL_GEN_UI_SERVICE_####`** linked below, and replace all occurrences of **`####`** with your chosen group ID.  
                
-   > **Hint**: Open the document linked below in a separate windows to keep the exercise flow and click on the *Raw* button to have a better display of the source code.
+   > **Hint**: Open the document linked below in a separate windows to keep the exercise flow and click on the _**Raw**_ button (in the toolbar above the editor in right-upper corner) to have a better display of the source code.
          
    ![doc icon](images/doc.png) **Source code document: [Class ZRAP400_CL_GEN_UI_SERVICE_####](sources/EX1_CLAS_ZRAP400_CL_GEN_UI_SERVICE.txt)**   
                 
@@ -59,7 +59,7 @@ Let's get started!
 
 5. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.  
   
-6. Press **F9** to run the ABAP class as a console application. As a result, you will see a success message in the Console. The various objects have been generated and activated.
+6. Press **F9** to run the ABAP class as a console application. As a result, you will see a success message in the Console. The various objects have been generated and activated. The execution may take a few seconds.
 
     ![Generate RAP Service](images/helperclass05.png)  
    
@@ -91,7 +91,7 @@ You can now start the SAP Fiori elements App preview of the generated RAP servic
       ![App Preview](images/servicebinding02.png)
  
 
-      The App will be displayed in the browser.
+      The _Travel Processing_ app will be displayed in the browser. Press **Go** to load the data. You can play around with the app.
 
       ![App Preview](images/apppreview01.png)  
 
@@ -127,7 +127,7 @@ We want to enhance the standard transactional behavior with some app-specific lo
 
 
 ## Exercise 1.4 - Create the behavior implementation class  
-1. Create the _Travel_ behavior implementation (aka _behabvior pool_).
+1. Create the _Travel_ behavior implementation (aka _behavior pool_).
   
     For that, go to the behavior definition **`ZRAP400_I_TRAVEL_####`**, set the cursor on the specified behavior pool **`zrap400_bp_i_travel_####`**, where `####` is your group ID, and press **Ctrl+1** to open the ADT Quick Fix list. 
   
@@ -202,8 +202,10 @@ Last but not least, enhance the CDS metadata extension of the _travel_ entity  *
    
  ## Exercise 1.7 - Test the enhanced Travel App
 
-1. If still open, then refresh the browser and test the changes - else go to the service binding and double-click on the **travel** entity to start the Travel App again.
+1. If still open, then refresh the browser and test the changes - else go to the service binding and double-click on the **travel** entity to start the _Travel Processing_ app again.
 
+    You can play around with the enhanced app.
+    
     For example,
     - The validity of entered customer, agency and begin and end date will be checked.
     - When creating a new travel record, the overal status will be set to **'O'** (_open_) if no other value is entered.
