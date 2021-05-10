@@ -652,7 +652,7 @@ You will now implement the test class **`ltc_UPDATE`** to test a simple UPDATE o
        "" ETag is needed 
        " set the business data
        lo_request->set_business_data( is_business_data = ls_business_data
-                                      it_provided_property = VALUE #( ( `DESCRIPTION` ) ( `BOOKINGFEE` ) ) ).
+                                      it_provided_property = VALUE #( ( \`DESCRIPTION\` ) ( \`BOOKINGFEE\` ) ) ).
        " You need to retrieve ETag and then set it here
        lo_request->set_if_match( lo_response_read->get_etag(  ) ).
  
