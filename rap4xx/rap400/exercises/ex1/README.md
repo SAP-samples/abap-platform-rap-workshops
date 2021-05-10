@@ -99,11 +99,11 @@ You can now start the SAP Fiori elements App preview of the generated RAP servic
 
 We want to enhance the standard transactional behavior with some app-specific logic which can then be tested in the next exercises. Due to some current restrictions in the helper class, let's enhance the generated RAP artefacts manually.
 
-1. Open the behavior definition  **`ZRAP400_I_RAP_Travel_####`** by double-clicking on it in the _**Project Explorer**_, and replace its source code with the provided code snippet. 
+1. Open the behavior definition  **`ZRAP400_I_Travel_####`** by double-clicking on it in the _**Project Explorer**_, and replace its source code with the provided code snippet. 
 
-     For that, delete the complete source code, insert the code snippet provided in the source code document **`ZRAP400_I_RAP_Travel_####`** linked below, and replace all occurrences of **`####`** with your chosen group ID.
+     For that, delete the complete source code, insert the code snippet provided in the source code document **`ZRAP400_I_Travel_####`** linked below, and replace all occurrences of **`####`** with your chosen group ID.
     
-    ![doc icon](images/doc.png) **Source code document: [Behavior definition ZRAP400_I_RAP_Travel_####](sources/EX1_BDEF_ZRAP400_I_RAP_Travel.txt)**   
+    ![doc icon](images/doc.png) **Source code document: [Behavior definition ZRAP400_I_Travel_####](sources/EX1_BDEF_ZRAP400_I_RAP_Travel.txt)**   
     
     The behavior definition document will now look as follows.
     
