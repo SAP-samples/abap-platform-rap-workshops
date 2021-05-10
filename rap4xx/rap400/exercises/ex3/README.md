@@ -315,17 +315,17 @@ It means that the CUT is a complex EML statement which includes  `CREATE`, `EXEC
         " check the existence of the persisted travel entity (using the test doubles)
         SELECT * FROM ZRAP400_I_Travel_#### INTO TABLE @DATA(lt_travel). "#EC CI_NOWHERE
         cl_abap_unit_assert=>assert_not_initial( msg = 'travel from db' act = lt_travel ).
-    *    " assert the generation of a travel ID (key) at creation
+        " assert the generation of a travel ID (key) at creation
         cl_abap_unit_assert=>assert_not_initial( msg = 'travel-id' act = lt_travel[ 1 ]-TravelID ).
         " assert that the action has changed the overall status
         cl_abap_unit_assert=>assert_equals( msg = 'overall status' exp = 'A' act = lt_travel[ 1 ]-OverallStatus ).
         " assert the calculated total_price = SUM( flight_price ) + booking_fee
         cl_abap_unit_assert=>assert_equals( msg = 'total price incl. booking_fee' exp = '2010.50' act = lt_travel[ 1 ]-TotalPrice ).
 
-    *   " check the existence of the persisted booking entity (using the test doubles)
+        " check the existence of the persisted booking entity (using the test doubles)
         SELECT * FROM ZRAP400_I_Booking_#### INTO TABLE @DATA(lt_booking). "#EC CI_NOWHERE
         cl_abap_unit_assert=>assert_not_initial( msg = 'booking from db' act = lt_booking ).
-    *    " assert the generation of a booking ID (key) at creation
+        " assert the generation of a booking ID (key) at creation
         cl_abap_unit_assert=>assert_not_initial( msg = 'booking-id' act = lt_booking[ 1 ]-BookingID ).
    </pre>
     </p>
