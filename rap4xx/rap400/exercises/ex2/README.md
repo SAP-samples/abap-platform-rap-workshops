@@ -42,7 +42,7 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
     - Beside various additions such as **`FOR TESTING`**, **`DURATION`** and **`RISKLEVEL`** which are specific to ABAP unit testing, the class definition template comprises a default private test method named **`first_test`**. The addition **`FOR TESTING`** specifies that this class is a test class.                 
        > Hint: You can use **F1** to find more information about the various additions in the ABAP keyword documentation.         
     - The test class implementation comprises a dummy implementation of the method **`first_test`**.   
-    - The class **`CL_ABAP_UNIT_ASSERT`** is used in test method implementations to check/assert the test assumptions. It offers various static methods for the purposes - e.g. `assert_equals()`, `assert_no_equals()` and `assert_differs()`.
+    - The class **`CL_ABAP_UNIT_ASSERT`** is used in test method implementations to check/assert the test assumptions. It offers various static methods for the purposes - e.g. `assert_equals()`, `assert_not_initial()`, `assert_differs()` and `assert_table_contains()`.
 
 3.	Rename the local class from **`ltcl_`** to **`ltc_readonly_methods`** and specify the test relation to the BO behavior definition **`ZRAP400_I_Travel_####`** using the special ABAP Doc comment **`"! @testing BDEF:ZRAP400_I_Travel_####`**, where **`####`** is your chosen group ID. The `TADIR` table entry for behavior definition objects is **`R3TR BDEF`**.   
   
@@ -172,8 +172,8 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
       -	**`cds_test_environment`**: The reference object for the CDS TDF which is used in this test to provide test travel and booking data.
       -	**`sql_test_environment`**: The reference object for the ABAP SQL TDF which is used to provided the additional needed test data.
     - Static methods    
-      -	**`class_setup`**: This setup method is executed once before all tests of the class. It will be used to setup the test environment in the present example.
-      -	**`class_teardown`**: This teardown method is executed once after every test of the class. It will be used to destroy the test environment in the present example.  
+      -	**`class_setup`**: This setup method is executed once before all tests of the class. It is used to setup the test environment.
+      -	**`class_teardown`**: This teardown method is executed once after all tests of the test class are executed. It is  used to destroy the test environment.  
     - Instance methods
       -	**`setup`**: This setup method is executed before each individual test or before each execution of a test method. It will be used to reset the test doubles before the execution of each test method in the present example.
       -	**`teardown`**: This teardown method is executed after each individual test or after each execution of a test method. It will be used to rollback any changes in involved entities after the execution of each test method.
