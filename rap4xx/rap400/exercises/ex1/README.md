@@ -49,7 +49,7 @@ Let's get started!
  
    For that, delete the complete source code, insert the code snippet provided in the source code document **`ZRAP400_CL_GEN_UI_SERVICE_####`** linked below, and replace all occurrences of **`####`** with your chosen group ID.  
                
-   > **Hint**: Open the document linked below in a separate windows to keep the exercise flow.
+   > **Hint**: Open the document linked below in a separate windows to keep the exercise flow and click on the *Raw* button to have a better display of the source code.
          
    ![doc icon](images/doc.png) **Source code document: [Class ZRAP400_CL_GEN_UI_SERVICE_####](sources/EX1_CLAS_ZRAP400_CL_GEN_UI_SERVICE.txt)**   
                 
