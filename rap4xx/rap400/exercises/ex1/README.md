@@ -217,7 +217,7 @@ Last but not least, enhance the CDS metadata extension of the _travel_ entity  *
 ## Summary
 
 Now that you've... 
-- create a helper class and generate a transactional RAP service data model,
+- created a helper class and generate a transactional RAP service data model,
 - and enhanced the transactional behavior of the business object
 
 you can continue with next exercise.
