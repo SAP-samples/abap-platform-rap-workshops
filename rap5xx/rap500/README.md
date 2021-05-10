@@ -114,7 +114,7 @@ These are the steps of our hands-ons session:
     - [Assign IAM App in business catalog](exercises/ex2#assign-iam-app-in-business-catalog)   
     - [Summary](exercises/ex1#exercises/ex2#summary)     
 - [Exercise 3 - SAP Analytics Cloud](exercises/ex3/README.md)  
-    - [Connect to SAP Analytics Cloud](exercises/ex3#sap-analytics-cloud)  
+    - [Logon to SAP Analytics Cloud](exercises/ex3#sap-analytics-cloud)  
     - [Create a Model](exercises/ex3#create-model)  
     - [Create a Story](exercises/ex3#create-story)  
    
