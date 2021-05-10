@@ -567,6 +567,7 @@ You will now implement the test class **`ltc_UPDATE`** to test a simple UPDATE o
 1.	Replace the generated class definition and implementation of the local test class **`ltc_UPDATE`** with the code snippet provided below and replace all occurrences of **`####`** with your group ID.
 
     **<details><summary>Click here to expand the source code</summary>**
+    <pre>
     <p>
       "!@testing SRVB:ZRAP400_UI_TRAVEL_####_O2
       CLASS ltc_UPDATE DEFINITION FINAL FOR TESTING DURATION SHORT RISK LEVEL HARMLESS.
