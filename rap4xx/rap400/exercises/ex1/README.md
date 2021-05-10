@@ -71,8 +71,8 @@ Let's get started!
     - Core Data Services > Behavior Definitons: **`ZRAP400_I_TRAVEL_####`** and **`ZRAP400_C_TRAVEL_####`**
     - Business Services > Service Definitons: **`ZRAP400_C_TRAVEL_####`**
     - Business Services > Service Bindings: **`ZRAP400_UI_TRAVEL_####_O2`**   
-    - Source Code Library > Classes > **`ZRAP400_CL_GEN_DEMO_DATA_####`**
-       
+    - Source Code Library > Classes > **`ZRAP400_CL_GEN_DEMO_DATA_####`** - which can be used to (re-)generate the test data at any time.
+        
     ![Generate RAP Service](images/projectexplorer01.png)  
             
 You are through with the generation.
