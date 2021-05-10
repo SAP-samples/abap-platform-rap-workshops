@@ -294,7 +294,8 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
  
      The present CUT is the validation method **`validate_status`** of the travel entity. This validation method checks whether the values specified for the overall travel status are valid. The allowed status values are **`N`** (_New_), **`O`** (_Open_) and **`X`** (_Cancelled_) in the present scenario.  
 
-     Insert the code snippet provided below in the method implementation and replace all occurrences of **`####`** with your group ID.
+     Insert the code snippet provided below in the method implementation and replace all occurrences of **`####`** with your group ID.  
+     An error will be displayed by the call of the method **`validateStatus`** .
          
     **<details><summary>Click here to expand the source code</summary>**
     <p>
