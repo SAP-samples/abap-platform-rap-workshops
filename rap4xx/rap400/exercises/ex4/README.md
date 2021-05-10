@@ -53,7 +53,7 @@ Do not forget to always replace all occurrences of **`####`** with your chosen g
 
     **Short explanation**:  
     -	Local test classes for the CRUD-Q (create, read, update, delete and query) operations have been automatically generated. 
-    -	The test relation to the service binding is specified for each local test class with the line **`"!@testing SRVB:ZRAP400_UI_TRAVEL_####_O2`**, where **`####`** is your group ID. The `TADIR` table entry of service bing objects is **`R3TR SRVB`**.
+    -	The test relation to the service binding is specified for each local test class with the line **`"!@testing SRVB:ZRAP400_UI_TRAVEL_####_O2`**, where **`####`** is your group ID. The `TADIR` table entry of service binding objects is **`R3TR SRVB`**.
     - Each of them contains the special instance setup method **`setup`** and a test method defined with the addition **`FOR TESTING`**.
     -	The default implementation of the instance method **`create`** comprises generic code for the instantiation of the local client proxy for your service binding.
     -	The default implementation of the test method **`setup`** comprises some basic statements for the given scenario which need to be adjusted accordingly. This generated code contains a template of the appropriate LCP call syntax.
