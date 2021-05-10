@@ -230,7 +230,7 @@ you can continue with next exercise.
 Find the source code for the helper class, the behavior definition and the behavior projection in the [sources](sources) folder. Don't forget to replace all occurences of the placeholder **`####`** with your group ID.
 
 - [Class ZRAP400_CL_GEN_UI_SERVICE_####](sources/EX1_CLAS_ZRAP400_CL_GEN_UI_SERVICE.txt)
-- [Class ZRAP400_BP_I_TRAVEL_#### (_local handler class_)](sources/EX1_CLASS_ZRAP400_BP_I_TRAVEL__lhc_handler.txt)
+- [Class ZRAP400_BP_I_TRAVEL_#### (_local handler class_)](sources/EX1_CLAS_ZRAP400_BP_I_TRAVEL__lhc_handler.txt.txt)
 - [Behavior Definition ZRAP400_I_TRAVEL_####](sources/EX1_BDEF_ZRAP400_I_RAP_TRAVEL.txt)
 - [Behavior Projection ZRAP400_C_TRAVEL_####](sources/EX1_BDEF_ZRAP400_C_RAP_Travel.txt)
 - [CDS Metadata Exetnsion ZRAP400_C_TRAVEL_####](sources/EX1_DDLX_ZRAP400_C_RAP_Travel.txt)
