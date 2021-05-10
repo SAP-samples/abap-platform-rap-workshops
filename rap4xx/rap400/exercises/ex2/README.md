@@ -634,7 +634,7 @@ The CUT (code under test) of the present exercise is the action method **`accept
              travelID TYPE /dmo/travel_id,
            END OF ty_entity_key.
 
-    DATA: result      TYPE TABLE    FOR ACTION RESULT ZRAP400_i_Travel_####\\travel~acceptTravel,
+    DATA: result      TYPE TABLE    FOR ACTION RESULT ZRAP400_i_Travel_####\\\travel~acceptTravel,
           mapped      TYPE RESPONSE FOR MAPPED EARLY ZRAP400_i_Travel_####,
           failed      TYPE RESPONSE FOR FAILED EARLY ZRAP400_i_Travel_####,
           reported    TYPE RESPONSE FOR REPORTED EARLY ZRAP400_i_Travel_####,
