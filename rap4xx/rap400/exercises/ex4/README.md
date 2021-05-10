@@ -568,41 +568,41 @@ You will now implement the test class **`ltc_UPDATE`** to test a simple UPDATE o
 
     **<details><summary>Click here to expand the source code</summary>**
     <p>
-        "!@testing SRVB:ZRAP400_UI_TRAVEL_####_O2
-        CLASS ltc_UPDATE DEFINITION FINAL FOR TESTING DURATION SHORT RISK LEVEL HARMLESS.
+      "!@testing SRVB:ZRAP400_UI_TRAVEL_####_O2
+      CLASS ltc_UPDATE DEFINITION FINAL FOR TESTING DURATION SHORT RISK LEVEL HARMLESS.
 
-          PRIVATE SECTION.
-            CLASS-METHODS:
-              class_setup RAISING cx_static_check,
-              class_teardown.
+      PRIVATE SECTION.
+        CLASS-METHODS:
+          class_setup RAISING cx_static_check,
+          class_teardown.
 
-            METHODS:
-              setup,
-              teardown,
-              update FOR TESTING RAISING cx_static_check.
+          METHODS:
+            setup,
+            teardown,
+            update FOR TESTING RAISING cx_static_check.
 
-        ENDCLASS.
+      ENDCLASS.
 
-        CLASS ltc_UPDATE IMPLEMENTATION.
-          METHOD class_setup.
-            ltc_helper=>helper_class_setup( ).    
-          ENDMETHOD.
+      CLASS ltc_UPDATE IMPLEMENTATION.
+        METHOD class_setup.
+          ltc_helper=>helper_class_setup( ).    
+        ENDMETHOD.
 
-          METHOD class_teardown.
-            ltc_helper=>helper_class_teardown( ).
-          ENDMETHOD.
+        METHOD class_teardown.
+          ltc_helper=>helper_class_teardown( ).
+        ENDMETHOD.
 
-          METHOD setup.
-            ltc_helper=>helper_setup( ).
-          ENDMETHOD.
+        METHOD setup.
+          ltc_helper=>helper_setup( ).
+        ENDMETHOD.
 
-          METHOD teardown.
-            ltc_helper=>helper_teardown( ).
-          ENDMETHOD.
+        METHOD teardown.
+          ltc_helper=>helper_teardown( ).
+        ENDMETHOD.
 
-          METHOD update.
-          ENDMETHOD.
-        ENDCLASS.
+        METHOD update.
+        ENDMETHOD.
+      ENDCLASS.
     </pre>
     </p>
     </details>
