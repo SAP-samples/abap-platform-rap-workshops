@@ -129,7 +129,7 @@ We want to enhance the standard transactional behavior with some app-specific lo
 ## Exercise 1.4 - Create the behavior implementation class  
 1. Create the _Travel_ behavior implementation (aka _behabvior pool_).
   
-    For that, go to the behavior definition **`ZRAP400_I_RAP_TRAVEL_####`**, set the cursor on the specified behavior pool **`zrap400_bp_i_travel_####`**, where `####` is your group ID, and press **Ctrl+1** to open the ADT Quick Fix list. 
+    For that, go to the behavior definition **`ZRAP400_I_TRAVEL_####`**, set the cursor on the specified behavior pool **`zrap400_bp_i_travel_####`**, where `####` is your group ID, and press **Ctrl+1** to open the ADT Quick Fix list. 
   
     Select the entry **`Create behavior implementation class zrap400_bp_i_travel_####`** to create the new class.
 
@@ -157,13 +157,13 @@ We want to enhance the standard transactional behavior with some app-specific lo
 
 ## Exercise 1.5 - Enhance the behavior projection  
 
-The newly defined actions **`acceptTravel`** and **`rejectTravel`** defined in the behavior definition **`ZRAP400_I_RAP_Travel_####`** need to be specified in the behavior projection **`ZRAP400_C_RAP_Travel_####`** to be exposed in the Travel App. You will also enable the Etag handling on the projection layer.
+The newly defined actions **`acceptTravel`** and **`rejectTravel`** defined in the behavior definition **`ZRAP400_I_Travel_####`** need to be specified in the behavior projection **`ZRAP400_C_Travel_####`** to be exposed in the Travel App. You will also enable the Etag handling on the projection layer.
 
-1. Open the behavior projection  **`ZRAP400_C_RAP_Travel_####`** by double-clicking on it in the _**Project Explorer**_, and replace its source code with the provided code snippet. 
+1. Open the behavior projection  **`ZRAP400_C_Travel_####`** by double-clicking on it in the _**Project Explorer**_, and replace its source code with the provided code snippet. 
 
-     For that, delete the complete source code, insert the code snippet provided in the source code document **`ZRAP400_C_RAP_Travel_####`** linked below, and replace all occurrences of **`####`** with your chosen group ID.
+     For that, delete the complete source code, insert the code snippet provided in the source code document **`ZRAP400_C_Travel_####`** linked below, and replace all occurrences of **`####`** with your chosen group ID.
     
-    ![doc icon](images/doc.png) **Source code document: [Behavior projection ZRAP400_C_RAP_Travel_####](sources/EX1_BDEF_ZRAP400_C_RAP_Travel.txt)**   
+    ![doc icon](images/doc.png) **Source code document: [Behavior projection ZRAP400_C_Travel_####](sources/EX1_BDEF_ZRAP400_C_RAP_Travel.txt)**   
     
     
     The changes should look as follows: 
