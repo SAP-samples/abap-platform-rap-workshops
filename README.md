@@ -9,7 +9,7 @@ In this repository we provide materials for customer and community facing sessio
 
 [RAP400 - Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)](/rap4xx/rap400#readme)
 
-[RAP500 - Developing for Analytics with the SAP BTP ABAP Environment](/rap5xx/rap500#readme)
+[RAP500 - Developing for Analytics with the SAP BTP ABAP Environment (requires licensed system)](/rap5xx/rap500#readme)
 ## Requirements
 
 - You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
