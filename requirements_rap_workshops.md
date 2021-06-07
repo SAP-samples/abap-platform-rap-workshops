@@ -5,6 +5,7 @@ In order to participate in an ABAP Platform RAP workshop you have prepare three 
 - Sign up for a free trial account on SAP BTP  
 - Create a SAP BTP ABAP Environment Trial User  
 - Install the ABAP Development Tools (ADT) on your laptop
+- Adapt the Web Browser settings in your ADT installation
 
 ## 1. Get a Free Account on SAP BTP Trial  
 
@@ -34,3 +35,10 @@ In order to install the ABAP Development Tools (ADT) we strongly recommend to us
 - Press **Enter** to display the available features.  
 - Select **ABAP Core Development Tools (Developer Edition)** and choose **Next**.  
 - Continue with the wizard and confirm the license confirmation popup. 
+
+## 4. Adapt the Web Browser settings in your ADT installation
+
+- In Eclipse, choose in the menu bar **Window > Preferences**    
+- Enter **Web Browser** in the search field  
+- Activate the radio button **Use external web browser** and make sure that the radio button *Use internal web browser* is **NOT selected** anymore.
+- Select one of the listed external web browsers that are available, e.g. **your Default system web browser**
