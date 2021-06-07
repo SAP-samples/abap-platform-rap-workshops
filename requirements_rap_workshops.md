@@ -1,3 +1,5 @@
+[Home](../README.md)
+
 # Requirements needed to participate in a ABAP Platform RAP workshop
 
 In order to participate in an ABAP Platform RAP workshop you have prepare three things beforehand:
