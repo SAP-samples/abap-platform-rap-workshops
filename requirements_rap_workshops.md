@@ -12,14 +12,14 @@ You have signed up for a free trial account on SAP BTP: [Get a Free Account on S
 
 ## 2. Create an SAP BTP ABAP Environment Trial User
 
-You have prepared your ABAP Trial which can be easily be done via the [SAP Cloud Platform cockpit](https://cockpit.hanatrial.ondemand.com) in just 3 steps.
+You have prepared your ABAP Trial which can be easily be done via the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com) in just 3 steps.
   - Click on Enter **Your Trial Account**.
   ![Enter Trial](images/intro_0000.png)
   - Click on **Boosters** in the menu on the left hand side
   - Choose the tile **Prepare an Account for ABAP Trial** and follow the wizard
   ![Start booster](images/intro_0010.png)
 
-  For a detailed step-by-step description check out our [Onboarding Tutorial](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/720c423ef1a8498ab690cf0e5512ba50.html#loio720c423ef1a8498ab690cf0e5512ba50__Create_ABAP_Trial_Instance).
+  For a detailed step-by-step description check out step 1 of our [Onboarding Tutorial](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
   
 ## 3. You have installed the ABAP Development Tools (ADT)  
 
