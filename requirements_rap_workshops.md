@@ -1,4 +1,4 @@
-[Home](../README.md)
+[Home](README.md)
 
 # Requirements needed to participate in a ABAP Platform RAP workshop
 
