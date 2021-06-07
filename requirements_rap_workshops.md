@@ -2,13 +2,13 @@
 
 In order to participate in an ABAP Platform RAP workshop you have prepare three things beforehand:
 
-- Create a free trial account on SAP BTP  
+- Sign up for a free trial account on SAP BTP  
 - Create a SAP BTP ABAP Environment Trial User  
 - Install the ABAP Development Tools (ADT) on your laptop
 
 ## 1. Get a Free Account on SAP BTP Trial  
 
-You have created a trial account on SAP BTP Trial: [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
+You have signed up for a free trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
 
 ## 2. Create an SAP BTP ABAP Environment Trial User
 
