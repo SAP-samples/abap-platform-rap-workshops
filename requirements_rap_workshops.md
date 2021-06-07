@@ -19,7 +19,7 @@ You have prepared your ABAP Trial which can be easily be done via the [SAP BTP c
   - Choose the tile **Prepare an Account for ABAP Trial** and follow the wizard
   ![Start booster](images/intro_0010.png)
 
-  For a detailed step-by-step description check out step 1 of our [Onboarding Tutorial](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
+  For a detailed step-by-step description check out step 1 of our [Onboarding Tutorial](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html#146ad3ba-8f2e-454b-93f2-0bbd1dc0ae1f).
   
 ## 3. You have installed the ABAP Development Tools (ADT)  
 
