@@ -1,3 +1,11 @@
+# Requirements needed to participate in a ABAP Platform RAP workshop
+
+In order to participate in an ABAP Platform RAP workshop you have prepare three things beforehand:
+
+- Create a free trial account on SAP BTP  
+- Create a SAP BTP ABAP Environment Trial User  
+- Install the ABAP Development Tools (ADT) on your laptop
+
 ## 1. Get a Free Account on SAP BTP Trial  
 
 You have created a trial account on SAP BTP Trial: [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
@@ -15,14 +23,14 @@ You have prepared your ABAP Trial which can be easily be done via the [SAP Cloud
   
 ## 3. You have installed the ABAP Development Tools (ADT)  
 
-In order to install the ABAP Development Tools (ADT) we strongly recommend to use the Eclipse Installer 2021 03 R which now includes a JRE for macOS, Windows and Linux
+In order to install the ABAP Development Tools (ADT) we strongly recommend to use the Eclipse Installer 2021 03 R which now includes a JRE for macOS, Windows and Linux.
 
-- Get an installation of the [latest Eclipse installer version](https://www.eclipse.org/downloads/packages/installer)     
+- Download the [latest Eclipse installer version](https://www.eclipse.org/downloads/packages/installer)  
+- Start the installer.   
 - When being asked by the installer choose the **Eclipse IDE for Java Developers**  
 - Start your newly installed Eclipse  
 - In Eclipse, choose in the menu bar **Help > Install New Software...**  
 - Enter the URL https://tools.hana.ondemand.com/latest  
 - Press **Enter** to display the available features.  
 - Select **ABAP Core Development Tools (Developer Edition)** and choose **Next**.  
-- On the next wizard page, you get an overview of the features to be installed. Chose **Next**.  
-- Confirm the license agreementsand choose **Finish** to start the installation.  
+- Continue with the wizard and confirm the license confirmation popup. 
