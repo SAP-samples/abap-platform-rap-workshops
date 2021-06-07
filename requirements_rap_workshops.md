@@ -38,7 +38,8 @@ In order to install the ABAP Development Tools (ADT) we strongly recommend to us
 
 ## 4. Adapt the Web Browser settings in your ADT installation
 
-- In Eclipse, choose in the menu bar **Window > Preferences**    
-- Enter **Web Browser** in the search field  
-- Activate the radio button **Use external web browser** and make sure that the radio button **Use internal web browser** is **NOT selected** anymore.
-- Select one of the listed external web browsers that are available, e.g. **your Default system web browser**. (Please make sure the **Internet Explorer** is **NOT selected**. 
+- In Eclipse, choose in the menu bar **Window > Preferences**.    
+- Enter **Web Browser** in the search field.  
+- Activate the radio button **Use external web browser**.  
+- Select one of the listed external web browsers that are available, e.g. **your Default system web browser**
+  (Please make sure the **Internet Explorer** is **NOT selected**). 
