@@ -1,12 +1,12 @@
 # RAP400 - Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)
+Build and test modern Apps with the ABAP RESTful Application Programming Model (RAP)
 
 ## Description
-
-This repository contains the exercise materials for a RAP workshop on testability called **RAP400** - **Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)**.  
+This repository contains the exercise materials for a RAP workshop on testability called **RAP400** - **Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)** - which is all about quality assurance in the development of modern Apps with RAP.  
 
 ## Overview
 
-In this session we will guide you through the creation of different types of ABAP Unit tests for a RAP business object (BO) developed with the ABAP RESTful Application Programming Model (RAP) and and the OData service exposing the BO for a transactional SAP Fiori elements-based application.  
+In this session we will guide you through the development of a transactional UI service and the creation of different types of ABAP Unit tests for a RAP business object (BO) developed with the ABAP RESTful Application Programming Model (RAP) and and the OData service exposing the BO for a transactional SAP Fiori elements-based application.  
 
 The RAP service to be tested with ABAP unit tests will be exposed for a UI use case with the OData V2 protocol, and the resulting app will look like this:
 
