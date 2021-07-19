@@ -1,4 +1,4 @@
-# Workshops about the ABAP RESTful Application Programming Model
+# Workshops about the ABAP RESTful Application Programming Model (RAP)
 
 ## Description
 In this repository we provide materials for customer and community facing sessions that cover topics of the ABAP RESTful Application Programming Model (RAP).
