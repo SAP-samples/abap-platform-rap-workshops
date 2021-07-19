@@ -14,7 +14,7 @@ A **Booking** entity comprises general flight and booking data, the customer ID 
 You've already chosen a group ID `####` and created the ABAP package **`ZRAP400_TRAVEL_####`** in the previous [Getting Started](/exercises/ex0/README.md) section.
 
 The focus of this session is on learning how to create ABAP unit test for an OData service built with the ABAP RESTful Application Programming Model (RAP).
-Therefore, we will generate a standard RAP service and enhanced its transactional behavior with BO specific business logic due to time constrainst.
+Therefore, we will generate a standard RAP service and enhance its transactional behavior with BO specific business logic due to time constrainst.
 
 
 ## Exercise 1.1 - Generate a basic transactional RAP Service 
