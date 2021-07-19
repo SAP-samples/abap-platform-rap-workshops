@@ -1,9 +1,9 @@
 # Exercises 1 - Build Your transactional UI Service
 
 ## Introduction
-The focus of this session is on learning how to create ABAP unit tests for services built with the ABAP RESTful Application Programming Model (RAP). To speed up the implementation of the UI service in this exercise, we will use a helper class to generate a basic transactional OData service with _managed_ implementation type, and then enhance its transactional behavior with BO specific business logic.
+The focus of this session is on learning how to create ABAP unit tests for OData services built with the ABAP RESTful Application Programming Model (RAP). To speed up the implementation of the UI service, a helper class is provided on the trial ABAP environment to generate a basic transactional OData service which can then be enhanced with BO specific business logic manualy.
 
-The data model underlying the current UI service consists of two main entities **_Travel_** and **_Booking_**, the transation data, as well as some master data, such as *Agency*, *Customer* and *Flight*, re-uded from the existing _ABAP Flight Reference Scenario_(main package: `/DMO/FLIGHT`) demo content. A _**Travel**_ entity defines general travel data, such as the agency ID or customer ID, the overall status of the travel and the price of travel. A _**Booking**_ entity comprises general flight and booking data, the customer ID for whom the flight is booked as well as the travel ID to which the booking belongs to – and some admin fields.
+The data model underlying the current UI service consists of two main entities **_Travel_** and **_Booking_**, the transation data, as well as master data, such as *Agency*, *Customer* and *Flight*, from the existing demo content _ABAP Flight Reference Scenario_(main package: `/DMO/FLIGHT`). A _**Travel**_ entity defines general travel data, such as the agency ID or customer ID, the overall status of the travel and the price of travel. A _**Booking**_ entity comprises general flight and booking data, the customer ID for whom the flight is booked as well as the travel ID to which the booking belongs to – and some admin fields.
 
 ![Flight Data Model](images/datamodel01.png)
 
