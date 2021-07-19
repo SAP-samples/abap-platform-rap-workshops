@@ -5,9 +5,9 @@ In this repository we provide materials for customer and community facing sessio
 
 ## Workshops
 
-[RAPCJE - SAP Cloud Platform, ABAP Environment Connectivity and Integration](/managed_extensibility/README.md#rapcje---sap-cloud-platform-abap-environment-connectivity-and-integration)
+[RAPCJE - SAP BTP ABAP Environment Connectivity and Integration](/managed_extensibility/README.md#rapcje---sap-cloud-platform-abap-environment-connectivity-and-integration)
 
-[RAP400 - Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)](/rap4xx/rap400#readme)
+[RAP400 - Building and Writing ABAP Unit Tests with the ABAP RESTful Application Programming Model (RAP)](/rap4xx/rap400#readme)
 
 [RAP500 - Developing for Analytics with the SAP BTP ABAP Environment (requires licensed system)](/rap5xx/rap500#readme)
 ## Requirements
@@ -26,7 +26,7 @@ There are no known issues.
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues).
 
-Or you post a question in the Q&A section of the SAP community using the tag "ABAP RESTful Programming Model".
+Or you post a question in the Q&A section of the SAP community using the tag "ABAP RESTful Application Programming Model".
 https://answers.sap.com/questions/ask.html
 
 ## Contributing
