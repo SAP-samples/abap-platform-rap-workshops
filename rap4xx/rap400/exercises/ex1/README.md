@@ -37,7 +37,8 @@ In the ABAP trial systems we have provided the helper class **`/dmo/cl_gen_rap40
       ...
      </pre>
    
-5. Go to the _**Project Explorer**_, right-click on the folder **Favorite Packages** and select **Add Package...**.
+5. Go to the _Project Explorer_, right-click on the folder **Favorite Packages** and select **Add Package...** from the the context menu.  
+    
     Enter the name of your package **`ZRAP400_TRAVEL_####`**, where `####`is your group ID, and press **OK**. 
 
    ![Open ABAP Development Object](images/helperclass04_gen.png)
