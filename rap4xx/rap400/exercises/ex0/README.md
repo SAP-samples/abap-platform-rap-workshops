@@ -1,7 +1,7 @@
 # Getting Started
 
 ## Introduction
-You've already created an ABAP Trial Account and connected your ADT to it using a ABAP Cloud Project as described in the [Requirements](../../../../#requirements) section.
+You've already created an ABAP Trial Account and connected your ADT to it using a ABAP Cloud Project as described in the [Requirements](../../#requirements) section.
 
 Please note that ADT dialogs and views as well as Fiori UIs may change in upcoming releases.
 
