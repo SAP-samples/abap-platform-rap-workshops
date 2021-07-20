@@ -85,8 +85,11 @@ The methods of the helper class will then be called from the appropriate test me
 
 1. Define the helper test class **`ltc_helper`**.
 
-    For that, insert the code snippet provided below at the top of the editor on the _**Test Classes**_  tab.  
+    For that, insert the code snippet provided below **at the top of the editor** on the _**Test Classes**_  tab.  
     You can press **Shift+F1** to format the code with the ABAP formatter.
+
+    > **Caution:**  
+    > If you don't put the source code of the helper class at the top of the editor you will get error messages later on such as **Type ltc_helper is unknown**.  
 
     **<details><summary>Click here to expand the source code</summary>**
     <p>
