@@ -86,7 +86,10 @@ We want to enhance the standard transactional behavior with some app-specific lo
 
      For that, delete the complete source code, insert the code snippet provided in the source code document **`ZRAP400_I_RAP_Travel_####`** linked below, and replace all occurrences of **`####`** with your chosen group ID.
     
-    ![doc icon](images/doc.png) **Source code document: [Behavior definition ZRAP400_I_RAP_Travel_####](sources/EX1_BDEF_ZRAP400_I_RAP_Travel.txt)**   
+    ![doc icon](images/doc.png) **Source code document: [Behavior definition ZRAP400_I_RAP_Travel_####](sources/EX1_BDEF_ZRAP400_I_RAP_Travel.txt)** 
+    
+    > **Hint**: Switch to the _Raw_ view in the document editor to easily copy the source code provided.  
+    > ![raw_view](images/raw_view01.png)
     
     The behavior definition document will now look as follows.
     
