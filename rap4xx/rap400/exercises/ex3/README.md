@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In this exercise you will test the behavior implementation of your _travel_ business object (BO) using Entity Manipulation Language (EML). This allows scenario testing where the operations on a RAP BOs are executed, with all the relevant side effects (e.g. determinations and validations) triggered at the appropriate time, and only the database dependencies are isolated.
+In the present exercise, you will test the behavior implementation of your _travel_ business object (BO) using Entity Manipulation Language (EML). This allows scenario testing where the operations on a RAP BOs are executed, with all the relevant side effects (e.g. determinations and validations) triggered at the appropriate time, and only the database dependencies are isolated.
 
 Writing Tests for your Business Logic in RAP Business Objects (BOs)
 
 You will write an ABAP Unit test for the business logic of the _travel_ BO node using EML in the separate ABAP class **`ZRAP400_TC_TRAVEL_EML_####`**, where **`####`** is your group ID - i.e. You will write an ABAP Unit test with test relation.
 
-In the present exercise, the scenario to be tested is the creation and manipulation of a new _travel_ instance.
+The scenario to be tested in the present exercise is the creation and manipulation of a new _travel_ instance.
 
 The Code under Test (CUT) is the RAP BO behavior under a complex EML statement, including `CREATE`, `EXECUTE` and  `COMMIT` statements.
 
