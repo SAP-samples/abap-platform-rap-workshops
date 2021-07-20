@@ -52,10 +52,10 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
     Do not forget to replace the placeholder **`####`** with your group ID.
 
     <pre>
-      **************************************************************
-      *  Local class to test read-only behavior implementations		  *
-      **************************************************************
-      "! @testing BDEF:ZRAP400_I_Travel_####
+    **************************************************************
+    *  Local class to test read-only behavior implementations		  *
+    **************************************************************
+    "! @testing BDEF:ZRAP400_I_Travel_####
     </pre>
     </p>
 
