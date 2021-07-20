@@ -157,8 +157,11 @@ The newly defined actions **`acceptTravel`** and **`rejectTravel`** defined in t
    
    ![Behavior Projection](images/behaviorprojection01.png)     
    
+    Please **ignore** the warning displayed in the editor. 
+   
+   ![Behavior Projection - Warning](images/behaviorprojection02.png)    
   
-3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.  
+2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.  
 
 
 ## Exercise 1.5 - Enhance the CDS metadata extension
