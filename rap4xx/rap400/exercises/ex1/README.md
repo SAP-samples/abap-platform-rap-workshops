@@ -92,9 +92,7 @@ We want to enhance the standard transactional behavior with some app-specific lo
     > Open the document in a new tab or window, and click on the **_Raw_** button in the editor toolbar to switch the view and easily copy the source code using *Ctrl+A* and *Ctrl+C*.  
     > ![raw_view](images/raw_view01.png)
     
-    After replacing the source code in the behavior definition **`ZRAP400_I_RAP_Travel_####`**, replace all occurrences of **`####`** with your group ID. 
-    
-    The behavior definition document will now look as follows.
+    After replacing the source code in the behavior definition **`ZRAP400_I_RAP_Travel_####`**, replace all occurrences of **`####`** with your group ID. The behavior definition document will now look as shown on the screenshot below.
     
     ![Enhance Behavior Definition](images/behaviordefinition01.png)  
          
