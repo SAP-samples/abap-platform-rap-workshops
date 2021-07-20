@@ -400,7 +400,7 @@ You will implement the test class **`ltc_CREATE`** to test a simple create opera
  
 3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.	
 
-> **Hint: Run your unit tests after you have implemented them.**
+> **Hint: Run your unit tests after you have implemented them.**  
 > You can run each unit test after having implemented it by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.  
 
 
@@ -561,7 +561,7 @@ You will now implement the test class **`ltc_DEEP_CREATE`** to test a deep creat
 
 4.	Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
-5. You can test the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
+5. You can run the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
 
 ## Exercise 4.5: Write a Unit Test for the UPDATE Operation
 
@@ -685,7 +685,7 @@ You will now implement the test class **`ltc_UPDATE`** to test a simple UPDATE o
 
 3.	Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
-4. You can test the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
+4. You can run the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
 
 ## Exercise 4.6:  Write a Unit Test for the DELETE Operation
 
@@ -809,7 +809,7 @@ You will now implement the test class **`ltc_DELETE_ENTITY`** to test a delete o
 
 4.  Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
-5.  You can test the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
+5.  You can run the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
 
 
 ## Exercise 4.7:  Write a Unit Test for the READ_LIST Operation
@@ -928,7 +928,7 @@ You will now implement the test class **`ltc_READ_LIST`** to test a query operat
  
 3.  Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
-4. You can test the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
+4. You can run the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
 
     ![Service Tests – READ LIST operation](images/runningunittest01.png)
 
