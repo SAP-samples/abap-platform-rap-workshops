@@ -157,7 +157,7 @@ The newly defined actions **`acceptTravel`** and **`rejectTravel`** defined in t
    
    ![Behavior Projection](images/behaviorprojection01.png)     
    
-    Please **ignore** the warning about provider contract displayed in the editor. 
+    Please **ignore** the warning about provider contract displayed in the editor and in the _Problems_ view. 
    
    ![Behavior Projection - Warning](images/behaviorprojection02.png)    
   
