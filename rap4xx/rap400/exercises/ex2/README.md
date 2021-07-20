@@ -80,16 +80,14 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
 
     You can use the code snippet provided below for this purpose. Do not forget to replace the placeholder **`####`** with your group ID.
     
-    **<details><summary>Click here to expand the source code</summary>**
     <p>
     <pre>
-      **************************************************************
-      *  Local class to test modifying behavior implementations		  *
-      **************************************************************
-      "! @testing BDEF:ZRAP400_I_Travel_####
+    **************************************************************
+    *  Local class to test modifying behavior implementations		  *
+    **************************************************************
+    "! @testing BDEF:ZRAP400_I_Travel_####
     </pre>
     </p>
-    </details>
     
     The source code should now look as follows:
     
