@@ -81,15 +81,14 @@ You will implement a private local helper test class with no test method to cent
 The methods of the helper class will then be called from the appropriate test methods later on.
 
 > **Please note**:   
-> We will not elaborate further on the implementation of the helper setup and teardown methods of the ABAP Unit test configurations in this exercise since they are similar to the ones implemented in the previous exercises.
+> We will not elaborate further on the implementation of the helper setup and teardown methods of the ABAP Unit test configurations in this exercise, since they are similar to the ones implemented in the previous exercises.
 
-1. Define the helper test class **`ltc_helper`**.
-
-    For that, insert the code snippet provided below **at the top of the editor** on the _**Test Classes**_  tab.  
-    You can press **Shift+F1** to format the code with the ABAP formatter.
+1. Define the helper test class **`ltc_helper`**.  
+    For that, insert the code snippet provided below **at the top of the editor** on the _**Test Classes**_  tab.   
+    You can press **Shift+F1** to format the code with the _ABAP Formatter_.
 
     > **Caution:**  
-    > If you don't put the source code of the helper class at the top of the editor you will get error messages later on such as **Type ltc_helper is unknown**.  
+    > If you don't put the source code of the helper class at the top of the editor, you will get error messages later on such as _**Type ltc_helper is unknown**_.  
 
     **<details><summary>Click here to expand the source code</summary>**
     <p>
