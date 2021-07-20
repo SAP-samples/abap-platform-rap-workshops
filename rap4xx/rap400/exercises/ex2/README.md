@@ -44,15 +44,13 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
     - The test class implementation comprises a dummy implementation of the method **`first_test`**.   
     - The class **`CL_ABAP_UNIT_ASSERT`** is used in test method implementations to check/assert the test assumptions. It offers various static methods for the purposes - e.g. `assert_equals()`, `assert_not_initial()`, `assert_differs()` and `assert_table_contains()`.
 
-3.	Rename the local class from **`ltcl_`** to **`ltc_readonly_methods`** and specify the test relation to the BO behavior definition **`ZRAP400_I_Travel_####`** using the special ABAP Doc comment **`"! @testing <TADIR Objecttype>:<TADIR Objectname>`**. The `TADIR` object type of behavior definition objects is **`BDEF`**. 
-Therefore, we will specify **`"! @testing BDEF:ZRAP400_I_Travel_####`**, where **`####`** is your group ID, in the current exercise.
+3.	Rename the local class from **`ltcl_`** to **`ltc_readonly_methods`** and specify the test relation to the BO behavior definition **`ZRAP400_I_Travel_####`** using the special ABAP Doc comment *`"! @testing <TADIR Objecttype>:<TADIR Objectname>`*. The TADIR object type of behavior definition objects is `BDEF` (`R3TR BDEF`). Therefore, the entry **`"! @testing BDEF:ZRAP400_I_Travel_####`**, where **`####`** is your group ID, shall be specified in the current exercise.
   
-    You may add a comment before the class definition (e.g. _**Local class to test read-only behavior implementations**_) and press **Shift+F1** to format the code with the _ABAP Formatter_ (aka _Pretty Printer_).
+    You can also add a comment before the class definition (e.g. _**Local class to test read-only behavior implementations**_) and press **Shift+F1** to format the code with the _ABAP Formatter_ (aka _Pretty Printer_).
     
-    You can use the code snippet provided below for this purpose. Do not forget to replace the placeholder **`####`** with your group ID.
+    You can use the code snippet provided below for this purpose to insert the special ABAP Doc comment and the test class description. 
+    Do not forget to replace the placeholder **`####`** with your group ID.
 
-    **<details><summary>Click here to expand the source code</summary>**
-    <p>
     <pre>
       **************************************************************
       *  Local class to test read-only behavior implementations		  *
@@ -60,7 +58,6 @@ Therefore, we will specify **`"! @testing BDEF:ZRAP400_I_Travel_####`**, where *
       "! @testing BDEF:ZRAP400_I_Travel_####
     </pre>
     </p>
-    </details>
 
      The source code should now look as follows:
   
