@@ -202,15 +202,15 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
     **<details><summary>Click here to expand the source code</summary>**
     <p>
     <pre>
-        " Create the class under Test
-        " The class is abstract but can be constructed with the FOR TESTING
-        CREATE OBJECT class_under_test FOR TESTING.
+    " Create the class under Test
+    " The class is abstract but can be constructed with the FOR TESTING
+    CREATE OBJECT class_under_test FOR TESTING.
 
-        " Create test doubles for database dependencies
-        " The EML READ operation will then also access the test doubles
-        cds_test_environment = cl_cds_test_environment=>create( i_for_entity = 'ZRAP400_I_Travel_####' ).
-        cds_test_environment->enable_double_redirection( ).
-        sql_test_environment = cl_osql_test_environment=>create( i_dependency_list = VALUE #( ( '/DMO/CUSTOMER' ) ) ).
+    " Create test doubles for database dependencies
+    " The EML READ operation will then also access the test doubles
+    cds_test_environment = cl_cds_test_environment=>create( i_for_entity = 'ZRAP400_I_Travel_####' ).
+    cds_test_environment->enable_double_redirection( ).
+    sql_test_environment = cl_osql_test_environment=>create( i_dependency_list = VALUE #( ( '/DMO/CUSTOMER' ) ) ).
     </pre>
     </p>
     </details>
@@ -230,9 +230,9 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
     **<details><summary>Click here to expand the source code</summary>**
     <p>
     <pre>
-      " stop mocking
-      cds_test_environment->destroy( ).
-      sql_test_environment->destroy( ).
+    " stop mocking
+    cds_test_environment->destroy( ).
+    sql_test_environment->destroy( ).
     </pre>
     </p>
     </details>
