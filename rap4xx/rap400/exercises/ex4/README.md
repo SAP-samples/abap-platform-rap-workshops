@@ -6,7 +6,7 @@ As a service provider, it is important is to ensure that the service is function
 
 Since these tests are running in the same ABAP session as the OData service is, you can use the various test double mechanisms to isolate dependencies especially the database dependencies that are present in the ABAP backend.
 
-This time around, you will write ABAP Unit tests for the _travel_ business object (BO) at the OData service level using LCP. The UI service exposed by the service binding **`ZRAP400_UI_TRAVEL_####_O2`** will be used to write these service tests. 
+Now you will write ABAP Unit tests for the _travel_ business object (BO) at the OData service level using LCP. The UI service exposed by the service binding **`ZRAP400_UI_TRAVEL_####_O2`** will be used to write these service tests. 
 
 The tests will be implemented in the separate ABAP test class **`ZRAP400_TC_TRAVEL_LCP_####_O2`**, where **`####`** is your group ID meaning that you will write ABAP Unit tests with test relations. 
 
