@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This time around you will test the behavior implementation of your _travel_ business object (BO) using Entity Manipulation Language (EML). This allows scenario testing where the operations on a RAP BOs are executed, with all the relevant side effects (e.g. determinations and validations) triggered at the appropriate time, and only the database dependencies are isoled.
+This time around you will test the behavior implementation of your _travel_ business object (BO) using Entity Manipulation Language (EML). This allows scenario testing where the operations on a RAP BOs are executed, with all the relevant side effects (e.g. determinations and validations) triggered at the appropriate time, and only the database dependencies are isolated.
 
 Writing Tests for your Business Logic in RAP Business Objects (BOs)
 
