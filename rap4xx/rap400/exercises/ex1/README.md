@@ -88,7 +88,8 @@ We want to enhance the standard transactional behavior with some app-specific lo
     
     ![doc icon](images/doc.png) **Source code document: [Behavior definition ZRAP400_I_RAP_Travel_####](sources/EX1_BDEF_ZRAP400_I_RAP_Travel.txt)** 
     
-    > **Hint**: Switch to the _Raw_ view in the document editor to easily copy the source code provided.  
+    > **Hint**:   
+    > Open the document in a new tab or window, and click on the **_Raw_** button in the editor toolbar to switch the view and easily copy the source code using *Ctrl+A* and *Ctrl+C*.  
     > ![raw_view](images/raw_view01.png)
     
     The behavior definition document will now look as follows.
