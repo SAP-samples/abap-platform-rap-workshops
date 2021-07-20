@@ -398,9 +398,10 @@ You will implement the test class **`ltc_CREATE`** to test a simple create opera
     ![Service Tests – CREATE operation](images/createoperation02.png)
  
  
-3. x.	Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.	
+3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.	
 
-4. You can test the unit test by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.
+> **Hint: Run your unit tests after you have implemented them.**
+> You can run each unit test after having implemented it by selecting the test method name in the _**Outline**_ view and pressing **Ctrl+Shift+F10**.  
 
 
 ## Exercise 4.4:  Write a Unit Test for the DEEP CREATE Operation
