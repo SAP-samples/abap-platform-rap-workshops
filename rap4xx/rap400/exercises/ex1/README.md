@@ -78,7 +78,7 @@ In the ABAP trial systems we have provided the helper class **`/dmo/cl_gen_rap40
 
 You can now go ahead and enhance the generated UI service.
 
-## Exercise 1.3 - Enhance the behavior definition  
+## Exercise 1.2 - Enhance the behavior definition  
 
 We want to enhance the standard transactional behavior with some app-specific logic which can then be tested in the next exercises. Due to some current restrictions in the helper class, let's enhance the generated RAP artefacts manually.
 
@@ -109,7 +109,7 @@ We want to enhance the standard transactional behavior with some app-specific lo
 5. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.  
 
 
-## Exercise 1.4 - Create the behavior implementation class  
+## Exercise 1.3 - Create the behavior implementation class  
 1. Create the _Travel_ behavior implementation (aka _behabvior pool_).
   
     For that, go to the behavior definition **`ZRAP400_I_RAP_TRAVEL_####`**, set the cursor on the specified behavior pool **`zrap400_bp_i_travel_####`**, where `####` is your group ID, and press **Ctrl+1** to open the ADT Quick Fix list. 
@@ -138,7 +138,7 @@ We want to enhance the standard transactional behavior with some app-specific lo
 3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.  
 
 
-## Exercise 1.5 - Enhance the behavior projection  
+## Exercise 1.4 - Enhance the behavior projection  
 
 The newly defined actions **`acceptTravel`** and **`rejectTravel`** defined in the behavior definition **`ZRAP400_I_RAP_Travel_####`** need to be specified in the behavior projection **`ZRAP400_C_RAP_Travel_####`** to be exposed in the Travel App. You will also enable the Etag handling on the projection layer.
 
@@ -157,7 +157,7 @@ The newly defined actions **`acceptTravel`** and **`rejectTravel`** defined in t
 3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.  
 
 
-## Exercise 1.6 - Enhance the CDS metadata extension
+## Exercise 1.5 - Enhance the CDS metadata extension
 
 Last but not least, enhance the CDS metadata extension of the _travel_ entity  **`ZRAP400_C_Travel_####`**, where  **`####`** is your group ID,  to expose the actions **`acceptTravel`** and **`rejectTravel`** on the UI. For that, appropriate annotations have to be provided.
 
@@ -183,7 +183,7 @@ Last but not least, enhance the CDS metadata extension of the _travel_ entity  *
   
 3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.  
    
- ## Exercise 1.7 - Test the enhanced Travel App
+ ## Exercise 1.6 - Test the enhanced Travel App
 
 1. If still open, then refresh the browser and test the changes - else go to the service binding and double-click on the **travel** entity to start the Travel App again.
 
