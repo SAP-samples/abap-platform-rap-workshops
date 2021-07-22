@@ -62,5 +62,11 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
+## Not yet familiar with the ABAP RESTful Application Programming Model?
+
+You can find further information on RAP here:
+ - [Get Started with the ABAP RESTful Application Programming Model (RAP)](https://blogs.sap.com/2019/10/25/getting-started-with-the-abap-restful-programming-model) - A collection of diverse getting started materials.   
+ - Free openSAP course [Building Apps with the ABAP RESTful Application Programming Model (RAP)](https://open.sap.com/courses/cp13) 
+
 ## License
 Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
