@@ -15,7 +15,7 @@ The RAP service to be tested with ABAP unit tests will be exposed for a UI use c
 ![RAP400 Overview - ABAP Unit Testing](images/rap400_overview02.png)  
 
 
-You will write different ABAP Unit tests in the following exercises to ensure the quality of an OData service developed with the ABAP RESTful Application Programming Model (RAP). The OData service is based on the ABAP Flight Reference Scenario. It is the underlying UI service of a SAP Fiori elements based  Travel managing app - i.e. creating, updating and deleting travel records.
+You will write different ABAP Unit tests in the following exercises to ensure the quality of an OData service developed with the ABAP RESTful Application Programming Model. The OData service is based on the ABAP Flight Reference Scenario. It is the underlying UI service of a SAP Fiori elements based  Travel managing app - i.e. creating, updating and deleting travel records.
 
         
 > **Please Note**  
@@ -63,11 +63,11 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
-## How to get familiar with the ABAP RESTful Application Programming Model (RAP)
+## How to get familiar with the ABAP RESTful Application Programming Model
 
-You can find further information on RAP here:
+You can find further information on the ABAP RESTful Application Programming Model (RAP) here:
  - [Get Started with the ABAP RESTful Application Programming Model](https://blogs.sap.com/2019/10/25/getting-started-with-the-abap-restful-programming-model) - A collection of diverse getting started materials.   
- - Free openSAP course [Building Apps with the ABAP RESTful Application Programming Model](https://open.sap.com/courses/cp13) 
+ - Free openSAP course [Building Apps with the ABAP RESTful Application Programming Model](https://community.sap.com/topics/btp-abap-environment/rap-opensap) ([direct link](https://open.sap.com/courses/cp13) to the course) 
 
 ## License
 Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
