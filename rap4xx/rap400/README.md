@@ -36,6 +36,7 @@ ABAP unit is the state-of-the-art unit testing framework for ABAP. It's embedded
  - [Testing the RAP Business Object in RAP-based Apps](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/600245bbe0204b34b4cd7626339fd56b.html)
  - [Checking Quality of ABAP Code with ATC](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/4ec5711c6e391014adc9fffe4e204223.html)
  - [Testing@CleanABAP](https://github.com/SAP/styleguides/blob/main/clean-abap/CleanABAP.md#testing)  
+ - [Writing Testable Code for ABAP](https://open.sap.com/courses/wtc1) (openSAP course)
 
 
 ## Requirements
@@ -62,7 +63,7 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
-## Not yet familiar with the ABAP RESTful Application Programming Model (RAP)?
+## How to get familiar with the ABAP RESTful Application Programming Model (RAP)
 
 You can find further information on RAP here:
  - [Get Started with the ABAP RESTful Application Programming Model](https://blogs.sap.com/2019/10/25/getting-started-with-the-abap-restful-programming-model) - A collection of diverse getting started materials.   
