@@ -36,16 +36,16 @@ Let us look at the **Flight Bookings analytical model**. At its center we find a
 
 The *cube view* contains dimensional data (= descriptive data such a carrier ID or an airline ID) as well as measurable data (=quantifiable fields that can be calculated, e.g. the number of flight bookings or the flight price). We refer to these as **dimension fields** and **measures**.
 
-**Measures** can be aggregated and, if necessary, can have an association to a unit of measure or a currency. Their aggregation behavior is defined via annotation *@Aggregation.default*. If annotation *@Aggregation.default: #SUM* is used, for instance, the measures will be summed in an analysis. Measures usually contain 
+**Measures** can be aggregated and, if necessary, can have an association to a unit of measure or a currency. Their aggregation behavior is defined via annotation *@Aggregation.default*. If for example the annotation *@Aggregation.default: #SUM* is used, the measures will be summed in an analysis. Measures usually contain **transactional data**
 
-In our Flight Bookings analytical model we have the following measures:  
+In our Flight Bookings analytical model we have the following *measures*:  
 
 1. Total number of bookings  
 2. The total price of a booking  
 
 **Dimension fields** can be used to filter the results of an analysis and to group the result rows of an analysis according to the values of the dimension fields. The more dimension fields a cube contains, the higher the flexibility of possible analyses as there are more options for filtering and grouping the data. Dimension fields usually contain **master data**.
 
-In our Flight Bookings analytical model we have the following dimensions:  
+In our Flight Bookings analytical model we have the following *dimensions*:  
 
 1. Airline
 2. Connection
@@ -103,7 +103,6 @@ These are the steps of our hands-ons session:
         - [Add a dimension for Customer](exercises/ex1#add-a-dimension-for-customer)  
         - [Add a dimenstion for Connections (Flights)](exercises/ex1#add-a-dimenstion-for-connections-flights)  
         - [Add a dimension for Agencies](exercises/ex1#add-a-dimension-for-agencies)  
-     - [Booking interface view](exercises/ex1#booking-interface-view)  
      - [Cube](exercises/ex1#cube)  
      - [Query](exercises/ex1#query)  
      - [Data preview](exercises/ex1#data-preview)
@@ -114,9 +113,18 @@ These are the steps of our hands-ons session:
     - [Assign IAM App in business catalog](exercises/ex2#assign-iam-app-in-business-catalog)   
     - [Summary](exercises/ex1#exercises/ex2#summary)     
 - [Exercise 3 - SAP Analytics Cloud](exercises/ex3/README.md)  
-    - [Logon to SAP Analytics Cloud](exercises/ex3#sap-analytics-cloud)  
+    - [Connect to SAP Analytics Cloud](exercises/ex3#sap-analytics-cloud)  
     - [Create a Model](exercises/ex3#create-model)  
     - [Create a Story](exercises/ex3#create-story)  
+    
+- [Exercise 4 - Test Live Data Connection](exercises/ex4/README.md)   
+    - [Booking Behavior Implementation](exercises/ex4#Booking-Behavior-implementation)  
+    - [Travel Behavior Implementation](exercises/ex4#Travel-Behavior-implementation)                                   
+    - [Change Data](exercises/ex4#Change-Data)   
+    - [Check Live Data Connection](exercises/ex4#Check-Live-Data-Connection)    
+    
+- [Exercise 5 - More analytics charts and tables](exercises/ex5/README.md)   
+    
    
     
 ## How to obtain support
