@@ -121,7 +121,7 @@ The Identity and Access Management apps secure access to the solution for busine
 
     ![search catalog](images/1245.png)
 
-2. Click on the tab **Apps** and then on the button **Add** to add your IAM App in this Business Catalog. Click **Publish Locally**.
+2. Click on the tab **Apps** and then on the button **Add** to add your IAM App in this Business Catalog.
 
     ![apps](images/1250.png)
     

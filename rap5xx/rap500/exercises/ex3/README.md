@@ -15,6 +15,16 @@
    - [3.3.4 - Insert Donut Chart](README.md#exercises-334---insert-donut-chart)  
 - [Summary](README.md#exercises/ex3#summary)   
 
+## CORS Issues
+
+> If there are issues with CORS connection initially then make sure the below cookies and pop-ups are allowed in your browser settings .
+> This needs to be enabled for CORS Connection.
+> Since the direct connection use CORS, please verify your web browser configuration and access.
+> Your web browsers must be configured to:
+>    -	Allow pop-up windows from the SAP Analytics Cloud domain: [*.]sapbusinessobjects.cloud.
+>    -	Allow 3rd party cookies from the SAP S/4HANA server's domain. For example, in Internet Explorer 11, go to Internet Options  Security  Trusted Sites, add your domain name, then select Enable Protected Mode.
+
+
 ## Exercises 3.1. - Log on to the SAP Analytics Cloud
 
    > Please note:  
@@ -56,9 +66,9 @@
 
   ![system type](images/2040.png)
   
-4. Choose **DSAG** as **Connection** and login with your username and password that you use in the SAP BTP ABAP environment system in the second popup.
+4. Choose **VNSG** as **Connection** and login with your username and password that you use in the SAP BTP ABAP environment system in the second popup.
 
-   > The connection **DSAG** has been prepared beforehand. It uses a *communication arrangement* that has been created in the SAP BTP ABAP enviroment. The connection type is a *direct connection* that uses *SAML based Single Sign On*. So when using this connection the user that is currently logged on to SAC will be prompted to authenticate to get access to the SAP BTP ABAP environment system that provides the analytical service.
+   > The connection **VNSG** has been prepared beforehand. It uses a *communication arrangement* that has been created in the SAP BTP ABAP enviroment. The connection type is a *direct connection* that uses *SAML based Single Sign On*. So when using this connection the user that is currently logged on to SAC will be prompted to authenticate to get access to the SAP BTP ABAP environment system that provides the analytical service.
 
   ![connection](images/2050.png)
   
@@ -231,7 +241,7 @@
 
 You have used the preconfigured connection of the SAP Analytics Cloud instance to connect to the SAP BTP ABAP environment system where you have developed an Analytical Query. The data was retrieved using a Live Data Connection so that any change in the data was immediately reflected in the visualization of your query in SAP Analytics Cloud.
 
-
+Continue to next execise - [Excercise 4](../ex4/README.md)
   
 
 
