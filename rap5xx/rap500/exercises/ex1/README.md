@@ -8,46 +8,65 @@
 In this exercise we will create a complete Analytical Data Model for Booking data. This consists out of dimension views for Carrier, Customer, Connection and Agency data, as well as an interface CDS view for Booking data which acts as a data source for the cube and the query.
 Since the analytical views must contain certain analytical annotations we have created appropriate templates that you have imported in the previous exercise.
 
-- [1.1 - Create a package](README.md#exercises-11---create-a-package)
+- [1.1 - Generate the data model](README.md#exercises-11---Generate-the-data-model)
 - [1.2 - Dimensions](README.md#exercises-12---create-dimension-views)  
    - [1.2.1 - Create the first dimension for Carrier](README.md#exercises-121---create-the-first-dimension-for-carrier)    
    - [1.2.2 - Add a dimension for Customer](README.md#exercises-122---add-a-dimension-for-customer)  
    - [1.2.3 - Add a dimenstion for Connections (Flights)](README.md#exercises-123---add-a-dimenstion-for-connections-flights)  
-   - [1.2.4 - Add a dimension for Agencies](README.md#exercises-124---add-a-dimension-for-agencies)  
- - [1.3 - Booking interface view](README.md#exercises-13---booking-interface-view)  
- - [1.4 - Cube](README.md#exercises-14---cube)  
- - [1.5 - Query](README.md#exercises-15---query)  
- - [1.6 - Data Preview](README.md#exercises-16---data-preview)
+   - [1.2.4 - Add a dimension for Agencies](README.md#exercises-124---add-a-dimension-for-agencies)   
+ - [1.3 - Cube](README.md#exercises-13---cube)  
+ - [1.4 - Query](README.md#exercises-14---query)  
+ - [1.5 - Data Preview](README.md#exercises-15---data-preview)
  - [Summary](README.md#exercises/ex1#summary)   
 
-## Exercises 1.1 - Create a package  
+## Exercises 1.1 - Generate the data model  
 
-> We start by creating a package to store all artefacts created in the SAP BTP ABAP environment.
+> In the ABAP system we have prepared a helper class **/dmo/cl_gen_dev260_teched_2021** to generate the database tables and different CDS artefacts needed for the next exercises. The helper class will also fill some demo data into the database tables. For this purpose, demo data provided by the ABAP Flight Reference Scenario (main package: `/DMO/FLIGHT`) will be used.
 
 <details>
   <summary>Click to expand!</summary>
   
-1. Right click on your project and select **New** **ABAP Package**
+1. Select the **Open ABAP Development Object** icon or press **Ctrl+Shift+A**.
 
-    ![RightClick](images/1000.png)
+    ![open](images/helperclass_00_new.png)
   
 
-2. In the **New --> ABAP Package** dialogue enter the following values and then press **Next**. 
+2. In the Open ABAP Development Object dialogue enter **/dmo/cl_gen_dev260_teched_2021** as search string and press **OK**. 
 
-   - Name: **ZRAP500_####**
-   - Description: **Analytics workshop**  
-   - Add to favorites packages: **X**  
-   - Superpackage: **ZLOCAL**  
+    ![search class](images/1010.png) 
+
+3. The class **/dmo/cl_gen_dev260_teched_2021** is displayed in a new tab. Save and activate the class.
   
-    ![Create package](images/1010.png)
+    ![find class](images/1005.png)
+    
+4. Press **F9** to run the ABAP class as a console application. As a result, you will see a success message in the Console. Please note down your group ID `####` and copy the name of the newly created package `ZRAP500_####`.
 
-   Please note:  
-   There is a new check box *Add to favorites packages* available that let you add the newly created package to your favorite packages.  
+    ![run class](images/1325.png) 
 
-3. Create a new transport request and press **Finish**.  
+5. Right click on the folder **Favorite Packages** and select **Add Package...**. 
+
+    ![add favorits](images/1330.png)
+    
+6. Enter the name of your package `ZRAP500_####` and press **OK**.
+
+7. Go to your package `ZRAP500_####` in the Project Explorer (where `####` is your group ID) and press **F5** to refresh the project explorer. It should now contain the generated objects.
+
+    ![package](images/1335.png)
+    
+8. You can preview the data from a database table or a CDS view by choosing the relevant objects in the Project Explorer and pressing **F8**.
+
+  - Dictionary > Database Tables: `ZRAP500TRAV_####` and `ZRAP500BOOK_####`
+  - Core Data Services > Data Definitions: `ZRAP500_C_BOOKING_####`, `ZRAP500_C_TRAVEL_####`, `ZRAP500_I_TRAVEL_####` and `ZRAP500_I_BOOKING_####`
+  - Core Data Services > Metadata Extensions: `ZRAP500_C_TRAVEL_####` and `ZRAP500_C_BOOKING_####`
+
+  ![review](images/1340.png)
   
-    ![Create transport request](images/1005.png)
-   
+  > Remember `ZRAP500_I_BOOKING_####` as booking interface view. You will need it as a reference to create your cube.
+  
+9. Open **Business Services** > **Service Bindings** > `ZRAP500_UI_TRAVEL_0004_O2` and click **Publish**.
+
+    ![open](images/1355.png)
+    ![publish](images/1350.png)
   
 </details>
 
@@ -71,15 +90,11 @@ We will start to create a dimension view that contains the different Airlines / 
 - How much bookings are there per Carrier ? or 
 - How much money was spend for bookings for a certain Airline?  
 
-1. Right-click your package and choose **New --> Other ABAP Repository Object**.
+1. Under **Core Data Services** right-click **Data Definitions** and choose **New Data Definition**.
 
-    ![RightClick](images/1020.png)
+    ![RightClick](images/1345.png)
     
-2. Choose **Core Data Services --> Data Definition** and click **Next**.
-
-    ![new data definition](images/1030.png)
-
-3. Enter the following values  
+2. Enter the following values  
 
    - *Name*: **ZRAP500_I_Carrier_####**  
    - *Description*:  **Dimension for Carrier**  
@@ -92,33 +107,33 @@ We will start to create a dimension view that contains the different Airlines / 
 
      ![new dimension](images/1040.png)
      
-4. Choose a transport request and press **Next**.   
+3. Choose a transport request and press **Next**.   
 
    Do **NOT** press Finish, because otherwise the wizard will not provide us the option to choose a specific template but would choose the template that you have used the last time.
 
     ![select transport](images/1050.png)
 
-5. In the *Define New Entity Definition* dialogue choose the template **Define a View Entity for a Dimension** and press **Finish**.  
+4. In the *Define New Entity Definition* dialogue choose the template **Define a View Entity for a Dimension** and press **Finish**.  
 
    Please note:  
    The *Define a View Entity for a Dimension* template is one of the new Data Defintion templates that you have imported in the first part of this exercise. This template contains certain annotations which will be explained below that are mandatory for dimension views. 
 
     ![view for dimension](images/1060.png)
     
-6. You now have to edit the dimension view.  
+5. You now have to edit the dimension view.  
 Here you can use code completion to add the values for the annotations <pre>@ObjectModel.representativeKey</pre> and <pre>@ObjectModel.text.element</pre> that are needed for our dimension view. 
 
    ![edit in ADT](images/1070.png) 
 
-7. Click on **'representativeKey'**, delete the placeholder **representativKey** so that you get an empty string **''** , press *CTRL+Space* and choose **CarrierId** 
+6. Click on **'representativeKey'**, delete the placeholder **representativKey** so that you get an empty string **''** , press *CTRL+Space* and choose **CarrierId** 
    
    ![edit in ADT](images/1080.png) 
    
-8. Click on **textElement**, delete the placeholder string **textElement**, ** press *CTRL+Space* and choose **Name**.
+7. Click on **textElement**, delete the placeholder string **textElement**, ** press *CTRL+Space* and choose **Name**.
     
    ![edit in ADT](images/1090.png)  
        
-9. Save and activate the dimension.
+8. Save and activate the dimension.
    
    ![edit in ADT](images/1100.png)  
 
@@ -176,7 +191,7 @@ The data for customers is contained in the table **/dmo/customer**. So you have 
 The table /dmo/customer contains the columns first_name and last_name, but not the full name of the customer. We will hence add a new field to our CDS view where we calculate the full name so that we can use it as the text element for the key field CustomerId.  
 The table /dmo/customer also contains fields that are too long to be used in analytics scenarios and it contains administrative fields that we do not want to show. We will hence delete these fields from the field list after having used the  **Define a View Entity for a Dimension** template.
 
-1. Right click on the folder **Data Defintions --> New --> Data Definition**. 
+1. Right click on the folder **Data Defintions --> New Data Definition**. 
  
     ![New Data Definition](images/1200.png)    
    
@@ -284,7 +299,7 @@ The information about the connections (flights) is stored in the table **/dmo/co
 For tables such as /dmo/connection that contain more than one key field, the key fields that are not annoted as the representative key field have to be annotated with a foreign key relationship.
 Since the key field **ConnectionId** will be annotated as the representativeKey we have to add an assocation that points to the Carrier dimension view which will be added as a foreign key relationship to the key field **CarrierId**.
 
-1. Right click on the folder **Data Defintions --> New --> Data Definition**.    
+1. Right click on the folder **Data Defintions --> New Data Definition**.    
 2. Enter the following values and press **Next**
 
    - *Name*: **ZRAP500_I_Connection_####**
@@ -363,7 +378,7 @@ association [1] to ZRAP500_I_Carrier_#### as _Carrier on $projection.CarrierId =
 
 The information about the Agencies that perform the bookings is stored in the table `/dmo/agencies`.
 
-1. Right click on the folder **Data Defintions --> New --> Data Definition**.    
+1. Right click on the folder **Data Defintions --> Data Definition**.    
 2. Enter the following values and press **Next**
 
    - *Name*: **ZRAP500_I_Agency_####**
@@ -427,87 +442,8 @@ define view entity ZRAP500_I_Agency_#### as select from /dmo/agency {
 
 </details>
 
-## Exercises 1.3 - Booking interface view
 
-> We will create a CDS interface view as an additional layer which is later used as the data source of our cube. This view adds the field AgencyId so that this can be used as a dimension field in our cube.
-
-<details>
-  <summary>Click to expand!</summary>
-
-1. Right click on the folder **Data Definitions** and choose **New --> New Data Definition** from the context menu.  
-
-2. Enter the following values and press **Next**
-
-   - *Name*: **ZRAP500_I_Booking_####**
-   - *Description*: **Interface View for Booking**
-   - *Referenced Object*: **/DMO/I_Booking_U**   
-   
-    ![new interface](images/1300.png)  
-   
-3. Select a transport request and press **Next**.  
-   Do **NOT** press finish at this point because we want to select a different template in the next step.  
-4. This time select the template **Define a View Entity** and then press **Finish**
-
-    ![new interface](images/1310.png)
-
-5. Add an annotation `@Semantics.amount.currencyCode` to the property **Flight Price** that points to the property `CurrencyCode`.
-
-   <pre> @Semantics.amount.currencyCode: 'CurrencyCode'</pre>
-
-6. Add a new field **AgencyId**. The value for this field will be retrieved using the association **_Travel**.
-   That points to the parent entity. This way the field AgencyId can be used as a dimension field. 
-   
-   <pre> _Travel.AgencyID as AgencyID, </pre>
-
-   ![new field](images/1320.png)
-
-7. Save and activate the interface view.
-
-Your final code should look like the following:
-#### ZRAP500_I_Booking_####
-   <details open><summary>Source code ZRAP500_I_Booking_####</summary>
-   <p>
-   <pre>
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: 'Interface View for Booking'
-@Metadata.ignorePropagatedAnnotations: true
-@ObjectModel.usageType:{
-    serviceQuality: #X,
-    sizeCategory: #S,
-    dataClass: #MIXED
-}
-define view entity ZRAP500_I_Booking_#### as select from /DMO/I_Booking_U {
-    key TravelID,
-    key BookingID,
-    BookingDate,
-    CustomerID,
-    AirlineID,
-    ConnectionID,
-    FlightDate,
-    @Semantics.amount.currencyCode: 'CurrencyCode'
-    FlightPrice,
-    CurrencyCode,
-    _Travel.AgencyID as AgencyID,
-   
-    /* Associations */
-    _BookSupplement,
-    _Carrier,
-    _Connection,
-    _Customer,
-    _Travel
-}
-
-   </pre>
-
-   </p>
-   </details>  
-   
-[^Top of page](README.md)  
-
-</details>
-
-## Exercises 1.4 - Cube
+## Exercises 1.3 - Cube
 
 > The Cube is the analytical interface view that is ultimately used in the query and "holds together" the model. In addition to the facts and the measurable key figures (if necessary also calculations), it contains references to the dimensions.
 
@@ -520,7 +456,7 @@ We will now use the Booking interface view as a data source to create a cube. Al
 
 This annotation is part of the template **Define a View Entity for a Cube** that you have imported in your ADT installation at the beginning of this workshop.  
 
-1. Right click **Data Definition** and choose **New --> New Data Definition**.
+1. Right click **Data Definition** and choose **New Data Definition**.
 
 2. Enter the following values and press **Next**
 
@@ -631,6 +567,7 @@ This annotation is part of the template **Define a View Entity for a Cube** that
     {
       key TravelID,
       key BookingID,
+          TravelUUID,
           BookingDate,
           @ObjectModel.foreignKey.association: '_Customer'
           CustomerID,
@@ -662,7 +599,6 @@ This annotation is part of the template **Define a View Entity for a Cube** that
 
 
           /* Associations */
-          _BookSupplement,
           _Carrier,
           _Connection,
           _Customer,
@@ -681,7 +617,7 @@ This annotation is part of the template **Define a View Entity for a Cube** that
 
 </details>
 
-## Exercises 1.5 - Query
+## Exercises 1.4 - Query
 
 > The *query* is the "purpose-bound", specific version of the *cube*, i.e. the projection view. In particular, the query determines the display such as the assignment of fields to axes and further calculations.  
 > 
@@ -790,7 +726,7 @@ define view entity ZRAP500_C_BOOKINGQUERY_#### as select from ZRAP500_I_BookingC
 
 </details>
 
-## Exercises 1.6 - Data preview
+## Exercises 1.5 - Data preview
 
 > Similar to the SAP Fiori Elements preview which is offered for OData V2 UI and OData V4 UI service bindings there is now an Analytical Data Preview available. This can be used by the ABAP developer to test the implementation of an Analytical Query since the preview uses the InA protocol.
 
