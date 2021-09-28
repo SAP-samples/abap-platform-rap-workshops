@@ -12,7 +12,7 @@ When you have installed the ABAP Development Tools you can proceed with the foll
 
 ## Connect to the system
 
-> For this workshop we use a dediciated SAP BTP ABAP environment system called **D20**.
+> For this workshop we use a dediciated SAP BTP ABAP environment system called **D21**.
 
 <details>
   <summary>Click to expand!</summary>
@@ -48,7 +48,7 @@ When you have installed the ABAP Development Tools you can proceed with the foll
    ![System connection options](images/0060.png)
 
    > **Please note**  
-   > For this workshop we have provided you the dedicated SAP BTP, ABAP Environment system - **D20**. 
+   > For this workshop we have provided you the dedicated SAP BTP, ABAP Environment system - **D21**. 
    > Logon to the system using the credentials (email adress and password) that you use to logon to the SAP BTP Platform.
 
 8. Enter the **Service Key** and press **Next**.
@@ -77,7 +77,7 @@ When you have installed the ABAP Development Tools you can proceed with the foll
 
     ![Service instance connection details](images/0097.png)
 
-14. You can keep the default project name, e.g. **D20_EN** unchanged and click **Finish**
+14. You can keep the default project name unchanged and click **Finish**
 
     ![Project name](images/0098.png)
 
