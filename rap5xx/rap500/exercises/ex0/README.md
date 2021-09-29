@@ -65,7 +65,7 @@ When you have installed the ABAP Development Tools you can proceed with the foll
    
 10. A new browser window will open. Enter the credentials that have been provided to you by the trainer (email address **sap_rap_workshop+0###@sap.com** and password). 
   
-    Make sure that you choose the Identity Provider (IdP) **teched20.accounts.com**
+    Make sure that you choose the Identity Provider (IdP) **teched20.accounts.ondemand.com**
 
     ![Logon screen](images/0090.png)
 
