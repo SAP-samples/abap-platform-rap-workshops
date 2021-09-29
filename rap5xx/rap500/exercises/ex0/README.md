@@ -63,11 +63,13 @@ When you have installed the ABAP Development Tools you can proceed with the foll
    ![Open Logon Page in Browser](images/0080.png)
   
    
-10. A new browser window will open. Enter the credentials that you use to authenticate at SAP Business Technology Platform (email address and password)
+10. A new browser window will open. Enter the credentials that have been provided to you by the trainer (email address **sap_rap_workshop+0###@sap.com** and password). 
+  
+    Make sure that you choose the Identity Provider (IdP) **teched20.accounts.com**
 
     ![Logon screen](images/0090.png)
 
-11. You should see a page like the following
+11. You should see a page like the following (
 
    ![Logon succeeded](images/0095.png)
 
