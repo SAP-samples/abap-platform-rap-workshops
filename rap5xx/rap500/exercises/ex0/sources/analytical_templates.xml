@@ -13,7 +13,6 @@ define view entity ${ddl_source_name_editable} as select from ${data_source_name
 </template><template autoinsert="false" context="com.sap.adt.cds.ddl.ui.template.context.type.view.creation" deleted="false" description="Define a View Entity for a Dimension" enabled="true" name="Z_defineViewEntityForDimension">
 @AccessControl.authorizationCheck: #CHECK&#13;
 @EndUserText.label: '${ddl_source_description}'&#13;
-@Metadata.ignorePropagatedAnnotations: true&#13;
 &#13;
 @Analytics.dataCategory: #DIMENSION&#13;
 @Analytics.internalName: #LOCAL&#13;
