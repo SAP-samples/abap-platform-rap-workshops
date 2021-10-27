@@ -964,11 +964,13 @@ Congratulations, you are now an expert in writing ABAP Unit tests for applicatio
 Thank you for attending this workshop. You are done with the exercises. 
 
 Further information about the ensuring the quality of your ABAP code can be found in the SAP Help portal:
- - [Ensuring the Quality of ABAP Code](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/4ec7641e6e391014adc9fffe4e204223.html)  
- - [Unit Testing with ABAP Unit](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/08c60b52cb85444ea3069779274b43db.html)  
- - [Testing the RAP Business Object in RAP-based Apps](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/600245bbe0204b34b4cd7626339fd56b.html)
- - [Checking Quality of ABAP Code with ATC](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/4ec5711c6e391014adc9fffe4e204223.html)  
- - [Testing@CleanABAP](https://github.com/SAP/styleguides/blob/main/clean-abap/CleanABAP.md#testing)
+ - [RAP Test Guide@RAP Developement Guide](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/1fa88de357464d98a08165cb5830c0ad.html) (SAP Help Portal)
+ - [Testing RAP Business Objects@RAP Development Guide](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/600245bbe0204b34b4cd7626339fd56b.html) (SAP Help Portal)
+ - [Ensuring the Quality of ABAP Code](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/4ec7641e6e391014adc9fffe4e204223.html) (SAP Help Portal)  
+ - [Unit Testing with ABAP Unit](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/08c60b52cb85444ea3069779274b43db.html) (SAP Help Portal) 
+ - [Checking Quality of ABAP Code with ATC](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/4ec5711c6e391014adc9fffe4e204223.html) (SAP Help Portal)
+ - [Testing@Clean ABAP](https://github.com/SAP/styleguides/blob/main/clean-abap/CleanABAP.md#testing)  (GitHub repository)
+ - [Writing Testable Code for ABAP](https://open.sap.com/courses/wtc1) (openSAP course) 
 
 ## Appendix
 
