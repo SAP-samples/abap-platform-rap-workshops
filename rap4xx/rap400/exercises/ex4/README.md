@@ -971,6 +971,7 @@ Further information about the ensuring the quality of your ABAP code can be foun
  - [Checking Quality of ABAP Code with ATC](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/4ec5711c6e391014adc9fffe4e204223.html) (SAP Help Portal)
  - [Testing@Clean ABAP](https://github.com/SAP/styleguides/blob/main/clean-abap/CleanABAP.md#testing)  (GitHub repository)
  - [Writing Testable Code for ABAP](https://open.sap.com/courses/wtc1) (openSAP course) 
+ - [Writing a Test using Function Module Test Double Framework (TDF)](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/latest/en-US/e015fbb525a44a38a5b830c909bb1b13.html) (SAP Help Portal)
 
 ## Appendix
 
