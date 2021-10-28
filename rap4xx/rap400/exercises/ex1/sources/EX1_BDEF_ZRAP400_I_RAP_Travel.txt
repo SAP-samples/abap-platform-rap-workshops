@@ -55,7 +55,7 @@ early numbering
 define behavior for ZRAP400_I_BOOKING_#### alias Booking
 //implementation in class zrap400_bp_i_booking_#### unique
 persistent table zrap400_book####
-etag master last_changed_at
+etag master LastChangedAt
 lock dependent by _Travel
 authorization dependent by _Travel
 early numbering
