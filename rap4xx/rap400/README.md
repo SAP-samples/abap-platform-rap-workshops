@@ -39,6 +39,7 @@ ABAP unit is the state-of-the-art unit testing framework for ABAP. It's embedded
  - [Testing@Clean ABAP](https://github.com/SAP/styleguides/blob/main/clean-abap/CleanABAP.md#testing)  (GitHub repository)
  - [Writing Testable Code for ABAP](https://open.sap.com/courses/wtc1) (openSAP course)
  - [Writing a Test using Function Module Test Double Framework (TDF)](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/latest/en-US/e015fbb525a44a38a5b830c909bb1b13.html) (SAP Help Portal)
+ - [ABAP Testing and Analysis Community](https://community.sap.com/topics/abap-testing-analysis) (SAP Community)
 
 
 ## Requirements
