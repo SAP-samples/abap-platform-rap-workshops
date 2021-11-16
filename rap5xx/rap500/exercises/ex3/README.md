@@ -13,6 +13,8 @@
    - [3.3.2 - Insert Chart](README.md#exercises-332---insert-chart)    
    - [3.3.3 - Insert Table](README.md#exercises-333---insert-table)  
    - [3.3.4 - Insert Donut Chart](README.md#exercises-334---insert-donut-chart)  
+   - [3.3.5 - Insert Line Chart](README.md#exercises-335---insert-line-chart) 
+   - [3.3.6 - Insert Another Line Chart](README.md#exercises-336---insert-another-line-chart)
 - [Summary](README.md#exercises/ex3#summary)   
 
 ## CORS Issues
@@ -21,14 +23,14 @@
 > This needs to be enabled for CORS Connection.
 > Since the direct connection use CORS, please verify your web browser configuration and access.
 > Your web browsers must be configured to:
->    -	Allow pop-up windows from the SAP Analytics Cloud domain: [*.]sapbusinessobjects.cloud.
+>    -	Allow pop-up windows from the SAP Analytics Cloud domain: [*.]cloud.sap
 >    -	Allow 3rd party cookies from the SAP S/4HANA server's domain. For example, in Internet Explorer 11, go to Internet Options  Security  Trusted Sites, add your domain name, then select Enable Protected Mode.
 
 
 ## Exercises 3.1. - Log on to the SAP Analytics Cloud
 
    > Please note:  
-   > The username and the password can be and will very likely be different from those that you have used to logon to your SAP BTP ABAP environment. This is because both systems use a different Identity Provider system for authentication.
+   > The username and the password that you will use to log on to SAP Analytics Cloud will be the same that you have used to logon to your SAP BTP ABAP environment. This is because both systems use the same Identity Provider system for authentication.
   
    > When you participate in a workshop the URL to your SAP Analytics Cloud instance has been provided to you by your trainer.   
 
@@ -54,7 +56,7 @@
 <details>
   <summary>Click to expand!</summary>
 
-1. Expand navigation bar.
+1. Expand navigation bar by clicking on the **Hamburger icon**.
 
   ![navigation bar](images/2020.png)
 
@@ -68,11 +70,17 @@
   
 4. Choose **RAPWS** as **Connection** and login with your username and password that you use in the SAP BTP ABAP environment system in the second popup.
 
-   > The connection **RAPWS** has been prepared beforehand. It uses a *communication arrangement* that has been created in the SAP BTP ABAP enviroment. The connection type is a *direct connection* that uses *SAML based Single Sign On*. So when using this connection the user that is currently logged on to SAC will be prompted to authenticate to get access to the SAP BTP ABAP environment system that provides the analytical service.
+   > The connection **RAPWS** has been prepared beforehand. It uses a *communication arrangement* that has been created in the SAP BTP ABAP enviroment. The connection type is a *direct connection* that uses *SAML based Single Sign On*.  
+   >  So when using this connection the user that is currently logged on to SAC in the browser will be used to authenticate to get access to the SAP BTP ABAP environment system that provides the analytical service.  
 
-  ![connection](images/2050.png)
+   >  Please note: If both systems do not use the same Identity Provider you will be prompted to enter your credentials of the SAP BTP ABAP environment system. Otherwise you will be automatically be logged on.  
+
+  ![Logon screen that will popup if different IdP's are used](images/2050.png)
   
 5. Select your created Query in the last exercise as **Data Source**. 
+
+   > If your service does not show up in the list of available service you might have forgotten to press the button **Publish Locally** in your IAM app in ADT in [Excercise 2](../ex2/README.md).    
+   
 
   ![data source](images/2060.png)
   
@@ -118,7 +126,7 @@
 
 > A story is a presentation-style document that uses various elements such as charts, images or tables to visualizue your data.  
 > Adding a chart starts with picking a chart type. Then you select your model and add measures and dimension and start on working how the data is displayed.
-> Hier we will create a story including a chart, a table and a Donut chart.
+> Here we will create a story including several charts and a table. 
 
 ### Exercises 3.3.1 - Open a blank dashboard
 
@@ -147,6 +155,8 @@
 
 ### Exercises 3.3.2 - Insert Chart
 
+> We start by adding a chart that shows the flight price per Airline.
+
 <details>
   <summary>Click to expand!</summary>
    
@@ -166,32 +176,58 @@
 
    ![measure](images/2180.png)
   
-5. Open **+ Add Dimension** and choose **Country/Region Key**. Now there is a chart which shows how the flight costs are distributed accross the different countries your customers live in.
+5. Open **+ Add Dimension** and choose **Airline ID**. Now there is a chart which shows how the flight costs are distributed accross the different countries your customers live in.
 
    ![dimension](images/2190.png)
    
-[^Top of page](README.md) 
+   > **Save your changes**  
+   > Before adding more items to your story, you should save the story.
+   
+6. Click on save icon and choose **Save**.
 
-</details>
+    ![save](images/2250_small.png)
+  
+7. Enter following values and click **OK**
+
+  - Name:  **RAP500_####_Story**
+  - Description: **Story ###**
+  
+  ![story](images/2260.png)
+  
+8. You will find your new created story undre **Welcome to Stories**
+
+  ![welcome](images/2270.png)
+
+  [^Top of page](README.md)
+  
+ </details>
 
 ### Exercises 3.3.3 - Insert Table
+
+> We add a table that contains all dimensions and measures.  
 
 <details>
   <summary>Click to expand!</summary>
    
-1. To insert a table, click on the *table icon*. A Table will be created and all dimensions and measures will be displayed. You can move the table, make it bigger. You can change dimensions and measures under **Builder**.
+1. Go to your story and swich to the **Edit** mode by pressing the _Edit|View_ toggle button located in the upper right corner of the editor.
+
+2. To insert a table, click on the *table icon*. A Table will be created and all dimensions and measures will be displayed. You can move the table, make it bigger. You can change dimensions and measures under **Builder**.
   
    ![table](images/2200.png)
   
    In the table you can find all data from your query, what you choose as **ROWS** or **COLUMNS**. We have just one dimension **CustomerCountry** in columns and all other dimensions are in rows. 
 
    ![columns](images/2210.png)
+   
+3. Click on save icon and choose **Save**.   
 
 [^Top of page](README.md) 
 
 </details>  
 
 ### Exercises 3.3.4 - Insert Donut Chart  
+
+> We add a donut chart that shows the number of total bookings per Airline.
 
 <details>
   <summary>Click to expand!</summary>
@@ -200,46 +236,72 @@
 
    ![donut](images/2220.png)
   
-2. Choose **Flight Price** under **+ Add Measure** and choose **Airline ID** under **+ Add Dimension**. 
+2. Choose **Total of Booking** under **+ Add Measure** and choose **Airline ID** under **Color** > **+ Add Dimension**. 
 
     > We now have a visualization how the booking costs are distributed accross the different airlines.  
 
     ![measure](images/2230.png)
    
     ![chart donut](images/2240.png)
+    
+3. Click on save icon and choose **Save**.    
 
 [^Top of page](README.md) 
 
 </details>
 
-### Save the Story
+
+### Exercises 3.3.5 - Insert Line Chart  
+
+> We add a line chart to visualize the flight price per Agency.
 
 <details>
   <summary>Click to expand!</summary>
    
-1. You are almost done with your story, you need just to save the story. Click on save icon and choose **Save**.
+1. Insert another chart and choose **Line** under **Builder -> Chart Structure -> Trend** .
 
-    ![save](images/2250.png)
+   ![line](images/2275.png)
   
-2. Enter following values and click **OK**
+2. Choose **Flight Price** under **+ Add Measure -> Left Y-Axis** and choose **Agency ID** under **+ Add Dimension**. 
 
-  - Name:  **RAP500_####_Story**
-  - Description: **Story ###**
-  
-  ![story](images/2260.png)
-  
-3. You will find your new created story undre **Welcome to Stories**
+    ![measure](images/2280.png)
+   
+3. Click on save icon and choose **Save**.
 
-  ![welcome](images/2270.png)
+[^Top of page](README.md) 
 
-  [^Top of page](README.md)
+</details>
+
+### Exercises 3.3.6 - Insert another Line Chart  
+
+> Finally we add a line chart to visualize the flight price per business user that has created the transactional data.
+
+<details>
+  <summary>Click to expand!</summary>
+   
+1. Insert another chart and choose **Line** under **Builder -> Chart Structure -> Trend** .
+
+   ![donut](images/2285.png)
   
- </details>
+2. Choose **Flight Price** under **+ Add Measure -> Left Y-Axis** and choose **Loc. Changed By** under **+ Add Dimension**. 
+
+    ![measure](images/2290.png)
+
+3. Click on save icon and choose **Save**.
+
+[^Top of page](README.md) 
+
+</details>
+
+
+
   
 
 ## Summary
 
-You have used the preconfigured connection of the SAP Analytics Cloud instance to connect to the SAP BTP ABAP environment system where you have developed an Analytical Query. The data was retrieved using a Live Data Connection so that any change in the data was immediately reflected in the visualization of your query in SAP Analytics Cloud.
+You have used the preconfigured connection of the SAP Analytics Cloud instance to connect to the SAP BTP ABAP environment system where you have developed an Analytical Query. The data is retrieved using a Live Data Connection so that any change in the data will immediately be reflected in the visualization of your query in SAP Analytics Cloud.  
+
+We will test this live data connection in the following exercise.
 
 Continue to next execise - [Excercise 4](../ex4/README.md)
   
