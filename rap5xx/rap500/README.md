@@ -6,6 +6,16 @@ This repository contains the material for the hands-on session *RAP500 - Develop
 
 It is used for various events such as SAP TechEd, SAP user groups events, etc.
 
+## Prerequisities (MANDATORY)
+
+> In order to participate in this hands-on session you MUST have installed the latest version of Eclipse and the latest version of the ABAP Development Tools (ADT) in Eclipse.
+
+> Please check the following two short documents how to do this if you have not already done it.
+
+> [Install the ABAP Development Tools (ADT)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)
+
+> [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)
+
 ## Overview
 [^Top of page](README.md)  
 A nice overview about the development for Analytics with SAP BTP ABAP Environment can be found in the following blog post [Developing for Analytics with the SAP BTP ABAP Environment](https://blogs.sap.com/2021/02/11/developing-for-analytics-with-the-sap-btp-abap-environment/) by [Andreas Riehl](https://people.sap.com/andreas.riehl)
