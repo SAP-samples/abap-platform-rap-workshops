@@ -2,13 +2,13 @@
 
 # Getting started
 
-> Before starting with the exercise please make sure that you have installed the ABAP Development Tools (ADT).   
+> Before starting with the exercise please make sure that you have installed the latest verion of the *ABAP Development Tools (ADT)*.   
 > [Get the ABAP Development Tools (ADT)](https://tools.hana.ondemand.com/#abap), section „Procedure“.
 
 When you have installed the ABAP Development Tools you can proceed with the following steps to prepare for this session:
 
 - [Connect to the system](#connect-to-the-system)
-- [Import temlates for Analytical CDS views](#import-temlates-for-analytical-cds-views) 
+- [Import templates for Analytical CDS views](#import-temlates-for-analytical-cds-views) 
 
 ## Connect to the system
 
@@ -63,13 +63,19 @@ When you have installed the ABAP Development Tools you can proceed with the foll
    ![Open Logon Page in Browser](images/0080.png)
   
    
-10. A new browser window will open. Enter the credentials that have been provided to you by the trainer (email address **sap_rap_workshop+0###@sap.com** and password). 
-  
-    Make sure that you choose the Identity Provider (IdP) **teched20.accounts.ondemand.com**
+10. A new browser window will open. Enter the credentials that have been provide to you by the trainer (email address and password)
 
     ![Logon screen](images/0090.png)
 
-11. You should see a page like the following (
+
+> If there are issues with CORS connection initially then make sure the below cookies and pop-ups are allowed in your browser settings .
+> This needs to be enabled for CORS Connection.
+> Since the direct connection use CORS, please verify your web browser configuration and access.
+> Your web browsers must be configured to:
+>    -	Allow pop-up windows from the SAP Analytics Cloud domain: [*.]sapbusinessobjects.cloud.
+>    -	Allow 3rd party cookies from the SAP S/4HANA server's domain. For example, in Internet Explorer 11, go to Internet Options  Security  Trusted Sites, add your domain name, then select Enable Protected Mode.
+
+11. You should see a page like the following
 
    ![Logon succeeded](images/0095.png)
 
@@ -86,6 +92,7 @@ When you have installed the ABAP Development Tools you can proceed with the foll
 15. Your ABAP Cloud Project should now look like follows
 
     ![Project name](images/0099.png)
+    
 
 [^Top of page](README.md) 
 
@@ -127,7 +134,7 @@ When you have installed the ABAP Development Tools you can proceed with the foll
 6. Select the XML file **analytical_templates.xml** that you have created in *Step 1*.
 
    > **Please note**  
-   > The Import-Dialog only allows to select files having the extension **.xml**. When you have downloaded the file in *Step 1* using a different file extension you have first to rename your file so that it gets the extension **.xml**.
+   > The Import-Dialog only allows to select files having the extension **.xml**. If you have downloaded the file in *Step 1* using a different file extension you have first to rename your file so that it gets the extension **.xml**.
 
    ![Select downloaded XML](images/0135.png)
    

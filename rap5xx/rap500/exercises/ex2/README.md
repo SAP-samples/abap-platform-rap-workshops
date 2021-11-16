@@ -13,10 +13,10 @@
 
 ## Exercises 2.1 - Create service definition
 
+> You use a service definition to define which data is to be exposed as a business service, using one or more business service bindings.
+
 <details>
   <summary>Click to expand!</summary>
-
-You use a service definition to define which data is to be exposed as a business service, using one or more business service bindings.
 
 1. Right-click your created query and choose **New Service Definition**.
 
@@ -32,7 +32,7 @@ You use a service definition to define which data is to be exposed as a business
 
 3. Select transport request and press **Next**
 4. Select the template **Define Service** and press **Finish**.
-4. After the query is exposed as a service it must be activated by pressing **Ctrl+F3**
+5. Activate the query using **Ctrl+F3**.
 
 [^Top of page](README.md)  
 
@@ -40,10 +40,10 @@ You use a service definition to define which data is to be exposed as a business
 
 ## Exercises 2.2 - Create InA UI service binding
 
+> The service binding is used to bind a service definition to a communication protocol and in our case, the protocol that enables analytical data access from SAP Analytics Cloud is the **Information Access (InA) protocol**.
+
 <details>
   <summary>Click to expand!</summary>
-  
-The service binding is used to bind a service definition to a communication protocol and in our case, the protocol that enables analytical data access from SAP Analytics Cloud is the **Information Access (InA) protocol**.
 
 1. Right click your newly created service definition and choose New Service Binding.
 
@@ -59,7 +59,10 @@ The service binding is used to bind a service definition to a communication prot
     ![new binding](images/1170.png)
     
 3. Choose a transport request and click **Finish**.
-4. Activate your service binding. 
+4. Activate your service binding. (You may have to expand the folder **Service Binding** in the **Project Explorer**.
+
+     ![Expand Project Explorer](images/1165.png)
+
 5. After activation, the external service name for your query is displayed.
 
     ![service binding](images/1180.png)
@@ -72,10 +75,10 @@ The service binding is used to bind a service definition to a communication prot
 
 ## Exercises 2.3 - Create IAM App
 
+> The Identity and Access Management apps secure access to the solution for business users. By creating an IAM app, the authorization is automatically assigned to the query exposed via 'InA' service. This basic authorization is mandatory for users to work with their services.
+
 <details>
   <summary>Click to expand!</summary>
-  
-The Identity and Access Management apps secure access to the solution for business users. By creating an IAM app, the authorization is automatically assigned to the query exposed via 'InA' service. This basic authorization is mandatory for users to work with their services.
 
 1. Right click your package, choose **New > Other ABAP Repository Object**.
 2. Search for **IAM App** under **Cloud Identity and Access Management**. Click **Next**.
@@ -102,9 +105,15 @@ The Identity and Access Management apps secure access to the solution for busine
 
 6. Select **Service Type** as **InA -UI** and your **Service Name** which is your service binding name **ZRAP500_UI_BOOKING_####**. Click **OK**.
 
+   > You can press **Ctrl+Space** to find your service name from the list of available service names. This is indicated by the small yellow bubble at the left hand side of the text box **Serive Name**.  
+
     ![Find service](images/1212.png)
 
-7. Save and **Publish Locally**.
+7. Press **Save**
+
+8. Press the button **Publish Locally**.
+
+   > If you have not saved your IAM app you will receive a warning that your IAM app has not been saved. In this case you have to **Save** it and to press the button **Publish locally** again.
 
     ![publish locally](images/1213.png)
 
@@ -113,6 +122,9 @@ The Identity and Access Management apps secure access to the solution for busine
 </details>
 
 ## Exercises 2.4 - Assign IAM App to business catalog
+
+> In order to allow end users to use this newly created query the IAM App has to be assigned to a business catalog which in turn must be added to a role that is assigned to the end user.
+> For this workshop we have thus prepared the business catalog **ZRAP500_BOOKING_QUERY_ALL** and have assigned this business catalog to the developer role. This allows thus all developers in the system **D21** to access to your Analytical Query that has been published via the Service Binding. 
 
 <details>
   <summary>Click to expand!</summary>  
@@ -127,15 +139,12 @@ The Identity and Access Management apps secure access to the solution for busine
     
 3. Select your IAM App. You can enter *####* as a search string and press **Ctrl+Space** to start code completion to search for your IAM App **ZRAP500_BOOKING_####_EXT**. Press **Next**.
    
-   > Please note that the value for the **Name** is automatically proposed.
+   > Please note that the value for the **Name** is automatically proposed. 
+   > So the number chosen as a suffix **XXXX** will differ from your group number **####**.
     
     ![add](images/1260.png)
 
 4. Choose a transport request and click **Finish**.
-
-> Please note:  
-> In order to allow end users to use the newly created query the business catalog **ZRAP500_BOOKING_QUERY_ALL** must be added to a business role that is assigned to the business user using the Maintain Business Roles App.  
-> For our workshop we have prepared this setting and we have assigned the business catalog **ZRAP500_BOOKING_QUERY_ALL** to the developer role. This allows thus all developers in the system **D20** to access to your Analytical Query that has been published via the Service Binding. 
 
 [^Top of page](README.md)  
 
