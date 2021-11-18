@@ -34,7 +34,7 @@ Since the analytical views must contain certain analytical annotations we have c
 
     ![search class](images/1010.png) 
 
-3. The class **/dmo/cl_gen_dev260_teched_2021** is displayed in a new tab. Save and activate the class.
+3. The class **/dmo/cl_gen_dev260_teched_2021** is displayed in a new tab.
   
     ![find class](images/1005.png)
     
