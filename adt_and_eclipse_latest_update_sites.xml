@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmarks>
+   <site url="https://eclipse.abapgit.org/updatesite/" selected="true" name="ABAPGit"/>
+   <site url="https://tools.hana.ondemand.com/latest" selected="true" name="ADT latest"/>
+   <site url="https://download.eclipse.org/technology/epp/packages/latest/" selected="true" name="Latest Eclipse IDE Packages Release"/>
+</bookmarks>
