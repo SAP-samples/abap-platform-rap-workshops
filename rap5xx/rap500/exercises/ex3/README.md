@@ -26,10 +26,12 @@
 >    -	Allow pop-up windows from the SAP Analytics Cloud domain: [*.]cloud.sap  
 >        - For *Edge* enter the following local URL *edge://settings/content/popups*  
 >        - For *Chrome* enter the following local URL *chrome://settings/content/popups*  
+>        - For *FireFox* use the following local URL *about:preferences#privacy*   
 >        
 >    -	Allow 3rd party cookies from the SAP S/4HANA server's domain. For example, in Internet Explorer 11, go to Internet Options  Security  Trusted Sites, add your domain name, then select Enable Protected Mode.  
 >        -  For *Edge* enter the following local URL *edge://settings/content/cookies*  
 >         - For *Chrome* enter the following local URL *chrome://settings/content/cookies*  
+>         - For *FireFox* use the following local URL *about:preferences#privacy*
 
 ## Exercises 3.1. - Log on to the SAP Analytics Cloud
 
