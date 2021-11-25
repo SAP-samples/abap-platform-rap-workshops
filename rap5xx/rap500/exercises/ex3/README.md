@@ -24,12 +24,12 @@
 > Since the direct connection use CORS, please verify your web browser configuration and access.
 > Your web browsers must be configured to:
 >    -	Allow pop-up windows from the SAP Analytics Cloud domain: [*.]cloud.sap
->        - For Edge   [edge://settings/content/popups](edge://settings/content/popups)
->        - For Chrome [chrome://settings/content/popups](chrome://settings/content/popups)
+>        - For Edge   ![edge://settings/content/popups](edge://settings/content/popups)
+>        - For Chrome ![chrome://settings/content/popups](chrome://settings/content/popups)
 >        
 >    -	Allow 3rd party cookies from the SAP S/4HANA server's domain. For example, in Internet Explorer 11, go to Internet Options  Security  Trusted Sites, add your domain name, then select Enable Protected Mode.
->        -  For Edge [edge://settings/content/cookies](edge://settings/content/cookies)
->        -  For Chrome [chrome://settings/cookies](chrome://settings/cookies)
+>        -  For Edge ![edge://settings/content/cookies](edge://settings/content/cookies)
+>        -  For Chrome ![chrome://settings/cookies](chrome://settings/cookies)
 
 
 ## Exercises 3.1. - Log on to the SAP Analytics Cloud
