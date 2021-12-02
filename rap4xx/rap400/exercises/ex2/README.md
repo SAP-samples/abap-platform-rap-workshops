@@ -445,20 +445,23 @@ These are the table fields **`travel_id`** and **`overall_status`**, and corresp
 
     **What could be the issue here?**  
     Remember that the allowed entries for the overall status are `A` (_Accepted_), `O` (_Open_) and `X` (_Cancelled_).
+  
 
+16. Correct the error if you’ve found it.
     >  
     > **Proposed solution**:  
-    > Comment out or delete the code line **`WHEN B. “booked`** from the source code. It is an invalid value for the overall travel status in the present scenario. 
-    > You can find a screenshot corrected source code in _**Exercise 2.6 – Proposed solutions for failed ABAP Unit Tests**_ at the bottom of this page.
+    > The overall status `B`(_Booked_) is currently evaluated in the `CASE` statement, but it is an invalid value in the present scenario.
+    > Therefore, comment out or delete the code line **`WHEN B. “booked`** from the source code.  
+    > 
+    > Your source code will look as follows.
+    >  ![Write Unit Test – Validation](images/ex2_02_16b.png)
     >  
-
-16. Correct the error if you’ve found it, go back to the local test class, and re-execute the ABAP unit test. 😊
     
 17. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
-18. Run the unit test again.
+18. Run the ABAP unit test again.
     
-    The test result should now look as follows - **green**!
+    The test result should now look as follows - **green**! 😊
 
     ![Write Unit Test – Validation](images/ex2_02_17.png)
  
@@ -876,7 +879,8 @@ Let us for example check the test coverage of your behavior implementation class
     
     That's it for this exercise!  
 
-## Exercise 2.6 – Proposed Solutions for failed ABAP Unit Tests
+## Exercise 2.6 – Proposed Solutions for failed ABAP Unit Tests \[Info/Recap\]
+This section is just a recap of the solution proposed.
 
 ### Regarding the error in Exercise 2.2 (Validation)
 
