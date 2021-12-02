@@ -200,23 +200,8 @@ define view entity ZRAP500_I_Carrier_####
 4. Select again the template **Define a View Entity for Dimension** and press **Finish**   
 
 5. Specify the value `ConnectionId` for the annotation `@ObjectModel.representativeKey`. You can use again code completion to select the field.
-
-6. Add a new field **Trip** which will later be specified as the text element for the key field **ConnectionId**.
-    
-    `concat(airport_from_id, concat(' -> ', airport_to_id)) as Trip `
-
-7. For the key field **CarrierId** do the following:  
-
-   i. Delete the annotation `@ObjectModel.text.element: ['textElement']`   
-   ii. Add the following annotation  
-   
-    <pre> @ObjectModel.foreignKey.association: '_Carrier' </pre>
-
-8. For the second key field **ConnectionId** add the following annotation `@ObjectModel.text.element: ['Trip']`. 
-
-   > For this example we only have to add a comprehensible text for the second key field.
-
-9. Add an association **_Carrier**
+  
+6. Add an association **_Carrier**
 
    <pre> 
    association [1] to ZRAP500_I_Carrier_#### as _Carrier on $projection.CarrierId = _Carrier.CarrierId
@@ -225,6 +210,23 @@ define view entity ZRAP500_I_Carrier_####
    and expose it in the field list by adding
    
    <pre> _Carrier </pre>.
+
+7. Add a new field **Trip** which will later be specified as the text element for the key field **ConnectionId**.
+    
+    `concat(airport_from_id, concat(' -> ', airport_to_id)) as Trip `
+
+8. For the key field **CarrierId** do the following:  
+
+   i. Delete the annotation `@ObjectModel.text.element: ['textElement']`   
+   ii. Add the following annotation  
+   
+    <pre> @ObjectModel.foreignKey.association: '_Carrier' </pre>
+
+9. For the second key field **ConnectionId** add the following annotation `@ObjectModel.text.element: ['Trip']`. 
+
+   > For this example we only have to add a comprehensible text for the second key field.
+
+
   
    
 10. Save and activate the dimension view.
