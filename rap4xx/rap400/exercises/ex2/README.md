@@ -450,8 +450,8 @@ These are the table fields **`travel_id`** and **`overall_status`**, and corresp
 16. Correct the error if you’ve found it.
     >  
     > **Proposed solution**:  
-    > The overall status `B`(_Booked_) is currently evaluated in the `CASE` statement, but it is an invalid value in the present scenario.
-    > Therefore, comment out or delete the code line **`WHEN B. “booked`** from the source code.  
+    > The overall status `B`(_Booked_) is currently evaluated in the `CASE` statement, but it is an invalid value in the present scenario.   
+    > Comment out or delete the code line **`WHEN B. “booked`** from the source code.  
     > 
     > Your source code will look as follows.  
     > 
