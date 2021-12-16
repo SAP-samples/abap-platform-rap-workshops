@@ -33,7 +33,7 @@ So the analytics developments are really following the same paradigm with CDS vi
 
 The new service binding type InA is tailored to the needs of analytical clients, e.g., to serve different aggregation levels at once and of course additional annotations are needed to describe the semantics that are unique to analytics.
 
-By the way, if you are not familiar yet with the ABAP Restful Programming Model, there is a great getting started blog post available [Getting Started with the ABAP RESTful Application Programming Model (RAP)](https://blogs.sap.com/2019/10/25/getting-started-with-the-abap-restful-programming-model).
+By the way, if you are not familiar yet with the ABAP RESTful Programming Model, there is a great getting started blog post available [Getting Started with the ABAP RESTful Application Programming Model (RAP)](https://blogs.sap.com/2019/10/25/getting-started-with-the-abap-restful-programming-model).
 
 ## What are the analytical models?
 [^Top of page](README.md) 
