@@ -46,7 +46,7 @@ ABAP unit is the state-of-the-art unit testing framework for ABAP. It's embedded
 
 The requirements to follow the exercises in this repository are:
 
-* You have installed the _latest_ ABAP Development Tools for Eclipse [(ADT)](https://tools.hana.ondemand.com/#abap); see [Tutorial - Install ADT](https://developers.sap.com/tutorials/abap-install-adt.html)
+* You have installed the _latest_ ABAP Development Tools for Eclipse ([ADT])(https://tools.hana.ondemand.com/#abap); see [Tutorial - Install ADT](https://developers.sap.com/tutorials/abap-install-adt.html)
 * You have created a SAP Business Technology Platform (BTP) ABAP Environment Trial account and connected your ADT to the Trial Account using a _ABAP Cloud Project_; see [Tutorial - Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
 ## Exercises
