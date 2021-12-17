@@ -96,7 +96,7 @@ You have to download and install the ABAP Development Tools (ADT) as described i
 
 ## Known Issues
 [^Top of page](README.md)  
-This tutorial can only be performed on licensed system (SAP BTP ABAP Environment and SAP Analytics Cloud).  
+This tutorial can only be performed on licensed systems, i.e. SAP BTP ABAP Environment and SAP Analytics Cloud.  
 
 ## Exercises
 [^Top of page](README.md)  
@@ -141,6 +141,12 @@ These are the steps of our hands-ons session:
 ## How to obtain support
 [^Top of page](README.md)  
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
+
+## Further Information
+[^Top of page](README.md)  
+You can find more information on the SAP Help Portal; see ... 
+- [ABAP RESTful Application Programming Model (RAP)](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/289477a81eec4d4e84c0302fb6835035.html) 
+- [Analytical Data Modeling & Live Data Connection to SAP Analytics Cloud (SAC)](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ae5db4d9bfd472ba70613b358dbb16b.html)  
 
 ## License
 [^Top of page](README.md)  
