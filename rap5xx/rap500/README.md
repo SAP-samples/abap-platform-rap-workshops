@@ -144,7 +144,7 @@ Support for the content in this repository is available during the actual time o
 
 ## Further Information
 [^Top of page](README.md)  
-You can find more information on the SAP Help Portal; see ... 
+You can find more information on the SAP Help Portal:  
 - [ABAP RESTful Application Programming Model (RAP)](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/289477a81eec4d4e84c0302fb6835035.html) 
 - [Analytical Data Modeling & Live Data Connection to SAP Analytics Cloud (SAC)](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ae5db4d9bfd472ba70613b358dbb16b.html)  
 
