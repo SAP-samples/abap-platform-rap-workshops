@@ -356,6 +356,8 @@ All cubes must have at least one measure. The measurable data are the quantifiab
 
 <details open><summary>Source code ZRAP510_I_Travel_Cube_###</summary> 
    <p>
+     
+     
    <pre>
 
 @AbapCatalog.viewEnhancementCategory: [#NONE]
