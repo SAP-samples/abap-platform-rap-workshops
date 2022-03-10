@@ -6,6 +6,14 @@
 
 This repository contains the material for the hands-on session **RAP100 - Building Fiori Apps with the ABAP RESTful application Programming Model (RAP)**.
 
+- [Overview](#overview)
+- [About the ABAP RESTful Application Programming Model](#about-the-abap-restful-application-programming-model)
+- [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
+- [Exercises](#exercises)
+- [Related Tutorials](#related-tutorials)
+- [How to obtain support](#how-to-obtain-support)
+- [How to get familiar with the ABAP RESTful Application Programming Model](#how-to-get-familiar-with-the-abap-restful-application-programming-model)
+
 ## Overview
 
 This workshop is all about RAP fundamentals; especially about how to use RAP core features when building greenfield implementations.
@@ -30,7 +38,8 @@ Below is the simplified data model underlying the app.
 > - Workshop **[DEV260](../readme.md)**
 > - RAP Development Guide on the SAP Help Portal: **[Develop Applications](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/4cff5dff7f2642cab54e993c840a163e.html)**
 
-## About the ABAP RESTful Application Programming Model (RAP)
+## About the ABAP RESTful Application Programming Model
+[^Top of page](#)
 
 The ABAP RESTful Application Programming Model (RAP) is a set of concepts, tools, languages, and powerful frameworks provided on the ABAP platform. It supports the efficient development of innovative and cloud-ready enterprise applications, as well as the extension of SAP standard applications in an upgrade-stable way in the cloud and on-premise.
 
@@ -51,7 +60,7 @@ Please check the following two short documents how to do this if you have not al
 - [Install the ABAP Development Tools (ADT)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)  
 - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
 
-# Exercises
+## Exercises
 [^Top of page](#)
 
 Follow these steps to build a RAP-based simple App with a helper class and write various ABAP unit tests for it.
@@ -70,9 +79,11 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 
 
 ## Related Tutorials
-| Exercises |  Estimated time |
+[^Top of page](#)
+
+| Description |  Estimated time |
 | ------------- |  -- |
-| [Develop and Run an SAP Fiori Application with SAP Business Application Studio (optional)](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) | 25 min |
+| [Develop and Run a Fiori Application with SAP Business Application Studio (optional)](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) | 25 min |
 
 
 ## How to obtain support
@@ -91,5 +102,4 @@ You can find further information on the ABAP RESTful Application Programming Mod
 
 ## License
 Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
-
 
