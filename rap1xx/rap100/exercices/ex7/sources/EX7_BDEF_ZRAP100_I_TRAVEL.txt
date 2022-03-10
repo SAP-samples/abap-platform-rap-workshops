@@ -34,8 +34,7 @@ early numbering
 
   action ( features : instance ) acceptTravel result [1] $self;
   action ( features : instance ) rejectTravel result [1] $self;
-
-  action deductDiscount parameter /dmo/a_travel_discount result [1] $self;
+  action ( features : instance ) deductDiscount parameter /dmo/a_travel_discount result [1] $self;
   factory action copyTravel [1];
 
   draft action ( features : instance ) Edit;
