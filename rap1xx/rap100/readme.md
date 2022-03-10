@@ -1,10 +1,10 @@
 [Home - RAP Managed BO Runtime Implementation](../readme.md)
 
-# RAP100 - Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)
+# RAP100 - Build Fiori Apps with the ABAP RESTful Application Programming Model (RAP)
 
 ## Description
 
-This repository contains the material for the hands-on session **RAP100 - Building SAP Fiori Apps with the ABAP RESTful application Programming Model (RAP)**.
+This repository contains the material for the hands-on session **RAP100 - Building Fiori Apps with the ABAP RESTful application Programming Model (RAP)**.
 
 ## Overview
 
