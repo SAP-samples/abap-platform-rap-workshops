@@ -8,7 +8,7 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Overview](#overview)
-- [About the ABAP RESTful Application Programming Model](#about-the-abap-restful-application-programming-model)
+- [About the ABAP RESTful Application Programming Model (RAP)](#about-the-abap-restful-application-programming-model)
 - [Exercises](#exercises)
 - [Related Tutorials](#related-tutorials)
 - [How to obtain support](#how-to-obtain-support)
