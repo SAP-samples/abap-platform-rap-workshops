@@ -173,7 +173,24 @@ In this exercise, you will create an ABAP package and database table. In your da
    4. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
 
       ![class](images/p77.png)
- 
+      
+   Below is a brief explanation of the generated artefacts.
+
+  **Base BO Layer**:
+   - ![ddls icon](images/adt_ddls.png)**`ZRAP100_I_TRAVEL_###`** (aka _base BO view_): This data definition defines the data model of the root entity _Travel_ which is the only  node of our business object).  
+   - ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`** (aka _base BO Behavior**): This behavior definition contains the definition of the standard transactional behavior of the base _Travel_ BO entity. It is a _managed_ and _draft-enabled_ implementation. 
+   - ![tabl icon](images/adt_tabl.png)**`ZRAP100_DTRAV###`** (aka _draft table_): This database table is used to temporary store the data from draft _travel_ instances at runtime. It is managed by the RAP framework. 
+   - ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`** (aka _behavior pool_): This ABAP which provides the implementation of the behavior defined in the behavior definition `ZRAP100_I_TRAVEL_###` of the base _Travel_ BO.
+
+  **BO Projection Layer**:
+   - ![ddls icon](images/adt_ddls.png)**`ZRAP100_C_TRAVEL_###`** (aka _BO projection view_ or _Consumption view_): This data definition which defines the projected data model of the root entity _Travel_  for our present consumption scenario – i.e. building a Fiori elements _Travel Processing App_. 
+   - ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TRAVEL_###`** (aka _BO Behavior projection_): This behavior definition which contains the projected transactional behavior of the _Travel_ BO entity for our present consumption scenario.
+   - ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TRAVEL_###`**: This metadata extension which enriches the BO projection view of the _Travel_ entity, **`ZRAP100_C_TRAVEL_###`**, with UI semantics for the later rendering of the Fiori elements app.
+
+  **Business Service Layer** 
+   - ![srvd icon](images/adt_srvd.png)**`ZRAP100_UI_TRAVEL_###`**: This service definition is used to define the relevant entity sets for our service and also provide local aliases if needed. We only have the _Travel_ entity specified in the present scenario.
+   - ![srvb icon](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`**: This service binding is used to expose the generated service definition as OData V4 based UI service.
+
  </details>
  
 ## Exercise 1.5: Preview the Travel App
@@ -218,5 +235,4 @@ Find the source code for the database table definition and the data generator cl
 
 - ![document](images/doc.png) [Table ZRAP100_ATRAV###](sources/EX1_TAB_ZRAP100_ATRAV.txt)
 - ![document](images/doc.png) [Class ZRAP100_GEN_DATA_###](sources/EX1_CLASS_ZRAP100_GEN_DATA.txt)
-
 
