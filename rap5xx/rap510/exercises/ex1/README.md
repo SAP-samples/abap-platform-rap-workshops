@@ -421,7 +421,7 @@ define view entity ZRAP510_I_TRAVEL_CUBE_###
 
 2. Enter the following values and press **Next**
 
-   - *Name*: **ZRAP510_C_Trsvel_Query_###**
+   - *Name*: **ZRAP510_C_Travel_Query_###**
    - *Description*: **Query for travel data**
    - *Referenced Object*: **ZRAP510_I_Travel_Cube_###**
 
@@ -498,6 +498,8 @@ define view entity ZRAP510_C_TRAVEL_QUERY_###
       TotalOfTravels,
       @Semantics.amount.currencyCode: 'CurrencyCode'
       TotalPrice as TravelPrice
+
+}
 
    </pre>
 
