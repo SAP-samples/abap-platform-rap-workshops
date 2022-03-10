@@ -68,8 +68,8 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 | Exercises |  Estimated time |
 | ------------- |  -- |
 | [Getting Started](exercises/ex0/) | -- |
-| [Exercise 1: Create Database Table and Generate UI Service](exercises/ex1/) | -- |
-| [Exercise 2: Enhance the BO Data Model](exercises/ex2/) | -- |
+| [Exercise 1: Create Database Table and Generate UI Service](exercises/ex1/README.md) | -- |
+| [Exercise 2: Enhance the BO Data Model](exercises/ex2/README.md) | -- |
 | [Exercise 3: Enhance the BO Behavior – Numbering](exercises/ex3/) | -- |
 | [Exercise 4: Enhance the BO Behavior – Determinations](exercises/ex4/) | -- |
 | [Exercise 5: Enhance the BO Behavior – Validations](exercises/ex5/) | -- |
