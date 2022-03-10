@@ -12,7 +12,7 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 - [Exercises](#exercises)
 - [Related Tutorials](#related-tutorials)
 - [How to obtain support](#how-to-obtain-support)
-- [How to get familiar with the ABAP RESTful Application Programming Model](#how-to-get-familiar-with-the-abap-restful-application-programming-model)
+- [Further Information on RAP](#further-information-on-rap)
 
 
 ## Requirements for attending this workshop 
@@ -83,7 +83,7 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
-## How to get familiar with the ABAP RESTful Application Programming Model
+## Further Information on RAP
 [^Top of page](#)
 
 You can find further information on the ABAP RESTful Application Programming Model (RAP) here:
