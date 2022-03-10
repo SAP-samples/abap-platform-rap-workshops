@@ -6,13 +6,22 @@
 
 This repository contains the material for the hands-on session **RAP100 - Building Fiori Apps with the ABAP RESTful application Programming Model (RAP)**.
 
+- [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Overview](#overview)
 - [About the ABAP RESTful Application Programming Model](#about-the-abap-restful-application-programming-model)
-- [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Exercises](#exercises)
 - [Related Tutorials](#related-tutorials)
 - [How to obtain support](#how-to-obtain-support)
 - [How to get familiar with the ABAP RESTful Application Programming Model](#how-to-get-familiar-with-the-abap-restful-application-programming-model)
+
+
+## Requirements for attending this workshop 
+[^Top of page](#)
+
+> In order to participate in this hands-on session, you **MUST** have installed the latest version of Eclipse and the latest version of the ABAP Development Tools (ADT) in Eclipse.   
+> Please check the following two short documents how to do this if you have not already done it:  
+> - [Install the ABAP Development Tools (ADT)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)  
+> - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
 
 ## Overview
 
@@ -51,15 +60,6 @@ The illustration below shows the high-level end-to-end development stack when wo
 
 ![RAP Big Picture](images/rap_bigpicture.png)
 
-## Requirements for attending this workshop 
-[^Top of page](#)
-
-In order to participate in this hands-on session, you **MUST** have installed the latest version of Eclipse and the latest version of the ABAP Development Tools (ADT) in Eclipse.  
-
-Please check the following two short documents how to do this if you have not already done it:  
-- [Install the ABAP Development Tools (ADT)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)  
-- [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
-
 ## Exercises
 [^Top of page](#)
 
@@ -78,14 +78,6 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 | [Exercise 8: ABAP Unit Testing with the Entity Manipulation Language (optional)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex8/readme.md) | -- |
 
 
-## Related Tutorials
-[^Top of page](#)
-
-| Description |  Estimated time |
-| ------------- |  -- |
-| [Develop and Run a Fiori Application with SAP Business Application Studio (optional)](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) | 25 min |
-
-
 ## How to obtain support
 [^Top of page](#)
 
@@ -99,6 +91,7 @@ You can find further information on the ABAP RESTful Application Programming Mod
  - Free openSAP course [Building Apps with the ABAP RESTful Application Programming Model](https://community.sap.com/topics/btp-abap-environment/rap-opensap) ([direct link](https://open.sap.com/courses/cp13) to the course) 
  - [Modernization with RAP](https://blogs.sap.com/2021/10/18/modernization-with-rap/)
  - Most frequently asked questions: [RAP FAQ](https://blogs.sap.com/2020/10/16/abap-restful-application-programming-model-faq/) 
+ - SAP Fiori: [Develop and Run a Fiori Application with SAP Business Application Studio (optional)](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) 
 
 ## License
 Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
