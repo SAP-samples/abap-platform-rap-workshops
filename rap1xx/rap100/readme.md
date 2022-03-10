@@ -68,14 +68,14 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 | Exercises |  Estimated time |
 | ------------- |  -- |
 | [Getting Started](exercises/ex0/) | -- |
-| [Exercise 1: Create Database Table and Generate UI Service](exercises/ex1/README.md) | -- |
-| [Exercise 2: Enhance the BO Data Model](exercises/ex2/README.md) | -- |
-| [Exercise 3: Enhance the BO Behavior – Numbering](exercises/ex3/) | -- |
-| [Exercise 4: Enhance the BO Behavior – Determinations](exercises/ex4/) | -- |
-| [Exercise 5: Enhance the BO Behavior – Validations](exercises/ex5/) | -- |
-| [Exercise 6: Enhance the BO Behavior – Actions ](exercises/ex6/) | -- |
-| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (optional)](exercises/ex7/) | -- |
-| [Exercise 8: ABAP Unit Testing with the Entity Manipulation Language (optional)](exercises/ex8/) | -- |
+| [Exercise 1: Create Database Table and Generate UI Service](exercises/ex1/readme.md) | -- |
+| [Exercise 2: Enhance the BO Data Model](exercises/ex2/readme.md) | -- |
+| [Exercise 3: Enhance the BO Behavior – Numbering](exercises/ex3/readme.md) | -- |
+| [Exercise 4: Enhance the BO Behavior – Determinations](exercises/ex4/readme.md) | -- |
+| [Exercise 5: Enhance the BO Behavior – Validations](exercises/ex5/readme.md) | -- |
+| [Exercise 6: Enhance the BO Behavior – Actions ](exercises/ex6/readme.md) | -- |
+| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (optional)](exercises/ex7/readme.md) | -- |
+| [Exercise 8: ABAP Unit Testing with the Entity Manipulation Language (optional)](exercises/ex8/readme.md) | -- |
 
 
 ## Related Tutorials
