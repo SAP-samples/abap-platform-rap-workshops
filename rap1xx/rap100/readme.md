@@ -77,7 +77,7 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 | [Exercise 3: Enhance the BO Behavior – Numbering](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex3/readme.md) | -- |
 | [Exercise 4: Enhance the BO Behavior – Determinations](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex4/readme.md) | -- |
 | [Exercise 5: Enhance the BO Behavior – Validations](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex5/readme.md) | -- |
-| [Exercise 6: Enhance the BO Behavior – Actions ](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex6/readme.md) | -- |
+| [Exercise 6: Enhance the BO Behavior – Actions (optional)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex6/readme.md) | -- |
 | [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (optional)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex7/readme.md) | -- |
 | [Exercise 8: ABAP Unit Testing with the Entity Manipulation Language (optional)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex8/readme.md) | -- |
 
