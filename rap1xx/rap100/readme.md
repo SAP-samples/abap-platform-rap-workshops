@@ -1,4 +1,4 @@
-[Home - RAP Managed BO Runtime Implementation](../readme.md)
+[Home - RAP Managed BO Runtime Implementation](../README.md)
 
 # RAP100 - Build Fiori Apps with the ABAP RESTful Application Programming Model (RAP)
 
