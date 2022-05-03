@@ -73,7 +73,7 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 | ------------- |  -- |
 | [Getting Started](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex0/readme.md) | -- |
 | [Exercise 1: Create Database Table and Generate UI Service](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex1/readme.md) | -- |
-| [Exercise 2: Enhance the BO Data Model](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercises/ex2/readme.md) | -- |
+| [Exercise 2: Enhance the BO Data Model](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex2/readme.md) | -- |
 | [Exercise 3: Enhance the BO Behavior – Numbering](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercises/ex3/readme.md) | -- |
 | [Exercise 4: Enhance the BO Behavior – Determinations](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercises/ex4/readme.md) | -- |
 | [Exercise 5: Enhance the BO Behavior – Validations](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercises/ex5/readme.md) | -- |
