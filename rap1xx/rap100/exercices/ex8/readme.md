@@ -1,6 +1,6 @@
 [Home - RAP100](../../#exercises)
 
-# \[optional\] Exercises 8: ABAP Unit Testing with the Entity Manipulation Language (EML)
+# \[OPTIONAL\] Exercises 8: ABAP Unit Testing with the Entity Manipulation Language (EML)
 
 ## Introduction 
 In the previous exercise, you've implemented the dynamic instance feature control for some of the standard and non-standard operations of the _Travel_ entity. (see [Exercise 7](../ex7/readme.md)).
