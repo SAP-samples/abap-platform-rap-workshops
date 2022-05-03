@@ -1,7 +1,7 @@
 
 [Home - RAP100](../../#exercises)
 
-# \[optional\] Exercises 7: Enhance the BO Behavior – Dynamic Feature Control
+# \[OPTIONAL\] Exercises 7: Enhance the BO Behavior – Dynamic Feature Control
 
 ## Introduction 
 In the previous exercise, you've defined and implemented different instance-bound actions for the BO entity _Travel_ (see [Exercise 6](../ex6/readme.md)).
