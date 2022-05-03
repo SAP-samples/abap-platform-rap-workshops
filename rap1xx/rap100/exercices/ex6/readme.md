@@ -47,7 +47,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
  <details>
   <summary>Click to expand!</summary>
   
-1. Go to your behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`** and define both actions.
+1. Go to your behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`** and define both actions.
    
    For that, insert the following code snippet after the defined validations as shown on the screenshot below.
    
@@ -56,7 +56,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    action rejectTravel result [1] $self;   
    ```      
    
-   ![Travel BO Behavior Definition](images/b.png)      
+   ![Travel BO Behavior Definition](images/n.png)      
    
    **Short explanation**:  
    - The name of the instance action is specified after the keyword **`action`**
@@ -69,6 +69,20 @@ In this step, you will define, implement, and expose two instance-bound non-fact
 
 2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
+3. Now, declare the required method in behavior implementation class with the ADT Quick Fix.
+
+   Set the cursor on one of the action names, **`acceptTravel`** or **`rejectTravel`**, and press **Ctrl+1** to open the **Quick Assist** view.
+  
+   Select the entry **`Add all 2 missing methods of entity zrap100_r_traveltp_### ...`** to add both methods to the local handler class `lcl_handler` of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**. 
+   
+   The result should look like this:
+   
+   ![Travel BO Behavior Pool](images/n2.png)
+
+4. Save ![save icon](images/adt_save.png) the changes.
+
+You are through with the definition of both actions.
+
    </details>
 
 ### Exercise 6.1.2: Implement the Actions
@@ -77,20 +91,12 @@ In this step, you will define, implement, and expose two instance-bound non-fact
 
  <details>
   <summary>Click to expand!</summary>
-
-1. Go to the the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`**, set the cursor on one of the action names, **`acceptTravel`** or **`rejectTravel`**, and press **Ctrl+1** to open the **Quick Assist** view.
-  
-   Select the entry _`Add all 2 missing methods of entity zrap100_i_travel_### ...`_ to add both methods to the local handler class `lcl_handler` of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**. 
    
-   The result should look like this:
-   
-   ![Travel BO Behavior Pool](images/b2.png)
-    
-2. Check the interfaces of the methods **`acceptTravel`** and **`rejectTravel`** in the declaration part of the local handler class in the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**.  
+1. First check the interfaces of the methods **`acceptTravel`** and **`rejectTravel`** in the declaration part of the local handler class in the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**.  
   
    Set the cursor on one of the method name, press **F2** to open the **ABAP Element Info** view, and examine the full method interface.  
 
-   ![Travel BO Behavior Pool](images/b3.png)  
+   ![Travel BO Behavior Pool](images/n3.png)  
    
    **Short explanation**:  
    - The addition **`FOR MODIFY`** after the method name, together with the addition **`FOR ACTION`** after the importing parameter, indicates that this method provides the implementation of an action.
@@ -110,7 +116,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    
     Go ahead with the implementation.  
 
-3. Implement the action **`acceptTravel`** in the implementation part of the local handler class. It is used to set the value of the field **`OverallStatus`** to **`Accepted`** (**`A`**). 
+2. Implement the action **`acceptTravel`** in the implementation part of the local handler class. It is used to set the value of the field **`OverallStatus`** to **`Accepted`** (**`A`**). 
    
    The logic consists of the following steps:  
    1. Implement the custom logic to determine the new values; **`Accepted`** (**`A`**) in the present scenario.  
@@ -125,7 +131,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    *************************************************************************************
      METHOD acceptTravel.
        " modify travel instance
-       MODIFY ENTITIES OF zrap100_i_travel_### IN LOCAL MODE
+       MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
          ENTITY Travel
            UPDATE FIELDS ( OverallStatus )
            WITH VALUE #( FOR key IN keys ( %tky          = key-%tky
@@ -134,7 +140,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
        REPORTED reported.
 
        " read changed data for action result
-       READ ENTITIES OF zrap100_i_travel_### IN LOCAL MODE
+       READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
          ENTITY Travel
            ALL FIELDS WITH
            CORRESPONDING #( keys )
@@ -148,7 +154,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    
    Your source code should look like this:
    
-   ![Travel BO Behavior Pool](images/b4.png)
+   ![Travel BO Behavior Pool](images/n4.png)
    
    **Short explanation**:  
    - The provided implementation is mass-enabled. This is recommended. 
@@ -156,7 +162,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    - The internal tables are filled inline using the constructor operator **`VALUE`** which made the need for explicit declaration obsolete.       
    - The EML statement **`READ ENTITIES ... ALL FIELDS WITH CORRESPONDING`** is used to read all fields of the updated instances from the buffer to fill the puput paramter `result`.      
 
-4. Implement the action  **`rejectTravel`** which is used to set the value of the field **`OverallStatus`** to **`Rejected`** (**`X`**). The business logic is similar to the one of the `acceptTravel` method.
+3. Implement the action  **`rejectTravel`** which is used to set the value of the field **`OverallStatus`** to **`Rejected`** (**`X`**). The business logic is similar to the one of the `acceptTravel` method.
    
    For that, replace the current method implementation with the code snippet provided below and replace all occurrences of the placeholder **`###`** with your group ID.
 
@@ -166,7 +172,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    *************************************************************************************
      METHOD rejectTravel.
        " modify travel instance(s)
-       MODIFY ENTITIES OF zrap100_i_travel_### IN LOCAL MODE
+       MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
          ENTITY Travel
            UPDATE FIELDS ( OverallStatus )
            WITH VALUE #( FOR key IN keys ( %tky          = key-%tky
@@ -175,7 +181,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
        REPORTED reported.
 
        " read changed data for action result
-       READ ENTITIES OF zrap100_i_travel_### IN LOCAL MODE
+       READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
          ENTITY Travel
            ALL FIELDS WITH
            CORRESPONDING #( keys )
@@ -189,11 +195,12 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    
    Your source code should look like this:
    
-   ![Travel BO Behavior Pool](images/b5.png)
+   ![Travel BO Behavior Pool](images/n5.png)
 
-5. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
+4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
-   You can try preview the enhanced Fiori elements App in the browser. You just need to refresh (**F5**) the tab if still open. 
+5. You are through with the implementation and can try to preview the enhanced Fiori elements app in the browser.    
+   You just need to refresh (**F5**) the browser if still open. 
    
    Well, **no action** will be displayed on the UI at this stage because they are not yet exposed on the BO projection layer and on the UI. Only determinations and validations are automatically called by the RAP framework at the specified trigger time. Actions must be explicitly exposed on the BO projection layer and called by the given consumer, the end-user in this scenario.
    
@@ -212,7 +219,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
 
 1. Expose the actions in the BO behavior projection.
    
-   Go to your behavior projection ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TRAVEL_###`** and insert the following code snippet as shown on the screenshot below. The keyword **`use action`** indicates that a behavior of the base BO is used on the projection layer.
+   Go to your behavior projection ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TRAVELTP_###`** and insert the following code snippet as shown on the screenshot below. The keyword **`use action`** indicates that a behavior of the base BO is used on the projection layer.
    
    ```
    use action acceptTravel;
@@ -229,7 +236,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
 
 3. Enhance UI semantics of the UI service to make the actions visible on the list report page and the object page; with the labels `Accept Travel` and `Reject Travel` specified. 
 
-   For that, go to your CDS metadata extension ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TRAVEL_###`** and replace the existing all `@UI` annotations placed before the element **`OverallStatus`** with the code snippet provided below as shown on the screenshot below.
+   For that, go to your CDS metadata extension ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TRAVELTP_###`** and replace the existing all `@UI` annotations placed before the element **`OverallStatus`** with the code snippet provided below as shown on the screenshot below.
    
    **Please note**: Some lines in the provided code snippet are commented out using **`//`**. **DO NOT remove them**. You will uncomment these lines in the following exercise steps.
    
@@ -292,7 +299,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
       - specify a value help using the element annotation `@Consumption.valueHelpDefinition`
       - hide an element using the element annotation `@UI.hidden`         
   
-2. Go to the behavior definition ![bdef icon](images/adt_bdef.png) **`ZRAP100_I_TRAVEL_###`** and insert the following code snippet after the actions defined in the previous step. 
+2. Go to the behavior definition ![bdef icon](images/adt_bdef.png) **`ZRAP100_R_TRAVELTP_###`** and insert the following code snippet after the actions defined in the previous step. 
 
    ```
    action deductDiscount parameter /dmo/a_travel_discount result [1] $self;
@@ -321,15 +328,15 @@ In this step, you will define, implement, and expose two instance-bound non-fact
   
 1. First declare the required method in the behavior pool.
   
-   Go to the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`**, set the cursor on the action name, **`deductDiscount`**, and press **Ctrl+1** to open the **Quick Assist** view. 
+   Go to the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`**, set the cursor on the action name, **`deductDiscount`**, and press **Ctrl+1** to open the **Quick Assist** view. 
    
-   Select the entry _**`Add method for action deductDiscount of entity zrap100_i_travel_### ...`**_ in the view to add the required method to the local handler class.     
+   Select the entry _**`Add method for action deductDiscount of entity zrap100_r_traveltp_### ...`**_ in the view to add the required method to the local handler class.     
       
    The result should look like this: 
    
-   ![Travel BO Behavior Definition](images/b11.png)    
+   ![Travel BO Behavior Definition](images/nn.png)    
 
-2. Go to the declaration part of the local handler class of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**, set the cursor on the method name, **`deductDiscount`**, press **F2**, and examine the full method interface.  
+2. Go to the declaration part of the local handler class of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**, set the cursor on the method name, **`deductDiscount`**, press **F2**, and examine the full method interface.  
    
    The major difference with the action methods `acceptTravel` and `rejectTravel` resides in the fact that the derived structure **`%param`** is part of the interface definition. **`%param`** is used to access the values of specifed action input parameters; **`deduct_discount`** in the present scenario (i.e. **`%param-deduct_discount`**).
    
@@ -358,7 +365,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    * Deduct the specified discount from the booking fee (BookingFee)
    **************************************************************************
     METHOD deductDiscount.
-      DATA travels_for_update TYPE TABLE FOR UPDATE ZRAP100_i_Travel_###.
+      DATA travels_for_update TYPE TABLE FOR UPDATE ZRAP100_R_TravelTP_###.
       DATA(keys_with_valid_discount) = keys.
 
       " check and handle invalid discount values
@@ -384,7 +391,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
       CHECK keys_with_valid_discount IS NOT INITIAL.
 
       " read relevant travel instance data (only booking fee)
-      READ ENTITIES OF ZRAP100_i_Travel_### IN LOCAL MODE
+      READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
         ENTITY Travel
           FIELDS ( BookingFee )
           WITH CORRESPONDING #( keys_with_valid_discount )
@@ -402,13 +409,13 @@ In this step, you will define, implement, and expose two instance-bound non-fact
       ENDLOOP.
 
       " update data with reduced fee
-      MODIFY ENTITIES OF ZRAP100_i_Travel_### IN LOCAL MODE
+      MODIFY ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
         ENTITY Travel
          UPDATE FIELDS ( BookingFee )
          WITH travels_for_update.
 
       " read changed data for action result
-      READ ENTITIES OF ZRAP100_i_Travel_### IN LOCAL MODE
+      READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
         ENTITY Travel
           ALL FIELDS WITH
           CORRESPONDING #( travels )
@@ -422,7 +429,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    
    The result should look like this:
    
-   ![Travel BO Behavior Pool](images/b13.png)
+   ![Travel BO Behavior Pool](images/n9.png)
    
 
 4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
@@ -436,7 +443,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
  <details>
   <summary>Click to expand!</summary>
 
-1. Go to your behavior projection ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TRAVEL_###`** and insert the following code snippet after the actions added previously. 
+1. Go to your behavior projection ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TRAVELTP_###`** and insert the following code snippet after the actions added previously. 
    
    ```
    use action deductDiscount;
@@ -450,7 +457,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
 
 3. Enhance UI semantics to make the action **`deductDiscount`** only visible on the object page with the label _**Deduct Discount**_.
 
-   For that, open your metadata extension ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TRAVEL_###`** and un-comment following code line in the **`@UI.identification`** annotation block placed before the element **`OverallStatus`** by simply deleting **`//`** placed at the line beginning.
+   For that, open your metadata extension ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TRAVELTP_###`** and un-comment following code line in the **`@UI.identification`** annotation block placed before the element **`OverallStatus`** by simply deleting **`//`** placed at the line beginning.
 
    ```   
    ,{ type: #FOR_ACTION, dataAction: 'deductDiscount', label: 'Deduct Discount' }   
@@ -486,7 +493,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
  <details>
   <summary>Click to expand!</summary>
   
-1. Go to the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`** and insert the following code snippet after the action defined in the previous step.
+1. Go to the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`** and insert the following code snippet after the action defined in the previous step.
    
    ```ABAP   
    factory action copyTravel [1];
@@ -494,7 +501,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    
    The result should look like this:
    
-   ![Travel BO Behavior Definition](images/b16.png)
+   ![Travel BO Behavior Definition](images/n11.png)
          
    **Short explanation**:  
    For factory actions, the same rules apply as for instance non-factory actions with the following differences:
@@ -518,19 +525,19 @@ In this step, you will define, implement, and expose two instance-bound non-fact
 
 1. First declare the required method in the behavior pool.
   
-   Go to the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`**, set the cursor on the action name, **`copyTravel`**, and press **Ctrl+1** to open the **Quick Assist** view. 
+   Go to the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`**, set the cursor on the action name, **`copyTravel`**, and press **Ctrl+1** to open the **Quick Assist** view. 
    
-   Select the entry _**`Add method for action copyTravel of entity zrap100_i_travel_### ...`**_ in the view to add the required method to the local handler class.     
+   Select the entry _**`Add method for action copyTravel of entity zrap100_r_traveltp_### ...`**_ in the view to add the required method to the local handler class.     
       
    The result should look like this: 
    
-   ![Travel BO Behavior Definition](images/b17.png)    
+   ![Travel BO Behavior Definition](images/n12.png)    
 
-2. Go to the declaration part of the local handler class of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**, set the cursor on the method name, **`copyTravel`**, press **F2**, and examine the full method interface.  
+2. Go to the declaration part of the local handler class of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**, set the cursor on the method name, **`copyTravel`**, press **F2**, and examine the full method interface.  
    
-   ![Travel BO Behavior Pool](images/b18.png)          
+   ![Travel BO Behavior Pool](images/n13.png)          
 
-3. Implement the factory action **`copyTravel`** in the behavior pool ![class icon](images/adt_class.png) **`ZRAP100_BP_TRAVEL_###`**.
+3. Implement the factory action **`copyTravel`** in the behavior pool ![class icon](images/adt_class.png) **`ZRAP100_BP_TRAVELTP_###`**.
 
    > Factory actions have a default input paramater **`ResultIsActiveEntity`** for specifiying whether the new instances should be stored as draft or active instance. This information is passed together with the action request and is stored in the component **`%is_draft`** of the structure **`%param`** - i.e. **`%param-%is_draft`**.
    
@@ -551,14 +558,14 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    **************************************************************************
     METHOD copyTravel.
        DATA:
-         travels       TYPE TABLE FOR CREATE zrap100_i_travel_###\\travel.
+         travels       TYPE TABLE FOR CREATE zrap100_r_traveltp_###\\travel.
 
        " remove travel instances with initial key (TravelID)
        READ TABLE keys WITH KEY %cid = '' INTO DATA(key_with_inital_cid).
        ASSERT key_with_inital_cid IS INITIAL.
 
        " read the data from the travel instances to be copied
-       READ ENTITIES OF zrap100_i_travel_### IN LOCAL MODE
+       READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
          ENTITY travel
           ALL FIELDS WITH CORRESPONDING #( keys )
        RESULT DATA(travel_read_result)
@@ -582,7 +589,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
        ENDLOOP.
 
        " create new BO instance
-       MODIFY ENTITIES OF zrap100_i_travel_### IN LOCAL MODE
+       MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
          ENTITY travel
            CREATE FIELDS ( AgencyID CustomerID BeginDate EndDate BookingFee 
                            TotalPrice CurrencyCode OverallStatus Description )
@@ -596,7 +603,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    
    Your source code should like this:
    
-   ![Travel BO Behavior Pool](images/b19.png)   
+   ![Travel BO Behavior Pool](images/n14.png)   
     
 4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
  
@@ -611,7 +618,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
 
 1. Expose the new action **`copyTravel`** in the BO behavior projection.
 
-   For that, open your behavior projection ![bdef icon](images/adt_bdef.png) **`ZRAP100_C_TRAVEL_###`** and insert the following code snippet after the actions added previously. 
+   For that, open your behavior projection ![bdef icon](images/adt_bdef.png) **`ZRAP100_C_TRAVELTP_###`** and insert the following code snippet after the actions added previously. 
    
    ```
    use action copyTravel;
@@ -619,14 +626,14 @@ In this step, you will define, implement, and expose two instance-bound non-fact
    
    The result should like this:
 
-   ![Travel BO Behavior Projection](images/b20.png)
+   ![Travel BO Behavior Projection](images/n15.png)
       
 2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
 
 3. Enhance UI semantics of the UI service to make the action **`copyTravel`** only visible on the list report page with the label _**Copy Travel**_.
 
-   For that, open your CDS metadata extension ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TRAVEL_###`** and un-comment following code line in the **`@UI.lineItem`** annotation block placed before the element **`OverallStatus`**.
+   For that, open your CDS metadata extension ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TRAVELTP_###`** and un-comment following code line in the **`@UI.lineItem`** annotation block placed before the element **`OverallStatus`**.
 
    ```   
    ,{ type: #FOR_ACTION, dataAction: 'copyTravel', label: 'Copy Travel' }
@@ -662,7 +669,7 @@ you can continue with the next exercise – **\[Optional\][Exercise 7: Enhance t
 
 Find the source code for the behavior definition, the behavior implementation class (aka behavior pool), the behavior projection, and the metadata extension in the [sources](sources) folder. Don't forget to replace all occurences of the placeholder `###` with your group ID.
 
-- ![document](images/doc.png) [CDS BDEF ZRAP100_I_TRAVEL_###](sources/EX6_BDEF_ZRAP100_I_TRAVEL.txt)
-- ![document](images/doc.png) [Class ZRAP100_BP_TRAVEL_###](sources/EX6_CLASS_ZRAP100_BP_TRAVEL.txt)
-- ![document](images/doc.png) [CDS BDEF ZRAP100_C_TRAVEL_###](sources/EX6_BDEF_ZRAP100_C_TRAVEL.txt)
-- ![document](images/doc.png) [CDS MDE ZRAP100_C_TRAVEL_###](sources/EX6_DDLX_ZRAP100_C_TRAVEL.txt)
+- ![document](images/doc.png) [CDS BDEF ZRAP100_R_TRAVELTP_###](sources/EX6_BDEF_ZRAP100_R_TRAVELTP.txt)
+- ![document](images/doc.png) [Class ZRAP100_BP_TRAVELTP_###](sources/EX6_CLASS_ZRAP100_BP_TRAVELTP.txt)
+- ![document](images/doc.png) [CDS BDEF ZRAP100_C_TRAVELTP_###](sources/EX6_BDEF_ZRAP100_C_TRAVELTP.txt)
+- ![document](images/doc.png) [CDS MDE ZRAP100_C_TRAVELTP_###](sources/EX6_DDLX_ZRAP100_C_TRAVELTP.txt)

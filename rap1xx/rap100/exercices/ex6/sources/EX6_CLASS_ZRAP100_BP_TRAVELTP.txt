@@ -1,0 +1,370 @@
+CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
+  PRIVATE SECTION.
+    CONSTANTS:
+      BEGIN OF travel_status,
+        open     TYPE c LENGTH 1 VALUE 'O', "Open
+        accepted TYPE c LENGTH 1 VALUE 'A', "Accepted
+        rejected TYPE c LENGTH 1 VALUE 'X', "Rejected
+      END OF travel_status.
+    METHODS:
+      get_global_authorizations FOR GLOBAL AUTHORIZATION
+        IMPORTING
+        REQUEST requested_authorizations FOR Travel
+        RESULT result,
+      earlynumbering_create FOR NUMBERING
+        IMPORTING entities FOR CREATE Travel,
+      setStatusToOpen FOR DETERMINE ON MODIFY
+        IMPORTING keys FOR Travel~setStatusToOpen,
+      validateCustomer FOR VALIDATE ON SAVE
+        IMPORTING keys FOR Travel~validateCustomer.
+
+    METHODS validateDates FOR VALIDATE ON SAVE
+      IMPORTING keys FOR Travel~validateDates.
+    METHODS acceptTravel FOR MODIFY
+      IMPORTING keys FOR ACTION Travel~acceptTravel RESULT result.
+
+    METHODS rejectTravel FOR MODIFY
+      IMPORTING keys FOR ACTION Travel~rejectTravel RESULT result.
+    METHODS deductDiscount FOR MODIFY
+      IMPORTING keys FOR ACTION Travel~deductDiscount RESULT result.
+    METHODS copyTravel FOR MODIFY
+      IMPORTING keys FOR ACTION Travel~copyTravel.
+ENDCLASS.
+
+CLASS lcl_handler IMPLEMENTATION.
+  METHOD get_global_authorizations.
+  ENDMETHOD.
+  
+**************************************************************************
+* Internal early numbering
+**************************************************************************  
+  METHOD earlynumbering_create.
+    DATA:
+      entity        TYPE STRUCTURE FOR CREATE ZRAP100_R_TravelTP_###,
+      travel_id_max TYPE /dmo/travel_id.
+
+    "Ensure Travel ID is not set yet (idempotent)- must be checked when BO is draft-enabled
+    LOOP AT entities INTO entity WHERE TravelID IS NOT INITIAL.
+      APPEND CORRESPONDING #( entity ) TO mapped-travel.
+    ENDLOOP.
+
+    DATA(entities_wo_travelid) = entities.
+    "Remove the entries with an existing Travel ID
+    DELETE entities_wo_travelid WHERE TravelID IS NOT INITIAL.
+    "Get numbers
+    TRY.
+        cl_numberrange_runtime=>number_get(
+          EXPORTING
+            nr_range_nr       = '01'
+            object            = '/DMO/TRV_M'
+            quantity          = CONV #( lines( entities_wo_travelid ) )
+          IMPORTING
+            number            = DATA(number_range_key)
+            returncode        = DATA(number_range_return_code)
+            returned_quantity = DATA(number_range_returned_quantity)
+        ).
+      CATCH cx_number_ranges INTO DATA(lx_number_ranges).
+        LOOP AT entities_wo_travelid INTO entity.
+          APPEND VALUE #(  %cid      = entity-%cid
+                           %key      = entity-%key
+                           %is_draft = entity-%is_draft
+                           %msg      = lx_number_ranges
+                        ) TO reported-travel.
+          APPEND VALUE #(  %cid      = entity-%cid
+                           %key      = entity-%key
+                           %is_draft = entity-%is_draft
+                        ) TO failed-travel.
+        ENDLOOP.
+        EXIT.
+    ENDTRY.
+
+    "determine the first free travel ID from the number range
+    travel_id_max = number_range_key - number_range_returned_quantity.
+
+    "set travel ID for new instances w/o ID
+    LOOP AT entities_wo_travelid INTO entity.
+      travel_id_max += 1.
+      entity-TravelID = travel_id_max.
+
+      APPEND VALUE #( %cid      = entity-%cid
+                      %key      = entity-%key
+                      %is_draft = entity-%is_draft
+                    ) TO mapped-travel.
+    ENDLOOP.
+  ENDMETHOD.
+
+**********************************************************************
+* Determination: Set the overall travel status to 'open' if empty
+**********************************************************************
+  METHOD setStatusToOpen.
+    "Read travel instances of the transferred keys
+    READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+     ENTITY Travel
+       FIELDS ( OverallStatus )
+       WITH CORRESPONDING #( keys )
+     RESULT DATA(travels)
+     FAILED DATA(read_failed).
+
+    "If overall travel status is already set, do nothing, i.e. remove such instances
+    DELETE travels WHERE OverallStatus IS NOT INITIAL.
+    CHECK travels IS NOT INITIAL.
+
+    "else set overall travel status to open ('O')
+    MODIFY ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+      ENTITY Travel
+        UPDATE SET FIELDS
+        WITH VALUE #( FOR travel IN travels ( %tky    = travel-%tky
+                                              OverallStatus = travel_status-open ) )
+    REPORTED DATA(update_reported).
+
+    "Set the changing parameter
+    reported = CORRESPONDING #( DEEP update_reported ).
+  ENDMETHOD.
+
+**********************************************************************
+* Validation: Check the validity of the entered customer data
+**********************************************************************
+  METHOD validateCustomer.
+    " Read relevant travel instance data
+    READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+    ENTITY Travel
+     FIELDS ( CustomerID )
+     WITH CORRESPONDING #( keys )
+    RESULT DATA(lt_travel).
+
+    DATA lt_customer TYPE SORTED TABLE OF /dmo/customer WITH UNIQUE KEY customer_id.
+
+    " Optimization of DB select: extract distinct non-initial customer IDs
+    lt_customer = CORRESPONDING #( lt_travel DISCARDING DUPLICATES MAPPING customer_id = customerID EXCEPT * ).
+    DELETE lt_customer WHERE customer_id IS INITIAL.
+    IF lt_customer IS NOT INITIAL.
+
+      " Check if customer ID exists
+      SELECT FROM /dmo/customer FIELDS customer_id
+        FOR ALL ENTRIES IN @lt_customer
+        WHERE customer_id = @lt_customer-customer_id
+        INTO TABLE @DATA(lt_customer_db).
+    ENDIF.
+    " Raise msg for non existing and initial customer id
+    LOOP AT lt_travel INTO DATA(ls_travel).
+      IF ls_travel-CustomerID IS INITIAL
+         OR NOT line_exists( lt_customer_db[ customer_id = ls_travel-CustomerID ] ).
+
+        APPEND VALUE #(  TravelID = ls_travel-TravelID ) TO failed-travel.
+        APPEND VALUE #(  TravelID = ls_travel-TravelID
+                         %msg = new_message( id        = '/DMO/CM_FLIGHT_LEGAC'
+                                             number    = '002'
+                                             v1        = ls_travel-CustomerID
+                                             severity  = if_abap_behv_message=>severity-error )
+                         %element-CustomerID = if_abap_behv=>mk-on )
+          TO reported-travel.
+      ENDIF.
+    ENDLOOP.
+  ENDMETHOD.
+  
+**********************************************************************
+* Validation: Check the validity of begin and end dates
+**********************************************************************
+  METHOD validateDates.
+    READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+      ENTITY travel
+        FIELDS ( BeginDate EndDate )
+        WITH CORRESPONDING #( keys )
+      RESULT DATA(lt_travel_result).
+
+    LOOP AT lt_travel_result INTO DATA(ls_travel_result).
+
+      IF ls_travel_result-EndDate < ls_travel_result-BeginDate.  "if end_date is before begin_date
+
+        APPEND VALUE #( %key        = ls_travel_result-%key
+                        travelID    = ls_travel_result-TravelID ) TO failed-travel.
+
+        APPEND VALUE #( %key = ls_travel_result-%key
+                        %msg     = new_message( id       = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgid
+                                                number   = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgno
+                                                v1       = ls_travel_result-BeginDate
+                                                v2       = ls_travel_result-EndDate
+                                                v3       = ls_travel_result-TravelID
+                                                severity = if_abap_behv_message=>severity-error )
+                        %element-BeginDate = if_abap_behv=>mk-on
+                        %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+
+      ELSEIF ls_travel_result-BeginDate < cl_abap_context_info=>get_system_date( ).  "begin_date must be in the future
+
+        APPEND VALUE #( %key       = ls_travel_result-%key
+                        travelID   = ls_travel_result-TravelID ) TO failed-travel.
+
+        APPEND VALUE #( %key = ls_travel_result-%key
+                        %msg = new_message( id       = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgid
+                                            number   = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgno
+                                            severity = if_abap_behv_message=>severity-error )
+                        %element-BeginDate = if_abap_behv=>mk-on
+                        %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+      ENDIF.
+    ENDLOOP.
+  ENDMETHOD.
+  
+*************************************************************************************
+* Instance-bound non-factory action: Set the overall travel status to 'accepted' (A)
+*************************************************************************************
+  METHOD acceptTravel.
+    " modify travel instance
+    MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY Travel
+        UPDATE FIELDS ( OverallStatus )
+        WITH VALUE #( FOR key IN keys ( %tky          = key-%tky
+                                        OverallStatus = travel_status-accepted ) )  " 'A'
+    FAILED failed
+    REPORTED reported.
+
+    " read changed data for action result
+    READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY Travel
+        ALL FIELDS WITH
+        CORRESPONDING #( keys )
+      RESULT DATA(travels).
+
+    " set the action result parameter
+    result = VALUE #( FOR travel IN travels ( %tky   = travel-%tky
+                                              %param = travel ) ).
+  ENDMETHOD.
+  
+*************************************************************************************
+* Instance-bound non-factory action: Set the overall travel status to 'rejected' (X)
+*************************************************************************************
+  METHOD rejectTravel.
+    " modify travel instance(s)
+    MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY Travel
+        UPDATE FIELDS ( OverallStatus )
+        WITH VALUE #( FOR key IN keys ( %tky          = key-%tky
+                                        OverallStatus = travel_status-rejected ) )  " 'X'
+    FAILED failed
+    REPORTED reported.
+
+    " read changed data for action result
+    READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY Travel
+        ALL FIELDS WITH
+        CORRESPONDING #( keys )
+      RESULT DATA(travels).
+
+    " set the action result parameter
+    result = VALUE #( FOR travel IN travels ( %tky   = travel-%tky
+                                              %param = travel ) ).
+  ENDMETHOD.
+
+**************************************************************************
+* Instance-bound non-factory action with parameter `deductDiscount`:
+* Deduct the specified discount from the booking fee (BookingFee)
+**************************************************************************
+  METHOD deductDiscount.
+    DATA travels_for_update TYPE TABLE FOR UPDATE ZRAP100_R_TravelTP_###.
+    DATA(keys_with_valid_discount) = keys.
+
+    " check and handle invalid discount values
+    LOOP AT keys_with_valid_discount ASSIGNING FIELD-SYMBOL(<key_with_valid_discount>)
+      WHERE %param-discount_percent IS INITIAL OR %param-discount_percent > 100 OR %param-discount_percent <= 0.
+
+      " report invalid discount value appropriately
+      APPEND VALUE #( %tky                       = <key_with_valid_discount>-%tky ) TO failed-travel.
+
+      APPEND VALUE #( %tky                       = <key_with_valid_discount>-%tky
+                      %msg                       = NEW /dmo/cm_flight_messages(
+                                                       textid = /dmo/cm_flight_messages=>discount_invalid
+                                                       severity = if_abap_behv_message=>severity-error )
+                      %element-TotalPrice        = if_abap_behv=>mk-on
+                      %op-%action-deductDiscount = if_abap_behv=>mk-on
+                    ) TO reported-travel.
+
+      " remove invalid discount value
+      DELETE keys_with_valid_discount.
+    ENDLOOP.
+
+    " check and go ahead with valid discount values
+    CHECK keys_with_valid_discount IS NOT INITIAL.
+
+    " read relevant travel instance data (only booking fee)
+    READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+      ENTITY Travel
+        FIELDS ( BookingFee )
+        WITH CORRESPONDING #( keys_with_valid_discount )
+      RESULT DATA(travels).
+
+    LOOP AT travels ASSIGNING FIELD-SYMBOL(<travel>).
+      DATA percentage TYPE decfloat16.
+      DATA(discount_percent) = keys_with_valid_discount[ KEY draft %tky = <travel>-%tky ]-%param-discount_percent.
+      percentage =  discount_percent / 100 .
+      DATA(reduced_fee) = <travel>-BookingFee * ( 1 - percentage ) .
+
+      APPEND VALUE #( %tky       = <travel>-%tky
+                      BookingFee = reduced_fee
+                    ) TO travels_for_update.
+    ENDLOOP.
+
+    " update data with reduced fee
+    MODIFY ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+      ENTITY Travel
+       UPDATE FIELDS ( BookingFee )
+       WITH travels_for_update.
+
+    " read changed data for action result
+    READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+      ENTITY Travel
+        ALL FIELDS WITH
+        CORRESPONDING #( travels )
+      RESULT DATA(travels_with_discount).
+
+    " set action result
+    result = VALUE #( FOR travel IN travels_with_discount ( %tky   = travel-%tky
+                                                            %param = travel ) ).
+  ENDMETHOD.
+
+*******************************************************************************
+* Instance-bound factory action `copyTravel`: Copy an existing travel instance
+*******************************************************************************
+  METHOD copyTravel.
+    DATA:
+      travels       TYPE TABLE FOR CREATE zrap100_r_traveltp_###\\travel.
+
+    " remove travel instances with initial key (TravelID)
+    READ TABLE keys WITH KEY %cid = '' INTO DATA(key_with_inital_cid).
+    ASSERT key_with_inital_cid IS INITIAL.
+
+    " read the data from the travel instances to be copied
+    READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY travel
+       ALL FIELDS WITH CORRESPONDING #( keys )
+    RESULT DATA(travel_read_result)
+    FAILED failed.
+
+    LOOP AT travel_read_result ASSIGNING FIELD-SYMBOL(<travel>).
+      " fill in travel container for creating new travel instance
+      APPEND VALUE #( %cid      = keys[ KEY entity %key = <travel>-%key ]-%cid
+                      %is_draft = keys[ KEY entity %key = <travel>-%key ]-%param-%is_draft
+                      %data     = CORRESPONDING #( <travel> EXCEPT TravelID )
+                   )
+        TO travels ASSIGNING FIELD-SYMBOL(<new_travel>).
+
+      " adjust the copied travel instance data
+      "" BeginDate must be on or after system date
+      <new_travel>-BeginDate     = cl_abap_context_info=>get_system_date( ).
+      "" EndDate must be after BeginDate
+      <new_travel>-EndDate       = cl_abap_context_info=>get_system_date( ) + 30.
+      "" OverallStatus of new instances must be set to open ('O')
+      <new_travel>-OverallStatus = travel_status-open.
+    ENDLOOP.
+
+    " create new BO instance
+    MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY travel
+        CREATE FIELDS ( AgencyID CustomerID BeginDate EndDate BookingFee
+                        TotalPrice CurrencyCode OverallStatus Description )
+          WITH travels
+      MAPPED DATA(mapped_create).
+
+    " set the new BO instances
+    mapped-travel   =  mapped_create-travel .
+  ENDMETHOD.
+
+ENDCLASS.
