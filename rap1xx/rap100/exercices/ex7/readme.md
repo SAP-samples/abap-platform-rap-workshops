@@ -29,7 +29,7 @@ In the present exercise, you will implement the dynamic instance feature control
  <details>
   <summary>Click to expand!</summary>
     
-1. Open your behavior definition ![behaviordefinition](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`** and add the addition **`( features : instance )`** to the following operations as shown on following code snippet and the screenshot below:
+1. Open your behavior definition ![behaviordefinition](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`** and add the addition **`( features : instance )`** to the following operations as shown on following code snippet and the screenshot below:
     - Standard operations **`update`** and **`delete`** 
     - Draft action **`Edit`** 
     - Instance actions **`acceptTravel`**, **`rejectTravel`**, and **`deductDiscount`**
@@ -67,19 +67,19 @@ In the present exercise, you will implement the dynamic instance feature control
  <details>
   <summary>Click to expand!</summary>
 
-1. Go to the the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`**, set the cursor on one of the operation or action name, and press **Ctrl+1** to open the **Quick Assist** view.
+1. Go to the the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`**, set the cursor on one of the operation or action name, and press **Ctrl+1** to open the **Quick Assist** view.
   
-   Select the entry _**`Add method for operation instance_features of entity zrap100_i_travel_### ...`**_ to add the required methods to the local handler class `lcl_handler` of your behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**. 
+   Select the entry _**`Add method for operation instance_features of entity zrap100_r_traveltp_### ...`**_ to add the required methods to the local handler class `lcl_handler` of your behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**. 
    
    The result should look like this:
    
-   ![Travel BO Behavior Pool](images/f2.png)
+   ![Travel BO Behavior Pool](images/l.png)
     
 2. Check the interface of the method **`get_instance_features`** in the declaration part of the local handler class in the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**.  
   
    Set the cursor on one of the method name, press **F2** to open the **ABAP Element Info** view, and examine the full method interface.  
 
-   ![Travel BO Behavior Pool](images/f3.png)
+   ![Travel BO Behavior Pool](images/l2.png)
   
    **Short explanation**:  
    - The addition **`FOR INSTANCE FEATURES`** after the method name indicates that this method provides the implementation of an instance-based dynamic feature control.
@@ -106,39 +106,42 @@ In the present exercise, you will implement the dynamic instance feature control
    You can make use of the **F1 Help** for more information about the EML statements and other ABAP constructs.
   
       ```ABAP
-        METHOD get_instance_features.
-            " read relevant travel instance data
-            READ ENTITIES OF ZRAP100_i_Travel_### IN LOCAL MODE
-              ENTITY travel
-                 FIELDS ( TravelID OverallStatus )
-                 WITH CORRESPONDING #( keys )
-               RESULT DATA(travels)
-               FAILED failed.
+        **************************************************************************
+        * Instance-based dynamic feature control
+        **************************************************************************
+          METHOD get_instance_features.
+              " read relevant travel instance data
+              READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+                ENTITY travel
+                   FIELDS ( TravelID OverallStatus )
+                   WITH CORRESPONDING #( keys )
+                 RESULT DATA(travels)
+                 FAILED failed.
 
-            " evaluate the conditions, set the operation state, and set result parameter
-            result = VALUE #( FOR travel IN travels
-                               ( %tky                   = travel-%tky
+              " evaluate the conditions, set the operation state, and set result parameter
+              result = VALUE #( FOR travel IN travels
+                                 ( %tky                   = travel-%tky
 
-                                 %features-%update      = COND #( WHEN travel-OverallStatus = travel_status-accepted
-                                                                  THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                                 %features-%delete      = COND #( WHEN travel-OverallStatus = travel_status-accepted
-                                                                  THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                                 %action-acceptTravel   = COND #( WHEN travel-OverallStatus = travel_status-accepted
-                                                                  THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                                 %action-rejectTravel   = COND #( WHEN travel-OverallStatus = travel_status-rejected
-                                                                  THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                                 %action-deductDiscount = COND #( WHEN travel-OverallStatus = travel_status-accepted
-                                                                  THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                                 %action-Edit           = COND #( WHEN travel-OverallStatus = travel_status-accepted
-                                                                  THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                              ) ).
+                                   %features-%update      = COND #( WHEN travel-OverallStatus = travel_status-accepted
+                                                                    THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+                                   %features-%delete      = COND #( WHEN travel-OverallStatus = travel_status-open
+                                                                    THEN if_abap_behv=>fc-o-enabled ELSE if_abap_behv=>fc-o-disabled   )
+                                   %action-Edit           = COND #( WHEN travel-OverallStatus = travel_status-accepted
+                                                                    THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+                                   %action-acceptTravel   = COND #( WHEN travel-OverallStatus = travel_status-accepted
+                                                                      THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+                                   %action-rejectTravel   = COND #( WHEN travel-OverallStatus = travel_status-rejected
+                                                                    THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+                                   %action-deductDiscount = COND #( WHEN travel-OverallStatus = travel_status-open
+                                                                    THEN if_abap_behv=>fc-o-enabled ELSE if_abap_behv=>fc-o-disabled   )
+                                ) ).
 
-          ENDMETHOD.
+            ENDMETHOD.
       ```   
       
       Your source code should look like this:
       
-      ![Travel Behavior Pool](images/f4.png)
+      ![Travel Behavior Pool](images/l3.png)
       
   2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
  
@@ -188,7 +191,7 @@ you can continue with the next exercise – **\[Optional\][Exercise 8: ABAP Unit
 
 Find the source code for the behavior definition and behavior implementation class (aka behavior pool) in the [sources](sources) folder. Don't forget to replace all occurences of the placeholder `###` with your group ID.
 
-- ![document](images/doc.png) [CDS BDEF ZRAP100_I_TRAVEL_###](sources/EX7_BDEF_ZRAP100_I_TRAVEL.txt)
-- ![document](images/doc.png) [Class ZRAP100_BP_TRAVEL_###](sources/EX7_CLASS_ZRAP100_BP_TRAVEL.txt)
+- ![document](images/doc.png) [CDS BDEF ZRAP100_R_TRAVELTP_###](sources/EX7_BDEF_ZRAP100_R_TRAVELTP.txt)
+- ![document](images/doc.png) [Class ZRAP100_BP_TRAVELTP_###](sources/EX7_CLASS_ZRAP100_BP_TRAVELTP.txt)
 
 
