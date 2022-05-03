@@ -51,7 +51,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
 > Create the test class ![class icon](images/adt_class.png)**`ZRAP100_TC_TRAVEL_EML_###`** in your previously exercise package.
 
-<details>
+[//]: <details>
   <summary>Click to expand!</summary>
 
 1. Right-click on your package ![package icon](images/adt_package.png)**`ZRAP100_EX###`** and choose **New > ABAP Class** from the context menu.      
@@ -96,7 +96,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 > Enhance the ABAP Unit test class definition with all the needed methods.  
 > You will declare the needed special ABAP unit instance and static methods, and the test method for the code under test (_CUT_).
 
- <details>
+[//]: <details>
   <summary>Click to expand!</summary>
 
 1. Insert the code snippet provided below under the **`PRIVATE SECTION.`** statement in the class definition.  
@@ -150,7 +150,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
 > Implement the special static methods **`class_setup`** and **`class_teardown`**,  and the special instance method **`setup`** required by the ABAP unit framework.
 
- <details>
+[//]: <details>
   <summary>Click to expand!</summary>
 
 1. Implement the static method **`class_setup`** which is used to setup the test doubles environment and prepare the test data.       
@@ -256,7 +256,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 > Implement your BO test.   
 > The present code under test (CUT) is an EML statement that will create a _Travel_ instance and execute the action `acceptTravel` on it. This scenario will include `CREATE`, `EXECUTE` and  `COMMIT` EML statements.
 
- <details>
+[//]: <details>
   <summary>Click to expand!</summary>
 
 1. Implement the test method **`create_with_action`**.  
@@ -360,7 +360,7 @@ You are through with writing your BO test. Go ahead and execute it.
 
 > Run your implemented ABAP Unit test.
 
- <details>
+[//]: <details>
   <summary>Click to expand!</summary>
 
 1. Execute the implemented unit test.   
