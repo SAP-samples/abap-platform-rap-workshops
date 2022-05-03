@@ -5,7 +5,7 @@
 ---
 > **IMPORTANT NOTICE**: 
 > 
-> During the _**ABAP Developer Day**_ event on **March 15, 2022**, you will be using the user credentials sent to you by the SAP Team (from andre.f$$$$@sap.com). 
+> During the _**the event**_ event on **xxx xx, 2022**, you will be using the user credentials sent to you by the SAP Team (from andre.f$$$$@sap.com). 
 > Please contact us if you have not receive an email.  
 >
 > **Do not** use your account created on the SAP BTP ABAP Environment Trial.
@@ -83,6 +83,6 @@ More useful ADT shortcuts can be found here: [Link](https://blogs.sap.com/2013/1
 ## Summary 
 [^Top of page](#)
 
-You can continue with the next exercise - [Exercise 1: Create Database Table and Generate UI Service](../ex1/readme.md)
+You can continue with the next exercise - **[Exercise 1: Create Database Table and Generate UI Service](../ex1/readme.md)**
 
 ---
