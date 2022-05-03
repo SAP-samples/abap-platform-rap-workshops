@@ -55,7 +55,7 @@ In this exercise, you will create an ABAP package and database table. In your da
    2. Search for **database table**, select it, and click **Next >**.
    
    3. Maintain the required information (`###` is your group ID) and click **Next >**.
-      - Title: **`ZRAP100_ATRAV###`**
+      - Name: **`ZRAP100_ATRAV###`**
       - Description: _**`Travel data`**_                  
              
       ![table](images/p2.png)
@@ -138,7 +138,7 @@ In this exercise, you will create an ABAP package and database table. In your da
 > Create your OData v4 based UI services with the built-in ADT generator.   
 > The generated business service will be transactional, draft-enabled, and enrich with UI semantics for the generation of the Fiori elements app.
 
- <details>
+  <details>
   <summary>Click to expand!</summary>
 
    1. Right-click your database table ![table](images/adt_tabl.png)**`ZRAP100_ATRAV###`**  and select **Generate ABAP Repository Objects** from the context menu.  
@@ -156,40 +156,56 @@ In this exercise, you will create an ABAP package and database table. In your da
       | **RAP Layer**          |  **Artefacts**           | **Artefact Names**                                       |     
       |:---------------------- |:------------------------ |:-------------------------------------------------------- |
       | **Business Object**    |                          |                                                          |                        
-      |                        |  **Data Model**          |  Data Definition Name:   **`ZRAP100_I_Travel_###`**      |
+      |                        |  **Data Model**          |  Data Definition Name:   **`ZRAP100_R_TravelTP_###`**    |
       |                        |                          |  Alias Name:             **`Travel`**                    |   
-      |                        |  **Behavior**            |  Implementation Class:   **`ZRAP100_BP_Travel_###`**     |
+      |                        |  **Behavior**            |  Implementation Class:   **`ZRAP100_BP_TravelTP_###`**   |
       |                        |                          |  Draft Table Name:       **`ZRAP100_DTRAV###`**          |
-      | **Service Projection** (BO Projection)  |         |  Name:                     **`ZRAP100_C_Travel_###`**    |   
+      | **Service Projection** (BO Projection)  |         |  Name:                   **`ZRAP100_C_TravelTP_###`**    |   
       | **Business Services**  |                          |                                                          |          
       |                        |  **Service Definition**  |  Name:         **`ZRAP100_UI_Travel_###`**               |
       |                        |  **Service Binding**     |  Name:         **`ZRAP100_UI_Travel_O4_###`**            |
       |                        |                          |  Binding Type: **`OData V4 - UI`**                       |
                        
-      ![class](images/p7.png)                   
+      ![class](images/new0.png)                   
       
       Verify the maintained entries and press **Finish** to confirm. The needed artifacts will be generated.
 
    4. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
 
-      ![class](images/p77.png)
+      ![class](images/new.png)
       
-   Below is a brief explanation of the generated artefacts for the different RAP layers: Base BO, BO Projection, and Business Service. 
+   Below is a brief explanation of the generated artefacts for the different RAP layers: Base BO, BO Projection, and Business Service.
 
-  **Base Business Object (BO) `ZRAP100_I_TRAVEL_###`**:
-   - ![ddls icon](images/adt_ddls.png)**`ZRAP100_I_TRAVEL_###`** (aka _base BO view_): This data definition defines the data model of the root entity _Travel_ which is the only  node of our business object).  
-   - ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_TRAVEL_###`** (aka _base BO Behavior**): This behavior definition contains the definition of the standard transactional behavior of the base _Travel_ BO entity. It is a _managed_ and _draft-enabled_ implementation. 
-   - ![tabl icon](images/adt_tabl.png)**`ZRAP100_DTRAV###`** (aka _draft table_): This database table is used to temporary store the data from draft _travel_ instances at runtime. It is managed by the RAP framework. 
-   - ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`** (aka _behavior pool_): This ABAP which provides the implementation of the behavior defined in the behavior definition `ZRAP100_I_TRAVEL_###` of the base _Travel_ BO.
+---
+  **Base Business Object (BO) `ZRAP100_I_TRAVEL_###`** 
+  
+   | **Object Name**               |  **Description**         |     
+   |:----------------------------- |:------------------------ |
+   | ![ddls icon](images/adt_ddls.png)**`ZRAP100_R_TravelTP_###`**     | (aka _Base BO view_): This **data definition** defines the data model of the root entity _Travel_ which is the only  node of our business object).  |                      
+   | ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`**   | (aka _Base BO behavior**): This **behavior definition** contains the definition of the standard transactional behavior of the base _Travel_ BO entity. It is a _managed_ and _draft-enabled_ implementation.  |  
+   | ![tabl icon](images/adt_tabl.png)**`ZRAP100_DTRAV###`**   | (aka _Draft table_): This **database table** is used to temporary store the data from draft _travel_ instances at runtime. It is managed by the RAP framework.    |     
+   | ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**  | (aka _Behavior pool_): This **ABAP class** which provides the implementation of the behavior defined in the behavior definition `ZRAP100_R_TravelTP_###` of the base _Travel_ BO.   |  
+  
+---
+  **BO Projection `ZRAP100_C_TRAVEL_###`** 
+  
+  The BO projection represents the consumption specific view on the BO data model and behavior. 
 
-  **BO Projection `ZRAP100_C_TRAVEL_###`**:
-   - ![ddls icon](images/adt_ddls.png)**`ZRAP100_C_TRAVEL_###`** (aka _BO projection view_ or _Consumption view_): This data definition which defines the projected data model of the root entity _Travel_  for our present consumption scenario – i.e. building a Fiori elements _Travel Processing App_. 
-   - ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TRAVEL_###`** (aka _BO Behavior projection_): This behavior definition which contains the projected transactional behavior of the _Travel_ BO entity for our present consumption scenario.
-   - ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TRAVEL_###`**: This metadata extension which enriches the BO projection view of the _Travel_ entity, **`ZRAP100_C_TRAVEL_###`**, with UI semantics for the later rendering of the Fiori elements app.
-
+   | **Object Name**               |  **Description**         |     
+   |:----------------------------- |:------------------------ |
+   | ![ddls icon](images/adt_ddls.png)**`ZRAP100_C_TravelTP_###`**   | (aka _BO projection view_): This **data definition** is used to define the projected data model of the root entity _Travel_ relevant for the present scenario. Currently almost all fields of the underlying base BO view are exposed and the definition of metadata extension is allowed using the view annotations `@Metadata.allowExtensions: true`.  |           
+   | ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TravelTP_###`**   | (aka _BO behavior projection_): This **behavior definition** exposes the part of the underlying base _Travel_ BO entity which is relevant for the present scenario with the keyword **`use`**. Currently all standard CUD operations are exposed.  |        
+   | ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TravelTP_###`**   | This **metadata extension** is used to annotate view `ZRAP100_C_TRAVEL_###` and its elements with UI semantics via CDS annotations. |        
+   
+---
   **Business Service** 
-   - ![srvd icon](images/adt_srvd.png)**`ZRAP100_UI_TRAVEL_###`**: This service definition is used to define the relevant entity sets for our service and also provide local aliases if needed. We only have the _Travel_ entity specified in the present scenario.
-   - ![srvb icon](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`**: This service binding is used to expose the generated service definition as OData V4 based UI service.
+
+   | **Object Name**               |  **Description**         |     
+   |:----------------------------- |:------------------------ |
+   | ![srvd icon](images/adt_srvd.png)**`ZRAP100_UI_TRAVEL_###`**  | A service definition is used to define the relevant entity sets for our service and also to provide local aliases if needed. Only the _Travel_ entity set is exposed in the present scenario. |                      
+   | ![srvb icon](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`**  | This service binding is used to expose the generated service definition as OData V4 based UI service. Other binding types (protocols and scenarios) are supported in the service binding wizard.  |  
+   
+---
 
  </details>
  
@@ -235,4 +251,3 @@ Find the source code for the database table definition and the data generator cl
 
 - ![document](images/doc.png) [Table ZRAP100_ATRAV###](sources/EX1_TAB_ZRAP100_ATRAV.txt)
 - ![document](images/doc.png) [Class ZRAP100_GEN_DATA_###](sources/EX1_CLASS_ZRAP100_GEN_DATA.txt)
-
