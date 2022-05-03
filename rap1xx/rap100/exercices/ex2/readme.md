@@ -9,10 +9,10 @@ In this exercise, you will enhance the base BO data model as well as the project
 
 - [2.1 - Enhance the Base BO Data Model](#exercise-21-enhance-the-base-bo-data-model)
 - [2.2 - Enhance the Projected BO Data Model](#exercise-22-enhance-the-projected-bo-data-model)
-- [2.3 - Enhance the Metadata Extension to adjust the UI semantics ](#exercise-23-enhance-the-metadata-extension-to-adjust-the-ui-semantics)
-- [2.4 - Preview and Test the enhanced Fiori elements App](#exercise-24-preview-and-test-the-enhanced-travel-app)
+- [2.3 - Enhance the Metadata Extension to Adjust the UI semantics ](#exercise-23-enhance-the-metadata-extension-to-adjust-the-ui-semantics)
+- [2.4 - Preview and Test the Enhanced Fiori elements App](#exercise-24-preview-and-test-the-enhanced-travel-app)
 - [Summary](#summary)
-- [Appendix](#appendix)
+- [Appendix](#appendix) 
 
 
 > **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
@@ -20,7 +20,7 @@ In this exercise, you will enhance the base BO data model as well as the project
 ## Exercise 2.1: Enhance the Base BO Data Model
 [^Top of page](#)
 
-> Define and expose new associations in the base BO data model defined in the CDS view entity **`ZRAP100_I_TRAVEL_###`**:  
+> Define and expose new associations in the base BO data model defined in the CDS view entity **`ZRAP100_R_TRAVELTP_###`**:  
 > - Associations to the business entities _Customer_ (_\_Customer_) and _Agency_ (_\_Agency_) 
 > - Associations to helpful information about _Overall Status_ (_\_OverallStatus_) and _Currency_ (_\_Currency_) 
 
@@ -29,7 +29,7 @@ In this exercise, you will enhance the base BO data model as well as the project
 
  1. Define the new associations **`_Agency`**, **`_Customer`**, **`_OverallStatus`**, and **`_Currency`**.
  
-    Open your data definition ![datadefinition](images/adt_ddls.png)**`ZRAP100_I_TRAVEL_###`** and insert the following code snippet after the _select_ statement as shown on the screenshot below. 
+    Open your data definition ![datadefinition](images/adt_ddls.png)**`ZRAP100_R_TRAVELTP_###`** and insert the following code snippet after the _select_ statement as shown on the screenshot below. 
     
     Format the source code with **Pretty Printer** **(Shift+F1)**.     
      
@@ -42,21 +42,22 @@ In this exercise, you will enhance the base BO data model as well as the project
     
     Your source code should look like this:
     
-    ![association](images/a.png)            
+    ![association](images/new2.png)            
     
   2. Expose the defined associations **`_Agency`**, **`_Customer`**, **`_OverallStatus`** and **`_Currency`** in the selection list.   
   
      For that, insert the code snippet provided below in the selection list between the curly brackets (`{...}`) as shown on the screenshot.
 
      ```ABAP
+     ,
      //public associations
-     ,_Customer,
+     _Customer,
      _Agency,
      _OverallStatus,
      _Currency
      ```
       
-     ![association](images/a2.png)
+     ![association](images/new3.png)
       
    3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
@@ -65,13 +66,13 @@ In this exercise, you will enhance the base BO data model as well as the project
 ## Exercise 2.2: Enhance the Projected BO Data Model 
 [^Top of page](#)
 
-> Enhance the projected BO data model defined in the CDS projection view ![datadefinition](images/adt_ddls.png)**`ZRAP100_C_TRAVEL_###`**, aka consumption view.   
+> Enhance the projected BO data model defined in the CDS projection view ![datadefinition](images/adt_ddls.png)**`ZRAP100_C_TRAVELTP_###`**, aka consumption view.   
 > For example, you will allow the full-text search on some elements, add new elements for language-dependent descriptive texts, and define value helps.
 
  <details>
   <summary>Click to expand!</summary>
 
- 1. Open your data definition ![datadefinition](images/adt_ddls.png)**`ZRAP100_C_TRAVEL_###`** and specify ...
+ 1. Open your data definition ![datadefinition](images/adt_ddls.png)**`ZRAP100_C_TRAVELTP_###`** and specify ...
     - the element **'TravelID'** as the semantic key of the _Travel_ entity using the view annotation  
       **`@ObjectModel.semanticKey: ['TravelID']`**
     - the projection view as searchable using the view annotation **`@Search.searchable: true`**
@@ -80,7 +81,7 @@ In this exercise, you will enhance the base BO data model as well as the project
 
      Your source code should look like this:
      
-     ![association](images/a3.png)
+     ![association](images/new4.png)
 
  2. Enhance the selection list between the curly brackets (`{...}`) with the agency name, the customer name, and the descriptive text of the overall status.
     - Agency Name:  **`_Agency.Name              as AgencyName,`**
@@ -90,7 +91,7 @@ In this exercise, you will enhance the base BO data model as well as the project
 
      Your source code should look like this:
      
-     ![association](images/a4.png)
+     ![association](images/new5.png)
 
  3. Use the provided code snippets to specify various element annotations for the elements **`TravelID`**, **`AgencyID`**, **`CustomerID`**, **`Currency Code`**, and **`OverallStatus`** between the curly brackets as shown on the screenshot below. 
 
@@ -132,12 +133,12 @@ In this exercise, you will enhance the base BO data model as well as the project
 
     Alternatively, you can simply replace the source code of your BO projection view ![ddls icon](images/adt_ddls.png)**`ZRAP100_C_RAP_TRAVEL_###`** with the code provided in the source code document linked below and replace all occurences of the placeholder **`###`** with your group ID using **Ctrl+F**.
      
-    ![document](images/doc.png) **Source code document**: ![ddls icon](images/adt_ddls.png)[CDS projection view ZRAP100_C_RAP_TRAVEL_###](sources/EX2_DDLS_ZRAP100_C_RAP_TRAVEL.txt)   
+    ![document](images/doc.png) **Source code document**: ![ddls icon](images/adt_ddls.png)[CDS projection view ZRAP100_C_TRAVELTP_###](sources/EX2_DDLS_ZRAP100_C_TRAVELTP.txt)   
 
 
     Your source code should look like this:
     
-    ![projected view](images/annotation.png)
+    ![projected view](images/new6.png)
     
    4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
@@ -152,7 +153,7 @@ In this exercise, you will enhance the base BO data model as well as the project
   <summary>Click to expand!</summary>
 
 
- 1. Open your metadata extention ![metadataextension](images/adt_ddlx.png)**`ZRAP100_C_TRAVEL_###`** and adjust the UI annotations to achieve the following changes on the Fiori elements based UI of the _Travel App_.
+ 1. Open your metadata extention ![metadataextension](images/adt_ddlx.png)**`ZRAP100_C_TRAVELTP_###`** and adjust the UI annotations to achieve the following changes on the Fiori elements based UI of the _Travel App_.
   
     - Element **`TravelID`** - should also be a selection criteria in the filter bar and have high display importance on small windows.
     - Element **`AgencyID`** - should also be a selection criteria in the filter bar and have high display importance on small windows.
@@ -168,7 +169,7 @@ In this exercise, you will enhance the base BO data model as well as the project
 
     For that, replace the generated source code of the metadata extension with the code provided in the source code document linked below and replace all occurences of the placeholder **`###`** with your group ID using **Ctrl+F**.
      
-     ![document](images/doc.png) **Source code document**: ![ddlx icon](images/adt_ddlx.png)[CDS metadata extension ZRAP100_C_RAP_TRAVEL_###](sources/EX2_DDLX_ZRAP100_C_RAP_TRAVEL.txt)
+     ![document](images/doc.png) **Source code document**: ![ddlx icon](images/adt_ddlx.png)[CDS metadata extension ZRAP100_C_TRAVELTP_###](sources/EX2_DDLX_ZRAP100_C_TRAVELTP.txt)
     
    2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
@@ -210,6 +211,6 @@ you can continue with the next exercise – **[Exercise 3: Enhance the BO Behavi
 
 Find the source code for the base BO view, the projected BO view (aka BO projection view), and the CDS metadata extension in the [sources](sources) folder. Don't forget to replace all occurences of the placeholder `###` with your group ID.
 
-- ![document](images/doc.png) [CDS view ZRAP100_I_RAP_TRAVEL_###](sources/EX2_DDLS_ZRAP100_I_RAP_TRAVEL.txt)
-- ![document](images/doc.png) [CDS projection view ZRAP100_C_RAP_TRAVEL_###](sources/EX2_DDLS_ZRAP100_C_RAP_TRAVEL.txt)
-- ![document](images/doc.png) [CDS metadata extension ZRAP100_C_RAP_TRAVEL_###](sources/EX2_DDLX_ZRAP100_C_RAP_TRAVEL.txt)
+- ![document](images/doc.png) [CDS view ZRAP100_R_TRAVELTP_###](sources/EX2_DDLS_ZRAP100_R_TRAVELTP.txt)
+- ![document](images/doc.png) [CDS projection view ZRAP100_C_TRAVELTP_###](sources/EX2_DDLS_ZRAP100_C_TRAVELTP.txt)
+- ![document](images/doc.png) [CDS metadata extension ZRAP100_C_TRAVELTP_###](sources/EX2_DDLX_ZRAP100_C_TRAVELTP.txt)
