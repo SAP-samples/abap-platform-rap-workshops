@@ -5,10 +5,9 @@
 ---
 > **IMPORTANT NOTICE**: 
 > 
-> During the _**the event**_ event on **xxx xx, 2022**, you will be using the user credentials sent to you by the SAP Team (from andre.f$$$$@sap.com). 
-> Please contact us if you have not receive an email.  
+> Sie werden weitere Informationen zu Systemen und Benutzern vom SAP Team während der Hands-on-Session auf den DSAG-Technologietagen 2022 am 4. Mai 2022 bekommen. 
 >
-> **Do not** use your account created on the SAP BTP ABAP Environment Trial.
+> Session Share: https://bit.ly/dsag_tt2022_abap (_passwortgeschützt_)
 ---
 
 ## Introduction
