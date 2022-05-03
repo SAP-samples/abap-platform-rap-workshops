@@ -1,6 +1,6 @@
 [Home - RAP100](../../#exercises)
 
-# Exercises 6: Enhance the BO Behavior – Actions 
+# \[OPTIONAL\] Exercises 6: Enhance the BO Behavior – Actions 
 
 ## Introduction
 
