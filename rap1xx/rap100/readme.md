@@ -1,4 +1,4 @@
-[Home - RAP Managed BO Runtime Implementation](../README.md)
+[Home - RAP Managed BO Runtime Implementation](../readme.md)
 
 # RAP100 - Build Fiori Apps with the ABAP RESTful Application Programming Model (RAP)
 
@@ -71,15 +71,15 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 
 | Exercises |  Estimated time |
 | ------------- |  -- |
-| [Getting Started](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex0/) | -- |
-| [Exercise 1: Create Database Table and Generate UI Service](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex1/readme.md) | -- |
-| [Exercise 2: Enhance the BO Data Model](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex2/readme.md) | -- |
-| [Exercise 3: Enhance the BO Behavior – Numbering](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex3/readme.md) | -- |
-| [Exercise 4: Enhance the BO Behavior – Determinations](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex4/readme.md) | -- |
-| [Exercise 5: Enhance the BO Behavior – Validations (optional)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex5/readme.md) | -- |
-| [Exercise 6: Enhance the BO Behavior – Actions (optional)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex6/readme.md) | -- |
-| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (optional)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex7/readme.md) | -- |
-| [Exercise 8: ABAP Unit Testing with the Entity Manipulation Language (optional)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100/exercices/ex8/readme.md) | -- |
+| [Getting Started](exercises/ex0/readme.md) | -- |
+| [Exercise 1: Create Database Table and Generate UI Service](exercises/ex1/readme.md) | -- |
+| [Exercise 2: Enhance the BO Data Model](exercises/ex2/readme.md) | -- |
+| [Exercise 3: Enhance the BO Behavior – Numbering](exercises/ex3/readme.md) | -- |
+| [Exercise 4: Enhance the BO Behavior – Determinations](exercises/ex4/readme.md) | -- |
+| [Exercise 5: Enhance the BO Behavior – Validations](exercises/ex5/readme.md) | -- |
+| [Exercise 6: Enhance the BO Behavior – Actions (**optional**)](exercises/ex6/readme.md) | -- |
+| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (**optional**)](exercises/ex7/readme.md) | -- |
+| [Exercise 8: ABAP Unit Testing with the Entity Manipulation Language (**optional**)](exercises/ex8/readme.md) | -- |
 
 
 ## How to obtain support
