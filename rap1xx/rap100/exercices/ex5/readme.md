@@ -33,7 +33,7 @@ A validation is implicitly invoked by the business object’s framework if the t
  <details>
   <summary>Click to expand!</summary>
   
-1. Open your behavior definition ![behaviordefinition](images/adt_bdef.png) **`ZRAP100_I_TRAVEL_###`** to define the validations **`validateCustomer`** and **`validateDates`**.
+1. Open your behavior definition ![behaviordefinition](images/adt_bdef.png) **`ZRAP100_R_TRAVELTP_###`** to define the validations **`validateCustomer`** and **`validateDates`**.
      
    For that, add the following code snippet after the determination as shown on the screenshot below.
    
@@ -55,7 +55,7 @@ A validation is implicitly invoked by the business object’s framework if the t
      
    Your source code should look like this: 
    
-   ![validation](images/v0.png)           
+   ![validation](images/new18.png)           
      
      
    **Short explanation**:    
@@ -69,10 +69,12 @@ A validation is implicitly invoked by the business object’s framework if the t
    
    For that, set the cursor on one of the validation names and press **Ctrl+1** to open the **Quick Assist** view and select the entry _**`Add all 2 missing methods of entity zrap100_i_travel_### ...`**_.
    
-   As a result, the **`FOR VALIDATE ON SAVE`** methods **`validateCustomer`** and **`validateDates`** will be added to the local handler class `lcl_handler` of the behavior pool of the _Travel_ BO entity ![class icon](images/adt_class.png)`ZRAP100_BP_TRAVEL_###`.       
+   As a result, the **`FOR VALIDATE ON SAVE`** methods **`validateCustomer`** and **`validateDates`** will be added to the local handler class `lcl_handler` of the behavior pool of the _Travel_ BO entity ![class icon](images/adt_class.png)`ZRAP100_BP_TRAVELTP_###`.       
    
-   ![Travel BO Behavior Pool](images/v2.png)  
-      
+   ![Travel BO Behavior Pool](images/new19.png)  
+
+4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
+
 </details>
   
 ## Exercise 5.2: Implement the Validation `validateCustomer` 
@@ -118,7 +120,7 @@ A validation is implicitly invoked by the business object’s framework if the t
       **********************************************************************
       METHOD validateCustomer.
         " Read relevant travel instance data
-        READ ENTITIES OF ZRAP100_i_Travel_### IN LOCAL MODE
+        READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
         ENTITY Travel
          FIELDS ( CustomerID )
          WITH CORRESPONDING #( keys )
@@ -168,7 +170,7 @@ A validation is implicitly invoked by the business object’s framework if the t
  <details>
   <summary>Click to expand!</summary>
 
-1. In your implementation class ![class](images/adt_class.png) **`ZRAP100_BP_TRAVEL_###`**, replace the current method implementation of **`validateDates`** with following code snippet and replace all occurrences of the placeholder **`###`** with your group ID.
+1. In your implementation class ![class](images/adt_class.png) **`ZRAP100_BP_TRAVELTP_###`**, replace the current method implementation of **`validateDates`** with following code snippet and replace all occurrences of the placeholder **`###`** with your group ID.
 
    The main implementation steps are similar to the one of method **`validateCustomer`**. The only main difference is the validation logic. 
    
@@ -178,7 +180,7 @@ A validation is implicitly invoked by the business object’s framework if the t
    * Validation: Check the validity of begin and end dates
    **********************************************************************
      METHOD validateDates.
-       READ ENTITIES OF ZRAP100_i_Travel_### IN LOCAL MODE
+       READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
          ENTITY travel
            FIELDS ( BeginDate EndDate )
            WITH CORRESPONDING #( keys )
@@ -260,6 +262,6 @@ you can continue with the next exercise – **[Exercise 6: Enhance the BO Behavi
 
 Find the source code for the behavior definition and behavior implementation class (aka behavior pool) in the [sources](sources) folder. Don't forget to replace all occurences of the placeholder `###` with your group ID.
 
-- ![document](images/doc.png) [CDS BDEF ZRAP100_I_TRAVEL_###](sources/EX5_BDEF_ZRAP100_I_TRAVEL.txt)
-- ![document](images/doc.png) [Class ZRAP100_BP_TRAVEL_###](sources/EX5_CLASS_ZRAP100_BP_TRAVEL.txt)
+- ![document](images/doc.png) [CDS BDEF ZRAP100_R_TRAVELTP_###](sources/EX5_BDEF_ZRAP100_R_TRAVELTP.txt)
+- ![document](images/doc.png) [Class ZRAP100_BP_TRAVELTP_###](sources/EX5_CLASS_ZRAP100_BP_TRAVELTP.txt)
 
