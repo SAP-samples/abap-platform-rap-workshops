@@ -1,6 +1,6 @@
 [Home - RAP100](../../#exercises)
 
-# \[OPTIONAL\] Exercises 6: Enhance the BO Behavior – Actions 
+# Exercises 6: Enhance the BO Behavior – Actions 
 
 ## Introduction
 
@@ -110,7 +110,7 @@ You are through with the definition of both actions.
        
     > **Please note**:  
     > An action is implemented in a **`FOR MODIFY`** method with the addition **`FOR ACTION`**. The signature of an action method always depends on the type of action: factor or non-factory and instance or static.   
-    > The rules for implementing an action operation in a RAP business object is explained in the respective _**Implementation Contract**_.      
+    > The rules for implementing an action operation in a RAP business object are explained in the respective _**Implementation Contract**_.      
     >
     > **Further reading**: [Action Implementation](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/6edad7d113394602b4bfa37e07f37764.html)  **|**  [Implementation Contract: Action](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/de6569d4b92e40a0911c926170140beb.html)   
    
@@ -338,7 +338,7 @@ You are through with the definition of both actions.
 
 2. Go to the declaration part of the local handler class of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**, set the cursor on the method name, **`deductDiscount`**, press **F2**, and examine the full method interface.  
    
-   The major difference with the action methods `acceptTravel` and `rejectTravel` resides in the fact that the derived structure **`%param`** is part of the interface definition. **`%param`** is used to access the values of specifed action input parameters; **`deduct_discount`** in the present scenario (i.e. **`%param-deduct_discount`**).
+   The major difference with the action methods `acceptTravel` and `rejectTravel` resides in the fact that the derived structure **`%param`** is part of the interface definition. **`%param`** is used to access the values of specified action input parameters; **`deduct_discount`** in the present scenario (i.e. **`%param-deduct_discount`**).
    
    ![Travel BO Behavior Pool](images/b12.png)  
    
@@ -348,7 +348,7 @@ You are through with the definition of both actions.
    
    The main steps of the implemented business logic:
    1. First, check the validity of the passed discount values and remove invalid ones: 0 < `%param-deduct_discount` <= 100 
-   2. Implement the custom logic to determine the new values: The discounted booking must be calculated for each instances
+   2. Implement the custom logic to determine the new values: The discounted booking must be calculated for each instance
    3. Modify the relevant fields of the instances with the EML statement **`MODIFY`**: Here only the field **`BookingFee`** must be updated 
    4. Read the data from the buffer with the EML statement **`READ`** to fill the action result parameter **`result`**
    5. The implicit response parameters are filled where necessary
@@ -505,7 +505,7 @@ You are through with the definition of both actions.
          
    **Short explanation**:  
    For factory actions, the same rules apply as for instance non-factory actions with the following differences:
-   - Instance factory action are speicified with the keyword **`factory action`** before its name.
+   - Instance factory actions are specified with the keyword **`factory action`** before its name.
    - Output parameters are not allowed. Factory actions always produce one new BO entity instance with possible child entity instances. It is therefore not necessary to specify the **`result`** parameter.
    - The cardinality must always be **`[1]`** for factory actions.   
    - The result of a factory action is returned in the implicit response parameter **`mapped`** by a mapping between the BDEF derived type **`%cid`** and the key of the newly created entity instance.
