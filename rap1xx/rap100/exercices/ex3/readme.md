@@ -112,7 +112,7 @@ A number range object will be used to determine the unique travel identifiers.
    >
    > **Further reading**: [Implicit Response Parameters](https://help.sap.com/viewer/fc4c71aa50014fd1b43721701471913d/202110.000/en-US/aceaf8453d4b4e628aa29aa7dfd7d948.html)               
   
-2. Now go ahead and implement the method **`earlynumbering_create`** in the implementation part of the implementation class
+2. Now go ahead and implement the method **`earlynumbering_create`** in the implementation part of the implementation class.
    
    First, it must be ensured that the imported _Travel_ entity instances do not yet have an ID set. This must especially be checked when the BO is draft-enabled. 
    
@@ -137,7 +137,7 @@ A number range object will be used to determine the unique travel identifiers.
    
 3. Get the exact number range for the new ID according to number of relevant _Travel_ entity instances stored in the internal table **`entities_wo_travelid`** and determine the current max ID. 
 
-   The number range object **`/DMO/TRV_M`** of the _ABAP Flight Reference Scenario_ (located in the package `/DMO/FLIGH_REUSE`) is used in the example implementation provided below.
+   The number range object **`/DMO/TRV_M`** of the _ABAP Flight Reference Scenario_ (located in the package `/DMO/FLIGHT_REUSE`) is used in the example implementation provided below.
 
    > **Please note**: All participants are using the same number range object **`/DMO/TRV_M`**, therefore, the assigned Travel ID will not be gap-free.
    
@@ -214,7 +214,7 @@ A number range object will be used to determine the unique travel identifiers.
    or go to your service binding ![srvb icon](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`** and start the Fiori elements App preview for the **`Travel`** entity set.
 
 2. Create a new _Travel_ instance. An ID should now be assigned automatically by the logic you just implemented.   
-   No dialog for manualy entering a Travel ID should be displayed now. The Travel ID will be assigned automatically.
+   No dialog for manually entering a Travel ID should be displayed now. The Travel ID will be assigned automatically.
 
    ![Travel App Preview](images/preview2.png)
 
