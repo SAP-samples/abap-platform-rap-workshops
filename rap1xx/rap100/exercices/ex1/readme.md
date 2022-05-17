@@ -110,7 +110,7 @@ In this exercise, you will create an ABAP package and database table. In your da
       - Name: **`ZCL_RAP100_GEN_DATA_###`**
       - Description: _**`Generate demo data`**_      
    
-      ![class](images/p3.png)
+      ![class](images/demo.png)
 
    3. Select a transport request and click **Finish** to create the class.
    
@@ -136,7 +136,7 @@ In this exercise, you will create an ABAP package and database table. In your da
 [^Top of page](#)
 
 > Create your OData v4 based UI services with the built-in ADT generator.   
-> The generated business service will be transactional, draft-enabled, and enrich with UI semantics for the generation of the Fiori elements app.
+> The generated business service will be transactional, draft-enabled, and enriched with UI semantics for the generation of the Fiori elements app.
 
   <details>
   <summary>Click to expand!</summary>
