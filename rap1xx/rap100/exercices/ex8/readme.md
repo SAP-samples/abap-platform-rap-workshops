@@ -1,6 +1,6 @@
 [Home - RAP100](../../#exercises)
 
-# \[OPTIONAL\] Exercises 8: ABAP Unit Testing with the Entity Manipulation Language (EML)
+# \[optional\] Exercises 8: ABAP Unit Testing with the Entity Manipulation Language (EML)
 
 ## Introduction 
 In the previous exercise, you've implemented the dynamic instance feature control for some of the standard and non-standard operations of the _Travel_ entity. (see [Exercise 7](../ex7/readme.md)).
@@ -51,7 +51,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
 > Create the test class ![class icon](images/adt_class.png)**`ZRAP100_TC_TRAVEL_EML_###`** in your previously exercise package.
 
-[//]: <details>
+<details>
   <summary>Click to expand!</summary>
 
 1. Right-click on your package ![package icon](images/adt_package.png)**`ZRAP100_EX###`** and choose **New > ABAP Class** from the context menu.      
@@ -64,7 +64,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
    ![Test Class](images/testclass01.png)
 
-4. Specify the new global ABAP class as an ABAP Unit test class and also specify the test relation to the behavior definition (**`BDEF`**) of your _Travel_ BO entity **`ZRAP100_I_Travel_###`**.
+4. Specify the new global ABAP class as an ABAP Unit test class and also specify the test relation to the behavior definition (**`BDEF`**) of your _Travel_ BO entity **`ZRAP100_R_TravelTP_###`**.
        
    For that, insert the addition **`FOR TESTING RISK LEVEL HARMLESS DURATION SHORT`** after the addition **`CREATE PPUBLIC`** (just before the **`.`**) of the class definition to enable the class for ABAP Unit testing.
    
@@ -74,17 +74,17 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
    DURATION SHORT   
    ```
    
-   Then add the ABAP Doc comment provided as code snippet below at the top of class editor to specify the test relation with your behavior definition **`ZRAP100_I_Travel_###`** (TADIR entry: `R3TR BDEF`). Replace the placeholder `###` with your group ID.
+   Then add the ABAP Doc comment provided as code snippet below at the top of class editor to specify the test relation with your behavior definition **`ZRAP100_R_TravelTP_###`** (TADIR entry: `R3TR BDEF`). Replace the placeholder `###` with your group ID.
    
    > **Info**: In ABAP Unit testing, test relations allow the tests of a given object to be executed from the referenced object. In the present example, you will execute the test for your RAP BO in the separate test class. It is also possible to write ABAP Unit tests directly in the behavior implementation classes. 
    
    ```ABAP
-   "! @testing BDEF:ZRAP100_I_Travel_###
+   "! @testing BDEF:ZRAP100_R_TravelTP_###
    ```
    
    Your source code should look like this:
    
-   ![Test Class](images/testclass02.png)
+   ![Test Class](images/ex8_1.png)
  
 5. Save ![save icon](images/adt_save.png) the changes.
 
@@ -96,7 +96,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 > Enhance the ABAP Unit test class definition with all the needed methods.  
 > You will declare the needed special ABAP unit instance and static methods, and the test method for the code under test (_CUT_).
 
-[//]: <details>
+<details>
   <summary>Click to expand!</summary>
 
 1. Insert the code snippet provided below under the **`PRIVATE SECTION.`** statement in the class definition.  
@@ -150,7 +150,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
 > Implement the special static methods **`class_setup`** and **`class_teardown`**,  and the special instance method **`setup`** required by the ABAP unit framework.
 
-[//]: <details>
+<details>
   <summary>Click to expand!</summary>
 
 1. Implement the static method **`class_setup`** which is used to setup the test doubles environment and prepare the test data.       
@@ -164,7 +164,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
       " create the test doubles for the underlying CDS entities
       cds_test_environment = cl_cds_test_environment=>create_for_multiple_cds(
                         i_for_entities = VALUE #(
-                          ( i_for_entity = 'ZRAP100_I_Travel_###' ) ) ).
+                          ( i_for_entity = 'ZRAP100_R_TravelTP_###' ) ) ).
                           
       " create test doubles for additional used tables.
       sql_test_environment = cl_osql_test_environment=>create(
@@ -187,7 +187,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
    Your source code should look like this:
    
-   ![Test Class](images/testclass04.png)    
+   ![Test Class](images/ex8_2.png)    
   
 2. Save ![save icon](images/adt_save.png) the changes.
 
@@ -254,9 +254,9 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 [^Top of page](#)
 
 > Implement your BO test.   
-> The present code under test (CUT) is an EML statement that will create a _Travel_ instance and execute the action `acceptTravel` on it. This scenario will include `CREATE`, `EXECUTE` and  `COMMIT` EML statements.
+> The present code under test (CUT) is an EML statement that will create a _Travel_ instance and execute the action `acceptTravel` on it. This scenario will include `CREATE`, `EXECUTE` and `COMMIT` EML statements.
 
-[//]: <details>
+<details>
   <summary>Click to expand!</summary>
 
 1. Implement the test method **`create_with_action`**.  
@@ -266,7 +266,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
    ```ABAP   
       METHOD create_with_action.
         " create a complete composition: Travel (root) 
-        MODIFY ENTITIES OF ZRAP100_I_Travel_###
+        MODIFY ENTITIES OF ZRAP100_R_TravelTP_###
          ENTITY Travel
            CREATE SET FIELDS WITH
              VALUE #( (  %cid = 'ROOT1'
@@ -313,7 +313,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
         cl_abap_unit_assert=>assert_initial( msg = 'commit_reported' act = commit_reported ).
 
         " read the data from the persisted travel entity (using the test doubles)
-        SELECT * FROM ZRAP100_I_Travel_### INTO TABLE @DATA(lt_travel). "#EC CI_NOWHERE         
+        SELECT * FROM ZRAP100_R_TravelTP_### INTO TABLE @DATA(lt_travel). "#EC CI_NOWHERE         
         " assert the existence of the persisted travel entity      
         cl_abap_unit_assert=>assert_not_initial( msg = 'travel from db' act = lt_travel ).
         " assert the generation of a travel ID (key) at creation
@@ -328,7 +328,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
    The source code should look like this:
 
-   ![Test Class](images/testclass08.png)
+   ![Test Class](images/ex8_3.png)
          
    **Short explanation:**  
    - The complete CUT is a complex EML Statement comprising a **`MODIFY ENTITIES`** statement **`CREATE`** and **`EXECUTE`** additions, and a **`COMMIT ENTITIES`** statement.
@@ -346,7 +346,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
         - The second assertion block checks for an eventual failure of the performed commit by examinating the return parameters **`commit_failed`** and **`commit_reported`**.
    - Block (3)
         - Third assertion block to check the successful persistence of the data in the test doubles. 
-        - For that, the committed data is first read via a **`SELECT`** statement on the base BO view **`ZRAP100_I_Travel_####`**; The data is read from the configure test double.
+        - For that, the committed data is first read via a **`SELECT`** statement on the base BO view **`ZRAP100_R_TravelTP_####`**; The data is read from the configure test double.
         - Various assertion checks are performed. Please read the comment lines in the code snippet for more explanation.
 
 8.	Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
@@ -360,7 +360,7 @@ You are through with writing your BO test. Go ahead and execute it.
 
 > Run your implemented ABAP Unit test.
 
-[//]: <details>
+<details>
   <summary>Click to expand!</summary>
 
 1. Execute the implemented unit test.   
@@ -371,17 +371,17 @@ You are through with writing your BO test. Go ahead and execute it.
    
    ![Test Class](images/testclass09.png)
    
-10. Now, run the unit test from the related behavior definition **`ZRAP100_I_Travel_###`**.
+10. Now, run the unit test from the related behavior definition **`ZRAP100_R_TravelTP_###`**.
 
-    In the [8.1 - Create the ABAP Unit Test Class](#exercise-81-create-the-abap-unit-test-class) of this document, you've specified the test relation to your behavior definition **`ZRAP100_I_Travel_###`** using the special ABAP Doc comment **`"! @testing BDEF:ZRAP100_I_Travel_###`**, where **`###`** is your group ID.   
+    In the [8.1 - Create the ABAP Unit Test Class](#exercise-81-create-the-abap-unit-test-class) of this document, you've specified the test relation to your behavior definition **`ZRAP100_R_TravelTP_###`** using the special ABAP Doc comment **`"! @testing BDEF:ZRAP100_R_TravelTP_###`**, where **`###`** is your group ID.   
  
-    This means that every ABAP Unit tests implemented in this test class can be executed from the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_Travel_####`**.
+    This means that every ABAP Unit tests implemented in this test class can be executed from the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_####`**.
   
-    Select your BO behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_I_Travel_###`** in the **Project Explorer**, right-click on it, and select **Run as > ABAP Unit Test** (**Ctrl+Shift+F10**) from the context menu to executed all its related unit tests; Currently only one :-). 
+    Select your BO behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`** in the **Project Explorer**, right-click on it, and select **Run as > ABAP Unit Test** (**Ctrl+Shift+F10**) from the context menu to executed all its related unit tests; Currently only one :-). 
     
     All units tests related to this behavior definition are executed and displayed under _**Foreign Tests**_ in the _**ABAP Unit**_ view.
    
-    ![Test Class](images/unitt.png)
+    ![Test Class](images/ex8_6.png)
     
     That's it for this exercise!     
  

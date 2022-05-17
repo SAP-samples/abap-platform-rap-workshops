@@ -1,5 +1,5 @@
-"! @testing BDEF:ZRAP100_I_Travel_SOL
-CLASS zrap100_tc_travel_eml_### DEFINITION
+"! @testing BDEF:ZRAP100_R_TravelTP_000
+CLASS zrap100_tc_travel_eml_000 DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC
@@ -32,15 +32,18 @@ CLASS zrap100_tc_travel_eml_### DEFINITION
       " CUT: create with action call and commit
       create_with_action FOR TESTING RAISING cx_static_check.
 
+
 ENDCLASS.
 
 
-CLASS zrap100_tc_travel_eml_SOL IMPLEMENTATION.
+
+CLASS zrap100_tc_travel_eml_000 IMPLEMENTATION.
+
   METHOD class_setup.
     " create the test doubles for the underlying CDS entities
     cds_test_environment = cl_cds_test_environment=>create_for_multiple_cds(
                       i_for_entities = VALUE #(
-                        ( i_for_entity = 'ZRAP100_I_Travel_SOL' ) ) ).
+                        ( i_for_entity = 'ZRAP100_R_TravelTP_000' ) ) ).
 
     " create test doubles for additional used tables.
     sql_test_environment = cl_osql_test_environment=>create(
@@ -57,7 +60,7 @@ CLASS zrap100_tc_travel_eml_SOL IMPLEMENTATION.
     customer_mock_data = VALUE #( ( customer_id = '000093' last_name = 'Customer 000093' ) ).
     carrier_mock_data  = VALUE #( ( carrier_id = '123' name = 'carrier 123' ) ).
     flight_mock_data   = VALUE #( ( carrier_id = '123' connection_id = '9876' flight_date = begin_date
-    price = '2000' currency_code = 'EUR' ) ).
+                                    price = '2000' currency_code = 'EUR' ) ).
   ENDMETHOD.
 
   METHOD class_teardown.
@@ -66,66 +69,66 @@ CLASS zrap100_tc_travel_eml_SOL IMPLEMENTATION.
     sql_test_environment->destroy(  ).
   ENDMETHOD.
 
- METHOD create_with_action.
-     " create a complete composition: Travel (root)
-     MODIFY ENTITIES OF ZRAP100_I_Travel_SOL
-      ENTITY Travel
-        CREATE SET FIELDS WITH
-          VALUE #( (  %cid = 'ROOT1'
-                      AgencyID      = agency_mock_data[ 1 ]-agency_id
-                      CustomerID    = customer_mock_data[ 1 ]-customer_id
-                      BeginDate     = begin_date
-                      EndDate       = end_date
-                      Description   = 'TestTravel 1'
-                      TotalPrice    = '1100'
-                      BookingFee    = '20'
-                      CurrencyCode  = 'EUR'
-                 ) )
+  METHOD create_with_action.
+    " create a complete composition: Travel (root)
+    MODIFY ENTITIES OF ZRAP100_R_TravelTP_000
+     ENTITY Travel
+       CREATE SET FIELDS WITH
+         VALUE #( (  %cid = 'ROOT1'
+                     AgencyID      = agency_mock_data[ 1 ]-agency_id
+                     CustomerID    = customer_mock_data[ 1 ]-customer_id
+                     BeginDate     = begin_date
+                     EndDate       = end_date
+                     Description   = 'TestTravel 1'
+                     TotalPrice    = '1100'
+                     BookingFee    = '20'
+                     CurrencyCode  = 'EUR'
+                ) )
 
-      " execute action `acceptTravel`
-      ENTITY Travel
-        EXECUTE acceptTravel
-          FROM VALUE #( ( %cid_ref = 'ROOT1' ) )
+     " execute action `acceptTravel`
+     ENTITY Travel
+       EXECUTE acceptTravel
+         FROM VALUE #( ( %cid_ref = 'ROOT1' ) )
 
-     " execute action `deductDiscount`
-      ENTITY Travel
-        EXECUTE deductDiscount
-          FROM VALUE #( ( %cid_ref = 'ROOT1'
-                          %param-discount_percent = '20' ) )   "=> 20%
+    " execute action `deductDiscount`
+     ENTITY Travel
+       EXECUTE deductDiscount
+         FROM VALUE #( ( %cid_ref = 'ROOT1'
+                         %param-discount_percent = '20' ) )   "=> 20%
 
-      " result parameters
-      MAPPED   DATA(mapped)
-      FAILED   DATA(failed)
-      REPORTED DATA(reported).
+     " result parameters
+     MAPPED   DATA(mapped)
+     FAILED   DATA(failed)
+     REPORTED DATA(reported).
 
-     " expect no failures and messages
-     cl_abap_unit_assert=>assert_initial( msg = 'failed'   act = failed ).
-     cl_abap_unit_assert=>assert_initial( msg = 'reported' act = reported ).
+    " expect no failures and messages
+    cl_abap_unit_assert=>assert_initial( msg = 'failed'   act = failed ).
+    cl_abap_unit_assert=>assert_initial( msg = 'reported' act = reported ).
 
-     " expect a newly created record in mapped tables
-     cl_abap_unit_assert=>assert_not_initial( msg = 'mapped-travel'  act = mapped-travel ).
+    " expect a newly created record in mapped tables
+    cl_abap_unit_assert=>assert_not_initial( msg = 'mapped-travel'  act = mapped-travel ).
 
-     " persist changes into the database (using the test doubles)
-     COMMIT ENTITIES RESPONSES
-       FAILED   DATA(commit_failed)
-       REPORTED DATA(commit_reported).
+    " persist changes into the database (using the test doubles)
+    COMMIT ENTITIES RESPONSES
+      FAILED   DATA(commit_failed)
+      REPORTED DATA(commit_reported).
 
-     " no failures expected
-     cl_abap_unit_assert=>assert_initial( msg = 'commit_failed'   act = commit_failed ).
-     cl_abap_unit_assert=>assert_initial( msg = 'commit_reported' act = commit_reported ).
+    " no failures expected
+    cl_abap_unit_assert=>assert_initial( msg = 'commit_failed'   act = commit_failed ).
+    cl_abap_unit_assert=>assert_initial( msg = 'commit_reported' act = commit_reported ).
 
-     " read the data from the persisted travel entity (using the test doubles)
-     SELECT * FROM ZRAP100_I_Travel_SOL INTO TABLE @DATA(lt_travel). "#EC CI_NOWHERE
-     " assert the existence of the persisted travel entity
-     cl_abap_unit_assert=>assert_not_initial( msg = 'travel from db' act = lt_travel ).
-     " assert the generation of a travel ID (key) at creation
-     cl_abap_unit_assert=>assert_not_initial( msg = 'travel-id' act = lt_travel[ 1 ]-TravelID ).
-     " assert that the action has changed the overall status
-     cl_abap_unit_assert=>assert_equals( msg = 'overall status' exp = 'A' act = lt_travel[ 1 ]-OverallStatus ).
-     " assert the discounted booking_fee
-     cl_abap_unit_assert=>assert_equals( msg = 'discounted booking_fee' exp = '16' act = lt_travel[ 1 ]-BookingFee ).
+    " read the data from the persisted travel entity (using the test doubles)
+    SELECT * FROM ZRAP100_R_TravelTP_000 INTO TABLE @DATA(lt_travel). "#EC CI_NOWHERE
+    " assert the existence of the persisted travel entity
+    cl_abap_unit_assert=>assert_not_initial( msg = 'travel from db' act = lt_travel ).
+    " assert the generation of a travel ID (key) at creation
+    cl_abap_unit_assert=>assert_not_initial( msg = 'travel-id' act = lt_travel[ 1 ]-TravelID ).
+    " assert that the action has changed the overall status
+    cl_abap_unit_assert=>assert_equals( msg = 'overall status' exp = 'A' act = lt_travel[ 1 ]-OverallStatus ).
+    " assert the discounted booking_fee
+    cl_abap_unit_assert=>assert_equals( msg = 'discounted booking_fee' exp = '16' act = lt_travel[ 1 ]-BookingFee ).
 
-   ENDMETHOD.
+  ENDMETHOD.
 
   METHOD setup.
     " clear the test doubles per test
