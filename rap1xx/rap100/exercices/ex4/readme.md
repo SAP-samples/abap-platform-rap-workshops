@@ -23,8 +23,8 @@ In the present exercise, you will  define and implement a determination, `setSta
 > **Further reading**: [Determinations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/6edb0438d3e14d18b3c403c406fbe209.html)
 
 ### Excursus: Entity Manipulation Language (EML)
-> The Entity Manipulation Language (EML) is an extension of the ABAP language which offers an API-based access to RAP business objects. EML is used to implement the transactional behavior of RAP BOs and also access existing RAP BOs from outside the RAP context. 
-> The EML reference documentation of is provided in the ABAP Keyword Documentation. You can use the classic **F1 Help** to get detailed information on each statement by pressing **F1** in the ABAP editors. 
+> The Entity Manipulation Language (EML) is an extension of the ABAP language which offers an API-based access to RAP business objects. EML is used to implement the transactional behavior of RAP BOs and also access existing RAP BOs from outside the RAP context.   
+> The EML reference documentation is provided in the ABAP Keyword Documentation. You can use the classic **F1 Help** to get detailed information on each statement by pressing **F1** in the ABAP editors. 
 >
 > **Further reading**: [ABAP for RAP Business Objects](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenabap_for_rap_bos.htm) 
 
@@ -102,13 +102,14 @@ You will now implement the logic of the defined determination in the behavior po
 
 3. Now implement the method **`setStatusToOpen`** in the implementation part of the class.
    
-   The logic consists of the following steps:   
-   i) Read the travel instance(s) of the transferred keys (**`keys`**) using the EML statement **`READ ENTITIES`**
-   ii) Removed all _Travel_ instances where the overall status is already set   
-   iii) Set the overall status to **`open`** (**`O`**) for the remaining entries using the EML statement **`MODIFY ENTITIES`**   
-   iv) Set the changing parameter **`reported`**   
+   The logic consists of the following steps:    
+     i) Read the travel instance(s) of the transferred keys (**`keys`**) using the EML statement **`READ ENTITIES`**   
+     ii) Removed all _Travel_ instances where the overall status is already set     
+     iii) Set the overall status to **`open`** (**`O`**) for the remaining entries using the EML statement **`MODIFY ENTITIES`**   
+     iv) Set the changing parameter **`reported`**   
 
-   Insert the following code snippet in the method and replace all occurrences of the placeholder `###` with your group ID. You can use the **F1 Help** to get detailed information on the EML statements.
+   Insert the following code snippet in the method and replace all occurrences of the placeholder `###` with your group ID.   
+   You can use the **F1 help** to get detailed information on each EML statement.
    
    ```ABAP
     "Read travel instances of the transferred keys
