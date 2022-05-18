@@ -3,11 +3,12 @@
 # Exercise 0: Getting Started
 
 ---
-> **IMPORTANT NOTICE**: 
+> **WICHTIGE INFORMATION**: 
 > 
-> Sie werden weitere Informationen zu Systemen und Benutzern vom SAP Team während der Hands-on-Session auf den DSAG-Technologietagen 2022 am 4. Mai 2022 bekommen. 
->
-> Session Share: https://bit.ly/dsag_tt2022_abap (_passwortgeschützt_)
+> Im Rahmen der **DSAG ABAP Development Days Edition 2022** werden Sie die Übungen auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, D22, durchführen.  
+> Eine E-Mail mit den erforderlichen Benutzerdaten wurde Ihnen vom SAP-Team vor der Veranstaltung zugesandt.
+> 
+> Bitte kontaktieren Sie uns während der Veranstaltung, wenn Sie keine E-Mail erhalten haben. 
 ---
 
 ## Introduction
