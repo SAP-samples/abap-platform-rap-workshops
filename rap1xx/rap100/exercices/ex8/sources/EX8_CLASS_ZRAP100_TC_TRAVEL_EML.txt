@@ -57,10 +57,10 @@ CLASS zrap100_tc_travel_eml_### IMPLEMENTATION.
     end_date   = cl_abap_context_info=>get_system_date( ) + 30.
 
     agency_mock_data   = VALUE #( ( agency_id = '070041' name = 'Agency 070041' ) ).
-    customer_mock_data = VALUE #( ( customer_id = '###093' last_name = 'Customer ###093' ) ).
+    customer_mock_data = VALUE #( ( customer_id = '000093' last_name = 'Customer 000093' ) ).
     carrier_mock_data  = VALUE #( ( carrier_id = '123' name = 'carrier 123' ) ).
     flight_mock_data   = VALUE #( ( carrier_id = '123' connection_id = '9876' flight_date = begin_date
-                                    price = '2###' currency_code = 'EUR' ) ).
+                                    price = '2000' currency_code = 'EUR' ) ).
   ENDMETHOD.
 
   METHOD class_teardown.
