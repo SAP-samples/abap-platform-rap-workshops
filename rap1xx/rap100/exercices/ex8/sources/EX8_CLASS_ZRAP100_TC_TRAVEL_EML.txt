@@ -1,5 +1,5 @@
-"! @testing BDEF:ZRAP100_R_TravelTP_000
-CLASS zrap100_tc_travel_eml_000 DEFINITION
+"! @testing BDEF:ZRAP100_R_TravelTP_###
+CLASS zrap100_tc_travel_eml_### DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC
@@ -37,13 +37,13 @@ ENDCLASS.
 
 
 
-CLASS zrap100_tc_travel_eml_000 IMPLEMENTATION.
+CLASS zrap100_tc_travel_eml_### IMPLEMENTATION.
 
   METHOD class_setup.
     " create the test doubles for the underlying CDS entities
     cds_test_environment = cl_cds_test_environment=>create_for_multiple_cds(
                       i_for_entities = VALUE #(
-                        ( i_for_entity = 'ZRAP100_R_TravelTP_000' ) ) ).
+                        ( i_for_entity = 'ZRAP100_R_TravelTP_###' ) ) ).
 
     " create test doubles for additional used tables.
     sql_test_environment = cl_osql_test_environment=>create(
@@ -57,10 +57,10 @@ CLASS zrap100_tc_travel_eml_000 IMPLEMENTATION.
     end_date   = cl_abap_context_info=>get_system_date( ) + 30.
 
     agency_mock_data   = VALUE #( ( agency_id = '070041' name = 'Agency 070041' ) ).
-    customer_mock_data = VALUE #( ( customer_id = '000093' last_name = 'Customer 000093' ) ).
+    customer_mock_data = VALUE #( ( customer_id = '###093' last_name = 'Customer ###093' ) ).
     carrier_mock_data  = VALUE #( ( carrier_id = '123' name = 'carrier 123' ) ).
     flight_mock_data   = VALUE #( ( carrier_id = '123' connection_id = '9876' flight_date = begin_date
-                                    price = '2000' currency_code = 'EUR' ) ).
+                                    price = '2###' currency_code = 'EUR' ) ).
   ENDMETHOD.
 
   METHOD class_teardown.
@@ -71,7 +71,7 @@ CLASS zrap100_tc_travel_eml_000 IMPLEMENTATION.
 
   METHOD create_with_action.
     " create a complete composition: Travel (root)
-    MODIFY ENTITIES OF ZRAP100_R_TravelTP_000
+    MODIFY ENTITIES OF ZRAP100_R_TravelTP_###
      ENTITY Travel
        CREATE SET FIELDS WITH
          VALUE #( (  %cid = 'ROOT1'
@@ -118,7 +118,7 @@ CLASS zrap100_tc_travel_eml_000 IMPLEMENTATION.
     cl_abap_unit_assert=>assert_initial( msg = 'commit_reported' act = commit_reported ).
 
     " read the data from the persisted travel entity (using the test doubles)
-    SELECT * FROM ZRAP100_R_TravelTP_000 INTO TABLE @DATA(lt_travel). "#EC CI_NOWHERE
+    SELECT * FROM ZRAP100_R_TravelTP_### INTO TABLE @DATA(lt_travel). "#EC CI_NOWHERE
     " assert the existence of the persisted travel entity
     cl_abap_unit_assert=>assert_not_initial( msg = 'travel from db' act = lt_travel ).
     " assert the generation of a travel ID (key) at creation
