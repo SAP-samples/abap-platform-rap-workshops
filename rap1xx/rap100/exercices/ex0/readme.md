@@ -5,9 +5,7 @@
 ---
 > **WICHTIGE INFORMATION**: 
 > 
-> Im Rahmen der **DSAG ABAP Development Days 2022** werden Sie  auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, **D22**, durchführen. 
-> 
-> Dort finden Sie die Lösung zu den Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
+> Im Rahmen der **DSAG ABAP Development Days 2022** werden Sie  auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, **D22**, durchführen. Dort finden Sie die Lösung der verschiedenen Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
 > 
 > Eine E-Mail mit den erforderlichen Benutzerdaten wurde Ihnen vom SAP-Team vor der Veranstaltung zugesandt.  
 > Bitte kontaktieren Sie uns während der Veranstaltung, wenn Sie keine E-Mail erhalten haben. 
