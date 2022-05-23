@@ -3,12 +3,12 @@
 # Exercise 0: Getting Started
 
 ---
-> **IMPORTANT NOTICE**: 
+> **WICHTIGE INFORMATION**: 
 > 
-> During the _**the event**_ event on **xxx xx, 2022**, you will be using the user credentials sent to you by the SAP Team (from andre.f$$$$@sap.com). 
-> Please contact us if you have not receive an email.  
->
-> **Do not** use your account created on the SAP BTP ABAP Environment Trial.
+> Im Rahmen der **DSAG ABAP Development Days 2022** werden Sie  auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, **D22**, durchführen. Dort finden Sie die Lösung zu den Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
+> 
+> Eine E-Mail mit den erforderlichen Benutzerdaten wurde Ihnen vom SAP-Team vor der Veranstaltung zugesandt.  
+> Bitte kontaktieren Sie uns während der Veranstaltung, wenn Sie keine E-Mail erhalten haben. 
 ---
 
 ## Introduction
@@ -53,7 +53,7 @@ _**No results**_ means this group ID seems to be available. You can note it as y
 Once you've found an available group ID, choose **Cancel**.
 
 > **Note:**    
-> The screenshots in this document have been taken using group ID **`000`** and system **`PMD`**. We **don't recommend** using group ID `000`.
+> The screenshots in this document have been taken using group ID **`000`** and system **`D22`**. We **don't recommend** using group ID `000`.
 
 ## Helful Information
 [^Top of page](#)
