@@ -1,6 +1,6 @@
 [Home - RAP100](../../#exercises)
 
-# \[optional\] Exercises 8: ABAP Unit Testing with the Entity Manipulation Language (EML)
+# \[optional\] Exercises 8: Write an ABAP Unit Test for the RAP BO 
 
 ## Introduction 
 In the previous exercise, you've implemented the dynamic instance feature control for some of the standard and non-standard operations of the _Travel_ entity. (see [Exercise 7](../ex7/readme.md)).
@@ -9,7 +9,7 @@ In the present exercise, you will write scenario tests for your business object 
 
 - [8.1 - Create the ABAP Unit Test Class](#exercise-81-create-the-abap-unit-test-class)
 - [8.2 - Enhance the Test Class Definition](#exercise-82-enhance-the-test-class-definition)
-- [8.3 - Implement the Standard Special Test Class Methods](#exercise-83-implement-the-standard-special-test-class-methods)
+- [8.3 - Implement the Special Methods](#exercise-83-implement-the-special-methods)
 - [8.4 - Implement the Test Method `create_with_action`](#exercise-84-implement-the-test-method-create_with_action)
 - [8.5 - Run Your ABAP Unit Test](#exercise-85-run-your-abap-unit-test)
 - [Summary](#summary)
@@ -145,7 +145,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
      
  </details>
 
-## Exercise 8.3: Implement the Standard Special Test Class Methods
+## Exercise 8.3: Implement the Special Methods
 [^Top of page](#)
 
 > Implement the special static methods **`class_setup`** and **`class_teardown`**,  and the special instance method **`setup`** required by the ABAP unit framework.
@@ -268,17 +268,17 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
         " create a complete composition: Travel (root) 
         MODIFY ENTITIES OF ZRAP100_R_TravelTP_###
          ENTITY Travel
-           CREATE SET FIELDS WITH
-             VALUE #( (  %cid = 'ROOT1'
-                         AgencyID      = agency_mock_data[ 1 ]-agency_id
-                         CustomerID    = customer_mock_data[ 1 ]-customer_id
-                         BeginDate     = begin_date
-                         EndDate       = end_date
-                         Description   = 'TestTravel 1'
-                         TotalPrice    = '1100'
-                         BookingFee    = '20'
-                         CurrencyCode  = 'EUR'
-                    ) )
+         CREATE FIELDS ( AgencyID CustomerID BeginDate EndDate Description TotalPrice BookingFee CurrencyCode )
+           WITH VALUE #( (  %cid = 'ROOT1'
+                            AgencyID      = agency_mock_data[ 1 ]-agency_id
+                            CustomerID    = customer_mock_data[ 1 ]-customer_id
+                            BeginDate     = begin_date
+                            EndDate       = end_date
+                            Description   = 'TestTravel 1'
+                            TotalPrice    = '1100'
+                            BookingFee    = '20'
+                            CurrencyCode  = 'EUR'
+                         ) )
 
          " execute action `acceptTravel`
          ENTITY Travel
@@ -390,17 +390,13 @@ You are through with writing your BO test. Go ahead and execute it.
 ## Summary 
 [^Top of page](#)
 
-You've... 
+In this exercise you have... 
 - written an ABAP unit test for your _Travel_ BO entity with EML 
 - run the implemented ABAP Unit test.
 
 > **Further reading**: You can learn more on writing ABAP Unit tests for apps built with RAP here: [RAP400](../../../../rap4xx/rap400)
 
-Congratulations, you are done with this hands-on!
-
-In this hands-on session, you have learned how to build a simple Fiori elements app with _managed_ implementation type of the ABAP RESTful Application Programming Model (RAP) and how to write a BO test with ABAP Unit and the Entity Manipulation Language!
-
-Thank you for attending this workshop!
+You can continue with the next exercise – **\[Explore\] [Exercises 9: External API-based Access to the RAP BO with EML ](../ex9/readme.md)**
 
 ---
 

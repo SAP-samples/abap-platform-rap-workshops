@@ -73,17 +73,17 @@ CLASS zrap100_tc_travel_eml_### IMPLEMENTATION.
     " create a complete composition: Travel (root)
     MODIFY ENTITIES OF ZRAP100_R_TravelTP_###
      ENTITY Travel
-       CREATE SET FIELDS WITH
-         VALUE #( (  %cid = 'ROOT1'
-                     AgencyID      = agency_mock_data[ 1 ]-agency_id
-                     CustomerID    = customer_mock_data[ 1 ]-customer_id
-                     BeginDate     = begin_date
-                     EndDate       = end_date
-                     Description   = 'TestTravel 1'
-                     TotalPrice    = '1100'
-                     BookingFee    = '20'
-                     CurrencyCode  = 'EUR'
-                ) )
+       CREATE FIELDS ( AgencyID CustomerID BeginDate EndDate Description TotalPrice BookingFee CurrencyCode )
+         WITH VALUE #( (  %cid = 'ROOT1'
+                          AgencyID      = agency_mock_data[ 1 ]-agency_id
+                          CustomerID    = customer_mock_data[ 1 ]-customer_id
+                          BeginDate     = begin_date
+                          EndDate       = end_date
+                          Description   = 'TestTravel 1'
+                          TotalPrice    = '1100'
+                          BookingFee    = '20'
+                          CurrencyCode  = 'EUR'
+                      ) )
 
      " execute action `acceptTravel`
      ENTITY Travel
