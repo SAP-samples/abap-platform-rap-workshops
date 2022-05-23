@@ -12,7 +12,7 @@ When you have installed the ABAP Development Tools you can proceed with the foll
 
 ## Connect to the system
 
-> For this workshop we use a dediciated SAP BTP ABAP environment system called **D21**.
+> For this workshop we use a dediciated SAP BTP ABAP environment system called **D22**.
 
 <details>
   <summary>Click to expand!</summary>
