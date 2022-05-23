@@ -270,7 +270,7 @@ All cubes must have at least one measure. The measurable data are the quantifiab
   > **Please note:**   
   > As the *Referenced object* (aka as the *data source*) we use the interface CDS view **ZRAP100_I_Travel_###**, that you have created in the last exercise *RAP100* as part of your transactional application.  
    
-  > If you have not completed the exercise *RAP100* and you have not this transactional application, you can use our solution application `ZRAP100_I_Travel_SOL`.
+  > If you have not completed the exercise *RAP100* and you have not this transactional application, you can use our solution application `ZRAP100_R_TravelTP_SOL`.
 
    ![new cube](images/125.png)
 
