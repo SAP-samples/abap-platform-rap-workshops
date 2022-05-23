@@ -24,8 +24,6 @@
    ![Edit](images/460.png) 
  
 2. In ADT open your created travel application service binding from excercise RAP100 `ZRAP100_UI_TRAVEL_O4_###`.
-
-  ![service binding](images/.png)
   
   > If you did not complete the exercise RAP100 and you have not this service binding, you can use our solution service binding `ZRAP100_UI_TRAVEL_O4_SOL`.
 
