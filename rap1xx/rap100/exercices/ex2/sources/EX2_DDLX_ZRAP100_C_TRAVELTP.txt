@@ -20,6 +20,7 @@
         @UI.identification: [ {
           position: 10
         } ]
+        @UI.selectionField: [ { position: 10 } ]  
         TravelID;
 
         @UI.lineItem: [ {
@@ -29,6 +30,7 @@
         @UI.identification: [ {
           position: 20
         } ]
+        @UI.selectionField: [ { position: 20 } ]  
         AgencyID;
 
         @UI.lineItem: [ {
@@ -38,6 +40,7 @@
         @UI.identification: [ {
           position: 30
         } ]
+        @UI.selectionField: [ { position: 30 } ]  
         CustomerID;
 
         @UI.lineItem: [ {

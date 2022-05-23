@@ -185,11 +185,11 @@ In this exercise, you will enhance the base BO data model as well as the project
 
  1. Open your service binding ![servicebinding](images/adt_srvb.png) **`ZRAP100_UI_TRAVEL_O4_###`** and double-click the _**Travel**_ entity set to open the SAP Fiori elements preview.
  
- 2. Click **Go** on the app.
+ 2. Click **Go** on the app and check the result.
     
- 3. Check your result.
+ 3. Play around in the app, e.g. filter the entries and test the defined value helps by creating a new entry or editing an existing one.
  
-     ![package](images/preview.png)
+    ![package](images/preview.png)
 
 </details>
 
