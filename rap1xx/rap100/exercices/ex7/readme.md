@@ -182,7 +182,7 @@ Now that you've...
 - implemented it in the behavior pool, and
 - preview and test the enhanced Fiori elements _Travel_ app,
 
-you can continue with the next exercise – **\[Optional\][Exercise 8: ABAP Unit Testing with the Entity Manipulation Language](../ex8/readme.md)**
+you can continue with the next exercise – **\[Optional\] [Exercise 8: Write an ABAP Unit Test for the RAP BO](../ex8/readme.md)**
 
 ---
 
