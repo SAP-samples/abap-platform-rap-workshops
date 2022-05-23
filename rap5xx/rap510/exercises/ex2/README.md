@@ -121,7 +121,7 @@
 ## Exercises 2.4 - Assign IAM App to business catalog
 
 > In order to allow end users to use this newly created query the IAM App has to be assigned to a business catalog which in turn must be added to a role that is assigned to the end user.
-> For this workshop we have thus prepared the business catalog **ZRAP510_TRAVEL_QUERY_ALL** and have assigned this business catalog to the developer role. This allows thus all developers in the system **D21** to access to your Analytical Query that has been published via the Service Binding. 
+> For this workshop we have thus prepared the business catalog **ZRAP510_TRAVEL_QUERY_ALL** and have assigned this business catalog to the developer role. This allows thus all developers in the system **D22** to access to your Analytical Query that has been published via the Service Binding. 
 
 <details>
   <summary>Click to expand!</summary>  
