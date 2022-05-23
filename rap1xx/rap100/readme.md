@@ -23,9 +23,12 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 > - [Install the ABAP Development Tools (ADT)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)  
 > - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
 > 
-> You also need a user on SAP BTP ABAP environment – for example, on the SAP BTP Trial.   
+> You also need a user on SAP BTP ABAP environment – for example, on the SAP BTP Trial.  
+> - @**DSAG ABAP Development Days Edition 2022**: You will be working on a dedicated SAP BTP ABAP Environment system (**D22**) during the event. 
+<!-- 
 > Please check the following tutorial if you do not have a working account yet:  
 > - [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
+-->
 
 ## Overview
 
