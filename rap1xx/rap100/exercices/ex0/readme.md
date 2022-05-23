@@ -3,12 +3,12 @@
 # Exercise 0: Getting Started
 
 ---
-> **WICHTIGE INFORMATION**: 
+> **IMPORTANT NOTICE**: 
 > 
-> Im Rahmen der **DSAG ABAP Development Days Edition 2022** werden Sie  auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, D22, durchführen. Dort finden Sie die Lösung zu den Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
-> 
-> Eine E-Mail mit den erforderlichen Benutzerdaten wurde Ihnen vom SAP-Team vor der Veranstaltung zugesandt.  
-> Bitte kontaktieren Sie uns während der Veranstaltung, wenn Sie keine E-Mail erhalten haben. 
+> During the _**the event**_ event on **xxx xx, 2022**, you will be using the user credentials sent to you by the SAP Team (from andre.f$$$$@sap.com). 
+> Please contact us if you have not receive an email.  
+>
+> **Do not** use your account created on the SAP BTP ABAP Environment Trial.
 ---
 
 ## Introduction
@@ -38,11 +38,13 @@ Please check the following two short documents how to do this if you have not al
 ## Group ID
 [^Top of page](#)
 
-> **NOTE**: In case you've received a group ID by the SAP team, then please skip this section (**Group ID**) and go ahead with the next one (**Helful Information**).
+> **PLEASE NOTE**:  
+> In case you've received a group ID by the SAP team, then please skip this section (**Group ID**) and go ahead with the next one (**Helpful Information**).
 
 As the ABAP environment is used by many people, we've defined a naming pattern for each artefact you are going to create to make sure it doesn't conflict with other ones. For this you'll find the placeholder **`###`** used in object names that must be replaced with the group ID of your choice during the exercises. The group ID can contain **a maximum of 3 characters (numbers and/or letters)** - e.g. `000`, `XY1`, or `ABC`. 
 
-You can check for **already used group IDs** by choosing Open ABAP Development Object ![open_object_icon](images/adt_open_object.png) (Ctrl+Shift+A) and searching for e.g. **`zrap100_*###`**, where `###`is your chosen suffix. This list all artefacts fitting that pattern. Try to add e.g. your initials, followed by a number to verify nobody else is already using this group ID.
+You can check for **already used group IDs** by choosing **Open ABAP Development Object** ![open_object_icon](images/adt_open_object.png) or pressing **Ctrl+Shift+A**, and searching for e.g. **`zrap100_*###`**, where **`###`** is your chosen suffix. This lists all artefacts fitting that pattern.  
+Try to add e.g. your initials, followed by a number to verify nobody else is already using this group ID.
 
    ![Group id 01](images/groupid01.png)
 
@@ -58,7 +60,7 @@ Once you've found an available group ID, choose **Cancel**.
 
 ### Find/Replace
 
-In the course of these exercises you will frequently see the task to "_replace the placeholder `###` with your group ID_". For this it's recommended to make use of the **Find/Replace** feature of the Eclipse Editor. It can be opened either via the menu (**_Edit -> Find/Replace..._**) or via **Ctrl+F**.
+In the course of these exercises you will frequently see the task to "_replace the placeholder **`###`** with your group ID_". For this it's recommended to make use of the **Find/Replace** feature of the Eclipse Editor. It can be opened either via the menu (**_Edit -> Find/Replace..._**) or via **Ctrl+F**.
   
    ![find and replace](images/find01.png)
    
