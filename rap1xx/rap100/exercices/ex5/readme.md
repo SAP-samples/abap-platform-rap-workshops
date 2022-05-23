@@ -105,57 +105,78 @@ A validation is implicitly invoked by the business object’s framework if the t
 2. Now implement the method **`validateCustomer`** in the implementation part of the class.
    
     The logic consists of the following main steps:   
-    1. Read the travel instance(s) of the transferred keys (**`keys`**) using the EML statement **`READ ENTITIES`**. Only the field `CustomerID` is read in the present scenario.
-    2. Read all the transfered (distinct, non-initial) customer IDs and check if they exist.  
-    3. Prepare/raise messages for all transferred _travel_ instances with initial and non-existing customer ID (**`CustomerID`**)  
+    1. Read the travel instance(s) of the transferred keys (**`keys`**) using the EML statement **`READ ENTITIES`**.   
+    2. The addition **`FIELDS`** is used to specify the fields to be read. Only **`CustomerID`** is relevant for the present validation.  
+       The addition `ALL FIELDS` can be used to read all fields.
+    3. The addition **`IN LOCAL MODE`** is used to exclude feature controls and authorization checks.
+    4. Read all the transfered (distinct, non-initial) customer IDs and check if they exist.  
+    5. Prepare/raise messages for all transferred _travel_ instances with initial and non-existing customer ID (**`CustomerID`**)  
        and set the changing parameter **`reported`**   
 
    Replace the current method implementation of **`validateCustomer`** with following code snippet and replace all occurrences of the placeholder **`###`** with your group ID. 
    
    You can use the **F1 Help** to get detailed information on the different ABAP and EML statements.  
-   
+ 
       ```ABAP
       **********************************************************************
       * Validation: Check the validity of the entered customer data
       **********************************************************************
-      METHOD validateCustomer.
-        " Read relevant travel instance data
-        READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-        ENTITY Travel
-         FIELDS ( CustomerID )
-         WITH CORRESPONDING #( keys )
-        RESULT DATA(lt_travel).
+        METHOD validateCustomer.
+          "read relevant travel instance data
+          READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+          ENTITY Travel
+           FIELDS ( CustomerID )
+           WITH CORRESPONDING #( keys )
+          RESULT DATA(travels).
 
-        DATA lt_customer TYPE SORTED TABLE OF /dmo/customer WITH UNIQUE KEY customer_id.
+          DATA customers TYPE SORTED TABLE OF /dmo/customer WITH UNIQUE KEY customer_id.
 
-        " Optimization of DB select: extract distinct non-initial customer IDs
-        lt_customer = CORRESPONDING #( lt_travel DISCARDING DUPLICATES MAPPING customer_id = customerID EXCEPT * ).
-        DELETE lt_customer WHERE customer_id IS INITIAL.
-        IF lt_customer IS NOT INITIAL.
+          "optimization of DB select: extract distinct non-initial customer IDs
+          customers = CORRESPONDING #( travels DISCARDING DUPLICATES MAPPING customer_id = customerID EXCEPT * ).
+          DELETE customers WHERE customer_id IS INITIAL.
+          IF customers IS NOT INITIAL.
 
-          " Check if customer ID exists
-          SELECT FROM /dmo/customer FIELDS customer_id
-            FOR ALL ENTRIES IN @lt_customer
-            WHERE customer_id = @lt_customer-customer_id
-            INTO TABLE @DATA(lt_customer_db).
-        ENDIF.
-        " Raise msg for non existing and initial customer id
-        LOOP AT lt_travel INTO DATA(ls_travel).
-          IF ls_travel-CustomerID IS INITIAL
-             OR NOT line_exists( lt_customer_db[ customer_id = ls_travel-CustomerID ] ).
-
-            APPEND VALUE #(  TravelID = ls_travel-TravelID ) TO failed-travel.
-            APPEND VALUE #(  TravelID = ls_travel-TravelID
-                             %msg = new_message( id        = '/DMO/CM_FLIGHT_LEGAC'
-                                                 number    = '002'
-                                                 v1        = ls_travel-CustomerID
-                                                 severity  = if_abap_behv_message=>severity-error )
-                             %element-CustomerID = if_abap_behv=>mk-on )
-              TO reported-travel.
+            "check if customer ID exists
+            SELECT FROM /dmo/customer FIELDS customer_id
+                                      FOR ALL ENTRIES IN @customers
+                                      WHERE customer_id = @customers-customer_id
+              INTO TABLE @DATA(valid_customers).
           ENDIF.
-        ENDLOOP.
-      ENDMETHOD.   
-      ```   
+
+          "raise msg for non existing and initial customer id
+          LOOP AT travels INTO DATA(travel).
+
+            APPEND VALUE #(  %tky                 = travel-%tky
+                             %state_area          = 'VALIDATE_CUSTOMER'
+                           ) TO reported-travel.
+
+            IF travel-CustomerID IS  INITIAL.
+              APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+
+              APPEND VALUE #( %tky                = travel-%tky
+                              %state_area         = 'VALIDATE_CUSTOMER'
+                              %msg                = NEW /dmo/cm_flight_messages(
+                                                                      textid   = /dmo/cm_flight_messages=>enter_customer_id
+                                                                      severity = if_abap_behv_message=>severity-error )
+                              %element-CustomerID = if_abap_behv=>mk-on
+                            ) TO reported-travel.
+
+            ELSEIF travel-CustomerID IS NOT INITIAL AND NOT line_exists( valid_customers[ customer_id = travel-CustomerID ] ).
+              APPEND VALUE #(  %tky = travel-%tky ) TO failed-travel.
+
+              APPEND VALUE #(  %tky                = travel-%tky
+                               %state_area         = 'VALIDATE_CUSTOMER'
+                               %msg                = NEW /dmo/cm_flight_messages(
+                                                                      customer_id = travel-customerid
+                                                                      textid      = /dmo/cm_flight_messages=>customer_unkown
+                                                                      severity    = if_abap_behv_message=>severity-error )
+                               %element-CustomerID = if_abap_behv=>mk-on
+                            ) TO reported-travel.
+            ENDIF.
+
+          ENDLOOP.
+        ENDMETHOD.      
+      ```  
   
 3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
@@ -172,10 +193,78 @@ A validation is implicitly invoked by the business object’s framework if the t
 
 1. In your implementation class ![class](images/adt_class.png) **`ZRAP100_BP_TRAVELTP_###`**, replace the current method implementation of **`validateDates`** with following code snippet and replace all occurrences of the placeholder **`###`** with your group ID.
 
-   The main implementation steps are similar to the one of method **`validateCustomer`**. The only main difference is the validation logic. 
-   
-   This validation checks if the entered begin date (`BeginDate`) is in the future and if the value of the entered end date (`EndDate`) is after the begin date (`BeginDate`).       
-   ```ABAP
+   The main implementation steps are similar to the one of method **`validateCustomer`**. 
+ 
+   This validation is performed on the fields **`BeginDate`** and **`EndDate`**. It checks if the entered begin date (`BeginDate`) is in the future and if the value of the entered end date (`EndDate`) is after the begin date (`BeginDate`).   
+ 
+ ```ABAP
+ **********************************************************************
+ * Validation: Check the validity of begin and end dates
+ **********************************************************************
+   METHOD validateDates.
+
+     READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+       ENTITY Travel
+         FIELDS (  BeginDate EndDate TravelID )
+         WITH CORRESPONDING #( keys )
+       RESULT DATA(travels).
+
+     LOOP AT travels INTO DATA(travel).
+
+       APPEND VALUE #(  %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES' ) TO reported-travel.
+
+       IF travel-BeginDate IS INITIAL.
+         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+
+         APPEND VALUE #( %tky               = travel-%tky
+                         %state_area        = 'VALIDATE_DATES'
+                          %msg              = NEW /dmo/cm_flight_messages(
+                                                                 textid   = /dmo/cm_flight_messages=>enter_begin_date
+                                                                 severity = if_abap_behv_message=>severity-error )
+                         %element-BeginDate = if_abap_behv=>mk-on ) TO reported-travel.
+       ENDIF.
+       IF travel-BeginDate < cl_abap_context_info=>get_system_date( ) AND travel-BeginDate IS NOT INITIAL.
+         APPEND VALUE #( %tky               = travel-%tky ) TO failed-travel.
+
+         APPEND VALUE #( %tky               = travel-%tky
+                         %state_area        = 'VALIDATE_DATES'
+                          %msg              = NEW /dmo/cm_flight_messages(
+                                                                 begin_date = travel-BeginDate
+                                                                 textid     = /dmo/cm_flight_messages=>begin_date_on_or_bef_sysdate
+                                                                 severity   = if_abap_behv_message=>severity-error )
+                         %element-BeginDate = if_abap_behv=>mk-on ) TO reported-travel.
+       ENDIF.
+       IF travel-EndDate IS INITIAL.
+         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+
+         APPEND VALUE #( %tky               = travel-%tky
+                         %state_area        = 'VALIDATE_DATES'
+                          %msg                = NEW /dmo/cm_flight_messages(
+                                                                 textid   = /dmo/cm_flight_messages=>enter_end_date
+                                                                 severity = if_abap_behv_message=>severity-error )
+                         %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+       ENDIF.
+       IF travel-EndDate < travel-BeginDate AND travel-BeginDate IS NOT INITIAL
+                                            AND travel-EndDate IS NOT INITIAL.
+         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+
+         APPEND VALUE #( %tky               = travel-%tky
+                         %state_area        = 'VALIDATE_DATES'
+                         %msg               = NEW /dmo/cm_flight_messages(
+                                                                 textid     = /dmo/cm_flight_messages=>begin_date_bef_end_date
+                                                                 begin_date = travel-BeginDate
+                                                                 end_date   = travel-EndDate
+                                                                 severity   = if_abap_behv_message=>severity-error )
+                         %element-BeginDate = if_abap_behv=>mk-on
+                         %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+       ENDIF.
+     ENDLOOP.
+
+   ENDMETHOD. 
+ ```
+ 
+ ```ABAP
    **********************************************************************
    * Validation: Check the validity of begin and end dates
    **********************************************************************

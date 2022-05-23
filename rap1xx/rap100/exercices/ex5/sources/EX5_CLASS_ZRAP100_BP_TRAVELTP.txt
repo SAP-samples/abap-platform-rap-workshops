@@ -116,42 +116,60 @@ CLASS lcl_handler IMPLEMENTATION.
 * Validation: Check the validity of the entered customer data
 **********************************************************************
   METHOD validateCustomer.
-    " Read relevant travel instance data
-    READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+    "read relevant travel instance data
+    READ ENTITIES OF ZRAP100_r_TravelTP_### IN LOCAL MODE
     ENTITY Travel
      FIELDS ( CustomerID )
      WITH CORRESPONDING #( keys )
-    RESULT DATA(lt_travel).
+    RESULT DATA(travels).
 
-    DATA lt_customer TYPE SORTED TABLE OF /dmo/customer WITH UNIQUE KEY customer_id.
+    DATA customers TYPE SORTED TABLE OF /dmo/customer WITH UNIQUE KEY customer_id.
 
-    " Optimization of DB select: extract distinct non-initial customer IDs
-    lt_customer = CORRESPONDING #( lt_travel DISCARDING DUPLICATES MAPPING customer_id = customerID EXCEPT * ).
-    DELETE lt_customer WHERE customer_id IS INITIAL.
-    IF lt_customer IS NOT INITIAL.
+    "optimization of DB select: extract distinct non-initial customer IDs
+    customers = CORRESPONDING #( travels DISCARDING DUPLICATES MAPPING customer_id = customerID EXCEPT * ).
+    DELETE customers WHERE customer_id IS INITIAL.
+    IF customers IS NOT INITIAL.
 
-      " Check if customer ID exists
+      "check if customer ID exists
       SELECT FROM /dmo/customer FIELDS customer_id
-        FOR ALL ENTRIES IN @lt_customer
-        WHERE customer_id = @lt_customer-customer_id
-        INTO TABLE @DATA(lt_customer_db).
+                                FOR ALL ENTRIES IN @customers
+                                WHERE customer_id = @customers-customer_id
+        INTO TABLE @DATA(valid_customers).
     ENDIF.
-    " Raise msg for non existing and initial customer id
-    LOOP AT lt_travel INTO DATA(ls_travel).
-      IF ls_travel-CustomerID IS INITIAL
-         OR NOT line_exists( lt_customer_db[ customer_id = ls_travel-CustomerID ] ).
 
-        APPEND VALUE #(  TravelID = ls_travel-TravelID ) TO failed-travel.
-        APPEND VALUE #(  TravelID = ls_travel-TravelID
-                         %msg = new_message( id        = '/DMO/CM_FLIGHT_LEGAC'
-                                             number    = '002'
-                                             v1        = ls_travel-CustomerID
-                                             severity  = if_abap_behv_message=>severity-error )
-                         %element-CustomerID = if_abap_behv=>mk-on )
-          TO reported-travel.
+    "raise msg for non existing and initial customer id
+    LOOP AT travels INTO DATA(travel).
+
+      APPEND VALUE #(  %tky                 = travel-%tky
+                       %state_area          = 'VALIDATE_CUSTOMER'
+                     ) TO reported-travel.
+
+      IF travel-CustomerID IS  INITIAL.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+
+        APPEND VALUE #( %tky                = travel-%tky
+                        %state_area         = 'VALIDATE_CUSTOMER'
+                        %msg                = NEW /dmo/cm_flight_messages(
+                                                                textid   = /dmo/cm_flight_messages=>enter_customer_id
+                                                                severity = if_abap_behv_message=>severity-error )
+                        %element-CustomerID = if_abap_behv=>mk-on
+                      ) TO reported-travel.
+
+      ELSEIF travel-CustomerID IS NOT INITIAL AND NOT line_exists( valid_customers[ customer_id = travel-CustomerID ] ).
+        APPEND VALUE #(  %tky = travel-%tky ) TO failed-travel.
+
+        APPEND VALUE #(  %tky                = travel-%tky
+                         %state_area         = 'VALIDATE_CUSTOMER'
+                         %msg                = NEW /dmo/cm_flight_messages(
+                                                                customer_id = travel-customerid
+                                                                textid      = /dmo/cm_flight_messages=>customer_unkown
+                                                                severity    = if_abap_behv_message=>severity-error )
+                         %element-CustomerID = if_abap_behv=>mk-on
+                      ) TO reported-travel.
       ENDIF.
+
     ENDLOOP.
-  ENDMETHOD.
+  ENDMETHOD.        
   
 **********************************************************************
 * Validation: Check the validity of begin and end dates
@@ -194,4 +212,5 @@ CLASS lcl_handler IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
 ENDCLASS.
