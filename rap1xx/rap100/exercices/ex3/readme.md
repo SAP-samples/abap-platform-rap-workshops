@@ -68,7 +68,7 @@ A number range object will be used to determine the unique travel identifiers.
    
 4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
-5. To finish de definition, you need to declare the required method in behavior implementation class. You can use the ADT Quick Fix to do that.
+5. To complete the definition, you need to declare the required method in behavior implementation class. You can use the ADT Quick Fix to do that.
      
    Set the cursor on the statement **`create;`** and press **Ctrl+1** to open the **Quick Assist** view. 
    
