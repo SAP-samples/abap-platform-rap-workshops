@@ -6,7 +6,7 @@
 
 In the previous exercise, you've defined and implemented the early numbering for assigning automatically an identifier (ID) for a new instance of the BO entity _Travel_ (see [Exercise 3](../ex3/readme.md)).
 
-In the present exercise, you will  define and implement a determination, `setStatusToOpen`, which will be used to set a default value for the overall status of a _Travel_ entity instance. You will use the Entity Manipulation Language (EML) to implement the transactional behavior of the _Travel_ business object.
+In the present exercise, you will  define and implement a determination, `setStatusToOpen`, which will be used to set a default value for the overall status of a _Travel_ entity instance. You will use the Entity Manipulation Language (EML) to implement the transactional behavior of the _Travel_ business object. 
 
 - [4.1 - Define the Determination `setStatusToOpen`](#exercise-41-define-the-determination-setstatustoopen)
 - [4.2 - Implement the Determination `setStatusToOpen`](#exercise-42-implement-the-determination-setstatustoopen)
@@ -24,7 +24,11 @@ In the present exercise, you will  define and implement a determination, `setSta
 
 ### Excursus: Entity Manipulation Language (EML)
 > The Entity Manipulation Language (EML) is an extension of the ABAP language which offers an API-based access to RAP business objects. EML is used to implement the transactional behavior of RAP BOs and also access existing RAP BOs from outside the RAP context.   
-> The EML reference documentation is provided in the ABAP Keyword Documentation. You can use the classic **F1 Help** to get detailed information on each statement by pressing **F1** in the ABAP editors. 
+> 
+> PS: Some EML statements can be used in the so-called local mode - by using the [addition **`IN LOCAL MODE`**](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm) - to exclude feature controls and authorization checks. This addition can currently only be used in RAP BO implementations for the particular RAP BO itself, i. e. not for other RAP BOs.
+>
+> The EML reference documentation is provided in the ABAP Keyword Documentation.   
+> You can use the classic **F1 Help** to get detailed information on each statement by pressing **F1** in the ABAP editors. 
 >
 > **Further reading**: [ABAP for RAP Business Objects](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenabap_for_rap_bos.htm) 
 
@@ -103,10 +107,11 @@ You will now implement the logic of the defined determination in the behavior po
 3. Now implement the method **`setStatusToOpen`** in the implementation part of the class.
    
    The logic consists of the following steps:    
-     i) Read the travel instance(s) of the transferred keys (**`keys`**) using the EML statement **`READ ENTITIES`**   
-     ii) Removed all _Travel_ instances where the overall status is already set     
-     iii) Set the overall status to **`open`** (**`O`**) for the remaining entries using the EML statement **`MODIFY ENTITIES`**   
-     iv) Set the changing parameter **`reported`**   
+     1. Read the travel instance(s) of the transferred keys (**`keys`**) using the EML statement **`READ ENTITIES`**   
+     2. The addition **`IN LOCAL MODE`** is used to exclude feature controls and authorization checks   
+     3. Removed all _Travel_ instances where the overall status is already set     
+     4. Set the overall status to **`open`** (**`O`**) for the remaining entries using the EML statement **`MODIFY ENTITIES`**   
+     5. Set the changing parameter **`reported`**   
 
    Insert the following code snippet in the method and replace all occurrences of the placeholder `###` with your group ID.   
    You can use the **F1 help** to get detailed information on each EML statement.
