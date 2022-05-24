@@ -38,8 +38,8 @@ Please check the following two short documents how to do this if you have not al
 ## Group ID
 [^Top of page](#)
 
-> **PLEASE NOTE**:  
-> In case you've received a group ID by the SAP team, then please skip this section (**Group ID**) and go ahead with the next one (**Helpful Information**).
+> > **PLEASE NOTE**:  
+> > In case you've received a group ID by the SAP team, then please skip this section (**Group ID**) and go ahead with the next one (**Helpful Information**).
 
 As the ABAP environment is used by many people, we've defined a naming pattern for each artefact you are going to create to make sure it doesn't conflict with other ones. For this you'll find the placeholder **`###`** used in object names that must be replaced with the group ID of your choice during the exercises. The group ID can contain **a maximum of 3 characters (numbers and/or letters)** - e.g. `000`, `XY1`, or `ABC`. 
 
