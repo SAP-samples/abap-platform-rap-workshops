@@ -41,6 +41,7 @@ Please check the following two short documents how to do this if you have not al
 > > **PLEASE NOTE**:  
 > > In case you've received a group ID by the SAP team, then please skip this section (**Group ID**) and go ahead with the next one (**Helpful Information**).
 
+<!--
 As the ABAP environment is used by many people, we've defined a naming pattern for each artefact you are going to create to make sure it doesn't conflict with other ones. For this you'll find the placeholder **`###`** used in object names that must be replaced with the group ID of your choice during the exercises. The group ID can contain **a maximum of 3 characters (numbers and/or letters)** - e.g. `000`, `XY1`, or `ABC`. 
 
 You can check for **already used group IDs** by choosing **Open ABAP Development Object** ![open_object_icon](images/adt_open_object.png) or pressing **Ctrl+Shift+A**, and searching for e.g. **`zrap100_*###`**, where **`###`** is your chosen suffix. This lists all artefacts fitting that pattern.  
@@ -52,6 +53,7 @@ Try to add e.g. your initials, followed by a number to verify nobody else is alr
 _**No results**_ means this group ID seems to be available. You can note it as your group ID somewhere and use it in the next exercises.
 
 Once you've found an available group ID, choose **Cancel**.
+-->
 
 > **Note:**    
 > The screenshots in this document have been taken using group ID **`000`** and system **`D22`**. We **don't recommend** using group ID `000`.
