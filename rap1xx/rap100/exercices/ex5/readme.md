@@ -112,6 +112,10 @@ A validation is implicitly invoked by the business object’s framework if the t
     4. Read all the transfered (distinct, non-initial) customer IDs and check if they exist.  
     5. Prepare/raise messages for all transferred _travel_ instances with initial and non-existing customer ID (**`CustomerID`**)  
        and set the changing parameter **`reported`**   
+    6. In the context of Draft, state-messages are used for reporting problems.  A **`REPORTED`**-entry becomes a state-message by filling the **`%STATE_AREA`**.  
+       State-messages are stored together with the state of the draft. As a consequence they need to be cleared before the corresponding check is executed again.
+
+ 
 
    Replace the current method implementation of **`validateCustomer`** with following code snippet and replace all occurrences of the placeholder **`###`** with your group ID. 
    
