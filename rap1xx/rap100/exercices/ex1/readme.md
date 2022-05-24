@@ -135,6 +135,7 @@ In this exercise, you will create an ABAP package and database table. In your da
 
 </details>
 
+<!--
 ## Exercise 1.4: Generate the transactional UI services 
 [^Top of page](#)
 
@@ -201,8 +202,8 @@ In this exercise, you will create an ABAP package and database table. In your da
 ---
 
  </details>
+-->
 
-<!--
 ## Exercise 1.4: Generate the transactional UI services
 [^Top of page](#)
 
@@ -278,7 +279,7 @@ In this exercise, you will create an ABAP package and database table. In your da
    
 ---
  </details>
- -->
+
  
 ## Exercise 1.5: Preview the Travel App
 [^Top of page](#)
