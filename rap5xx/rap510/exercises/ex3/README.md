@@ -72,7 +72,7 @@
 
   ![system type](images/320.png)
   
-4. Choose **RAPWS** as **Connection** and login with your username and password that you use in the SAP BTP ABAP environment system in the second popup.
+4. Choose **RAPDEVDAYS** as **Connection** and login with your username and password that you use in the SAP BTP ABAP environment system in the second popup.
 
    > The connection **RAPWS** has been prepared beforehand. It uses a *communication arrangement* that has been created in the SAP BTP ABAP enviroment. The connection type is a *direct connection* that uses *SAML based Single Sign On*.  
    >  So when using this connection the user that is currently logged on to SAC in the browser will be used to authenticate to get access to the SAP BTP ABAP environment system that provides the analytical service.  
