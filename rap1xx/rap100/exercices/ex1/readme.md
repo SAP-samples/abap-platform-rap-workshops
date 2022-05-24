@@ -15,7 +15,10 @@ In this exercise, you will create an ABAP package and database table. In your da
 - [Appendix](#appendix)
 
 
-> **Reminder:** Don't forget to replace all occurences of the placeholder **`###`** with your group ID in the exercise steps below. You can use the ADT function **Replace All** (**Ctrl+F**) for the purpose. If you don't have a group ID yet, then check the section [Getting Started - Group ID](../ex0/readme.md#group-id).    
+> **Reminder:**   
+> Don't forget to replace all occurences of the placeholder **`###`** with your group ID in the exercise steps below.  
+> You can use the ADT function **Replace All** (**Ctrl+F**) for the purpose.   
+> If you don't have a group ID yet, then check the section [Getting Started - Group ID](../ex0/readme.md#group-id).    
 
 ## Exercise 1.1: Create Package
 [^Top of page](#)
