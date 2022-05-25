@@ -212,6 +212,9 @@ In this exercise, you will create an ABAP package and database table. In your da
 > Create your OData v4 based UI services with the built-in ADT generator.   
 > The generated business service will be transactional, draft-enabled, and enriched with UI semantics for the generation of the Fiori elements app.
 
+> Please note - Error Invalid XML format  
+> When you receive an error message **Invalid XML format of the response** this might be due to a bug in version 1.26 in the ADT tools. When you update your installation to 1.26.3 this issue will be fixed.
+
   <details>
   <summary>Click to expand!</summary>
 
