@@ -3,6 +3,15 @@
 # Exercise 0: Getting Started
 
 ---
+> **PLEASE NOTE**:    
+>  
+> Participants of SAP events will receive logon information - i.e. system information and user credentials - to an SAP S/4HANA Cloud ABAP Environment system from the SAP team during the respective event.
+> >
+> Please contact us during the event if you do not find the logon information . 
+---
+
+<!--
+---
 > **WICHTIGE INFORMATION**: 
 > 
 > Im Rahmen der **DSAG ABAP Development Days 2022** werden Sie  auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, **D22**, durchführen. Dort finden Sie die Lösung der verschiedenen Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
@@ -10,6 +19,7 @@
 > Eine E-Mail mit den erforderlichen Benutzerdaten wurde Ihnen vom SAP-Team vor der Veranstaltung zugesandt.  
 > Bitte kontaktieren Sie uns während der Veranstaltung, wenn Sie keine E-Mail erhalten haben. 
 ---
+-->
 
 ## Introduction
 
@@ -38,8 +48,12 @@ Please check the following two short documents how to do this if you have not al
 ## Group ID
 [^Top of page](#)
 
-> > **PLEASE NOTE**:  
-> > In case you've received a group ID by the SAP team, then please skip this section (**Group ID**) and go ahead with the next one (**Helpful Information**).
+Use the group ID assigned to you by the SAP team in the different exercises of this workshop.
+
+<!--
+> **PLEASE NOTE**:  
+> In case you've been assigned a group ID by the SAP team, then please skip this section (**Group ID**) and go ahead with the next one (**Helpful Information**).
+-->
 
 <!--
 As the ABAP environment is used by many people, we've defined a naming pattern for each artefact you are going to create to make sure it doesn't conflict with other ones. For this you'll find the placeholder **`###`** used in object names that must be replaced with the group ID of your choice during the exercises. The group ID can contain **a maximum of 3 characters (numbers and/or letters)** - e.g. `000`, `XY1`, or `ABC`. 
@@ -63,7 +77,9 @@ Once you've found an available group ID, choose **Cancel**.
 
 ### Find/Replace
 
-In the course of these exercises you will frequently see the task to "_replace the placeholder **`###`** with your group ID_". For this it's recommended to make use of the **Find/Replace** feature of the Eclipse Editor. It can be opened either via the menu (**_Edit -> Find/Replace..._**) or via **Ctrl+F**.
+In the course of these exercises you will frequently see the task to "_replace the placeholder **`###`** with your group ID_". 
+
+For this it's recommended to make use of the **Find/Replace** feature of the Eclipse Editor. It can be opened either via the menu (**_Edit -> Find/Replace..._**) or via **Ctrl+F**.
   
    ![find and replace](images/find01.png)
    
