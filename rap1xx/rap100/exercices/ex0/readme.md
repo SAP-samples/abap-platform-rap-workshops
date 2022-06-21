@@ -5,7 +5,7 @@
 ---
 > **PLEASE NOTE**:    
 >  
-> Participants of SAP events will receive logon information - i.e. system information and user credentials - to an SAP S/4HANA Cloud ABAP Environment system from the SAP team during the respective event.
+> Participants of SAP events will receive logon information - i.e. system information and user credentials - to a dedicated SAP BTP ABAP Environment system from the SAP team during the respective event.
 > >
 > Please contact us during the event if you do not find the logon information . 
 ---
