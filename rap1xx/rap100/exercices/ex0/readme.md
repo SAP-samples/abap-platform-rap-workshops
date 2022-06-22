@@ -2,6 +2,7 @@
 
 # Exercise 0: Getting Started
 
+<!--
 ---
 > **PLEASE NOTE**:    
 >  
@@ -9,17 +10,18 @@
 > >
 > Please contact us during the event if you do not find the logon information . 
 ---
+-->
 
-<!--
 ---
 > **WICHTIGE INFORMATION**: 
 > 
-> Im Rahmen der **DSAG ABAP Development Days 2022** werden Sie  auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, **D22**, durchführen. Dort finden Sie die Lösung der verschiedenen Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
+> Auf dem **ABAP Developer Day 2022** (am 26.06.2022) werden Sie auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, **D22**, die praktischen Übungen durchführen. In diesem System finden Sie die Lösung der verschiedenen Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
 > 
 > Eine E-Mail mit den erforderlichen Benutzerdaten wurde Ihnen vom SAP-Team vor der Veranstaltung zugesandt.  
-> Bitte kontaktieren Sie uns während der Veranstaltung, wenn Sie keine E-Mail erhalten haben. 
+>
+> Bitte kontaktieren Sie uns während der Veranstaltung, falls Sie keine E-Mail erhalten haben. 
 ---
--->
+
 
 ## Introduction
 
@@ -31,6 +33,7 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 
 - [Requirements](#requirements)
 - [Group ID](#group-id)
+- [Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)
 - [Find/Replace](#findreplace)
 - [Modern ABAP Syntax](#modern-abap-syntax)
 - [Useful ADT Shortcuts](#useful-adt-shortcuts)
@@ -71,6 +74,26 @@ Once you've found an available group ID, choose **Cancel**.
 
 > **Note:**    
 > The screenshots in this document have been taken using group ID **`000`** and system **`D22`**. We **don't recommend** using group ID `000`.
+
+## Create an ABAP Cloud Project in ADT
+[^Top of page](#)
+
+> Create an **ABAP Cloud Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
+
+<details>
+  <summary>Click to expand!</summary>
+   
+1. Open the **ABAP** perspective if not yet done.
+
+    ![Open ABAP Perspective](images/abap_perspective.png)
+
+2. Now create the **ABAP Cloud Project** as shown on the screenshots provided below. 
+
+    ![Create ABAP Project Cloud 1/2](images/steampunk_systemlogon1.png)
+
+    ![Create ABAP Project Cloud 2/2](images/steampunk_systemlogon2.png)
+
+</details>
 
 ## Helful Information
 [^Top of page](#)
