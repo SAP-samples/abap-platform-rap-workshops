@@ -51,7 +51,7 @@ Below is the simplified data model underlying the app.
 > The purpose of the different exercises is to show you how to implement the different RAP core features - and less on having the perfect business scenario.
 > To remove a certain complexity in the implementation, we will use a very simplified data model with only one BO node, the _Travel_ entity.   
 > For implementation examples with more than one BO node, you can have a look at:
-> - Workshop **[DEV260](../readme.md)**
+> <!-- - Workshop **[DEV260](../readme.md)** -->
 > - RAP Development Guide on the SAP Help Portal: **[Develop Applications](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/4cff5dff7f2642cab54e993c840a163e.html)**
 
 ## About the ABAP RESTful Application Programming Model
