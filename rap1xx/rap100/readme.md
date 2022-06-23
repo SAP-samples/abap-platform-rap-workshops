@@ -81,9 +81,9 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 | [Exercise 4: Enhance the BO Behavior – Determinations](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex4/readme.md) | -- |
 | [Exercise 5: Enhance the BO Behavior – Validations](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex5/readme.md) | -- |
 | [Exercise 6: Enhance the BO Behavior – Actions](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex6/readme.md) | -- |
-| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex7/readme.md) | -- |
+| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (**_optional_**)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex7/readme.md) | -- |
 | [Exercise 8: Write an ABAP Unit Test for the RAP BO (**_optional_**)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex8/readme.md) | -- |
-| [Exercise : External API-based Access to the RAP BO with EML (**_explore_**)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex9/readme.md) | -- |
+| [Exercise 9: External API-based Access to the RAP BO with EML (**_explore_**)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex9/readme.md) | -- |
 
 
 ## How to obtain support
