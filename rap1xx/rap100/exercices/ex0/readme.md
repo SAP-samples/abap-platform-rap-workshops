@@ -2,16 +2,15 @@
 
 # Exercise 0: Getting Started
 
-<!--
+## Introduction
 ---
 > **PLEASE NOTE**:    
 >  
-> Participants of SAP events will receive logon information - i.e. system information and user credentials - to a dedicated SAP BTP ABAP Environment system from the SAP team during the respective event.
+> Participants of SAP events (e.g. **ABAP Developer Day**) will receive logon information - i.e. system information and user credentials - to a dedicated SAP BTP ABAP Environment system from the SAP team during the respective event.
 > >
 > Please contact us during the event if you do not find the logon information . 
 ---
--->
-
+<!--
 ---
 > **WICHTIGE INFORMATION**: 
 > 
@@ -21,17 +20,21 @@
 >
 > Bitte kontaktieren Sie uns während der Veranstaltung, falls Sie keine E-Mail erhalten haben. 
 ---
+-->
 
+You've already received user credentials from the SAP Team via email or created an account on the SAP BTP ABAP environment Trial.
 
-## Introduction
+You've eventually also created an _ABAP Cloud Project_ in the ABAP Development Tools in Eclipse (ADT). If not, then you will find an appropriate step-b-step description in the section _[Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)_ below.
 
-You've already created an account on the SAP BTP ABAP environment Trial or received user credentials from the SAP Team via email, and created a destination to the ABAP environment in the ABAP Development Tools in Eclipse (ADT) an _ABAP Cloud Project_ as described in the [Requirements](#requirements) section.
-
+<!--
 In this exercise you will define a group ID that you will need in the course of this workshop to uniquely identify your repository artefacts and separate them from those of other users conducting the same workshop on this system.
+-->
 
 Please note that ADT dialogs and views as well as Fiori UIs may change in upcoming releases.
 
-- [Requirements](#requirements)
+<!--
+- [Requirements](#requirements) 
+-->
 - [Group ID](#group-id)
 - [Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)
 - [Find/Replace](#findreplace)
@@ -39,6 +42,7 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 - [Useful ADT Shortcuts](#useful-adt-shortcuts)
 - [Summary](#summary)
 
+<!--
 ## Requirements
 [^Top of page](#)
 
@@ -47,6 +51,7 @@ In order to participate in this hands-on session you MUST have installed the lat
 Please check the following two short documents how to do this if you have not already done it:  
 - [Install the ABAP Development Tools (ADT)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)  
 - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
+-->
 
 ## Group ID
 [^Top of page](#)
@@ -73,7 +78,7 @@ Once you've found an available group ID, choose **Cancel**.
 -->
 
 > **Note:**    
-> The screenshots in this document have been taken using group ID **`000`** and system **`D22`**. We **don't recommend** using group ID `000`.
+> The screenshots in this document have been taken using group ID **`000`** and system **`D22`**. We **do not recommend** using group ID `000`.
 
 ## Create an ABAP Cloud Project in ADT
 [^Top of page](#)
