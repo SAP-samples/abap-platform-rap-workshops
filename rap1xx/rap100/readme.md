@@ -92,16 +92,16 @@ Follow these steps to build an OData service for developing a transactional, dra
 
 | Exercises | -- |
 | ------------- |  -- |
-| [Getting Started](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex0/readme.md) | -- |
-| [Exercise 1: Create Database Table and Generate UI Service](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex1/readme.md) | -- |
-| [Exercise 2: Enhance the BO Data Model](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex2/readme.md) | -- |
-| [Exercise 3: Enhance the BO Behavior – Numbering](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex3/readme.md) | -- |
-| [Exercise 4: Enhance the BO Behavior – Determinations](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex4/readme.md) | -- |
-| [Exercise 5: Enhance the BO Behavior – Validations](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex5/readme.md) | -- |
-| [Exercise 6: Enhance the BO Behavior – Actions](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex6/readme.md) | -- |
-| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (**_optional_**)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex7/readme.md) | -- |
-| [Exercise 8: Write an ABAP Unit Test for the RAP BO (**_optional_**)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex8/readme.md) | -- |
-| [Exercise 9: External API-based Access to the RAP BO with EML (**_explore_**)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/rap1xx/rap100/exercices/ex9/readme.md) | -- |
+| [Getting Started](exercices/ex0/readme.md) | -- |
+| [Exercise 1: Create Database Table and Generate UI Service](exercices/ex1/readme.md) | -- |
+| [Exercise 2: Enhance the BO Data Model](exercices/ex2/readme.md) | -- |
+| [Exercise 3: Enhance the BO Behavior – Numbering](exercices/ex3/readme.md) | -- |
+| [Exercise 4: Enhance the BO Behavior – Determinations](exercices/ex4/readme.md) | -- |
+| [Exercise 5: Enhance the BO Behavior – Validations](exercices/ex5/readme.md) | -- |
+| [Exercise 6: Enhance the BO Behavior – Actions](exercices/ex6/readme.md) | -- |
+| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (**_optional_**)](exercices/ex7/readme.md) | -- |
+| [Exercise 8: Write an ABAP Unit Test for the RAP BO (**_optional_**)](exercices/ex8/readme.md) | -- |
+| [Exercise 9: External API-based Access to the RAP BO with EML (**_explore_**)](exercices/ex9/readme.md) | -- |
    
 _BO: Business Object_  
 _EML: Entity Manipulation Language_    
