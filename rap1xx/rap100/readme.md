@@ -88,7 +88,7 @@ The illustration below shows the high-level end-to-end development stack when wo
 ## Exercises
 [^Top of page](#)
 
-Follow these steps to build a RAP-based simple App with a helper class and write various ABAP unit tests for it.
+Follow these steps to build an OData service for developing a transactional, draft-enabled Fiori elements app from scratch using RAP. You will also write an ABAP unit test for it and explore the Entity Manipulation Language (EML).
 
 | Exercises | -- |
 | ------------- |  -- |
