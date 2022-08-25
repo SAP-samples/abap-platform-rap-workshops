@@ -100,7 +100,7 @@ Once you've found an available group ID, choose **Cancel**.
 
 </details>
 
-## Helful Information
+## Helpful Information
 [^Top of page](#)
 
 ### Find/Replace
