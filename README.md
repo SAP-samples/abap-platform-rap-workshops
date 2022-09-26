@@ -17,6 +17,7 @@ In this repository we provide materials for customer and community facing sessio
 
 [RAP510 - Developing for Analytics with the SAP BTP ABAP Environment (short version, requires licensed system)](/rap5xx/rap510#readme)
 
+[RAP620 - Side-by-side extensibility with SAP BTP ABAP Environment](/rap6xx/rap620#readme)
 
 ## Requirements
 
