@@ -1,5 +1,5 @@
 # TOC
-[Home](../../README.md#exercises)
+[Home](../../readme.md#exercises)
 # Adapt the generated code
 
 In this exercise we will perform changes to the generated code so that our application becomes usable. 
