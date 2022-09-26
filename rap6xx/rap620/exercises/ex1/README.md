@@ -1,5 +1,5 @@
 # TOC
-[Home](../../README.md#exercises)
+[Home](../../readme.md#exercises)
 # Exercise 1: Create Database Table and Generate UI Service
 
 ## Introduction
