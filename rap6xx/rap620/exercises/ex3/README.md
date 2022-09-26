@@ -1,5 +1,5 @@
 # TOC
-[Home](../../README.md#exercises)
+[Home](../../readme.md#exercises)
 # Exercise 3: Consume a remote API based on an OData service
 
 ## Introduction
