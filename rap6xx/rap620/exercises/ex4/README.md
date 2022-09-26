@@ -1,5 +1,5 @@
 # TOC
-[Home](../../README.md#exercises)
+[Home](../../readme.md#exercises)
 # Exercise 4 - Consume a SOAP Web Service
 
 - [Download the WSDL](#download-the-wsdl)
