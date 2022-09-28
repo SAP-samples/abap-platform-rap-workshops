@@ -20,7 +20,7 @@ In the source code of the projection view ````ZRAP620_C_INVENTORYTP_### ```` we 
 You can either open the source code editor from the Project Explorer or you can use the short cut **Ctrl+Shift+A**  which starts the dialogue to open an ABAP development object and search for ````ZRAP620_C_INVENTORYTP_### ````.   
  <details>
   <summary>Click to expand the source code ...</summary>
-<pre>
+<pre lang="ABAP">
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
 @EndUserText.label: 'Projection TEST BUG View for ZRAP620_R_INVENTORYTP_###'
