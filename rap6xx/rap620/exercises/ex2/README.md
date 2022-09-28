@@ -280,7 +280,7 @@ The quick fix has added a method ````CalculateInventoryID```` with an (empty) im
 
 
 
- <pre> 
+ <pre lang="ABAP"> 
  
 METHOD CalculateInventoryID.
 
