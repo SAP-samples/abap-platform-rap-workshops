@@ -189,8 +189,7 @@ In this exercise, you will create an ABAP package and database table. In your da
  
  
    > **Naming conventions**   
-   > You can find in the *SAP Online Help*   
-   > [Naming Conventions for Development Objects](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/8b8f9d8f3cb948b2841d6045a255e503.html?locale=en-US)
+   > You can find in the *SAP Online Help* [Naming Conventions for Development Objects](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/8b8f9d8f3cb948b2841d6045a255e503.html?locale=en-US)
 
 ---
   **Base Business Object (BO) `ZRAP100_I_TRAVEL_###`** 
