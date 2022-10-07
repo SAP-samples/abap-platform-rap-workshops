@@ -186,6 +186,10 @@ In this exercise, you will create an ABAP package and database table. In your da
       ![class](images/new.png)
       
    Below is a brief explanation of the generated artefacts for the different RAP layers: Base BO, BO Projection, and Business Service.
+ 
+ 
+   > *Naming conventions* 
+   > You can find in the SAP Online Help ![Naming Conventions for Development Objects](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/8b8f9d8f3cb948b2841d6045a255e503.html?locale=en-US)
 
 ---
   **Base Business Object (BO) `ZRAP100_I_TRAVEL_###`** 
