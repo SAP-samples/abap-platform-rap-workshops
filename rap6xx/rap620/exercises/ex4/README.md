@@ -229,6 +229,15 @@ We will use the SOAP web service to retrieve the price of a product.
 ## Adapt the behavior definition and the behavior projection
 [^Top of page](#)
 
+> The following code changes are currently necessary to avoid a short dump that will be raised because the generated code uses the 
+> `strict( 2 ) statement.   
+
+> **Statement "INSERT " is not allowed with this status.**
+> **Short Text  Statement "INSERT " is not allowed with this status.**    
+> **Runtime Error  BEHAVIOR_ILLEGAL_STATEMENT**    
+> **Program  CL_PROXY_DATA=================CP**    
+
+
 Before we can test the service we have to adapt the code of our behavior definition and our behavior projection.
 
 <details>
