@@ -230,7 +230,7 @@ We will use the SOAP web service to retrieve the price of a product.
 [^Top of page](#)
 
 > ⚠ Caution:   
-> The code changes described in the following are currently necessary as a workaround to avoid a short dump 
+> The code changes described in the following are currently necessary as a workaround to avoid a short dump   
 > **Statement "INSERT " is not allowed with this status.**   
 > that will be raised because the generated code uses the `strict( 2 )` statement.   
 
