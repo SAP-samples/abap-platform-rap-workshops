@@ -4,10 +4,10 @@
 
 In order to participate in an ABAP Platform RAP workshop you have to prepare four things beforehand:
 
-- Sign up for a free trial account on SAP BTP  
-- Create an SAP BTP ABAP Environment Trial User  
-- Install the latest ABAP Development Tools (ADT) 
-- Adapt the Web Browser settings in your ADT installation
+- [Sign up for a free trial account on SAP BTP  ](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#1-sign-up-for-a-free-trial-account-on-sap-btp)
+- [Create an SAP BTP ABAP Environment Trial User](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#2-create-an-sap-btp-abap-environment-trial-user)  
+- [Install the latest ABAP Development Tools (ADT)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-latest-abap-development-tools-adt) 
+- [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)
 
 ## 1. Sign up for a free trial account on SAP BTP  
 
