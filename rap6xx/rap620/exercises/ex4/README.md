@@ -226,9 +226,10 @@ We will use the SOAP web service to retrieve the price of a product.
 
 </details>
 
-## Adapt the behavior definition and the behavior projection
+## ⚠ Adapt the behavior definition and the behavior projection
 [^Top of page](#)
 
+> ⚠ Caution:   
 > The following code changes are currently necessary to avoid a short dump that will be raised because the generated code uses the 
 > `strict( 2 ) statement.   
 
@@ -256,6 +257,7 @@ The code of your behavior definition and the behavior projection should read as 
 
 <pre>
 projection;
+//strict ( 2 );
 strict ;
 use draft;
 
@@ -280,6 +282,7 @@ use etag
 
 <pre>
 managed implementation in class ZRAP620_BP_InventoryTP_### unique;
+//strict ( 2 );
 strict ;
 with draft;
 
