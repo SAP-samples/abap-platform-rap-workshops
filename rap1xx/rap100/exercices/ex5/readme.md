@@ -6,7 +6,13 @@
 
 In the previous exercise, you've defined and implemented a determination for setting the inital value of the field `OverallStatus` to `Open` (`O`) during the creation of new instances of BO entity _Travel_ (see [Exercise 4](../ex4/readme.md)).
 
-In the present exercise, you're going to define and implement two validations, `validateCustomer` and `validateDates`, to respectively check if the customer ID that is entered by the consumer is valid and if the begin date is in the future and if the value of the end date is after the begin date.
+In the present exercise, you're going to define and implement two back-end validations, `validateCustomer` and `validateDates`, to respectively check if the customer ID that is entered by the consumer is valid and if the begin date is in the future and if the value of the end date is after the begin date. These validations are only performed in the back-end (not on the UI) and are triggered independently of the caller, i.e. Fiori UIs or EML APIs.
+
+> ℹ **Frontend validation & Backend validations**     
+> Validations are used to ensure the data consistency.   
+> As the name suggests, **frontend validations** are performed on the UI. They are used to improve the user experience by providing faster feedback and avoiding unnecessary roundtrips. In the RAP context, front-end validations are defined using CDS annotation or UI logic.  
+> On the other hand, **backend validations** are performed on the back-end. They are defined in the BO behavior definitons and implemented in the respective behavior pools.   
+> Frontend validations can be easily bypassed - e.g. by using EML APIs in the RAP context. Therefore, **backend validations are a MUST** to ensure the data consistency.
 
 - [5.1 - Define the Validation `validateCustomer` and `validateDates`](#exercise-51-define-the-validations-validatecustomer-and-validatedates)
 - [5.2 - Implement the Validation `validateCustomer`](#exercise-52-implement-the-validation-validatecustomer)
@@ -17,7 +23,7 @@ In the present exercise, you're going to define and implement two validations, `
 
 > **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
 
-### Excursus: Validations
+### About Validations
 
 A validation is an optional part of the business object behavior that checks the consistency of business object instances based on trigger conditions. 
 
@@ -33,47 +39,72 @@ A validation is implicitly invoked by the business object’s framework if the t
  <details>
   <summary>Click to expand!</summary>
   
-1. Open your behavior definition ![behaviordefinition](images/adt_bdef.png) **`ZRAP100_R_TRAVELTP_###`** to define the validations **`validateCustomer`** and **`validateDates`**.
+1. Open your behavior definition ![behaviordefinition](images/adt_bdef.png) **`ZRAP100_R_TRAVELTP_###`**  
+
+2. Because empty values will not be accepted for the fields **`CustomerID`**, **`BeginDate`**, and **`EndDate`**, specify them as _mandatory_ field 
+   by adding the following code snippet after the determination as shown on the screenshot below.
+ 
+   <pre lang="ABAP">  
+    field ( mandatory )
+    CustomerID,
+    BeginDate,
+    EndDate;  
+   </pre>   
+
+   Your source code should look like this:   
+
+   <!-- ![validation](images/new18a.png)    -->
+   <img src="images/new18a.png" alt="validation" width="60%"> 
+
+3. Define the validations **`validateCustomer`** and **`validateDates`**.
      
    For that, add the following code snippet after the determination as shown on the screenshot below.
    
-   ```ABAP
+   <pre lang="ABAP"> 
    validation validateCustomer on save { create; field CustomerID; }
    validation validateDates on save { create; field BeginDate, EndDate; }
-   ```         
+   </pre>          
 
-   In order to have draft instances being checked and determinations being executed before they become active, they have to be specified for the **`draft determine action prepare`** in the behavior definition.
+4. In order to have draft instances being checked by validations and determinations being executed before they become active, they have to be specified for the **`draft determine action prepare`** in the behavior definition.
   
    Replace the code line **`draft determine action Prepare;`** with the following code snippet as shown on the screenshot below
 
-   ```ABAP
+   <pre lang="ABAP"> 
    draft determine action Prepare
    {
    validation validateCustomer;
    validation validateDates;    }
-   ```    
+   </pre>     
      
    Your source code should look like this: 
    
-   ![validation](images/new18.png)           
-     
+   <!-- ![validation](images/new18.png) -->
+   <img src="images/new18.png" alt="validation" width="60%">       
      
    **Short explanation**:    
    - Validations are always invoked during the save and specified with the keyword `validateCustomer on save`.    
    - `validateCustomer` is a validation with trigger operation `create` and trigger field `CustomerID`.    
    - `validateDates` is a validation with trigger operation `create` and trigger fields `BeginDate` and `EndDate`.            
     
-2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
+   **ℹ Hint**:    
+   > In case a validation should be invoked at every change of the BO entity instance, then the trigger conditions `create`and `update` 
+   > must be specified: e.g. `validation validateCustomer on save { create; update; }`
+ 
+5. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
       
-3. Add the appropriate **`FOR VALIDATE ON SAVE`** methods to the local handler class of the behavior pool of the _Travel_ BO entity via quick fix.  
+6. Add the appropriate **`FOR VALIDATE ON SAVE`** methods to the local handler class of the behavior pool of the _Travel_ BO entity via quick fix.  
    
-   For that, set the cursor on one of the validation names and press **Ctrl+1** to open the **Quick Assist** view and select the entry _**`Add all 2 missing methods of entity zrap100_i_travel_### ...`**_.
+   For that, set the cursor on one of the validation names and press **Ctrl+1** to open the **Quick Assist** view and select the entry _**`Add all 2 missing methods of entity zrap100_r_travel_### ...`**_.
    
    As a result, the **`FOR VALIDATE ON SAVE`** methods **`validateCustomer`** and **`validateDates`** will be added to the local handler class `lcl_handler` of the behavior pool of the _Travel_ BO entity ![class icon](images/adt_class.png)`ZRAP100_BP_TRAVELTP_###`.       
    
-   ![Travel BO Behavior Pool](images/new19.png)  
+   <!-- ![Travel BO Behavior Pool](images/new19.png)  -->
+   <img src="images/new19.png" alt="validation" width="90%">   
 
-4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
+7. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
+
+> Hint:  
+> If you get an error message in the behavior implementation `The entity "ZRAP100_R_TRAVELTP_###" does not have a validation "VALIDATECUSTOMER".` try to activate the behvavior definition once again.  
 
 </details>
   
@@ -86,7 +117,7 @@ A validation is implicitly invoked by the business object’s framework if the t
  <details>
   <summary>Click to expand!</summary>
 
-1. First, check the interface of the new methods in the declaration part of the local handler class `lcl_handler` of the behavior pool of the _Travel_ BO entity ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**. 
+1. First, check the interface of the new methods in the declaration part of the local handler class `lcl_handler` of the behavior pool of the _Travel_ BO entity ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**. 
 
    For that, set the cursor on the method name, **`validateCustomer`**, press **F2** to open the **ABAP Element Info** view, and examine the full method interface. 
    
@@ -112,16 +143,12 @@ A validation is implicitly invoked by the business object’s framework if the t
     4. Read all the transfered (distinct, non-initial) customer IDs and check if they exist.  
     5. Prepare/raise messages for all transferred _travel_ instances with initial and non-existing customer ID (**`CustomerID`**)  
        and set the changing parameter **`reported`**   
-    6. In the context of Draft, state-messages are used for reporting problems.  A **`REPORTED`**-entry becomes a state-message by filling the **`%STATE_AREA`**.  
-       State-messages are stored together with the state of the draft. As a consequence they need to be cleared before the corresponding check is executed again.
-
- 
 
    Replace the current method implementation of **`validateCustomer`** with following code snippet and replace all occurrences of the placeholder **`###`** with your group ID. 
    
    You can use the **F1 Help** to get detailed information on the different ABAP and EML statements.  
  
-      ```ABAP
+      <pre lang="ABAP"> 
       **********************************************************************
       * Validation: Check the validity of the entered customer data
       **********************************************************************
@@ -180,7 +207,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 
           ENDLOOP.
         ENDMETHOD.      
-      ```  
+      </pre>   
   
 3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
@@ -201,7 +228,7 @@ A validation is implicitly invoked by the business object’s framework if the t
  
    This validation is performed on the fields **`BeginDate`** and **`EndDate`**. It checks if the entered begin date (`BeginDate`) is in the future and if the value of the entered end date (`EndDate`) is after the begin date (`BeginDate`).   
  
- ```ABAP
+ <pre lang="ABAP"> 
  **********************************************************************
  * Validation: Check the validity of begin and end dates
  **********************************************************************
@@ -266,8 +293,52 @@ A validation is implicitly invoked by the business object’s framework if the t
      ENDLOOP.
 
    ENDMETHOD. 
- ```
+ </pre> 
+ 
+ <!-- <pre lang="ABAP"> 
+   **********************************************************************
+   * Validation: Check the validity of begin and end dates
+   **********************************************************************
+     METHOD validateDates.
+       READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+         ENTITY travel
+           FIELDS ( BeginDate EndDate )
+           WITH CORRESPONDING #( keys )
+         RESULT DATA(lt_travel_result).
 
+       LOOP AT lt_travel_result INTO DATA(ls_travel_result).
+
+         IF ls_travel_result-EndDate < ls_travel_result-BeginDate.  "if end_date is before begin_date
+
+           APPEND VALUE #( %key        = ls_travel_result-%key
+                           travelID    = ls_travel_result-TravelID ) TO failed-travel.
+
+           APPEND VALUE #( %key = ls_travel_result-%key
+                           %msg     = new_message( id       = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgid
+                                                   number   = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgno
+                                                   v1       = ls_travel_result-BeginDate
+                                                   v2       = ls_travel_result-EndDate
+                                                   v3       = ls_travel_result-TravelID
+                                                   severity = if_abap_behv_message=>severity-error )
+                           %element-BeginDate = if_abap_behv=>mk-on
+                           %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+
+         ELSEIF ls_travel_result-BeginDate < cl_abap_context_info=>get_system_date( ).  "begin_date must be in the future
+
+           APPEND VALUE #( %key       = ls_travel_result-%key
+                           travelID   = ls_travel_result-TravelID ) TO failed-travel.
+
+           APPEND VALUE #( %key = ls_travel_result-%key
+                           %msg = new_message( id       = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgid
+                                               number   = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgno
+                                               severity = if_abap_behv_message=>severity-error )
+                           %element-BeginDate = if_abap_behv=>mk-on
+                           %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+         ENDIF.
+       ENDLOOP.
+     ENDMETHOD.
+   </pre>   
+ -->
 2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
 </details>
@@ -284,14 +355,19 @@ You can either refresh your application in the browser using **F5** if the brows
 
 1. Click **Create** to create a new entry.
 
-2. Select an `Sunshine Travel (70001)` as Agency ID,  **12345** as Customer ID, Mar 16, 2022 as starting date and Mar 14, 2022 as end date and click **Create**.
+2. Select an `Sunshine Travel (70001)` as Agency ID, select a customer by starting to add a name `Theresia`, Nov 20, 2022 as starting date and Nov 15, 2022 as end date. The draft will be updated.
 
-     ![package](images/preview3.png)
+    <!-- ![Preview](images/preview3.png) --Y
+    <img src="images/preview3.png" alt="Preview" width="90%">        
      
-3. You should get following message displayed.
+3. Now click **Create**. You should get following error messages displayed:  
+   *Begin Date 11/20/2022 must not be after End Date 11/16/2022* .
 
-    ![package](images/preview4.png)
-    
+    <!-- ![Preview](images/preview4.png)  -->
+    <img src="images/preview3.png" alt="Preview" width="90%">     
+
+    ![Preview](images/preview5.png)
+       
 </details>
 
 ## Summary 
