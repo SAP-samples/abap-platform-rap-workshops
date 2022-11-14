@@ -1,5 +1,5 @@
 projection;
-strict;
+strict ( 2 );
 use draft;
 
 define behavior for ZRAP100_C_TRAVELTP_### alias Travel
