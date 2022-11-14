@@ -10,20 +10,21 @@ CLASS zcl_rap100_gen_data_### DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-
-
 CLASS zcl_rap100_gen_data_### IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
+    DATA:
+      group_id   TYPE string VALUE '###',
+      attachment TYPE /dmo/attachment,
+      file_name  TYPE /dmo/filename,
+      mime_type  TYPE /dmo/mime_type.
 
-    DATA table_name TYPE string VALUE 'zrap100_atrav###'.
-*    DATA draft_table_name TYPE string VALUE 'zrap100_dtrav###'.
-
-    DELETE FROM (table_name).
-*    DELETE FROM (draft_table_name).
+*   clear data
+    DELETE FROM zrap100_atrav###.
+*    DELETE FROM zrap100_dtrav###.
 
     "insert travel demo data
-    INSERT (table_name)  FROM (
+    INSERT zrap100_atrav###  FROM (
         SELECT
           FROM /dmo/travel AS travel
           FIELDS
@@ -41,7 +42,10 @@ CLASS zcl_rap100_gen_data_### IMPLEMENTATION.
               WHEN 'P' THEN 'O'
               WHEN 'B' THEN 'A'
               ELSE 'X'
-            END                     AS overall_status,  "Overall Status [A(Accepted) | O(Open) | X(Cancelled)]
+            END                     AS overall_status,
+            @attachment             AS attachment,
+            @mime_type              AS mime_type,
+            @file_name              AS file_name,
             travel~createdby        AS created_by,
             travel~createdat        AS created_at,
             travel~lastchangedby    AS last_changed_by,
@@ -49,10 +53,7 @@ CLASS zcl_rap100_gen_data_### IMPLEMENTATION.
             travel~lastchangedat    AS local_last_changed_at
             ORDER BY travel_id UP TO 10 ROWS
       ).
-
-
     COMMIT WORK.
-    out->write( |[RAP100] Demo data generated for table { table_name }. | ).
-
+    out->write( |[RAP100] Demo data generated for table ZRAP100_ATRAV{ group_id }. | ).
   ENDMETHOD.
 ENDCLASS.

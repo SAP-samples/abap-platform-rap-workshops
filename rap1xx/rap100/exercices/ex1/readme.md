@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this exercise, you will create an ABAP package and database table. In your database table you will define all important fields. To fill all your database table fields, you will create an ABAP class and run it. With the transactional UI services you will be able to define all your UI services in one step. This includes the data model, projection view, service definition and service binding. Afterwards you will check your _Travel_ application with the SAP Fiori elements preview. 
+In this exercise, you will create an ABAP package and database table. In your database table you will define all important fields. To fill all your database table fields, you will create an ABAP class and run it. You will use an ADT wizard to generate all the needed development RAP artefacts of your UI service. This includes the data model, projection view, service definition and service binding. Afterwards you will check your _Travel_ application with the SAP Fiori elements preview. 
 
 - [1.1 - Create Package](#exercise-11-create-package)
 - [1.2 - Create database table](#exercise-12-create-database-table)
@@ -30,6 +30,9 @@ In this exercise, you will create an ABAP package and database table. In your da
   <summary>Click to expand!</summary>
 
    1. In ADT, go to the **Project Explorer**, right-click on the package **`ZLOCAL`**, and select **New** > **ABAP Package** from the context menu. 
+
+      <!-- ![package](images/p1a.png)  --> 
+      <img src="images/p1a.png" alt="table" width="50%">
    
    2. Maintain the required information (`###` is your group ID):
        - Name: **`ZRAP100_###`**
@@ -37,10 +40,14 @@ In this exercise, you will create an ABAP package and database table. In your da
        - Select the box **Add to favorites package**
        
       Click **Next >**.
+
+      <!-- ![package](images/p1b.png)  -->  
+      <img src="images/p1b.png" alt="table" width="50%">
    
-   3. Select a transport request, maintained a description (e.g. _**RAP100 Package ###**_), and click **Finish**.
+   3. Select a transport request, maintain a description (e.g. _**RAP100 Package ###**_), and click **Finish**.
       
-      ![package](images/p.png)
+      <!-- ![package](images/p1c.png)  -->  
+      <img src="images/p1c.png" alt="table" width="50%">
 
 </details>
 
@@ -54,20 +61,29 @@ In this exercise, you will create an ABAP package and database table. In your da
   <summary>Click to expand!</summary>
 
    1. Right-click on your ABAP package **`ZRAP100_###`** and select **New** > **Other ABAP Repository Object** from the context menu.
+
+      <!-- ![table](images/p2a.png) -->
+      <img src="images/p2a.png" alt="table" width="50%">
    
    2. Search for **database table**, select it, and click **Next >**.
+
+      <!--  ![table](images/p2b.png) -->
+      <img src="images/p2b.png" alt="table" width="50%">
    
    3. Maintain the required information (`###` is your group ID) and click **Next >**.
       - Name: **`ZRAP100_ATRAV###`**
       - Description: _**`Travel data`**_                  
              
-      ![table](images/p2.png)
-   
+      <!-- ![table](images/p2c.png)-->    
+      <img src="images/p2c.png" alt="table" width="50%">
+
    4. Select a transport request, and click **Finish** to create the database table.
    
-   5. Replace the default code with the code snippet provided below and replace all occurences of the placeholder **`###`** with your group ID using the **Replace All** function (**Ctrl+F**).
+   5. Replace the default code with the code snippet provided below and replace all occurences of the placeholder **`###`** with your group ID using the **Replace All** function (**Ctrl+F**).    
+ 
+      > **Hint**: Hover the code snippet and choose the _Copy raw contents_ icon <img src="images/copyrawcontents.png" alt="table" width="30px"> appearing in the upper-right corner to copy it. 
       
-      ```ABAP
+      <pre lang="ABAP">
       @EndUserText.label : 'Travel data'
       @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
       @AbapCatalog.tableCategory : #TRANSPARENT
@@ -87,13 +103,18 @@ In this exercise, you will create an ABAP package and database table. In your da
         currency_code         : /dmo/currency_code;
         description           : /dmo/description;
         overall_status        : /dmo/overall_status;
+        attachment            : /dmo/attachment;
+        mime_type             : /dmo/mime_type;
+        file_name             : /dmo/filename;
         created_by            : abp_creation_user;
         created_at            : abp_creation_tstmpl;
         last_changed_by       : abp_locinst_lastchange_user;
         last_changed_at       : abp_locinst_lastchange_tstmpl;
         local_last_changed_at : abp_lastchange_tstmpl;
       }      
-      ```
+      </pre>
+ 
+      <img src="images/p2d.png" alt="table" width="60%">
       
    6. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
@@ -108,31 +129,45 @@ In this exercise, you will create an ABAP package and database table. In your da
   <summary>Click to expand!</summary>
 
    1. Right-click your ABAP package **`ZRAP100_###`** and select **New** > **ABAP Class** from the context menu.
+
+      <!--  ![class](images/p3a.png) -->
+      <img src="images/p3a.png" alt="table" width="70%">
    
    2. Maintain the required information (`###` is your group ID) and click **Next >**.
       - Name: **`ZCL_RAP100_GEN_DATA_###`**
       - Description: _**`Generate demo data`**_      
    
-      ![class](images/demo.png)
+      <!-- ![class](images/p3b.png) -->
+      <img src="images/p3b.png" alt="table" width="60%">
 
    3. Select a transport request and click **Finish** to create the class.
    
-   4. Replace the default code with the code snippet provided in the source code document **`ZRAP100_GEN_DATA_###`** linked below and replace all occurences of the placeholder **`###`** with your group ID using the **Replace All** function (**Ctrl+F**).
-  
-      ![document](images/doc.png) **Source code document**: ![class icon](images/adt_class.png)[Class ZRAP100_GEN_DATA_###](sources/EX1_CLASS_ZRAP100_GEN_DATA.txt)
+   4. Replace the default source code with the code snippet provided in the source code document **`ZRAP100_GEN_DATA_###`** linked below and replace all occurences of the placeholder **`###`** with your group ID using the **Replace All** function (**Ctrl+F**).
+ 
+      You can use the **ABAP Pretty Printer** (**ABAP Formatter**) function using by pressing **Shift+F1** to format the source code. You will be requested to configure it, if this is the first time you use it on the system.
+ 
+      **Hint**: Open the document in a new tab. In the document editor, use the _Copy raw contents_ icon <img src="images/copyrawcontents.png" alt="table" width="30px"> in the toolbar to copy the full source code. 
+      
+       ![document](images/doc.png) **Source code document**: ![class icon](images/adt_class.png)[Class ZRAP100_GEN_DATA_###](sources/EX1_CLASS_ZRAP100_GEN_DATA.txt)
       
    5. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
    6. Run your console application. 
       
-      For that, select your ABAP class ![class](images/adt_class.png)**`ZCL_RAP100_GEN_DATA_###`**, select the run button > **Run As** > **ABAP Application (Console) F9** or press **F9**. A message will be displayed _ABAP Console_.
+      For that, select your ABAP class ![class](images/adt_class.png)**`ZCL_RAP100_GEN_DATA_###`**, select the run button > **Run As** > **ABAP Application (Console) F9** or press **F9**. 
    
-      ![class](images/p4.png)  
+      <!-- ![class](images/p4.png) -->
+      <img src="images/p4.png" alt="table" width="70%">
+
+      A message will be displayed _ABAP Console_.
+
+      <!-- ![class](images/p4a.png)  -->
+      <img src="images/p4a.png" alt="table" width="70%">
       
    7. Open your database table ![table](images/adt_tabl.png)**`ZRAP100_ATRAV###`** and press **F8** to start the data preview and display the filled database entries, i.e. _travel_ data.
    
-      ![class](images/p5.png)   
-
+      ![class](images/p5.png)
+      
 </details>
 
 
@@ -145,25 +180,32 @@ In this exercise, you will create an ABAP package and database table. In your da
   <details>
   <summary>Click to expand!</summary>
 
-   1. Right-click your database table ![table](images/adt_tabl.png)**`ZRAP100_ATRAV###`**  and select **Generate ABAP Repository Objects** from the context menu.  
+   1. Right-click your database table ![table](images/adt_tabl.png)**`ZRAP100_ATRAV###`**  and select **Generate ABAP Repository Objects** from the context menu. 
+
+       <!-- ![class](images/p6a.png)  -->  
+       <img src="images/p6a.png" alt="table" width="50%">   
    
    2. Maintain the required information  (`###` is your group ID) and click **Next >**:
         - Description: **`Travel App ###`**
         - Generator: **`ABAP RESTful Application Programming Model: UI Service`**
         
-        ![class](images/p6.png) 
+        <!-- ![class](images/p6b.png)  --> 
+         <img src="images/p6b.png" alt="table" width="50%"> 
         
    3. Maintain the required information on the **Configure Generator** dialog to provide the name of your data model and generate them.         
-      
+
       For that, navigate through the wizard tree (_Business Objects_, _Data Model_, etc...), maintain the artefact names provided in the table below, 
       and press **Next >**.
  
-      Verify the maintained entries and press **Next >** to confirm. The needed artifacts will be generated.
- 
-      > **Please note**: _Error Invalid XML format_  
-      > If you receive an error message _**Invalid XML format of the response**_, this may be due to a bug in version 1.26 of the ADT tools.  
-      > An update of your ADT plugin to version 1.26.3 will fix this issue.
+      Verify the maintained entries and press **Next >** to confirm. The needed artefacts will be generated. 
 
+      > ℹ **Info about Naming Conventions**     
+      > The main aspects of the naming conventions of SAP S/4HANA's Virtual Data Model (VDM) are used in this exercise.  
+      > More information on VDM can be found on the SAP Help portal: **[Here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/8a8cee943ef944fe8936f4cc60ba9bc1.html)**.
+ 
+      > ⚠ **Attention**  
+      > If you receive the error message _**Invalid XML format of the response**_, this may be due to a bug in version 1.26 of the ADT tools.  
+      > An update of your ADT plugin to the newer version will fix this issue.
       
       | **RAP Layer**          |  **Artefacts**           | **Artefact Names**                                       |     
       |:---------------------- |:------------------------ |:-------------------------------------------------------- |
@@ -178,26 +220,28 @@ In this exercise, you will create an ABAP package and database table. In your da
       |                        |  **Service Binding**     |  Name:         **`ZRAP100_UI_Travel_O4_###`**            |
       |                        |                          |  Binding Type: **`OData V4 - UI`**                       |
                        
-      ![class](images/new0.png)                   
-            
+      <!-- ![generator](images/p7a.png)  --> 
+      <img src="images/p7a.png" alt="table" width="50%">                   
+
+      <!-- ![generator](images/p7b.png)   -->   
+      <img src="images/p7b.png" alt="table" width="50%">               
+
+      <img src="images/p7c.png" alt="table" width="50%">         
  
    4. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
 
-      ![class](images/new.png)
+      <!-- ![class](images/p7d.png) -->
+      <img src="images/p7d.png" alt="table" width="50%">  
       
    Below is a brief explanation of the generated artefacts for the different RAP layers: Base BO, BO Projection, and Business Service.
- 
- 
-   > **Naming conventions**   
-   > You can find in the *SAP Online Help* [Naming Conventions for Development Objects](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/8b8f9d8f3cb948b2841d6045a255e503.html?locale=en-US)
 
 ---
-  **Base Business Object (BO) `ZRAP100_I_TRAVEL_###`** 
+  **Base Business Object (BO) `ZRAP100_R_TRAVEL_###`** 
   
    | **Object Name**               |  **Description**         |     
    |:----------------------------- |:------------------------ |
    | ![ddls icon](images/adt_ddls.png)**`ZRAP100_R_TravelTP_###`**     | (aka _Base BO view_): This **data definition** defines the data model of the root entity _Travel_ which is the only  node of our business object).  |                      
-   | ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`**   | (aka _Base BO behavior**): This **behavior definition** contains the definition of the standard transactional behavior of the base _Travel_ BO entity. It is a _managed_ and _draft-enabled_ implementation.  |  
+   | ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`**   | (aka _Base BO behavior): This **behavior definition** contains the definition of the standard transactional behavior of the base _Travel_ BO entity. It is a _managed_ and _draft-enabled_ implementation.  |  
    | ![tabl icon](images/adt_tabl.png)**`ZRAP100_DTRAV###`**   | (aka _Draft table_): This **database table** is used to temporary store the data from draft _travel_ instances at runtime. It is managed by the RAP framework.    |     
    | ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**  | (aka _Behavior pool_): This **ABAP class** which provides the implementation of the behavior defined in the behavior definition `ZRAP100_R_TravelTP_###` of the base _Travel_ BO.   |  
   
@@ -323,7 +367,7 @@ Now that you've...
 - created a transactional UI service,
 - published a local service point, and started the _Fiori elements App Preview_ in ADT,
 
-you can continue with the next exercise - **[Exercise 2: Enhance the Core Data Services (CDS) Data Model](../ex2/readme.md)**.
+you can continue with the next exercise - **[Exercise 2: Enhance the BO Data Model and Enable OData Streams](../ex2/readme.md)**.
 
 ---
 
