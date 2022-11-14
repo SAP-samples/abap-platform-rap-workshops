@@ -1,6 +1,6 @@
 [Home - RAP100](../../#exercises)
 
-# Exercise 3: Enhance the BO Behavior – Numbering 
+# Exercise 3: Enhance the BO Behavior – Early Numbering  
 
 ## Introduction 
 
@@ -46,7 +46,8 @@ A number range object will be used to determine the unique travel identifiers.
    
    You can ignore it for now. You will handle it later.    
 
-   ![Travel BO Behavior Definition](images/new7.png)
+   <!-- ![Travel BO Behavior Definition](images/new7.png) -->
+   <img src="images/new7.png" alt="BO Behavior Definition" width="60%">
    
 3. Specify the field **`TravelID`** as read-only field since it will be set at runtime by the internal early numbering. 
    
@@ -59,10 +60,10 @@ A number range object will be used to determine the unique travel identifiers.
    TravelID;
    ```
   
-   You can use the **ABAP Pretty Printer** function (**Shift+F1**) to format the source code. 
-   You will be requested to configure it, if this is the first time you use it on the system.  
+   You can use the **ABAP Pretty Printer** function (**Shift+F1**) to format the source code.  
    
-   ![Travel BO Behavior Definition](images/field.png)
+   <!-- ![Travel BO Behavior Definition](images/field.png) -->
+   <img src="images/field.png" alt="Travel BO Behavior Definition" width="60%"> 
          
    As you can seen in the behavior definition, the administrative fields `CreatedAt`, `CreatedBy`, `LocalLastChangedAt`, `LastChangedAt`, and `LastChangedBy` have been set to read-only during the service generation. Their values are automatically set by the ABAP runtime thanks to element annotations specified in the base CDS view entity ![ddls icon](images/adt_ddls.png)`ZRAP100_R_Travel_###`.  
    
@@ -72,9 +73,10 @@ A number range object will be used to determine the unique travel identifiers.
      
    Set the cursor on the statement **`create;`** and press **Ctrl+1** to open the **Quick Assist** view. 
    
-   Select the entry **`Add earlynumbering method for create of entity zrap100_i_travel_### in local handler ...`** from the dialog to add the `FOR NUMBERING` method **`earlynumbering_create`** to the local handler class **`lcl_handler`** of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**.
+   Select the entry **`Add earlynumbering method for create of entity zrap100_i_travel_### in local handler ...`** from the dialog to add the `FOR NUMBERING` method **`earlynumbering_create`** to the local handler class **`lcl_handler`** of the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**.
          
-   ![Travel BO Behavior Definition](images/create.png)
+   <!-- ![Travel BO Behavior Definition](images/create.png) -->
+   <img src="images/create.png" alt="Travel BO Behavior Definition" width="60%">  
    
    The behavior implementation class ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`** will be enhanced appropriately.
    
@@ -117,11 +119,13 @@ A number range object will be used to determine the unique travel identifiers.
    First, it must be ensured that the imported _Travel_ entity instances do not yet have an ID set. This must especially be checked when the BO is draft-enabled. 
    
    For that, remove all instances with a non-initial **`TravelID`** from the imported parameter **`entities`** which contains all _Travel_ entities for which a key must be assigned. Insert the code snippet provided below into the method implementation and replace all occurrences of the placeholder `###` with your group ID.
-   
+
    ```ABAP
     DATA:
-      entity        TYPE STRUCTURE FOR CREATE ZRAP100_R_TravelTP_###,
-      travel_id_max TYPE /dmo/travel_id.
+      entity           TYPE STRUCTURE FOR CREATE ZRAP100_R_TravelTP_###,
+      travel_id_max    TYPE /dmo/travel_id,
+      " change to abap_false if you get the ABAP Runtime error 'BEHAVIOR_ILLEGAL_STATEMENT'
+      use_number_range TYPE abap_bool VALUE abap_true.
 
     "Ensure Travel ID is not set yet (idempotent)- must be checked when BO is draft-enabled
     LOOP AT entities INTO entity WHERE TravelID IS NOT INITIAL.
@@ -130,12 +134,12 @@ A number range object will be used to determine the unique travel identifiers.
 
     DATA(entities_wo_travelid) = entities.
     "Remove the entries with an existing Travel ID
-    DELETE entities_wo_travelid WHERE TravelID IS NOT INITIAL.        
+    DELETE entities_wo_travelid WHERE TravelID IS NOT INITIAL.
    ```
-   
+ 
    ![Travel BO Behavior Pool](images/new11.png)
    
-3. Get the exact number range for the new ID according to number of relevant _Travel_ entity instances stored in the internal table **`entities_wo_travelid`** and determine the current max ID. 
+3. Use the Number Range API to retrieve the set of available numbers, based on entries in **`entities_wo_travelid`** and determine the first available travel ID. 
 
    The number range object **`/DMO/TRV_M`** of the _ABAP Flight Reference Scenario_ (located in the package `/DMO/FLIGHT_REUSE`) is used in the example implementation provided below.
 
@@ -143,40 +147,58 @@ A number range object will be used to determine the unique travel identifiers.
    
    For that, enhance the method implementation with the provided code snippet as shown on the screenshot below. As already mentioned, the error handling is kept to the minimum here.
 
-   ```ABAP
-   "Get numbers
-    TRY.
-        cl_numberrange_runtime=>number_get(
-          EXPORTING
-            nr_range_nr       = '01'
-            object            = '/DMO/TRV_M'
-            quantity          = CONV #( lines( entities_wo_travelid ) )
-          IMPORTING
-            number            = DATA(number_range_key)
-            returncode        = DATA(number_range_return_code)
-            returned_quantity = DATA(number_range_returned_quantity)
-        ).
-      CATCH cx_number_ranges INTO DATA(lx_number_ranges).
-        LOOP AT entities_wo_travelid INTO entity.
-          APPEND VALUE #(  %cid      = entity-%cid
-                           %key      = entity-%key
-                           %is_draft = entity-%is_draft
-                           %msg      = lx_number_ranges
-                        ) TO reported-travel.
-          APPEND VALUE #(  %cid      = entity-%cid
-                           %key      = entity-%key
-                           %is_draft = entity-%is_draft
-                        ) TO failed-travel.
-        ENDLOOP.
-        EXIT.
-    ENDTRY.
-    
-    "determine the first free travel ID from the number range
-    travel_id_max = number_range_key - number_range_returned_quantity.  
+   ```ABAP 
+     IF use_number_range = abap_true.
+      "Get numbers
+      TRY.
+          cl_numberrange_runtime=>number_get(
+            EXPORTING
+              nr_range_nr       = '01'
+              object            = '/DMO/TRV_M'
+              quantity          = CONV #( lines( entities_wo_travelid ) )
+            IMPORTING
+              number            = DATA(number_range_key)
+              returncode        = DATA(number_range_return_code)
+              returned_quantity = DATA(number_range_returned_quantity)
+          ).
+        CATCH cx_number_ranges INTO DATA(lx_number_ranges).
+          LOOP AT entities_wo_travelid INTO entity.
+            APPEND VALUE #(  %cid      = entity-%cid
+                             %key      = entity-%key
+                             %is_draft = entity-%is_draft
+                             %msg      = lx_number_ranges
+                          ) TO reported-travel.
+            APPEND VALUE #(  %cid      = entity-%cid
+                             %key      = entity-%key
+                             %is_draft = entity-%is_draft
+                          ) TO failed-travel.
+          ENDLOOP.
+          EXIT.
+      ENDTRY.
+
+      "determine the first free travel ID from the number range
+      travel_id_max = number_range_key - number_range_returned_quantity.
+    ELSE.
+      "determine the first free travel ID without number range
+      "Get max travel ID from active table
+      SELECT SINGLE FROM zrap100_atrav### FIELDS MAX( travel_id ) AS travelID INTO @travel_id_max.
+      "Get max travel ID from draft table
+      SELECT SINGLE FROM zrap100_dtrav### FIELDS MAX( travelid ) INTO @DATA(max_travelid_draft).
+      IF max_travelid_draft > travel_id_max.
+        travel_id_max = max_travelid_draft.
+      ENDIF.
+    ENDIF.
+ 
    ```
    
    ![Travel BO Behavior Pool](images/new12.png)
-  
+ 
+
+> ⚠ If you get the following error message:  
+> **ABAP Runtime error 'BEHAVIOR_ILLEGAL_STATEMENT'**    
+> then change the value of the variable `use_number_range` to `abap_false`.   
+> `use_number_range TYPE abap_bool VALUE abap_true.`     
+ 
 4. Set the Travel ID for new _Travel_ instances without identifier.
    
    Enhance the method implementation with the following code snippet as shown on the screenshot below.
@@ -213,10 +235,13 @@ A number range object will be used to determine the unique travel identifiers.
 1. Refresh your application in the browser using **F5** if the browser is still open -   
    or go to your service binding ![srvb icon](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`** and start the Fiori elements App preview for the **`Travel`** entity set.
 
-2. Create a new _Travel_ instance. An ID should now be assigned automatically by the logic you just implemented.   
-   No dialog for manually entering a Travel ID should be displayed now. The Travel ID will be assigned automatically.
+2. Create a new _Travel_ instance. 
 
-   ![Travel App Preview](images/preview2.png)
+   ![Travel App Preview](images/preview2.png)  
+
+   No dialog for manually entering a Travel ID should be displayed now. The Travel ID will be assigned automatically by the logic you just implemented.   
+
+   ![Travel App Preview](images/preview3.png)  
 
 </details>
 
