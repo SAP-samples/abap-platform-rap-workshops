@@ -106,15 +106,15 @@ Follow these steps to build an OData service for developing a transactional, dra
 | Exercises | -- |
 | ------------- |  -- |
 | [Getting Started](exercises/ex0/readme.md) | -- |
-| [Exercise 1: Create Database Table and Generate UI Service](exercises/ex1/readme.md) | -- |
-| [Exercise 2: Enhance the BO Data Model and Enable OData Streams](exercises/ex2/readme.md) | -- |
-| [Exercise 3: Enhance the BO Behavior – Early Numbering](exercises/ex3/readme.md) | -- |
-| [Exercise 4: Enhance the BO Behavior – Determinations](exercises/ex4/readme.md) | -- |
-| [Exercise 5: Enhance the BO Behavior – Validations](exercises/ex5/readme.md) | -- |
-| [Exercise 6: Enhance the BO Behavior – Actions](exercises/ex6/readme.md) | -- |
-| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (**_optional_**)](exercises/ex7/readme.md) | -- |
-| [Exercise 8: Write an ABAP Unit Test for the RAP BO (**_optional_**)](exercises/ex8/readme.md) | -- |
-| [Exercise 9: External API-based Access to the RAP BO with EML (**_explore_**)](exercises/ex9/readme.md) | -- |
+| [Exercise 1: Create Database Table and Generate UI Service](exercices/ex1/readme.md) | -- |
+| [Exercise 2: Enhance the BO Data Model and Enable OData Streams](exercices/ex2/readme.md) | -- |
+| [Exercise 3: Enhance the BO Behavior – Early Numbering](exercices/ex3/readme.md) | -- |
+| [Exercise 4: Enhance the BO Behavior – Determinations](exercices/ex4/readme.md) | -- |
+| [Exercise 5: Enhance the BO Behavior – Validations](exercices/ex5/readme.md) | -- |
+| [Exercise 6: Enhance the BO Behavior – Actions](exercices/ex6/readme.md) | -- |
+| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (**_optional_**)](exercices/ex7/readme.md) | -- |
+| [Exercise 8: Write an ABAP Unit Test for the RAP BO (**_optional_**)](exercices/ex8/readme.md) | -- |
+| [Exercise 9: External API-based Access to the RAP BO with EML (**_explore_**)](exercices/ex9/readme.md) | -- |
    
 _BO: Business Object_  
 _EML: Entity Manipulation Language_    
