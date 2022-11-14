@@ -17,9 +17,7 @@ CLASS zrap100_tc_travel_eml_### DEFINITION
       begin_date           TYPE /dmo/begin_date,
       end_date             TYPE /dmo/end_date,
       agency_mock_data     TYPE STANDARD TABLE OF /dmo/agency,
-      customer_mock_data   TYPE STANDARD TABLE OF /dmo/customer,
-      carrier_mock_data    TYPE STANDARD TABLE OF /dmo/carrier,
-      flight_mock_data     TYPE STANDARD TABLE OF /dmo/flight.
+      customer_mock_data   TYPE STANDARD TABLE OF /dmo/customer.
 
     CLASS-METHODS:
       class_setup,    " setup test double framework
@@ -48,9 +46,7 @@ CLASS zrap100_tc_travel_eml_### IMPLEMENTATION.
     " create test doubles for additional used tables.
     sql_test_environment = cl_osql_test_environment=>create(
     i_dependency_list = VALUE #( ( '/DMO/AGENCY' )
-                                 ( '/DMO/CUSTOMER' )
-                                 ( '/DMO/CARRIER' )
-                                 ( '/DMO/FLIGHT' ) ) ).
+                                 ( '/DMO/CUSTOMER' ) ) ).
 
     " prepare the test data
     begin_date = cl_abap_context_info=>get_system_date( ) + 10.
@@ -58,9 +54,6 @@ CLASS zrap100_tc_travel_eml_### IMPLEMENTATION.
 
     agency_mock_data   = VALUE #( ( agency_id = '070041' name = 'Agency 070041' ) ).
     customer_mock_data = VALUE #( ( customer_id = '000093' last_name = 'Customer 000093' ) ).
-    carrier_mock_data  = VALUE #( ( carrier_id = '123' name = 'carrier 123' ) ).
-    flight_mock_data   = VALUE #( ( carrier_id = '123' connection_id = '9876' flight_date = begin_date
-                                    price = '2000' currency_code = 'EUR' ) ).
   ENDMETHOD.
 
   METHOD class_teardown.
@@ -85,10 +78,10 @@ CLASS zrap100_tc_travel_eml_### IMPLEMENTATION.
                           CurrencyCode  = 'EUR'
                       ) )
 
-     " execute action `acceptTravel`
-     ENTITY Travel
-       EXECUTE acceptTravel
-         FROM VALUE #( ( %cid_ref = 'ROOT1' ) )
+*     " execute action `acceptTravel`
+*     ENTITY Travel
+*       EXECUTE acceptTravel
+*         FROM VALUE #( ( %cid_ref = 'ROOT1' ) )
 
     " execute action `deductDiscount`
      ENTITY Travel
@@ -123,8 +116,8 @@ CLASS zrap100_tc_travel_eml_### IMPLEMENTATION.
     cl_abap_unit_assert=>assert_not_initial( msg = 'travel from db' act = lt_travel ).
     " assert the generation of a travel ID (key) at creation
     cl_abap_unit_assert=>assert_not_initial( msg = 'travel-id' act = lt_travel[ 1 ]-TravelID ).
-    " assert that the action has changed the overall status
-    cl_abap_unit_assert=>assert_equals( msg = 'overall status' exp = 'A' act = lt_travel[ 1 ]-OverallStatus ).
+*    " assert that the action has changed the overall status
+*    cl_abap_unit_assert=>assert_equals( msg = 'overall status' exp = 'A' act = lt_travel[ 1 ]-OverallStatus ).
     " assert the discounted booking_fee
     cl_abap_unit_assert=>assert_equals( msg = 'discounted booking_fee' exp = '16' act = lt_travel[ 1 ]-BookingFee ).
 
@@ -137,8 +130,6 @@ CLASS zrap100_tc_travel_eml_### IMPLEMENTATION.
     " insert test data into test doubles
     sql_test_environment->insert_test_data( agency_mock_data   ).
     sql_test_environment->insert_test_data( customer_mock_data ).
-    sql_test_environment->insert_test_data( carrier_mock_data  ).
-    sql_test_environment->insert_test_data( flight_mock_data   ).
   ENDMETHOD.
 
   METHOD teardown.

@@ -17,7 +17,7 @@ In the present exercise, you will write scenario tests for your business object 
 
 > **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned **group ID** in the exercise steps below. 
 
-### Excursus: ABAP Unit Testing
+### About ABAP Unit Testing
 
 Ensuring the high quality of applications has a very high priority in the whole software development lifecycle. As an application developer, you want to be able to write, for example, unit, scenario and integration tests to verify the application behavior as a whole. The ABAP platform offers different mechanisms and frameworks to achieve this. The main options here are ABAP Unit Tests und the ABAP Test Cockpit.
 
@@ -27,8 +27,10 @@ ABAP Unit is the state-of-the-art unit testing framework for ABAP. It's embedded
 
 **Further reading** : [Test@RAP Development Guide](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/1fa88de357464d98a08165cb5830c0ad.html) | [Testing the RAP Business Object](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/600245bbe0204b34b4cd7626339fd56b.html) | [Ensuring Quality of ABAP Code](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/4ec7641e6e391014adc9fffe4e204223.html)
 
----
-### Excursus: Simplified Runtime flow of ABAP Unit Test Classes
+### Simplified Runtime flow of ABAP Unit Test Classes
+
+<details>
+  <summary>Click to expand!</summary>
 
 The ABAP Unit framework has standard special methods which needs to be implemented to set up and destroy a given test cofiguration.
 - The standard special static methods of the test configuration **`class_setup()`** and **`class_teardown()`**.
@@ -44,7 +46,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
  ![BO Test – Adjust Test Class](images/testclassruntimeflow01.png)
 
----
+</details>
 
 ## Exercise 8.1: Create the ABAP Unit Test Class
 [^Top of page](#)
@@ -100,6 +102,8 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
   <summary>Click to expand!</summary>
 
 1. Insert the code snippet provided below under the **`PRIVATE SECTION.`** statement in the class definition.  
+  
+  Mock data for the _Agency_ and _Customer_ entities are needed in the present test scenario.
    
    ```ABAP
        CLASS-DATA:
@@ -108,9 +112,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
          begin_date           TYPE /dmo/begin_date,
          end_date             TYPE /dmo/end_date,
          agency_mock_data     TYPE STANDARD TABLE OF /dmo/agency,
-         customer_mock_data   TYPE STANDARD TABLE OF /dmo/customer,
-         carrier_mock_data    TYPE STANDARD TABLE OF /dmo/carrier,
-         flight_mock_data     TYPE STANDARD TABLE OF /dmo/flight.
+         customer_mock_data   TYPE STANDARD TABLE OF /dmo/customer.
        
        CLASS-METHODS:
          class_setup,    " setup test double framework
@@ -169,9 +171,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
       " create test doubles for additional used tables.
       sql_test_environment = cl_osql_test_environment=>create(
       i_dependency_list = VALUE #( ( '/DMO/AGENCY' )
-                                   ( '/DMO/CUSTOMER' )
-                                   ( '/DMO/CARRIER' )
-                                   ( '/DMO/FLIGHT' ) ) ).
+                                   ( '/DMO/CUSTOMER' ) ) ).
 
       " prepare the test data
       begin_date = cl_abap_context_info=>get_system_date( ) + 10.
@@ -179,9 +179,6 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 
       agency_mock_data   = VALUE #( ( agency_id = '070041' name = 'Agency 070041' ) ).
       customer_mock_data = VALUE #( ( customer_id = '000093' last_name = 'Customer 000093' ) ).
-      carrier_mock_data  = VALUE #( ( carrier_id = '123' name = 'carrier 123' ) ).
-      flight_mock_data   = VALUE #( ( carrier_id = '123' connection_id = '9876' flight_date = begin_date
-                                      price = '2000' currency_code = 'EUR' ) ).
     ENDMETHOD.   
    ```   
 
@@ -220,14 +217,12 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
          " insert test data into test doubles
          sql_test_environment->insert_test_data( agency_mock_data   ).
          sql_test_environment->insert_test_data( customer_mock_data ).
-         sql_test_environment->insert_test_data( carrier_mock_data  ).
-         sql_test_environment->insert_test_data( flight_mock_data   ).
        ENDMETHOD.
     ``` 
 
-   The source code should look like this:
+    The source code should look like this:
 
-   ![Test Class](images/testclass06.png)
+    ![Test Class](images/testclass06.png)
 
 
 5. Implement the special instance method **`teardown`** which is used to rollback any changes in the involved entities after the execution the test method.
@@ -262,6 +257,9 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 1. Implement the test method **`create_with_action`**.  
    
    Insert the code snippet provided below in the method body and replace all occurrences of **`###`** with your group ID.
+
+   ⚠**Attention**⚠:  
+   In case you've defined and implemented the instance actions **`acceptTravel`** in the [Exercise 6](../ex6/readme.md)_), then uncomment the six (6) related code lines in the inserted source code.  
    
    ```ABAP   
       METHOD create_with_action.
@@ -280,10 +278,10 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
                             CurrencyCode  = 'EUR'
                          ) )
 
-         " execute action `acceptTravel`
-         ENTITY Travel
-           EXECUTE acceptTravel
-             FROM VALUE #( ( %cid_ref = 'ROOT1' ) )
+   *        " execute action `acceptTravel`
+   *        ENTITY Travel
+   *          EXECUTE acceptTravel
+   *            FROM VALUE #( ( %cid_ref = 'ROOT1' ) )
 
         " execute action `deductDiscount`
          ENTITY Travel
@@ -318,8 +316,8 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
         cl_abap_unit_assert=>assert_not_initial( msg = 'travel from db' act = lt_travel ).
         " assert the generation of a travel ID (key) at creation
         cl_abap_unit_assert=>assert_not_initial( msg = 'travel-id' act = lt_travel[ 1 ]-TravelID ).
-        " assert that the action has changed the overall status
-        cl_abap_unit_assert=>assert_equals( msg = 'overall status' exp = 'A' act = lt_travel[ 1 ]-OverallStatus ).
+   *     " assert that the action has changed the overall status
+   *     cl_abap_unit_assert=>assert_equals( msg = 'overall status' exp = 'A' act = lt_travel[ 1 ]-OverallStatus ).
         " assert the discounted booking_fee
         cl_abap_unit_assert=>assert_equals( msg = 'discounted booking_fee' exp = '16' act = lt_travel[ 1 ]-BookingFee ).
         
@@ -371,7 +369,7 @@ You are through with writing your BO test. Go ahead and execute it.
    
    ![Test Class](images/testclass09.png)
    
-10. Now, run the unit test from the related behavior definition **`ZRAP100_R_TravelTP_###`**.
+2. Now, run the unit test from the related behavior definition **`ZRAP100_R_TravelTP_###`**.
 
     In the [8.1 - Create the ABAP Unit Test Class](#exercise-81-create-the-abap-unit-test-class) of this document, you've specified the test relation to your behavior definition **`ZRAP100_R_TravelTP_###`** using the special ABAP Doc comment **`"! @testing BDEF:ZRAP100_R_TravelTP_###`**, where **`###`** is your group ID.   
  
@@ -379,7 +377,7 @@ You are through with writing your BO test. Go ahead and execute it.
   
     Select your BO behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`** in the **Project Explorer**, right-click on it, and select **Run as > ABAP Unit Test** (**Ctrl+Shift+F10**) from the context menu to executed all its related unit tests; Currently only one :-). 
     
-    All units tests related to this behavior definition are executed and displayed under _**Foreign Tests**_ in the _**ABAP Unit**_ view.
+    All unit tests related to this behavior definition are executed and displayed under _**Foreign Tests**_ in the _**ABAP Unit**_ view.
    
     ![Test Class](images/ex8_6.png)
     
@@ -404,6 +402,9 @@ You can continue with the next exercise – **\[Explore\] [Exercises 9: External
 [^Top of page](#)
 
 Find the source code for the global ABAP test class in the [sources](sources) folder. Don't forget to replace all occurences of the placeholder `###` with your group ID.
+
+> ℹ **Info**:   
+> The solution comprises the implementation of a unit test for the actions, i.e. `deductDiscount` and `acceptTravel`.
 
 - ![document](images/doc.png) [CLASS ZRAP100_TC_TRAVEL_EML_###](sources/EX8_CLASS_ZRAP100_TC_TRAVEL_EML.txt)
 
