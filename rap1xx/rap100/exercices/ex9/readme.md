@@ -28,7 +28,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 > Make use of the classic **F1 Help** to get detailed information on each ABAP and EML statement in ABAP editors
 
 
-### Excursus: Entity Manipulation Language (EML)
+### About Entity Manipulation Language (EML)
 > The Entity Manipulation Language (EML) is an extension of the ABAP language which offers a type-safe, API-based access to RAP business objects directly by using ABAP. EML has an SQL-like syntax. 
 > 
 > EML is used to implement the transactional behavior of RAP BOs and also access existing RAP BOs from outside the RAP context.  
@@ -36,10 +36,9 @@ This exercise is all about exploring and better understanding EML. Follow the in
 > 
 > When consuming a RAP BO instance via EML, the consumer application is responsible for triggering the `COMMIT` operation after `MODIFY` statement to persist the changes temporary stored in the transactional buffer to the SAP HANA database.
 > 
-> The EML reference documentation of is provided in the ABAP Keyword Documentation. You can use the classic **F1 Help** to get detailed information on each statement by pressing **F1** in the ABAP editors. 
+> The EML reference documentation is provided in the ABAP Keyword Documentation. You can use the classic **F1 Help** to get detailed information on each statement by pressing **F1** in the ABAP editors. 
 >
-> **Further reading**: [EML@RAP Development Guide](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/af7782de6b9140e29a24eae607bf4138.html) | [EML@ABAP Keyword Documentation](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abeneml.htm) | [ABAP for RAP Business Objects](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenabap_for_rap_bos.htm) 
-
+> **Further reading**: [EML@RAP Development Guide](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/af7782de6b9140e29a24eae607bf4138.html) | [EML@ABAP Keyword Documentation](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abeneml.htm) | [ABAP for RAP Business Objects](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenabap_for_rap_bos.htm) | [RAP BO Contract](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/3a402c5cf6a74bc1a1de080b2a7c6978.html)
 
 ## Exercise 9.1: Create the ABAP Class
 [^Top of page](#)
@@ -79,7 +78,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
        - **`is_active`**: for active instances (`if_abap_behv=>mk-off` = **`00`**) 
        
     3. **(2)** Static attributes accessible everywhere in the class 
-       - **`travel_id`**: used to specify a the ID of a travel instance
+       - **`travel_id`**: used to specify the ID of a travel instance
        - **`instance_state`**: used to specify the instance state (draft or active)
        - **`console_output`**: reference object used to write output to the _Console_ view  
        
@@ -159,7 +158,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 > This method is executed when the variable **`execute`** is set to **`2`** or **`55`** in the method **`if_oo_adt_classrun~main( )`**.
 >
 > The [EML statement **`MODIFY ENTITIES`**](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abapmodify_entity_entities.htm) with the standard operation **`UPDATE`** is used in this example.  
-> PS: Draft instances **cannot** be updated with this EML statement. The standard draft operation **`EXECUTE Edit`** must be used instead.
+> PS: You can only update your own Draft instances when using EML APIs. The standard draft operation **`EXECUTE Edit`** must be used first when manipulating an active BO entity instance with no associated draft instance.
 
 >> **Info**:  
 >> The `UPDATE` statement enables the editing of entity instances.
@@ -255,7 +254,8 @@ This exercise is all about exploring and better understanding EML. Follow the in
 
 >>
 >> **Info**:  
->> The `CREATE` statement enables the creation of entity instances. The `CREATE BY` association statement uses an association of the entity specified in the EML statement in order to create instances of its child entity.    
+>> The `CREATE` statement enables the creation of entity instances. The `CREATE BY` association statement uses an association of the entity specified in the EML statement in order to create instances of its child entity.   
+>> We will only use the `CREATE` statement in the current exercise.    
 >> **Read more**: [MODIFY >> General Information: CREATE and CREATE BY Association](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/9000a42dcd604a7799527cbb00bc4a69.html) 
 >> 
 >> The `EXECUTE Action` statement enables the execution of actions.   
@@ -349,7 +349,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 
 >>
 >> **Info**:  
->> By executing the draft action `ACTIVATE` on a draft instance, you copy the draft instance to active application buffer. It invokes the `PREPARE` and a modify request to change the active BO instance according to the state of the draft instance. Once the active instance is successfully created or updated, the draft instance is discarded. The activate action does not save the active instance on the database. The actual save is executed separately, either by `COMMIT ENTITIES` via EML or by calling the save sequence in case of OData. 
+>> By executing the draft action `ACTIVATE` on a draft instance, you copy the draft instance to active application buffer. It invokes the `PREPARE` and a modify request to change the active BO instance according to the state of the draft instance. Once the active instance is successfully created or updated, the draft instance is discarded. The activate action does not save the active instance on the database. The actual save is executed separately, either by `COMMIT ENTITIES` via EML or by calling the save sequence in case of OData. In the case of OData requests, this is automatically done by the RAP framework.
 >> The activate action is only possible on draft instances.
 >> 
 >> **Read more**: [Creating Active Data](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/e61754e947724d1c90676b2605ee453f.html)
@@ -375,7 +375,9 @@ This exercise is all about exploring and better understanding EML. Follow the in
 2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.      
 
 3. Press **F9** to run the class as console application and check the result in the _Console_ view.      
-   Check the deleted instance in the _Travel_ Fiori elements app.  
+   
+   Check in the _Travel_ Fiori elements app if the specified draft instances have been activated.  
+   
    You can also use the _ABAP Debugger_ to investigate the response parameters.    
    
    ![ABAP Class](images/emlclass08.png)

@@ -164,10 +164,10 @@ CLASS zrap100_cl_eml_### IMPLEMENTATION.
                           Description = | ABAP DevDays { cl_abap_context_info=>get_system_time(  ) } |
                       ) )
 
-      "execute action `rejectTravel`
-        ENTITY travel
-        EXECUTE rejectTravel
-        FROM VALUE #( ( %cid_ref = 'create_travel' %is_draft = instance_state ) )
+*      "execute action `rejectTravel`
+*        ENTITY travel
+*        EXECUTE rejectTravel
+*        FROM VALUE #( ( %cid_ref = 'create_travel' %is_draft = instance_state ) )
 
       MAPPED DATA(mapped)
       FAILED DATA(failed)
@@ -231,7 +231,7 @@ CLASS zrap100_cl_eml_### IMPLEMENTATION.
     MODIFY ENTITIES OF ZRAP100_R_TravelTP_###
       ENTITY Travel
         EXECUTE Activate FROM
-        VALUE #( ( %key-TravelID = travel_id ) )
+        VALUE #( ( %cid = 'activate_draft_travel'  %key-TravelID = travel_id ) )
      MAPPED DATA(mapped)
      FAILED DATA(failed)
      REPORTED DATA(reported).
