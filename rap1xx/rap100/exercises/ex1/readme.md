@@ -246,16 +246,16 @@ In this exercise, you will create an ABAP package and database table. In your da
 
         8. Right click on the service definition **ZRAP100_UI_TRAVEL_###** and choose **New service binding**    
 
-          <img src="images/e170_add_service_binding.png" alt="table" width="50%"> 
+           <img src="images/e170_add_service_binding.png" alt="table" width="50%"> 
 
         9. Enter the following values:   
 
-          - Name:  ZRAP100_UI_Travel_O4_###   
-          - Description: ##GENERATED Demo ###   
+           - Name:  ZRAP100_UI_Travel_O4_###   
+           - Description: ##GENERATED Demo ###   
 
-          and choose the **OData V4 - UI" Service Binding**   
+           and choose the **OData V4 - UI" Service Binding**   
 
-          <img src="images/e180_add_service_binding.png" alt="table" width="50%"> 
+           <img src="images/e180_add_service_binding.png" alt="table" width="50%"> 
 
        10. Press **Next**.   
 
