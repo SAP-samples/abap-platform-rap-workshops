@@ -17,20 +17,20 @@ In the present exercise, you will  define and implement a determination, `setSta
 
 > **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
 
-### Excursus: Determinations  
+### About Determinations  
 > A determination is an optional part of the business object behavior that modifies instances of business objects based on trigger conditions. A determination is implicitly invoked by the RAP framework if the trigger condition of the determination is fulfilled. Trigger conditions can be modify operations and modified fields.   
 >  
 > **Further reading**: [Determinations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/6edb0438d3e14d18b3c403c406fbe209.html)
 
-### Excursus: Entity Manipulation Language (EML)
+### About Entity Manipulation Language (EML)
 > The Entity Manipulation Language (EML) is an extension of the ABAP language which offers an API-based access to RAP business objects. EML is used to implement the transactional behavior of RAP BOs and also access existing RAP BOs from outside the RAP context.   
 > 
-> PS: Some EML statements can be used in the so-called local mode - by using the [addition **`IN LOCAL MODE`**](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm) - to exclude feature controls and authorization checks. This addition can currently only be used in RAP BO implementations for the particular RAP BO itself, i. e. not for other RAP BOs.
+> PS: Some EML statements can be used in the so-called local mode - by using the [addition **`IN LOCAL MODE`**](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abapin_local_mode.htm) - to exclude feature controls and authorization checks. This addition can only be used in the behavior implementation (aka behavior pool) of a particular RAP BO when accessing its own instances, i. e. not for accessing instances of other RAP BOs.
 >
 > The EML reference documentation is provided in the ABAP Keyword Documentation.   
 > You can use the classic **F1 Help** to get detailed information on each statement by pressing **F1** in the ABAP editors. 
 >
-> **Further reading**: [ABAP for RAP Business Objects](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenabap_for_rap_bos.htm) 
+> **Further reading**: [Entity Manipulation Language (EML)](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/af7782de6b9140e29a24eae607bf4138.html) | [ABAP for RAP Business Objects](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenabap_for_rap_bos.htm) 
 
 ## Exercise 4.1: Define the Determination `setStatusToOpen`
 [^Top of page](#)
@@ -46,7 +46,8 @@ In the present exercise, you will  define and implement a determination, `setSta
      determination setStatusToOpen on modify { create; }
    ```
    
-   ![Travel BO Definition](images/new14.png)
+   <!-- ![Travel BO Definition](images/new14.png) -->
+   <img src="images/new14.png" alt="Travel BO Definition" width="60%"> 
    
    **Short explanation**:  
    The statement specifies the name of the new determination, `setStatusToOpen` and `on modify` as the determination time when creating new _travel_ instance (`{ create }`).
@@ -55,14 +56,13 @@ In the present exercise, you will  define and implement a determination, `setSta
 
 3. Now, declare the required method in behavior implementation class with ADT Quick Fix.
   
-   Set the cursor on the determination name **`setStatusToOpen`** and press **Ctrl+1** to open the **Quick Assist** view and select the entry _`Add method for determination setstatustoopen of entity zrap100_i_travel_### ...`_ in the view.
+   Set the cursor on the determination name **`setStatusToOpen`** and press **Ctrl+1** to open the **Quick Assist** view and select the entry _`Add method for determination setstatustoopen of entity zrap100_r_travel_### ...`_ in the view.
    
-   As result, the `FOR DETERMINE` method **`setStatusToOpen`** will be added to the local handler class **`lcl_handler`** of the behavior pool of the _Travel_ BO entity ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVEL_###`**.
+   As result, the `FOR DETERMINE` method **`setStatusToOpen`** will be added to the local handler class **`lcl_handler`** of the behavior pool of the _Travel_ BO entity ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**.
          
-   ![Travel BO Behavior Pool](images/new15.png)             
+   <!-- ![Travel BO Behavior Pool](images/new15.png) -->
+   <img src="images/new15.png" alt="Travel BO Behavior Pool" width="60%">  
    
-4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
-
 You are through with the definition of the determination.
 
 </details>
@@ -84,7 +84,7 @@ You will now implement the logic of the defined determination in the behavior po
    **Short explanation**:  
    - The addition **`FOR DETERMINE`** indicates that the method provides the implementation of a determination and the addition **`ON MODIFY`** indicates the specified trigger time.
    - `IMPORTING`parameter **`keys`** - an internal table containing the keys of the instances the determination will be executed on 
-   includes all entities for which keys must be assigned    
+   all entities for which keys must be assigned    
    - Implicit **`CHANGING`** parameter **`reported`** - used to return messages in case of failure   
          
     Now go ahead and implement the method in the implementation part of the local handler class.
@@ -115,6 +115,8 @@ You will now implement the logic of the defined determination in the behavior po
 
    Insert the following code snippet in the method and replace all occurrences of the placeholder `###` with your group ID.   
    You can use the **F1 help** to get detailed information on each EML statement.
+ 
+   Format your source code with the **ABAP Pretty Printer** (**Shift+F1**).
    
    ```ABAP
     "Read travel instances of the transferred keys
@@ -132,8 +134,8 @@ You will now implement the logic of the defined determination in the behavior po
     "else set overall travel status to open ('O')
     MODIFY ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
       ENTITY Travel
-        UPDATE SET FIELDS
-        WITH VALUE #( FOR travel IN travels ( %tky    = travel-%tky
+        UPDATE FIELDS ( OverallStatus )
+        WITH VALUE #( FOR travel IN travels ( %tky          = travel-%tky
                                               OverallStatus = travel_status-open ) )
     REPORTED DATA(update_reported).
 
@@ -163,7 +165,8 @@ You will now implement the logic of the defined determination in the behavior po
 2. Create a new _Travel_ instance. The overal status should now be set automatically by the logic you just implemented.   
    The initial overall status of the created should now be set to **`open`** (**`O`**). 
 
-   ![Travel App Preview](images/pp3.png)
+   <!-- ![Travel App Preview](images/pp3.png) -->
+   <img src="images/pp3.png" alt="Travel App Preview" width="80%">   
 
 </details>
 

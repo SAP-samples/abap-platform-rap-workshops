@@ -1,5 +1,5 @@
 managed implementation in class ZRAP100_BP_TravelTP_### unique;
-strict;
+strict ( 2 );
 with draft;
 
 define behavior for ZRAP100_R_TRAVELTP_### alias Travel
@@ -45,6 +45,9 @@ early numbering
     CurrencyCode = CURRENCY_CODE;
     Description = DESCRIPTION;
     OverallStatus = OVERALL_STATUS;
+    Attachment = ATTACHMENT;
+    MimeType = MIME_TYPE;
+    FileName = FILE_NAME;    
     CreatedBy = CREATED_BY;
     CreatedAt = CREATED_AT;
     LastChangedBy = LAST_CHANGED_BY;
