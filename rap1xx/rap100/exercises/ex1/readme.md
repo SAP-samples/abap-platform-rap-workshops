@@ -203,9 +203,81 @@ In this exercise, you will create an ABAP package and database table. In your da
       > The main aspects of the naming conventions of SAP S/4HANA's Virtual Data Model (VDM) are used in this exercise.  
       > More information on VDM can be found on the SAP Help portal: **[Here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/8a8cee943ef944fe8936f4cc60ba9bc1.html)**.
  
+ 
+  
+      > ⚠ **Attention**  
+      > If you receive the error message _**DDLS ZRAP100_C_TRAVELTP_AF1: Element 'Client' for'ObjectModel.semanticKey**_, 
+      > this is due to a bug in the SAP BTP ABAP Environment, 2011, HFC3.  
+      > An emergency patch is planned to fix this issue.
+      >
+      > <img src="images/e100_error_message_detail.png" alt="table" width="50%"> 
+  
+      <details>
+        <summary>Click to expand to work around this issue!</summary>      
+        
+        When the error message **DDLS ZRAP100_C_TRAVELTP_###: Element 'Client' for 'ObjectModel.semanticKey' not found** shows up do the following:
+
+        1. Press OK to close the popup.
+       
+        2. Press Cancel.
+       
+           <img src="images/e110_press_cancel.png" alt="table" width="50%">   
+       
+        3. Open the generated projection view `ZRAP100_C_TRAVELTP_###`
+
+           <img src="images/e115_open_projection_view.png" alt="table" width="50%">  
+
+        4. Adapt the generated code of the projection view.   
+        
+           Change the generated code from   
+
+           `@ObjectModel.semanticKey: [ 'Client', 'TravelID' ]`   
+           to   
+           `@ObjectModel.semanticKey: [ 'TravelID' ]`   
+
+           by removing the field 'Client' from the semantic key definition.   
+           
+           <img src="images/e120_remove_client_field.png" alt="table" width="50%">
+         
+        5. Save and activate your changes   
+
+        6. Use mass activation
+
+           <img src="images/e150_use_mass_activation.png" alt="table" width="50%"> 
+
+        7. In the dialog select all objects and press **Activate**  
+
+           <img src="images/e160_mass_activation.png" alt="table" width="50%">  
+
+        8. Right click on the service definition **ZRAP100_UI_TRAVEL_###** and choose **New service binding**    
+
+          <img src="images/e170_add_service_binding.png" alt="table" width="50%"> 
+
+        9. Enter the following values:   
+
+          - Name:  ZRAP100_UI_Travel_O4_###   
+          - Description: ##GENERATED Demo ###   
+
+          and choose the **OData V4 - UI" Service Binding**   
+
+          <img src="images/e180_add_service_binding.png" alt="table" width="50%"> 
+
+       10. Press **Next**.   
+
+       11. Select a transport request and press **Finish**.
+
+       12. Activate the service binding  
+      
+       
+      </details>  
+
+
+ 
+      <!--  
       > ⚠ **Attention**  
       > If you receive the error message _**Invalid XML format of the response**_, this may be due to a bug in version 1.26 of the ADT tools.  
       > An update of your ADT plugin to the newer version will fix this issue.
+      -->
       
       | **RAP Layer**          |  **Artefacts**           | **Artefact Names**                                       |     
       |:---------------------- |:------------------------ |:-------------------------------------------------------- |
