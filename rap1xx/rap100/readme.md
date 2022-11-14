@@ -10,7 +10,6 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Overview](#overview)
-- [About the ABAP RESTful Application Programming Model (RAP)](#about-the-abap-restful-application-programming-model)
 - [Exercises](#exercises)
 - [How to obtain support](#how-to-obtain-support) 
 - [Further Information](#further-information)
@@ -23,7 +22,7 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 
 > ⚠**Please note**⚠   
 > Participants of the onsite hands-on session AD162 at SAP TechEd 2022 will have access to devices with pre-configured frontend tools 
-> and to a dedicated ABAP system. Therefore, just ignore this section and go ahead with the [Exercises](#exercises).
+> and to a dedicated ABAP system. Therefore, just ignore this section and go ahead with the next section.
 
 <details>
   <summary>Click to expand!</summary>
@@ -34,18 +33,19 @@ Please check the following two short documents how to do this if you have not al
  - [Install the newest Eclipse platform and the newest ABAP Development Tools (ADT) plugin](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)  
  - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
  
-You also need a user on SAP BTP ABAP environment – for example, on the SAP BTP Trial.   
+You also need a user on an SAP BTP ABAP environment or SAP S/4HANA 2022 system, e.g. SAP BTP ABAP Environment Trial.   
 Please check the following tutorial if you do not have a working account yet:  
  - [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
 <!--
+
 > **Please note**:    
 > Participants of SAP events (e.g. **ABAP Developer Day**) will carry out the various exercises on a dedicated SAP BTP ABAP Environment system set up by SAP for the specific event.    
-> 
--->
+
+-->  
   
 </details>
-  
+
 ## Overview
 
 > This workshop is all about RAP fundamentals; especially about how to use RAP core features when building greenfield implementations.
@@ -74,7 +74,8 @@ Below is the simplified data model underlying the app.
 > - RAP Development Guide on the SAP Help Portal: **[Develop Applications](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/4cff5dff7f2642cab54e993c840a163e.html)**
 
 </details>
-    
+
+<!--
 ## About the ABAP RESTful Application Programming Model (RAP)
 [^Top of page](#)
 
@@ -94,6 +95,8 @@ The illustration below shows the high-level end-to-end development stack when wo
 > **Read more**: [Modern ABAP Development with the ABAP RESTful Application Programming Model (RAP)](https://community.sap.com/topics/abap/rap)
 
 </details>
+
+-->
     
 ## Exercises
 [^Top of page](#)
@@ -112,7 +115,6 @@ Follow these steps to build an OData service for developing a transactional, dra
 | [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (**_optional_**)](exercises/ex7/readme.md) | -- |
 | [Exercise 8: Write an ABAP Unit Test for the RAP BO (**_optional_**)](exercises/ex8/readme.md) | -- |
 | [Exercise 9: External API-based Access to the RAP BO with EML (**_explore_**)](exercises/ex9/readme.md) | -- |
-
    
 _BO: Business Object_  
 _EML: Entity Manipulation Language_    
@@ -126,8 +128,8 @@ Support for the content in this repository is available during the actual time o
 [^Top of page](#)
 
 You can find further information on the ABAP RESTful Application Programming Model (RAP) here:
- - [Get Started with the ABAP RESTful Application Programming Model](https://blogs.sap.com/2019/10/25/getting-started-with-the-abap-restful-programming-model) - A collection of diverse getting started materials.   
- - Free openSAP course [Building Apps with the ABAP RESTful Application Programming Model](https://community.sap.com/topics/btp-abap-environment/rap-opensap) ([direct link](https://open.sap.com/courses/cp13) to the course) 
+ - [Modern ABAP Development with the ABAP RESTful Application Programming Model (RAP)](https://community.sap.com/topics/abap/rap)- A collection of diverse getting started materials.   
+ - Free openSAP course [Building Apps with the ABAP RESTful Application Programming Model](https://community.sap.com/topics/btp-abap-environment/rap-opensap) 
  - [Modernization with RAP](https://blogs.sap.com/2021/10/18/modernization-with-rap/)
  - Most frequently asked questions: [RAP FAQ](https://blogs.sap.com/2020/10/16/abap-restful-application-programming-model-faq/) 
  - SAP Fiori: [Develop and Run a Fiori Application with SAP Business Application Studio (optional)](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) 
