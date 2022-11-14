@@ -39,11 +39,20 @@ CLASS lcl_handler IMPLEMENTATION.
   
 **************************************************************************
 * Internal early numbering
-**************************************************************************  
+* ------------------------------------------------------------------------
+* Please note:
+* If you get the following error message:
+* ABAP Runtime error 'BEHAVIOR_ILLEGAL_STATEMENT'
+* then change the value of use_number_range to abap_false.
+* ------------------------------------------------------------------------
+**************************************************************************
   METHOD earlynumbering_create.
+
     DATA:
-      entity        TYPE STRUCTURE FOR CREATE ZRAP100_R_TravelTP_###,
-      travel_id_max TYPE /dmo/travel_id.
+      entity           TYPE STRUCTURE FOR CREATE ZRAP100_R_TravelTP_###,
+      travel_id_max    TYPE /dmo/travel_id,
+      " change to abap_false if you get the ABAP Runtime error 'BEHAVIOR_ILLEGAL_STATEMENT'
+      use_number_range TYPE abap_bool VALUE abap_false.
 
     "Ensure Travel ID is not set yet (idempotent)- must be checked when BO is draft-enabled
     LOOP AT entities INTO entity WHERE TravelID IS NOT INITIAL.
@@ -53,37 +62,49 @@ CLASS lcl_handler IMPLEMENTATION.
     DATA(entities_wo_travelid) = entities.
     "Remove the entries with an existing Travel ID
     DELETE entities_wo_travelid WHERE TravelID IS NOT INITIAL.
-    "Get numbers
-    TRY.
-        cl_numberrange_runtime=>number_get(
-          EXPORTING
-            nr_range_nr       = '01'
-            object            = '/DMO/TRV_M'
-            quantity          = CONV #( lines( entities_wo_travelid ) )
-          IMPORTING
-            number            = DATA(number_range_key)
-            returncode        = DATA(number_range_return_code)
-            returned_quantity = DATA(number_range_returned_quantity)
-        ).
-      CATCH cx_number_ranges INTO DATA(lx_number_ranges).
-        LOOP AT entities_wo_travelid INTO entity.
-          APPEND VALUE #(  %cid      = entity-%cid
-                           %key      = entity-%key
-                           %is_draft = entity-%is_draft
-                           %msg      = lx_number_ranges
-                        ) TO reported-travel.
-          APPEND VALUE #(  %cid      = entity-%cid
-                           %key      = entity-%key
-                           %is_draft = entity-%is_draft
-                        ) TO failed-travel.
-        ENDLOOP.
-        EXIT.
-    ENDTRY.
 
-    "determine the first free travel ID from the number range
-    travel_id_max = number_range_key - number_range_returned_quantity.
-    
-    "set travel ID for new instances w/o ID
+    IF use_number_range = abap_true.
+      "Get numbers
+      TRY.
+          cl_numberrange_runtime=>number_get(
+            EXPORTING
+              nr_range_nr       = '01'
+              object            = '/DMO/TRV_M'
+              quantity          = CONV #( lines( entities_wo_travelid ) )
+            IMPORTING
+              number            = DATA(number_range_key)
+              returncode        = DATA(number_range_return_code)
+              returned_quantity = DATA(number_range_returned_quantity)
+          ).
+        CATCH cx_number_ranges INTO DATA(lx_number_ranges).
+          LOOP AT entities_wo_travelid INTO entity.
+            APPEND VALUE #(  %cid      = entity-%cid
+                             %key      = entity-%key
+                             %is_draft = entity-%is_draft
+                             %msg      = lx_number_ranges
+                          ) TO reported-travel.
+            APPEND VALUE #(  %cid      = entity-%cid
+                             %key      = entity-%key
+                             %is_draft = entity-%is_draft
+                          ) TO failed-travel.
+          ENDLOOP.
+          EXIT.
+      ENDTRY.
+
+      "determine the first free travel ID from the number range
+      travel_id_max = number_range_key - number_range_returned_quantity.
+    ELSE.
+      "determine the first free travel ID without number range
+      "Get max travel ID from active table
+      SELECT SINGLE FROM zrap100_atrav### FIELDS MAX( travel_id ) AS travelID INTO @travel_id_max.
+      "Get max travel ID from draft table
+      SELECT SINGLE FROM zrap100_dtrav### FIELDS MAX( travelid ) INTO @DATA(max_travelid_draft).
+      IF max_travelid_draft > travel_id_max.
+        travel_id_max = max_travelid_draft.
+      ENDIF.
+    ENDIF.
+
+    "Set Travel ID for new instances w/o ID
     LOOP AT entities_wo_travelid INTO entity.
       travel_id_max += 1.
       entity-TravelID = travel_id_max.
@@ -114,8 +135,8 @@ CLASS lcl_handler IMPLEMENTATION.
     "else set overall travel status to open ('O')
     MODIFY ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
       ENTITY Travel
-        UPDATE SET FIELDS
-        WITH VALUE #( FOR travel IN travels ( %tky    = travel-%tky
+        UPDATE FIELDS ( OverallStatus )
+        WITH VALUE #( FOR travel IN travels ( %tky          = travel-%tky
                                               OverallStatus = travel_status-open ) )
     REPORTED DATA(update_reported).
 
@@ -347,7 +368,7 @@ CLASS lcl_handler IMPLEMENTATION.
     DATA:
       travels       TYPE TABLE FOR CREATE zrap100_r_traveltp_###\\travel.
 
-    " remove travel instances with initial key (TravelID)
+    " remove travel instances with initial %cid (i.e., not set by caller API)
     READ TABLE keys WITH KEY %cid = '' INTO DATA(key_with_inital_cid).
     ASSERT key_with_inital_cid IS INITIAL.
 
