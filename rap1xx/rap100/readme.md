@@ -1,4 +1,4 @@
-[Home - RAP Managed BO Runtime Implementation](../readme.md)  
+[Home - RAP Managed BO Runtime Implementation](../README.md)  
 [**Back to AD162@SAP TechEd in 2022**](https://github.com/SAP-samples/teched2022-AD162/blob/main/README.md)  
 [**Back to DT281@SAP TechEd in 2022**](https://github.com/SAP-samples/teched2022-DT281/blob/main/README.md)  
 
