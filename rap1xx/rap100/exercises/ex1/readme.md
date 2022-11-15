@@ -10,7 +10,7 @@ In this exercise, you will create an ABAP package and database table. In your da
 - [1.2 - Create database table](#exercise-12-create-database-table)
 - [1.3 - Create data generator class](#exercise-13-create-data-generator-class)
 - [1.4 - Generate the transactional UI services](#exercise-14-generate-the-transactional-ui-services)
-- [1.5 - Preview the Travel App](#exercise-15-preview-the-travel-app)
+- [1.5 - Publish the Service and Preview the Travel App](#exercise-15-publish-the-service-and-preview-the-travel-app)
 - [Summary](#summary)
 - [Appendix](#appendix)
 
@@ -418,7 +418,7 @@ In this exercise, you will create an ABAP package and database table. In your da
  </details>
 -->
  
-## Exercise 1.5: Preview the Travel App
+## Exercise 1.5: Publish the Service and Preview the Travel App
 [^Top of page](#)
 
 > Publish the local service endpoint of your service binding ![service binding](images/adt_srvb.png) and start the _Fiori elements App Preview_.
