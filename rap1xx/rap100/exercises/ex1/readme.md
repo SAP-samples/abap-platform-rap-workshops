@@ -199,7 +199,7 @@ In this exercise, you will create an ABAP package and database table. In your da
  
       Verify the maintained entries and press **Next >** to confirm. The needed artefacts will be generated. 
 
-  
+  <!--
       > ⚠ **Attention**  
       > If you receive the error message _**DDLS ZRAP100_C_TRAVELTP_###: Element 'Client' for'ObjectModel.semanticKey**_, 
       > this is due to a bug in the SAP BTP ABAP Environment, 2011, HFC3.  
@@ -265,6 +265,8 @@ In this exercise, you will create an ABAP package and database table. In your da
       
        
       </details>  
+
+-->
 
       > ℹ **Info about Naming Conventions**     
       > The main aspects of the naming conventions of SAP S/4HANA's Virtual Data Model (VDM) are used in this exercise.  
