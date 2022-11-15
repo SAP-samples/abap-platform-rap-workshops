@@ -201,7 +201,7 @@ In this exercise, you will create an ABAP package and database table. In your da
 
   
       > ⚠ **Attention**  
-      > If you receive the error message _**DDLS ZRAP100_C_TRAVELTP_AF1: Element 'Client' for'ObjectModel.semanticKey**_, 
+      > If you receive the error message _**DDLS ZRAP100_C_TRAVELTP_###: Element 'Client' for'ObjectModel.semanticKey**_, 
       > this is due to a bug in the SAP BTP ABAP Environment, 2011, HFC3.  
       > An emergency patch is planned to fix this issue.
       >
