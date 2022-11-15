@@ -299,14 +299,20 @@ In this exercise, you will create an ABAP package and database table. In your da
 
       <img src="images/p7c.png" alt="table" width="50%">         
  
-   4. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
+   4. Click **Finish** to confirm the dialog.
+ 
+   5. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
 
       <!-- ![class](images/p7d.png) -->
       <img src="images/p7d.png" alt="table" width="50%">  
       
    Below is a brief explanation of the generated artefacts for the different RAP layers: Base BO, BO Projection, and Business Service.
-
+   
+  <details>
+  <summary>Click to expand!</summary>
+   
 ---
+   
   **Base Business Object (BO) `ZRAP100_R_TRAVEL_###`** 
   
    | **Object Name**               |  **Description**         |     
@@ -315,8 +321,9 @@ In this exercise, you will create an ABAP package and database table. In your da
    | ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`**   | (aka _Base BO behavior): This **behavior definition** contains the definition of the standard transactional behavior of the base _Travel_ BO entity. It is a _managed_ and _draft-enabled_ implementation.  |  
    | ![tabl icon](images/adt_tabl.png)**`ZRAP100_DTRAV###`**   | (aka _Draft table_): This **database table** is used to temporary store the data from draft _travel_ instances at runtime. It is managed by the RAP framework.    |     
    | ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**  | (aka _Behavior pool_): This **ABAP class** which provides the implementation of the behavior defined in the behavior definition `ZRAP100_R_TravelTP_###` of the base _Travel_ BO.   |  
-  
+
 ---
+   
   **BO Projection `ZRAP100_C_TRAVEL_###`** 
   
   The BO projection represents the consumption specific view on the BO data model and behavior. 
@@ -326,16 +333,20 @@ In this exercise, you will create an ABAP package and database table. In your da
    | ![ddls icon](images/adt_ddls.png)**`ZRAP100_C_TravelTP_###`**   | (aka _BO projection view_): This **data definition** is used to define the projected data model of the root entity _Travel_ relevant for the present scenario. Currently almost all fields of the underlying base BO view are exposed and the definition of metadata extension is allowed using the view annotations `@Metadata.allowExtensions: true`.  |           
    | ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TravelTP_###`**   | (aka _BO behavior projection_): This **behavior definition** exposes the part of the underlying base _Travel_ BO entity which is relevant for the present scenario with the keyword **`use`**. Currently all standard CUD operations are exposed.  |        
    | ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TravelTP_###`**   | This **metadata extension** is used to annotate view `ZRAP100_C_TRAVEL_###` and its elements with UI semantics via CDS annotations. |        
-   
+
 ---
+   
   **Business Service** 
 
    | **Object Name**               |  **Description**         |     
    |:----------------------------- |:------------------------ |
    | ![srvd icon](images/adt_srvd.png)**`ZRAP100_UI_TRAVEL_###`**  | A service definition is used to define the relevant entity sets for our service and also to provide local aliases if needed. Only the _Travel_ entity set is exposed in the present scenario. |                      
    | ![srvb icon](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`**  | This service binding is used to expose the generated service definition as OData V4 based UI service. Other binding types (protocols and scenarios) are supported in the service binding wizard.  |  
-   
+
 ---
+
+ </details>   
+ 
  </details>
 
 <!--
@@ -367,7 +378,7 @@ In this exercise, you will create an ABAP package and database table. In your da
  
        ![run class](images/1_4_100_generator_class.jpg)
  
-   4. The class checks for the existence of the package **`ZRAP100_###`** and for the existience of a table **`ZRAP100_ATRAV###`**. The output in the *Console Window* shows that       the needed artifacts have been generated.
+   4. The class checks for the existence of the package **`ZRAP100_###`** and for the existience of a table **`ZRAP100_ATRAV###`**. The output in the *Console Window* shows that the needed artifacts have been generated.
          
         ![class output](images/1_4_100_result_in_console.jpg)
       
@@ -418,6 +429,10 @@ In this exercise, you will create an ABAP package and database table. In your da
    1. Open your service binding ![service binding](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`** and click **Publish**.
    
    2. Double-click on the entity **`Travel`** in the **Entity Set and Association** section to open the _Fiori elements App Preview_.
+     
+      > ⚠Please note:⚠   
+      In case following error appears in the browser: _`Application could not be started due to technical issues.`_   
+      After publishing your service, it may take 2-3 minutes on the SAP BTP Trial before you can access it via URL in the browser.      
      
        ![class](images/p8.png)
    
