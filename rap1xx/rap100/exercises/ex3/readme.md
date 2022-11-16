@@ -53,7 +53,14 @@ A number range object will be used to determine the unique travel identifiers.
    
    > **Info**: The **static field control** is used to restrict properties of particular fields. 
    
-   For that, enter the code snippet provided below in the behavior definition as shown on the screenshot.  
+   For that, replace the statement   
+ 
+   ```ABAP
+   field ( mandatory:create )
+   TravelID;
+   ```
+   
+   with the code snippet provided below in the behavior definition as shown on the screenshot.  
   
    ```ABAP
    field ( readonly )
