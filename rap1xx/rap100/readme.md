@@ -37,12 +37,18 @@ You also need a user on an SAP BTP ABAP environment or SAP S/4HANA 2022 system, 
 Please check the following tutorial if you do not have a working account yet:  
  - [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
-<!--
-
-> **Please note**:    
+> ⚠**Please note**⚠:    
 > Participants of SAP events (e.g. **ABAP Developer Day**) will carry out the various exercises on a dedicated SAP BTP ABAP Environment system set up by SAP for the specific event.    
 
--->  
+<!--
+The requirements to follow the exercises in this repository are:
+1. [Install the latest Eclipse platform and the latest ABAP Development Tools (ADT) plugin](https://developers.sap.com/tutorials/abap-install-adt.html)
+2. [Create an user on the SAP BTP ABAP Environment Trial](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
+--
+1. [Install the latest Eclipse platform](https://www.eclipse.org/downloads/packages/installer)	
+2. [Install the latest ABAP Development Tools (ADT) plugin](https://tools.hana.ondemand.com/#abap) 
+3. [Create an user on the SAP BTP ABAP Environment Trial](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
+-->
   
 </details>
 
