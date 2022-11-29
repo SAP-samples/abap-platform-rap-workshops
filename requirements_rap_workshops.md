@@ -29,8 +29,11 @@ You have prepared your ABAP Trial which can be easily done via the [SAP BTP cock
   
 ## 3. Install the latest ABAP Development Tools (ADT) 
 
-In order to install the ABAP Development Tools (ADT), we strongly recommend to use the latest Eclipse Installer which includes a JRE for macOS, Windows and Linux.
+In order to install the ABAP Development Tools (ADT), we recommend to follow this tutorial that describes how to download the latest version of Eclipse which includes a JRE for macOS, Windows and Linux.
 
+[Tutorial: Install ABAP Development Tools (ADT) and abapGit Plugin](https://developers.sap.com/tutorials/abap-install-adt.html)
+
+<!---
 - Download the [latest Eclipse installer version](https://www.eclipse.org/downloads/packages/installer)  
 - Start the installer.   
 - When being asked by the installer choose the **Eclipse IDE for Java Developers**  
@@ -40,6 +43,7 @@ In order to install the ABAP Development Tools (ADT), we strongly recommend to u
 - Press **Enter** to display the available features.  
 - Select **ABAP Core Development Tools (Developer Edition)** and choose **Next**.  
 - Continue with the wizard and confirm the license confirmation popup. 
+-->  
 
 ## 4. Adapt the Web Browser settings in your ADT installation
 
