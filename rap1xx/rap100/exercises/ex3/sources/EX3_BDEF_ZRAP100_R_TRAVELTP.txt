@@ -19,7 +19,7 @@ early numbering
    LastChangedAt,
    LastChangedBy;
 
-   field ( readonly )
+   field ( readonly : update )
    TravelID;
 
   create;
