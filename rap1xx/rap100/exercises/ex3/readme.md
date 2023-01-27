@@ -54,6 +54,7 @@ A number range object will be used to determine the unique travel identifiers.
    The _Travel_ BO uses the early numbering in this scenario. To ensure that the primary key field `TravelID` is filled when creating new _travel_ instances, but is read-only on further processing of these instances, the operation-dependent field access restrictions `field (mandatory:create)` and `field (read-only:update)` are used respectively.
  
 <!-- 
+
 3. Specify the field **`TravelID`** as read-only field since it will be set at runtime by the internal early numbering. 
    
    > **Info**: The **static field control** is used to restrict properties of particular fields. 
@@ -73,10 +74,12 @@ A number range object will be used to determine the unique travel identifiers.
    ```
   
    You can use the **ABAP Pretty Printer** function (**Shift+F1**) to format the source code.  
-   
+-->
+ 
    <!-- ![Travel BO Behavior Definition](images/field.png) -->
-   <img src="images/field.png" alt="Travel BO Behavior Definition" width="60%"> 
-         
+<!--
+ <img src="images/field.png" alt="Travel BO Behavior Definition" width="60%"> 
+ 
    As you can seen in the behavior definition, the administrative fields `CreatedAt`, `CreatedBy`, `LocalLastChangedAt`, `LastChangedAt`, and `LastChangedBy` have been set to read-only during the service generation. Their values are automatically set by the ABAP runtime thanks to element annotations specified in the base CDS view entity ![ddls icon](images/adt_ddls.png)`ZRAP100_R_Travel_###`.  
  
  -->
