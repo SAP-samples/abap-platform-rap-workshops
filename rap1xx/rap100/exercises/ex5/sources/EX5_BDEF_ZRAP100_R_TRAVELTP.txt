@@ -17,10 +17,10 @@ early numbering
    LastChangedAt,
    LastChangedBy;
 
-  field ( readonly )
+  field ( readonly : update )
   TravelID;
 
-  field ( mandatory : update )
+  field ( mandatory  )
   CustomerID,
   BeginDate,
   EndDate;
