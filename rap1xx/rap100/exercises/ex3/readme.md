@@ -56,14 +56,14 @@ A number range object will be used to determine the unique travel identifiers.
    For that, replace the statement   
  
    ```ABAP
-   field ( mandatory:create )
+   field ( mandatory : create )
    TravelID;
    ```
    
    with the code snippet provided below in the behavior definition as shown on the screenshot.  
   
    ```ABAP
-   field ( readonly )
+   field ( readonly : update )
    TravelID;
    ```
   
