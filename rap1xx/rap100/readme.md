@@ -20,10 +20,6 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 
 > You need the latest version of ABAP Development Tools in Eclipse (ADT) on your laptop or PC as well as the access to an ABAP Environment system to carry out the practical exercises of this workshop.
 
-> ⚠**Please note**⚠   
-> Participants of the DevDay event will have access to devices with pre-configured frontend tools 
-> and to a dedicated ABAP system. Therefore, just ignore this section and go ahead with the next section.
-
 <details>
   <summary>Click to expand!</summary>
 
