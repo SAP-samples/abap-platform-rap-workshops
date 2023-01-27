@@ -10,7 +10,7 @@ lock master total etag LocalLastChangedAt
 authorization master( global )
 early numbering
 {
-  field ( readonly )
+  field ( readonly : create )
    CreatedAt,
    CreatedBy,
    LocalLastChangedAt,
@@ -20,7 +20,7 @@ early numbering
   field ( readonly )
   TravelID;
 
-  field ( mandatory )
+  field ( mandatory : update )
   CustomerID,
   BeginDate,
   EndDate;
