@@ -27,11 +27,12 @@ You will add a short cut to your desktop that lets you display / edit the HOSTS 
    ![Edit HOSTS](images/110_edit_hosts.png).
 
 7. Confirm the popup of the User Accesss Control that needs the confirmation that you are OK with notepad being started with administrative rights
-8. Enter the following three lines at the bottom of your HOSTS file
+
+8. Enter the following three lines at the bottom of your HOSTS file, where xxx.xxx.xxx.xxx has to be replaced by the IP adress of your SAP S/4HANA preconfigured appliance system.
 
 <pre>
 # Customer Workshops Template SAP S/4HANA 2022
-34.234.115.12 vhcals4hcs.dummy.nodomain
+xxx.xxx.xxx.xxx vhcals4hcs.dummy.nodomain
 #
 </pre>
 
