@@ -13,18 +13,18 @@ You will add a short cut to your desktop that lets you display / edit the HOSTS 
 
    ![Edit HOSTS](images/100_edit_hosts.png).
 
-3. In the textbox enter the following string and press **Next**:
+3. In the *Create Shortcut* dialogue enter the following string and press **Next**:
    `C:\Windows\System32\notepad.exe C:\Windows\System32\drivers\etc\hosts`. 
    
-   ![Edit HOSTS](images/102_edit_hosts.png).
+   ![Edit HOSTS](images/110_edit_hosts.png).
    
 4. Provide the shortcut with a meaningful name such as **Edit HOSTS**.
 
-   ![Edit HOSTS](images/105_edit_hosts.png).
+   ![Edit HOSTS](images/120_edit_hosts.png).
 
 5. Right click on the newly created shortcut and select **Run as administrator**.   
  
-   ![Edit HOSTS](images/110_edit_hosts.png).
+   ![Edit HOSTS](images/130_edit_hosts.png).
 
 7. Confirm the popup of the User Accesss Control that needs the confirmation that you are OK with notepad being started with administrative rights
 
