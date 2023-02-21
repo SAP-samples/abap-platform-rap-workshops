@@ -1,4 +1,4 @@
-[Home - RAP Managed BO Runtime Implementation](../README.md)  
+[Home - RAP6XX: Extensibility](../README.md)  
 # RAP610: Use ABAP Cloud for SAP S/4HANA (Cloud) extensions
 
 <!-- 
