@@ -4,9 +4,9 @@
 
 ## Introduction
 
-In this exercise, you will search for a released RAP business object to create a purchase requisistion. For this we will add appropriate *ABAP repository trees* to the *Project Explorer* in your ADT.
+In this exercise, you will search for a released RAP business object to create a purchase requisistion. For this we will add an appropriate *ABAP repository tree* to the *Project Explorer* in your ADT.
 
-We will start to create a simple class to investigate 
+We will continue to create a simple class to investigate 
 
 - How ABAP cloud restricts the use of not released APIs
 - How ABAP cloud restricts the use of outdated ABAP statements that are not part of the ABAP language version *ABAP for Cloud Development*   
