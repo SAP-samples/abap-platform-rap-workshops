@@ -1,11 +1,11 @@
 [Home - RAP Managed BO Runtime Implementation](../README.md)  
-# RAP610: Use ABAP Cloud for SAP S/4HANA extensions
+# RAP610: Use ABAP Cloud for SAP S/4HANA (Cloud) extensions
 
 <!-- 
 ## Description
 -->
 
-This repository contains the material for the hands-on session **RAP610: Use ABAP Cloud for SAP S/4HANA extensions**.
+This repository contains the material for the hands-on session **RAP610: Use ABAP Cloud for SAP S/4HANA (Cloud) extensions**.
 
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Overview](#overview)
