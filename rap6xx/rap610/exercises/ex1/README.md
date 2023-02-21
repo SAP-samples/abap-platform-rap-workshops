@@ -129,32 +129,6 @@ We will reuse this code in the implementation of the behavior definition class o
 
  </details> 
 
-## Exercise 1.5: Implement a test class to call I_PurchaseRequisitionTP
-[^Top of page](#)
-
-In the preceeding exercise you have learned how to access the documentation of a released RAP business object.  
-
-We will use this code to implement a test class that calls the API **I_PurchaseRequisitionTP** and that implements the interface **if_oo_adt_classrun** so we can start with basic tests by simply starting the `if_oo_adt_classrun~main( )` method of our test class by pressing **F9**.
-
- <details>
-  <summary>Click to expand!</summary>
-
-  1. Open the test class **zcl_test_i_purchase_req_###** that you have created before by pressing **Ctrl+Shift+A**.    
-
-     ![test class](images/600_develop_test_class.png)  
-
-  2. Replace the code in the `if_oo_adt_classrun~main( )` method with the following code snippet.   
-
-     ![source code main method](sources/main_test_class.txt)  
-
-  3. Run the test class by pressing **F9**.  
-
-     ![test class](images/610_develop_test_class.png)   
-
- </details> 
-
-
-
 ## Exercise 1.3: Create Package with language version ABAP for Cloud Development
 [^Top of page](#)
 
@@ -279,6 +253,34 @@ We will use this code to implement a test class that calls the API **I_PurchaseR
    ![package](images/340_new_class.png). 
 
 </details>
+
+
+
+## Exercise 1.5: Implement a test class to call I_PurchaseRequisitionTP
+[^Top of page](#)
+
+In the preceeding exercise you have learned how to access the documentation of a released RAP business object.  
+
+We will use this code to implement a test class that calls the API **I_PurchaseRequisitionTP** and that implements the interface **if_oo_adt_classrun** so we can start with basic tests by simply starting the `if_oo_adt_classrun~main( )` method of our test class by pressing **F9**.
+
+ <details>
+  <summary>Click to expand!</summary>
+
+  1. Open the test class **zcl_test_i_purchase_req_###** that you have created before by pressing **Ctrl+Shift+A**.    
+
+     ![test class](images/600_develop_test_class.png)  
+
+  2. Replace the code in the `if_oo_adt_classrun~main( )` method with the following code snippet.   
+
+     ![source code main method](sources/main_test_class.txt)  
+
+  3. Run the test class by pressing **F9**.  
+
+     ![test class](images/610_develop_test_class.png)   
+
+ </details> 
+
+
 
 ## Summary 
 [^Top of page](#)
