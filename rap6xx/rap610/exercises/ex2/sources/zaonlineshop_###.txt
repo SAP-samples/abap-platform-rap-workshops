@@ -1,0 +1,29 @@
+@EndUserText.label : 'Persistence for online shop'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zaonlineshop_### {
+  key client               : abap.clnt not null;
+  key order_uuid           : sysuuid_x16 not null;
+  order_id                 : abap.char(10) not null;
+  order_item_id            : abap.char(40) not null;
+  @Semantics.amount.currencyCode : 'zaonlineshop_###.currency'
+  order_item_price         : abap.curr(11,2);
+  order_item_quantity      : abap.numc(4);
+  @Semantics.amount.currencyCode : 'zaonlineshop_###.currency'
+  total_price              : abap.curr(11,2);
+  currency                 : abap.cuky;
+  overall_status           : abap.char(30);
+  overall_status_indicator : abap.int1;
+  delivery_date            : abap.dats;
+  notes                    : abap.string(256);
+  purchase_requisition     : abap.char(20);
+  purch_rqn_creation_date  : abap.dats;
+  created_by               : abp_creation_user;
+  created_at               : abp_creation_tstmpl;
+  last_changed_by          : abp_lastchange_user;
+  last_changed_at          : abp_lastchange_tstmpl;
+  local_last_changed_at    : abp_locinst_lastchange_tstmpl;
+
+}

@@ -1,0 +1,140 @@
+CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
+  PRIVATE SECTION.
+
+    CONSTANTS:
+      BEGIN OF is_draft,
+        false TYPE abp_behv_flag VALUE '00', " active (not draft)
+        true  TYPE abp_behv_flag VALUE '01', " draft
+      END OF is_draft.
+    CONSTANTS:
+      BEGIN OF c_overall_status,
+        new       TYPE string VALUE 'New / Composing',
+        submitted TYPE string VALUE 'Submitted / Approved',
+      END OF c_overall_status.
+
+    METHODS:
+      get_global_authorizations FOR GLOBAL AUTHORIZATION
+        IMPORTING
+        REQUEST requested_authorizations FOR OnlineShop
+        RESULT result,
+      calculateTotalPrice FOR DETERMINE ON MODIFY
+        IMPORTING keys FOR OnlineShop~calculateTotalPrice,
+      setInitialOrderValues FOR DETERMINE ON MODIFY
+        IMPORTING keys FOR OnlineShop~setInitialOrderValues,
+      updateProductDetails FOR DETERMINE ON MODIFY
+        IMPORTING keys FOR OnlineShop~updateProductDetails.
+ENDCLASS.
+
+CLASS lcl_handler IMPLEMENTATION.
+  METHOD get_global_authorizations.
+  ENDMETHOD.
+  METHOD calculateTotalPrice.
+    DATA total_price TYPE ZR_OnlineShop_000-TotalPrice.
+
+    " read transfered instances
+    READ ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+      ENTITY OnlineShop
+        FIELDS ( OrderID TotalPrice OrderItemPrice OrderItemQuantity )
+        WITH CORRESPONDING #( keys )
+      RESULT DATA(OnlineShops).
+
+    LOOP AT OnlineShops ASSIGNING FIELD-SYMBOL(<OnlineShop>).
+      " calculate total value
+      <OnlineShop>-TotalPrice = <OnlineShop>-OrderItemPrice * <OnlineShop>-OrderItemQuantity.
+    ENDLOOP.
+
+    "update instances
+    MODIFY ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+      ENTITY OnlineShop
+        UPDATE FIELDS ( TotalPrice )
+        WITH VALUE #( FOR OnlineShop IN OnlineShops (
+                           %tky       = OnlineShop-%tky
+                           TotalPrice = <OnlineShop>-TotalPrice
+                        ) ).
+  ENDMETHOD.
+
+  METHOD setInitialOrderValues.
+    DATA delivery_date TYPE I_PurchaseReqnItemTP-DeliveryDate.
+
+    "set delivery date proposal
+    cl_scal_api=>date_compute_day(
+        EXPORTING
+          iv_date           = cl_abap_context_info=>get_system_date(  )
+        IMPORTING
+          ev_weekday_number = DATA(weekday_number)
+          ev_weekday_name = DATA(weekday_name)
+         ).
+    CASE weekday_number.
+      WHEN 6.
+        delivery_date = cl_abap_context_info=>get_system_date(  ) + 16.
+      WHEN 7.
+        delivery_date = cl_abap_context_info=>get_system_date(  ) + 15.
+      WHEN OTHERS.
+        delivery_date = cl_abap_context_info=>get_system_date(  ) + 14.
+    ENDCASE.
+
+    "read transfered instances
+    READ ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+      ENTITY OnlineShop
+        FIELDS ( OrderID OverallStatus DeliveryDate )
+        WITH CORRESPONDING #( keys )
+      RESULT DATA(OnlineShops).
+
+    "delete entries with assigned order ID
+    DELETE OnlineShops WHERE OrderID IS NOT INITIAL.
+    CHECK OnlineShops IS NOT INITIAL.
+
+    " **Dummy logic to determine order IDs**
+    " get max order ID from the relevant active and draft table entries
+    SELECT MAX( order_id ) FROM zaonlineshop_000 INTO @DATA(max_order_id). "active table
+    SELECT SINGLE FROM zdonlineshop_000 FIELDS MAX( orderid ) INTO @DATA(max_orderid_draft). "draft table
+    IF max_orderid_draft > max_order_id.
+      max_order_id = max_orderid_draft.
+    ENDIF.
+
+    "set initial values of new instances
+    MODIFY ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+      ENTITY OnlineShop
+        UPDATE FIELDS ( OrderID OverallStatus DeliveryDate OrderItemPrice )
+        WITH VALUE #( FOR OnlineShop IN OnlineShops INDEX INTO i (
+                           %tky           = OnlineShop-%tky
+                           OrderID        = max_order_id + i
+                           OverallStatus  = c_overall_status-new  "'New / Composing'
+                           DeliveryDate   = delivery_date
+                        ) ).
+  ENDMETHOD.
+
+  METHOD updateProductDetails.
+    "read transfered instances
+    READ ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+      ENTITY OnlineShop
+        FIELDS ( OrderItemID )
+        WITH CORRESPONDING #( keys )
+      RESULT DATA(OnlineShops).
+
+    "read and set product details
+    LOOP AT OnlineShops ASSIGNING FIELD-SYMBOL(<OnlineShop>).
+      "read and set relevant product information
+      SELECT SINGLE * FROM zi_product_vh_reuse WHERE product = @<OnlineShop>-OrderItemID INTO @DATA(product).
+      <OnlineShop>-ProductGroup   = product-productgroup.
+      <OnlineShop>-ProductText    = product-producttext.
+      <OnlineShop>-OrderItemPrice = product-price.
+      <OnlineShop>-Currency       = product-Currency.
+      <OnlineShop>-BaseUnit       = product-baseunit.
+    ENDLOOP.
+
+    "update instances
+    MODIFY ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+      ENTITY OnlineShop
+        UPDATE FIELDS ( ProductText OrderItemPrice Currency ProductGroup BaseUnit )
+        WITH VALUE #( FOR OnlineShop IN OnlineShops INDEX INTO i (
+                           %tky           = OnlineShop-%tky
+                           ProductText    = OnlineShop-ProductText
+                           OrderItemPrice = OnlineShop-OrderItemPrice
+                           Currency       = OnlineShop-Currency
+                           ProductGroup   = OnlineShop-ProductGroup
+                           BaseUnit       = OnlineShop-BaseUnit
+                        ) ).
+  ENDMETHOD.
+
+ENDCLASS.
