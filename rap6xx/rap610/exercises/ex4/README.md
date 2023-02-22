@@ -415,22 +415,7 @@ In the following you have to perform the following steps
   PurchaseRequisition;
 </pre>
   
-  The code in your BDEF should now read as follows:
-
-<pre>
- managed implementation in class ZBP_R_ONLINESHOP_### unique;
- strict ( 2 );
- with draft;
-
- define behavior for ZR_ONLINESHOP_### alias OnlineShop
- //persistent table zaonlineshop_###
- draft table zdonlineshop_###
- etag master LocalLastChangedAt
- lock master total etag LastChangedAt
- authorization master ( global )
- with unmanaged save
-</pre>
-
+ 
 > **Note**
 > 7. Before checking the results in the ADT Fiori Elements preview make sure to clear the cache by pressing **F12** and by selecting **clear cache and refresh**. Otherwise you might run into the issue that the button of the action is visible but not functional.   
 
