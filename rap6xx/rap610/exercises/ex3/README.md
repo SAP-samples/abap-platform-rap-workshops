@@ -163,6 +163,7 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
  <details>
   <summary>Click to expand!</summary>
+ 
   1. Add the following determinations to your behavior definition.
 
   <pre>
@@ -170,7 +171,8 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
   determination calculateTotalPrice on modify { create; field OrderItemID; field OrderItemQuantity; }
   </pre>
 
-    ![define_determinations](images/300_define_determinations.png)  
+  
+  ![define_determinations](images/300_define_determinations.png)  
 
 
   2. Use the quick fix **Ctrl+1** to generate the appropriate methods in the behavior definition class.
