@@ -1,6 +1,7 @@
 # Create an ABAP project in ADT  
 
-This document describes how to create a **ABAP Project** to connect to an SAP S/4HANA on premise or private cloud system.  The screen shots taken use a preconfigured appliance system 
+This document describes how to create a **ABAP Project** to connect to an SAP S/4HANA on premise or private cloud system.  
+The screen shots taken use a **SAP S/4HANA Fully-Activated Appliance** system.  More details about this offering can be found in the following blog post [SAP S/4HANA Fully-Activated Appliance: Create your SAP S/4HANA system in a fraction of the usual setup time](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/).
 
 1. Click on  **File > New > New ABAP Project**
 
