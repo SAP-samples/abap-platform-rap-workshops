@@ -350,7 +350,7 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
  
   - Add the following code snippet to implement the determination `setInitialOrderValues`. The code selects the next weekday in two weeks as a delivery day, it sets the initial status and it calculates a semantic key for the field `OrderID`
 
-    <pre>
+ <pre>
      METHOD setInitialOrderValues.
       DATA delivery_date TYPE I_PurchaseReqnItemTP-DeliveryDate.
 
@@ -404,11 +404,11 @@ MODIFY ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
                     ) ).
     ENDMETHOD.
     
-    </pre>
+</pre>
 
   - Add the following code snippet to implement the determination `updateProductDetails`. The code selects data from the value help `zi_product_vh_reuse`.
 
-    <pre>
+ <pre>
     METHOD updateProductDetails.
     "read transfered instances
     READ ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
@@ -435,7 +435,9 @@ MODIFY ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
                            Currency       = OnlineShop-Currency
                         ) ).
     ENDMETHOD.
-    </pre>
+    
+    
+</pre>
 
   - Open the service binding `ZUI_ONLINESHOP_O4_###` to test your implementation by using the ADT Fiori preview.
  </details> 
