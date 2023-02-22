@@ -530,7 +530,7 @@ In addition there will be a check that make sure that not too many items can be 
   <pre>
    METHOD checkdeliverydate.
 
-    READ ENTITIES OF zr_onlineshop_000 IN LOCAL MODE
+    READ ENTITIES OF zr_onlineshop_### IN LOCAL MODE
       ENTITY OnlineShop
         FIELDS ( DeliveryDate )
         WITH CORRESPONDING #( keys )
