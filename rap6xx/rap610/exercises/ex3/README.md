@@ -409,7 +409,8 @@ MODIFY ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
   - Add the following code snippet to implement the determination `updateProductDetails`. The code selects data from the value help `zi_product_vh_reuse`.
 
  <pre>
-    METHOD updateProductDetails.
+ 
+  METHOD updateProductDetails.
     "read transfered instances
     READ ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
       ENTITY OnlineShop
@@ -418,11 +419,11 @@ MODIFY ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
       RESULT DATA(OnlineShops).
 
     "read and set product details
-    LOOP AT OnlineShops ASSIGNING FIELD-SYMBOL(<OnlineShop>).
+    LOOP AT OnlineShops ASSIGNING FIELD-SYMBOL(&lt;OnlineShop&gt;).
       "read and set relevant product information
-      SELECT SINGLE * FROM zi_product_vh_reuse WHERE product = @<OnlineShop>-OrderItemID INTO @DATA(product).
-      <OnlineShop>-OrderItemPrice = product-price.
-      <OnlineShop>-Currency       = product-Currency.
+      SELECT SINGLE * FROM zi_product_vh_reuse WHERE product = @&lt;OnlineShop&gt;-OrderItemID INTO @DATA(product).
+      &lt;OnlineShop&gt;-OrderItemPrice = product-price.
+      &lt;OnlineShop&gt;-Currency       = product-Currency.
     ENDLOOP.
 
     "update instances
@@ -434,7 +435,7 @@ MODIFY ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
                            OrderItemPrice = OnlineShop-OrderItemPrice
                            Currency       = OnlineShop-Currency
                         ) ).
-    ENDMETHOD.
+  ENDMETHOD.
     
     
 </pre>
