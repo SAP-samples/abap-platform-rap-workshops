@@ -351,58 +351,59 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
   - Add the following code snippet to implement the determination `setInitialOrderValues`. The code selects the next weekday in two weeks as a delivery day, it sets the initial status and it calculates a semantic key for the field `OrderID`
 
     <pre>
-    METHOD setInitialOrderValues.
-    DATA delivery_date TYPE I_PurchaseReqnItemTP-DeliveryDate.
+     METHOD setInitialOrderValues.
+      DATA delivery_date TYPE I_PurchaseReqnItemTP-DeliveryDate.
 
-    "read transfered instances via EML
-    READ ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
-      ENTITY OnlineShop
-        FIELDS ( OrderID OverallStatus DeliveryDate )
-        WITH CORRESPONDING #( keys )
-      RESULT DATA(OnlineShops).
+"read transfered instances via EML
+READ ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
+  ENTITY OnlineShop
+    FIELDS ( OrderID OverallStatus DeliveryDate )
+    WITH CORRESPONDING #( keys )
+  RESULT DATA(OnlineShops).
 
-    "delete entries with assigned order ID
-    DELETE OnlineShops WHERE OrderID IS NOT INITIAL.
-    CHECK OnlineShops IS NOT INITIAL.
+"delete entries with assigned order ID
+DELETE OnlineShops WHERE OrderID IS NOT INITIAL.
+CHECK OnlineShops IS NOT INITIAL.
 
-    " ** ABAP logic to determine order IDs and delivery date**
+" ** ABAP logic to determine order IDs and delivery date**
 
-    " get max order ID from the relevant active and draft table entries
-    SELECT MAX( order_id ) FROM zaonlineshop_000 INTO @DATA(max_order_id). "active table
-    SELECT SINGLE FROM zdonlineshop_000 FIELDS MAX( orderid ) INTO @DATA(max_orderid_draft). "draft table
-    IF max_orderid_draft > max_order_id.
-      max_order_id = max_orderid_draft.
-    ENDIF.
+" get max order ID from the relevant active and draft table entries
+SELECT MAX( order_id ) FROM zaonlineshop_### INTO @DATA(max_order_id). "active table
+SELECT SINGLE FROM zdonlineshop_### FIELDS MAX( orderid ) INTO @DATA(max_orderid_draft). "draft table
+IF max_orderid_draft > max_order_id.
+  max_order_id = max_orderid_draft.
+ENDIF.
 
-    "set delivery date proposal
-    cl_scal_api=>date_compute_day(
-        EXPORTING
-          iv_date           = cl_abap_context_info=>get_system_date(  )
-        IMPORTING
-          ev_weekday_number = DATA(weekday_number)
-          ev_weekday_name = DATA(weekday_name)
-         ).
-    CASE weekday_number.
-      WHEN 6.
-        delivery_date = cl_abap_context_info=>get_system_date(  ) + 16.
-      WHEN 7.
-        delivery_date = cl_abap_context_info=>get_system_date(  ) + 15.
-      WHEN OTHERS.
-        delivery_date = cl_abap_context_info=>get_system_date(  ) + 14.
-    ENDCASE.
+"set delivery date proposal
+cl_scal_api=>date_compute_day(
+    EXPORTING
+      iv_date           = cl_abap_context_info=>get_system_date(  )
+    IMPORTING
+      ev_weekday_number = DATA(weekday_number)
+      ev_weekday_name = DATA(weekday_name)
+     ).
+CASE weekday_number.
+  WHEN 6.
+    delivery_date = cl_abap_context_info=>get_system_date(  ) + 16.
+  WHEN 7.
+    delivery_date = cl_abap_context_info=>get_system_date(  ) + 15.
+  WHEN OTHERS.
+    delivery_date = cl_abap_context_info=>get_system_date(  ) + 14.
+ENDCASE.
 
 
-    "set initial values of new instances via EML
-    MODIFY ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
-      ENTITY OnlineShop
-        UPDATE FIELDS ( OrderID OverallStatus DeliveryDate OrderItemPrice )
-        WITH VALUE #( FOR OnlineShop IN OnlineShops INDEX INTO i (
-                           %tky           = OnlineShop-%tky
-                           OrderID        = max_order_id + i
-                           OverallStatus  = c_overall_status-new  "'New / Composing'
-                           DeliveryDate   = delivery_date
-                        ) ).
+"set initial values of new instances via EML
+MODIFY ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
+  ENTITY OnlineShop
+    UPDATE FIELDS ( OrderID OverallStatus DeliveryDate OrderItemPrice )
+    WITH VALUE #( FOR OnlineShop IN OnlineShops INDEX INTO i (
+                       %tky           = OnlineShop-%tky
+                       OrderID        = max_order_id + i
+                       OverallStatus  = c_overall_status-new  "'New / Composing'
+                       DeliveryDate   = delivery_date
+                    ) ).
     ENDMETHOD.
+    
     </pre>
 
   - Add the following code snippet to implement the determination `updateProductDetails`. The code selects data from the value help `zi_product_vh_reuse`.
