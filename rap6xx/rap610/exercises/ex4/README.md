@@ -178,7 +178,7 @@ Navigate to the behavior definition `ZR_ONLINESHOP_###` either in the *Project E
      The statement `mapping for ZAONLINESHOP_###` must be changed to `mapping for ZAONLINESHOP_### control zaonlineshop_x_### corresponding`
 
      <pre>     
-     mapping for ZAONLINESHOP_### control zaonlineshop_x_000 corresponding
+     mapping for ZAONLINESHOP_### control zaonlineshop_x_### corresponding
      </pre>
 
      ![unmanaged save](images/550_unmanaged_save.png)
