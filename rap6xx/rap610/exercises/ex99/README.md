@@ -1,7 +1,7 @@
 # How to log on to a SAP S/4HANA Fully-Activated Appliance system
 
 - [1.1 - How to edit the HOSTS file](#how-to-edit-the-hosts-file-when-using-a-sap-s4hana-2022-preconfigured-appliance-system)
-- [1.2 - How to create an ABAP project in ADT](#exercise-12-check-the-documentation-for-i_purchaserequisitiontp)
+- [1.2 - How to create an ABAP project in ADT](#how-to-create-an-abap-project-in-adt)
 
 ## How to edit the HOSTS file when using a SAP S/4HANA 2022 preconfigured appliance system
 
