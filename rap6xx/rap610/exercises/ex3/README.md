@@ -180,8 +180,8 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
   ![define_determinations](images/310_define_determinations.png)  
 
   - Add the following code snippet to implement the determination `calculateTotalPrice`. The code updates the field `TotalPrice` when the field `OrderItemID` and thus the `OrderItemPrice` has changed or if the field `OrderItemQuantity` has changed. 
-
-  `
+-----------------------------------------------
+  
     METHOD calculateTotalPrice.
     DATA total_price TYPE ZR_OnlineShop_###-TotalPrice.
 
@@ -206,8 +206,10 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
                            TotalPrice = \<OnlineShop\>-TotalPrice
                         ) ).
     ENDMETHOD.
- `
+ 
 
+ --------------------------------------------------------------------
+ 
   - Add the following code snippet to implement the determination `setInitialOrderValues`. The code selects the next weekday in two weeks as a delivery day, it sets the initial status and it calculates a semantic key for the field `OrderID`
 
     <pre>
