@@ -69,9 +69,9 @@ association [1..1] to ZI_PRODUCT_VH_REUSE as _Product on $projection.OrderItemID
 
 ![enhance_data_model](images/110_adapt_data_model.png) 
 
-Replace the complete source code of the Metadata Extension File **ZC_ONLINESHOP_###**.   
+3. Replace the complete source code of the Metadata Extension File **ZC_ONLINESHOP_###**.   
 
-We have prepared a meta data extension file that nicely groups your fields.  
+   We have prepared a meta data extension file that nicely groups your fields.  
  
 <pre>
 @Metadata.layer: #CUSTOMER
