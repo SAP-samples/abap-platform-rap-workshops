@@ -24,9 +24,9 @@ Please check the following two short documents how to do this if you have not al
  
 You also need a user on an SAP S/4HANA Cloud ABAP Environment system or on a SAP S/4HANA on prem or private cloud system. The on premise system must have a relase equal or higher SAP S/4HANA 2022.  
 
-> **Note for participants of SAP events:** You will recieve logon information from the SAP team during the event.   
+> **Note for participants of SAP events:** You will recieve logon information from the SAP team during the event. 
 > 
-> | [How to create an ABAP project for SAP S/4HANA on premise systems in ADT](exercises/ex99/README.md) |   
+> | [How to log on to a SAP S/4HANA 2022 preconfigured appliance system](exercises/ex99/README.md) |  
 
 ## Overview
 [^Top of page](#)
