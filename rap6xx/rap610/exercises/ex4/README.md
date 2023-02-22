@@ -37,11 +37,11 @@ And in order to transfer the mapped premliminary key(s) from the interaction pha
 
   <pre>
 
-  CLASS zbp_r_onlineshop_000 DEFINITION
+  CLASS zbp_r_onlineshop_### DEFINITION
   PUBLIC
   ABSTRACT
   FINAL
-  FOR BEHAVIOR OF zr_onlineshop_000 .
+  FOR BEHAVIOR OF zr_onlineshop_### .
 
   PUBLIC SECTION.
     CLASS-DATA mapped_purchase_requisition TYPE RESPONSE FOR MAPPED i_purchaserequisitiontp.
@@ -51,7 +51,7 @@ And in order to transfer the mapped premliminary key(s) from the interaction pha
 
 
 
-  CLASS zbp_r_onlineshop_000 IMPLEMENTATION.
+  CLASS zbp_r_onlineshop_### IMPLEMENTATION.
   ENDCLASS.
   </pre>
 
@@ -226,7 +226,7 @@ In the following you have to perform the following steps
    In the implementation we first fill some internal tables that serve as a payload for the EML call that will create one or more purchase requisitions.  
    The preliminary id %pid that is returned via the mapped table from the API that was called is stored in a variable in the global behavior implementation class.  
    
-   <pre>zbp_r_onlineshop_000=>mapped_purchase_requisition-purchaserequisition = mapped_create_pr-purchaserequisition.</pre>  
+   <pre>zbp_r_onlineshop_###=>mapped_purchase_requisition-purchaserequisition = mapped_create_pr-purchaserequisition.</pre>  
    
    The code then updates the fields `OverallStatus`, `OverallStatusIndicator` and `PurchRqnCreationDate` of our RAP business object. This way it is also ensured that the save_sequence is triggered where the `CONVERT KEY` statement is used to retrieve the final key, the `PurchaseRequisitionID`.  
    
@@ -244,12 +244,12 @@ In the following you have to perform the following steps
           purchase_reqn_acct_assgmt  TYPE STRUCTURE FOR CREATE I_PurchaseReqnItemTP\_PurchaseReqnAcctAssgmt,
           purchase_reqn_item_texts   TYPE TABLE FOR CREATE I_PurchaseReqnItemTP\_PurchaseReqnItemText,
           purchase_reqn_item_text    TYPE STRUCTURE FOR CREATE I_PurchaseReqnItemTP\_PurchaseReqnItemText,
-          update_lines               TYPE TABLE FOR UPDATE ZR_OnlineShop_000\\OnlineShop,
-          update_line                TYPE STRUCTURE FOR UPDATE ZR_OnlineShop_000\\OnlineShop,
+          update_lines               TYPE TABLE FOR UPDATE ZR_OnlineShop_###\\OnlineShop,
+          update_line                TYPE STRUCTURE FOR UPDATE ZR_OnlineShop_###\\OnlineShop,
           purchase_order_description TYPE c LENGTH 40.
 
     "read transfered order instances
-    READ ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+    READ ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
       ENTITY OnlineShop
         ALL FIELDS WITH
         CORRESPONDING #( keys )
@@ -354,7 +354,7 @@ In the following you have to perform the following steps
     ENDIF.
 
     "retrieve the generated
-    zbp_r_onlineshop_000=>mapped_purchase_requisition-purchaserequisition = mapped_create_pr-purchaserequisition.
+    zbp_r_onlineshop_###=>mapped_purchase_requisition-purchaserequisition = mapped_create_pr-purchaserequisition.
 
     "set a flag to check in the save sequence that purchase requisition has been created
     "the correct value for PurchaseRequisition has to be calculated in the save sequence using convert key
@@ -369,7 +369,7 @@ In the following you have to perform the following steps
       ENDIF.
     ENDLOOP.
 
-    MODIFY ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+    MODIFY ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
       ENTITY OnlineShop
         UPDATE
 *        FIELDS ( DirtyFlag OverallStatus OverallStatusIndicator PurchRqnCreationDate )
@@ -381,7 +381,7 @@ In the following you have to perform the following steps
 
     IF failed IS INITIAL.
       "Read the changed data for action result
-      READ ENTITIES OF ZR_OnlineShop_000 IN LOCAL MODE
+      READ ENTITIES OF ZR_OnlineShop_### IN LOCAL MODE
         ENTITY OnlineShop
           ALL FIELDS WITH
           CORRESPONDING #( keys )
@@ -418,7 +418,7 @@ In the following you have to perform the following steps
   The code in your BDEF should now read as follows:
 
 <pre>
- managed implementation in class ZBP_R_ONLINESHOP_000 unique;
+ managed implementation in class ZBP_R_ONLINESHOP_### unique;
  strict ( 2 );
  with draft;
 
