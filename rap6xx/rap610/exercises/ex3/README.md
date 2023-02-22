@@ -304,6 +304,7 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
   <pre>
   determination setInitialOrderValues on modify { create; }
+  determination updateProductDetails on modify { field OrderItemID; }
   determination calculateTotalPrice on modify { create; field OrderItemID; field OrderItemQuantity; }
   </pre>
 
