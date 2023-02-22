@@ -196,7 +196,7 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
     LOOP AT OnlineShops ASSIGNING FIELD-SYMBOL(&lt;OnlineShop&gt;).
       " calculate total value
-      \<OnlineShop\>-TotalPrice = \<OnlineShop\>-OrderItemPrice * \<OnlineShop\>-OrderItemQuantity.
+      &lt;OnlineShop&gt;-TotalPrice = &lt;OnlineShop&gt;-OrderItemPrice * &lt;OnlineShop&gt;-OrderItemQuantity.
     ENDLOOP.
 
     "update instances
@@ -205,7 +205,7 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
         UPDATE FIELDS ( TotalPrice )
         WITH VALUE #( FOR OnlineShop IN OnlineShops (
                            %tky       = OnlineShop-%tky
-                           TotalPrice = \<OnlineShop\>-TotalPrice
+                           TotalPrice = OnlineShop-TotalPrice
                         ) ).
     ENDMETHOD.
  
