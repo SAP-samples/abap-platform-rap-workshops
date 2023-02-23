@@ -269,7 +269,7 @@ As a preparation for implementing determinations and validations we will add con
 
   <pre>
   
-CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
+CLASS lcl_OnlineShop DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
 
     CONSTANTS:
