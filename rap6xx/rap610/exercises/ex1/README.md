@@ -195,7 +195,7 @@ We will reuse this code in the implementation of the behavior definition class o
       - Name: **`zcl_test_i_purchase_req_###`**
       - Description: _**`Test Purchase Req API I_PurchaserequisitionTP`**_                  
 
-      Click on **Add** and select the interface `if_oo_adt_class_run`. 
+      Click on **Add** and select the interface `if_oo_adt_classrun`. 
 
       and click **Next >**
 
