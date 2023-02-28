@@ -95,53 +95,8 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
 
  </details> 
 
-## Exercise 1.2: Identifying local APIs for S/4HANA Cloud via SAP Note 3088062 or GitHub   
-[^Top of page](#)
-
-While developing an ABAP Application for S/4HANA Cloud, you do get the following error message: "Use of <Object Type> <Object Name> is not permitted". But the error message does not provide a hint which API or object to use instead. The reason is that the successor information in on premise system does not contain the latest updates such as in SAP S/4HANA Cloud, ABAP Environment systems.   
-
- You as a developer nevertheless want to find out which objects to use intstead and to check their documentation.   
-
- <details>
-  <summary>Click to expand!</summary>
-  
-  
-  
- </details>  
-
-## Exercise 1.2: Check the documentation for I_PurchaseRequisitionTP
-[^Top of page](#)
-
-The documentation for a released RAP business object can be found in so called **Knowledge Transfer Documents** which have the same name as the business object (released API) it describes.     
-
- <details>
-  <summary>Click to expand!</summary>
-
-  1. You can find the **Knowledge Transfer Document** of a realeased API in the folder **Documentation** underneath the business object in the Project Explorer.
-  It can also be opened from within the source code editor of your behavior definition. Here you find the link at the top of the source code of the behavior definition.
-
-  ![KTD](images/500_check_documentation.png) 
-
-  2. The **Knowledge Transfer Document** can also be opened directly via the **Open Development Object** dialogu that can be opened via the menu or via the short cut **Ctrl+Shift+A**.  
-
-  ![KTD](images/510_check_documentation.png) 
-
-  3. When you have opened the **Knowledge Transfer Document** you should change from the **Source** tab to the more appealing visualization of the **Preview** tab.  
-
-  ![KTD](images/520_check_documentation.gif)  
-
-  4. The **Knowledge Transfer Document** provides you with code snippets that help you to write code to perform the operation (e.g. *create* as shown below) or an action which is supported by this business object.  
-
-  ![KTD](images/530_check_documentation.png)     
-
-
-We will use these code templates to create a test class that calls the API **I_PurchaseRequisitionTP** in order to create purchase requisitions in the following Excercise.
-
-We will reuse this code in the implementation of the behavior definition class of our sample RAP business object **OnlineShop**. 
-
- </details> 
-
-## Exercise 1.3: Create Package with language version ABAP for Cloud Development
+ 
+## Exercise 1.2: Create Package with language version ABAP for Cloud Development
 [^Top of page](#)
 
 > Create your exercise package ![package](../../images/adt_package.png).   
@@ -191,7 +146,7 @@ We will reuse this code in the implementation of the behavior definition class o
 
 </details>
 
-## Exercise 1.4: Create a class to test ABAP Cloud governance
+## Exercise 1.3: Create a class to test ABAP Cloud governance
 [^Top of page](#)
 
 > Create a class![class](../../images/adt_class.png) to test the effects of using the language version *ABAP for Cloud Development*.   
@@ -265,6 +220,72 @@ We will reuse this code in the implementation of the behavior definition class o
    ![package](images/340_new_class.png). 
 
 </details>
+
+
+ 
+## Exercise 1.2: Identifying local APIs for S/4HANA Cloud via SAP Note 3088062 or GitHub   
+[^Top of page](#)
+
+While developing an ABAP Application for S/4HANA Cloud, you do get the following error message: "Use of <Object Type> <Object Name> is not permitted". But the error message does not provide a hint which API or object to use instead. The reason is that the successor information in on premise system does not contain the latest updates such as in SAP S/4HANA Cloud, ABAP Environment systems.   
+
+An example would be the table `MARA` in the on premise release 2022.  
+
+ You as a developer nevertheless want to find out which objects to use intstead and to check their documentation.   
+
+ <details>
+  <summary>Click to expand!</summary>
+  
+  1. Check out SAP Note https://launchpad.support.sap.com/#/notes/3088062
+  
+     The SAP Note mentioned above contains two Excel Sheets that contain information about successor API's that are either available in on premise systems (as of 2022) or in SAP S/4HANA Cloud systems. If your object is not contained in the Excel, please create a request in the SAP Customer Infuence campaign [SAP S/4HANA Cloud and SAP S/4HANA for Key-User and Developer Extensibility](https://influence.sap.com/sap/ino/#/campaign/2759). 
+  
+  2. Check out the GitHub repository. 
+  
+     The repository contains the list of released APIs of S/4HANA Cloud. In addition also the objects that are not released are contained with the specification of successor objects. All objects are contained in one JSON file. This file is used as content for the ABAP Test Cockpit Check "Usage of Released APIs (Cloudification Repository)". This check can be used by customers and partners to analyse existing custom code concerning the usage of released and not released APIs on all ECC and S/4HANA releases. The check is available in SAP BTP, ABAP environment.
+     
+     [S/4 HANA Cloud - Released objects for ATC Check (Cloudification Repository)](https://github.com/SAP/abap-atc-cr-cv-s4hc).
+     
+ When we check the csv file that is public available we can retrieve a list of successors for the table MARA.  
+ 
+ [MARA](images/810_use_sap_note_and_github.png)  
+ 
+ And we can identify additional released API's from the purchase requisition area.   
+ 
+ [I_PURCHASEREQUISITIONTP](images/810_use_sap_note_and_github.png)  
+  
+ </details>  
+
+## Exercise 1.2: Check the documentation for I_PurchaseRequisitionTP
+[^Top of page](#)
+
+The documentation for a released RAP business object can be found in so called **Knowledge Transfer Documents** which have the same name as the business object (released API) it describes.     
+
+ <details>
+  <summary>Click to expand!</summary>
+
+  1. You can find the **Knowledge Transfer Document** of a realeased API in the folder **Documentation** underneath the business object in the Project Explorer.
+  It can also be opened from within the source code editor of your behavior definition. Here you find the link at the top of the source code of the behavior definition.
+
+  ![KTD](images/500_check_documentation.png) 
+
+  2. The **Knowledge Transfer Document** can also be opened directly via the **Open Development Object** dialogu that can be opened via the menu or via the short cut **Ctrl+Shift+A**.  
+
+  ![KTD](images/510_check_documentation.png) 
+
+  3. When you have opened the **Knowledge Transfer Document** you should change from the **Source** tab to the more appealing visualization of the **Preview** tab.  
+
+  ![KTD](images/520_check_documentation.gif)  
+
+  4. The **Knowledge Transfer Document** provides you with code snippets that help you to write code to perform the operation (e.g. *create* as shown below) or an action which is supported by this business object.  
+
+  ![KTD](images/530_check_documentation.png)     
+
+
+We will use these code templates to create a test class that calls the API **I_PurchaseRequisitionTP** in order to create purchase requisitions in the following Excercise.
+
+We will reuse this code in the implementation of the behavior definition class of our sample RAP business object **OnlineShop**. 
+
+ </details> 
 
 
 
