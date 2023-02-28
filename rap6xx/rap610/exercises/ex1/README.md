@@ -223,7 +223,7 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
 
 
  
-## Exercise 1.3: Identifying local APIs for S/4HANA Cloud via SAP Note 3088062 or GitHub   
+## Exercise 1.4: Identifying local APIs for S/4HANA Cloud via SAP Note 3088062 or GitHub   
 [^Top of page](#)
 
 While developing an ABAP Application for S/4HANA Cloud, you do get the following error message: "Use of <Object Type> <Object Name> is not permitted". But the error message does not provide a hint which API or object to use instead. The reason is that the successor information in on premise system does not contain the latest updates such as in SAP S/4HANA Cloud, ABAP Environment systems.   
@@ -255,7 +255,7 @@ An example would be the table `MARA` in the on premise release 2022.
   
  </details>  
 
-## Exercise 1.4: Check the documentation for I_PurchaseRequisitionTP
+## Exercise 1.5: Check the documentation for I_PurchaseRequisitionTP
 [^Top of page](#)
 
 The documentation for a released RAP business object can be found in so called **Knowledge Transfer Documents** which have the same name as the business object (released API) it describes.     
@@ -289,7 +289,7 @@ We will reuse this code in the implementation of the behavior definition class o
 
 
 
-## Exercise 1.5: Implement a test class to call I_PurchaseRequisitionTP
+## Exercise 1.6: Implement a test class to call I_PurchaseRequisitionTP
 [^Top of page](#)
 
 In the preceeding exercise you have learned how to access the documentation of a released RAP business object.  
