@@ -228,6 +228,8 @@ ENDCLASS.
    6. The effect of the release state **Not to Be Released** in combination with a successor is illustrated below for the table `EBAN`, which was replaced by the CDS view `I_PURCHASEREQUISITIONITEMAPI01`. When you open an object such as `EBAN` for which a success is maintained you see this information also in the **Properties** in ADT where you have the option to conveniently navigate to the successor object.   
    
    ![package](images/340_new_class_a.png). 
+  
+  7. What you can do if the use of an object is not permitted but now successor has been maintained in the current release is described in the following exercise. 
 
 </details>
 
