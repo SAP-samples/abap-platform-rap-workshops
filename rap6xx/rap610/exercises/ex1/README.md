@@ -95,7 +95,19 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
 
  </details> 
 
+## Exercise 1.2: Identifying local APIs for S/4HANA Cloud via SAP Note 3088062 or GitHub   
+[^Top of page](#)
 
+While developing an ABAP Application for S/4HANA Cloud, you do get the following error message: "Use of <Object Type> <Object Name> is not permitted". But the error message does not provide a hint which API or object to use instead. The reason is that the successor information in on premise system does not contain the latest updates such as in SAP S/4HANA Cloud, ABAP Environment systems.   
+
+ You as a developer nevertheless want to find out which objects to use intstead and to check their documentation.   
+
+ <details>
+  <summary>Click to expand!</summary>
+  
+  
+  
+ </details>  
 
 ## Exercise 1.2: Check the documentation for I_PurchaseRequisitionTP
 [^Top of page](#)
