@@ -179,46 +179,55 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
       
  <pre lang="ABAP">
    METHOD if_oo_adt_classrun~main.
-
+  
     CALL FUNCTION 'POPUP_TO_CONFIRM'.
 
-    CALL FUNCTION 'SI_UNIT_GET'
-*    EXPORTING
-*      dimension           = space
-*      unit                = space
-*    IMPORTING
-*      si_unit             =
-*    EXCEPTIONS
-*      dimension_not_found = 1
-*      unit_not_found      = 2
-*      others              = 3
-      .
-    IF sy-subrc <> 0.
-*   MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
-*     WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
-    ENDIF.
+    select single * from MARA where matnr = '1234' into @data(material_info).
 
-    SELECT * FROM bkpf WHERE belnr = '4900000018' INTO TABLE @DATA(journal_entry_data_from_bkpf).
+    call function 'BAPI_PR_CREATE'
+*  EXPORTING
+*    prheader               = 
+*    prheaderx              = 
+*    testrun                = 
+*  IMPORTING
+*    number                 = 
+*    prheaderexp            = 
+*  TABLES
+*    return                 = 
+*    pritem                 = 
+*    pritemx                = 
+*    pritemexp              = 
+*    pritemsource           = 
+*    praccount              = 
+* ...
 
-    SELECT * FROM I_JournalEntry WHERE AccountingDocument = '4900000018' INTO TABLE @DATA(journal_entry_data).
+  .
 
-  ENDMETHOD.    
+    SELECT * FROM EBAN WHERE banfn = '0010001516' INTO TABLE @DATA(purchase_req_data_from_eban).
+
+    SELECT * FROM  I_PURCHASEREQUISITIONITEMAPI01 WHERE PurchaseRequisition = '0010001516' INTO TABLE @DATA(purchase_req_data).
+  ENDMETHOD.
+
+ENDCLASS.
  </pre>
 
       The ABAP class `zcl_test_i_purchase_req_###` in the screenshot underneath uses the ABAP Cloud development model (ABAP language version “ABAP for Cloud development”). The class cannot be compiled because of two ABAP statements containing syntax-errors:
 
-      - Line 20: The SAP function module `POPUP_TO_CONFIRM` is used in the classic Dynpro/SAP GUI world and is no public SAP API in the ABAP Cloud development model.  
-      - Line 22: The use of the SAP function module `SI_UNIT_GET` is also forbidden in the ABAP Cloud development model, but for this function module a successor is available, namely the class `CL_UOM_CONVERSION` which is mentioned in the error message.   
-      - Line 38: Direct access to SAP table `BKPF` is also not allowed. Here the devloper gets the hint to use the public CDS view `I_JournalEntry` instead – (see line 40).             
- 
-![package](images/330_new_class.png). 
+      - Line 17: The SAP function module `POPUP_TO_CONFIRM` is used in the classic Dynpro/SAP GUI world and is no public SAP API in the ABAP Cloud development model.  
+  
+      - Line 19: Direct access to SAP table `MARA` is also not allowed. Here (in 2022) the devloper gets **no** hint which public API to use instead.
+  
+      - Line 21: The use of the SAP function module `BAPI_PR_CREATE` is also forbidden in the ABAP Cloud development model, but for this function module a successor is available, namely the Behavior Definition `I_PURCHASEREQUISITIONTP` which is mentioned in the error message.   
+  
+      - Line 41: Direct access to SAP table `EBAN` is also not allowed. Here (in 2022) the devloper already gets a hint to use the public CDS view `I_PURCHASEREQUISITIONITEMAPI01` instead.
+  
+      - Line 43: Valid access to CDS view `I_PURCHASEREQUISITIONITEMAPI01`. 
+             
+![package](images/330_new_class_a.png). 
       
-   The effect of the release state **Not to Be Released** in combination with a successor is illustrated below for function module `SI_UNIT_GET`, which was replaced by class `CL_UOM_CONVERSION`.
-
-
-   6. When you open an object such as `BKPF` for which a success is maintained you see this information also in the **Properties** in ADT where you have the option to conveniently navigate to the successor object.
+   6. The effect of the release state **Not to Be Released** in combination with a successor is illustrated below for the table `EBAN`, which was replaced by the CDS view `I_PURCHASEREQUISITIONITEMAPI01`. When you open an object such as `EBAN` for which a success is maintained you see this information also in the **Properties** in ADT where you have the option to conveniently navigate to the successor object.   
    
-   ![package](images/340_new_class.png). 
+   ![package](images/340_new_class_a.png). 
 
 </details>
 
