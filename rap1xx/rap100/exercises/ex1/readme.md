@@ -4,7 +4,9 @@
 
 ## Introduction
 
-In this exercise, you will create an ABAP package and database table. In your database table you will define all important fields. To fill all your database table fields, you will create an ABAP class and run it. You will use an ADT wizard to generate all the needed development RAP artefacts of your UI service. This includes the data model, projection view, service definition and service binding. Afterwards you will check your _Travel_ application with the SAP Fiori elements preview. 
+In this exercise, you will create a transactional UI service along with the underlying RAP business object. 
+
+First you will create an ABAP package, a database table, and an ABAP class to fill the database table with demo data. Then you will use an ADT wizard to generate all the needed development RAP artefacts of your UI service on top of the database table. This includes the CDS data model, behavior definition, service definition, and service binding. Afterwards you will publish and check your _Travel_ application with the SAP Fiori elements preview. 
 
 - [1.1 - Create Package](#exercise-11-create-package)
 - [1.2 - Create database table](#exercise-12-create-database-table)
