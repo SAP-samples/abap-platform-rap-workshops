@@ -12,7 +12,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
 - [1.2 - Create database table](#exercise-12-create-database-table)
 - [1.3 - Create data generator class](#exercise-13-create-data-generator-class)
 - [1.4 - Generate the transactional UI services](#exercise-14-generate-the-transactional-ui-services)
-- [1.5 - Publish the Service and Preview the Travel App](#exercise-15-publish-the-service-and-preview-the-travel-app)
+- [1.5 - Publish and Preview the Travel App](#exercise-15-publish-and-preview-the-travel-app)
 - [Summary](#summary)
 - [Appendix](#appendix)
 
@@ -201,84 +201,13 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
  
       Verify the maintained entries and press **Next >** to confirm. The needed artefacts will be generated. 
 
-      <!--
-      > ⚠ **Attention**  
-      > If you receive the error message _**DDLS ZRAP100_C_TRAVELTP_###: Element 'Client' for'ObjectModel.semanticKey**_, 
-      > this is due to a bug in the SAP BTP ABAP Environment, 2011, HFC3.  
-      > An emergency patch is planned to fix this issue.
-      >
-      > <img src="images/e100_error_message_detail.png" alt="table" width="50%"> 
-  
-      <details>
-        <summary>Click to expand to work around this issue!</summary>      
-        
-        When the error message **DDLS ZRAP100_C_TRAVELTP_###: Element 'Client' for 'ObjectModel.semanticKey' not found** shows up do the following:
-
-        1. Press OK to close the popup.
-       
-        2. Press Cancel.
-       
-           <img src="images/e110_press_cancel.png" alt="table" width="50%">   
-       
-        3. Open the generated projection view `ZRAP100_C_TRAVELTP_###`
-
-           <img src="images/e115_open_projection_view.png" alt="table" width="50%">  
-
-        4. Adapt the generated code of the projection view.   
-        
-           Change the generated code from   
-
-           `@ObjectModel.semanticKey: [ 'Client', 'TravelID' ]`   
-           to   
-           `@ObjectModel.semanticKey: [ 'TravelID' ]`   
-
-           by removing the field 'Client' from the semantic key definition.   
-           
-           <img src="images/e120_remove_client_field.png" alt="table" width="50%">
-         
-        5. Save and activate your changes   
-
-        6. Use mass activation
-
-           <img src="images/e150_use_mass_activation.png" alt="table" width="50%"> 
-
-        7. In the dialog select all objects and press **Activate**  
-
-           <img src="images/e160_mass_activation.png" alt="table" width="50%">  
-
-        8. Right click on the service definition **ZRAP100_UI_TRAVEL_###** and choose **New service binding**    
-
-           <img src="images/e170_add_service_binding.png" alt="table" width="50%"> 
-
-        9. Enter the following values:   
-
-           - Name:  ZRAP100_UI_Travel_O4_###   
-           - Description: ##GENERATED Demo ###   
-
-           and choose the **OData V4 - UI" Service Binding**   
-
-           <img src="images/e180_add_service_binding.png" alt="table" width="50%"> 
-
-       10. Press **Next**.   
-
-       11. Select a transport request and press **Finish**.
-
-       12. Activate the service binding  
-      
-       
-      </details>  
-      
-      -->
-      
       > ℹ **Info about Naming Conventions**     
       > The main aspects of the naming conventions of SAP S/4HANA's Virtual Data Model (VDM) are used in this exercise.  
       > More information on VDM can be found on the SAP Help portal: **[Here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/8a8cee943ef944fe8936f4cc60ba9bc1.html)**.
  
-      <!--  
       > ⚠ **Attention**  
       > If you receive the error message _**Invalid XML format of the response**_, this may be due to a bug in version 1.26 of the ADT tools.  
       > An update of your ADT plugin to the newer version will fix this issue.
-      -->
       
       | **RAP Layer**          |  **Artefacts**           | **Artefact Names**                                       |     
       |:---------------------- |:------------------------ |:-------------------------------------------------------- |
@@ -301,20 +230,14 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
 
       <img src="images/p7c.png" alt="table" width="50%">         
  
-   4. Click **Finish** to confirm the dialog.
- 
-   5. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
+   4. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
 
       <!-- ![class](images/p7d.png) -->
       <img src="images/p7d.png" alt="table" width="50%">  
       
    Below is a brief explanation of the generated artefacts for the different RAP layers: Base BO, BO Projection, and Business Service.
-   
-  <details>
-  <summary>Click to expand!</summary>
-   
+
 ---
-   
   **Base Business Object (BO) `ZRAP100_R_TRAVEL_###`** 
   
    | **Object Name**               |  **Description**         |     
@@ -323,9 +246,8 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
    | ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`**   | (aka _Base BO behavior): This **behavior definition** contains the definition of the standard transactional behavior of the base _Travel_ BO entity. It is a _managed_ and _draft-enabled_ implementation.  |  
    | ![tabl icon](images/adt_tabl.png)**`ZRAP100_DTRAV###`**   | (aka _Draft table_): This **database table** is used to temporary store the data from draft _travel_ instances at runtime. It is managed by the RAP framework.    |     
    | ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**  | (aka _Behavior pool_): This **ABAP class** which provides the implementation of the behavior defined in the behavior definition `ZRAP100_R_TravelTP_###` of the base _Travel_ BO.   |  
-
+  
 ---
-   
   **BO Projection `ZRAP100_C_TRAVEL_###`** 
   
   The BO projection represents the consumption specific view on the BO data model and behavior. 
@@ -335,20 +257,16 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
    | ![ddls icon](images/adt_ddls.png)**`ZRAP100_C_TravelTP_###`**   | (aka _BO projection view_): This **data definition** is used to define the projected data model of the root entity _Travel_ relevant for the present scenario. Currently almost all fields of the underlying base BO view are exposed and the definition of metadata extension is allowed using the view annotations `@Metadata.allowExtensions: true`.  |           
    | ![bdef icon](images/adt_bdef.png)**`ZRAP100_C_TravelTP_###`**   | (aka _BO behavior projection_): This **behavior definition** exposes the part of the underlying base _Travel_ BO entity which is relevant for the present scenario with the keyword **`use`**. Currently all standard CUD operations are exposed.  |        
    | ![ddlx icon](images/adt_ddlx.png)**`ZRAP100_C_TravelTP_###`**   | This **metadata extension** is used to annotate view `ZRAP100_C_TRAVEL_###` and its elements with UI semantics via CDS annotations. |        
-
----
    
+---
   **Business Service** 
 
    | **Object Name**               |  **Description**         |     
    |:----------------------------- |:------------------------ |
    | ![srvd icon](images/adt_srvd.png)**`ZRAP100_UI_TRAVEL_###`**  | A service definition is used to define the relevant entity sets for our service and also to provide local aliases if needed. Only the _Travel_ entity set is exposed in the present scenario. |                      
    | ![srvb icon](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`**  | This service binding is used to expose the generated service definition as OData V4 based UI service. Other binding types (protocols and scenarios) are supported in the service binding wizard.  |  
-
+   
 ---
-
- </details>   
- 
  </details>
 
 <!--
@@ -380,7 +298,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
  
        ![run class](images/1_4_100_generator_class.jpg)
  
-   4. The class checks for the existence of the package **`ZRAP100_###`** and for the existience of a table **`ZRAP100_ATRAV###`**. The output in the *Console Window* shows that the needed artifacts have been generated.
+   4. The class checks for the existence of the package **`ZRAP100_###`** and for the existience of a table **`ZRAP100_ATRAV###`**. The output in the *Console Window* shows that       the needed artifacts have been generated.
          
         ![class output](images/1_4_100_result_in_console.jpg)
       
@@ -420,10 +338,15 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
  </details>
 -->
  
-## Exercise 1.5: Publish the Service and Preview the Travel App
+## Exercise 1.5: Publish and Preview the Travel App
 [^Top of page](#)
 
-> Publish the local service endpoint of your service binding ![service binding](images/adt_srvb.png) and start the _Fiori elements App Preview_.
+> Publish the local service endpoint of your service binding ![service binding](images/adt_srvb.png) and start the _Fiori elements App Preview_.  
+> 
+> ℹ Carry out exercise 1.5.1 **or** 1.5.2, depending on the ABAP system you're working on.
+
+
+### Exercise 1.5.1: Publish and Preview the Travel App on SAP BTP, ABAP environment or SAP S/4HANA, Public Cloud Edition
 
  <details>
   <summary>Click to expand!</summary>
@@ -431,10 +354,6 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
    1. Open your service binding ![service binding](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`** and click **Publish**.
    
    2. Double-click on the entity **`Travel`** in the **Entity Set and Association** section to open the _Fiori elements App Preview_.
-     
-      > ⚠Please note:⚠   
-      In case following error appears in the browser: _`Application could not be started due to technical issues.`_   
-      After publishing your service, it may take 2-3 minutes on the SAP BTP Trial before you can access it via URL in the browser.      
      
        ![class](images/p8.png)
    
@@ -444,6 +363,57 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
    
        ![class](images/p9.png)
 
+</details>
+
+### Exercise 1.5.2: Publish and Preview the Travel App on SAP S/4HANA, On-Prem or Private Cloud Edition
+
+> Publishing the local service endpoint of your service binding does not work from within the Service Binding. 
+> Therefore, you have to carry out this task in the SAP Gateway Service Administration Tool (transaction **/IWFND/V4_ADMIN**).
+
+<details>
+  <summary>Click to expand!</summary>
+
+   1. In the ADT menu, click on the button *Run ABAP Development Object as ABAP Application in SAPGUI* or press **Alt+F8**
+ 
+      ![start_transaction](images/100_publish_service_binding_on_prem.png)   
+   
+   2. Type **/iwfnd/v4_admin** as a search string and double-click on the entry **/IWFND/V4_ADMIN (Transaction)**   
+     
+      ![v4_admin](images/110_publish_service_binding_on_prem.png)   
+   
+   3. Click the button **Publish Service Groups** to get a list of service groups that can be published.
+ 
+      ![v4_admin](images/120_publish_service_binding_on_prem.png)  
+ 
+   4. Enter following values to search for the service group of your service and press the button **Get Service Groups**   
+      
+      System Alias: `LOCAL`  
+      Service Group ID: `Z*###*`  
+
+      ![v4_admin](images/130_publish_service_binding_on_prem.png)        
+
+   5. Select the entry `ZRAP100_UI_TRAVELTP_O4_###` from the list and press the button **Publish Service Groups**   
+ 
+      ![v4_admin](images/140_publish_service_binding_on_prem.png) 
+ 
+   6. In the following popup enter a meaningful description such as `Travel App ###`   
+      
+      ![v4_admin](images/150_publish_service_binding_on_prem.png) 
+ 
+   7. You are now asked to provide a customizing request. Choose an existing customizing request or create a new one and choose a meaningful description.
+ 
+      ![v4_admin](images/160_publish_service_binding_on_prem.png)   
+ 
+   8. Confirm the success message and press **Enter**. 
+ 
+      ![v4_admin](images/170_publish_service_binding_on_prem.png)    
+ 
+   9. Navigate back to your service binding in the project explorer. Right click on it and choose **Refresh**   
+ 
+      ![v4_admin](images/180_publish_service_binding_on_prem.png)   ** 
+ 
+   10. Check that your service bindings is now publish and choose the entity **Travel** and press the button **Preview**   
+ 
 </details>
 
 ## Summary 
