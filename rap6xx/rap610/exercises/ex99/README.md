@@ -1,4 +1,4 @@
-# How to connect to a SAP S/4HANA Fully-Activated Appliance system using ADT  
+# How to connect to a to an SAP S/4HANA on premise or private cloud system 
 
 This document describes how to create a **ABAP Project** to connect to an SAP S/4HANA on premise or private cloud system.  
 The screen shots taken use a preconfigured appliance system as it is used in various workshops of the SAP ABAP Platform PM team.  
