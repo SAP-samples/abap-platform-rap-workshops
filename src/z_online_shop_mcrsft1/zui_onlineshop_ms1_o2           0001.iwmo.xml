@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_IWMO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <_-IWBEP_-I_MGW_OHD>
+    <_-IWBEP_-I_MGW_OHD>
+     <TECHNICAL_NAME>ZUI_ONLINESHOP_MS1_O2</TECHNICAL_NAME>
+     <VERSION>0001</VERSION>
+     <CLASS_NAME>CL_SADL_GW_RAP_EXPOSURE_MPC</CLASS_NAME>
+     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    </_-IWBEP_-I_MGW_OHD>
+   </_-IWBEP_-I_MGW_OHD>
+   <_-IWBEP_-I_MGW_OHT>
+    <_-IWBEP_-I_MGW_OHT>
+     <TECHNICAL_NAME>ZUI_ONLINESHOP_MS1_O2</TECHNICAL_NAME>
+     <VERSION>0001</VERSION>
+     <LANGUAGE>E</LANGUAGE>
+    </_-IWBEP_-I_MGW_OHT>
+   </_-IWBEP_-I_MGW_OHT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

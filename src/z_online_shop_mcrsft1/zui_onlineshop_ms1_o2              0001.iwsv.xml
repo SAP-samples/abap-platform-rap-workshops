@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_IWSV" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <_-IWBEP_-I_MGW_SRG>
+    <_-IWBEP_-I_MGW_SRG>
+     <GROUP_TECH_NAME>ZUI_ONLINESHOP_MS1_O2</GROUP_TECH_NAME>
+     <GROUP_VERSION>0001</GROUP_VERSION>
+     <MODEL_TECH_NAME>ZUI_ONLINESHOP_MS1_O2</MODEL_TECH_NAME>
+     <MODEL_VERSION>0001</MODEL_VERSION>
+    </_-IWBEP_-I_MGW_SRG>
+   </_-IWBEP_-I_MGW_SRG>
+   <_-IWBEP_-I_MGW_SRH>
+    <_-IWBEP_-I_MGW_SRH>
+     <TECHNICAL_NAME>ZUI_ONLINESHOP_MS1_O2</TECHNICAL_NAME>
+     <VERSION>0001</VERSION>
+     <EXTERNAL_NAME>ZUI_ONLINESHOP_MS1_O2</EXTERNAL_NAME>
+     <CLASS_NAME>CL_SADL_RAP_EXPOSURE_DPC</CLASS_NAME>
+     <IS_SAP_SERVICE>-</IS_SAP_SERVICE>
+     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    </_-IWBEP_-I_MGW_SRH>
+   </_-IWBEP_-I_MGW_SRH>
+   <_-IWBEP_-I_MGW_SRT>
+    <_-IWBEP_-I_MGW_SRT>
+     <TECHNICAL_NAME>ZUI_ONLINESHOP_MS1_O2</TECHNICAL_NAME>
+     <VERSION>0001</VERSION>
+     <LANGUAGE>E</LANGUAGE>
+    </_-IWBEP_-I_MGW_SRT>
+   </_-IWBEP_-I_MGW_SRT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

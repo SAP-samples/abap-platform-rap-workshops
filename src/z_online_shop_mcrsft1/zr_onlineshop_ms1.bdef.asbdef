@@ -1,0 +1,58 @@
+managed implementation in class zbp_r_onlineshop_ms1 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_ONLINESHOP_MS1 alias onlineshop
+persistent table zaonlineshop_ms1
+draft table zdonlineshop_ms1
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with additional save
+{
+  field ( readonly )
+  OrderUUID,
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LastChangedBy,
+  LocalLastChangedAt;
+
+  field ( numbering : managed )
+  OrderUUID;
+  field ( readonly ) Prstatus, Purchasereqn, url;
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+
+  draft determine action Prepare { validation checkQuantity ; validation checkDescription; }
+  determination calculateOrderID on modify { create; }
+  validation checkQuantity on save { create;field quantity; }
+  validation checkDescription on save { create; field DescriptionText; }
+
+  action ( features : instance ) createPurchaseRequisitionItem result [1] $self;
+  mapping for ZAONLINESHOP_MS1
+  {
+    OrderUUID = ORDERUUID;
+    OrderID = ORDERID;
+    Ordereditem = ORDEREDITEM;
+    Purchasereqn = PURCHASEREQN;
+    Prstatus = PRSTATUS;
+    CreatedAt = CREATED_AT;
+    CreatedBy = CREATED_BY;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    DeliveryDate = delivery_date;
+    DescriptionText = descriptiontext;
+    url = url;
+  }
+    event sendPurchaseRequisitionDetails parameter zabs_purchaserequisition;
+
+}

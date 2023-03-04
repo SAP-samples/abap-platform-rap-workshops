@@ -1,0 +1,22 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "producerNamespace": "zsap.s4.beh",
+  "producer": "P50C7E76229498403FC8392AB97947729",
+  "producerVersion": "0001",
+  "boName": "OnlineShop",
+  "boOperation": "Update",
+  "producerType": "zsap.s4.beh.OnlineShop.Update.v*",
+  "events": [
+    {
+      "eventVersion": "0001",
+      "eventMinorVersion": 1,
+      "entityName": "ZR_ONLINESHOP_MS1",
+      "entityEventName": "SENDPURCHASEREQUISITIONDETAILS"
+    }
+  ]
+}

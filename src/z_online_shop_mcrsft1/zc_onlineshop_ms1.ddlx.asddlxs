@@ -1,0 +1,119 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Onlineshop', 
+    typeNamePlural: 'Onlineshops', 
+    title: {
+      type: #STANDARD, 
+      label: 'Onlineshop', 
+      value: 'OrderID'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'OrderID', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_ONLINESHOP_MS1 with
+{
+  @UI.facet: [ {
+    id: 'idCollection', 
+    type: #COLLECTION, 
+    label: 'Onlineshop', 
+    position: 10 
+  }, 
+  {
+    id: 'idIdentification', 
+    parentId: 'idCollection', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'General Information', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'OrderID'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'OrderID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+ OrderID;
+   @Consumption.valueHelpDefinition: [{ entity: 
+                {name: 'zi_items' , element: 'Item' } }     ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'OrderedItem'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'OrderedItem'
+  } ]
+  Ordereditem;
+   @UI.lineItem: [ {
+    position: 22 , 
+    importance: #HIGH, 
+    label: 'Quantity'
+  } ]
+  @UI.identification: [ {
+    position: 22 , 
+    label: 'Quantity'
+  } ]
+  quantity;
+   @UI.lineItem: [ {
+    position: 26 , 
+    importance: #HIGH, 
+    label: 'Description Text'
+  } ]
+  @UI.identification: [ {
+    position: 26 , 
+    label: 'Description Text'
+  } ]
+  DescriptionText;
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'PurchaseRequisition'
+  } ,
+    { type: #FOR_ACTION, dataAction: 'createPurchaseRequisitionItem', label: 'Accept Order-Trigger Purchase Reqn' }]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'PurchaseRequisition'
+  }
+//  ,  { type: #FOR_ACTION, dataAction: 'createPurchaseRequisitionItem', label: 'Accept Order-Trigger Purchase Reqn' }
+   ]
+  Purchasereqn;
+    @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'PRStatus'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'PRStatus'
+  } ]
+  Prstatus;
+  @UI.hidden: true
+  CreatedAt;
+  
+  @UI.hidden: true
+  CreatedBy;
+  
+  @UI.hidden: true
+  LastChangedBy;
+  
+  @UI.hidden: true
+  LastChangedAt;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

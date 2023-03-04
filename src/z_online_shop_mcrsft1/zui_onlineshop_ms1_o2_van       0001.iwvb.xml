@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_IWVB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <_-IWBEP_-I_MGW_VAA>
+    <_-IWBEP_-I_MGW_VAA>
+     <ANNO_TECH_NAME>ZUI_ONLINESHOP_MS1_O2_VAN</ANNO_TECH_NAME>
+     <ANNO_VERSION>0001</ANNO_VERSION>
+     <SERV_TECH_NAME>ZUI_ONLINESHOP_MS1_O2</SERV_TECH_NAME>
+     <SERV_VERSION>0001</SERV_VERSION>
+     <IS_MAIN_SERVICE>X</IS_MAIN_SERVICE>
+     <SERV_ALIAS>SAP</SERV_ALIAS>
+     <SCHEMA_NAMESPACE>ZUI_ONLINESHOP_MS1_O2</SCHEMA_NAMESPACE>
+    </_-IWBEP_-I_MGW_VAA>
+   </_-IWBEP_-I_MGW_VAA>
+   <_-IWBEP_-I_MGW_VAH>
+    <_-IWBEP_-I_MGW_VAH>
+     <TECHNICAL_NAME>ZUI_ONLINESHOP_MS1_O2_VAN</TECHNICAL_NAME>
+     <VERSION>0001</VERSION>
+     <CLASS_NAME>CL_SADL_GW_CDS_EXPOSURE_APC</CLASS_NAME>
+     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    </_-IWBEP_-I_MGW_VAH>
+   </_-IWBEP_-I_MGW_VAH>
+   <_-IWBEP_-I_MGW_VAT>
+    <_-IWBEP_-I_MGW_VAT>
+     <TECHNICAL_NAME>ZUI_ONLINESHOP_MS1_O2_VAN</TECHNICAL_NAME>
+     <VERSION>0001</VERSION>
+     <LANGUAGE>E</LANGUAGE>
+     <DESCRIPTION>Generic Annotation Provider</DESCRIPTION>
+    </_-IWBEP_-I_MGW_VAT>
+   </_-IWBEP_-I_MGW_VAT>
+  </asx:values>
+ </asx:abap>
+</abapGit>
