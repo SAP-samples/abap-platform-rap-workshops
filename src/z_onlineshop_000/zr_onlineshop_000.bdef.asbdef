@@ -1,0 +1,71 @@
+managed implementation in class ZBP_R_ONLINESHOP_000 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_ONLINESHOP_000 alias OnlineShop
+//persistent table zaonlineshop_000
+draft table zdonlineshop_000
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with unmanaged save
+
+{
+  field ( readonly )
+  OrderUUID,
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LastChangedBy,
+  LocalLastChangedAt;
+
+  field ( numbering : managed )
+  OrderUUID;
+
+  field ( readonly )
+  OrderID, OverallStatus, TotalPrice, Currency, //order
+  OrderItemPrice, ProductGroup, ProductText, BaseUnit, //product;
+  PurchaseRequisition, PurchRqnCreationDate; //purchase rqn
+
+  create;
+  update;
+  delete;
+
+  action createPurchaseRequisition result [1] $self;
+
+  determination setInitialOrderValues on modify { create; }
+  determination updateProductDetails on modify { field OrderItemID; }
+  determination calculateTotalPrice on modify { field OrderItemID; field OrderItemQuantity; }
+
+  validation checkOrderedItem on save { create; field OrderItemID; }
+  validation checkOrderedQuantity on save { create; field OrderItemQuantity; }
+  validation checkDeliveryDate on save { create; field DeliveryDate; }
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZAONLINESHOP_000 control zaonlineshop_x_000 corresponding
+  {
+    OrderUUID = ORDER_UUID;
+    OrderID = ORDER_ID;
+    OrderItemID = ORDER_ITEM_ID;
+    OrderItemPrice = ORDER_ITEM_PRICE;
+    OrderItemQuantity = ORDER_ITEM_QUANTITY;
+    TotalPrice = TOTAL_PRICE;
+    Currency = CURRENCY;
+    OverallStatus = OVERALL_STATUS;
+    OverallStatusIndicator = overall_status_indicator;
+    DeliveryDate = DELIVERY_DATE;
+    Notes = NOTES;
+    PurchaseRequisition = PURCHASE_REQUISITION;
+    PurchRqnCreationDate = PURCH_RQN_CREATION_DATE;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+}

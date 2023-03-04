@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_G4BA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <_-IWBEP_-I_V4_MSGA>
+    <_-IWBEP_-I_V4_MSGA>
+     <GROUP_ID>ZRAP100_UI_TRAVELTP_O4_000</GROUP_ID>
+     <SERVICE_ID>/IWBEP/COMMON</SERVICE_ID>
+     <REPOSITORY_ID>DEFAULT</REPOSITORY_ID>
+    </_-IWBEP_-I_V4_MSGA>
+   </_-IWBEP_-I_V4_MSGA>
+   <_-IWBEP_-I_V4_MSGR>
+    <_-IWBEP_-I_V4_MSGR>
+     <GROUP_ID>ZRAP100_UI_TRAVELTP_O4_000</GROUP_ID>
+     <ASSIGNMENT_REPO_ID>SADL</ASSIGNMENT_REPO_ID>
+     <EXTERNAL_GROUP_ID>ZRAP100_UI_TRAVELTP_O4_000</EXTERNAL_GROUP_ID>
+     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    </_-IWBEP_-I_V4_MSGR>
+   </_-IWBEP_-I_V4_MSGR>
+   <_-IWBEP_-I_V4_MSGT>
+    <_-IWBEP_-I_V4_MSGT>
+     <GROUP_ID>ZRAP100_UI_TRAVELTP_O4_000</GROUP_ID>
+     <LANGUAGE>E</LANGUAGE>
+     <DESCRIPTION>0</DESCRIPTION>
+    </_-IWBEP_-I_V4_MSGT>
+   </_-IWBEP_-I_V4_MSGT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

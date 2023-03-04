@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service definition forZRAP100_C_TRAVELTP_000'
+define service ZRAP100_UI_TRAVELTP_000 {
+  expose ZRAP100_C_TRAVELTP_000 as Travel;
+  expose /DMO/I_Overall_Status_VH as OverallStatus;
+  expose /DMO/I_Agency_StdVH as Agency;
+  expose /DMO/I_Customer_StdVH as Customer;
+}
