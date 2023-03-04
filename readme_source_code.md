@@ -4,7 +4,8 @@
 
 In this repository you will also find several packages that contain the solutions for the various workshops.  
 
-[source code](../../src).  
+[source code](../src). 
+
 
 ### RAP100
 
