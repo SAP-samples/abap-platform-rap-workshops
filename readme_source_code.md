@@ -2,16 +2,13 @@
 
 ## Description
 
-In this repository you will also find several packages that contain the solutions for the various workshops.  
+In this repository you will also find several packages that contain the solutions for the various workshops:   
 
-[source code](/src). 
+- RAP100  (--> package **ZRAP100_000**)  
+- RAP610  (--> package **z_onlineshop_000**)
+- MSFT Integration Online Shop (--> package **z_online_shop_mcrsft1**)
 
-
-### RAP100
-
-### RAP610  
-
-### Microsoft integration 
+**[source code](/src)**   
 
 ## Requirements
 
