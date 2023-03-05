@@ -437,16 +437,22 @@ We can use the app **Manage Purchase Requisition - Professional** to check the p
 
  <details>
   <summary>Click to expand!</summary>
-
- In a preconfigured appliance system the app can be started using the local Fiori Launchpad.
  
-  https://xxx.xxx.xxx.xxx:44301/sap/bc/ui2/flp?sap-client=100&sap-language=EN#PurchaseRequisition-maintain
+  1. Open the Fiori Elements Preview of your Online Shop App and create an order. 
 
-  **Fiori Elements Preview**   
-  ![Manage Purchase Requistion - Professional](images/620_action.png)  
+  2. Press on the button to create a purchase requisition.    
+
+     **Fiori Elements Preview**   
+     ![Manage Purchase Requistion - Professional](images/620_action.png)  
+
+  3. In a preconfigured appliance system the app can be started using the local Fiori Launchpad.
  
-  **Manage Purchase Requistion - SAP standard application**   
-  ![Manage Purchase Requistion - Professional](images/610_action.png)  
+     https://xxx.xxx.xxx.xxx:44301/sap/bc/ui2/flp?sap-client=100&sap-language=EN#PurchaseRequisition-maintain
+
+     **Manage Purchase Requistion - SAP standard application**   
+     ![Manage Purchase Requistion - Professional](images/610_action.png)  
+     
+     
  
  
  </details>
