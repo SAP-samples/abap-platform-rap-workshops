@@ -281,8 +281,7 @@ For fields that are read-only and that are not read from the value help we have 
 ## Exercise 3.3: Define constants for lhc_onlineshop
 [^Top of page](#)
 
-As a preparation for implementing determinations and validations we will add constants in the local handler class `lhc_onlineshop` that can be used by all implementations.
-
+As a preparation for implementing determinations and validations we will add constants in the local handler class `lhc_onlineshop` of the the behavior implementation class `ZBP_R_ONLINESHOP_###` so that these variables can be used by all implementations.  
 
 ![adapt_bil](images/adapt_behavior_implementation_class.gif)   
 
