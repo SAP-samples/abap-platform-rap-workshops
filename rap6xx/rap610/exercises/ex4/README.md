@@ -13,7 +13,7 @@ In this exercise, you will implement calls to the released API so that the users
 - [Appendix](#appendix)
 
 
-## Exercise 4.1: Add variable to global BDEF class
+## Exercise 4.1: Add variable to global BDEF class zbp_r_onlineshop_###
 [^Top of page](#)
 
  The called **API I_PurchaserequisitionTP** uses late numbering. When being called by our application it will only return a preliminary key **%pid**.
@@ -33,7 +33,7 @@ And in order to transfer the mapped premliminary key(s) from the interaction pha
  <details>
   <summary>Click to expand!</summary>
   
-  We define a variable that will hold the response of our (to be implemented) API call.
+  We define a variable that will hold the response of our (to be implemented) API call in the behavior implementation class `zbp_r_onlineshop_###`.  
 
   <pre>
 
@@ -57,7 +57,7 @@ And in order to transfer the mapped premliminary key(s) from the interaction pha
 
  </details>
 
-## Exercise 4.1: Add unmanaged save
+## Exercise 4.2: Add unmanaged save
 [^Top of page](#)
 
 As mentioned above we have to add the use of an unmanaged save to the behavior of our RAP business object since the API that we plan to call uses *late numbering*.
@@ -187,7 +187,7 @@ Navigate to the behavior definition `ZR_ONLINESHOP_###` either in the *Project E
 
  </details>
 
-## Exercise 4.2: Add and implement an action
+## Exercise 4.3: Add and implement an action
 [^Top of page](#)
 
 We have now prepared everything so that we can add an action to our RAP business object that will trigger the creation of a purchase requisition based on an order that has been placed in the OnlineShop.   
@@ -421,7 +421,7 @@ In the following you have to perform the following steps
 
   </details>
 
-## Exercise 4.3: Check the results in the SAP standard Fiori App
+## Exercise 4.4: Check the results in the SAP standard Fiori App
 [^Top of page](#)
 
 We can use the app **Manage Purchase Requisition - Professional** to check the purchase requistions that you have created using your custom RAP business object.   
@@ -431,7 +431,7 @@ We can use the app **Manage Purchase Requisition - Professional** to check the p
 
  In a preconfigured appliance system the app can be started using the local Fiori Launchpad.
  
-  https://vhcals4hcs.dummy.nodomain:44301/sap/bc/ui2/flp?sap-client=100&sap-language=EN#PurchaseRequisition-maintain
+  https://xxx.xxx.xxx.xxx:44301/sap/bc/ui2/flp?sap-client=100&sap-language=EN#PurchaseRequisition-maintain
 
   **Fiori Elements Preview**   
   ![Manage Purchase Requistion - Professional](images/620_action.png)  
