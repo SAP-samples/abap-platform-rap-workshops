@@ -90,7 +90,9 @@ authorization master ( global )
 with unmanaged save
 </pre>
 
-  2. Select the key word `unmanaged` and select **Ctrl + 1** to start the code assistant.   
+  2. Activate your changes.   
+
+  3. After having activated your changes select the key word `unmanaged` and select **Ctrl + 1** to start the code assistant.   
      
      This will add a local saver class `lsc_zr_onlineshop_###` to the local classes of your behavior implementation class. The method `save_modified` is added to the DEFINITION and the IMPLEMENTATION section of this local class.   
 
@@ -104,7 +106,7 @@ with unmanaged save
 
   ![unmanaged save](images/500_unmanaged_save.png)  
 
-  3. Implement the `save_modified()` method as follows:
+  4. Implement the `save_modified()` method as follows:
   
 <pre>
       METHOD save_modified.
@@ -135,7 +137,7 @@ with unmanaged save
 
 </pre>
 
-  4. Create a structure `zaonlineshop_x_###`.
+  5. Create a structure `zaonlineshop_x_###`.
 
      - Right click on your package and select **New > Other ABAP Repository Object**  
      
