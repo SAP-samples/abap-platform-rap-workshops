@@ -82,6 +82,8 @@ association [1..1] to ZI_PRODUCT_VH_REUSE as _Product on $projection.OrderItemID
 
    We have prepared a meta data extension file that nicely groups your fields.  
  
+4. Replace the placeholder `###` with your group number and save and activate your changes.    
+ 
 <pre>
 @Metadata.layer: #CUSTOMER
 @UI: {
