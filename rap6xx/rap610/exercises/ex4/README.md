@@ -425,11 +425,70 @@ In the following you have to perform the following steps
 </pre>
   
  
-> **Note**
-> 7. Before checking the results in the ADT Fiori Elements preview make sure to clear the cache by pressing **F12** and by selecting **clear cache and refresh**. Otherwise you might run into the issue that the button of the action is visible but not functional.   
-
   </details>
 
+## Exercise 4.4: Add the convert key statement to your local saver class
+
+The `save_modified`  method will be enhanced such that we check whether any preliminary key
+`zbp_r_onlineshop_###=>mapped_purchase_requisition` has been saved in the helper variable in the global behavior implementation class by our action implementation.   
+
+We add this implementation after the implementation of the **create**, **update** and **delete** statements.  
+
+ <details>
+  <summary>Click to expand!</summary>
+
+1. Open the method `save_modified` in your local saver class. 
+
+2. Add the following coding to retrieve the semantic key from the called API.  
+
+  <pre>
+    METHOD save_modified.
+    DATA : lt_online_shop_as        TYPE STANDARD TABLE OF zaonlineshop_###,
+           ls_online_shop_as        TYPE                   zaonlineshop_###,
+           lt_online_shop_x_control TYPE STANDARD TABLE OF zaonlineshop_x_###.
+
+    IF create-onlineshop IS NOT INITIAL.
+      lt_online_shop_as = CORRESPONDING #( create-onlineshop MAPPING FROM ENTITY ).
+      INSERT zaonlineshop_### FROM TABLE @lt_online_shop_as.
+    ENDIF.
+
+    IF update IS NOT INITIAL.
+      CLEAR lt_online_shop_as.
+      lt_online_shop_as = CORRESPONDING #( update-onlineshop MAPPING FROM ENTITY ).
+      lt_online_shop_x_control = CORRESPONDING #( update-onlineshop MAPPING FROM ENTITY ).
+      MODIFY zaonlineshop_### FROM TABLE @lt_online_shop_as.
+    ENDIF.
+    IF delete IS NOT INITIAL.
+      LOOP AT delete-onlineshop INTO DATA(onlineshop_delete).
+        DELETE FROM zaonlineshop_### WHERE order_uuid = @onlineshop_delete-OrderUUID.
+        DELETE FROM zdonlineshop_### WHERE orderuuid = @onlineshop_delete-OrderUUID.
+      ENDLOOP.
+    ENDIF.
+
+  IF zbp_r_onlineshop_###=>mapped_purchase_requisition IS NOT INITIAL AND update IS NOT INITIAL.
+    LOOP AT zbp_r_onlineshop_###=>mapped_purchase_requisition-purchaserequisition ASSIGNING FIELD-SYMBOL(<fs_pr_mapped>).
+      CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%pid TO DATA(ls_pr_key).
+      <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
+    ENDLOOP.
+    LOOP AT update-onlineshop INTO  DATA(ls_online_shop) WHERE %control-OverallStatus = if_abap_behv=>mk-on.
+      " Creates internal table with instance data
+      DATA(creation_date) = cl_abap_context_info=>get_system_date(  ).
+      UPDATE zaonlineshop_### SET purchase_requisition = @ls_pr_key-purchaserequisition,
+                                  purch_rqn_creation_date = @creation_date WHERE order_uuid = @ls_online_shop-OrderUUID.
+    ENDLOOP.
+
+  ENDIF.
+
+  ENDMETHOD.
+  
+  </pre>
+
+  Your implementation should now look like follows:   
+
+  ![local saver class](images/620_converted_key_saver_class.png)   
+
+  </details>   
+  
 ## Exercise 4.4: Check the results in the SAP standard Fiori App
 [^Top of page](#)
 
@@ -437,6 +496,10 @@ We can use the app **Manage Purchase Requisition - Professional** to check the p
 
  <details>
   <summary>Click to expand!</summary>
+  
+  > **Note**
+  > Before checking the results in the ADT Fiori Elements preview make sure to clear the cache by pressing **F12** and by selecting **clear cache and refresh**. Otherwise you might run into the issue that the button of the action is visible but not functional.   
+
  
   1. Open the Fiori Elements Preview of your Online Shop App and create an order. 
 
