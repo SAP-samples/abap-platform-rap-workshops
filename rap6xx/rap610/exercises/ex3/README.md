@@ -655,4 +655,7 @@ In addition there will be a check that make sure that not too many items can be 
 
  </details> 
 
+ ## Summary   
+ 
+ you can continue with the next exercise - **[Exercise 4: Adapt the data model](../ex4/README.md)**.
 
