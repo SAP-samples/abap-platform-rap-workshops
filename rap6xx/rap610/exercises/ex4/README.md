@@ -69,19 +69,20 @@ Navigate to the behavior definition `ZR_ONLINESHOP_###` either in the *Project E
 
   1. Open the behavior definition and add the statement `with unmanaged save` right after the `authorization master ( global )` statement and also uncomment the statement that specifies the persistent table of our RAP BO `//persistent table zaonlineshop_###` since it is not possible to use both statements in the same behavior definition. 
 
-  <pre>
-  managed implementation in class ZBP_R_ONLINESHOP_### unique;
-  strict ( 2 );
-  with draft;
+<pre>
+managed implementation in class ZBP_R_ONLINESHOP_### unique;
+strict ( 2 );
+with draft;
 
-  define behavior for ZR_ONLINESHOP_### alias OnlineShop
-  //persistent table zaonlineshop_###
-  draft table zdonlineshop_###
-  etag master LocalLastChangedAt
-  lock master total etag LastChangedAt
-  authorization master ( global )
-  with unmanaged save
-  </pre>
+define behavior for ZR_ONLINESHOP_### alias OnlineShop
+//implementation in class ZBP_R_ONLINESHOP_### unique
+//persistent table zaonlineshop_###
+draft table zdonlineshop_###
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with unmanaged save
+</pre>
 
   2. Select the key word `unmanaged` and select **Ctrl + 1** to start the code assistant.   
      
