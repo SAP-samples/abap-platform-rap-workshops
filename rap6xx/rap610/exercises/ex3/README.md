@@ -283,9 +283,15 @@ For fields that are read-only and that are not read from the value help we have 
 
 As a preparation for implementing determinations and validations we will add constants in the local handler class `lhc_onlineshop` that can be used by all implementations.
 
+![adapt_bil](images/adapt_behavior_implementation_class.gif)   
+
+adapt_behavior_implementation_class
+
 <details>
   <summary>Click to expand!</summary>
-
+  
+  0. Navigate to the behavior implementation class `ZBP_R_ONLINESHOP_###` in the *Project Explorer* and then click on the tab *Local Types*.   
+  
   1. Start the implementation by adding the following constants in the private section of your local handler class `lhc_onlineshop`.   
 
   <pre>
