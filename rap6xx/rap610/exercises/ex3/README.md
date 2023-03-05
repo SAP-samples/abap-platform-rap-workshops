@@ -72,7 +72,7 @@ association [1..1] to ZI_PRODUCT_VH_REUSE as _Product on $projection.OrderItemID
 > **Note:**   
 > When a starter project has been generated the field `CreatedAt` has already been added to the projection view.  
 > You will thus get the following error message: *The name CreatedAt is not unique*   
-> In this case simply delete the second `CreatedAt` entry.
+> In this case simply delete or comment out the duplicate `CreatedAt` entry.
 >    
 > ![enhance_data_model](images/105_adapt_data_model.png) 
 
