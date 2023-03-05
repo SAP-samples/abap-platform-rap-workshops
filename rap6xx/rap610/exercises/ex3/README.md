@@ -655,7 +655,9 @@ In addition there will be a check that make sure that not too many items can be 
 
  </details> 
 
- ## Summary   
+ ## Summary  
  
- you can continue with the next exercise - **[Exercise 4: Adapt the data model](../ex4/README.md)**.
+ You have implemented checks (validations) and determinations to prepare the data that is sent via EML to the released API.   
+ 
+ you can continue with the next exercise - **[Exercise 4: Developer extensibility](../ex4/README.md)**.
 
