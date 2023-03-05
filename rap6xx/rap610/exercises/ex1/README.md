@@ -341,6 +341,8 @@ Now that you've...
 
 you can continue with the next exercise - **[Exercise 2: Implement the business logic of your RAP BO](../ex2/#readme)**.
 
+> **Note:**   
+> When your package and a starter project has already been generated in a SAP led workshop you can **skip Exercise 2** and you can continue with the third exercise - **[Exercise 3: Adapt the data model](../ex3/README.md)**.   
 ---
 
 ## Appendix
