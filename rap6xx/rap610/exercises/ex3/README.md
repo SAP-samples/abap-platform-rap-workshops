@@ -254,12 +254,22 @@ For fields that are read-only and that are not read from the value help we have 
      - Add the following list of fields to mark them as read-only.  
        <pre>
        field ( readonly )
-       OrderID, OverallStatus, TotalPrice, Currency, //order
+       OrderID,
+       OverallStatus, TotalPrice, Currency, //order
        OrderItemPrice, ProductGroup, ProductText, BaseUnit, //product;
        PurchaseRequisition, PurchRqnCreationDate; //purchase rqn
        </pre>
        
        ![adapt_bdef](images/220_adapt_bdef.png)  
+
+       > **Note:**   
+       > When a starter project has already been generated you might get the error message:  
+       > *"readonly" is specified more than once for "OrderID".*  
+       > In this case simply comment out the duplicate entry `OrderID,`   
+       >     
+       > ![adapt_bdef](images/225_adapt_bdef.png)
+ 
+      
 
      - Check the UI using the Fiori Elements preview.   
 
