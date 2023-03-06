@@ -46,7 +46,7 @@ The screen shots taken use a preconfigured appliance system as it is used in var
 
 7. Add `ZLOCAL` to your favorites packages.  
 
-   - Right click on your newly created project.   
+   - Right click on the folder **Favorite Packages** in your newly created ABAP project.   
 
    ![add_to_favorites](images/99_100_add_zlocal_to_favorites.png)  
    
