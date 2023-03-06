@@ -43,5 +43,17 @@ The screen shots taken use a preconfigured appliance system as it is used in var
    ![Project Name](images/140_create_a_new_abap_project.png)
 
 6. Press **Finish**.   
+
+7. Add `ZLOCAL` to your favorites packages.  
+
+   - Right click on your newly created project.   
+
+   ![add_to_favorites](images/99_100_add_zlocal_to_favorites.png)  
+   
+   - Search for `ZLOCAL`. Select the entry and press **OK**.   
+   
+   ![add_to_favorites](images/99_110_add_zlocal_to_favorites.png) 
+   
+ 
    
 </details>
