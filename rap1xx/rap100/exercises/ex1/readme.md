@@ -348,6 +348,8 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
 
 ### Exercise 1.5.1: Publish and Preview the Travel App on SAP BTP, ABAP environment or SAP S/4HANA, Public Cloud Edition
 
+> Publish the local service endpoint of your service binding ![service binding](images/adt_srvb.png) in the **Service Binding editor** and start the _Fiori elements App Preview_.  
+> 
  <details>
   <summary>Click to expand!</summary>
 
