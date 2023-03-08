@@ -1,6 +1,6 @@
 [Home - RAP Managed BO Runtime Implementation](../README.md)  
-[**Back to AD162@SAP TechEd in 2022**](https://github.com/SAP-samples/teched2022-AD162/blob/main/README.md)  
-[**Back to DT281@SAP TechEd in 2022**](https://github.com/SAP-samples/teched2022-DT281/blob/main/README.md)  
+<!-- [**Back to AD162@SAP TechEd in 2022**](https://github.com/SAP-samples/teched2022-AD162/blob/main/README.md)  
+[**Back to DT281@SAP TechEd in 2022**](https://github.com/SAP-samples/teched2022-DT281/blob/main/README.md)  -->
 
 # RAP100 - Build Fiori Apps with the ABAP RESTful Application Programming Model (RAP)
 
@@ -125,6 +125,14 @@ _EML: Entity Manipulation Language_
 [^Top of page](#)
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../../../issues) tab.
+
+## Recording
+[^Top of page](#)
+
+Watch the replay of the virtual workshop DT281 at SAP TechEd 2022:   
+📹 <a href="http://www.youtube.com/watch?feature=player_embedded&v=BNoUYkizM30" target="_blank">Build and Extend Apps with the ABAP RESTful Application Programming Model</a>.
+
+The replay comprises an introduction to RAP and the exercises 1 to 7 are demonstrated.
 
 ## Further Information
 [^Top of page](#)
