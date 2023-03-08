@@ -339,6 +339,7 @@ By using the convert key command we are able to retrieve the semantic key that h
     COMMIT ENTITIES END.     
 </pre>
 
+See also the Development guide for the ABAP RESTful Application Programming Model, section [General RAP BO Implementation Contract](https://help.sap.com/docs/ABAP_PLATFORM_NEW/fc4c71aa50014fd1b43721701471913d/1040b81372d44ed38b07a409fa0e1769.html?locale=en-US&version=202210.000)  
 
  <details>
   <summary>Click to expand!</summary>
