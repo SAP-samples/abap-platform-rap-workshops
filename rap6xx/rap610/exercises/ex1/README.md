@@ -321,12 +321,22 @@ The coding leverages the `response` parameter of EML statements that is used to 
 By using the convert key command we are able to retrieve the semantic key that has been set by the purchase requisition API in the late numbering phase.   
 
 <pre language=ABAP>
-COMMIT ENTITIES
+    COMMIT ENTITIES
       BEGIN RESPONSE OF i_purchaserequisitiontp
         FAILED DATA(failed_late)
         REPORTED DATA(reported_late).
-...            
-COMMIT ENTITIES END.        
+
+        LOOP AT mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<mapped>).
+          CONVERT KEY OF i_purchaserequisitiontp FROM <mapped>-%pid TO DATA(ls_ctr).
+          <mapped>-PurchaseRequisition = ls_ctr-PurchaseRequisition.
+        ENDLOOP.
+
+        IF sy-subrc = 0.
+          out->write( | PurchaseRequisition:  { ls_ctr-PurchaseRequisition } | ).
+        ELSE.
+          out->write( | Error PurchaseRequisition sy-subrc:  { sy-subrc } | ).
+        ENDIF.
+    COMMIT ENTITIES END.     
 </pre>
 
 
