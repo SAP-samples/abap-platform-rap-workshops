@@ -11,6 +11,7 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Overview](#overview)
 - [Exercises](#exercises)
+- [Recording](#recording)
 - [How to obtain support](#how-to-obtain-support) 
 - [Further Information](#further-information)
 
@@ -121,18 +122,17 @@ Follow these steps to build an OData service for developing a transactional, dra
 _BO: Business Object_  
 _EML: Entity Manipulation Language_    
 
+## Recording
+[^Top of page](#)
+
+Watch the replay of the virtual workshop on RAP held SAP TechEd in 2022. It contains a compact introduction to RAP and a demonstration of the exercises 1 to 7.
+
+📹 <a href="http://www.youtube.com/watch?feature=player_embedded&v=BNoUYkizM30" target="_blank">Build and Extend Apps with the ABAP RESTful Application Programming Model</a> 
+
 ## How to obtain support
 [^Top of page](#)
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../../../issues) tab.
-
-## Recording
-[^Top of page](#)
-
-Watch the replay of the virtual workshop DT281 at SAP TechEd 2022:   
-📹 <a href="http://www.youtube.com/watch?feature=player_embedded&v=BNoUYkizM30" target="_blank">Build and Extend Apps with the ABAP RESTful Application Programming Model</a>.
-
-The replay comprises an introduction to RAP and the exercises 1 to 7 are demonstrated.
 
 ## Further Information
 [^Top of page](#)
