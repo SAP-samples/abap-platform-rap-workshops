@@ -312,6 +312,24 @@ In the preceeding exercise you have learned how to access the documentation of a
 
 We will use this code to implement a test class that calls the API **I_PurchaseRequisitionTP** and that implements the interface **if_oo_adt_classrun** so we can start with basic tests by simply starting the `if_oo_adt_classrun~main( )` method of our test class by pressing **F9**.
 
+The coding leverages the `response` parameter of EML statements that is used to specify response parameters for ABAP EML statements to get information on the following: 
+
+- Failures, i. e. operations that could not get processed (FAILED failed_resp)   
+- Key mapping information (MAPPED mapped_resp)   
+- Returned error messages (REPORTED reported_resp)
+
+By using the convert key command we are able to retrieve the semantic key that has been set by the purchase requisition API in the late numbering phase.   
+
+<pre language=ABAP>
+COMMIT ENTITIES
+      BEGIN RESPONSE OF i_purchaserequisitiontp
+        FAILED DATA(failed_late)
+        REPORTED DATA(reported_late).
+...            
+COMMIT ENTITIES END.        
+</pre>
+
+
  <details>
   <summary>Click to expand!</summary>
 
@@ -325,7 +343,9 @@ We will use this code to implement a test class that calls the API **I_PurchaseR
 
   3. Run the test class by pressing **F9**.  
 
-     ![test class](images/610_develop_test_class.png)   
+     ![test class](images/610_develop_test_class.png)  
+     
+     
 
  </details> 
 
