@@ -14,10 +14,7 @@ ENDCLASS.
 
 CLASS zcl_test_i_purchase_req_### IMPLEMENTATION.
 
-
-  METHOD if_oo_adt_classrun~main.
-
-
+METHOD if_oo_adt_classrun~main.
 
 
     DATA: purchase_requisitions      TYPE TABLE FOR CREATE I_PurchaserequisitionTP,
@@ -36,9 +33,9 @@ CLASS zcl_test_i_purchase_req_### IMPLEMENTATION.
 
     n += 1.
     "purchase requisition
-    purchase_requisition = VALUE #(  %cid                   = |My%CID_{ n }|
-                                      purchaserequisitiontype  = 'NB'
-                                      PurReqnDescription = 'Hugo' ) .
+    purchase_requisition = VALUE #( %cid                    = |My%CID_{ n }|
+                                    purchaserequisitiontype = 'NB'
+                                    PurReqnDescription      = CONV string( cl_abap_context_info=>get_system_time( ) ) ) .
     APPEND purchase_requisition TO purchase_requisitions.
 
     "purchase requisition item
@@ -48,19 +45,19 @@ CLASS zcl_test_i_purchase_req_### IMPLEMENTATION.
 
 
 **"Printer Professional
-                                             %cid                            = 'My%ItemCID_1'
-                                             plant                           = '1010'
-                                             purchaserequisitionitemtext     = 'Test Released APIs'
-                                             accountassignmentcategory     = 'U'
-                                             requestedquantity               =  n
-*                                             baseunit                        = 'EA'
-                                             purchaserequisitionprice        = '10.00'
-                                             purreqnitemcurrency             = 'EUR'
-                                             materialgroup                   = 'L001'
-                                             purchasinggroup                 = '001'
-                                             purchasingorganization          = '1010'
-                                             DeliveryDate                    = Delivery_Date
-                                             Material                        = 'ZPRINTERa01'
+*                                             %cid                            = 'My%ItemCID_1'
+*                                             plant                           = '1010'
+*                                             purchaserequisitionitemtext     = 'Test Released APIs'
+*                                               accountassignmentcategory     = 'U'
+*                                             requestedquantity               =  n
+**                                             baseunit                        = 'EA'
+*                                             purchaserequisitionprice        = '10.00'
+*                                             purreqnitemcurrency             = 'EUR'
+*                                             materialgroup                   = 'L001'
+*                                             purchasinggroup                 = '001'
+*                                             purchasingorganization          = '1010'
+*                                             DeliveryDate                    = Delivery_Date
+*                                             Material                        = 'ZPRINTER01'
 
 **"Printer Platinum
 
@@ -77,6 +74,24 @@ CLASS zcl_test_i_purchase_req_### IMPLEMENTATION.
 *                                             purchasingorganization          = '1010'
 *                                             DeliveryDate                    = Delivery_Date
 *                                             Material                        = 'ZPRINTER02'
+
+
+** Mobile Phone
+
+                                             %cid                            = 'My%ItemCID_1'
+                                             plant                           = '1010'
+                                             purchaserequisitionitemtext     = 'Test Released APIs'
+                                               accountassignmentcategory     = 'U'
+                                             requestedquantity               =  n
+*                                             baseunit                        = 'EA'
+                                             purchaserequisitionprice        = '178.00'
+                                             purreqnitemcurrency             = 'EUR'
+                                             materialgroup                   = 'A001'
+                                             purchasinggroup                 = '001'
+                                             purchasingorganization          = '1010'
+                                             DeliveryDate                    = Delivery_Date
+                                             Material                        = 'D001'
+
 
                                                      ) ) ).
     APPEND purchase_requisition_item TO purchase_requisition_items.
@@ -104,14 +119,10 @@ CLASS zcl_test_i_purchase_req_### IMPLEMENTATION.
 
     "EML deep create statement
 
-
-    MODIFY ENTITIES OF i_purchaserequisitiontp
-
-      "purchase reqn
-      ENTITY purchaserequisition
+    "purchase reqn
+    MODIFY ENTITIES OF i_purchaserequisitiontp ENTITY purchaserequisition
       CREATE FIELDS ( purchaserequisitiontype PurReqnDescription  )
       WITH purchase_requisitions
-
       "purchase reqn item
       CREATE BY \_purchaserequisitionitem
       FIELDS ( plant
@@ -143,31 +154,33 @@ CLASS zcl_test_i_purchase_req_### IMPLEMENTATION.
           FIELDS ( plainlongtext )
           WITH purchase_reqn_item_texts
 
-    REPORTED DATA(pr_reported)
-    MAPPED DATA(pr_mapped)
-    FAILED DATA(pr_failed).
+    REPORTED DATA(reported)
+    MAPPED DATA(mapped)
+    FAILED DATA(failed).
 
-    out->write( 'mapped' ).
-    LOOP AT pr_mapped-purchaserequisition INTO DATA(mapped_pr).
-      out->write( |pid:{  mapped_pr-%pid }| ).
-    ENDLOOP.
-    out->write( 'failed' ).
-    LOOP AT pr_failed-purchaserequisition INTO DATA(failed_pr).
-      out->write( |pid:{  failed_pr-%pid }| ).
-    ENDLOOP.
-    out->write( 'reported' ).
-    LOOP AT pr_reported-purchaserequisition INTO DATA(reported_pr).
-      out->write( |pid:{  reported_pr-%pid }| ).
-      out->write( |message:{  reported_pr-%msg->if_message~get_text(  )  }| ).
+    LOOP AT mapped-purchaserequisition INTO DATA(mapped_pr).
+      out->write( |{  mapped_pr-%pid }| ).
     ENDLOOP.
 
-    COMMIT ENTITIES .
+    COMMIT ENTITIES
+      BEGIN RESPONSE OF i_purchaserequisitiontp
+        FAILED DATA(failed_late)
+        REPORTED DATA(reported_late).
 
-    out->write( |sy-subrc { sy-subrc }| ).
+        LOOP AT mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<mapped>).
+          CONVERT KEY OF i_purchaserequisitiontp FROM <mapped>-%pid TO DATA(ls_ctr).
+          <mapped>-PurchaseRequisition = ls_ctr-PurchaseRequisition.
+        ENDLOOP.
 
+        IF sy-subrc = 0.
+          out->write( | PurchaseRequisition:  { ls_ctr-PurchaseRequisition } | ).
+        ELSE.
+          out->write( | Error PurchaseRequisition sy-subrc:  { sy-subrc } | ).
+        ENDIF.
+    COMMIT ENTITIES END.
 
 
   ENDMETHOD.
 
-
+ 
 ENDCLASS.
