@@ -51,7 +51,8 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
   - objects that are released (API:USE_IN_CLOUD_DEVELOPMENT)
   - objects of type behavior definition (TYPE:BDEF)  
 
-  ![package](images/410_abap_repository_tree.png)
+  ![package](images/410_abap_repository_tree.png)  
+ 
 
   3. Since we are only interested in released objects and in behavior definitions, we place the cursor in the input field **Property Filter** and press **Ctrl + Space** to use the *Content Assit* to open the list of object types.   
  
