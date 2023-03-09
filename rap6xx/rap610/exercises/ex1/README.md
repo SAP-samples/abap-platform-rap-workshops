@@ -34,6 +34,10 @@ We will then use this class to build a test class to call the released API **I_P
 
 In this exercise we will learn how to find a released API in the application component hierarchy.  
 For this we will use an ABAP Repository Tree which allows for displaying a filtered selection of development objects in the Project Explorer of the ABAP Development Tools (ADT).   
+The application component hierarchy contains all objects of the entire system. Structuring is done by application component, package and object type. 
+Here we have later to add additional filters that restrict the search to 
+- objects that are released: **API:USE_IN_CLOUD_DEVELOPMENT**  
+- objects of type behavior definition: **TYPE:BDEF**    
 
  <details>
   <summary>Click to expand!</summary>
@@ -43,11 +47,6 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
   ![package](images/400_abap_repository_tree.png). 
 
   2. In the Create Tree dialog, choose **Appliction Component Hierarchy** as filter criterion and click the **Next >** button.
-
-     > The application component hierarchy contains all objects of the entire system. Structuring is done by application component, package and object type. 
-     > Here we have later to add additional filters that restrict the search to 
-     >  - objects that are released (API:USE_IN_CLOUD_DEVELOPMENT)
-     >  - objects of type behavior definition (TYPE:BDEF)  
 
   ![package](images/410_abap_repository_tree.png)  
  
