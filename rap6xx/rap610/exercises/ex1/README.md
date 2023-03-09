@@ -49,9 +49,7 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
   Here we have later to add additional filters that restrict the search to 
 
   - objects that are released (API:USE_IN_CLOUD_DEVELOPMENT)
-  - objects of type behavior definition (TYPE:BDEF)
-
-  > Alternatively you can choose **Released Objects** which shows all released objects and add appropriate filters for application objects there.   
+  - objects of type behavior definition (TYPE:BDEF)  
 
   ![package](images/410_abap_repository_tree.png)
 
