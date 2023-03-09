@@ -44,12 +44,10 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
 
   2. In the Create Tree dialog, choose **Appliction Component Hierarchy** as filter criterion and click the **Next >** button.
 
-  The application component hierarchy contains all objects of the entire system. Structuring is done by application component, package and object type. 
-
-  Here we have later to add additional filters that restrict the search to 
-
-  - objects that are released (API:USE_IN_CLOUD_DEVELOPMENT)
-  - objects of type behavior definition (TYPE:BDEF)  
+     > The application component hierarchy contains all objects of the entire system. Structuring is done by application component, package and object type. 
+     > Here we have later to add additional filters that restrict the search to 
+     >  - objects that are released (API:USE_IN_CLOUD_DEVELOPMENT)
+     >  - objects of type behavior definition (TYPE:BDEF)  
 
   ![package](images/410_abap_repository_tree.png)  
  
