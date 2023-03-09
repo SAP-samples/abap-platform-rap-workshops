@@ -53,20 +53,13 @@ For this we will use an ABAP Repository Tree which allows for displaying a filte
 
   ![package](images/410_abap_repository_tree.png)
 
-  3. Since we are only interested in released objects and in behavior definitions, we place the cursor in the input field **Property Filter** and press **Ctrl + <space>** to use the *Content Assit* to open the list of object types. 
-  Choose **API:** and then again press **Ctrl + <space>** to get a list of API states. Here we choose **USE_IN_CLOUD_DEVELOPMENT** so that the entry in the property filter text box now reads **api:use_in_cloud_development**.  
+  3. Since we are only interested in released objects and in behavior definitions, we place the cursor in the input field **Property Filter** and press **Ctrl + Space** to use the *Content Assit* to open the list of object types.   
+ 
+ Choose **API:** and then again press **Ctrl + Space** to get a list of API states. Here we choose **USE_IN_CLOUD_DEVELOPMENT** so that the entry in the property filter text box now reads **api:use_in_cloud_development**.  
+
+Then add a **blank** behind the filter statement and and press again **Ctrl + space**.  This time we select **TYPE:** and after having pressed again  **Ctrl + Space** we select **BDEF**.  
   
-  ![package](images/420_abap_repository_tree.png) 
-
-  ![package](images/430_abap_repository_tree.png)
-
-  Place the cursor right next to the statement **api:use_in_cloud_development** and press again **Ctrl + <space>**.   
-
-  This time we select **TYPE:** and after having pressed again  **Ctrl + <space>** we select **BDEF**.   
-
-  ![package](images/440_abap_repository_tree.png)
-
-  ![package](images/450_abap_repository_tree.png)
+  ![abap_repository_tree](images/420_abap_repository_tree.gif) 
 
   The entry in the property filter text box now reads as follows: **api:use_in_cloud_development type:bdef**   
 
