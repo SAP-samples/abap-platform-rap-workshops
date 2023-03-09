@@ -64,7 +64,7 @@ Then add a **blank** behind the filter statement and and press again **Ctrl + sp
 
   The entry in the property filter text box now reads as follows: **api:use_in_cloud_development type:bdef**   
  
-  Press **Finish**   
+  Rename tree name to **Application Component Hierarchy filtered by API state and object type (BDEF)** and the press **Finish**.     
 
   ![package](images/460_abap_repository_tree.png)  
  
