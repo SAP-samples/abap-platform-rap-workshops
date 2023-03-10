@@ -1,19 +1,20 @@
 # TOC
 [Home](../../readme.md#exercises)
-# Adapt the generated code
-
+# Exercise 2: Adapt the generated code
+## Introduction
 In this exercise we will perform changes to the generated code so that our application becomes usable. 
 
-- _Projection view_:  
+- [_Projection view_](#projection-view):  
 Here we will add value help definitions for the currency code and quantity units.
 
-- _Metadata extension file_:  
+- [_Metadata extension file_](#metadata-extension-file):  
 Since we use built-in ABAP data types rather than data elements we have to add UI annotations to provide a label for the columns in the list view and the fields in the object page.
 
-- _Behavior Definition_ and _Behavior Implementation_:  
+- [_Behavior Definition_](#behavior-definition) and [_Behavior Implementation_](#behavior-implementation):  
 Here we will make the semantic key field **InventoryID** _read_only_ and we will add a determination to the behavior definition and implement the same in the behavior implementation clas so that the semantic key field **InventoryID** will be filled automatically.
 
 ## Projection view
+[^Top of page](#toc)
 
 In the source code of the projection view ````ZRAP620_C_INVENTORYTP_### ```` we will add two value help definitions for the fields ````QuantityUnit```` and ````CurrencyCode````. 
 
@@ -58,6 +59,7 @@ define root view entity ZRAP620_C_INVENTORYTP_###
 </details>
 
 ## Metadata extension file
+[^Top of page](#toc)
 
 Open the metadata extension file ````ZRAP620_C_INVENTORYTP_### ````. Replace the complete source code with the following code snippet and use search and replace to change the placeholder ````###````.
 
@@ -207,6 +209,7 @@ annotate view ZRAP620_C_INVENTORYTP_### with
 </details>
 
 ## Behavior definition
+[^Top of page](#toc)
 
 Open the behavior defintion ````ZRAP620_R_INVENTORYTP_### ```` and add the field **InventoryID** to the list of fields that are marked as readonly and add a determination **CalculateInventoryID** for the field **InventoryID**.
 
@@ -262,6 +265,7 @@ determination CalculateInventoryID on save { create; }
 </details>
 
 ## Behavior implementation
+[^Top of page](#toc)
 
 The behavior implementation class ````ZRAP620_BP_INVENTORYTP_###```` is automatically opened with the tab **Local Types** for the local handler class ````lcl_handler```` .
 The quick fix has added a method ````CalculateInventoryID```` with an (empty) implementation for the determination that shall calculate the semantic key InventoryID. 
@@ -323,7 +327,8 @@ ENDMETHOD.
 </details>
 
 # Test your changes
-
+[^Top of page](#toc)
+ 
 After having performed all the changes mentioned above we can use the SAP Fiori Elements preview in ADT to test our updated implementation.   
 
 <details>
