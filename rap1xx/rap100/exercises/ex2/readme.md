@@ -10,7 +10,7 @@ In this exercise, you will enhance the base BO data model as well as the project
 The enablement of OData streams will give end-users the option to upload and download images from your _Travel_ app. 
 
 - [2.1 - Enhance the Base BO Data Model](#exercise-21-enhance-the-base-bo-data-model)
-- [2.2 - Enable the Handling of Large Objects (aka OData Streams)](#exercise-22-enable-the-handling-of-large-objects-aka-odata-streams)
+- [2.2 - Enable the Handling of Large Objects (LOBs, aka OData Streams)](#exercise-22-enable-the-handling-of-large-objects-lobs-aka-odata-streams)
 - [2.3 - Enhance the Projected BO Data Model](#exercise-23-enhance-the-projected-bo-data-model)
 - [2.4 - Adjust the UI semantics in the Metadata Extension](#exercise-24-adjust-the-ui-semantics-in-the-metadata-extension)
 - [2.5 - Preview and Test the Enhanced Fiori elements App](#exercise-25-preview-and-test-the-enhanced-travel-app)
@@ -77,10 +77,10 @@ The enablement of OData streams will give end-users the option to upload and dow
 </details>
 
 
-## Exercise 2.2: Enable the Handling of Large Objects (aka OData Streams)
+## Exercise 2.2: Enable the Handling of Large Objects (LOBs, aka OData Streams)
 [^Top of page](#)
 
-> Adjust the data model of the base RAP BO to enable the handling large objects (aka OData stream) in your Fiori elements app. 
+> Adjust the data model of the base RAP BO to enable the handling large objects (LOBs, aka OData stream) in your Fiori elements app. 
 > By doing that, you will give end-users the option to upload and download images from your _Travel_ app. 
 > 
 > The only things you will have to do in the RAP BO, is to specify the appropriate semantics annotations for the relevant fields: `Attachment`, `MimeType`, and `FileName`. You will also have to adjust the UI semantics in the CDS metadata Extension for the appearence in the _Travel_ app. 
@@ -92,9 +92,9 @@ The enablement of OData streams will give end-users the option to upload and dow
  
  1. Remain in the CDS data definiton ![datadefinition](images/adt_ddls.png)**`ZRAP100_R_TRAVELTP_###`** and have a look at following elements in the _select_ list:
 
-      - **`Attachment`** - It will be used to store the MIME object (stream). It must be annotated appropriately using the CDS annotation `@Semantics.largeObject`.
-      - **`MimeType`** - It will be used to store the MIME type of the mime object (stream) It must be tagged appropriately using the CDS annotation `@Semantics.mimeType`.
-      - **`FileName`** - It will be used to store the file name of the MIME object (stream). No specific annotation is needed for this element. 
+      - **`Attachment`** - It is used to store the LOB (aka stream). It must be annotated appropriately using the CDS annotation `@Semantics.largeObject`. It is technically bound to the field `MimeType`.
+      - **`MimeType`** - It is used to indicates the content type of the attachment. It must be tagged appropriately using the CDS annotation `@Semantics.mimeType`.
+      - **`FileName`** - It is used to store the file name of the LOB (stream). This is optional. No specific annotation is needed for this element. 
 
  2. Use the code snippets provided below and annotate the elements as shown on the screenshot.
 
