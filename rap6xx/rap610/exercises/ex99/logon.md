@@ -8,11 +8,11 @@ The screen shots taken use a preconfigured appliance system as it is used in var
 
 1. Click on  **File > New > New ABAP Project**
 
-   ![New ABAP Project](images/100_create_a_new_abap_project.png)
+   ![New ABAP Project](images/logon.png)
 
 2. In the *System Connection* dialogue click on the link **new system connection**  
 
-   ![System Connection](images/110_create_a_new_abap_project.png)
+   ![System Connection](images/logon2.png)
 
 3. In the *Connection Settings* dialogue choose the connection type **Custom Application Server**  
    
@@ -25,7 +25,7 @@ The screen shots taken use a preconfigured appliance system as it is used in var
    
    Press Next.   
 
-   ![Connection Settings](images/120_create_a_new_abap_project.png)
+   ![Connection Settings](images/logon3.png)
 
 4. In the *Logon to System* dialogue enter the following data
     
@@ -36,11 +36,11 @@ The screen shots taken use a preconfigured appliance system as it is used in var
 
    Press Next
 
-   ![Logon to System](images/130_create_a_new_abap_project.png)
+   ![Logon to System](images/logon4.png)
    
 5. In the *Project Name* screen you can choose an individual name for your project or leave the default value proposed by ADT.
   
-   ![Project Name](images/140_create_a_new_abap_project.png)
+   ![Project Name](images/logon5.png)
 
 6. Press **Finish**.   
 
