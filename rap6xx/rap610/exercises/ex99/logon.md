@@ -1,7 +1,6 @@
 # How to connect to an SAP S/4HANA on premise system (DSAG-Technologietage 2023)
 
-This document describes how to create a **ABAP Project** to connect to an SAP S/4HANA on premise or private cloud system.  
-The screen shots taken use a preconfigured appliance system as it is used in various workshops of the SAP ABAP Platform PM team.  
+This document describes how to create a **ABAP Project** to connect to an SAP S/4HANA on premise system-  
 
 <details>
  <summary>Click to expand!</summary>
@@ -10,7 +9,7 @@ The screen shots taken use a preconfigured appliance system as it is used in var
 
    ![New ABAP Project](images/logon.png)
 
-2. In the *System Connection* dialogue click on the link **new system connection**  
+2. In the *System Connection* select **S4H**.  
 
    ![System Connection](images/logon2.png)
 
