@@ -6,7 +6,7 @@ The screen shots taken use a preconfigured appliance system as it is used in var
 <details>
  <summary>Click to expand!</summary>
 
-1. Click on  **File > New > New ABAP Project**
+1. Click on  **File > New > ABAP Project**
 
    ![New ABAP Project](images/logon.png)
 
