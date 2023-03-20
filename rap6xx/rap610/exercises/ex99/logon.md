@@ -36,11 +36,11 @@ This document describes how to create an **ABAP Project** to connect to an SAP S
 
    - Right click on the folder **Favorite Packages** in your newly created ABAP project.   
 
-   ![add_to_favorites](images/logon6.png)  
+    ![add_to_favorites](images/logon6.png)  
    
    - Search for `ZLOCAL`. Select the entry and press **OK**.   
    
-   ![add_to_favorites](images/logon7.png) 
+    ![add_to_favorites](images/logon7.png) 
  
  8. Check your result.
  
