@@ -5,35 +5,19 @@ This document describes how to create a **ABAP Project** to connect to an SAP S/
 <details>
  <summary>Click to expand!</summary>
 
-1. Click on  **File > New > ABAP Project**
+1. Click on  **File > New > ABAP Project** to create a new ABAP project.
 
    ![New ABAP Project](images/logon.png)
 
-2. In the *System Connection* select **S4H**.  
+2. In the *System Connection* select **S4H** and click **Next >**. The system **S4H** is already configured in SAP logon. 
 
    ![System Connection](images/logon2.png)
 
-3. In the *Connection Settings* dialogue choose the connection type **Custom Application Server**  
-   
-   Then enter the following connection information
-   - System ID: S4H
-   - Application Server: xxx.xxx.xxx.xxx
-   - Instance Number: 00
-   
-   and **deactivate** the check box **Activate Secure Network Communication (SNC)**
-   
-   Press Next.   
+3. Click **Next >**.   
 
    ![Connection Settings](images/logon3.png)
 
-4. In the *Logon to System* dialogue enter the following data
-    
-   - Client: xxx
-   - User: DEVELOPER###
-   - Password: xxxxxxxx
-   - Language: xx
-
-   Press Next
+4. Click **Next >**.
 
    ![Logon to System](images/logon4.png)
    
