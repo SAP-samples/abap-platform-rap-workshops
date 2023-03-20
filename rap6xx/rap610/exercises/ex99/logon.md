@@ -1,6 +1,6 @@
 # How to connect to an SAP S/4HANA on premise system (DSAG-Technologietage 2023)
 
-This document describes how to create a **ABAP Project** to connect to an SAP S/4HANA on premise system-  
+This document describes how to create an **ABAP Project** to connect to an SAP S/4HANA on premise system.
 
 <details>
  <summary>Click to expand!</summary>
@@ -17,7 +17,14 @@ This document describes how to create a **ABAP Project** to connect to an SAP S/
 
    ![Connection Settings](images/logon3.png)
 
-4. Click **Next >**.
+4. In the *Logon to System* dialogue enter the following data
+    
+   - Client: xxx
+   - User: DEVELOPER###
+   - Password: xxxxxxxx
+   - Language: xx
+
+   Click **Next >**.
 
    ![Logon to System](images/logon4.png)
    
