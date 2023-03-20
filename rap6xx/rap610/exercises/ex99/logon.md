@@ -28,11 +28,9 @@ This document describes how to create an **ABAP Project** to connect to an SAP S
 
    ![Logon to System](images/logon4.png)
    
-5. In the *Project Name* screen you can choose an individual name for your project or leave the default value proposed by ADT.
+5. In the *Project Name* screen you can choose an individual name for your project or leave the default value proposed by ADT. Press **Finish**.
   
-   ![Project Name](images/logon5.png)
-
-6. Press **Finish**.   
+   ![Project Name](images/logon5.png) 
 
 7. Add `ZLOCAL` to your favorites packages.  
 
