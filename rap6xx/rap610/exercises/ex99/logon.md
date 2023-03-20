@@ -2,9 +2,6 @@
 
 This document describes how to create an **ABAP Project** to connect to an SAP S/4HANA on premise system.
 
-<details>
- <summary>Click to expand!</summary>
-
 1. Click on  **File > New > ABAP Project** to create a new ABAP project.
 
    ![New ABAP Project](images/logon.png)
@@ -44,6 +41,4 @@ This document describes how to create an **ABAP Project** to connect to an SAP S
  
    ![add_to_favorites](images/logon8.png) 
  
-   
-</details>
 
