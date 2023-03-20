@@ -10,7 +10,7 @@ This document describes how to create an **ABAP Project** to connect to an SAP S
 
    ![System Connection](images/logon2.png)
 
-3. Click **Next >**.   
+3. Click **Next >**.    
 
    ![Connection Settings](images/logon3.png)
 
