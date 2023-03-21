@@ -87,7 +87,7 @@ A number range object will be used to determine the unique travel identifiers.
 
    <img src="images/field.png" alt="Travel BO Behavior Definition" width="60%"> 
  
-   As you can seen in the behavior definition, the administrative fields `CreatedAt`, `CreatedBy`, `LocalLastChangedAt`, `LastChangedAt`, and `LastChangedBy` have been set to read-only during the service generation. Their values are automatically set by the ABAP runtime thanks to element annotations specified in the base CDS view entity ![ddls icon](images/adt_ddls.png)`ZRAP100_R_Travel_###`.  
+   <!-- As you can seen in the behavior definition, the administrative fields `CreatedAt`, `CreatedBy`, `LocalLastChangedAt`, `LastChangedAt`, and `LastChangedBy` have been set to read-only during the service generation. Their values are automatically set by the ABAP runtime thanks to element annotations specified in the base CDS view entity ![ddls icon](images/adt_ddls.png)`ZRAP100_R_Travel_###`.  !--> 
  
 
    
