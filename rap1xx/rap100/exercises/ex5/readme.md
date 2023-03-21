@@ -228,7 +228,7 @@ A validation is implicitly invoked by the business object’s framework if the t
  
    This validation is performed on the fields **`BeginDate`** and **`EndDate`**. It checks if the entered begin date (`BeginDate`) is in the future and if the value of the entered end date (`EndDate`) is after the begin date (`BeginDate`).   
  
- <pre lang="ABAP"> 
+ ```ABAP
  **********************************************************************
  * Validation: Check the validity of begin and end dates
  **********************************************************************
@@ -293,51 +293,51 @@ A validation is implicitly invoked by the business object’s framework if the t
      ENDLOOP.
 
    ENDMETHOD. 
- </pre> 
+ ``` 
  
- <!-- <pre lang="ABAP"> 
-   **********************************************************************
-   * Validation: Check the validity of begin and end dates
-   **********************************************************************
-     METHOD validateDates.
-       READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-         ENTITY travel
-           FIELDS ( BeginDate EndDate )
-           WITH CORRESPONDING #( keys )
-         RESULT DATA(lt_travel_result).
+ ```ABAP 
+ **********************************************************************
+ * Validation: Check the validity of begin and end dates
+ **********************************************************************
+   METHOD validateDates.
+     READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+       ENTITY travel
+         FIELDS ( BeginDate EndDate )
+         WITH CORRESPONDING #( keys )
+       RESULT DATA(lt_travel_result).
 
-       LOOP AT lt_travel_result INTO DATA(ls_travel_result).
+     LOOP AT lt_travel_result INTO DATA(ls_travel_result).
 
-         IF ls_travel_result-EndDate < ls_travel_result-BeginDate.  "if end_date is before begin_date
+       IF ls_travel_result-EndDate < ls_travel_result-BeginDate.  "if end_date is before begin_date
 
-           APPEND VALUE #( %key        = ls_travel_result-%key
-                           travelID    = ls_travel_result-TravelID ) TO failed-travel.
+         APPEND VALUE #( %key        = ls_travel_result-%key
+                         travelID    = ls_travel_result-TravelID ) TO failed-travel.
 
-           APPEND VALUE #( %key = ls_travel_result-%key
-                           %msg     = new_message( id       = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgid
-                                                   number   = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgno
-                                                   v1       = ls_travel_result-BeginDate
-                                                   v2       = ls_travel_result-EndDate
-                                                   v3       = ls_travel_result-TravelID
-                                                   severity = if_abap_behv_message=>severity-error )
-                           %element-BeginDate = if_abap_behv=>mk-on
-                           %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+         APPEND VALUE #( %key = ls_travel_result-%key
+                         %msg     = new_message( id       = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgid
+                                                 number   = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgno
+                                                 v1       = ls_travel_result-BeginDate
+                                                 v2       = ls_travel_result-EndDate
+                                                 v3       = ls_travel_result-TravelID
+                                                 severity = if_abap_behv_message=>severity-error )
+                         %element-BeginDate = if_abap_behv=>mk-on
+                         %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
 
-         ELSEIF ls_travel_result-BeginDate < cl_abap_context_info=>get_system_date( ).  "begin_date must be in the future
+       ELSEIF ls_travel_result-BeginDate < cl_abap_context_info=>get_system_date( ).  "begin_date must be in the future
 
-           APPEND VALUE #( %key       = ls_travel_result-%key
-                           travelID   = ls_travel_result-TravelID ) TO failed-travel.
+         APPEND VALUE #( %key       = ls_travel_result-%key
+                         travelID   = ls_travel_result-TravelID ) TO failed-travel.
 
-           APPEND VALUE #( %key = ls_travel_result-%key
-                           %msg = new_message( id       = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgid
-                                               number   = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgno
-                                               severity = if_abap_behv_message=>severity-error )
-                           %element-BeginDate = if_abap_behv=>mk-on
-                           %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
-         ENDIF.
-       ENDLOOP.
-     ENDMETHOD.
-   </pre>   
+         APPEND VALUE #( %key = ls_travel_result-%key
+                         %msg = new_message( id       = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgid
+                                             number   = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgno
+                                             severity = if_abap_behv_message=>severity-error )
+                         %element-BeginDate = if_abap_behv=>mk-on
+                         %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+       ENDIF.
+     ENDLOOP.
+   ENDMETHOD.
+ ```  
  -->
 2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
