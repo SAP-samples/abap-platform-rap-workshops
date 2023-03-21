@@ -148,66 +148,66 @@ A validation is implicitly invoked by the business object’s framework if the t
    
    You can use the **F1 Help** to get detailed information on the different ABAP and EML statements.  
  
-      <pre lang="ABAP"> 
-      **********************************************************************
-      * Validation: Check the validity of the entered customer data
-      **********************************************************************
-        METHOD validateCustomer.
-          "read relevant travel instance data
-          READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-          ENTITY Travel
-           FIELDS ( CustomerID )
-           WITH CORRESPONDING #( keys )
-          RESULT DATA(travels).
+   ```ABAP
+   **********************************************************************
+   * Validation: Check the validity of the entered customer data
+   **********************************************************************
+     METHOD validateCustomer.
+       "read relevant travel instance data
+       READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+       ENTITY Travel
+        FIELDS ( CustomerID )
+        WITH CORRESPONDING #( keys )
+       RESULT DATA(travels).
 
-          DATA customers TYPE SORTED TABLE OF /dmo/customer WITH UNIQUE KEY customer_id.
+       DATA customers TYPE SORTED TABLE OF /dmo/customer WITH UNIQUE KEY customer_id.
 
-          "optimization of DB select: extract distinct non-initial customer IDs
-          customers = CORRESPONDING #( travels DISCARDING DUPLICATES MAPPING customer_id = customerID EXCEPT * ).
-          DELETE customers WHERE customer_id IS INITIAL.
-          IF customers IS NOT INITIAL.
+       "optimization of DB select: extract distinct non-initial customer IDs
+       customers = CORRESPONDING #( travels DISCARDING DUPLICATES MAPPING customer_id = customerID EXCEPT * ).
+       DELETE customers WHERE customer_id IS INITIAL.
+       IF customers IS NOT INITIAL.
 
-            "check if customer ID exists
-            SELECT FROM /dmo/customer FIELDS customer_id
-                                      FOR ALL ENTRIES IN @customers
-                                      WHERE customer_id = @customers-customer_id
-              INTO TABLE @DATA(valid_customers).
-          ENDIF.
+         "check if customer ID exists
+         SELECT FROM /dmo/customer FIELDS customer_id
+                                   FOR ALL ENTRIES IN @customers
+                                   WHERE customer_id = @customers-customer_id
+           INTO TABLE @DATA(valid_customers).
+       ENDIF.
 
-          "raise msg for non existing and initial customer id
-          LOOP AT travels INTO DATA(travel).
+       "raise msg for non existing and initial customer id
+       LOOP AT travels INTO DATA(travel).
 
-            APPEND VALUE #(  %tky                 = travel-%tky
-                             %state_area          = 'VALIDATE_CUSTOMER'
-                           ) TO reported-travel.
+         APPEND VALUE #(  %tky                 = travel-%tky
+                          %state_area          = 'VALIDATE_CUSTOMER'
+                        ) TO reported-travel.
 
-            IF travel-CustomerID IS  INITIAL.
-              APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+         IF travel-CustomerID IS  INITIAL.
+           APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
 
-              APPEND VALUE #( %tky                = travel-%tky
-                              %state_area         = 'VALIDATE_CUSTOMER'
-                              %msg                = NEW /dmo/cm_flight_messages(
-                                                                      textid   = /dmo/cm_flight_messages=>enter_customer_id
-                                                                      severity = if_abap_behv_message=>severity-error )
-                              %element-CustomerID = if_abap_behv=>mk-on
-                            ) TO reported-travel.
+           APPEND VALUE #( %tky                = travel-%tky
+                           %state_area         = 'VALIDATE_CUSTOMER'
+                           %msg                = NEW /dmo/cm_flight_messages(
+                                                                   textid   = /dmo/cm_flight_messages=>enter_customer_id
+                                                                   severity = if_abap_behv_message=>severity-error )
+                           %element-CustomerID = if_abap_behv=>mk-on
+                         ) TO reported-travel.
 
-            ELSEIF travel-CustomerID IS NOT INITIAL AND NOT line_exists( valid_customers[ customer_id = travel-CustomerID ] ).
-              APPEND VALUE #(  %tky = travel-%tky ) TO failed-travel.
+         ELSEIF travel-CustomerID IS NOT INITIAL AND NOT line_exists( valid_customers[ customer_id = travel-CustomerID ] ).
+           APPEND VALUE #(  %tky = travel-%tky ) TO failed-travel.
 
-              APPEND VALUE #(  %tky                = travel-%tky
-                               %state_area         = 'VALIDATE_CUSTOMER'
-                               %msg                = NEW /dmo/cm_flight_messages(
-                                                                      customer_id = travel-customerid
-                                                                      textid      = /dmo/cm_flight_messages=>customer_unkown
-                                                                      severity    = if_abap_behv_message=>severity-error )
-                               %element-CustomerID = if_abap_behv=>mk-on
-                            ) TO reported-travel.
-            ENDIF.
+           APPEND VALUE #(  %tky                = travel-%tky
+                            %state_area         = 'VALIDATE_CUSTOMER'
+                            %msg                = NEW /dmo/cm_flight_messages(
+                                                                   customer_id = travel-customerid
+                                                                   textid      = /dmo/cm_flight_messages=>customer_unkown
+                                                                   severity    = if_abap_behv_message=>severity-error )
+                            %element-CustomerID = if_abap_behv=>mk-on
+                         ) TO reported-travel.
+         ENDIF.
 
-          ENDLOOP.
-        ENDMETHOD.      
-      </pre>   
+       ENDLOOP.
+     ENDMETHOD.      
+   ```
   
 3. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
