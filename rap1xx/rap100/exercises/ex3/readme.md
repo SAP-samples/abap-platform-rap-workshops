@@ -59,7 +59,7 @@ A number range object will be used to determine the unique travel identifiers.
    
    For that, replace the statement   
  
-   ```ABAP
+   <!-- ```ABAP
    field ( mandatory : create )
    TravelID;
    ```
@@ -68,6 +68,11 @@ A number range object will be used to determine the unique travel identifiers.
   
    ```ABAP
    field ( readonly : update )
+   TravelID;
+   ```  !-->
+ 
+   ```ABAP
+   field ( readonly )
    TravelID;
    ```
   
