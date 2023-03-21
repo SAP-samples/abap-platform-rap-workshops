@@ -78,7 +78,7 @@ A number range object will be used to determine the unique travel identifiers.
   
    You can use the **ABAP Pretty Printer** function (**Shift+F1**) to format the source code.  
 
-   ![Travel BO Behavior Definition](images/field.png) 
+   <!--  ![Travel BO Behavior Definition](images/field.png)   !-->
 
  <img src="images/field.png" alt="Travel BO Behavior Definition" width="60%"> 
  
