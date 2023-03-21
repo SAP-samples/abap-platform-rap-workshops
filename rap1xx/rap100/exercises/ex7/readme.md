@@ -124,37 +124,37 @@ In the present exercise, you will implement the dynamic instance feature control
    You can make use of the **F1 Help** for more information about the EML statements and other ABAP constructs.
   
       ```ABAP
-        **************************************************************************
-        * Instance-based dynamic feature control
-        **************************************************************************
-          METHOD get_instance_features.
-              " read relevant travel instance data
-              READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-                ENTITY travel
-                   FIELDS ( TravelID OverallStatus )
-                   WITH CORRESPONDING #( keys )
-                 RESULT DATA(travels)
-                 FAILED failed.
+      **************************************************************************
+      * Instance-based dynamic feature control
+      **************************************************************************
+        METHOD get_instance_features.
+          " read relevant travel instance data
+          READ ENTITIES OF ZRAP100_R_TravelTP_sss IN LOCAL MODE
+            ENTITY travel
+               FIELDS ( TravelID OverallStatus )
+               WITH CORRESPONDING #( keys )
+             RESULT DATA(travels)
+             FAILED failed.
 
-              " evaluate the conditions, set the operation state, and set result parameter
-              result = VALUE #( FOR travel IN travels
-                                 ( %tky                   = travel-%tky
+          " evaluate the conditions, set the operation state, and set result parameter
+          result = VALUE #( FOR travel IN travels
+                             ( %tky                   = travel-%tky
 
-                                   %features-%update      = COND #( WHEN travel-OverallStatus = travel_status-accepted
-                                                                    THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                                   %features-%delete      = COND #( WHEN travel-OverallStatus = travel_status-open
-                                                                    THEN if_abap_behv=>fc-o-enabled ELSE if_abap_behv=>fc-o-disabled   )
-                                   %action-Edit           = COND #( WHEN travel-OverallStatus = travel_status-accepted
-                                                                    THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-        *                           %action-acceptTravel   = COND #( WHEN travel-OverallStatus = travel_status-accepted
-        *                                                              THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-        *                           %action-rejectTravel   = COND #( WHEN travel-OverallStatus = travel_status-rejected
-        *                                                            THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                                   %action-deductDiscount = COND #( WHEN travel-OverallStatus = travel_status-open
-                                                                    THEN if_abap_behv=>fc-o-enabled ELSE if_abap_behv=>fc-o-disabled   )
-                                ) ).
+                               %features-%update      = COND #( WHEN travel-OverallStatus = travel_status-accepted
+                                                                THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+                               %features-%delete      = COND #( WHEN travel-OverallStatus = travel_status-open
+                                                                THEN if_abap_behv=>fc-o-enabled ELSE if_abap_behv=>fc-o-disabled   )
+      *                           %action-Edit           = COND #( WHEN travel-OverallStatus = travel_status-accepted
+      *                                                            THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+      *                           %action-acceptTravel   = COND #( WHEN travel-OverallStatus = travel_status-accepted
+      *                                                              THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+      *                           %action-rejectTravel   = COND #( WHEN travel-OverallStatus = travel_status-rejected
+      *                                                            THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+                              %action-deductDiscount = COND #( WHEN travel-OverallStatus = travel_status-open
+                                                                THEN if_abap_behv=>fc-o-enabled ELSE if_abap_behv=>fc-o-disabled   )
+                            ) ).
 
-            ENDMETHOD.
+        ENDMETHOD.
       ```   
       
       Your source code should look like this:
