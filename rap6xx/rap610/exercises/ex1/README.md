@@ -317,9 +317,9 @@ By using the convert key command we are able to retrieve the semantic key that h
         FAILED DATA(failed_late)
         REPORTED DATA(reported_late).
 
-        LOOP AT mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<mapped>).
-          CONVERT KEY OF i_purchaserequisitiontp FROM <mapped>-%pid TO DATA(ls_ctr).
-          <mapped>-PurchaseRequisition = ls_ctr-PurchaseRequisition.
+        LOOP AT mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(&lt;mapped&gt;).
+          CONVERT KEY OF i_purchaserequisitiontp FROM &lt;mapped&gt;-%pid TO DATA(ls_ctr).
+          &lt;mapped&gt;-PurchaseRequisition = ls_ctr-PurchaseRequisition.
         ENDLOOP.
 
         IF sy-subrc = 0.
