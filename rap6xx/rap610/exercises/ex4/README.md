@@ -466,9 +466,9 @@ We add this implementation after the implementation of the **create**, **update*
     ENDIF.
 
   IF zbp_r_onlineshop_###=>mapped_purchase_requisition IS NOT INITIAL AND update IS NOT INITIAL.
-    LOOP AT zbp_r_onlineshop_###=>mapped_purchase_requisition-purchaserequisition ASSIGNING FIELD-SYMBOL(\<fs_pr_mapped\>).
-      CONVERT KEY OF i_purchaserequisitiontp FROM \<fs_pr_mapped\>-%pid TO DATA(ls_pr_key).
-      \<fs_pr_mapped\>-purchaserequisition = ls_pr_key-purchaserequisition.
+    LOOP AT zbp_r_onlineshop_###=>mapped_purchase_requisition-purchaserequisition ASSIGNING FIELD-SYMBOL(&lt;fs_pr_mapped&gt;).
+      CONVERT KEY OF i_purchaserequisitiontp FROM &lt;fs_pr_mapped&gt;-%pid TO DATA(ls_pr_key).
+      &lt;fs_pr_mapped&gt;-purchaserequisition = ls_pr_key-purchaserequisition.
     ENDLOOP.
     LOOP AT update-onlineshop INTO  DATA(ls_online_shop) WHERE %control-OverallStatus = if_abap_behv=>mk-on.
       " Creates internal table with instance data
