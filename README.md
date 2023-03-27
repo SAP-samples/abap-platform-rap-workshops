@@ -7,8 +7,6 @@ In this repository we provide materials for customer and community facing sessio
 
 ## Workshops
 
-[RAPCJE - SAP BTP ABAP Environment Connectivity and Integration](/managed_extensibility/README.md#rapcje---sap-cloud-platform-abap-environment-connectivity-and-integration)
-
 [RAP100 - Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)](/rap1xx/rap100#readme)
 
 [RAP400 - Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)](/rap4xx/rap400#readme)
