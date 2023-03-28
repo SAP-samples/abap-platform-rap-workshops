@@ -228,7 +228,7 @@ A validation is implicitly invoked by the business object’s framework if the t
  
    This validation is performed on the fields **`BeginDate`** and **`EndDate`**. It checks if the entered begin date (`BeginDate`) is in the future and if the value of the entered end date (`EndDate`) is after the begin date (`BeginDate`).   
  
- <```ABAP
+ ```ABAP
  **********************************************************************
  * Validation: Check the validity of begin and end dates
  **********************************************************************
@@ -295,6 +295,7 @@ A validation is implicitly invoked by the business object’s framework if the t
    ENDMETHOD. 
  ``` 
  
+ <!-- 
  ```ABAP 
  **********************************************************************
  * Validation: Check the validity of begin and end dates
@@ -337,7 +338,8 @@ A validation is implicitly invoked by the business object’s framework if the t
        ENDIF.
      ENDLOOP.
    ENDMETHOD.
- ```>
+ ```
+ -->
  
 2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
