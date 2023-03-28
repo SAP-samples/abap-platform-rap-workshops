@@ -160,11 +160,11 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
    * Deduct the specified discount from the booking fee (BookingFee)
    **************************************************************************
      METHOD deductDiscount.
-       DATA travels_for_update TYPE TABLE FOR UPDATE ZRAP100_R_TravelTP_sss.
+       DATA travels_for_update TYPE TABLE FOR UPDATE ZRAP100_R_TravelTP_###.
        DATA(keys_with_valid_discount) = keys.
 
        " read relevant travel instance data (only booking fee)
-       READ ENTITIES OF ZRAP100_R_TravelTP_sss IN LOCAL MODE
+       READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
           ENTITY Travel
           FIELDS ( BookingFee )
           WITH CORRESPONDING #( keys_with_valid_discount )
@@ -182,13 +182,13 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
        ENDLOOP.
 
        " update data with reduced fee
-       MODIFY ENTITIES OF ZRAP100_R_TravelTP_sss IN LOCAL MODE
+       MODIFY ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
           ENTITY Travel
           UPDATE FIELDS ( BookingFee )
           WITH travels_for_update.
 
        " read changed data for action result
-       READ ENTITIES OF ZRAP100_R_TravelTP_sss IN LOCAL MODE
+       READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
           ENTITY Travel
           ALL FIELDS WITH
           CORRESPONDING #( travels )
