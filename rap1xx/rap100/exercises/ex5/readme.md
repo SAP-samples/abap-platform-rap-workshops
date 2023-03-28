@@ -294,7 +294,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 
    ENDMETHOD. 
  ``` 
- 
+ <--
  ```ABAP 
  **********************************************************************
  * Validation: Check the validity of begin and end dates
