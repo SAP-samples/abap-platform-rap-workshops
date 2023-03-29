@@ -73,7 +73,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
    ```ABAP   
    FOR TESTING
    RISK LEVEL HARMLESS
-   DURATION SHORT   
+   DURATION SHORT.   
    ```
    
    Then add the ABAP Doc comment provided as code snippet below at the top of class editor to specify the test relation with your behavior definition **`ZRAP100_R_TravelTP_###`** (TADIR entry: `R3TR BDEF`). Replace the placeholder `###` with your group ID.
