@@ -11,9 +11,6 @@ authorization master( global )
 early numbering
 
 {
-  field ( mandatory : create )
-   TravelID;
-  
   field ( readonly )
    CreatedAt,
    CreatedBy,
@@ -21,7 +18,7 @@ early numbering
    LastChangedAt,
    LastChangedBy;
 
-   field ( readonly : update )
+   field ( readonly )
    TravelID;
 
   field ( mandatory )
