@@ -129,7 +129,7 @@ In the present exercise, you will implement the dynamic instance feature control
       **************************************************************************
         METHOD get_instance_features.
           " read relevant travel instance data
-          READ ENTITIES OF ZRAP100_R_TravelTP_sss IN LOCAL MODE
+          READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
             ENTITY travel
                FIELDS ( TravelID OverallStatus )
                WITH CORRESPONDING #( keys )
