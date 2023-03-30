@@ -3,7 +3,7 @@
 # Exercise 0: Getting Started
 
 ## Introduction
-<!--
+
 ---
 > ⚠ **PLEASE NOTE**:    
 >  
@@ -11,8 +11,8 @@
 > >
 > Please contact us during the event if you do not find the logon information . 
 ---
--->
-<!--
+
+
 ---
 > **WICHTIGE INFORMATION**: 
 > 
@@ -22,7 +22,7 @@
 >
 > Bitte kontaktieren Sie uns während der Veranstaltung, falls Sie keine E-Mail erhalten haben. 
 ---
--->
+
 
 You've already received user credentials from the SAP Team  **or** created an account on the SAP BTP ABAP environment Trial.
 
