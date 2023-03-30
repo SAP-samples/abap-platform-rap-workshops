@@ -26,7 +26,7 @@
 
 You've already received user credentials from the SAP Team  **or** created an account on the SAP BTP ABAP environment Trial.
 
-You've eventually also created an **ABAP Cloud Project** in the ABAP Development Tools in Eclipse (ADT). If not, then you will find an appropriate step-by-step description in the section _**Create an ABAP Cloud Project in ADT**_ below.
+You've eventually also created an **ABAP Cloud Project** or an **ABAP Project** in the ABAP Development Tools in Eclipse (ADT) depending on the used ABAP system. If not, then you will find an appropriate step-by-step description in the section _**Create an ABAP Cloud Project in ADT**_ or _**Create an ABAP Project in ADT**_ below.
 
 <!--
 In this exercise you will define a group ID that you will need in the course of this workshop to uniquely identify your repository artefacts and separate them from those of other users conducting the same workshop on this system.
