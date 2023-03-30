@@ -112,7 +112,7 @@ Once you've found an available group ID, choose **Cancel**.
 ## Create an ABAP Cloud Project in ADT
 [^Top of page](#)
 
-> ⚠ **Please note**: Skip this step if you're carrying out the exercises on an **SAP S/4HANA system** on SAP Cloud Application Library (CAL).
+> ⚠**Please note**⚠: Skip this step if you're carrying out the exercises on an **SAP S/4HANA system** on SAP Cloud Application Library (CAL).
 
 > Create an **ABAP Cloud Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
 
@@ -135,7 +135,7 @@ Once you've found an available group ID, choose **Cancel**.
 ## Create an ABAP Project in ADT
 [^Top of page](#)
 
-> ⚠ **Please note**: Skip this step if you're carrying out the exercises on an **SAP BTP ABAP Environment system** (aka _Steampunk_).
+> ⚠**Please note**⚠: Skip this step if you're carrying out the exercises on an **SAP BTP ABAP Environment system** (aka _Steampunk_).
 
 > Create an **ABAP Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
 
