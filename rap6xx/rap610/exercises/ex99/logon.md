@@ -1,4 +1,4 @@
-# How to connect to an SAP S/4HANA on premise system (DSAG-Technologietage 2023)
+# How to connect to an SAP S/4HANA on premise system (ABAP Dev Day 2023)
 
 This document describes how to create an **ABAP Project** to connect to an SAP S/4HANA on premise system.
 
