@@ -145,7 +145,7 @@ Once you've found an available group ID, choose **Cancel**.
   
   Enter the system information (SID, System IP, and Instance number) provided to you by the SAP event team.
 
-    ![Create ABAP Project](images/adt_create_abapproject.png)
+   ![Create ABAP Project](images/adt_create_abapproject.png)
 
 </details>
 
