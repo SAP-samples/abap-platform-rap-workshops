@@ -108,7 +108,7 @@ Once you've found an available group ID, choose **Cancel**.
 
 </details>
    
-
+<!--
 ## Create an ABAP Cloud Project in ADT
 [^Top of page](#)
 
@@ -126,6 +126,25 @@ Once you've found an available group ID, choose **Cancel**.
     ![Create ABAP Project Cloud 1/2](images/steampunk_systemlogon1.png)
 
     ![Create ABAP Project Cloud 2/2](images/steampunk_systemlogon2.png)
+
+</details>
+-->
+
+## Create an ABAP Project in ADT
+[^Top of page](#)
+
+> Create an **ABAP Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
+
+<details>
+  <summary>Click to expand!</summary>
+   
+1. Open the **ABAP** perspective if not yet done.
+
+    ![Open ABAP Perspective](images/abap_perspective.png)
+
+2. Now create the **ABAP Project** as shown on the screenshots provided below. 
+
+    ![Create ABAP Project](images/adt_create_abapproject.png)
 
 </details>
 
