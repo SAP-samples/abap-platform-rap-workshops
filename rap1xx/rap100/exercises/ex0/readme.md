@@ -16,7 +16,7 @@
 ---
 > **WICHTIGE INFORMATION**: 
 > 
-> Auf dem **ABAP Developer Day 2022** (am 01.12.2022) werden Sie auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, **D22**, die praktischen Übungen durchführen. In diesem System finden Sie die Lösung der verschiedenen Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
+> Auf dem **ABAP Developer Day 2023** (z.B. am 30.03.2023) werden Sie auf einem eigens für die Veranstaltung eingerichteten SAP S/4HANA System, **S4H**, die praktischen Übungen durchführen. In diesem System finden Sie die Lösung der verschiedenen Übungen in den Entwicklungspaketen **`ZRAP100_SOL`** bzw. **`ZRAP610_SOL`**   
 > 
 > Eine E-Mail mit den erforderlichen Benutzerdaten wurde Ihnen vom SAP-Team vor der Veranstaltung zugesandt.  
 >
