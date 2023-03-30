@@ -38,6 +38,7 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 - [Requirements](#requirements) 
 - [Group ID](#group-id)
 - [Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)
+- [Create an ABAP Project in ADT](#create-an-abap-project-in-adt)
 - [Helpful Information](#helpful-information)
   - [Find/Replace](#findreplace)
   - [Modern ABAP Syntax](#modern-abap-syntax)
@@ -46,7 +47,7 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 -->
 
 - [Group ID](#group-id)
-- [Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)
+- [Create an ABAP Project in ADT](#create-an-abap-project-in-adt)
 - [Helpful Information](#helpful-information)
   - Find/Replace
   - Modern ABAP Syntax
