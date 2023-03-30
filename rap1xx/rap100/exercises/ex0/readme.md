@@ -75,17 +75,15 @@ Please check the following two short documents how to do this if you have not al
 > In this exercise you will define a group ID that you will need in the course of this workshop to uniquely identify your repository artefacts 
 > and separate them from those of other users conducting the same workshop on this system.
 
+<!--
 > ⚠ **Please note** ⚠  
 > For SAP TechEd session AD162, you will be assigned a group ID by the SAP team. Therefore, skip this section and go directly ahead with the next one.
+-->
 
-<!--
 > ⚠ **Please note** ⚠  
 > In case you've been assigned a group ID by the SAP team, then please skip this section and go directly ahead with the next one (_**Create an ABAP Cloud Project in ADT**_).
--->
-
-<!--
-Use the group ID assigned to you by the SAP team in the different exercises of this workshop.
--->
+> 
+> Use the group ID assigned to you by the SAP team in the different exercises of this workshop.
 
 <details>
   <summary>Click to expand!</summary>
