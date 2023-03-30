@@ -144,6 +144,8 @@ Once you've found an available group ID, choose **Cancel**.
     ![Open ABAP Perspective](images/abap_perspective.png)
 
 2. Now create the **ABAP Project** as shown on the screenshots provided below. 
+  
+  Enter the system information (SID, System IP, and Instance number) provided to you by the SAP event team.
 
     ![Create ABAP Project](images/adt_create_abapproject.png)
 
