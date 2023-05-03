@@ -25,7 +25,7 @@ ENDCLASS.
 CLASS lcl_handler IMPLEMENTATION.
   METHOD get_global_authorizations.
   ENDMETHOD.
-  
+
 **************************************************************************
 * Internal early numbering
 * ------------------------------------------------------------------------
@@ -190,48 +190,71 @@ CLASS lcl_handler IMPLEMENTATION.
       ENDIF.
 
     ENDLOOP.
-  ENDMETHOD.        
-  
+  ENDMETHOD.
+
 **********************************************************************
 * Validation: Check the validity of begin and end dates
 **********************************************************************
   METHOD validateDates.
+
     READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-      ENTITY travel
-        FIELDS ( BeginDate EndDate )
+      ENTITY Travel
+        FIELDS (  BeginDate EndDate TravelID )
         WITH CORRESPONDING #( keys )
-      RESULT DATA(lt_travel_result).
+      RESULT DATA(travels).
 
-    LOOP AT lt_travel_result INTO DATA(ls_travel_result).
+    LOOP AT travels INTO DATA(travel).
 
-      IF ls_travel_result-EndDate < ls_travel_result-BeginDate.  "if end_date is before begin_date
+      APPEND VALUE #(  %tky               = travel-%tky
+                       %state_area        = 'VALIDATE_DATES' ) TO reported-travel.
 
-        APPEND VALUE #( %key        = ls_travel_result-%key
-                        travelID    = ls_travel_result-TravelID ) TO failed-travel.
+      IF travel-BeginDate IS INITIAL.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
 
-        APPEND VALUE #( %key = ls_travel_result-%key
-                        %msg     = new_message( id       = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgid
-                                                number   = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgno
-                                                v1       = ls_travel_result-BeginDate
-                                                v2       = ls_travel_result-EndDate
-                                                v3       = ls_travel_result-TravelID
-                                                severity = if_abap_behv_message=>severity-error )
-                        %element-BeginDate = if_abap_behv=>mk-on
+        APPEND VALUE #( %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES'
+                         %msg              = NEW /dmo/cm_flight_messages(
+                                                                textid   = /dmo/cm_flight_messages=>enter_begin_date
+                                                                severity = if_abap_behv_message=>severity-error )
+                        %element-BeginDate = if_abap_behv=>mk-on ) TO reported-travel.
+      ENDIF.
+      IF travel-BeginDate < cl_abap_context_info=>get_system_date( ) AND travel-BeginDate IS NOT INITIAL.
+        APPEND VALUE #( %tky               = travel-%tky ) TO failed-travel.
+
+        APPEND VALUE #( %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES'
+                         %msg              = NEW /dmo/cm_flight_messages(
+                                                                begin_date = travel-BeginDate
+                                                                textid     = /dmo/cm_flight_messages=>begin_date_on_or_bef_sysdate
+                                                                severity   = if_abap_behv_message=>severity-error )
+                        %element-BeginDate = if_abap_behv=>mk-on ) TO reported-travel.
+      ENDIF.
+      IF travel-EndDate IS INITIAL.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+
+        APPEND VALUE #( %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES'
+                         %msg                = NEW /dmo/cm_flight_messages(
+                                                                textid   = /dmo/cm_flight_messages=>enter_end_date
+                                                                severity = if_abap_behv_message=>severity-error )
                         %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+      ENDIF.
+      IF travel-EndDate < travel-BeginDate AND travel-BeginDate IS NOT INITIAL
+                                           AND travel-EndDate IS NOT INITIAL.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
 
-      ELSEIF ls_travel_result-BeginDate < cl_abap_context_info=>get_system_date( ).  "begin_date must be in the future
-
-        APPEND VALUE #( %key       = ls_travel_result-%key
-                        travelID   = ls_travel_result-TravelID ) TO failed-travel.
-
-        APPEND VALUE #( %key = ls_travel_result-%key
-                        %msg = new_message( id       = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgid
-                                            number   = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgno
-                                            severity = if_abap_behv_message=>severity-error )
+        APPEND VALUE #( %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES'
+                        %msg               = NEW /dmo/cm_flight_messages(
+                                                                textid     = /dmo/cm_flight_messages=>begin_date_bef_end_date
+                                                                begin_date = travel-BeginDate
+                                                                end_date   = travel-EndDate
+                                                                severity   = if_abap_behv_message=>severity-error )
                         %element-BeginDate = if_abap_behv=>mk-on
                         %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
       ENDIF.
     ENDLOOP.
+
   ENDMETHOD.
 
 ENDCLASS.

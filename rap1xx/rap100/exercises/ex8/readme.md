@@ -56,7 +56,7 @@ ABAP Unit test methods: **`<test method>()`** represents each unit test method f
 <details>
   <summary>Click to expand!</summary>
 
-1. Right-click on your package ![package icon](images/adt_package.png)**`ZRAP100_EX###`** and choose **New > ABAP Class** from the context menu.      
+1. Right-click on your package ![package icon](images/adt_package.png)**`ZRAP100_###`** and choose **New > ABAP Class** from the context menu.      
  
 2. Maintain the required information (`###` is your group ID) and click **Next >**.
    - Name: **`ZRAP100_TC_TRAVEL_EML_###`**

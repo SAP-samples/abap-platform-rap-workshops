@@ -20,21 +20,23 @@ CLASS lcl_handler DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
     METHODS validateDates FOR VALIDATE ON SAVE
       IMPORTING keys FOR Travel~validateDates.
+    METHODS deductDiscount FOR MODIFY
+      IMPORTING keys FOR ACTION Travel~deductDiscount RESULT result.
     METHODS acceptTravel FOR MODIFY
       IMPORTING keys FOR ACTION Travel~acceptTravel RESULT result.
 
-    METHODS rejectTravel FOR MODIFY
-      IMPORTING keys FOR ACTION Travel~rejectTravel RESULT result.
-    METHODS deductDiscount FOR MODIFY
-      IMPORTING keys FOR ACTION Travel~deductDiscount RESULT result.
     METHODS copyTravel FOR MODIFY
       IMPORTING keys FOR ACTION Travel~copyTravel.
+
+    METHODS rejectTravel FOR MODIFY
+      IMPORTING keys FOR ACTION Travel~rejectTravel RESULT result.
+
 ENDCLASS.
 
 CLASS lcl_handler IMPLEMENTATION.
   METHOD get_global_authorizations.
   ENDMETHOD.
-  
+
 **************************************************************************
 * Internal early numbering
 * ------------------------------------------------------------------------
@@ -199,98 +201,71 @@ CLASS lcl_handler IMPLEMENTATION.
       ENDIF.
 
     ENDLOOP.
-  ENDMETHOD.        
-  
+  ENDMETHOD.
+
 **********************************************************************
 * Validation: Check the validity of begin and end dates
 **********************************************************************
   METHOD validateDates.
+
     READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-      ENTITY travel
-        FIELDS ( BeginDate EndDate )
+      ENTITY Travel
+        FIELDS (  BeginDate EndDate TravelID )
         WITH CORRESPONDING #( keys )
-      RESULT DATA(lt_travel_result).
+      RESULT DATA(travels).
 
-    LOOP AT lt_travel_result INTO DATA(ls_travel_result).
+    LOOP AT travels INTO DATA(travel).
 
-      IF ls_travel_result-EndDate < ls_travel_result-BeginDate.  "if end_date is before begin_date
+      APPEND VALUE #(  %tky               = travel-%tky
+                       %state_area        = 'VALIDATE_DATES' ) TO reported-travel.
 
-        APPEND VALUE #( %key        = ls_travel_result-%key
-                        travelID    = ls_travel_result-TravelID ) TO failed-travel.
+      IF travel-BeginDate IS INITIAL.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
 
-        APPEND VALUE #( %key = ls_travel_result-%key
-                        %msg     = new_message( id       = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgid
-                                                number   = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgno
-                                                v1       = ls_travel_result-BeginDate
-                                                v2       = ls_travel_result-EndDate
-                                                v3       = ls_travel_result-TravelID
-                                                severity = if_abap_behv_message=>severity-error )
-                        %element-BeginDate = if_abap_behv=>mk-on
+        APPEND VALUE #( %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES'
+                         %msg              = NEW /dmo/cm_flight_messages(
+                                                                textid   = /dmo/cm_flight_messages=>enter_begin_date
+                                                                severity = if_abap_behv_message=>severity-error )
+                        %element-BeginDate = if_abap_behv=>mk-on ) TO reported-travel.
+      ENDIF.
+      IF travel-BeginDate < cl_abap_context_info=>get_system_date( ) AND travel-BeginDate IS NOT INITIAL.
+        APPEND VALUE #( %tky               = travel-%tky ) TO failed-travel.
+
+        APPEND VALUE #( %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES'
+                         %msg              = NEW /dmo/cm_flight_messages(
+                                                                begin_date = travel-BeginDate
+                                                                textid     = /dmo/cm_flight_messages=>begin_date_on_or_bef_sysdate
+                                                                severity   = if_abap_behv_message=>severity-error )
+                        %element-BeginDate = if_abap_behv=>mk-on ) TO reported-travel.
+      ENDIF.
+      IF travel-EndDate IS INITIAL.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+
+        APPEND VALUE #( %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES'
+                         %msg                = NEW /dmo/cm_flight_messages(
+                                                                textid   = /dmo/cm_flight_messages=>enter_end_date
+                                                                severity = if_abap_behv_message=>severity-error )
                         %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
+      ENDIF.
+      IF travel-EndDate < travel-BeginDate AND travel-BeginDate IS NOT INITIAL
+                                           AND travel-EndDate IS NOT INITIAL.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
 
-      ELSEIF ls_travel_result-BeginDate < cl_abap_context_info=>get_system_date( ).  "begin_date must be in the future
-
-        APPEND VALUE #( %key       = ls_travel_result-%key
-                        travelID   = ls_travel_result-TravelID ) TO failed-travel.
-
-        APPEND VALUE #( %key = ls_travel_result-%key
-                        %msg = new_message( id       = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgid
-                                            number   = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgno
-                                            severity = if_abap_behv_message=>severity-error )
+        APPEND VALUE #( %tky               = travel-%tky
+                        %state_area        = 'VALIDATE_DATES'
+                        %msg               = NEW /dmo/cm_flight_messages(
+                                                                textid     = /dmo/cm_flight_messages=>begin_date_bef_end_date
+                                                                begin_date = travel-BeginDate
+                                                                end_date   = travel-EndDate
+                                                                severity   = if_abap_behv_message=>severity-error )
                         %element-BeginDate = if_abap_behv=>mk-on
                         %element-EndDate   = if_abap_behv=>mk-on ) TO reported-travel.
       ENDIF.
     ENDLOOP.
-  ENDMETHOD.
-  
-*************************************************************************************
-* Instance-bound non-factory action: Set the overall travel status to 'accepted' (A)
-*************************************************************************************
-  METHOD acceptTravel.
-    " modify travel instance
-    MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
-      ENTITY Travel
-        UPDATE FIELDS ( OverallStatus )
-        WITH VALUE #( FOR key IN keys ( %tky          = key-%tky
-                                        OverallStatus = travel_status-accepted ) )  " 'A'
-    FAILED failed
-    REPORTED reported.
 
-    " read changed data for action result
-    READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
-      ENTITY Travel
-        ALL FIELDS WITH
-        CORRESPONDING #( keys )
-      RESULT DATA(travels).
-
-    " set the action result parameter
-    result = VALUE #( FOR travel IN travels ( %tky   = travel-%tky
-                                              %param = travel ) ).
-  ENDMETHOD.
-  
-*************************************************************************************
-* Instance-bound non-factory action: Set the overall travel status to 'rejected' (X)
-*************************************************************************************
-  METHOD rejectTravel.
-    " modify travel instance(s)
-    MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
-      ENTITY Travel
-        UPDATE FIELDS ( OverallStatus )
-        WITH VALUE #( FOR key IN keys ( %tky          = key-%tky
-                                        OverallStatus = travel_status-rejected ) )  " 'X'
-    FAILED failed
-    REPORTED reported.
-
-    " read changed data for action result
-    READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
-      ENTITY Travel
-        ALL FIELDS WITH
-        CORRESPONDING #( keys )
-      RESULT DATA(travels).
-
-    " set the action result parameter
-    result = VALUE #( FOR travel IN travels ( %tky   = travel-%tky
-                                              %param = travel ) ).
   ENDMETHOD.
 
 **************************************************************************
@@ -359,9 +334,34 @@ CLASS lcl_handler IMPLEMENTATION.
                                                             %param = travel ) ).
   ENDMETHOD.
 
-*******************************************************************************
-* Instance-bound factory action `copyTravel`: Copy an existing travel instance
-*******************************************************************************
+*************************************************************************************
+* Instance-bound non-factory action: Set the overall travel status to 'A' (accepted)
+*************************************************************************************
+  METHOD acceptTravel.
+    " modify travel instance
+    MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY Travel
+        UPDATE FIELDS ( OverallStatus )
+        WITH VALUE #( FOR key IN keys ( %tky          = key-%tky
+                                        OverallStatus = travel_status-accepted ) )  " 'A'
+    FAILED failed
+    REPORTED reported.
+
+    " read changed data for action result
+    READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY Travel
+        ALL FIELDS WITH
+        CORRESPONDING #( keys )
+      RESULT DATA(travels).
+
+    " set the action result parameter
+    result = VALUE #( FOR travel IN travels ( %tky   = travel-%tky
+                                              %param = travel ) ).
+  ENDMETHOD.
+**************************************************************************
+* Instance-bound factory action `copyTravel`:
+* Copy an existing travel instance
+**************************************************************************
   METHOD copyTravel.
     DATA:
       travels       TYPE TABLE FOR CREATE zrap100_r_traveltp_###\\travel.
@@ -404,6 +404,32 @@ CLASS lcl_handler IMPLEMENTATION.
 
     " set the new BO instances
     mapped-travel   =  mapped_create-travel .
+  ENDMETHOD.
+
+
+*************************************************************************************
+* Instance-bound non-factory action: Set the overall travel status to 'X' (rejected)
+*************************************************************************************
+  METHOD rejectTravel.
+    " modify travel instance(s)
+    MODIFY ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY Travel
+        UPDATE FIELDS ( OverallStatus )
+        WITH VALUE #( FOR key IN keys ( %tky          = key-%tky
+                                        OverallStatus = travel_status-rejected ) )  " 'X'
+    FAILED failed
+    REPORTED reported.
+
+    " read changed data for action result
+    READ ENTITIES OF zrap100_r_traveltp_### IN LOCAL MODE
+      ENTITY Travel
+        ALL FIELDS WITH
+        CORRESPONDING #( keys )
+      RESULT DATA(travels).
+
+    " set the action result parameter
+    result = VALUE #( FOR travel IN travels ( %tky   = travel-%tky
+                                              %param = travel ) ).
   ENDMETHOD.
 
 ENDCLASS.

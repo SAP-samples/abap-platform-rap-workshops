@@ -3,30 +3,30 @@
 # Exercise 0: Getting Started
 
 ## Introduction
-<!--
+
 ---
 > ⚠ **PLEASE NOTE**:    
 >  
-> Participants of SAP events (e.g. **ABAP Developer Day**) will receive logon information - i.e. system information and user credentials - to a dedicated SAP BTP ABAP Environment system from the SAP team during the respective event.
+> Participants of SAP events (e.g. **ABAP Developer Day**) will receive logon information - i.e. system information and user credentials - to a dedicated SAP BTP ABAP Environment system or SAP S/4HANA system from the SAP team by email prior to the event or during the respective event.
+> You will find the solution for this workshop in the development package **`ZRAP100_SOL`**. 
 > >
-> Please contact us during the event if you do not find the logon information . 
+> Please contact us during the event if you have not received the logon information. 
 ---
--->
-<!--
+
 ---
 > **WICHTIGE INFORMATION**: 
 > 
-> Auf dem **ABAP Developer Day 2022** (am 01.12.2022) werden Sie auf einem eigens für die Veranstaltung eingerichteten SAP BTP ABAP Environment (aka Steampunk) System, **D22**, die praktischen Übungen durchführen. In diesem System finden Sie die Lösung der verschiedenen Übungen im Entwicklungspaket **`ZRAP100_SOLUTION`**.   
+> Auf dem **ABAP Developer Day 2023** (z.B. am 30.03.2023) werden Sie auf einem eigens für die Veranstaltung eingerichteten SAP S/4HANA System, **S4H**, die praktischen Übungen durchführen. In diesem System finden Sie die Lösung der verschiedenen Übungen in den Entwicklungspaketen **`ZRAP100_SOL`** bzw. **`ZRAP610_SOL`**   
 > 
 > Eine E-Mail mit den erforderlichen Benutzerdaten wurde Ihnen vom SAP-Team vor der Veranstaltung zugesandt.  
 >
 > Bitte kontaktieren Sie uns während der Veranstaltung, falls Sie keine E-Mail erhalten haben. 
 ---
--->
+
 
 You've already received user credentials from the SAP Team  **or** created an account on the SAP BTP ABAP environment Trial.
 
-You've eventually also created an **ABAP Cloud Project** in the ABAP Development Tools in Eclipse (ADT). If not, then you will find an appropriate step-by-step description in the section _**Create an ABAP Cloud Project in ADT**_ below.
+You've eventually also created an **ABAP Cloud Project** or an **ABAP Project** in the ABAP Development Tools in Eclipse (ADT) depending on the used ABAP system. If not, then you will find an appropriate step-by-step description in the section _**Create an ABAP Cloud Project in ADT**_ or _**Create an ABAP Project in ADT**_ below.
 
 <!--
 In this exercise you will define a group ID that you will need in the course of this workshop to uniquely identify your repository artefacts and separate them from those of other users conducting the same workshop on this system.
@@ -38,6 +38,7 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 - [Requirements](#requirements) 
 - [Group ID](#group-id)
 - [Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)
+- [Create an ABAP Project in ADT](#create-an-abap-project-in-adt)
 - [Helpful Information](#helpful-information)
   - [Find/Replace](#findreplace)
   - [Modern ABAP Syntax](#modern-abap-syntax)
@@ -47,6 +48,7 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 
 - [Group ID](#group-id)
 - [Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)
+- [Create an ABAP Project in ADT](#create-an-abap-project-in-adt)
 - [Helpful Information](#helpful-information)
   - Find/Replace
   - Modern ABAP Syntax
@@ -74,17 +76,15 @@ Please check the following two short documents how to do this if you have not al
 > In this exercise you will define a group ID that you will need in the course of this workshop to uniquely identify your repository artefacts 
 > and separate them from those of other users conducting the same workshop on this system.
 
+<!--
 > ⚠ **Please note** ⚠  
 > For SAP TechEd session AD162, you will be assigned a group ID by the SAP team. Therefore, skip this section and go directly ahead with the next one.
+-->
 
-<!--
 > ⚠ **Please note** ⚠  
-> In case you've been assigned a group ID by the SAP team, then please skip this section and go directly ahead with the next one (_**Create an ABAP Cloud Project in ADT**_).
--->
-
-<!--
-Use the group ID assigned to you by the SAP team in the different exercises of this workshop.
--->
+> In case you've been assigned a group ID by the SAP team, then please skip this section and go directly ahead with the next one (either _**Create an ABAP Cloud Project in ADT**_ or _**Create an ABAP Project in ADT**_).
+> 
+> Use the group ID assigned to you by the SAP team in the different exercises of this workshop.
 
 <details>
   <summary>Click to expand!</summary>
@@ -112,6 +112,8 @@ Once you've found an available group ID, choose **Cancel**.
 ## Create an ABAP Cloud Project in ADT
 [^Top of page](#)
 
+> ⚠**Please note**⚠: Skip this step if you're carrying out the exercises on an **SAP S/4HANA system** on SAP Cloud Application Library (CAL).
+
 > Create an **ABAP Cloud Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
 
 <details>
@@ -126,6 +128,29 @@ Once you've found an available group ID, choose **Cancel**.
     ![Create ABAP Project Cloud 1/2](images/steampunk_systemlogon1.png)
 
     ![Create ABAP Project Cloud 2/2](images/steampunk_systemlogon2.png)
+
+</details>
+
+
+## Create an ABAP Project in ADT
+[^Top of page](#)
+
+> ⚠**Please note**⚠: Skip this step if you're carrying out the exercises on an **SAP BTP ABAP Environment system** (aka _Steampunk_).
+
+> Create an **ABAP Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
+
+<details>
+  <summary>Click to expand!</summary>
+   
+1. Open the **ABAP** perspective if not yet done.
+
+    ![Open ABAP Perspective](images/abap_perspective.png)
+
+2. Now create the **ABAP Project** as shown on the screenshots provided below. 
+  
+  Enter the system information (SID, System IP, and Instance number) provided to you by the SAP event team.
+
+   ![Create ABAP Project](images/adt_create_abapproject.png)
 
 </details>
 

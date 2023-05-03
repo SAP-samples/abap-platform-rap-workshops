@@ -159,42 +159,45 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
    * Instance-bound non-factory action:
    * Deduct the specified discount from the booking fee (BookingFee)
    **************************************************************************
-   METHOD deductDiscount.
-      DATA travels_for_update TYPE TABLE FOR UPDATE ZRAP100_R_TravelTP_###.
-      DATA(keys_with_valid_discount) = keys.   
+     METHOD deductDiscount.
+       DATA travels_for_update TYPE TABLE FOR UPDATE ZRAP100_R_TravelTP_###.
+       DATA(keys_with_valid_discount) = keys.
 
-      " read relevant travel instance data (only booking fee)
-      READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-         ENTITY Travel
-         FIELDS ( BookingFee )
-         WITH CORRESPONDING #( keys_with_valid_discount )
-         RESULT DATA(travels).
+       " read relevant travel instance data (only booking fee)
+       READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+          ENTITY Travel
+          FIELDS ( BookingFee )
+          WITH CORRESPONDING #( keys_with_valid_discount )
+          RESULT DATA(travels).
 
-      LOOP AT travels ASSIGNING FIELD-SYMBOL(<travel>).  
-         DATA(reduced_fee) = <travel>-BookingFee * ( 1 - 3 / 10 ) .  
+       LOOP AT travels ASSIGNING FIELD-SYMBOL(<travel>).
+         DATA percentage TYPE decfloat16.
+         DATA(discount_percent) = keys_with_valid_discount[ KEY draft %tky = <travel>-%tky ]-%param-discount_percent.
+         percentage =  discount_percent / 100 .
+         DATA(reduced_fee) = <travel>-BookingFee * ( 1 - percentage ) .
 
          APPEND VALUE #( %tky       = <travel>-%tky
-                        BookingFee = reduced_fee
-                     ) TO travels_for_update.
-      ENDLOOP.
+                         BookingFee = reduced_fee
+                       ) TO travels_for_update.
+       ENDLOOP.
 
-      " update data with reduced fee
-      MODIFY ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-         ENTITY Travel
-         UPDATE FIELDS ( BookingFee )
-         WITH travels_for_update.
+       " update data with reduced fee
+       MODIFY ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+          ENTITY Travel
+          UPDATE FIELDS ( BookingFee )
+          WITH travels_for_update.
 
-      " read changed data for action result
-      READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
-         ENTITY Travel
-         ALL FIELDS WITH
-         CORRESPONDING #( travels )
-         RESULT DATA(travels_with_discount).
+       " read changed data for action result
+       READ ENTITIES OF ZRAP100_R_TravelTP_### IN LOCAL MODE
+          ENTITY Travel
+          ALL FIELDS WITH
+          CORRESPONDING #( travels )
+          RESULT DATA(travels_with_discount).
 
-      " set action result
-      result = VALUE #( FOR travel IN travels_with_discount ( %tky   = travel-%tky
+       " set action result
+       result = VALUE #( FOR travel IN travels_with_discount ( %tky   = travel-%tky
                                                                %param = travel ) ).
-   ENDMETHOD.
+     ENDMETHOD.
    ```
 
    The result should look like this:
