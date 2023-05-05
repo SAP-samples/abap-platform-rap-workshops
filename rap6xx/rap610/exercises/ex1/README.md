@@ -248,13 +248,17 @@ An example would be the table `MARA` in the on premise release 2022.
      
      [S/4 HANA Cloud - Released objects for ATC Check (Cloudification Repository)](https://github.com/SAP/abap-atc-cr-cv-s4hc).
      
- When we check the csv file that is public available we can retrieve a list of successors for the table MARA.  
+ When we check the **csv file** that is public available we can retrieve a list of successors for the table MARA.  
  
  ![MARA](images/810_use_sap_note_and_github.png)  
  
  And we can identify additional released API's from the purchase requisition area.   
  
  ![I_PURCHASEREQUISITIONTP](images/810_use_sap_note_and_github.png)  
+  
+ While csv files are nice for human beings, computers prefer json files.  
+ 
+ [Link to json sample file](https://raw.githubusercontent.com/SAP/abap-atc-cr-cv-s4hc/main/src/objectReleaseInfo_2208.json) 
   
  </details>  
 
