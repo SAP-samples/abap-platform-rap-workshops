@@ -17,7 +17,7 @@ We will then use this class to build a test class to call the released API **I_P
 - [1.1 - How to find a released API using an ABAP repository tree](#exercise-11-how-to-find-a-released-api-using-an-abap-repository-tree)
 - [1.2 - Create a package with language version "ABAP for Cloud Development"](#exercise-12-create-package-with-language-version-abap-for-cloud-development)
 - [1.3 - Test ABAP Cloud restrictions](#exercise-13-create-a-class-to-test-abap-cloud-governance)
-- [1.4 - How to identify local API's for SAP S/4HANA Cloud via SAP Note 3088062 or Github ](#exercise-14-identifying-local-apis-for-s4hana-cloud-via-sap-note-3088062-or-github)
+- [1.4 - How to identify local API's for SAP S/4HANA Cloud via Github ](#exercise-14-identifying-local-apis-for-s4hana-cloud-via-github)
 - [1.5 - Check the documentation of i_purchaserequisitiontp](#exercise-15-check-the-documentation-for-i_purchaserequisitiontp)
 - [1.6 - Implement a test class to call I_PurchaserequisitionTP ](#exercise-16-implement-a-test-class-to-call-i_purchaserequisitiontp)
 - [Summary](#summary)
@@ -230,7 +230,7 @@ ENDCLASS.
 
 
  
-## Exercise 1.4: Identifying local APIs for S/4HANA Cloud via SAP Note 3088062 or GitHub   
+## Exercise 1.4: Identifying local APIs for S/4HANA Cloud via GitHub   
 [^Top of page](#)
 
 While developing an ABAP Application for S/4HANA Cloud, you do get the following error message: "Use of <Object Type> <Object Name> is not permitted". But the error message does not provide a hint which API or object to use instead. The reason is that the successor information in on premise system does not contain the latest updates such as in SAP S/4HANA Cloud, ABAP Environment systems.   
@@ -242,11 +242,7 @@ An example would be the table `MARA` in the on premise release 2022.
  <details>
   <summary>Click to expand!</summary>
   
-  1. Check out SAP Note https://launchpad.support.sap.com/#/notes/3088062
-  
-     The SAP Note mentioned above contains two Excel Sheets that contain information about successor API's that are either available in on premise systems (as of 2022) or in SAP S/4HANA Cloud systems. If your object is not contained in the Excel, please create a request in the SAP Customer Infuence campaign [SAP S/4HANA Cloud and SAP S/4HANA for Key-User and Developer Extensibility](https://influence.sap.com/sap/ino/#/campaign/2759). 
-  
-  2. Check out the GitHub repository. 
+  1. Check out the GitHub repository. 
   
      The repository contains the list of released APIs of S/4HANA Cloud. In addition also the objects that are not released are contained with the specification of successor objects. All objects are contained in one JSON file. This file is used as content for the ABAP Test Cockpit Check "Usage of Released APIs (Cloudification Repository)". This check can be used by customers and partners to analyse existing custom code concerning the usage of released and not released APIs on all ECC and S/4HANA releases. The check is available in SAP BTP, ABAP environment.
      
