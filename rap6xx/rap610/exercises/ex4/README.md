@@ -491,7 +491,7 @@ We add this implementation after the implementation of the **create**, **update*
 
   </details>   
   
-## Exercise 4.4: Check the results in the SAP standard Fiori App
+## Exercise 4.5: Check the results in the SAP standard Fiori App
 [^Top of page](#)
 
 We can use the app **Manage Purchase Requisition - Professional** to check the purchase requistions that you have created using your custom RAP business object.   
