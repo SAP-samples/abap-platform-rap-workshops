@@ -6,15 +6,16 @@
 
 In this exercise, you will implement calls to the released API so that the users of the OnlineShop App can create purchase requisitions using your RAP business object `ZR_ONLINESHOP_###`
 
-- [4.1 - Add unmanaged save](#exercise-41-add-unmanaged-save)
-- [4.2 - Add and implement an action](#exercise-42-add-and-implement-an-action)
-- [4.3 - ...()
-- [4.4 - Check the results in the SAP standard Fiori App](#exercise-44-check-the-results-in-the-sap-standard-fiori-app)
+- [4.1 - Add variable to global behavior implementation class](#exercise-41-add-variable-to-global-behavior-implementation-class)
+- [4.3 - Add unmanaged save](#exercise-42-add-unmanaged-save)
+- [4.3 - Add and implement an action](#exercise-43-add-and-implement-an-action)
+- [4.4 - Add convert key statement to your local saver class](#exercise-44-add-the-convert-key-statement-to-your-local-saver-class)
+- [4.5 - Check the results in the SAP standard Fiori App](#exercise-45-check-the-results-in-the-sap-standard-fiori-app)
 - [Summary](#summary)
 - [Appendix](#appendix)
 
 
-## Exercise 4.1: Add variable to global BDEF class zbp_r_onlineshop_###
+## Exercise 4.1: Add variable to global behavior implementation class
 [^Top of page](#)
 
  The called **API I_PurchaserequisitionTP** uses late numbering. When being called by our application it will only return a preliminary key **%pid**.
