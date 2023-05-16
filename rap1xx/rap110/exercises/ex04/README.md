@@ -80,7 +80,7 @@ In the present exercise, you will define and implement the base BO behavior for 
          
     ```
          
-    <img src="images/ex4x2.png" alt="Travel MDE" width="70%">
+    <img src="images/ex4x02.png" alt="Travel MDE" width="70%">
           
  3. Enhance the logic for drawing primary keys for _Booking_ BO entity instances created by association.
          
@@ -115,7 +115,7 @@ In the present exercise, you will define and implement the base BO behavior for 
       ENDIF.         
     ```
           
-    <img src="images/ex4x3.png" alt="Travel MDE" width="80%">
+    <img src="images/ex4x03.png" alt="Travel MDE" width="80%">
                   
  4. Save ![save icon](../images/adt_save.png) and activate ![activate icon](../images/adt_activate.png) the changes.
 
