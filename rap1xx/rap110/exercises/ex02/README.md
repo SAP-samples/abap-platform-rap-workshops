@@ -265,8 +265,9 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
     <img src="images/ex2x3.png" alt="ABAP Class" width="70%">
 
     <details>
-     <summary>Source code</summary>   
-     ```ABAP
+      <summary>Source code</summary>   
+        
+      ```ABAP
               @ObjectModel.virtualElementCalculatedBy: 'ABAP:ZRAP110_CALC_BOOK_ELEM_###'
               @EndUserText.label: 'Booking Status Indicator'
       virtual BookingStatusIndicator : abap.int2,
@@ -282,7 +283,8 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
               @ObjectModel.virtualElementCalculatedBy: 'ABAP:ZRAP110_CALC_BOOK_ELEM_###'
               @EndUserText.label: 'Days to Flight Indicator'
       virtual DaysToFlightIndicator  : abap.int1,      
-     ```         
+      ``` 
+      
     </details>
      
  5. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the changes. Close the data definition.  
