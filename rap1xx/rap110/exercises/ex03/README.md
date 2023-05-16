@@ -305,7 +305,7 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
   
  1. Define a validation to check the values of **`BookingStatus`**. The validation will always be triggered `on save`.
   
-    Insert the code snippet provided below in the behavior definition ![bdef](../images/adt_bdef.png)**`ZRAP110_R_BOOKINGTP_###`** of the _booking_ child entity.
+    Insert the code snippet provided below in the behavior definition ![bdef](../images/adt_bdef.png)**`ZRAP110_R_TRAVELTP_###`** of the _booking_ child entity.
   
     ```ABAP
       //validation(s)
