@@ -142,7 +142,7 @@ In the present exercise, you will define and implement the base BO behavior for 
   
 4. Now enter all information for booking and click **Apply**.
 
-   <img src="images/m2.png" alt="Travel MDE" width="80%">
+   <img src="images/m22.png" alt="Travel MDE" width="80%">
   
 5. Click **Create**.
   
