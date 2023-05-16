@@ -138,19 +138,19 @@ In the present exercise, you will define and implement the base BO behavior for 
 
    Now selet the agency ID and click **Create** under Booking.
 
-   <img src="images/ex406.png" alt="Travel MDE" width="80%">
+   <img src="images/ex4x1.png" alt="Travel MDE" width="80%">
   
    Fill in the booking information and click **Apply**.
   
-   <img src="images/ex407.png" alt="Travel MDE" width="80%">
+   <img src="images/ex4x2.png" alt="Travel MDE" width="80%">
   
    Click **Create**.
   
-   <img src="images/ex408.png" alt="Travel MDE" width="80%">
+   <img src="images/ex4x3.png" alt="Travel MDE" width="80%">
   
    Check your result.
   
-   <img src="images/ex409.png" alt="Travel MDE" width="80%">
+   <img src="images/ex4x4.png" alt="Travel MDE" width="80%">
 
 </details>  
            
