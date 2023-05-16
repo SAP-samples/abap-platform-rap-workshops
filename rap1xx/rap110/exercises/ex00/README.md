@@ -53,7 +53,8 @@ Please inform the SAP staff during the event if you have not yet received the em
 
 > Create an **ABAP Cloud Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
 
-> ⚠ **DSAG ABAP Development Days 2023**: Use the Service Key for the dedicated system D23 available on [the Event Share](https://sap-my.sharepoint.com/personal/carine_tchoutouo_djomo_sap_com/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fcarine%5Ftchoutouo%5Fdjomo%5Fsap%5Fcom%2FDocuments%2FDSAG%20ABAP%20Development%20Days%20Edition%202023%2FTag%201%2FHands%2Don%2DUnterlagen&view=0).  
+> ⚠ **DSAG ABAP Development Days 2023**:   
+> Use the Service Key for the dedicated system D23 available on [the Event Share](https://sap-my.sharepoint.com/personal/carine_tchoutouo_djomo_sap_com/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fcarine%5Ftchoutouo%5Fdjomo%5Fsap%5Fcom%2FDocuments%2FDSAG%20ABAP%20Development%20Days%20Edition%202023%2FTag%201%2FHands%2Don%2DUnterlagen&view=0).    
 > 
 > ⚠ DO NOT use the SAP BTP, ABAP environment trial for this exercise, because the generated ZRAP110_### package are not available there.
 
