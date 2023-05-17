@@ -341,7 +341,7 @@ See also the Development guide for the ABAP RESTful Application Programming Mode
 
   2. Replace the code in the `if_oo_adt_classrun~main( )` method with the following code snippet.   
 
-     ![source code main method](sources/main_test_class.txt)  
+     📄 [source code main method](sources/main_test_class.txt)  
 
   3. Run the test class by pressing **F9**.  
 
