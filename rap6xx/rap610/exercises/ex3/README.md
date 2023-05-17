@@ -25,7 +25,7 @@ In this step we will use a value help `ZI_PRODUCT_VH_REUSE` that has been provid
 When working with a system provided as part of a SAP workshop this view will be provided. If you try out this script in your own SAP S/4HANA 2022 on prem system you would have to create this view manually.  
 
 The source code of ZI_PRODUCT_VH_REUSE can be found here:   
-![document](../../images/doc.png) ![ZI_PRODUCT_VH_REUSE](sources/ZI_PRODUCT_VH_REUSE.txt) 
+![document](../../images/doc.png) [ZI_PRODUCT_VH_REUSE](sources/ZI_PRODUCT_VH_REUSE.txt) 
 
  <details>
   <summary>Click to expand!</summary>
