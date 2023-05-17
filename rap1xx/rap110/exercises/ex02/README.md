@@ -381,12 +381,13 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
     
     <details>
       <summary>About the virtual elements</summary>
+      
        - **`BookingStatusIndicator`**: For the UI coloring - 1  = red (Cancelled) | 2 = orange (Open)  | 3 = green (Booked)
        - **`InitialDaysToFlight`**: The initial number of days between the flight date and the booking date (_flight date - booking date_). 
        - **`RemainingDaysToFlight`**: The number of days until departure from today.   
        - **`DaysToFlightIndicator`**: The criticality/coloring for the remaining days to flight    
-            Colors: 1 = red | 2 = orange | 3 = green | 4 = grey | 5 = bleu
-     </details>      
+       - Colors: 1 = red | 2 = orange | 3 = green | 4 = grey | 5 = bleu
+    </details>      
    
  7. Now, uncomment the method call **`calculate_trav_status_ind`** within the method **`CALCULATE`**.
    
