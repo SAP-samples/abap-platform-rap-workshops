@@ -308,7 +308,7 @@ METHOD CalculateInventoryID.
 
     "fill reported
     reported = CORRESPONDING #( DEEP lt_reported ).
-  ENDMETHOD.
+
 
 ENDMETHOD.
  
