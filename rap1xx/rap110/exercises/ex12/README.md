@@ -129,18 +129,20 @@ In this hands-on session, you have hopefully have some more insights into new RA
 
 Thank you for attending this workshop!
 
+[Go to the RAP110 entry page](../../README.md)
 
 ## Appendix
 [^Top of page](#)
+
+ℹ **Optional**: Here is a tutorial on how to [Develop and Run a Fiori Application with SAP Business Application Studio](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) 
+
+You can carry out this tutorial to create and deploy a productive _Travel_ app with the SAP Fiori tools on SAP Business Application Studio.
+
+---
+
 <!--
 Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
   
 Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
----
-
-ℹ **Optional**: Here is a tutorial on how to [Develop and Run a Fiori Application with SAP Business Application Studio](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) 
-
----
-
 -->
 
