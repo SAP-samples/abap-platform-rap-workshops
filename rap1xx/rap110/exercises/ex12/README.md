@@ -136,7 +136,7 @@ Thank you for attending this workshop!
 
 ℹ **Optional**: Here is a tutorial on how to [Develop and Run a Fiori Application with SAP Business Application Studio](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) 
 
-You can carry out this tutorial to create and deploy a productive _Travel_ app with the SAP Fiori tools on SAP Business Application Studio.
+You can follow the tutorial steps to create and deploy a productive version of your _Travel_ app using the SAP Fiori tools in SAP Business Application Studio.
 
 ---
 
