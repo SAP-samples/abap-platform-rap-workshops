@@ -108,12 +108,12 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
         attachment            : /dmo/attachment;
         mime_type             : /dmo/mime_type;
         file_name             : /dmo/filename;
-        created_by            : abp_creation_user;
+        created_by            : abp_creation_user;
         created_at            : abp_creation_tstmpl;
-        last_changed_by       : abp_locinst_lastchange_user;
-        last_changed_at       : abp_locinst_lastchange_tstmpl;
-        local_last_changed_at : abp_lastchange_tstmpl;
-      }      
+        local_last_changed_by : abp_locinst_lastchange_user;
+        local_last_changed_at : abp_locinst_lastchange_tstmpl;
+        last_changed_at       : abp_lastchange_tstmpl; 
+      }
       </pre>
  
       <img src="images/p2d.png" alt="table" width="60%">
