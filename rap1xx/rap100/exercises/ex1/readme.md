@@ -116,7 +116,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
       }
       </pre>
  
-      <img src="images/22x.png" alt="table" width="60%">
+      <img src="images/Picture22x.png" alt="table" width="60%">
       
    6. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
