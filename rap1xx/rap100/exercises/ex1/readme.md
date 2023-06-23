@@ -11,7 +11,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
 - [1.1 - Create Package](#exercise-11-create-package)
 - [1.2 - Create database table](#exercise-12-create-database-table)
 - [1.3 - Create data generator class](#exercise-13-create-data-generator-class)
-- [1.4 - Generate the transactional UI services](#exercise-14-generate-the-transactional-ui-services)
+- [1.4 - Generate the transactional UI services](#exercise-14-generate-the-transactional-ui-service)
 - [1.5 - Publish and Preview the Travel App](#exercise-15-publish-and-preview-the-travel-app)
 - [Summary](#summary)
 - [Appendix](#appendix)
@@ -173,10 +173,10 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
 </details>
 
 
-## Exercise 1.4: Generate the transactional UI services
+## Exercise 1.4: Generate the transactional UI service
 [^Top of page](#)
 
-> Create your OData v4 based UI services with the built-in ADT generator.   
+> Create your OData v4 based UI services and the RAP business object (BO) with all the needed ABAP artefacts - e.g. CDS view entities, behavior definition and implementation - using the built-in ADT generator.   
 > The generated business service will be transactional, draft-enabled, and enriched with UI semantics for the generation of the Fiori elements app.
 
   <details>
