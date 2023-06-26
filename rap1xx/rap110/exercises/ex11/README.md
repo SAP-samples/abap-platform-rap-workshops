@@ -10,6 +10,7 @@ In this exercise, you will enhance the behavior defintion of the _Travel_ BO ent
 
 In this exercise your RAP BO acts as event provider, so an outbound communication arrangement is required to set up the connection between your system and the SAP Event Mesh.
 
+<!--
 ---
 > **DSAG ABAP Development Days 2023**:  
 > 
@@ -17,6 +18,8 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 > 
 > ⚠ Due to time constraint, you will not implement a consumer app to display the raised events in this hands-on. Instead you will get the possibility to have a look at the sent messages in the **_Event Monitor_** app in the **SAP BTP Cockpit**. This aspect will be handled in another session during the event (day 2).
 ---
+
+-->
 
 #### Exercises:
 - [11.1 - Define the Business Event Parameter](#exercise-111-define-the-business-event-parameter )
