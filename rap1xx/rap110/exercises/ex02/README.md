@@ -145,7 +145,9 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
 
  1. Open your ABAP class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_TRAV_ELEM_###`** and have a look at the available source code.
     
-    > ⚠ **Error**: Please remove the statement **`interfaces IF_SADL_EXIT .`**  erroneously inserted by the generator into the class definition section. This is due to a bug that is currently under investigation.           
+    > ⚠ **Error**: Please remove the statement **`interfaces IF_SADL_EXIT .`**  erroneously inserted by the generator into the class definition section. This is due to a bug that is currently under investigation.
+    > 
+    >   <img src="images/ex203a.png" alt="ABAP Class" width="50%">          
 
     Your source code will look like this:
    
@@ -301,7 +303,9 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
 
  1. Open your ABAP class ![ABAP class](../images/adt_class.png)**`ZRAP110_CALC_BOOK_ELEM_###`** and have a look at it. It is similar to the ABAP class `ZRAP110_CALC_TRAV_ELEM_###` and the princip is the same.
       
-    > ⚠ **Error**: Please remove the statement **`interfaces IF_SADL_EXIT .`**  erroneously inserted by the generator into the class definition section. This is due to a bug that is currently under investigation.       
+    > ⚠ **Error**: Please remove the statement **`interfaces IF_SADL_EXIT .`** erroneously inserted by the generator into the class definition section. This is due to a bug that is currently under investigation.
+    > 
+    > <img src="images/ex303a.png" alt="ABAP Class" width="50%">     
         
  2. Define the class method interface **`calculate_days_to_flight`** in the public section of the class definition. 
 
