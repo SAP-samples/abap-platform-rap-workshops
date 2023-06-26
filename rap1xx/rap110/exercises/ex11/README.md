@@ -308,11 +308,11 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 
   1. Now launch the SAP Fiori Launchpad. For that, right-click your **_ABAP Cloud Project_** (or **Alt+Enter**) and select **Properties** in the context menu.
   
-    <img src="images/ex1126.png" alt="Event Binding" width="50%">  
+     <img src="images/ex1126.png" alt="Event Binding" width="50%">  
      
-    Then click on **ABAP Development** in the left window pane and click the System URL to open the SAP Fiori Launchpad.
+     Then click on **ABAP Development** in the left window pane and click the System URL to open the SAP Fiori Launchpad.
   
-    <img src="images/ex1127.png" alt="Event Binding" width="100%">  
+     <img src="images/ex1127.png" alt="Event Binding" width="100%">  
 
   3. Then click on ABAP Development in the left window pane and click the System URL to open the SAP Fiori Launchpad.
 
