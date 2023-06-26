@@ -33,11 +33,11 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
 
 1. Right-click **Favorite Objects** and click **Add Object**.
 
-   <img src="images/generatepackage.png" alt="package" width="100%">  
+   <img src="images/generatepackage.png" alt="package" width="50%">  
 
 3. Search for **`ZDMO_GEN_RAP110_SINGLE`**, select it and click **OK**.
 
-   <img src="images/generatepackage2.png" alt="package" width="100%">  
+   <img src="images/generatepackage2.png" alt="package" width="50%">  
 
 5. Right-click **`ZDMO_GEN_RAP110_SINGLE`**, select **Run As** > **ABAP Application (Console) F9**.
 
