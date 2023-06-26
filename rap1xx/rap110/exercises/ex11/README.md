@@ -310,17 +310,15 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
   
      <img src="images/ex1126.png" alt="Event Binding" width="50%">  
      
-     Then click on **ABAP Development** in the left window pane and click the System URL to open the SAP Fiori Launchpad.
+  2. Then click on **ABAP Development** in the left window pane and click the System URL to open the SAP Fiori Launchpad.
   
      <img src="images/ex1127.png" alt="Event Binding" width="100%">  
 
-  3. Then click on ABAP Development in the left window pane and click the System URL to open the SAP Fiori Launchpad.
-
-  4. Search for the Channel Binding app and start it.
+  3. Search for the Channel Binding app **Enterprise Event Enablement - Configure Channel Binding** and start it.
 
      > Please search for **Kanalbindung** if you’re logged in german (DE).
 
-  5. Select the event channel `ZRAP110_TRAVEL_EVENTS`, and add a new Topic. The Topic correspond to the xxx  in the Event Binding editor.
+  4. Select the event channel `ZRAP110_TRAVEL_EVENTS`, and add a new Topic. The Topic correspond to the xxx  in the Event Binding editor.
  
      <img src="images/eventx.png" alt="Event Binding" width="50%">
   
