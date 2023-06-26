@@ -12,8 +12,9 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
 ### Exercises
 
 - [1.1 - Access your exercise Package](#exercise-11-access-your-exercise--package)
-- [1.2 - Brief Explanation of the ABAP Artefacts](#exercise-12-brief-explanation-of-the-different-abap-artefacts)
-- [1.3 - Publish the UI Service and Test the _Travel_ App](#exercise-13-publish-the-ui-service-and-test-the-travel-app)
+- [1.2 - Access your exercise Package](#exercise-11-access-your-exercise--package)
+- [1.3 - Brief Explanation of the ABAP Artefacts](#exercise-12-brief-explanation-of-the-different-abap-artefacts)
+- [1.4 - Publish the UI Service and Test the _Travel_ App](#exercise-13-publish-the-ui-service-and-test-the-travel-app)
 - [Summary](#summary)  
 
 ---
@@ -26,8 +27,30 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
 
 ---
 
+## Exercise 1.1: Generate your ![package](../images/adt_package.png) Package
+ <details>
+  <summary>🔵 Click to expand!</summary>
 
-## Exercise 1.1: Access your exercise ![package](../images/adt_package.png) Package
+1. Right-click **Favorite Objects** and click **Add Object**.
+
+   <img src="images/generatepackage.png" alt="package" width="100%">  
+
+3. Search for **`ZDMO_GEN_RAP110_SINGLE`**, select it and click **OK**.
+
+   <img src="images/generatepackage2.png" alt="package" width="100%">  
+
+5. Right-click **`ZDMO_GEN_RAP110_SINGLE`**, select **Run As** > **ABAP Application (Console) F9**.
+
+   <img src="images/generatepackage3.png" alt="package" width="100%">  
+
+7. Now your package is created. Check the ABAP console.
+
+   <img src="images/generatepackage4.png" alt="package" width="100%">  
+
+ 
+ </details>
+ 
+## Exercise 1.2: Access your exercise ![package](../images/adt_package.png) Package
 [^Top of page](#)
 
 > Add your package to **_Favorite Packages_**
@@ -51,7 +74,7 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
  </details>  
 
 
-## Exercise 1.2: Brief Explanation of the different ABAP Artefacts
+## Exercise 1.3: Brief Explanation of the different ABAP Artefacts
 [^Top of page](#)
 
 > Get to know **_ABAP Artefacts_**
@@ -116,7 +139,7 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
  </details>
 
 
-## Exercise 1.3: Publish the UI Service and Test the _Travel_ App 
+## Exercise 1.4: Publish the UI Service and Test the _Travel_ App 
 [^Top of page](#)
 
 > Now, publish the local service endpoint of your service binding **`ZRAP110_UI_TRAVEL_O4_###`**, then preview and test the _Travel_ app by creating, updating an deleting _travel_ instances and _booking_ instances.
