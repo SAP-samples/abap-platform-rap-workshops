@@ -316,21 +316,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 
   5. Select the event channel `ZRAP110_TRAVEL_EVENTS`, and add a new Topic. The Topic correspond to the xxx  in the Event Binding editor.
  
-     <img src="images/eventx.png" alt="Event Binding" width="50%">  
-      
-// 1. Please copy, adapt, and send the text provided below in the event Zoom chat. Do not forget to replace the occurences of the placeholder `###` with your group ID.
-  
-//    ```
-//      Please Configure the Channel Binding for the Event Binding of **DEVELOPER-###** for SAP BTP Event Mesh.
-     
-//      Event Binding Type: zrap110.a###.Travel.Accepted.v*
-//    ```
-    
-//    Check your event binding type in the screenshot below.  
-  
-//    <img src="images/ex1125.png" alt="Event Binding" width="100%">  
- 
-//  2. The SAP staff will let you know in the chat when this is done.
+     <img src="images/eventx.png" alt="Event Binding" width="50%">
   
 </details>
 
