@@ -6,7 +6,8 @@
 
 In this present exercise, you will make yourself familiar with your exercise package **`ZRAP110_###`**, where **###** is your group ID.
 
-Due to time constrainst, exercises packages containing a generated OData-V4-based UI service is provided for this workshop. The UI service is built on top of 
+For your convenience, the class `ZDMO_GEN_RAP110_SINGLE` has already been created to generate packages after execution. This is part of Exercise 1.1.
+These packages contain a generated OData-V4-based UI service, which is provided for this workshop. The UI service is built on top of 
 a managed Business Object (BO) with two entities, _travel_ and _booking_, with generic transactional behavior - i.e. CRUD: Create, Read, Update, and Delete. 
 
 ### Exercises
