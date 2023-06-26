@@ -320,7 +320,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 
   4. Select the event channel `ZRAP110_TRAVEL_EVENTS`, and add a new Topic. The Topic correspond to the xxx  in the Event Binding editor.
  
-     <img src="images/meshx1.png" alt="Event Binding" width="100%">
+     <img src="images/meshx.png" alt="Event Binding" width="100%">
 
      <img src="images/meshx2.png" alt="Event Binding" width="100%">
  
