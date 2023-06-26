@@ -43,7 +43,7 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
 
    <img src="images/generatepackage3.png" alt="package" width="100%">  
 
-7. Now your package is created. Check the ABAP console. **Copy the suffix for later use.**
+7. Now your package is created. Check the ABAP console. **⚠Copy the suffix for later use.**
 
    <img src="images/generatepackage4.png" alt="package" width="100%">  
 
