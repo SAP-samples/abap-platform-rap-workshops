@@ -43,7 +43,7 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
 
    <img src="images/generatepackage3.png" alt="package" width="100%">  
 
-7. Now your package is created. Check the ABAP console.
+7. Now your package is created. Check the ABAP console. **Copy the suffix for later use.**
 
    <img src="images/generatepackage4.png" alt="package" width="100%">  
 
@@ -61,9 +61,9 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
  
       <img src="images/package.png" alt="package" width="50%">  
  
-2. Search for your package **`ZRAP110_###`**, select it and click **OK**.   
+2. Search for your package **`ZRAP110_###`** , select it and click **OK**.   
  
-   > `###` is your GroupID.
+   > `###` is your **suffix and GroupID**.
 
       <img src="images/ex102.png" alt="package" width="50%">  
  
