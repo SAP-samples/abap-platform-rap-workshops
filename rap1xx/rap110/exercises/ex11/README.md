@@ -324,7 +324,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 
      <img src="images/meshx2.png" alt="Event Binding" width="100%">
 
-  6. Now search for your event with *axxx*.     
+  6. Now search for your event with `*axxx*`.     
  
      <img src="images/meshx3.png" alt="Event Binding" width="100%">
      
