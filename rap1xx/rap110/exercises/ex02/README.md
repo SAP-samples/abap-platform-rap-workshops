@@ -147,7 +147,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
     
     > ⚠ **Error**: Please remove the statement **`interfaces IF_SADL_EXIT .`**  erroneously inserted by the generator into the class definition section. This is due to a bug that is currently under investigation.
     > 
-    >   <img src="images/ex203a.png" alt="ABAP Class" width="50%">          
+    >   <img src="images/interfacex.png" alt="ABAP Class" width="50%">          
 
     Your source code will look like this:
    
@@ -305,7 +305,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
       
     > ⚠ **Error**: Please remove the statement **`interfaces IF_SADL_EXIT .`** erroneously inserted by the generator into the class definition section. This is due to a bug that is currently under investigation.
     > 
-    > <img src="images/ex303a.png" alt="ABAP Class" width="50%">     
+    > <img src="images/interfacex2.png" alt="ABAP Class" width="50%">     
         
  2. Define the class method interface **`calculate_days_to_flight`** in the public section of the class definition. 
 
