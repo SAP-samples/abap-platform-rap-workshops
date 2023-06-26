@@ -306,11 +306,17 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 <details>
   <summary>🔵 Click to expand!</summary>
 
-  1. Now launch the SAP Fiori Launchpad. For that, right-click your ABAP Cloud Project (or Alt+Enter) and select Properties in the context menu.
+  1. Now launch the SAP Fiori Launchpad. For that, right-click your **_ABAP Cloud Project_** (or **Alt+Enter**) and select **Properties** in the context menu.
+  
+    <img src="images/ex1126.png" alt="Event Binding" width="50%">  
+     
+    Then click on **ABAP Development** in the left window pane and click the System URL to open the SAP Fiori Launchpad.
+  
+    <img src="images/ex1127.png" alt="Event Binding" width="100%">  
 
-  2. Then click on ABAP Development in the left window pane and click the System URL to open the SAP Fiori Launchpad.
+  3. Then click on ABAP Development in the left window pane and click the System URL to open the SAP Fiori Launchpad.
 
-  3. Search for the Channel Binding app and start it.
+  4. Search for the Channel Binding app and start it.
 
      > Please search for **Kanalbindung** if you’re logged in german (DE).
 
@@ -332,10 +338,6 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
  
  2. Now launch the SAP Fiori Launchpad.
  
-    For that, right-click your **_ABAP Cloud Project_** (or **Alt+Enter**) and select **Properties** in the context menu.
-  
-    <img src="images/ex1126.png" alt="Event Binding" width="50%">  
-     
     Then click on **ABAP Development** in the left window pane and click the System URL to open the SAP Fiori Launchpad.
   
     <img src="images/ex1127.png" alt="Event Binding" width="100%">  
