@@ -63,7 +63,7 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
  
 2. Search for your package **`ZRAP110_###`** , select it and click **OK**.   
  
-   > `###` is your **suffix and GroupID**.
+   > ⚠ `###` is your **suffix and GroupID**.
 
       <img src="images/ex102.png" alt="package" width="50%">  
  
