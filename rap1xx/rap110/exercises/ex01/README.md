@@ -12,7 +12,7 @@ a managed Business Object (BO) with two entities, _travel_ and _booking_, with g
 ### Exercises
 
 - [1.1 - Generate your Package](#exercise-11-generate-your--package)
-- [1.2 - Access your exercise Package](#exercise-11-access-your-exercise--package)
+- [1.2 - Access your exercise Package](#exercise-12-access-your-exercise--package)
 - [1.3 - Brief Explanation of the ABAP Artefacts](#exercise-12-brief-explanation-of-the-different-abap-artefacts)
 - [1.4 - Publish the UI Service and Test the _Travel_ App](#exercise-13-publish-the-ui-service-and-test-the-travel-app)
 - [Summary](#summary)  
