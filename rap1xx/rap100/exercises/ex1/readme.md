@@ -198,8 +198,16 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
    3. Select **OData UI Service** and click **Next >**.
 
        <img src="images/newgenerator2.png" alt="table" width="50%"> 
+
+   4. Click **Next >**.
+    
+       <img src="images/newgenerator3.png" alt="table" width="50%"> 
+
+   5. Enter a description.
+
+       <img src="images/newgenerator4.png" alt="table" width="50%"> 
         
-   4. Maintain the required information on the **Configure Generator** dialog to provide the name of your data model and generate them.         
+   6. Maintain the required information on the **Configure Generator** dialog to provide the name of your data model and generate them.         
 
       For that, navigate through the wizard tree (_Business Objects_, _Data Model_, etc...), maintain the artefact names provided in the table below, 
       and press **Next >**.
@@ -235,7 +243,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
 
       <img src="images/p7c.png" alt="table" width="50%">         
  
-   4. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
+   7. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
 
       <!-- ![class](images/p7d.png) -->
       <img src="images/p7d.png" alt="table" width="50%">  
