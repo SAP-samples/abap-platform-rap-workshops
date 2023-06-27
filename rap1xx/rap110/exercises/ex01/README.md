@@ -142,21 +142,23 @@ You can find the steps in Exercise 1.1.
  </details>
 
 
-## Exercise 1.4: Publish the UI Service and Test the _Travel_ App 
+## Exercise 1.4: Test the _Travel_ App 
 [^Top of page](#)
 
-> Now, publish the local service endpoint of your service binding **`ZRAP110_UI_TRAVEL_O4_###`**, then preview and test the _Travel_ app by creating, updating an deleting _travel_ instances and _booking_ instances.
+> Now, check the local service endpoint of your service binding **`ZRAP110_UI_TRAVEL_O4_###`**, and use the preview to test the _Travel_ app by creating, updating an deleting _travel_ instances and _booking_ instances.
 
  <details>
   <summary>🔵 Click to expand!</summary>
 
+<!---
 1. Open the service binding ![srvb icon](../images/adt_srvb.png)**`ZRAP110_UI_TRAVEL_O4_###`** and click on the link **`Publish local service endpoint`** in the **Service Version Details** section. 
  
       <img src="images/publish.png" alt="table" width="50%">  
  
    This steps may take some seconds. Do not close the **_Service Binding_** editor during this process. 
- 
- 2. Now start the **_Fiori elements App Preview_** for the **`Travel`** entity set.
+--> 
+
+ 1. Now start the **_Fiori elements App Preview_** for the **`Travel`** entity set.
  
     For that, either select the entity set **`Travel`** in the **Entity Set and Associations** section and press the **Preview** button or simply doubleclicking on it.
  
