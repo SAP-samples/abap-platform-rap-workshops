@@ -129,7 +129,7 @@ replace all occurences of the placeholder `###` with your group ID using **Ctrl+
   
     <img src="images/ex10x1.png" alt="BO Behavior Definition" width="70%">   
     
- 2.  Start your **_Travel_** App and copy a **Travel ID** from a former created entry of your choice. 
+ 2. Start your **_Travel_** App and copy a **Travel ID** from a former created entry of your choice. 
  
     <img src="images/ex10x2.png" alt="BO Behavior Definition" width="70%">   
  
