@@ -297,16 +297,16 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 ## Exercise 11.5: Configure the Event Bindings in SAP Event Mesh
 [^Top of page](#)
 
-> The next step is typically to configure the event bindings in the relevant Event Channel of the SAp Event Mesh instance using the appropriate app in the SAP Fiori Launchpad.  
-
+> The next step is typically to configure the event bindings in the relevant Event Channel of the SAp Event Mesh instance using the _**Enterprise Event Enablement - Configure Channel Binding**_ app in the SAP Fiori Launchpad.  
+<!--
 > ⚠ **PLEASE NOTE**  
 > Due to time constraints, this step will be carried out for you by the SAP staff available during the event.  
 > Please follow the intruction below to request for your Event Binding to be published in SAP Event Mesh by the SAP Team.
-
+-->
 <details>
   <summary>🔵 Click to expand!</summary>
 
-  1. Now launch the SAP Fiori Launchpad. For that, right-click your **_ABAP Cloud Project_** (or **Alt+Enter**) and select **Properties** in the context menu.
+  1. For that, launch the SAP Fiori Launchpad. For that, right-click your **_ABAP Cloud Project_** (or **Alt+Enter**) and select **Properties** in the context menu.
   
      <img src="images/ex1126.png" alt="Event Binding" width="50%">  
      
@@ -314,17 +314,22 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
   
      <img src="images/ex1127.png" alt="Event Binding" width="100%">  
 
-  3. Search for the Channel Binding app **Enterprise Event Enablement - Configure Channel Binding** and start it.
+  3. Search for the Channel Binding app **Configure Channel Binding** and start it.
+
+     > Please search for _**`Kanalbindung`**_ if you’re logged in german (DE).
       
-     <img src="images/meshx.png" alt="Event Binding" width="100%">
+     <img src="images/meshx.png" alt="Event Binding" width="100%">   
 
-     > Please search for **Kanalbindung** if you’re logged in german (DE).
+  5. Select the event channel **`ZRAP110_TRAVEL_EVENTS`**, and add a new **Outbound Topic** in the **Outboung Topic Bindings** tab.
 
-  5. Select the event channel `ZRAP110_TRAVEL_EVENTS`, and add a new Topic. Therefore select **Create**. The Topic correspond to the xxx in the Event Binding editor.
+     > An outbound Topic corresponds to a event binding _**Type**_ which can be found in the **Event Binding** editor - 
+     > e.g. `zrap110.a###.Travel.Accepted.v*` in the present exercise
+  
+     For that, select **Create**. 
 
      <img src="images/meshx2.png" alt="Event Binding" width="100%">
 
-  6. Now search for your event with `*axxx*`.     
+  8. Now search for your event with **`*axxx*`**.     
  
      <img src="images/meshx3.png" alt="Event Binding" width="100%">
      
@@ -333,7 +338,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
   ## Exercise 11.6: Test the Enhanced _Travel_ App
 [^Top of page](#)
 
-> Check out your raised events in the **_Event Monitor_** app in the SAP Fiori Launchpad.
+> Check out your raised events in the _**Enterprise Event Enablement - Event Monitor**_ app in the SAP Fiori Launchpad.
 
 <details>
   <summary>🔵 Click to expand!</summary>
@@ -341,13 +346,11 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
  1. First, go to your _Manage Travel_ app, create and set travel entries to _accepted_.
  
  2. Now launch the SAP Fiori Launchpad and search for the **_Event Monitor_** app and start it.
-  
+
+    > Please search for _**`Ereignismonitor`**_ if you’re logged in german (DE). 
+
     <img src="images/ex112x2.png" alt="Event Binding" width="100%">  
-     
-    >Search for either (a) or (b) depending on your logon language:
-     - (a) **_`Event Monitor`_**   - if you're logged in English (EN)
-     - (b) **_`Ereignismonitor`_** - if you're logged in German (DE)
-     
+          
   4. Select the event channel **`ZRAP110_TRAVEL_EVENTS`**, search for your **_Outbound Event Topic_**, and navigate to it to check if your raised event have been transferred to SAP Event Mesh Instance. Yoou can sort the topic entries.
   
      > ℹ The **_Outbound Event Topic_** corresponds to the **_Event Binding Type_** generated in the _Event Bindings_ editor in ADT.
