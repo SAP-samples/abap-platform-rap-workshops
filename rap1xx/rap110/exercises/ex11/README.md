@@ -297,7 +297,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 ## Exercise 11.5: Configure the Event Bindings in SAP Event Mesh
 [^Top of page](#)
 
-> The next step is typically to configure the event bindings in the relevant Event Channel of the SAp Event Mesh instance using the _**Enterprise Event Enablement - Configure Channel Binding**_ app in the SAP Fiori Launchpad.
+> The next step is typically to configure the event bindings in the relevant Event Channel of the SAP Event Mesh instance using the _**Enterprise Event Enablement - Configure Channel Binding**_ app in the SAP Fiori Launchpad.
 > 
 > PS: The app name is _**Bereitstellung von Unternehmens-/technischen Ereignissen - Kanalbindung**_ if you're logged in german (DE).
  
@@ -317,7 +317,9 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
   
      <img src="images/ex1127.png" alt="Event Binding" width="100%">  
 
-  3. Search for the Channel Binding app **Configure Channel Binding** and start it.
+  3. Start the app _**Enterprise Event Enablement - Configure Channel Binding**_ in the SAP Fiori launchpad.  
+  
+     For that, you can search for **Configure Channel Binding** and select the entry.
 
      > Please search for _**`Kanalbindung`**_ if you’re logged in german (DE).
       
