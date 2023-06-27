@@ -75,5 +75,5 @@ annotate view ZRAP100_C_TRAVELTP_### with
   Filename;
 
   @UI.hidden: true
-  LastChangedAt;
+  LocalLastChangedAt;
 }
