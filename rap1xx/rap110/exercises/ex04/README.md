@@ -1,4 +1,3 @@
-![image](https://github.com/SAP-samples/abap-platform-rap-workshops/assets/58476315/65dc0c6f-d40a-4ecb-9997-8ab1a0adbe3f)[Home - RAP110](../../README.md)
 
 # Exercise 4: Implement the Base BO Behavior - Late Numbering 
 
