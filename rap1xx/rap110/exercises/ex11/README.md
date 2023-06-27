@@ -297,7 +297,10 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 ## Exercise 11.5: Configure the Event Bindings in SAP Event Mesh
 [^Top of page](#)
 
-> The next step is typically to configure the event bindings in the relevant Event Channel of the SAp Event Mesh instance using the _**Enterprise Event Enablement - Configure Channel Binding**_ app in the SAP Fiori Launchpad.  
+> The next step is typically to configure the event bindings in the relevant Event Channel of the SAp Event Mesh instance using the _**Enterprise Event Enablement - Configure Channel Binding**_ app in the SAP Fiori Launchpad.
+> 
+> PS: The app name is _**Bereitstellung von Unternehmens-/technischen Ereignissen - Kanalbindung**_ if you're logged in german (DE).
+ 
 <!--
 > ⚠ **PLEASE NOTE**  
 > Due to time constraints, this step will be carried out for you by the SAP staff available during the event.  
@@ -339,14 +342,18 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 [^Top of page](#)
 
 > Check out your raised events in the _**Enterprise Event Enablement - Event Monitor**_ app in the SAP Fiori Launchpad.
+> 
+> PS: The app name is _**Bereitstellung von Unternehmens-/technischen Ereignissen - Ereignismonitor**_ if you're logged in german (DE).
 
 <details>
   <summary>🔵 Click to expand!</summary>
  
- 1. First, go to your _Manage Travel_ app, create and set travel entries to _accepted_.
+ 1. First, go to your _Manage Travel_ app, create and set a Travel record to _accepted_.
  
- 2. Now launch the SAP Fiori Launchpad and search for the **_Event Monitor_** app and start it.
+ 2. Now launch the SAP Fiori Launchpad and start the _**Enterprise Event Enablement - Event Monitor**_ app. 
 
+    For that, you can search for the **_Event Monitor_** app and click on the entry.
+    
     > Please search for _**`Ereignismonitor`**_ if you’re logged in german (DE). 
 
     <img src="images/ex112x2.png" alt="Event Binding" width="100%">  
