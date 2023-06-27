@@ -1,4 +1,4 @@
-[Home - RAP110](../../README.md)
+![image](https://github.com/SAP-samples/abap-platform-rap-workshops/assets/58476315/65dc0c6f-d40a-4ecb-9997-8ab1a0adbe3f)[Home - RAP110](../../README.md)
 
 # Exercise 4: Implement the Base BO Behavior - Late Numbering 
 
@@ -56,7 +56,7 @@ In the present exercise, you will define and implement the base BO behavior for 
            cl_numberrange_runtime=>number_get(
              EXPORTING
                nr_range_nr       = '01'
-               object            = 'ZRAP110###'  
+               object            = '/DMO/TRV_M'  
                quantity          = CONV #( lines( mapped-travel ) )
              IMPORTING
                number            = DATA(number_range_key)
