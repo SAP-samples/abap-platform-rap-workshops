@@ -111,7 +111,7 @@ replace all occurences of the placeholder `###` with your group ID using **Ctrl+
  
     ```ABAP
       "execute function getDaysToFlight
-     READ ENTITIES OF ZRAP110_R_TravelTP_810
+     READ ENTITIES OF ZRAP110_R_TravelTP_###
        ENTITY Booking
          EXECUTE getDaysToFlight
            FROM VALUE #( FOR link IN travels_to_bookings ( %tky = link-target-%tky ) )
