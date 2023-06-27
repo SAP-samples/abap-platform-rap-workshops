@@ -189,10 +189,12 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
    
    2. Maintain the required information  (`###` is your group ID) and click **Next >**:
         - Description: **`Travel App ###`**
-        - Generator: **`ABAP RESTful Application Programming Model: UI Service`**
+        - Generator: **`OData UI Service`**
         
         <!-- ![class](images/p6b.png)  --> 
-         <img src="images/p6b.png" alt="table" width="50%"> 
+         <!--  <img src="images/p6b.png" alt="table" width="50%">  --> 
+         <img src="images/newgenerator.png" alt="table" width="50%"> 
+         
         
    3. Maintain the required information on the **Configure Generator** dialog to provide the name of your data model and generate them.         
 
