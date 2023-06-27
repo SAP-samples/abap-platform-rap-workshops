@@ -326,7 +326,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
   5. Select the event channel **`ZRAP110_TRAVEL_EVENTS`**, and add a new **Outbound Topic** in the **Outboung Topic Bindings** tab.
 
      > An outbound Topic corresponds to a event binding _**Type**_ which can be found in the **Event Binding** editor - 
-     > e.g. `zrap110.a###.Travel.Accepted.v*` in the present exercise
+     > e.g. **`zrap110.a###.Travel.Accepted.v*`**, where `###` is your group ID/suffix, in the present exercise
   
      For that, select **Create**. 
 
