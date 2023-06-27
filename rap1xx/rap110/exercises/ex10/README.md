@@ -128,24 +128,22 @@ replace all occurences of the placeholder `###` with your group ID using **Ctrl+
     ```
   
     <img src="images/ex10x1.png" alt="BO Behavior Definition" width="70%">   
- 
- 2. Save ![save icon](../images/adt_save.png) and activate ![activate icon](../images/adt_activate.png) the changes.
     
- 3.  Start your **_Travel_** App and copy a **Travel ID** from a former created entry of your choice. 
+ 2.  Start your **_Travel_** App and copy a **Travel ID** from a former created entry of your choice. 
  
     <img src="images/ex10x2.png" alt="BO Behavior Definition" width="70%">   
  
- 4. Go back to your class **`ZRAP110_EML_PLAYGROUND_###`** and **paste** your **Travel ID** on the corresponding space.
+ 3. Go back to your class **`ZRAP110_EML_PLAYGROUND_###`** and **paste** your **Travel ID** on the corresponding space.
  
     <img src="images/ex10x3.png" alt="BO Behavior Definition" width="70%">  
  
- 5. Save ![save icon](../images/adt_save.png) and activate ![activate icon](../images/adt_activate.png) the changes.
+ 4. Save ![save icon](../images/adt_save.png) and activate ![activate icon](../images/adt_activate.png) the changes.
  
- 6. Right-click your class, select **Run As** > **ABAP Application (Console)** (or press **F9**).
+ 5. Right-click your class, select **Run As** > **ABAP Application (Console)** (or press **F9**).
  
     <img src="images/ex10x4.png" alt="BO Behavior Definition" width="70%">   
 
- 7. Check your result.
+ 6. Check your result.
  
     <img src="images/ex10x5.png" alt="BO Behavior Definition" width="50%">  
  
