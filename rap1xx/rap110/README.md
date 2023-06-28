@@ -27,15 +27,15 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 <details>
   <summary>🔵Click to expand!</summary>
 
-### ADT Installation  
+#### **ADT Installation**  
+  
+You **MUST** have installed the latest version of Eclipse and the latest version of the ABAP Development Tools (ADT) plugin in it.    
 
-You **MUST** have installed the latest version of Eclipse and the latest version of the ABAP Development Tools (ADT) plugin in it.   
- 
 Please check the following two short documents how to do this if you have not already done it:  
  - [Install the newest Eclipse platform and the newest ABAP Development Tools (ADT) plugin](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)  
  - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
 
-### ABAP System  
+#### **ABAP System**  
 You also need a user on an SAP BTP ABAP Environment, SAP S/4HANA Cloud, public edition (3SL), or SAP S/4HANA 2022 (or higher) system. For example, you can create an ABAP user on the free SAP BTP ABAP Environment Trial.
 
 Please check the following tutorial if you do not have a working account yet:  
