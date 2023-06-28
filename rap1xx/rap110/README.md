@@ -21,7 +21,7 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 ## 📋 Requirements for attending this workshop 
 [^Top of page](#)
 
-> You need the latest version of ABAP Development Tools in Eclipse (ADT) on your laptop or PC as well as the access to an appropriate ABAP system - e.g. SAP BTP ABAP Environment or SAP S/4HANA 2022 or higher - to perform the practical exercises of this workshop.
+> You need the latest version of ABAP Development Tools in Eclipse (ADT) on your laptop or PC as well as the access to an appropriate ABAP system to perform the practical exercises of this workshop.
 
 
 <details>
@@ -35,19 +35,18 @@ Please check the following two short documents how to do this if you have not al
  - [Install the newest Eclipse platform and the newest ABAP Development Tools (ADT) plugin](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-abap-development-tools-adt)  
  - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
 
-### ABAP User  
-You also need a user on an SAP BTP ABAP environment or SAP S/4HANA Cloud, public edition (3SL), system - e.g. SAP BTP ABAP Environment Trial.  
+### ABAP System  
+You also need a user on an SAP BTP ABAP Environment, SAP S/4HANA Cloud, public edition (3SL), or SAP S/4HANA 2022 (or higher) system. For example, you can create an ABAP user on the free SAP BTP ABAP Environment Trial.
 
-> ⚠**Please note**⚠:
-> 
-> 1️⃣ All exercises except Exercise 9 (Side Effects) can be performed on release 2022 of SAP S/4HANA, private cloud and on-premises editions.
-> 
-> 2️⃣ Participants of internal or external SAP events (e.g. **ABAP Developer Days**) will carry out the various exercises on a dedicated SAP BTP ABAP environment system set up by SAP team for the specific event.    
-> 
-  
 Please check the following tutorial if you do not have a working account yet:  
  - [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
+---
+> ⚠**Please note**⚠:
+> 
+> 1. All exercises except Exercise 9 (Side Effects) can be performed on release 2022 of SAP S/4HANA, private cloud and on-premises editions. 
+> 2. Participants of internal or external SAP events (e.g. **ABAP Developer Days**) will carry out the various exercises on a dedicated SAP BTP ABAP environment system set up by SAP team for the specific event.    
+---
 </details>
 
 ## 🔎Overview
