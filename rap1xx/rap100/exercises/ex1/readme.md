@@ -36,7 +36,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
       <!-- ![package](images/p1a.png)  --> 
       <img src="images/p1a.png" alt="table" width="50%">
    
-   2. Maintain the required information (`###` is your group ID):
+   2. Maintain the required information (`###` is your group ID, please choose a suitable combination of numbers and characters, e.g. **088** or **ZT1**):
        - Name: **`ZRAP100_###`**
        - Description: _**`RAP100 Package ###`**_
        - Select the box **Add to favorites package**
