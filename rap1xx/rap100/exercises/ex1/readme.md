@@ -195,13 +195,13 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
 
    <!--    <img src="images/newgenerator2.png" alt="table" width="50%">  -->  
 
-  <!-- 5. Click **Next >**. -->  
+   <!-- 5. Click **Next >**. -->  
     
    <!--    <img src="images/newgenerator3.png" alt="table" width="50%">  -->  
 
-     <!--   6. Enter a description.  -->  
+   <!--   6. Enter a description.  -->  
 
-         <!--  <img src="images/newgenerator4.png" alt="table" width="50%">    -->  
+   <!--  <img src="images/newgenerator4.png" alt="table" width="50%">    -->  
         
    7. Maintain the required information on the **Configure Generator** dialog to provide the name of your data model and generate them.         
 
