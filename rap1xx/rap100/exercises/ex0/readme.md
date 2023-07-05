@@ -108,7 +108,7 @@ Once you've found an available group ID, choose **Cancel**.
 
 </details>
    
-
+<!--
 ## Create an ABAP Cloud Project in ADT
 [^Top of page](#)
 
@@ -131,6 +131,7 @@ Once you've found an available group ID, choose **Cancel**.
 
 </details>
 
+-->
 
 ## Create an ABAP Project in ADT
 [^Top of page](#)
