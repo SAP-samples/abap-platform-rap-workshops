@@ -40,6 +40,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
        - Name: **`ZRAP100_###`**
        - Description: _**`RAP100 Package ###`**_
        - Select the box **Add to favorites package**
+       - Superpackage: **`ZLOCAL`**
        
       Click **Next >**.
 
