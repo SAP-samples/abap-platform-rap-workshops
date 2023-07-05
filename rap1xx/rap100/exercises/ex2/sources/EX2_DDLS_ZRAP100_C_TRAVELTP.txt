@@ -1,6 +1,6 @@
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
-@EndUserText.label: '##GENERATED Travel App ###'
+@EndUserText.label: '##GENERATED Travel App (###)'
 
 @Search.searchable: true
 @ObjectModel.semanticKey: ['TravelID'] //case-sensitive
