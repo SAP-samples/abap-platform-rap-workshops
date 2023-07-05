@@ -192,13 +192,13 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
       
        <img src="images/generatorxx1.png" alt="table" width="50%">
       
-   4. Select **OData UI Service** and click **Next >**.  
+   <!-- 4. Select **OData UI Service** and click **Next >**.    -->  
 
-       <img src="images/newgenerator2.png" alt="table" width="50%">   
+ <!--       <img src="images/newgenerator2.png" alt="table" width="50%">     -->  
 
-   5. Click **Next >**. 
+ <!--   5. Click **Next >**.   -->  
     
-      <img src="images/newgenerator3.png" alt="table" width="50%">  
+   <!--    <img src="images/newgenerator3.png" alt="table" width="50%">    -->  
 
    6. Enter a description.  
 
