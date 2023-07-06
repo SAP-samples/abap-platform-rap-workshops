@@ -46,7 +46,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 > In this step you will create the class ![class icon](images/adt_class.png)**`ZRAP100_CL_EML_###`**, where **`###`** is your group ID, to play around with EML.  
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1.	Right-click on your package ![package icon](images/adt_package.png)**`ZRAP100_###`** and choose _**New > ABAP Class**_
       
@@ -114,7 +114,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 > This method is executed when the variable **`execute`** is set to **`1`** or **`55`** in the method **`if_oo_adt_classrun~main( )`**.
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Go to the implementation of the method **`read_travel( )`**  and take a look at it.
    
@@ -166,7 +166,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 >> **Read more**: [MODIFY >> General Information: UPDATE](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/9000a42dcd604a7799527cbb00bc4a69.html)
  
   <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Check the implementation of the method **`update_travel( )`**.    
    You can see that the data (i.e. internal table) for the **`UPDATE`** request is filled inline with **`VALUE`** operator.      
@@ -262,7 +262,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 >> **Read more**: [MODIFY >> General Information: EXECUTE Action](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/9000a42dcd604a7799527cbb00bc4a69.html)
 
   <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Go to the implementation of the method **`if_oo_adt_classrun~main( )`** and set the variable **`execute`** to **`3`**.      
    Also specify the state (**`instance_state`**) of the new travel instance to be created. The ID will be automatically assigned by the internal early numbering.   
@@ -307,7 +307,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 >> **Read more**: [MODIFY >> General Information: DELETE](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/9000a42dcd604a7799527cbb00bc4a69.html)
 
   <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Go to the implementation of the method **`if_oo_adt_classrun~main( )`** and set the variable **`execute`** to **`4`**.    
    Also specify the ID (**`travel_id`**) and the state (**`instance_state`**) of the travel instance to be deleted.        
@@ -355,7 +355,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 >> **Read more**: [Creating Active Data](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/e61754e947724d1c90676b2605ee453f.html)
 
   <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Go to the implementation of the method **`if_oo_adt_classrun~main( )`** and set the variable **`execute`** to **`5`**.    
    Also specify the ID (**`travel_id`**) of the draft travel instance to be activated.     
@@ -401,7 +401,7 @@ This exercise is all about exploring and better understanding EML. Follow the in
 >> **Read more**: [Deleting Instances of a Draft BO >> Activate Action](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/ef0f5136cb084dd4ab4fb19128b2ab13.html)
 
   <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Go to the implementation of the method **`if_oo_adt_classrun~main( )`** and set the variable **`execute`** to **`6`**.    
    Also specify the ID (**`travel_id`**) of the draft travel instance to be discarded.       
