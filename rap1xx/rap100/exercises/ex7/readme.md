@@ -29,7 +29,7 @@ In the present exercise, you will implement the dynamic instance feature control
 > ⚠ If implemented in the previous exercise  (_[see Exercise 6.3 - Actions](../ex6/readme.md)_), you'll also define the dynamic instance feature control for the optional instance actions **`acceptTravel`** and **`rejectTravel`**. 
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
     
 1. Open your behavior definition ![behaviordefinition](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`** and add the addition **`( features : instance )`** to the following operations as shown on following code snippet and the screenshot below:
     - Standard operations **`update`** and **`delete`** 
@@ -104,7 +104,7 @@ In the present exercise, you will implement the dynamic instance feature control
 >   - If the overall status is `Rejected` (**`X`**), then the action **`rejectTravel`** must be disabled. 
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 
 3. Implement the instance feature control method **`get_instance_features`** in the implementation part of the local handler class. 
@@ -173,7 +173,7 @@ In the present exercise, you will implement the dynamic instance feature control
 Now the SAP Fiori elements app can be tested. 
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 You can either refresh your application in the browser using **F5** if the browser is still open - or go to your service binding **`ZRAP100_UI_TRAVEL_O4_###`** and start the Fiori elements App preview for the **`Travel`** entity set.
 
