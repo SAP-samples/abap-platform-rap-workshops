@@ -37,7 +37,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 > Define the validations `validateCustomer` and `validateDates`.  
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
   
 1. Open your behavior definition ![behaviordefinition](images/adt_bdef.png) **`ZRAP100_R_TRAVELTP_###`**  
 
@@ -115,7 +115,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 > An appropriate message should be raised and displayed on the UI for each invalid value.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. First, check the interface of the new methods in the declaration part of the local handler class `lcl_handler` of the behavior pool of the _Travel_ BO entity ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**. 
 
@@ -220,7 +220,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 > An appropriate messages should be raised and displayed on the UI for each invalid value.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. In your implementation class ![class](images/adt_class.png) **`ZRAP100_BP_TRAVELTP_###`**, replace the current method implementation of **`validateDates`** with following code snippet and replace all occurrences of the placeholder **`###`** with your group ID.
 
@@ -351,7 +351,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 Now the SAP Fiori elements app can be tested. 
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 You can either refresh your application in the browser using **F5** if the browser is still open - or go to your service binding **`ZRAP100_UI_TRAVEL_O4_###`** and start the Fiori elements App preview for the **`Travel`** entity set.
 
