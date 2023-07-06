@@ -31,7 +31,7 @@ A number range object will be used to determine the unique travel identifiers.
 > Define the (unmanaged) internal early numbering in the behavior definition ![bdef icon](images/adt_bdef.png) of the _Travel_ entity.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Open the behavior definiton ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`** of the _Travel_ entity.
 
@@ -120,7 +120,7 @@ A number range object will be used to determine the unique travel identifiers.
 > Nevertheless, you can find a more comprehensive implementation example of a managed BO with a number range object in the behavior implementation class `/DMO/BP_TRAVEL_M` located in the package `/DMO/FLIGHT_MANAGED`. A description of this implementation is provided in the RAP development guide [Developing Managed Transactional Apps](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/b5bba99612cf4637a8b72a3fc82c22d9.html) on the SAP Help Portal.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
    
 1. Check the method interface of the method **`earlynumbering_create`** in the declaration part of the local handler class `lcl_handler`.  
    
@@ -254,7 +254,7 @@ A number range object will be used to determine the unique travel identifiers.
 > You can now preview and test the changes by creating a new travel instance in the Travel app.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Refresh your application in the browser using **F5** if the browser is still open -   
    or go to your service binding ![srvb icon](images/adt_srvb.png)**`ZRAP100_UI_TRAVEL_O4_###`** and start the Fiori elements App preview for the **`Travel`** entity set.
