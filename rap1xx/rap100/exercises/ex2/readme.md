@@ -36,7 +36,7 @@ The enablement of OData streams will give end-users the option to upload and dow
 > - Associations to helpful information about _Overall Status_ (_\_OverallStatus_) and _Currency_ (_\_Currency_) 
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
  1. Define the new associations **`_Agency`**, **`_Customer`**, **`_OverallStatus`**, and **`_Currency`**.
  
@@ -88,7 +88,7 @@ The enablement of OData streams will give end-users the option to upload and dow
 > ℹ **Further reading**: [Working with Large Objects](https://help.sap.com/docs/BTP/923180ddb98240829d935862025004d6/10a3eb645b83413cbbebe4fc1d879a62.html) 
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
  
  1. Remain in the CDS data definiton ![datadefinition](images/adt_ddls.png)**`ZRAP100_R_TRAVELTP_###`** and have a look at following elements in the _select_ list:
 
@@ -131,7 +131,7 @@ The enablement of OData streams will give end-users the option to upload and dow
 > For example, you will allow the full-text search on some elements, add new elements for language-dependent descriptive texts, and define value helps.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
  1. Open your data definition ![datadefinition](images/adt_ddls.png)**`ZRAP100_C_TRAVELTP_###`** and format the generated source code with the **Pretty Printer** (**Shift+F1**)..
     
@@ -243,7 +243,7 @@ The enablement of OData streams will give end-users the option to upload and dow
 > Enhance the metadata extension![ddlx icon](images/adt_ddlx.png) to change the appearence of the generated Fiori elements based _Travel App_.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 
  1. Open your metadata extention ![metadataextension](images/adt_ddlx.png)**`ZRAP100_C_TRAVELTP_###`** and adjust the UI annotations to achieve the following changes on the Fiori elements based UI of the _Travel App_.
@@ -282,7 +282,7 @@ The enablement of OData streams will give end-users the option to upload and dow
 > Test the enhanced SAP Fiori elements application.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
  1. Open your service binding ![servicebinding](images/adt_srvb.png) **`ZRAP100_UI_TRAVEL_O4_###`** and double-click the _**Travel**_ entity set to open the SAP Fiori elements preview.
  
