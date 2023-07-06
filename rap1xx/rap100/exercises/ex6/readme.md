@@ -62,7 +62,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > First, define the non-factory, instance action **`deductDiscount`** in the behavior definition of the _Travel_ entity. This action has no input parameter. 
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
   
 1. Go to your behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`** and define the instance action without input paramater.
    
@@ -135,7 +135,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > Now implement the action behavior in the appropriate method in the behavior pool of the _Travel_ entity.
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
   
 1. Implement the action method **`deductDiscount`**.
 
@@ -219,7 +219,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > Now, you will expose the action in the BO behavior projection and enrich the UI semantics in the CDS metadata extension to add an appropriate button to the _Travel_ App.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Expose the action in the BO behavior projection.
    
@@ -288,7 +288,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > ℹ **Info**: An abstract CDS entity defines the type properties of a CDS entity. Consequently, it provides metadata on element level or parameter level using CDS annotations and does not have a corresponding implementation nor an underlying persistency.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
   
 1. Let's have a look at the abstract entity defined in the data definition ![ddls icon](images/adt_ddls.png)**`/DMO/A_Travel_Discount`**. You can use the shortcut **Ctrl+Shift+A** to open the data definition.
 
@@ -329,7 +329,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > The parameter structure **`%param`** for parameter input is imported by action with parameters. The parameter structure is used to access the passed values of the input parameters: **`deduct_discount`** in the present scenario - i.e. *`%param-deduct_discount`*.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Go to your behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`** and adjust the action method **`deductDiscount`**.
 
@@ -424,7 +424,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > You can now test the new behavior of the action button _**Deduct Discount`**_ on the enhanced _Travel_ app.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Preview and test the enhanced Fiori elements _Travel_ App.
 
@@ -454,7 +454,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > Define the instance factory action **`copyTravel`** in the behavior definition.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
   
 1. Go to the behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`** and insert the following code snippet after the action defined in the previous step.
    
@@ -485,7 +485,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > Implement the instance factory action **`coyTravel`** in the base BO behavior pool.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. First declare the required method in the behavior pool.
   
@@ -582,7 +582,7 @@ As *optional* exercises, you can additionally implement the two non-factory, ins
 > Expose the instance factory action in the BO behavior projection and in the CDS metadata extension and test the enhance Fiori elements app.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Expose the new action **`copyTravel`** in the BO behavior projection.
 
@@ -648,7 +648,7 @@ In this step, you will define, implement, and expose two instance-bound non-fact
 > First, define the instance non-factory actions **`acceptTravel`** and **`rejectTravel`** in the behavior definition of the _Travel_ entity.  
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
   
 1. Go to your behavior definition ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TRAVELTP_###`** and define both actions.
    
@@ -680,7 +680,7 @@ You are through with the definition of both actions. Go ahead with the implement
 > Now implement the required action methods in the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`** of the _Travel_ entity.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
    
 1. You can check the interfaces of the methods **`acceptTravel`** and **`rejectTravel`** in the declaration part of the local handler class in the behavior pool ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**. They are similar to the one of the action method **`deductDiscount`**.
   
@@ -781,7 +781,7 @@ You are through with the definition of both actions. Go ahead with the implement
 > Now, you will expose the actions in the BO behavior projection and enrich the UI semantics in the CDS metadata extension to add appropriate button to the _Travel_ App.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Expose the actions in the BO behavior projection.
    
