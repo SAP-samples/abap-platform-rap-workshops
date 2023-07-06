@@ -38,7 +38,7 @@ In the present exercise, you will  define and implement a determination, `setSta
 > Define the determination **`setStatusToOpen`** in the behavior definition of the _Travel_ entity. This determination will be used to set the default value of the field `OverallStatus` to `open` (`O`) at the creation time new _Travel_ instances.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Go to the behavior definiton of the _Travel_ BO entity ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`** and insert the following statement after the statement **`delete;`** as shown on the screenshot below: 
 
@@ -73,7 +73,7 @@ You are through with the definition of the determination.
 You will now implement the logic of the defined determination in the behavior pool. 
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. First check the interface of the method **`setStatusToOpen`** in the declaration part of the local handler class `lcl_handler`. 
 
@@ -157,7 +157,7 @@ You will now implement the logic of the defined determination in the behavior po
 > You can now preview and test the changes by creating a new travel instance in the Travel app.
 
  <details>
-  <summary>Click to expand!</summary>
+  <summary>🔵 Click to expand!</summary>
 
 1. Refresh your application in the browser using **F5** if the browser is still open   
    or go to your service binding **`ZRAP100_UI_TRAVEL_O4_###`** and start the Fiori elements App preview for the **`Travel`** entity set.
