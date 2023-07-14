@@ -13,6 +13,7 @@
 > Please contact us during the event if you have not received the logon information. 
 ---
 
+<!--
 ---
 > **WICHTIGE INFORMATION**: 
 > 
@@ -22,7 +23,7 @@
 >
 > Bitte kontaktieren Sie uns während der Veranstaltung, falls Sie keine E-Mail erhalten haben. 
 ---
-
+-->
 
 You've already received user credentials from the SAP Team  **or** created an account on the SAP BTP ABAP environment Trial.
 
@@ -36,7 +37,7 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 
 <!--
 - [Requirements](#requirements) 
-- [Group ID](#group-id)
+- [Group ID](#group-id
 - [Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)
 - [Create an ABAP Project in ADT](#create-an-abap-project-in-adt)
 - [Helpful Information](#helpful-information)
@@ -47,8 +48,7 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 -->
 
 - [Group ID](#group-id)
-- [Create an ABAP Cloud Project in ADT](#create-an-abap-cloud-project-in-adt)
-- [Create an ABAP Project in ADT](#create-an-abap-project-in-adt)
+- [Create an _ABAP Cloud Project_ or _ABAP Project_ in ADT](#create-an-abap-cloud-project-or-abap-project-in-adt)
 - [Helpful Information](#helpful-information)
   - Find/Replace
   - Modern ABAP Syntax
@@ -108,13 +108,20 @@ Once you've found an available group ID, choose **Cancel**.
 
 </details>
    
-<!--
-## Create an ABAP Cloud Project in ADT
+
+## Create an _ABAP Cloud Project_ or _ABAP Project_ in ADT
+
+> In this step, you will create a connection to the ABAP system in your ADT installation. An _**ABAP Project**_ or an _**ABAP Cloud Project**_ has to be created for the purpose.
+>
+> If you're carrying out the exercises on an SAP S/4HANA, on-prem or private cloud edition, then you have to create an _**ABAP Project**_ in ADT.
+> Otherwise, create an _**ABAP Cloud Project**_ if you're working on an **SAP BTP ABAP Environment system** (aka _Steampunk_) or **SAP S/4HANA Cloud, public edition, system**.
+
+### Create an _ABAP Cloud Project_ in ADT
 [^Top of page](#)
 
-> ⚠**Please note**⚠: Skip this step if you're carrying out the exercises on an **SAP S/4HANA system** on SAP Cloud Application Library (CAL).
-
-> Create an **ABAP Cloud Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
+> ⚠ PS: Skip this step if you're working on an **SAP S/4HANA system, on-prem or private cloud edition**, incl. CAL instances. 
+>
+> Create an **ABAP Cloud Project** in your ADT installation to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
 
 <details>
   <summary>Click to expand!</summary>
@@ -131,13 +138,11 @@ Once you've found an available group ID, choose **Cancel**.
 
 </details>
 
--->
-
-## Create an ABAP Project in ADT
+### Create an _ABAP Project_ in ADT
 [^Top of page](#)
 
-> ⚠**Please note**⚠: Skip this step if you're carrying out the exercises on an **SAP BTP ABAP Environment system** (aka _Steampunk_).
-
+> ⚠ PS: Skip this step if you're working on an **SAP BTP ABAP Environment** or **SAP S/4HANA Cloud (public edition)** system.
+>
 > Create an **ABAP Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
 
 <details>
@@ -154,6 +159,9 @@ Once you've found an available group ID, choose **Cancel**.
    ![Create ABAP Project](images/adt_create_abapproject.png)
 
 </details>
+
+</details>
+
 
 ## Helpful Information
 [^Top of page](#)
