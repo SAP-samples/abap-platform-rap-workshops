@@ -111,17 +111,16 @@ Once you've found an available group ID, choose **Cancel**.
 
 ## Create an _ABAP Cloud Project_ or _ABAP Project_ in ADT
 
-> In this step, you will create a connection to the ABAP system in your ADT installation. An _**ABAP Project**_ or an _**ABAP Cloud Project**_ has to be created for the purpose.
+> In this step, you will create a connection to the ABAP system in your ADT installation. To do this, you need to create an _**ABAP Project**_ or an _**ABAP Cloud Project**_.
 >
-> If you're carrying out the exercises on an SAP S/4HANA, on-prem or private cloud edition, then you have to create an _**ABAP Project**_ in ADT.
-> Otherwise, create an _**ABAP Cloud Project**_ if you're working on an **SAP BTP ABAP Environment system** (aka _Steampunk_) or **SAP S/4HANA Cloud, public edition, system**.
+> If you're working on an SAP S/4HANA, on-prem or private cloud edition, you must create an _**ABAP Project**_ in ADT. Otherwise, create an _**ABAP Cloud Project**_ if you're working on an **SAP BTP ABAP Environment system** or an **SAP S/4HANA Cloud, public edition, system**.
 
 ### Create an _ABAP Cloud Project_ in ADT
 [^Top of page](#)
 
-> ⚠ PS: Skip this step if you're working on an **SAP S/4HANA system, on-prem or private cloud edition**, incl. CAL instances. 
+> Create an _**ABAP Cloud Project**_ in your ADT installation to connect it to the **SAP BTP ABAP Environment** or **SAP S/4HANA Cloud (public edition)** system.
 >
-> Create an **ABAP Cloud Project** in your ADT installation to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
+> PS: Skip this step if you're working on _SAP S/4HANA system, on-prem or private cloud edition_, including CAL instances. 
 
 <details>
   <summary>Click to expand!</summary>
@@ -141,9 +140,9 @@ Once you've found an available group ID, choose **Cancel**.
 ### Create an _ABAP Project_ in ADT
 [^Top of page](#)
 
-> ⚠ PS: Skip this step if you're working on an **SAP BTP ABAP Environment** or **SAP S/4HANA Cloud (public edition)** system.
+> Create an _**ABAP Project**_ in your ADT installation to connect it to the **SAP S/4HANA system, on-prem or private cloud edition** system, includig to CAL Instances.
 >
-> Create an **ABAP Project** in your ADT installtion to create a connection to the SAP BTP ABAP Environment system, aka Steampunk.
+> PS: Skip this step if you're working on _SAP BTP ABAP Environment_ or _SAP S/4HANA Cloud, public edition_.
 
 <details>
   <summary>Click to expand!</summary>
