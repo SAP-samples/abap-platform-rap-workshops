@@ -6,7 +6,8 @@ define behavior for ZRAP100_R_TRAVELTP_### alias Travel
 persistent table zrap100_atrav###
 draft table ZRAP100_DTRAV###
 etag master LastChangedAt
-lock master total etag LocalLastChangedAt
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
 authorization master( global )
 early numbering
 
@@ -14,9 +15,9 @@ early numbering
   field ( readonly  )
    CreatedAt,
    CreatedBy,
+   LocalLastChangedBy,
    LocalLastChangedAt,
-   LastChangedAt,
-   LastChangedBy;
+   LastChangedAt;
 
    field ( readonly )
    TravelID;
@@ -63,11 +64,11 @@ early numbering
     OverallStatus = OVERALL_STATUS;
     Attachment = ATTACHMENT;
     MimeType = MIME_TYPE;
-    FileName = FILE_NAME;    
+    FileName = FILE_NAME;
     CreatedBy = CREATED_BY;
     CreatedAt = CREATED_AT;
-    LastChangedBy = LAST_CHANGED_BY;
-    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
     LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
   }
 }
