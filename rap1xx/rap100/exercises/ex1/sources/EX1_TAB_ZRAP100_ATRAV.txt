@@ -4,6 +4,7 @@
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
 define table zrap100_atrav### {
+
   key client            : abap.clnt not null;
   key travel_id         : /dmo/travel_id not null;
   agency_id             : /dmo/agency_id;
@@ -19,10 +20,11 @@ define table zrap100_atrav### {
   overall_status        : /dmo/overall_status;
   attachment            : /dmo/attachment;
   mime_type             : /dmo/mime_type;
-  file_name             : /dmo/filename;  
+  filename              : /dmo/filename;
   created_by            : abp_creation_user;
   created_at            : abp_creation_tstmpl;
-  last_changed_by       : abp_locinst_lastchange_user;
-  last_changed_at       : abp_locinst_lastchange_tstmpl;
-  local_last_changed_at : abp_lastchange_tstmpl;
+  local_last_changed_by : abp_locinst_lastchange_user;
+  local_last_changed_at : abp_locinst_lastchange_tstmpl;
+  last_changed_at       : abp_lastchange_tstmpl;
+
 }
