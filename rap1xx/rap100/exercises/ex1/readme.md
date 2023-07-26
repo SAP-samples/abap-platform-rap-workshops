@@ -441,4 +441,4 @@ you can continue with the next exercise - **[Exercise 2: Enhance the BO Data Mod
 Find the source code for the database table definition and the data generator class in the [sources](sources) folder. Don't forget to replace all occurences of the placeholder `###` with your group ID.
 
 - ![document](images/doc.png) [Table ZRAP100_ATRAV###](sources/EX1_TAB_ZRAP100_ATRAV.txt)
-- ![document](images/doc.png) [Class ZRAP100_GEN_DATA_###](sources/EX1_CLASS_ZRAP100_GEN_DATA.txt)
+- ![document](images/doc.png) [Class ZCL_RAP100_GEN_DATA_###](sources/EX1_CLASS_ZCL_RAP100_GEN_DATA.txt)
