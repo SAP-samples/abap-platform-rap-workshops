@@ -85,7 +85,9 @@ In this exercise, you will implement the different actions defined in [Exercise 
 ## Exercise 7.1: Implement the Instance Actions `acceptTravel` and `rejectTravel`
 [^Top of page](#)
 
-> You will now implement the logic of the instance actions **`acceptTravel`** and **`rejectTravel`** in the local handler class `Lhc_travel` of the behavior pool of the _travel_ BO entity. These actions are used to set the overall status of a given _travel_ instance respectively to _accepted_ or _rejected_ in one click. Both actions have been defined in [Exercise 3.4](../ex03/README.md).
+> You will now implement the logic of the instance actions **`acceptTravel`** and **`rejectTravel`** in the local handler class `Lhc_travel` of the behavior pool of the _travel_ BO entity. These actions are used to set the overall status of a given _travel_ instance respectively to _accepted_ or _rejected_ in one click. Both actions have been defined in [Exercise 3.4](../ex03/README.md):
+>   > `  action acceptTravel result [1] $self; `  
+>   > `  action rejectTravel result [1] $self; `  
 > 
 > The definition, implementation and exposuse of instance actions is covered and explained in [RAP100](../../../rap100#exercises). Therefore, simply copy the business logic provided as code snippet below in your _travel_ behavior pool ![ABAP class](../images/adt_class.png)`ZRAP110_BP_TRAVELTP_###` to enhance the functionality of your _Travel_ app.
 > 
@@ -174,7 +176,8 @@ In this exercise, you will implement the different actions defined in [Exercise 
 [^Top of page](#)
 
 > You will now implement the logic of the internal instance action **`reCalcTotalPrice`** in the local handler class `lhc_travel` of the behavior pool of the _travel_ BO entity. This action is used to calculate the total price of a given _travel_ instance. The total price is the sum of the booking fee (`BookingFee`) of a _travel_ entity instance and the flight price (`FlightPrice`) of each associated _booking_ entity instances. The currency (`CurrencyCode`) is considered in this calculation. 
-> This action has been defined in [Exercise 3.4](../ex03/README.md).
+> This action has been defined in [Exercise 3.4](../ex03/README.md):
+>   > `  internal action recalcTotalPrice; `  
 > 
 > The implementation of **internal instance actions** is similar to the one of classic instance actions such as `acceptTravel` and `rejectTravel`. The only difference is that internal actions are private and can only be used within the given BO.
 > 
@@ -269,7 +272,8 @@ In this exercise, you will implement the different actions defined in [Exercise 
 ## Exercise 7.3: Implement the Static Factory Action with Parameter `createTravel`
 [^Top of page](#)
 
-> You will now implement the logic of the static factory action (with parameter) **`createTravel`** in the local handler class `lhc_travel` of the behavior pool of the _travel_ BO entity ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_TRAVELTP_###`**. The action has been defined in [Exercise 3.4](../ex03/README.md). 
+> You will now implement the logic of the static factory action (with parameter) **`createTravel`** in the local handler class `lhc_travel` of the behavior pool of the _travel_ BO entity ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_TRAVELTP_###`**. The action has been defined in [Exercise 3.4](../ex03/README.md):
+>   > `  static factory action createTravel parameter ZRAP110_A_Create_Travel_### [1]; `  
 > 
 > Then you will specify the action as **`default static factory action`** in the behavior definition![bdef](../images/adt_bdef.png) of the _travel_ entity . 
                
