@@ -5,4 +5,5 @@ Find hands-on exercises related to testability in the context of the ABAP RESTfu
 ## RAP500: Developing for Analytics with the SAP BTP ABAP Environment
 Find hands-on exercises on writing an Analytical Model based on the ABAP RESTful Programming Model in the folder [rap500](rap500).
 
-
+## RAP510: Developing for Analytics with the SAP BTP ABAP Environment (Booster)
+Find hands-on exercises on writing an Analytical Model based on the ABAP RESTful Programming Model in the folder [rap510](rap510).
