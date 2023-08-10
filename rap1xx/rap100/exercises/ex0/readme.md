@@ -99,7 +99,7 @@ You can check for **already used group IDs** by choosing **Open ABAP Development
 
 Try to add e.g. your initials, followed by a number to verify nobody else is already using this group ID. 
 
-In the screenshot below, we're checking to see if the suffix **`000`** is still available, so we search for **`zrap100_*000`**.
+In the screenshot below, we're checking to see if the suffix **`000`** is still available, so we enter **`zrap100_*000`** as search string.
 
   ![determine group id](images/groupid01.png) 
   <!-- <img src="images/groupid01.png" alt="determine group id" width="30%"> -->
