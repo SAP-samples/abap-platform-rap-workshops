@@ -97,7 +97,9 @@ The group ID can contain **a maximum of 3 characters (numbers and/or letters)** 
 
 You can check for **already used group IDs** by choosing **Open ABAP Development Object** ![open_object_icon](images/adt_open_object.png) or pressing **Ctrl+Shift+A**, and searching for e.g. **`zrap100_*###`**, where **`###`** is your chosen suffix. All artefacts fitting that pattern will be listed.  
 
-Try to add e.g. your initials, followed by a number to verify nobody else is already using this group ID.
+Try to add e.g. your initials, followed by a number to verify nobody else is already using this group ID. 
+
+In the screenshot below, we're checking to see if the suffix **`000`** is still available, so we search for **`zrap100_*000`**.
 
   ![determine group id](images/groupid01.png) 
   <!-- <img src="images/groupid01.png" alt="determine group id" width="30%"> -->
