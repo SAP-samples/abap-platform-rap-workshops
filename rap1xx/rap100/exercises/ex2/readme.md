@@ -54,7 +54,7 @@ The enablement of OData streams will give end-users the option to upload and dow
     
     Your source code should look like this:
     
-    ![association](images/new2.png)            
+    ![association](images/nsc.png)            
     
   2. Expose the defined associations **`_Agency`**, **`_Customer`**, **`_OverallStatus`** and **`_Currency`** in the selection list.   
   
@@ -70,7 +70,7 @@ The enablement of OData streams will give end-users the option to upload and dow
      _Currency
      ```
       
-     ![association](images/new3.png)
+     ![association](images/nsc2.png)
       
    3. Save ![save icon](images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](images/adt_activate.png) (**Ctrl+F3**) the changes.
 
