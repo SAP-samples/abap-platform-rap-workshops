@@ -72,7 +72,7 @@ annotate view ZRAP100_C_TRAVELTP_### with
   MimeType;
 
   @UI.hidden: true
-  Filename;
+  FileName;
 
   @UI.hidden: true
   LocalLastChangedAt;
