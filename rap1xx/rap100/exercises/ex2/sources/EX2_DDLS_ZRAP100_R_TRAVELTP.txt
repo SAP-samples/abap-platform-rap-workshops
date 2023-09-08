@@ -1,5 +1,5 @@
 @AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: '##GENERATED Travel App ###'
+@EndUserText.label: '##GENERATED ZRAP100_ATRAV###'
 define root view entity ZRAP100_R_TRAVELTP_###
   as select from zrap100_atrav### as Travel
   association [0..1] to /DMO/I_Agency            as _Agency        on $projection.AgencyID = _Agency.AgencyID
@@ -20,28 +20,27 @@ define root view entity ZRAP100_R_TRAVELTP_###
       description           as Description,
       overall_status        as OverallStatus,
       @Semantics.largeObject: { mimeType: 'MimeType',   //case-sensitive
-                                fileName: 'FileName',   //case-sensitive
-                                acceptableMimeTypes: ['image/png', 'image/jpeg'],
-                                contentDispositionPreference: #ATTACHMENT }
+                          fileName: 'FileName',   //case-sensitive
+                          acceptableMimeTypes: ['image/png', 'image/jpeg'],
+                          contentDispositionPreference: #ATTACHMENT }
       attachment            as Attachment,
       @Semantics.mimeType: true
       mime_type             as MimeType,
-      file_name             as FileName,      
+      file_name             as FileName,
       @Semantics.user.createdBy: true
       created_by            as CreatedBy,
       @Semantics.systemDateTime.createdAt: true
       created_at            as CreatedAt,
       @Semantics.user.localInstanceLastChangedBy: true
-      last_changed_by       as LastChangedBy,
+      local_last_changed_by as LocalLastChangedBy,
       @Semantics.systemDateTime.localInstanceLastChangedAt: true
-      last_changed_at       as LastChangedAt,
-      @Semantics.systemDateTime.lastChangedAt: true
       local_last_changed_at as LocalLastChangedAt,
+      @Semantics.systemDateTime.lastChangedAt: true
+      last_changed_at       as LastChangedAt,
 
       //public associations
       _Customer,
       _Agency,
       _OverallStatus,
       _Currency
-
 }
