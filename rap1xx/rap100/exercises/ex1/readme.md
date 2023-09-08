@@ -151,7 +151,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
  
       **Hint**: Open the document in a new tab. In the document editor, use the _Copy raw contents_ icon <img src="images/copyrawcontents.png" alt="table" width="30px"> in the toolbar to copy the full source code. 
       
-       ![document](images/doc.png) **Source code document**: ![class icon](images/adt_class.png)[Class ZRAP100_GEN_DATA_###](sources/EX1_CLASS_ZRAP100_GEN_DATA.txt)
+       ![document](images/doc.png) **Source code document**: ![class icon](images/adt_class.png)[Class ZRAP100_GEN_DATA_###](sources/EX1_CLASS_ZCL_RAP100_GEN_DATA.txt)
       
    5. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
