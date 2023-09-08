@@ -1,7 +1,6 @@
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
 @EndUserText.label: '##GENERATED Travel App (###)'
-
 @Search.searchable: true
 @ObjectModel.semanticKey: ['TravelID'] //case-sensitive
 define root view entity ZRAP100_C_TRAVELTP_###
