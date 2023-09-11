@@ -165,7 +165,7 @@ You will now implement the logic of the defined determination in the behavior po
 2. Create a new _Travel_ instance. The overal status should now be set automatically by the logic you just implemented.   
    The initial overall status of the created should now be set to **`open`** (**`O`**). 
 
-   <!-- ![Travel App Preview](images/pp3.png) -->
+   <!-- ![Travel App Preview](images/overallstatus.png) -->
    <!--<img src="images/overallstatus.png" alt="Travel App Preview" width="80%">!-->
    ![Travel App Preview](images/open.png)
 
