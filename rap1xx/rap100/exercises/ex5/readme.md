@@ -357,7 +357,7 @@ You can either refresh your application in the browser using **F5** if the brows
 
 1. Click **Create** to create a new entry.
 
-2. Select an `Sunshine Travel (70001)` as Agency ID, select a customer by starting to add a name `Theresia`, Nov 20, 2022 as starting date and Nov 15, 2022 as end date. The draft will be updated.
+2. Select `Sunshine Travel (70001)` as Agency ID, select a customer by starting to add a name `Theresia`, Nov 20, 2022 as starting date and Nov 15, 2022 as end date. The draft will be updated.
 
     <!-- ![Preview](images/preview3.png) --Y
     <img src="images/preview3.png" alt="Preview" width="90%">        
