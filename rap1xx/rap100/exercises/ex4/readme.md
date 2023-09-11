@@ -166,7 +166,7 @@ You will now implement the logic of the defined determination in the behavior po
    The initial overall status of the created should now be set to **`open`** (**`O`**). 
 
    <!-- ![Travel App Preview](images/pp3.png) -->
-   <!--<img src="images/pp3.png" alt="Travel App Preview" width="80%">!-->
+   <!--<img src="images/overallstatus.png" alt="Travel App Preview" width="80%">!-->
    ![Travel App Preview](images/open.png)
 
 </details>
