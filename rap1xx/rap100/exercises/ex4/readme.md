@@ -167,7 +167,7 @@ You will now implement the logic of the defined determination in the behavior po
 
    <!-- ![Travel App Preview](images/overallstatus.png) -->
    <!--<img src="images/overallstatus.png" alt="Travel App Preview" width="80%">!-->
-   ![Travel App Preview](images/open.png)
+   ![Travel App Preview](images/overallstatus.png)
 
 </details>
 
