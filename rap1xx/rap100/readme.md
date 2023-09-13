@@ -104,7 +104,9 @@ The illustration below shows the high-level end-to-end development stack when wo
 ## Exercises
 [^Top of page](#)
 
-Follow these steps to build an OData service for developing a transactional, draft-enabled Fiori elements app from scratch using RAP. You will also write an ABAP unit test for it and explore the Entity Manipulation Language (EML).
+Follow these steps to build an OData service on top of a draft-enabled RAP Business Object (BO) to develop a transactional, draft-enabled Fiori elements List Report app from scratch using RAP. You will also write an ABAP unit test for it and explore the Entity Manipulation Language (EML).
+
+#### Beginner Level
 
 | Exercises | -- |
 | ------------- |  -- |
@@ -114,14 +116,17 @@ Follow these steps to build an OData service for developing a transactional, dra
 | [Exercise 3: Enhance the BO Behavior – Early Numbering](exercises/ex3/readme.md) | -- |
 | [Exercise 4: Enhance the BO Behavior – Determinations](exercises/ex4/readme.md) | -- |
 | [Exercise 5: Enhance the BO Behavior – Validations](exercises/ex5/readme.md) | -- |
-| [Exercise 6: Enhance the BO Behavior – Actions](exercises/ex6/readme.md) | -- |
-| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control (**_optional_**)](exercises/ex7/readme.md) | -- |
-| [Exercise 8: Write an ABAP Unit Test for the RAP BO (**_optional_**)](exercises/ex8/readme.md) | -- |
-| [Exercise 9: External API-based Access to the RAP BO with EML (**_explore_**)](exercises/ex9/readme.md) | -- |
-   
-_BO: Business Object_  
-_EML: Entity Manipulation Language_    
 
+#### Intermediate Level
+The exercises below are based on the exercise 1 to 5 from the _Beginner Level_ section.
+
+| Exercises | -- |
+| ------------- |  -- |
+| [Exercise 6: Enhance the BO Behavior – Actions](exercises/ex6/readme.md) | -- |
+| [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control](exercises/ex7/readme.md) | -- |
+| [Exercise 8: Write an ABAP Unit Test for the RAP BO](exercises/ex8/readme.md) | -- |
+| [Exercise 9: External API-based Access to the RAP BO with EML](exercises/ex9/readme.md) | -- |
+   
 ## Recording
 [^Top of page](#)
 
