@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="com.sap.adt.cds.ddl.ui.template.context.type.view.creation" deleted="false" description="Define a View Entity for a Cube" enabled="true" name="Z_defineViewEntityForCube">
-@AccessControl.authorizationCheck: #CHECK&#13;
+@AccessControl.authorizationCheck: #CHECK&#13; 
 @EndUserText.label: '${ddl_source_description}'&#13;
 @Metadata.ignorePropagatedAnnotations: true&#13;
 &#13;
