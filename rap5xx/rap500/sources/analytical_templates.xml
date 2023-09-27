@@ -24,13 +24,12 @@ define view entity ${ddl_source_name_editable} as select from ${data_source_name
  ${data_source_elements}${cursor}&#13;
 }&#13;
 </template><template autoinsert="false" context="com.sap.adt.cds.ddl.ui.template.context.type.view.creation" deleted="false" description="Define View Entity for Query" enabled="true" name="Z_defineViewEntityForQuery">
-@AccessControl.authorizationCheck: #CHECK&#13;
+@AccessControl.authorizationCheck: #NOT_ALLOWED&#13;
 @EndUserText.label: '${ddl_source_description}'&#13;
-
 &#13;
-@Analytics.query: true&#13;
-&#13;
-define view entity ${ddl_source_name_editable} as select from ${data_source_name} {&#13;
+define transient view entity ${ddl_source_name_editable}&#13;
+provider contract analytical_query&#13;
+as projection on ${data_source_name} {&#13;
  ${data_source_elements}${cursor}&#13;
 }&#13;
 </template></templates>
