@@ -17,7 +17,7 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 - [How to obtain support](#how-to-obtain-support) 
 - [Further Information](#further-information)
 
-
+ 
 ## 📋 Requirements for attending this workshop 
 [^Top of page](#)
 
