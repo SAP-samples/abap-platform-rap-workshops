@@ -15,7 +15,7 @@ We will then use this class to build a test class to call the released API **I_P
  
 
 - [1.1 - How to find a released API using an ABAP repository tree](#exercise-11-how-to-find-a-released-api-using-an-abap-repository-tree)
-- [1.2 - Create a package with language version "ABAP for Cloud Development"](#exercise-12-create-package-with-language-version-abap-for-cloud-development) (Not for participants of SAP events)  
+- [1.2 - Create a package with language version "ABAP for Cloud Development" (Not needed for participants of SAP events)](#exercise-12-create-package-with-language-version-abap-for-cloud-development) 
 - [1.3 - Test ABAP Cloud restrictions](#exercise-13-create-a-class-to-test-abap-cloud-governance)
 - [1.4 - How to identify local API's for SAP S/4HANA Cloud via Github ](#exercise-14-identifying-local-apis-for-s4hana-cloud-via-github)
 - [1.5 - Check the documentation of i_purchaserequisitiontp](#exercise-15-check-the-documentation-for-i_purchaserequisitiontp)
