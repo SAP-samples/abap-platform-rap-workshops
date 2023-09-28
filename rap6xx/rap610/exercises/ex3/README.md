@@ -492,6 +492,22 @@ In addition there will be a check that make sure that not too many items can be 
   ![define_validations](images/400_define_validations.png)  
 
 
+  2. Add the validations to the draft determine action Prepare
+
+     <pre>
+        //  draft determine action Prepare;
+        draft determine action Prepare
+        {
+          validation checkOrderedItem;
+          validation checkOrderedQuantity;
+          validation checkDeliveryDate;
+         }
+     </pre>
+
+     For more details about the syntax you can check the online help.   
+
+     [Online Help: RAP - draft action](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/abenbdl_draft_action.htm)
+
   2. Validation checkOrderedItem
 
   <pre>
