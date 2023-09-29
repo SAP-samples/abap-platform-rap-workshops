@@ -600,11 +600,14 @@ Your final code should look like the following:
 
 @Analytics.query: true
 
-define view entity ZRAP500_C_BOOKINGQUERY_#### as select from ZRAP500_I_BookingCube_#### {
+define transient view entity ZRAP500_C_BookingQuery_####
+  provider contract analytical_query
+  as projection on ZRAP500_I_BookingCube_####
+{
       @AnalyticsDetails.query.axis: #ROWS
-    key TravelID,
+      TravelID,
       @AnalyticsDetails.query.axis: #ROWS
-  key BookingID,
+      BookingID,
       @AnalyticsDetails.query.axis: #ROWS
       BookingDate,
       @AnalyticsDetails.query.axis: #ROWS
