@@ -558,7 +558,7 @@ Again you can use a template that you have imported at the beginning of this wor
 
 3. Choose a transport request and then press **Next**
 
-4. In the following dialogue choose **Define a View Entity for Query** and click **Finish**.
+4. In the following dialogue choose **Define a View Entity for Query** and click **Finish**. 
 
     ![template query](images/1130.png)
 
