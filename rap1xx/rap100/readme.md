@@ -147,7 +147,7 @@ You can find further information on the ABAP RESTful Application Programming Mod
  - [Modernization with RAP](https://blogs.sap.com/2021/10/18/modernization-with-rap/)
  - Most frequently asked questions: [RAP FAQ](https://blogs.sap.com/2020/10/16/abap-restful-application-programming-model-faq/) 
  - Free openSAP course [Building Apps with the ABAP RESTful Application Programming Model](https://community.sap.com/topics/btp-abap-environment/rap-opensap) 
- - [RAP100 Tutorials Mission on SAP Developers Center](https://developers.sap.com/group.abap-env-restful-managed.html)
+ - [RAP100 Tutorials Mission on SAP Developers Center](https://developers.sap.com/mission.sap-fiori-abap-rap100.html)
  - SAP Fiori: [Develop and Run a Fiori Application with SAP Business Application Studio (optional)](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) 
 
 ## License
