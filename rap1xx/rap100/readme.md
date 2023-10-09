@@ -126,6 +126,14 @@ The exercises below are based on the exercise 1 to 5 from the _Beginner Level_ s
 | [Exercise 7: Enhance the BO Behavior – Dynamic Feature Control](exercises/ex7/readme.md) | -- |
 | [Exercise 8: Write an ABAP Unit Test for the RAP BO](exercises/ex8/readme.md) | -- |
 | [Exercise 9: External API-based Access to the RAP BO with EML](exercises/ex9/readme.md) | -- |
+
+#### Additional Exercise: 
+The following exercise is based on the Exercise 1-9 from the _Beginner_ and _Intermediate Level_ sections.   
+However, you can perform this exercise already after _Exercise 1_ if you want to test the resut of the follow-up exercises directly in the actual proper SAP Fiori elements-based _Travel_ app instead of using the ADT preview.
+
+| Exercises | -- |
+| ------------- |  -- |
+| [Exercise 10: Develop, Deploy, and Run a Fiori elements App with SAP Business Application Studio](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) | -- |
    
 ## Recording
 [^Top of page](#)
