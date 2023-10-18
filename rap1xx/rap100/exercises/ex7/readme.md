@@ -159,7 +159,7 @@ In the present exercise, you will implement the dynamic instance feature control
       
       Your source code should look like this:
       
-      ![Travel Behavior Pool](images/l3.png)
+      ![Travel Behavior Pool](images/instance_feature.png)
       
   2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
  
