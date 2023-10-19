@@ -104,7 +104,9 @@ METHOD if_oo_adt_classrun~main.
     "EML deep create statement
 
     "purchase reqn
-    MODIFY ENTITIES OF i_purchaserequisitiontp ENTITY purchaserequisition
+    MODIFY ENTITIES OF i_purchaserequisitiontp 
+      PRIVILEGED
+      ENTITY purchaserequisition
       CREATE FIELDS ( purchaserequisitiontype PurReqnDescription  )
       WITH purchase_requisitions
       "purchase reqn item
