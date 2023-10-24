@@ -3,19 +3,19 @@
 # Exercise 2: Enhance the Data Model of the Base and Projected Business Object (BO) 
 
 ## Introduction
-In the previous exercise, you've had a look at your exercise package **`ZRAP110_###`**, where `###` is your group ID (see [Exercise 1](../ex01/README.md)).  
+In the previous exercise, you've had a look at your exercise package **`ZRAP110_###`**, where **`###`** is your assigned suffix (see [Exercise 1](../ex01/README.md)). 
 
 In this exercise, you will enhance the CDS data model of the base BO and the BO projection. These enhancements include enabling OData Stream in the base BO data model and adding new elements by associations, virtual elements, and adjusting the value help definitions in the BO data model projection.
 
-#### Exercises:
+
+### Exercises:
 - [2.1 - Enhance the Data Model of the Base _Travel_ BO Entity](#exercise-21-enhance-the-data-model-of-the-base-travel-bo)
 - [2.2 - Enhance the Data Model of the Projected _Travel_ BO Entity](#exercise-22-enhance-the-data-model-of-the-projected-travel-bo-entity)
 - [2.3 - Enhance the Data Model of the Projected _Booking_ BO Entity](#exercise-23-enhance-the-data-model-of-the-projected-booking-bo-entity)
 - [2.4 - Preview and Test the Enhanced Travel App](#exercise-24-preview-and-test-the-enhanced-travel-app)
 - [Summary](#summary)
-- [Appendix](#appendix) 
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your assigned suffix in the exercise steps below. 
 
 > ℹ **Further reading**: [CDS Annotations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/cds-annotations) | [Working with Large Objects](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/working-with-large-objects) | [Using Virtual Elements in CDS Projection Views](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/using-virtual-elements-in-cds-projection-views) 
 
@@ -110,7 +110,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
    
     Replace the whole data definition of the _travel_ BO projection view ![datadefinition](../images/adt_ddls.png)**`ZRAP110_C_TravelTP_###`** with the source code from the document provided below.
   
-    Replace all occurences of the placeholder **`###`** with your group ID using **Ctrl+F**.
+    Replace all occurences of the placeholder **`###`** with your assigned suffix using **Ctrl+F**.
     
     > **Hint**: The changed lines are marked with a comment in the provided source code.
   
@@ -120,7 +120,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
  
     The keyword **`virtual`** must be specified in front of the element and the name of the calculation class must be specified in the annotation **`@ObjectModel.virtualElementCalculatedBy`**. The ABAP class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_TRAV_ELEM_###`** will be used to calculate this virtual element is specified.   
    
-    Uncomment in the _Travel_ BO projection view ![datadefinition](../images/adt_ddls.png)**`ZRAP110_C_TravelTP_###`** the code snippet below placed after the element **`OverallStatusText`** in the SELECT list as shown on the screenshot and replace the placeholder **`###`** with your group ID.
+    Uncomment in the _Travel_ BO projection view ![datadefinition](../images/adt_ddls.png)**`ZRAP110_C_TravelTP_###`** the code snippet below placed after the element **`OverallStatusText`** in the SELECT list as shown on the screenshot and replace the placeholder **`###`** with your assigned suffix.
   
     ```ABAP
               @ObjectModel.virtualElementCalculatedBy: 'ABAP:ZRAP110_CALC_TRAV_ELEM_###'
@@ -138,7 +138,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
 
 ### Exercise 2.2.2: Calculate the Virtual Elements of the _Travel_ BO Entity
 
-> Implement the logic of the virtual element **`OverallStatusIndicator`** in the ABAP Class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_TRAV_ELEM_###`**, where `###`is your group ID.
+> Implement the logic of the virtual element **`OverallStatusIndicator`** in the ABAP Class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_TRAV_ELEM_###`**, where `###`is your assigned suffix.
 
  <details>
   <summary>🟣 Click to expand!</summary>
@@ -169,7 +169,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
       
  2. Define the class method interface **`calculate_trav_status_ind`** in the public section of the class definition where the proper calculation of the virtual element **`OverallStatusIndicator`** will take place. The method is declared as class method to have the possibility to access it externaly, for example, from a function.
   
-    For that, insert the code snippet provided below after the statement _`interfaces IF_SADL_EXIT_CALC_ELEMENT_READ.`_ in the class definition and replace all occurences of the placeholder **`###`** with your group ID.   
+    For that, insert the code snippet provided below after the statement _`interfaces IF_SADL_EXIT_CALC_ELEMENT_READ.`_ in the class definition and replace all occurences of the placeholder **`###`** with your assigned suffix.   
   
     ```ABAP
     CLASS-METHODS:
@@ -256,13 +256,13 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
   
  2. Similarly to Exercise 2.2.1 basic adjustments will be carried out by simply replacing the complete data definition of your _Booking_ BO projection view with the source code provided in the source code document linked below. 
    
-    Replace all occurences of the placeholder **`###`** with your group ID using **Ctrl+F**.
+    Replace all occurences of the placeholder **`###`** with your assigned suffix using **Ctrl+F**.
  
     ▶📄 **Source code document**: ![ddls icon](../images/adt_ddls.png)[CDS projection view ZRAP110_C_BookingTP_###](sources/EX02_DDLS_ZRAP110_C_BOOKINGTP.txt)  
   
  3. Now, define the four (4) new virtual elements **`BookingStatusIndicator`**, **`InitialDaysToFlight`**, **`RemainingDaysToFlight`**, and **`RemainingDaysToFlight`**. Their values will be determined in the ABAP class **`ZRAP110_CALC_BOOK_ELEM_###`**.
       
-    For that, uncomment the code snippet below placed after the element **`BookingStatusText`** in the SELECT list as shown on the screenshot and replace the placeholders **`###`** with your group ID.
+    For that, uncomment the code snippet below placed after the element **`BookingStatusText`** in the SELECT list as shown on the screenshot and replace the placeholders **`###`** with your assigned suffix.
        
     <img src="images/ex2x3.png" alt="ABAP Class" width="70%">
 
@@ -296,7 +296,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
 ### Exercise 2.3.2: Calculate the Virtual Elements of the _Booking_ BO Entity 
 [^Top of page](#)
 
-> Implement the logic of the different virtual elements of the _booking_ BO entity in the ABAP Class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_BOOK_ELEM_###`**, where `###`is your group ID.
+> Implement the logic of the different virtual elements of the _booking_ BO entity in the ABAP Class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_BOOK_ELEM_###`**, where `###`is your assigned suffix.
 
  <details>
   <summary>🟣 Click to expand!</summary>
@@ -309,7 +309,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
         
  2. Define the class method interface **`calculate_days_to_flight`** in the public section of the class definition. 
 
-    For that, insert the code snippet provided below after the statement _`interfaces IF_SADL_EXIT_CALC_ELEMENT_READ.`_ in the class definition and replace all occurences of the placeholder **`###`** with your group ID.
+    For that, insert the code snippet provided below after the statement _`interfaces IF_SADL_EXIT_CALC_ELEMENT_READ.`_ in the class definition and replace all occurences of the placeholder **`###`** with your assigned suffix.
 
     ```ABAP
       CLASS-METHODS:
@@ -452,19 +452,11 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
 [^Top of page](#)
 
 Now that you've... 
-- enabled the OData stream in the base BO to upload files
+- enabled the OData stream handling in the base BO to upload files
 - added elements to the selection list and element/view annotations in the consumption view,
-- add and implemented virtual elements on the consumption layer  
+- added and implemented virtual elements on the consumption layer  
 - checked the preview,
 
 you can continue with the next exercise – **[Exercise 3: Enhance the BO Behavior Definition and Projection](../ex03/README.md)**
 
 ---
-
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->  
