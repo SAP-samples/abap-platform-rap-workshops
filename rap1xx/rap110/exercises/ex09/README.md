@@ -4,18 +4,19 @@
 
 ## Introduction 
 
-In the previous exercise, you've xxx (see [Exercise 8](../ex08/README.md)).
+In the previous exercise, you've implemented determinations in the base BO Behavior (see [Exercise 8](../ex08/README.md)).
 
 In the present exercise, you will define side effects for the _travel_ BO root entity to trigger a reload of the Fiori elements based _Travel_ app. 
+
+### Exercises
  
 - [9.1 - Define Side Effects in the base _Travel_ BO Behavior](#exercise-91-define-side-effects-in-the-base-travel-bo-behavior)
 - [9.2 - Expose Side Effects in the _Travel_ BO Behavior Projection](#exercise-92-expose-side-effects-in-the-travel-bo-projection)
 - [9.3 - Define Side Effects in the _Travel_BO Behavior Projection](#exercise-93-define-side-effects-in-the-travel-bo-behavior-projection)
 - [9.4 - Preview and Test the Enhanced Travel App](#exercise-94-preview-and-test-the-enhanced-travel-app)
 - [Summary](#summary)  
-- [Appendix](#appendix)  
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned assigned suffix in the exercise steps below. 
 
 ### About Side Effects  
 
@@ -192,17 +193,10 @@ In the present exercise, you will define side effects for the _travel_ BO root e
 
 Now that you've... 
 - defined side effects in the base BO,
-- expose them in the BO projection, and
-- test the enhanced _Travel_ app,
+- exposed them in the BO projection, and
+- tested the enhanced _Travel_ app,
 
 you can continue with the next exercise – **[Exercise 10: Implement the Base BO Behavior - Functions](../ex10/README.md)**
 
 ---
 
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
