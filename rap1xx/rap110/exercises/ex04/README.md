@@ -6,13 +6,14 @@
 In the previous exercise (see [Exercise 3](../ex03/README.md)), you've enhanced the BO Behavior Definition and Projection.  
 
 In the present exercise, you will define and implement the base BO behavior for late numbering. 
+
+### Exercises
  
 - [4.1 - Implement the Late Numbering](#exercise-41-implement-the-late-numbering)
 - [4.2 - Preview and Test the Enhanced Travel App](#exercise-42-preview-and-test-the-enhanced-travel-app)
 - [Summary](#summary)  
-- [Appendix](#appendix)  
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned assigned suffix in the exercise steps below. 
 
 ### About Numbering  
  
@@ -43,7 +44,7 @@ In the present exercise, you will define and implement the base BO behavior for 
 
  2. Insert the source code provided below in the method implementation as shown on the screenshot. 
  
-    Replace all occurences of the placeholder `###` with your group ID using **Ctrl+F**.
+    Replace all occurences of the placeholder `###` with your assigned suffix using **Ctrl+F**.
 
     ```ABAP
      DATA: travel_id_max TYPE /dmo/travel_id.
@@ -85,7 +86,7 @@ In the present exercise, you will define and implement the base BO behavior for 
          
     Insert the source code provided below after the `ENDIF` of the previoud code block.
          
-    Replace all occurences of the placeholder `###` with your group ID using **Ctrl+F**.
+    Replace all occurences of the placeholder `###` with your assigned suffix using **Ctrl+F**.
          
     ```ABAP
       "Child BO entity: Booking
@@ -158,16 +159,8 @@ In the present exercise, you will define and implement the base BO behavior for 
 
 Now that you've... 
 - implemented the late numbering for the _travel_ and _booking_ BO entities, 
-- preview and test the enhanced Fiori elements app,
+- previewed and test the enhanced Fiori elements app,
 
 you can continue with the next exercise – **[Exercise 5: Adjust the UI Semantics in the Metadata Extensions](../ex05/README.md)**
 
 ---
-
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
