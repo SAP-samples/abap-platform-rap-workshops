@@ -7,8 +7,9 @@ In the previous exercise, you've enhanced the data model of the base  _Travel_ B
 
 In this exercise, you will enhance the transactional behavior of your _Travel_ BO. You will define the Late Numbering for drawing the primary of the _travel_ and the _booking_ entities, the static and dynamic feature control for fields, standard and nonstandard operations, validations, instance and factory actions, determinations, and functions.
 
-#### Exercises:
-- [3.1 - How to handle this exercise](#exercise-31-how-to-handle-this-exercise)
+
+### Exercises:
+- [3.1 - How to handle this exercise](#exercise-31-how-to-handle-this-exercise-) 💡
 - [3.2 - Define the Late Numbering and the Static Field Control](#exercise-32-define-the-late-numbering-and-the-static-field-control)
 - [3.3 - Define the Validations](#exercise-33-define-the-validations)
 - [3.4 - Define the Actions](#exercise-34-define-the-actions)
@@ -18,9 +19,8 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
 - [3.8 - Adjust the Behavior Implementation Classes](#exercise-38-adjust-the-behavior-implementation-classes)
 - [3.9 - Enhance the BO Behavior Projection](#exercise-39-enhance-the-bo-behavior-projection) 
 - [Summary](#summary)
-- [Appendix](#appendix) 
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your assigned suffix in the exercise steps below. 
 
 
 ### About Numbering | Validations | Actions | Determinations | Functions | Dynamic Feature Control
@@ -28,15 +28,24 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
 <details> 
   <summary>ℹ Click to expand!</summary>
   
-#### About Numbering  
+#### Numbering  
 
+  <details> 
+  <summary>ℹ Click to expand!</summary>
+    
 > Numbering is about setting values for primary key fields of entity instances during runtime. Different types of numbering are supported in RAP which can be divided into two main categories: 
 > - **Early numbering**: In an early numbering scenario, the primary key value is set instantly after the modify request for the `CREATE` is executed. The key values can be passed externally by the consumer or can be set internally by the framework or an implementation of the `FOR NUMBERING` method.
 > - **Late numbering**: In a late numbering scenario, the key values are always assigned internally without consumer interaction after the point of no return in the interaction phase has passed, and the `SAVE` sequence is triggered. The latter will be implemented in the present exercise
 > 
 > **Further reading**: [Numbering](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/numbering)
 
-#### About Frontend validation & Backend validations   
+</details> 
+      
+#### Frontend validation & Backend validations   
+
+<details> 
+  <summary>ℹ Click to expand!</summary>
+  
 > Validations are used to ensure the data consistency.   
 > As the name suggests, **front-end validations** are performed on the UI. They are used to improve the user experience by providing faster feedback and avoiding unnecessary roundtrips. In the RAP context, front-end validations are defined using CDS annotation or UI logic.  
 > On the other hand, **back-end validations** are performed on the back-end. They are defined in the BO behavior definitions and implemented in the respective behavior pools.   
@@ -46,8 +55,13 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
 >   
 > **Further reading**: [Validations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/validations)    
 
-#### About actions   
->   > In the RAP context, an action is a non-standard operation that change the data of a BO instance. 
+</details> 
+  
+#### Actions   
+<details> 
+  <summary>ℹ Click to expand!</summary>
+  
+> In the RAP context, an action is a non-standard operation that change the data of a BO instance. 
 > 
 > Actions are specified in behavior definitions and implemented in ABAP behavior pools. 
 > By default, actions are related to instances of a BO entity. The addition **`static`** allows you to define a static actions that are not bound to any instance but relates to the complete entity. The addition **`internal`** define a private action that can only be called within the given BO.
@@ -61,27 +75,38 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
 >
 > **Further reading**: [Actions](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/actions)     
 
+</details>   
   
-#### About determinations   
+#### Determinations   
+
+<details> 
+  <summary>ℹ Click to expand!</summary>
+  
 > A determination is an optional part of the business object behavior that modifies instances of business objects based on trigger conditions. A determination is implicitly invoked by the RAP framework if the trigger condition of the determination is fulfilled. 
 > Trigger conditions can be modify operations and modified fields. A determination can be triggered `on modify` or `on save`.
 >
 > **Further reading**: [Determinations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/determinations)  
- 
+
+</details>  
   
-### About the Static and Dynamic Feature Control
+### Static and Dynamic Feature Control
+  
+<details> 
+  <summary>ℹ Click to expand!</summary>
+  
 > As an application developer you may want to determine based on certain attributes of your business object entity, which fields should be read-only or mandatory or which functionality like update or actions are allowed.  As this property is related to an instance of this business object it is called Dynamic Feature Control.
 > 
 > ℹ **Further reading**: [Adding Static and Dynamic Feature Control](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/adding-static-and-dynamic-feature-control)  
-    
+</details> 
+  
 </details> 
 
-## Exercise 3.1: How to handle this exercise
+## Exercise 3.1: How to handle this exercise 💡 
 [^Top of page](#)
 
 > 💡 There are two (2) ways to complete this exercise:
 > 
-> - **Option 1️⃣**: **This is the recommended option**. Carry out this step (3.1) to replace the whole content of your behavior definiton with the provided source code and **then proceed directly with step 3.8** of the present exercise. Of course you can quickly go over the steps 3.2-3.7 to understand the enhanced behavior. 
+> - **Option 1️⃣**: **This is the recommended option**. Carry out this **step (3.1)** to replace the whole content of your behavior definiton with the provided source code and **then proceed directly with step 3.8** of the present exercise. Of course you can quickly go over the steps 3.2-3.7 to understand the enhanced behavior. 
 > 
 > - **Option 2️⃣**: Skip this step (3.1) and carry out the steps 3.2-3.9 in sequence. 
 
@@ -94,7 +119,7 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
       
     For that, replace the whole source code of your behavior definition object with the source code from the document provided below.
   
-    Replace all occurences of the placeholder `###` with your group ID using **Ctrl+F**. 
+    Replace all occurences of the placeholder `###` with your assigned suffix using **Ctrl+F**. 
   
     ▶📄 **Source code document:** ![bdef](../images/adt_bdef.png)[CDS Behavior Definition ZRAP110_R_TRAVELTP_###](sources/EX03_BDEF_ZRAP110_R_TRAVELTP.txt)
   
@@ -256,9 +281,9 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
 [^Top of page](#)
 
 > Define following validations: to ensure the consitency of the entered data:
-> In the present exercise, you're going to define and implement three back-end validations, `validateCustomer` and `validateDates`, to respectively check if the customer ID that is entered the consumer is valid and if the begin date is in the future and if the value of the end date is after the begin date. These validations are only performed in the back-end (not on the UI) and are triggered independently of the caller, i.e. Fiori UIs or EML APIs.
+> In the present exercise, you're going to define and implement three back-end validations - **`validateCustomer`**, **`validateAgency`**, and **`validateDates`** - to respectively check if the customer ID and the agency ID that are entered by the consumer are valid, and if the begin date is in the future and the end date is after the begin date. These validations are only performed in the back-end (not on the UI). The validations are triggered independently of the consumer, i.e. Fiori UIs or EML APIs.
 
-> ⚠ **Note**: Validations are used to ensure the data consistency. They have been already handled in the RAP100 exercise document. Therefore, we will not go into details about them again. We will simply quickly define and implement some validations that will be use to display other capabilities.
+> ⚠ **Note**: Validations are used to ensure the data consistency. They have been already handled in the [RAP100 exercise document](../../../rap100/readme.md#exercises). Therefore, we will not go into details about them again. We will simply quickly define and implement some validations that will be use to display other capabilities.
 
 <details> 
   <summary>🔵 Click to expand!</summary>
@@ -349,7 +374,7 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
     
  1. Define different actions in the behavior definition of the _travel_ root entity ![bdef](../images/adt_bdef.png)**`ZRAP110_R_TRAVELTP_###`**. 
   
-    Insert the code snippet provided below and replace the placeholder `###` with your group ID.
+    Insert the code snippet provided below and replace the placeholder `###` with your assigned suffix.
   
     ```ABAP
       //action(s)
@@ -475,7 +500,7 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
       
     </details>
   
-  2. Define the instance function **`getDaysToFlight`** in the _booking_ child entity  ![bdef](../images/adt_bdef.png)**`ZRAP110_R_TravelTP_###`** as shown on the screenshot. Replace the placeholder `###` with your group ID.
+  2. Define the instance function **`getDaysToFlight`** in the _booking_ child entity  ![bdef](../images/adt_bdef.png)**`ZRAP110_R_TravelTP_###`** as shown on the screenshot. Replace the placeholder `###` with your assigned suffix.
   
      ```ABAP
      //function(s)
@@ -655,25 +680,19 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
 > ⚠ **Attention** ⚠   
 > Due to the specification of _late numbering_, you will not be able to create new _travel_ or _booking_ instances due to the fact that no key is set at this stage. But no problem, you will tackle it in the next exercise.
 
-Now that you've enhance the transactional behavior definition of both BO entities, _Travel_ and _Booking_ with 
-- Late Numbering
-- static field control, 
-- validations, 
-- actions, 
-- determinations, 
-- functions, 
-- dynamic feature control,
+Now that you've... 
+- enhanced the transactional behavior definition of both BO entities, _Travel_ and _Booking_ with 
+  - Late Numbering
+  - static field control, 
+  - validations, 
+  - actions, 
+  - determinations, 
+  - functions, 
+  - dynamic feature control,
 - recreated database tables and adjusted the implementation class definition of the implementation classes with ADT Quick Fixes, and
-- expose the new base BO behavior to the projection layer,
+- exposed the new base BO behavior to the projection layer,
 
 you can continue with the next exercise – **[Exercise 4: Implement the Base BO Behavior - Late Numbering](../ex04/README.md)**
 
 ---
 
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
