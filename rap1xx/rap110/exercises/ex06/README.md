@@ -11,15 +11,13 @@ In the present exercise, you're going to implement back-end validations, `valida
 > ℹ Similar validations were already handled in RAP100. Therefore, you will simply adopt the provided source code. We will use the validations for playing around with features such as **determine actions** and **side effects**.
 > 
 
-#### Exercises:
-- [6.1 - Implement the Validations of the _Travel_ BO Entity](#exercise-61-implement-the-validations-of-the-travel-bo-entity)
+### Exercises:
+- [6.1 - Implement the Validations of the _Travel_ BO Entity](#exercise-61-implement-the-validations-of-the-travel-bo-entity-) 💡
 - [6.2 - Implement the Validations of the _Booking_ BO Entity](#exercise-62-implement-the-validations-of-the-booking-bo-entity) 
 - [6.3 - Preview and Test the enhanced Travel App](#exercise-63-preview-and-test-the-enhanced-travel-app)
 - [Summary](#summary)  
-- [Appendix](#appendix)
 
-
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned assigned suffix in the exercise steps below. 
 
  
 ### About Validations
@@ -35,14 +33,14 @@ A validation is implicitly invoked by the business object’s framework if the t
 
 </details>
 
-## Exercise 6.1: Implement the Validations of the _Travel_ BO Entity
+## Exercise 6.1: Implement the Validations of the _Travel_ BO Entity 💡
 [^Top of page](#)
 
 > Enhance the behavior implementation class of the _travel_ entity with the business logic for the validation methods **`validateCustomer`**, **`validateAgency`**, and **`validateDates`**.
 
 > 💡 There are two (2) ways to complete exercise 6.1:
 > 
-> - **Option 1️⃣**: **This is the recommended option**. Replace the whole content of your behavior implementation class of the _travel_ entity ![class](../images/adt_class.png)**ZRAP110_BP_TRAVELTP_###** with the provided source code document linked below and replace the placeholder **`###`** with your group ID. Save ![save icon](../images/adt_save.png) and activate ![activate icon](../images/adt_activate.png) the changes, then **procedd directly with Exercise 6.2**.
+> - **Option 1️⃣**: **This is the recommended option**. Replace the whole content of your behavior implementation class of the _travel_ entity ![class](../images/adt_class.png)**ZRAP110_BP_TRAVELTP_###** with the provided source code document linked below and replace the placeholder **`###`** with your assigned suffix. Save ![save icon](../images/adt_save.png) and activate ![activate icon](../images/adt_activate.png) the changes, then **procedd directly with Exercise 6.2**.
 >    
 >   📄 **Source code document:** ![class](../images/adt_class.png)[Behavior Implementation Class ZRAP110_BP_TRAVELTP_###](sources/EX06_CLASS_ZRAP110_BP_TRAVELTP.txt)
 >
@@ -61,7 +59,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 
  1. In your implementation class of the _travel_ entity ![class](../images/adt_class.png) **`ZRAP110_BP_TRAVELTP_###`**, replace the current method implementation of **`validateCustomer`** with following code snippet. 
   
-    Replace all occurrences of the placeholder **`###`** with your group ID.
+    Replace all occurrences of the placeholder **`###`** with your assigned suffix.
     
     ```ABAP
      METHOD validateCustomer.
@@ -134,7 +132,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 
  1. In your implementation class of the _travel_ entity ![class](../images/adt_class.png) **`ZRAP110_BP_TRAVELTP_###`**, replace the current method implementation of **`validateAgency`** with following code snippet. 
   
-    Replace all occurrences of the placeholder **`###`** with your group ID.
+    Replace all occurrences of the placeholder **`###`** with your assigned suffix.
     
     ```ABAP
      METHOD validateAgency.  
@@ -195,7 +193,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 
  1. In your implementation class of the _travel_ entity ![class](../images/adt_class.png) **`ZRAP110_BP_TRAVELTP_###`**, replace the current method implementation of **`validateDates`** with following code snippet. 
   
-    Replace all occurrences of the placeholder **`###`** with your group ID.
+    Replace all occurrences of the placeholder **`###`** with your assigned suffix.
     
     ```ABAP
       METHOD validateDates.  
@@ -264,7 +262,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 
  1. In your implementation class of the _booking_ entity ![class](../images/adt_class.png) **`ZRAP110_BP_BOOKINGTP_###`**, insert the code snippet provided below into the method implementation of **`validateBookingStatus`** as shown on the scrrenshot. 
   
-    Replace all occurrences of the placeholder **`###`** with your group ID.
+    Replace all occurrences of the placeholder **`###`** with your assigned suffix.
     
     ```ABAP
      METHOD validateBookingStatus.  
@@ -306,8 +304,7 @@ A validation is implicitly invoked by the business object’s framework if the t
 
 > Now the SAP Fiori elements app can be tested. 
 
->  ⚠ **Please note** ⚠
-> Clicking on the button **Aceept Travel** and **Reject Travel** at this stage will lead to errors on the UI, because they are not yet implemented. 
+>  ⚠**Please note**⚠ that clicking on the **Accept Travel** and **Reject Travel** buttons at this stage will lead to errors on the UI, because they are not yet implemented. 
 
  <details>
   <summary>🔵 Click to expand!</summary>
@@ -332,16 +329,8 @@ A validation is implicitly invoked by the business object’s framework if the t
 
 Now that you've... 
 - Added the logic for various validations in the behavior definition, 
-- preview and test the enhanced Fiori elements app,
+- previewed and tested the enhanced Fiori elements app,
 
 you can continue with the next exercise – **[Exercise 7: Implement the Base BO Behavior - Actions](../ex07/README.md)**
 
 ---
-
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
