@@ -1,34 +1,22 @@
 [Home - RAP110](../../README.md)
 
-# Exercise 1: Inspect your Exercise Package - Generated RAP BO & UI Service
+# Exercise 1: Generate and Inspect your Exercise Package
 
 ## Introduction 
 
-In this present exercise, you will make yourself familiar with your exercise package **`ZRAP110_###`**, where **###** is your group ID.
+In this exercise, you will generated and make yourself familiar with your exercise package **`ZRAP110_###`**, where **`###`** is your assigned suffix.
 
-This package will contain a generated OData-V4-based UI service, which is provided for this workshop. The UI service is built on top of a managed Business Object (BO) with two entities, _travel_ and _booking_, with generic transactional behavior - i.e. CRUD: Create, Read, Update, and Delete.   
+This generated package will contain an OData-V4-based UI service and all the RAP artifacts required for this workshop. The UI service is based on a managed Business Object (BO) with two entities, _travel_ and _booking_, with generic transactional behavior - i.e. CRUD: Create, Read, Update, and Delete.   
 
-For your convenience, the class `ZDMO_GEN_RAP110_SINGLE` is provided to you to generate the package  **`ZRAP110_###`** alongside with the aforementioned RAP business object after execution. 
-
-You can find the steps in Exercise 1.1.   
+For your convenience, the class **`ZDMO_GEN_RAP110_SINGLE`** is provided to you to generate the package  **`ZRAP110_###`** alongside with the aforementioned RAP business object after execution. You can find the steps in Exercise 1.1.   
 
 ### Exercises
 
 - [1.1 - Generate your Package](#exercise-11-generate-your--package)
 - [1.2 - Access your exercise Package](#exercise-12-access-your-exercise--package)
-- [1.3 - Brief Explanation of the ABAP Artefacts](#exercise-12-brief-explanation-of-the-different-abap-artefacts)
-- [1.4 - Publish the UI Service and Test the _Travel_ App](#exercise-13-publish-the-ui-service-and-test-the-travel-app)
+- [1.3 - Brief Explanation of the generated ABAP Artefacts](#exercise-13-brief-explanation-of-the-generated-abap-artefacts)
+- [1.4 - Test the _Travel_ App](#exercise-14-test-the-travel-app)
 - [Summary](#summary)  
-
----
-
-> ⚠ **Regarding Warnings about missing CDS Access Controls**  
-> Please ignore the warnings about missing access control that will be displayed for the CDS views entities `ZRAP110_R_TravelTP_###`, `ZRAP110_C_TravelTP_###`, `ZRAP110_R_BookingTP_###`, and `ZRAP110_C_BookingTP_###`. These is due to the view annotation `@AccessControl.authorizationCheck: #CHECK` specified in these entities. 
-> Due to time constraints, we will not define CDS access control in this workshop.  
-> 
-> You can suppress these warnings by changing the annotation value to `#NOT_REQUIRED`. 
-
----
 
 ## Exercise 1.1: Generate your ![package](../images/adt_package.png) Package
  <details>
@@ -57,6 +45,7 @@ You can find the steps in Exercise 1.1.
 [^Top of page](#)
 
 > Add your package to **_Favorite Packages_**
+ 
  <details>
   <summary>🔵 Click to expand!</summary>
  
@@ -77,10 +66,16 @@ You can find the steps in Exercise 1.1.
  </details>  
 
 
-## Exercise 1.3: Brief Explanation of the different ABAP Artefacts
+## Exercise 1.3: Brief Explanation of the generated ABAP Artefacts
 [^Top of page](#)
 
-> Get to know **_ABAP Artefacts_**
+> Get to know the generated **ABAP development objects**.
+
+>> **Regarding ⚠ warnings about missing CDS access controls**  
+>> Please ignore the warnings about missing access control that will be displayed for the CDS views entities `ZRAP110_R_TravelTP_###`, `ZRAP110_C_TravelTP_###`, `ZRAP110_R_BookingTP_###`, and `ZRAP110_C_BookingTP_###`. These is due to the view annotation `@AccessControl.authorizationCheck: #CHECK` specified in these entities. 
+>> Due to time constraints, we will not define CDS access control in this workshop.  
+>> 
+>> You can suppress these warnings by changing the annotation value to `#NOT_REQUIRED`. 
 
  <details>
   <summary>🔵 Click to expand!</summary>
@@ -179,8 +174,8 @@ You can find the steps in Exercise 1.1.
 
 Now that you've... 
 - inspected the generated _Travel_ BO with its two entities _travel_ and _booking_, 
-- preview the UI service, and 
-- Play around with the Fiori elements _Travel_ app,
+- previewed the UI service, and 
+- played around with the Fiori elements _Travel_ app,
 
 you can continue with the next exercise – **[Exercise 2: Enhance the Data Model of the Base and Projected BO](../ex02/README.md)**
 
