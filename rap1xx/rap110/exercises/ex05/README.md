@@ -9,16 +9,15 @@ In the previous exercise, you've implemented the late numbering for the late num
 
 In this exercise, you will adjust the layout of the list reports and  object pages of your _Travel_ App by enhancing the metadata extension ![metadataextension](../images/adt_ddlx.png) of the _travel_ and the _booking_ BO entities with UI semantics in form of UI-specific annotations (`@UI`).
 
-#### Exercises:
-- [5.1 - Adjust the UI Semantics in the _Travel_ Metadata Extension](#exercise-51-adjust-the-ui-semantics-in-the-travel-metadata-extension) 
-- [5.2 - Adjust the UI Semantics in the _Booking_ Metadata Extension](#exercise-52-adjust-the-ui-semantics-in-the-booking-metadata-extension)
+### Exercises:
+- [5.1 - Adjust the UI Semantics in the _Travel_ Metadata Extension](#exercise-51-adjust-the-ui-semantics-in-the-travel-metadata-extension-) 💡
+- [5.2 - Adjust the UI Semantics in the _Booking_ Metadata Extension](#exercise-52-adjust-the-ui-semantics-in-the-booking-metadata-extension-) 💡
 - [5.3 - Preview and Test the Enhanced _Travel_ App](#exercise-53-preview-and-test-the-enhanced-travel-app)
 - [Summary](#summary)
-- [Appendix](#appendix) 
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your assigned suffix in the exercise steps below. 
 
-### UI Semantics in RAP 
+### About UI Semantics in RAP 
 
 <details> 
   <summary>Click to expand!</summary>
@@ -29,7 +28,7 @@ In this exercise, you will adjust the layout of the list reports and  object pag
 > **Read more**: [Develop UI Specifics](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/develop-ui-specifics)
 
 #### UI Annotations
-> UI annotations represent semantic views on business data through the use of specific patterns that are independent of UI technologies.
+> UI annotations represent semantic views on business data through the use of specific patterns that are independent of UI technologies. They can be defined either in the ABAP system using UI-specific ABAP CDS annotations or in the SAP Fiori tools. 
 >
 > **Read more**: [All CDS Annotations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/cds-annotations) | [UI Annotations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/ui-annotations) 
 
@@ -41,14 +40,14 @@ In this exercise, you will adjust the layout of the list reports and  object pag
   
 </details>   
   
-## Exercise 5.1: Adjust the UI Semantics in the _Travel_ Metadata Extension 
+## Exercise 5.1: Adjust the UI Semantics in the _Travel_ Metadata Extension 💡
 [^Top of page](#)
 
 > Adjust the appearence of the generated Fiori elements based Travel App by adding the action **`acceptTravel`**, **`rejectTravel`**, and **`createTravel`**, and specifying a colored-based indication of the overall travel status `OverallStatus` for the _travel_ BO entity.
 
 > 💡 There are two (2) ways to complete exercise 5.1:
 > 
-> - **Option 1️⃣**: **This is the recommended option**. Replace the complete source code of the metadata extension ![ddlx icon](../images/adt_ddlx.png)**`ZRAP110_C_TRAVELTP_###`** with the source code provided in the source code document linked below and replace the placeholder **`###`** with your group ID. The changes are marked with an appropriate comment in the source code document. 
+> - **Option 1️⃣**: **This is the recommended option**. Replace the complete source code of the metadata extension ![ddlx icon](../images/adt_ddlx.png)**`ZRAP110_C_TRAVELTP_###`** with the source code provided in the source code document linked below and replace the placeholder **`###`** with your assigned suffix. The changes are marked with an appropriate comment in the source code document. 
 Then **proceed directly with Exercise 5.2**.
 > 
 >   📄 **Source code document**: ![ddlx icon](../images/adt_ddlx.png) [CDS Metadata extension ZRAP110_C_TravelTP_###](sources/EX05_DDLX_ZRAP110_C_TravelTP.txt) 
@@ -87,7 +86,7 @@ Then **proceed directly with Exercise 5.2**.
     For that, add the attribute **`criticality`** to the annotations `@UI.lineItem` and `@UI.identification` for the element **`OverallStatus`** as shown on the screenshot.
  
     ```ABAP
-    , criticality: 'OverallStatusIndicator',
+    , criticality: 'OverallStatusIndicator'
     ```   
     
     <img src="images/ex502.png" alt="Travel MDE" width="50%">
@@ -96,14 +95,14 @@ Then **proceed directly with Exercise 5.2**.
 
 </details>
 
-## Exercise 5.2: Adjust the UI Semantics in the _Booking_ Metadata Extension
+## Exercise 5.2: Adjust the UI Semantics in the _Booking_ Metadata Extension 💡
 [^Top of page](#)
 
 > Enhance the _booking_ metadata extension![metadataextension](../images/adt_ddlx.png)**`ZRAP110_C_BOOKINGTP_###`** to change the appearence of the generated Fiori elements based Travel App. You will define the criticality for the booking status (**`BookingStatus`**) and display the virtual element **`RemainingDaysToFlight`** as _progress bar_ on the UI.
 
 > 💡 There are two (2) ways to complete exercise 5.2:
 > 
-> - **Option 1️⃣**: **This is the recommended option**. Replace the complete source code of the metadata extension ![ddlx icon](../images/adt_ddlx.png)**`ZRAP110_C_BOOKINGTP_###`** with the source code provided in the source code document linked below and replace the placeholder **`###`** with your group ID. The changes are marked with an appropriate comment in the source code document. Then **proceed directly with Exercise 5.3**.
+> - **Option 1️⃣**: **This is the recommended option**. Replace the complete source code of the metadata extension ![ddlx icon](../images/adt_ddlx.png)**`ZRAP110_C_BOOKINGTP_###`** with the source code provided in the source code document linked below and replace the placeholder **`###`** with your assigned suffix. The changes are marked with an appropriate comment in the source code document. Then **proceed directly with Exercise 5.3**.
 > 
 >   📄 **Source code document**: ![ddlx icon](../images/adt_ddlx.png) [CDS Metadata extension ZRAP110_C_BookingTP_###](sources/EX05_DDLX_ZRAP110_C_BookingTP.txt)  
 >  
@@ -148,8 +147,7 @@ Then **proceed directly with Exercise 5.2**.
 
 > You can now preview and test the changes by creating a new _travel_ BO instance in the _Travel_ app.
 
->  ⚠ **Please note** ⚠
-> Clicking on the button **Aceept Travel** and **Reject Travel** at this stage will lead to errors on the UI, because they are not yet implemented. 
+> ⚠**Please note**⚠ that clicking on the **Accept Travel** and **Reject Travel** buttons at this stage will lead to errors on the UI, because they are not yet implemented. 
 
  <details>
   <summary>🔵 Click to expand!</summary>
@@ -166,16 +164,9 @@ Then **proceed directly with Exercise 5.2**.
 
 Now that you've ... 
 - adjusted the UI semantics in the metadata extensions by with criticality and datapoint,
-- preview the enhanced app,
+- previewed the enhanced app,
 
 you can continue with the next exercise – **[Exercise 6: Implement the Base BO Behavior - Validations](../ex06/README.md)**
 
 ---
 
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->  
