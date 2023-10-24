@@ -12,9 +12,8 @@ In this exercise, you will implement the function **`getDaysToFlight`** that you
 - [10.1 - Implement the Functions of the _Booking_ BO Entity](#exercise-101-implement-the-functions-of-the-booking-bo-entity)
 - [10.2 - Test Function using EML](#exercise-102-test-function-using-eml)
 - [Summary](#summary)  
-- [Appendix](#appendix)  
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned assigned suffix in the exercise steps below. 
 
 ### About Functions   
  <details>
@@ -53,7 +52,7 @@ In this exercise, you will implement the function **`getDaysToFlight`** that you
  2. Implement the function method **`getDaysToFlight`**.
  
     For that, replace the empty method implementation of **`getDaysToFlight`** with the source code provided below and 
-replace all occurences of the placeholder `###` with your group ID using **Ctrl+F**.
+replace all occurences of the placeholder `###` with your assigned suffix using **Ctrl+F**.
 
     ```ABAP
     **************************************************************************
@@ -156,16 +155,9 @@ replace all occurences of the placeholder `###` with your group ID using **Ctrl+
 
 Now that you've... 
 - implemented a function with a return structure as output parameter, and
-- determine the values of virtual elements via an EML call using a function,
+- determined the values of virtual elements via an EML call using a function,
 
 you can continue with the next exercise – **[Exercise 11: Enhance the BO Behavior with Business Events](../ex11/README.md)**
 
 ---
 
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
