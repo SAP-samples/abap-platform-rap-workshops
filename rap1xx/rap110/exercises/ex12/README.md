@@ -13,9 +13,9 @@ In this exercise, you will implement the dynamic instance feature control for so
 - [Summary](#summary)
 - [Appendix](#appendix)
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned assigned suffix in the exercise steps below. 
 
-### Information: Dynamic Feature Control
+### About Dynamic Feature Control
 > As an application developer you may want to determine based on certain attributes of your business object entity, which fields should be read-only or mandatory or which functionality like update or actions are allowed.  As this property is related to an instance of this business object it is called Dynamic Feature Control.
 > 
 > **Further reading**: [Adding Static and Dynamic Feature Control](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/adding-static-and-dynamic-feature-control)
@@ -44,7 +44,7 @@ In this exercise, you will implement the dynamic instance feature control for so
    3. Set the result set appropriately.   
    
    For that, insert the code snippet provided below into the method implementation of the instance feature control method `get_instance_features`.   
-   Replace the placeholder **`###`** with your group ID.  
+   Replace the placeholder **`###`** with your assigned suffix.  
   
    ```ABAP
    **************************************************************************
@@ -121,7 +121,7 @@ For example, select a _travel_ instance that has the overall status _**Accepted*
 Now that you've... 
 - defined the dynamic instance feature control for standard and non-standard operations in the behavior definition, 
 - implemented it in the behavior pool, and
-- preview and test the enhanced Fiori elements _Travel_ app,
+- previewed and tested the enhanced Fiori elements _Travel_ app,
 
 you are done with this hands-on. **Congratulations!** 🎉🎉🎉
 
@@ -129,20 +129,15 @@ In this hands-on session, you have hopefully have some more insights into new RA
 
 Thank you for attending this workshop!
 
-[Go to the RAP110 entry page](../../README.md)
+[Go to the RAP110 entry page](../../README.md#sap-teched-2023)
+
+---
 
 ## Appendix
 [^Top of page](#)
 
-ℹ **Optional Exercise**: [Develop and Run a Fiori Application with SAP Business Application Studio](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) 
+> ℹ **Optional Exercise**: [Develop and Run a Fiori Application with SAP Business Application Studio](https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html) 
+> 
+> You can follow the tutorial steps to create and deploy a productive version of your _Travel_ app using the SAP Fiori tools in SAP Business Application Studio.
 
-You can follow the tutorial steps to create and deploy a productive version of your _Travel_ app using the SAP Fiori tools in SAP Business Application Studio.
-
----
-
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
 
