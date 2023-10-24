@@ -6,24 +6,23 @@
 
 In the previous exercise, you've defined and implemented validations (see [Exercise 6](../ex06/README.md)).
 
-In this exercise, you will implement the different actions defined in [Exercise 3](../ex03/README.md):
+In this exercise, you will implement the different actions defined for the _Travel_ Bo entity in [Exercise 3](../ex03/README.md):
 - The instance actions **`acceptTravel`** and **`rejectTravel`** to accept or reject _travel_ instances with one click. 
 - The internal instance action **`reCalcTotalPrice`** to recalculate the total price of a _travel_ instance when needed. 
 - The static default factory instance action **`createTravel`** with parameter that will be used to replace the standard `create` operation.
 
 
-#### Exercises:
+### Exercises:
 - [7.0: How to handle this exercise](#exercise-70-how-to-handle-this-exercise)
 - [7.1: Implement the Instance Actions `acceptTravel` and `rejectTravel`](#exercise-71-implement-the-instance-actions-accepttravel-and-rejecttravel)
 - [7.2: Implement the Internal Instance Action `reCalcTotalPrice`](#exercise-72-implement-the-internal-instance-action-recalctotalprice)
 - [7.3: Implement the Static Factory Action with Parameter `createTravel`](#exercise-73-implement-the-static-factory-action-with-parameter-createtravel)
 - [7.4: Preview and Test the Enhanced _Travel_ App](#exercise-74-preview-and-test-the-enhanced-travel-app)
 - [Summary](#summary)
-- [Appendix](#appendix)
 
 ----
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned assigned suffix in the exercise steps below. 
 
 ### About Actions
 
@@ -62,7 +61,7 @@ In this exercise, you will implement the different actions defined in [Exercise 
  
  1. Go to the behavior implementation class of the _travel_ entity ![class](../images/adt_class.png)**ZRAP110_BP_TRAVELTP_###** and adjust it.
  
-    For that, replace the whole source code on the **Local Types** tab with the source code provided in the source code document linked below and replace the placeholder **`###`** with your group ID.
+    For that, replace the whole source code on the **Local Types** tab with the source code provided in the source code document linked below and replace the placeholder **`###`** with your assigned suffix.
     
     ▶📄 **Source code document:** ![class](../images/adt_class.png)[Behavior Implementation Class ZRAP110_BP_TRAVELTP_###](sources/EX07_CLASS_ZRAP110_BP_TRAVELTP.txt)
   
@@ -105,7 +104,7 @@ In this exercise, you will implement the different actions defined in [Exercise 
   
  1. Go to the method **`acceptTravel`** of the local handler class `lhc_travel` in the behavior implementation class ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_TRAVELTP_###`** and replace the empty method implementation with the code provide below. 
  
-    Replace all occurences of the placeholder `###` with your group ID.
+    Replace all occurences of the placeholder `###` with your assigned suffix.
  
     ```ABAP
     **************************************************************************
@@ -142,7 +141,7 @@ In this exercise, you will implement the different actions defined in [Exercise 
   
  1. Go to the method **`rejectTravel`** of the local handler class `lhc_travel` in the behavior implementation class ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_TRAVELTP_###`** and replace the empty method implementation with the code provide below. 
  
-    Replace all occurences of the placeholder `###` with your group ID.
+    Replace all occurences of the placeholder `###` with your assigned suffix.
  
     ```ABAP
     **************************************************************************
@@ -190,7 +189,7 @@ In this exercise, you will implement the different actions defined in [Exercise 
  
     > ⚠ Please note: Only few currency codes conversion factors are currently maintained in the present system D23.
  
-    Replace all occurences of the placeholder `###` with your group ID.
+    Replace all occurences of the placeholder `###` with your assigned suffix.
  
     ```ABAP
     **************************************************************************
@@ -321,7 +320,7 @@ In this exercise, you will implement the different actions defined in [Exercise 
      
  2. Now, go to the method **`createTravel`** of the local handler class `lhc_travel` in the behavior implementation class ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_TRAVELTP_###`** and replace the empty method implementation with the code provide below. 
  
-    Replace all occurences of the placeholder `###` with your group ID.
+    Replace all occurences of the placeholder `###` with your assigned suffix.
  
     ```ABAP
     **************************************************************************
@@ -411,7 +410,7 @@ You can test the enhanced SAP Fiori elements app can be tested.
 ## Summary
 [^Top of page](#)
 
-Now that you've implemented and test... 
+Now that you've implemented and tested... 
 - instance actions, 
 - internal instance actions, and
 - static default factory instance actions, 
@@ -420,10 +419,3 @@ you can continue with the next exercise – **[Exercise 8: Implement the Base BO
 
 ---
 
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
