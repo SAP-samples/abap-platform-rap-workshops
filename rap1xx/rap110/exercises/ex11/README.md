@@ -8,7 +8,7 @@ In the previous exercise, you've implemented a function for the _booking_ BO ent
 
 In this exercise, you will enhance the behavior defintion of the _Travel_ BO entity ![bdef](../images/adt_bdef.png)**`ZRAP110_R_TRAVELTP_###`** with business events. Your RAP BO will act as an event provider. The events will be used to send a message when the overall status of the _Travel_ BO node is changed to _accepted_ or _rejected_ to inform possible consumers about the change. 
 
-In this exercise your RAP BO acts as event provider, so an outbound communication arrangement is required to set up the connection between your system and the SAP Event Mesh.
+In this exercise your RAP BO acts as an event provider. For the local event consumption, you will implement a local event handler that acts as an event consumer, listening to and processing events raised by your _Travel_ RAP BO in the same system.
 
 <!--
 ---
@@ -21,17 +21,15 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 
 -->
 
-#### Exercises:
+### Exercises:
 - [11.1 - Define the Business Event Parameter](#exercise-111-define-the-business-event-parameter )
 - [11.2 - Define the Business Event in the _Travel_ BO](#exercise-112-define-the-business-event-in-the-travel-bo)
 - [11.3 - Raise the Event in the _Travel_ BOl](#exercise-113-raise-the-event-in-the-travel-bo)
-- [11.4 - Create the Event Binding](#exercise-114-create-the-event-binding)
-- [11.5 - Configure the Event Bindings in SAP Event Mesh](#exercise-115-configure-the-event-bindings-in-sap-event-mesh)
-- [11.6 - Test the Enhanced _Travel_ App](#exercise-116-test-the-enhanced-travel-app)
+- [11.4 - Create a Local Event Handler](#exercise-114-create-a-local-event-handler)
+- [11.5 - Test the Enhanced _Travel_ App](#exercise-115-test-the-enhanced-travel-app)
 - [Summary](#summary)
-- [Appendix](#appendix) 
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your assigned suffix in the exercise steps below. 
 
 
 ### About Business Events in RAP
@@ -46,10 +44,12 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 > Business events provide the opportunity of light-weight, decoupled process integration based on standardized and stable APIs and they are now a native part of the SAP - ABAP RESTful Application Programming Model. With the RAP Business Event Bindings Editor, you can create RAP Event Bindings which are needed to provide a mapping between the definition of RAP Events via behavior definition (BDEF) and the external representation of Business Events.
 > 
 > A RAP BO can act as event consumer or event provider.
+>  
+> RAP Business events can be consumed in other systems (_remote consumption_), or in the same system as they are raised (_local consumption_).  
   
 </details>
 
-> ℹ **Further reading**: [RAP Business Events](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/business-events) | [Creating RAP Business Events](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/creating-rap-business-events) | [Creating Event Bindings](https://help.sap.com/docs/btp/sap-abap-development-user-guide/creating-event-bindings) | [Enterprise Event Enablement for SAP BTP ABAP environment and SAP S/4HANA](https://blogs.sap.com/2022/08/19/an-introduction-to-enterprise-event-enablement-for-sap-btp-abap-environment) | [SAP Event Mesh](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/df532e8735eb4322b00bfc7e42f84e8d.html?version=Cloud) 
+> ℹ **Further reading**: [About RAP Business Events](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/business-events) | [Develop RAP Business Events](https://help.sap.com/docs/abap-cloud/abap-rap/develop-business-events) | [Business Event Consumption](https://help.sap.com/docs/abap-cloud/abap-rap/business-event-consumption) | 
 
 
 ## Exercise 11.1: Define the Business Event Parameter 
@@ -59,7 +59,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
 > 
 > Parameters in RAP are modelled using CDS abtract entity.
 > 
-> In this exercise, you will use the CDS abstract entity ![ddls](../images/adt_ddls.png)**`ZRAP110_A_TRAVEL_###`** available in your exercise package **`ZRAP110_###`**, where **`###`** is your group ID.
+> In this exercise, you will use the CDS abstract entity ![ddls](../images/adt_ddls.png)**`ZRAP110_A_TRAVEL_###`** available in your exercise package **`ZRAP110_###`**, where **`###`** is your assigned suffix.
 
 <details>
   <summary>🔵 Click to expand!</summary>
@@ -93,10 +93,8 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
       Beside attributes - such as **`travel_id`**, **`customer_id`**, and **`total_price`** - that can be retrieved from the _Travel_ BO entity, the variable **`email_address`** can contains the e-mail address of an Agency which needs to be informed. The variable **`travel_id`** contains the information about the _travel_ that triggered the event.        
     
   2. Close the abstract entity and go ahead with the next step.
-  
-  
+
 </details>
-  
 
 ## Exercise 11.2: Define the Business Event in the _Travel_ BO 
 [^Top of page](#)
@@ -111,7 +109,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
   
  1. Open the behavior definition of the _travel_ BO entitiy ![bdef](../images/adt_bdef.png)**`ZRAP110_R_TravelTP_###`** in your package.
   
- 2. Define the event **`travel_accepted`** using the keyword **`event`** in the behavior definition of the **_Travel_ BO node**, just after the _Side Effects_ as shown on the screenshot below. Replace the placeholder `###` with your group ID.
+ 2. Define the event **`travel_accepted`** using the keyword **`event`** in the behavior definition of the **_Travel_ BO node**, just after the _Side Effects_ as shown on the screenshot below. Replace the placeholder `###` with your assigned suffix.
   
     Insert the code snippet provided below for the purpose after the _side effects_ definition. 
 
@@ -140,7 +138,6 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
     A warning ⚠ will be displayed about the need for a redefinition of the local saver method `save_modified`. You will tackle this in the next step.
   
 </details>
-
 
 ## Exercise 11.3: Raise the Event in the _Travel_ BO
 [^Top of page](#)
@@ -178,7 +175,7 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
  
   4. Now go to the class implementation section and raise the event with the appropriate information. The appropriate events should be raised only when the overall status of a _travel_ instance is set to _accepted_ or _rejected_.
   
-     For that, replace the empty method implementation of **`save_modified`** with the source code provided below and replace all occurences of the placeholder **`###`** with your group ID using **Ctrl+F**.
+     For that, replace the empty method implementation of **`save_modified`** with the source code provided below and replace all occurences of the placeholder **`###`** with your assigned suffix using **Ctrl+F**.
   
      ```ABAP
       METHOD save_modified.
@@ -224,178 +221,156 @@ In this exercise your RAP BO acts as event provider, so an outbound communicatio
   
 </details>
 
-## Exercise 11.4: Create the Event Binding
+## Exercise 11.4: Create a Local Event Handler
 [^Top of page](#)
 
-> Now, you will create an event binding (`R3TR EVTB`) for your RAP business event in ADT: ![evt binding icon](../images/adt_evtb.png)**`ZRAP110_E_TRAVEL_ACCEPTED_###`**, where `###` is your group ID.
+> As mentioned in the introduction, RAP business events can be consumed locally in the same system where they are raised (local consumption) or remotely in a separate system using SAP Event Mesh (remote consumption) for the a cross-system communication. The events will be **consumed locally** in this exercise. 
+>        
+> For that, you will create an event handler class to locally consume the RAP business events raised by your application, ie. by your RAP BO: ![ABAP class](../images/adt_class.png)**`ZRAP110_TRAVEL_EVENT_HANDL_###`**, where `###` is your assigned suffix. In this exercise, the event handling will simply consist of persisting the received information to a database table.  
 > 
-> An event binding represents the design time definition of the event and maps the event defined in a RAP BO to a namespace, a business object and a business object operation like modify or update. It enables you to map the relevant information of an event in order to access the event itself outside of your ABAP system on the SAP BTP event mesh. (Further information, see [Creating Event Bindings](https://help.sap.com/docs/btp/sap-abap-development-user-guide/creating-event-bindings))
 
 <details>
   <summary>🔵 Click to expand!</summary>
 
-  1. In the **Project Explorer**, right-click the folder **Business Services** in your package and  select **New** > **Event Binding** from the context menu to launch the creation wizard.
+  1. First create a database table with a UUID-based primary key to store the received event information. 
+     
+     For that, right-click the folder **Database Tables** and select  **New Database Table** from the context menu to launch the creation wizard.
+      
+     <img src="images/ex11x1.png" alt="Travel BO node bdef" width="50%">     
   
-     <img src="images/ex1105.png" alt="Travel BO node bdef" width="50%">  
+     Maintain the required information and click **Next >**.  
+      - Name: **`ZRAP110_ETRAV###`**, where `###` is your assigned suffix
+      - Description: `Travel event data`
+      
+     <img src="images/ex11x2.png" alt="Travel BO node bdef" width="50%"> 
   
-  2. Enter the name and the description of the event binding:
-     - Name: **`ZRAP110_E_TRAVEL_ACCEPTED_###`**, where ### is your group ID
-     - Description: _Accepted Travel Event Binding_
+     Select a transport request, and click **Finish** to create the database table.
   
-     <img src="images/ex1106.png" alt="Travel BO node bdef" width="50%">  
+     <img src="images/ex11x3.png" alt="Travel BO node bdef" width="50%"> 
+
+  2. Replace the default code with the code snippet provided below and replace all occurences of the placeholder `###` with your assigned suffix. 
+  
+      <pre lang="ABAP">
+        @EndUserText.label : 'Travel data'
+        @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+        @AbapCatalog.tableCategory : #TRANSPARENT
+        @AbapCatalog.deliveryClass : #A
+        @AbapCatalog.dataMaintenance : #RESTRICTED
+        define table zrap110_etrav### {
+
+          key client     : abap.clnt not null;
+          key uuid       : sysuuid_x16 not null;
+          travel_id      : /dmo/travel_id not null;
+          agency_id      : /dmo/agency_id;
+          customer_id    : /dmo/customer_id;
+          event_name     : /dmo/description;
+          overall_status : /dmo/overall_status;
+          created_at     : abap.utclong;
+        }
+      </pre>  
+  
+      <img src="images/ex11x4.png" alt="Travel BO node bdef" width="50%"> 
+
+  3. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the changes.
+  
+  4. Now go ahead, create, and implement the event handler class for the local event consumption.
+     
+     For that, go to the **Project Explorer**, right-click the folder **Classes** in your package, and select **New ABAP Classes** from the context menu to launch the creation wizard.
+  
+     <img src="images/ex11x5.png" alt="Travel BO node bdef" width="50%"> 
    
-     Click **Finish**.    
-  
-     <img src="images/ex1107.png" alt="Travel BO node bdef" width="50%">  
-  
-  3. In the **General Information** section of the form-based **_Event Bindings Editor_**, enter the *namespace for which the event binding will be available, the name of the external BO, and the name of the external BO operation.
-     
-     - Namespace: **`zrap110.a###`** (where `###` is your group ID)
-     - Business Object: **`Travel`**
-     - Business Object Operation: **`Accepted`**
-     
-      <img src="images/ex1123.png" alt="Event Binding" width="100%">              
+     Maintain the required information and press **Finish**.
+       - Name: **`ZRAP110_TRAVEL_EVENT_HANDL_###`**, where `###` is your assigned suffix
+       - Description: _Travel event handler for local consumption_  
 
-     >The **Type** field shows the qualified name of the event type that will be used for the configuration in the SAP BTP Event Mesh. It is automatically derived from the value of the other fields in the following way: `your_namespace.external_business_object.business_object_operation`, i.e. `zrap110.a###.Travel.Accepted.v*` in this exercise.       
+     <img src="images/ex11x6.png" alt="Travel BO node bdef" width="50%"> 
+  
+     Select a transport request, and click **Finish** to create the ABAP class.
+  
+     <img src="images/ex11x7.png" alt="Travel BO node bdef" width="50%"> 
+  
+  5. Specify the class as event handler class pool for your RAP BO by adding the statement **`FOR EVENTS OF entity_name`** of the class definition section, directly after the keyword **`FINAL`** as shown on the screenshot. Do not forget to replace all occurence of **`###`** with your assigned suffix.
+  
+     <pre lang="ABAP">
+          FOR EVENTS OF ZRAP110_R_TRAVELTP_###
+     </pre>
+   
+     <img src="images/ex11x8.png" alt="Travel BO node bdef" width="50%">  
+  
+     You can now go ahead with the event handler implementation.
  
-  4. Now go to the **Events** section and reference the details of the event defined in your behavior definition: 
-     
-     For that, click **Add...**, enter following information, and then click **Add** :
- 
-     - Event Minor version : 1    
-     - Event Patch version : 0
-     - Root Entity Name    : **`ZRAP110_R_TRAVELTP_###`**
-     - Event Entity Name   : **`TRAVEL_ACCEPT`**
-      
-      You can update these details using the **Add...**, **Edit...**, and **Remove** buttons.
-      
-      <img src="images/ex1124.png" alt="Event Binding" width="50%">  
-      
-      Click **Add**.
+  6. Now go to the **Local Types** tab to define and implement the local handler class **`lhe_travel`** for the _travel_ BO entity. 
   
-  5. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate your changes by right-click the event binding and selecting **Activate**.   
+     For that, simply replace the skeleton code with the source code provided in the document below. You can access the ABAP Kexword documentation (**F1**) for more details on the classes `cl_abap_behavior_event_handler` and `cl_abap_tx` used in the implementation.
   
-     <img src="images/ex1109.png" alt="Event Binding" width="50%">  
-     
-  6. Check your result. Now you should be able to see the event binding type.  
+     Do not forget to replace all occurences of the placeholder **`###`** with your assigned suffix. 
+       
+     ▶📄 **Source code document:** ![class](../images/adt_class.png)[Local Types of ABAP Class ZRAP110_TRAVEL_EVENT_HANDLER_###](sources/EX11_CLASS_ZRAP110_TRAVEL_EVENT_HANDLER_LocalTypes.txt)
+  
+     **Brief explanation of the local RAP event handler class `lhe_travel`**
+       <details>
+        <summary>Click to expand!</summary>
+         
+        1. A local event handler class must inherit from the superclass **`cl_abap_behavior_event_handler`**.        
+         
+        2. Our current local event handler contains a RAP event handler method for each event we whant to handle: 
+            - i.e. **`on_travel_accept()`** and **`on_travel_reject()`** for the events `travel_accepted` and `travel_rejected` respectively, in this exercise.   
+            - In the method signature, the importing parameter, the entity, as well as the event to be consumed are specified.
+         
+           > **Note**: An event can only be handled by one method within an event handler class. However, method handling across multiple handler classes is possible.
+         
+        3. In this exercise, the method **`get_uuid()`** is used for convenience to centrally generate UUIDs for the new database records to be persisted.
+         
+        4. About the implementation of the RAP event handler methods: **`on_travel_accept()`** and **`on_travel_reject()`**
+           - Because we are doing an insert on a database, we must first close the active modify phase of the RAP LUW by calling the method `cl_abap_tx=>save()`. 
+           - Loop over the transfered event instances and do the needful 🙂        
+         
+       </details>    
+  
+  7. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the changes.
+       
+ </details>    
 
-     <img src="images/ex1125.png" alt="Event Binding" width="100%">  
 
-      <details>
-        <summary>Info: Events</summary>   
-        
-        - **Info**: see [Editing Event Bindings](https://help.sap.com/docs/btp/sap-abap-development-user-guide/editing-event-bindings) 
-        - **Event Version** will automatically be generated by the system.
-        - **Event Minor Version** defines the semantic minor version of the event. 
-        - **Event Patch Version** defines the semantic patch version of the event. 
-        - **Root Entity Name** is the name of the CDS root entity.
-        - **Entity Event Name** is the name of the event defined in the behavior definition of the respective CDS root entity.    
-
-        </details>  
-      </details>    
-
-## Exercise 11.5: Configure the Event Bindings in SAP Event Mesh
+  ## Exercise 11.5: Test the Enhanced _Travel_ App
 [^Top of page](#)
 
-> The next step is typically to configure the event bindings in the relevant Event Channel of the SAP Event Mesh instance using the _**Enterprise Event Enablement - Configure Channel Binding**_ app in the SAP Fiori Launchpad.
+> Now play aroud with your _Travel_ app and check out whether the raised events were process by the event handler class and the respective information persisted in the database table **`ZRAP110_ETRAV###`**.
 > 
-> PS: The app name is _**Bereitstellung von Unternehmens-/technischen Ereignissen - Kanalbindung**_ if you're logged in german (DE).
- 
-<!--
-> ⚠ **PLEASE NOTE**  
-> Due to time constraints, this step will be carried out for you by the SAP staff available during the event.  
-> Please follow the intruction below to request for your Event Binding to be published in SAP Event Mesh by the SAP Team.
--->
-<details>
-  <summary>🔵 Click to expand!</summary>
-
-  1. For that, launch the SAP Fiori Launchpad. For that, right-click your **_ABAP Cloud Project_** (or **Alt+Enter**) and select **Properties** in the context menu.
-  
-     <img src="images/ex1126.png" alt="Event Binding" width="50%">  
-     
-  2. Then click on **ABAP Development** in the left window pane and click the System URL to open the SAP Fiori Launchpad.
-  
-     <img src="images/ex1127.png" alt="Event Binding" width="100%">  
-
-  3. Start the app _**Enterprise Event Enablement - Configure Channel Binding**_ in the SAP Fiori launchpad.  
-  
-     For that, you can search for **Configure Channel Binding** and select the entry.
-
-     > Please search for _**`Kanalbindung`**_ if you’re logged in german (DE).
-      
-     <img src="images/meshx.png" alt="Event Binding" width="100%">   
-
-  5. Select the event channel **`ZRAP110_TRAVEL_EVENTS`**, and add a new **Outbound Topic** in the **Outboung Topic Bindings** tab.
-
-     > An outbound Topic corresponds to a event binding _**Type**_ which can be found in the **Event Binding** editor - 
-     > e.g. **`zrap110.a###.Travel.Accepted.v*`**, where `###` is your group ID/suffix, in the present exercise
-  
-     For that, select **Create**. 
-
-     <img src="images/meshx2.png" alt="Event Binding" width="100%">
-
-  8. Now search for your event with **`*axxx*`**.     
- 
-     <img src="images/meshx3.png" alt="Event Binding" width="100%">
-     
-</details>
-
-  ## Exercise 11.6: Test the Enhanced _Travel_ App
-[^Top of page](#)
-
-> Check out your raised events in the _**Enterprise Event Enablement - Event Monitor**_ app in the SAP Fiori Launchpad.
-> 
-> PS: The app name is _**Bereitstellung von Unternehmens-/technischen Ereignissen - Ereignismonitor**_ if you're logged in german (DE).
 
 <details>
   <summary>🔵 Click to expand!</summary>
  
- 1. First, go to your _Manage Travel_ app, create and set a Travel record to _accepted_.
+ 1. First, start the Data Preview (F8) of the new database table `ZRAP110_ETRAV_###`. No data should be shown as it is empty.
+  
+    <img src="images/ex11x9.png" alt="???" width="100%">     
+  
+ 2. Now, go to your _Travel_ app, and, for example, set a Travel record to _accepted_ and another one to _rejected_.
  
- 2. Now launch the SAP Fiori Launchpad and start the _**Enterprise Event Enablement - Event Monitor**_ app. 
-
-    For that, you can search for the **_Event Monitor_** app and click on the entry.
+    <img src="images/ex11x12.png" alt="???" width="100%">   
+  
+    <img src="images/ex11x13.png" alt="???" width="100%">   
     
-    > Please search for _**`Ereignismonitor`**_ if you’re logged in german (DE). 
+    <img src="images/ex11x10.png" alt="???" width="100%">   
+  
+ 3. Go back to the ABAP Development Tools and refresh the Data Preview of the database table `ZRAP110_ETRAV_###`.  
+  
+    Entires of the raised events should now appear on the screen.
 
-    <img src="images/ex112x2.png" alt="Event Binding" width="100%">  
-          
-  4. Select the event channel **`ZRAP110_TRAVEL_EVENTS`**, search for your **_Outbound Event Topic_**, and navigate to it to check if your raised event have been transferred to SAP Event Mesh Instance. Yoou can sort the topic entries.
+    <img src="images/ex11x11.png" alt="???" width="100%">     
   
-     > ℹ The **_Outbound Event Topic_** corresponds to the **_Event Binding Type_** generated in the _Event Bindings_ editor in ADT.
- 
-     <img src="images/ex112x3.png" alt="FL Event Monitor" width="100%">
+ 4. You can repeat the test: Play around in the _Travel_ app and check the new entries in the database table `ZRAP110_ETRAV_###`.
   
-     Your Outbound Event Topic: **`zrap110.a###.Travel.Accepted.v*`**  (where ### is your group ID)
-  
-     <img src="images/ex112x4.png" alt="FL Event Monitor" width="100%">
-  
-  5. Have a look at the event payloads. Therefore select the first entry of your ountbound events.
-  
-     <img src="images/ex112x5.png" alt="FL Event Monitor" width="100%">
-   
-     Now check your result.
-  
-     <img src="images/ex112x6.png" alt="FL Event Monitor" width="50%">
- 
 </details>
 
 ## Summary
 [^Top of page](#)
 
 Now that you've... 
-- Define and raise an event in your BO behavior definition,
-- Create an Event binding,
-- and check in the **_Event Monitor_** app in the SAP Fiori launchpad whether your events reached SAP Event Mesh on SAP BTP,
+- Defined and raised an event in your BO behavior definition,
+- Created and implemented an event handler class for the local event consumption, and
+- Test the enhanced _Travel_ App,
 
 you can continue with the next exercise – **[Exercise 12: Implement the Base BO Behavior - Dynamic Feature Control](../ex12/README.md)**
 
 ---
-
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
