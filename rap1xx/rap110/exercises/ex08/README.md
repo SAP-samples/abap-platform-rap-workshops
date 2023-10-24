@@ -9,14 +9,13 @@ In this exercise, you will implement the determinations defined for the _travel_
 - **`setInitialTravelValues`** and **`setInitialBookingValues`** to set the default values of _travel_ and _booking_ entities respectively.
 - **`calculateTotalPrice`** to trigger the recalculation of the total price of a _travel_ instance when needed.
 
-#### Exercises:
+### Exercises:
 - [8.1: Implement the Determinations of the _Travel_ BO entity](#exercise-81-implement-the-determinations-of-the-travel-bo-entity)
 - [8.2: Implement the Determinations of the _Booking_ BO entity](#exercise-82-implement-the-determinations-of-the-booking-bo-entity)
 - [8.3: Preview and Test the Enhanced _Travel_ App](#exercise-83-preview-and-test-the-enhanced-travel-app)
 - [Summary](#summary)
-- [Appendix](#appendix)
 
-> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned group ID in the exercise steps below. 
+> **Reminder**: Do not forget to replace the suffix placeholder **`###`** with your choosen or assigned assigned suffix in the exercise steps below. 
 
 ### About determinations
 
@@ -47,7 +46,7 @@ In this exercise, you will implement the determinations defined for the _travel_
   
  1. Go to the method **`setInitialTravelValues`** of the local handler class **`lhc_travel`** in the behavior implementation class ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_TRAVELTP_###`** and replace the empty method implementation with the code provide below. 
  
-    Replace all occurences of the placeholder `###` with your group ID.
+    Replace all occurences of the placeholder `###` with your assigned suffix.
  
     ```ABAP
     **************************************************************************
@@ -107,7 +106,7 @@ In this exercise, you will implement the determinations defined for the _travel_
   
  1. Go to the method **`calculateTotalPrice`** of the local handler class **`lhc_travel`** in the behavior implementation class ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_TRAVELTP_###`** and replace the empty method implementation with the code provide below. 
  
-    Replace all occurences of the placeholder `###` with your group ID.
+    Replace all occurences of the placeholder `###` with your assigned suffix.
  
     ```ABAP
     **************************************************************************
@@ -146,7 +145,7 @@ In this exercise, you will implement the determinations defined for the _travel_
   
  1. Go to the method **`setInitialBookingValues`** of the local handler class **`lhc_booking`** in the behavior implementation class ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_BOOKINGTP_###`** and replace the empty method implementation with the code provide below. 
  
-    Replace all occurences of the placeholder `###` with your group ID.
+    Replace all occurences of the placeholder `###` with your assigned suffix.
  
     ```ABAP
     **************************************************************************
@@ -215,7 +214,7 @@ In this exercise, you will implement the determinations defined for the _travel_
   
  1. Go to the method **`calculateTotalPrice`** of the local handler class **`lhc_booking`** in the behavior implementation class ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_BOOKINGTP_###`** and replace the empty method implementation with the code provide below. 
  
-    Replace all occurences of the placeholder `###` with your group ID.
+    Replace all occurences of the placeholder `###` with your assigned suffix.
  
     ```ABAP
     **************************************************************************
@@ -267,18 +266,11 @@ You can test the enhanced SAP Fiori elements app can be tested.
 [^Top of page](#introduction)
 
 Now that you've...   
-- Implement the various determinations,
-- call an internal action from a determination, and
-- preview your enhanced _travel_ App
+- Implemented the various determinations,
+- called an internal action from a determination, and
+- previewed your enhanced _travel_ App
                 
 you can continue with the next exercise – **[Exercise 9: Enhance the BO Behavior with Side Effects](../ex09/README.md)**
 
 ---
 
-## Appendix
-[^Top of page](#)
-<!--
-Find the full solution source code of all ![tabl](../images/adt_tabl.png)database tables, CDS artefacts ( ![ddls](../images/adt_ddls.png)views,  ![ddlx](../images/adt_ddlx.png)metadata extensions and  ![bdef](../images/adt_bdef.png)behavior), ![class](../images/adt_class.png) ABAP classes, and ![servicebinding](../images/adt_srvb.png) service definition used in this workshop in the [**sources**](../sources) folder. 
-  
-Don't forget to replace all occurences of the placeholder `###` in the provided source code with your group ID using the ADT _Replace All_ function (_Ctrl+F_).
--->
