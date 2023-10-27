@@ -33,7 +33,7 @@ For your convenience, the class **`ZDMO_GEN_RAP110_SINGLE_2`** is provided to yo
 
 5. Right-click **`ZDMO_GEN_RAP110_SINGLE_2`**, select **Run As** > **ABAP Application (Console) F9**.
 
-   <img src="images/generatepackage3.png" alt="package" width="100%">  
+   <img src="images/generatepackage3x.png" alt="package" width="100%">  
 
 7. Now your package is created. Check the ABAP console. **⚠Copy the suffix for later use.**
 
