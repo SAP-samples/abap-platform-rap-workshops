@@ -8,7 +8,7 @@ In this exercise, you will generated and make yourself familiar with your exerci
 
 This generated package will contain an OData-V4-based UI service and all the RAP artifacts required for this workshop. The UI service is based on a managed Business Object (BO) with two entities, _travel_ and _booking_, with generic transactional behavior - i.e. CRUD: Create, Read, Update, and Delete.   
 
-For your convenience, the class **`ZDMO_GEN_RAP110_SINGLE`** is provided to you to generate the package  **`ZRAP110_###`** alongside with the aforementioned RAP business object after execution. You can find the steps in Exercise 1.1.   
+For your convenience, the class **`ZDMO_GEN_RAP110_SINGLE_2`** is provided to you to generate the package  **`ZRAP110_###`** alongside with the aforementioned RAP business object after execution. You can find the steps in Exercise 1.1.   
 
 ### Exercises
 
