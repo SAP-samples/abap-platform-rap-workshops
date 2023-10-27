@@ -23,7 +23,7 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 
 
 
-## 📋 Requirements for attending this workshop 
+## 📋Requirements for attending this workshop 
 [^Top of page](#)
 
 > You need the latest version of the ABAP Development Tools in Eclipse (ADT) on your laptop or PC as well as the access to an ABAP Environment system to carry out the practical exercises of this workshop.
@@ -112,7 +112,7 @@ The illustration below shows the high-level end-to-end development stack when wo
 ▶ 🏦 Access to the entry page of the [AD260 Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
 
 
-## 🛠 Exercises
+## 🛠Exercises
 [^Top of page](#)
 
 Follow these steps to enhance an existing OData UI service developed with RAP for a transactional SAP Fiori elements-based Travel Processing app.
@@ -146,7 +146,7 @@ _EML: Entity Manipulation Language_
 
 No recording available. 
 
-## 🎧 How to obtain support
+## 🎧How to obtain support
 [^Top of page](#)
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../../../issues) tab.
