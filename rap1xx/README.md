@@ -14,8 +14,10 @@ It is based on a managed Business Object (BO) with two BO nodes or entities, _Tr
 
 Find hands-on exercises in the folder [RAP110](rap110/README.md).
 
+<!--
 ## DEV260 - Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)
 The application built in this exercise is a managed Implementation with managed early numbering (uuid-based key). 
 This exercise was first offered at SAP TechEd in 2020.
 
 Find hands-on exercises in the folder [DEV260](https://github.com/SAP-samples/teched2020-DEV260).
+-->
