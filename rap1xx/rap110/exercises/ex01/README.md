@@ -29,7 +29,7 @@ For your convenience, the class **`ZDMO_GEN_RAP110_SINGLE_2`** is provided to yo
 3. Search for **`ZDMO_GEN_RAP110_SINGLE_2`**, select it and click **OK**.
 
    <!-- <img src="images/generatepackage2.png" alt="package" width="50%">  -->
-   <img src="images/generatepackage2_2.png" alt="package" width="50%">  
+   <img src="images/generatepackage2x.png" alt="package" width="50%">  
 
 5. Right-click **`ZDMO_GEN_RAP110_SINGLE_2`**, select **Run As** > **ABAP Application (Console) F9**.
 
