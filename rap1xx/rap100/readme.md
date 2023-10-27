@@ -16,7 +16,7 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 - [Further Information](#further-information)
 
 
-## Requirements for attending this workshop 
+## 📋Requirements for attending this workshop 
 [^Top of page](#)
 
 > You need the latest version of ABAP Development Tools in Eclipse (ADT) on your laptop or PC as well as the access to an ABAP Environment system to carry out the practical exercises of this workshop.
@@ -49,7 +49,7 @@ The requirements to follow the exercises in this repository are:
   
 </details>
 
-## Overview
+## 🔎Overview
 
 > This workshop is all about RAP fundamentals; especially about how to use RAP core features when building greenfield implementations.
 
@@ -101,7 +101,7 @@ The illustration below shows the high-level end-to-end development stack when wo
 
 -->
     
-## Exercises
+## 🛠Exercises
 [^Top of page](#)
 
 Follow these steps to build an OData service on top of a draft-enabled RAP Business Object (BO) to develop a transactional, draft-enabled Fiori elements List Report app from scratch using RAP. You will also write an ABAP unit test for it and explore the Entity Manipulation Language (EML).
@@ -142,7 +142,7 @@ Watch the replay of the virtual workshop on RAP held SAP TechEd in 2022. It cont
 
 📹 <a href="http://www.youtube.com/watch?feature=player_embedded&v=BNoUYkizM30" target="_blank">Build and Extend Apps with the ABAP RESTful Application Programming Model</a> 
 
-## How to obtain support
+## 🎧How to obtain support
 [^Top of page](#)
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../../../issues) tab.
