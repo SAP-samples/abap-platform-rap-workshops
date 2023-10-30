@@ -15,9 +15,10 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 
 #### Table of Content
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
+- [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Overview](#overview)
-- [Exercises](#-exercises)
-- [Recording](#-recording)
+- [Exercises](#exercises)
+- [Recording](#recording)
 - [How to obtain support](#how-to-obtain-support) 
 - [Further Information](#further-information)
 
@@ -141,7 +142,7 @@ _BO: Business Object_
 _EML: Entity Manipulation Language_    
 💡 Exercises with _Boosters_ offer an accelerated way of doing them. 
 
-## 📹 Recording 
+## 📹Recording 
 [^Top of page](#)
 
 No recording available. 
@@ -151,7 +152,7 @@ No recording available.
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../../../issues) tab.
 
-## ℹ Further Information
+## ℹFurther Information
 [^Top of page](#)
 
 You can find further information on the ABAP RESTful Application Programming Model (RAP) here:
