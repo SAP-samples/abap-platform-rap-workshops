@@ -16,7 +16,7 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 #### Table of Content
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Overview](#overview)
-- [Exercises](#exercises)
+- [Exercises](#-exercises)
 - [Recording](#recording)
 - [How to obtain support](#how-to-obtain-support) 
 - [Further Information](#further-information)
@@ -112,7 +112,7 @@ The illustration below shows the high-level end-to-end development stack when wo
 ▶ 🏦 Access to the entry page of the [**AD260** Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
 
 
-## 🛠Exercises
+## 🛠 Exercises
 [^Top of page](#)
 
 Follow these steps to enhance an existing OData UI service developed with RAP for a transactional SAP Fiori elements-based Travel Processing app.
