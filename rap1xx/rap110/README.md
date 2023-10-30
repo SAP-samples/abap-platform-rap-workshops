@@ -105,7 +105,7 @@ The illustration below shows the high-level end-to-end development stack when wo
 </details>
 -->
 
-#### SAP TechEd 2023
+### SAP TechEd 2023
 
 ▶ ☁ Access to the entry page of the [**AD181v** Jump-Start session repository](https://github.com/SAP-samples/teched2023-AD181v/blob/main/README.md)  
 
