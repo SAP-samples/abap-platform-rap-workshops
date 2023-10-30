@@ -24,7 +24,7 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 <details>
   <summary>Click to expand!</summary>
 
-1. You need a user on an SAP BTP ABAP environment or SAP S/4HANA 2022 system where the [ABAP Flight Reference Scenario](https://github.com/SAP-samples/abap-platform-refscen-flight) is available - e.g. SAP BTP ABAP Environment Trial.
+1. You need a user on an SAP BTP ABAP environment, SAP S/4HANA Cloud, or SAP S/4HANA 2022 system where the [ABAP Flight Reference Scenario](https://github.com/SAP-samples/abap-platform-refscen-flight) is available - e.g. SAP BTP ABAP Environment Trial.
    
    Please check the following tutorial if you do not have an ABAP user yet:
      - [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
