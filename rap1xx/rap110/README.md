@@ -15,7 +15,6 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 
 #### Table of Content
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
-- [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
 - [Overview](#overview)
 - [Exercises](#exercises)
 - [Recording](#recording)
