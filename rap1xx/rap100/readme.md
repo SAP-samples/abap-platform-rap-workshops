@@ -20,6 +20,8 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 [^Top of page](#)
 
 > To complete the practical exercises in this workshop, you need access to an appropriate ABAP system -i.e. SAP BTP ABAP environment, SAP S/4HANA Cloud, or at least release 2022 of SAP S/4HANA, in the private cloud and on-premises - and the latest version of the ABAP Development Tools for Eclipse (ADT).
+> 
+> The [ABAP Flight Reference Scenario](https://github.com/SAP-samples/abap-platform-refscen-flight) must be available in the relevant system. 
 
 <details>
   <summary>Click to expand!</summary>
