@@ -56,6 +56,7 @@ Please check the following tutorial if you do not have a working account yet:
 
 > This workshop is all about RAP fundamentals; especially about how to use RAP core features when building greenfield implementations.
 
+<!--
 <details>
   <summary>Click to expand!</summary>
 
@@ -82,7 +83,6 @@ Below is the simplified _Flight_ data model underlying the app.
 
 </details>
 
-
 ### About the ABAP RESTful Application Programming Model (RAP)
 [^Top of page](#)
    
@@ -103,13 +103,13 @@ The illustration below shows the high-level end-to-end development stack when wo
 </details>
 
 </details>
+-->
 
+#### SAP TechEd 2023
 
-## SAP TechEd 2023
+▶ ☁ Access to the entry page of the [**AD181v** Jump-Start session repository](https://github.com/SAP-samples/teched2023-AD181v/blob/main/README.md)  
 
-▶ ☁ Access to the entry page of the [AD181v Jump-Start repository](https://github.com/SAP-samples/teched2023-AD181v/blob/main/README.md)  
-
-▶ 🏦 Access to the entry page of the [AD260 Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
+▶ 🏦 Access to the entry page of the [**AD260** Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
 
 
 ## 🛠Exercises
