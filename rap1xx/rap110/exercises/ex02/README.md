@@ -357,12 +357,74 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
  <details>
   <summary>🟣 Click to expand!</summary>
 
- 1. Open your ABAP class ![ABAP class](../images/adt_class.png)**`ZRAP110_CALC_BOOK_ELEM_###`** and have a look at it. It is similar to the ABAP class `ZRAP110_CALC_TRAV_ELEM_###` and the princip is the same.
+<!-- 1. Open your ABAP class ![ABAP class](../images/adt_class.png)**`ZRAP110_CALC_BOOK_ELEM_###`** and have a look at it. It is similar to the ABAP class `ZRAP110_CALC_TRAV_ELEM_###` and the princip is the same.
       
     > ⚠ **Error**: Please remove the statement **`interfaces IF_SADL_EXIT .`** erroneously inserted by the generator into the class definition section. This is due to a bug that is currently under investigation.
     > 
-    > <img src="images/interfacex2.png" alt="ABAP Class" width="50%">     
+    > <img src="images/interfacex2.png" alt="ABAP Class" width="50%"> --> 
         
+ 1. Open your ABAP class ![ABAP class](../images/adt_class.png)**`ZRAP110_CALC_BOOK_ELEM_###`** and replace the entire code with the code provided below. Replace all occurences of the placeholder **`###`** with your assigned suffix using **Ctrl+F**.
+
+    ```ABAP
+    CLASS zrap110_calc_book_elem_### DEFINITION
+      PUBLIC
+      FINAL
+      CREATE PUBLIC .
+    
+      PUBLIC SECTION.
+        INTERFACES if_sadl_exit_calc_element_read .
+    
+      PROTECTED SECTION.
+      PRIVATE SECTION.
+    ENDCLASS.
+    
+    CLASS zrap110_calc_book_elem_### IMPLEMENTATION.
+    
+      METHOD if_sadl_exit_calc_element_read~calculate.
+        IF it_requested_calc_elements IS INITIAL.
+          EXIT.
+        ENDIF.
+    
+        LOOP AT it_requested_calc_elements ASSIGNING FIELD-SYMBOL(<fs_req_calc_elements>).
+    
+          CASE <fs_req_calc_elements>.
+              "virtual elements from BOOKING entity
+            WHEN 'INITIALDAYSTOFLIGHT'   OR 'REMAININGDAYSTOFLIGHT'
+              OR 'DAYSTOFLIGHTINDICATOR' OR 'BOOKINGSTATUSINDICATOR'.
+    
+              DATA lt_book_original_data TYPE STANDARD TABLE OF ZRAP110_C_BookingTP_### WITH DEFAULT KEY.
+              lt_book_original_data = CORRESPONDING #( it_original_data ).
+              LOOP AT lt_book_original_data ASSIGNING FIELD-SYMBOL(<fs_book_original_data>).
+    *            <fs_book_original_data> = zrap110_calc_book_elem_###=>calculate_days_to_flight( <fs_book_original_data> ).
+              ENDLOOP.
+              ct_calculated_data = CORRESPONDING #( lt_book_original_data ).
+          ENDCASE.
+        ENDLOOP.
+      ENDMETHOD.
+    
+    
+      METHOD if_sadl_exit_calc_element_read~get_calculation_info.
+        IF iv_entity EQ 'ZRAP110_C_BOOKINGTP_###'. "Booking BO node
+          LOOP AT it_requested_calc_elements ASSIGNING FIELD-SYMBOL(<fs_booking_calc_element>).
+            CASE <fs_booking_calc_element>.
+              WHEN 'INITIALDAYSTOFLIGHT'.
+                COLLECT `BOOKINGDATE` INTO et_requested_orig_elements.
+                COLLECT `FLIGHTDATE` INTO et_requested_orig_elements.
+              WHEN 'REMAININGDAYSTOFLIGHT'.
+                COLLECT `FLIGHTDATE` INTO et_requested_orig_elements.
+              WHEN 'DAYSTOFLIGHTINDICATOR'.
+                COLLECT `FLIGHTDATE` INTO et_requested_orig_elements.
+              WHEN 'BOOKINGSTATUSINDICATOR'.
+                COLLECT `BOOKINGSTATUS` INTO et_requested_orig_elements.
+            ENDCASE.
+          ENDLOOP.
+        ENDIF.
+    
+      ENDMETHOD.
+    
+    ENDCLASS.
+    ```      
+      
  2. Define the class method interface **`calculate_days_to_flight`** in the public section of the class definition. 
 
     For that, insert the code snippet provided below after the statement _`interfaces IF_SADL_EXIT_CALC_ELEMENT_READ.`_ in the class definition and replace all occurences of the placeholder **`###`** with your assigned suffix.
