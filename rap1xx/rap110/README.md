@@ -105,15 +105,15 @@ The illustration below shows the high-level end-to-end development stack when wo
 </details>
 -->
 
+### ASUG TechConnect 2023 
+
+▶ ⚠️ Access to the system details for this on-site workshop will be provided by the instructors during the session. A dedicated system with pre-generated packages for the hands-on workshop participants will be provided.   
+
 ### SAP TechEd 2023
 
 ▶ ☁ Access to the entry page of the [**AD181v** Jump-Start session repository](https://github.com/SAP-samples/teched2023-AD181v/blob/main/README.md)  
 
 ▶ 🏦 Access to the entry page of the [**AD260** Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
-
-## ASUG TechConnect 2023
-
-▶ ☁ Access to the system details for this on-site hands-on workshop (service key, user credentials) will be provided by the instructors during the session.     
 
 ## 🛠 Exercises
 [^Top of page](#)
