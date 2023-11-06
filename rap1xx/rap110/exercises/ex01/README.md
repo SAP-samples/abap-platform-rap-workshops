@@ -24,7 +24,7 @@ For your convenience, the class **`ZDMO_GEN_RAP110_SINGLE_2`** is provided to yo
 
 ## Exercise 1.1: Generate your ![package](../images/adt_package.png) Package
 
-> For **⚠  ASUG 2003 TechConnect** users   
+> For **⚠  ASUG 2023 TechConnect** users   
 > Please skip step 1.1., because the packages have been pre-generated for convenience in the dedicated workshop system.   
  
  <details>
