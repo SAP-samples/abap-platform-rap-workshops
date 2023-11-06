@@ -143,7 +143,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
  <details>
   <summary>🟣 Click to expand!</summary>
 
- 1. Open your ABAP class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_TRAV_ELEM_###`** and have a look at the available source code.
+<!-- 1. Open your ABAP class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_TRAV_ELEM_###`** and have a look at the available source code.
     
     > ⚠ **Error**: Please remove the statement **`interfaces IF_SADL_EXIT .`**  erroneously inserted by the generator into the class definition section. This is due to a bug that is currently under investigation.
     > 
@@ -151,7 +151,63 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
 
     Your source code will look like this:
    
-    <img src="images/ex203.png" alt="ABAP Class" width="50%">
+    <img src="images/ex203.png" alt="ABAP Class" width="50%"> -->
+
+ 1. Open your ABAP class ![class icon](../images/adt_class.png)**`ZRAP110_CALC_TRAV_ELEM_###`** and replace the entire code with the code provided below. Replace all occurences of the placeholder **`###`** with your assigned suffix using **Ctrl+F**.
+
+    ```ABAP
+    CLASS zrap110_calc_trav_elem_### DEFINITION
+      PUBLIC
+      FINAL
+      CREATE PUBLIC .
+    
+      PUBLIC SECTION.
+        INTERFACES if_sadl_exit_calc_element_read .
+    
+      PROTECTED SECTION.
+      PRIVATE SECTION.
+    ENDCLASS.
+    
+    CLASS ZRAP110_CALC_TRAV_ELEM_### IMPLEMENTATION.
+    
+      METHOD IF_SADL_EXIT_CALC_ELEMENT_READ~CALCULATE.
+        IF it_requested_calc_elements IS INITIAL.
+          EXIT.
+        ENDIF.
+    
+        LOOP AT it_requested_calc_elements ASSIGNING FIELD-SYMBOL(<fs_req_calc_elements>).
+          CASE <fs_req_calc_elements>.
+              "virtual elements from TRAVEL entity
+            WHEN 'OVERALLSTATUSINDICATOR'.
+    
+              DATA lt_trav_original_data TYPE STANDARD TABLE OF ZRAP110_C_TravelTP_### WITH DEFAULT KEY.
+              lt_trav_original_data = CORRESPONDING #( it_original_data ).
+              LOOP AT lt_trav_original_data ASSIGNING FIELD-SYMBOL(<fs_trav_original_data>).
+    
+    *            <fs_trav_original_data> = zrap110_calc_trav_elem_###=>calculate_trav_status_ind( <fs_trav_original_data> ).
+    
+              ENDLOOP.
+    
+              ct_calculated_data = CORRESPONDING #( lt_trav_original_data ).
+    
+          ENDCASE.
+        ENDLOOP.
+      ENDMETHOD.
+    
+      METHOD IF_SADL_EXIT_CALC_ELEMENT_READ~GET_CALCULATION_INFO.
+        IF iv_entity EQ 'ZRAP110_C_TRAVELTP_###'. "Travel BO node
+          LOOP AT it_requested_calc_elements ASSIGNING FIELD-SYMBOL(<fs_travel_calc_element>).
+            CASE <fs_travel_calc_element>.
+              WHEN 'OVERALLSTATUSINDICATOR'.
+                APPEND 'OVERALLSTATUS' TO et_requested_orig_elements.
+    
+            ENDCASE.
+          ENDLOOP.
+        ENDIF.
+      ENDMETHOD.
+    
+    ENDCLASS.
+    ```      
   
     **Brief explanation**: 
     <details>
