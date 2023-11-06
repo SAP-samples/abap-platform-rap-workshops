@@ -46,7 +46,7 @@ Please check the following tutorial if you do not have a working account yet:
  - [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
 > ⚠**Please note**⚠:    
-> Participants of SAP events (e.g. **DSAG ABAP Developer Days 2023**) will carry out the various exercises on a dedicated SAP BTP ABAP environment system set up by SAP for the specific event.    
+> Participants of SAP events (e.g. **DSAG ABAP Developer Days 2023** or **ASUG TechConnect**) will carry out the various exercises on a dedicated SAP BTP ABAP environment system set up by SAP for the specific event.    
 
 </details>
 
@@ -111,6 +111,9 @@ The illustration below shows the high-level end-to-end development stack when wo
 
 ▶ 🏦 Access to the entry page of the [**AD260** Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
 
+## ASUG TechConnect 2023
+
+▶ ☁ Access to the system details for this on-site hands-on workshop (service key, user credentials) will be provided by the instructors during the session.     
 
 ## 🛠 Exercises
 [^Top of page](#)
