@@ -69,7 +69,7 @@ late numbering
     FileName = FILE_NAME;
     OverallStatus = OVERALL_STATUS;
     CreatedBy = CREATED_BY;
-    LocalCreatedAt = LOCAL_CREATED_AT;
+    CreatedAt = CREATED_AT;
     LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
     LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
     LastChangedAt = LAST_CHANGED_AT;
