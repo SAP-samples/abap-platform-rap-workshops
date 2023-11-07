@@ -613,7 +613,7 @@ In this exercise, you will enhance the transactional behavior of your _Travel_ B
 <details> 
   <summary>🟣 Click to expand!</summary>
   
-> You will now adjust the behavior implementation class (aka behavior pool) of the _booking_ entity ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_TravelTP_###`** 
+> You will now adjust the behavior implementation class (aka behavior pool) of the _booking_ entity ![ABAP class](../images/adt_class.png)**`ZRAP110_BP_BookingTP_###`** 
   
  1. Now go to the behavior definition ![bdef](../images/adt_bdef.png)**`ZRAP110_R_TravelTP_###`**, set the cursor on one of the new determinations, validations or the function, e.g. **`validateBookingStatus`**, and press **Ctrl+1**. 
   
