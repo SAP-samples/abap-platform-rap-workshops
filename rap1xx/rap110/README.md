@@ -38,15 +38,15 @@ Please check the following two short documents how to do this if you have not al
  - [Install the newest Eclipse platform and the newest ABAP Development Tools (ADT) plugin](https://developers.sap.com/tutorials/abap-install-adt.html)  
  - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
  
-You also need a user on an SAP BTP ABAP environment or SAP S/4HANA Cloud, public edition (3SL), system - e.g. SAP BTP ABAP Environment Trial.  
+You also need a user on an SAP BTP ABAP Environment, an SAP S/4HANA Cloud, public edition (3SL), or an SAP S/4HANA 2023 system - e.g. SAP BTP ABAP Environment Trial.  
 
-  > PS: All exercises except Exercise 9 (Side Effects) can be performed on SAP S/4HANA 2022.  
+  > PS: All exercises except Exercise 9 (_Side Effects_) and Exercise 11.4 (_Local Event Consumption_) can be performed on SAP S/4HANA 2022.  
   
 Please check the following tutorial if you do not have a working account yet:  
  - [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
 > ⚠**Please note**⚠:    
-> Participants of SAP events (e.g. **DSAG ABAP Developer Days 2023** or **ASUG TechConnect**) will carry out the various exercises on a dedicated SAP BTP ABAP environment system set up by SAP for the specific event.    
+> Participants of SAP events (e.g. **DSAG ABAP Developer Days 2023** or **ASUG TechConnect**) will carry out the various exercises on a dedicated ABAP system set up by SAP for the specific event.    
 
 </details>
 
@@ -59,7 +59,6 @@ Please check the following tutorial if you do not have a working account yet:
 <!--
 <details>
   <summary>Click to expand!</summary>
-
 
 ### Business Scenario
 > In this hands-on session we will guide you through the development of the OData service of a SAP Fiori elements based _Travel Processing App_ with RAP, using the _managed_ business object (BO) runtime implementation with semantic key and late numbering. We will give you more details on the scenario in the different exercises.
