@@ -42,7 +42,7 @@ late numbering
   determination calculateTotalPrice on modify { create; field BookingFee, CurrencyCode; }
 
   draft action ( features : instance ) Edit;
-  draft action Activate;
+  draft action Activate optimized;
   draft action Discard;
   draft action Resume;
   draft determine action Prepare
