@@ -4,7 +4,7 @@
 https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax 
 -->
 
-# RAP110 - Build transactional SAP Fiori elements Apps with the ABAP RESTful Application Programming Model (RAP)
+# RAP110 - Build transactional SAP Fiori elements-based Apps with the ABAP RESTful Application Programming Model (RAP)
 
 ## Level: Intermediate
 
