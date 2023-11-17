@@ -98,6 +98,7 @@ Below is the simplified _Flight_ data model underlying the app.
 
 <img src="exercises/images/rap110_datamodel.png" alt="RAP110 Data Model" width="80%">
 
+</details>
 
 ### About the ABAP RESTful Application Programming Model (RAP)
 [^Top of page](#)
