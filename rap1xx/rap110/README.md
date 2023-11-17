@@ -70,6 +70,7 @@ Please check the following tutorial if you do not have a working account yet:
 ▶ 🏦 Access to the entry page of the [**AD260** Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
 
 
+<!--
 ## 🔎Overview
 
 > This workshop is all about RAP fundamentals; especially about how to use RAP core features when building greenfield implementations.
