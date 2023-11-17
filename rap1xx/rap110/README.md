@@ -28,6 +28,16 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 
 > You need the latest version of the ABAP Development Tools in Eclipse (ADT) on your laptop or PC as well as the access to an ABAP Environment system to carry out the practical exercises of this workshop.
 
+<details>
+  <summary>Click to expand!</summary>
+
+The requirements to follow the exercises in this repository are:
+1. [Install the latest Eclipse platform and the latest ABAP Development Tools (ADT) plugin](https://developers.sap.com/tutorials/abap-install-adt.html)
+2. [Create an user on the SAP BTP, ABAP environment Trial](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
+3. [Create an ABAP Cloud Project](https://developers.sap.com/tutorials/abap-environment-create-abap-cloud-project.html)
+
+</details>
+
 <!--
 <details>
   <summary>Click to expand!</summary>
@@ -49,14 +59,23 @@ Please check the following tutorial if you do not have a working account yet:
 > Participants of SAP events (e.g. **DSAG ABAP Developer Days 2023** or **ASUG TechConnect**) will carry out the various exercises on a dedicated ABAP system set up by SAP for the specific event.    
 
 </details>
-
 -->
+
+## SAP Events
+
+#### ABAP Developer Days 
+▶ ⚠️ Access to the system details for this on-site workshop will be provided by the instructors during the session. A dedicated system with pre-generated packages for the hands-on workshop participants will be provided.   
+
+#### SAP TechEd 2023
+▶ ☁ Access to the entry page of the [**AD181v** Jump-Start session repository](https://github.com/SAP-samples/teched2023-AD181v/blob/main/README.md)  
+
+▶ 🏦 Access to the entry page of the [**AD260** Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
+
 
 ## 🔎Overview
 
 > This workshop is all about RAP fundamentals; especially about how to use RAP core features when building greenfield implementations.
 
-<!--
 <details>
   <summary>Click to expand!</summary>
 
@@ -102,17 +121,6 @@ The illustration below shows the high-level end-to-end development stack when wo
 </details>
 
 </details>
--->
-
-### ASUG TechConnect 2023 
-
-▶ ⚠️ Access to the system details for this on-site workshop will be provided by the instructors during the session. A dedicated system with pre-generated packages for the hands-on workshop participants will be provided.   
-
-### SAP TechEd 2023
-
-▶ ☁ Access to the entry page of the [**AD181v** Jump-Start session repository](https://github.com/SAP-samples/teched2023-AD181v/blob/main/README.md)  
-
-▶ 🏦 Access to the entry page of the [**AD260** Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
 
 ## 🛠 Exercises
 [^Top of page](#)
