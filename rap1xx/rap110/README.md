@@ -21,19 +21,21 @@ This repository contains the material for the hands-on session **RAP110 - Buildi
 - [How to obtain support](#how-to-obtain-support) 
 - [Further Information](#further-information)
 
-
-
 ## 📋Requirements for attending this workshop 
 [^Top of page](#)
 
-> You need the latest version of the ABAP Development Tools in Eclipse (ADT) on your laptop or PC as well as the access to an ABAP Environment system to carry out the practical exercises of this workshop.
+> You need the latest version of the ABAP Development Tools in Eclipse (ADT) on your laptop or PC as well as the access to an ABAP system * to carry out the practical exercises of this workshop.
+ 
+>> ⚠ **SAP events such as "ABAP Developer Day"**:   
+>> → A dedicated ABAP system with pre-generated packages for the hands-on workshop participants will be provided.   
+>> → Access to the system details for this on-site workshop will be provided by the instructors during the session.    
 
 <details>
   <summary>Click to expand!</summary>
 
 The requirements to follow the exercises in this repository are:
 1. [Install the latest Eclipse platform and the latest ABAP Development Tools (ADT) plugin](https://developers.sap.com/tutorials/abap-install-adt.html)
-2. [Create an user on the SAP BTP, ABAP environment Trial](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
+2. [Create an user on the SAP BTP, ABAP environment Trial](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html) (if needed)
 3. [Create an ABAP Cloud Project](https://developers.sap.com/tutorials/abap-environment-create-abap-cloud-project.html)
 
 </details>
@@ -61,12 +63,8 @@ Please check the following tutorial if you do not have a working account yet:
 </details>
 -->
 
-## SAP Events
+## SAP TechEd 2023
 
-#### ABAP Developer Days 
-▶ ⚠️ Access to the system details for this on-site workshop will be provided by the instructors during the session. A dedicated system with pre-generated packages for the hands-on workshop participants will be provided.   
-
-#### SAP TechEd 2023
 ▶ ☁ Access to the entry page of the [**AD181v** Jump-Start session repository](https://github.com/SAP-samples/teched2023-AD181v/blob/main/README.md)  
 
 ▶ 🏦 Access to the entry page of the [**AD260** Hands-On Workshop repository](https://github.com/SAP-samples/teched2023-AD260/blob/main/README.md)  
@@ -99,7 +97,6 @@ Below is the simplified _Flight_ data model underlying the app.
 
 <img src="exercises/images/rap110_datamodel.png" alt="RAP110 Data Model" width="80%">
 
-</details>
 
 ### About the ABAP RESTful Application Programming Model (RAP)
 [^Top of page](#)
@@ -121,6 +118,8 @@ The illustration below shows the high-level end-to-end development stack when wo
 </details>
 
 </details>
+
+-->
 
 ## 🛠 Exercises
 [^Top of page](#)
