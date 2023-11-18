@@ -247,18 +247,9 @@ determination CalculateInventoryID on save { create; }
    ![Open Behavior Implementation](images/bdef_add_determination_0010.png)
    
 
-5. The editor for the behavior implementation class opens and you will see the warning _The entity "ZRAP620_R_INVENTORYTP_AF3" does not have a determination "CALCULATEINVENTORYID"._
+5. The editor for the behavior implementation class opens.
 
-   ![Open Behavior Implementation](images/bdef_add_determination_0025.png)
-
-6. Press Save all.
-
-   > This will save the behavior definition as well as the behavior implementationand it will remove the error message in the behavior implementation class. 
-
-   ![Open Behavior Implementation](images/bdef_add_determination_0030.png)
-   
-
-7. Activate your changes.   
+6. *Save* your changes and proceed with the following section to maintain the behavior implementation.   
 
 </details>
 
