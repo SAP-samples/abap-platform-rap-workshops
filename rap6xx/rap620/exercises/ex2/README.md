@@ -63,7 +63,8 @@ Open the metadata extension file ````ZRAP620_C_INVENTORYTP_### ````. Replace the
 
  <details>
   <summary>Click to expand the source code ...</summary>
-<pre>
+  
+  <pre>
 @Metadata.layer: #CUSTOMER
 @UI: {
   headerInfo: {
@@ -203,7 +204,7 @@ annotate view ZRAP620_C_INVENTORYTP_### with
   @UI.hidden: true
   locallastchangedat;
 }
-</pre>
+  </pre>
 </details>
 
 ## Behavior definition
