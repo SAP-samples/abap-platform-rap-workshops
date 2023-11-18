@@ -139,14 +139,14 @@ define table zrap620_inven### {
    1. Right-click your database table ![table](images/adt_tabl.png) **`zrap620_inven###`**  and select **Generate ABAP Repository Objects** from the context menu.  
   
       ![Generate UI Service](images/generate_ui_service_0000.png)
-   
-   2. Maintain the required information  (`###` is your group ID) and click **Next >**:
-        - Description: **`Inventory App ###`**
-        - Generator: **`ABAP RESTful Application Programming Model: UI Service`**
-        
-        ![Generate UI Service](images/generate_ui_service_0010.png)
-        
-   3. Maintain the required information on the **Configure Generator** dialog to provide the name of your data model and generate them.         
+
+   2. In the *Select Generator* screen select the **OData UI Service** Generator option and press **Next** 
+
+      ![OData UI Service](images/Select_Generator.png)
+
+   3. In the *Enter Package* screen just press **Next**.  
+      
+   4. Maintain the required information on the **Configure Generator** dialog to provide the name of your data model and generate them.         
       
       For that, navigate through the wizard tree (_Business Objects_, _Data Model_, etc...), maintain the artefact names provided in the table below, 
       and press **Next >**.
