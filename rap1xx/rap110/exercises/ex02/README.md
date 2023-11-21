@@ -559,7 +559,7 @@ In this exercise, you will enhance the CDS data model of the base BO and the BO 
    
     <img src="images/ex2x8.png" alt="ABAP Class" width="80%">  
    
-    Now you can see, that you are able to upload attachement on the _Booking_ object page. 
+    Now you can see, that you are able to upload attachement on the _Travel_ object page. 
    
     <img src="images/ex2x9.png" alt="ABAP Class" width="80%">  
 
