@@ -6,9 +6,10 @@
 
 In this exercise, you will generate and make yourself familiar with your exercise package **`ZRAP110_###`**, where **`###`** is your assigned suffix.
 
-   
+<!--   
 > For **⚠  ASUG 2023 TechConnect** users   
 > Please skip step 1.1., because the packages have been pre-generated for convenience in the dedicated workshop system.   
+-->
 
 This generated package will contain an OData-V4-based UI service and all the RAP artifacts required for this workshop. The UI service is based on a managed Business Object (BO) with two entities, _travel_ and _booking_, with generic transactional behavior - i.e. CRUD: Create, Read, Update, and Delete.   
 
