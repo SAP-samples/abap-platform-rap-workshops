@@ -21,7 +21,7 @@ In this repository we provide materials for customer and community facing sessio
 
 [RAP620 - Side-by-side extensibility with SAP BTP ABAP Environment](/rap6xx/rap620#readme)
 
-[RAP630 - RAP630 - Use ABAP Cloud for developer extensibility (extend an SAP app)](https://github.com/SAP-samples/abap-platform-rap630)
+[RAP630 - Use ABAP Cloud for developer extensibility (extend an SAP app)](https://github.com/SAP-samples/abap-platform-rap630)
 
 
 ## Requirements
