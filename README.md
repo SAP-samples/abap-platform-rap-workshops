@@ -17,16 +17,17 @@ In this repository we provide materials for customer and community facing sessio
 
 [RAP510 - Developing for Analytics with the SAP BTP ABAP Environment (short version, requires licensed system)](/rap5xx/rap510#readme)
 
-[RAP610 - Use ABAP Cloud for SAP S/4HANA (Cloud) extensions](/rap6xx/rap610#readme)
+[RAP610 - Use ABAP Cloud for SAP S/4HANA (Cloud) (new app on stack)](/rap6xx/rap610#readme)
 
 [RAP620 - Side-by-side extensibility with SAP BTP ABAP Environment](/rap6xx/rap620#readme)
 
-[RAP630 - RAP630 - Use ABAP Cloud for developer extensibility](https://github.com/SAP-samples/abap-platform-rap630)
+[RAP630 - RAP630 - Use ABAP Cloud for developer extensibility (extend an SAP app)](https://github.com/SAP-samples/abap-platform-rap630)
 
 
 ## Requirements
 
 See [requirements document](requirements_rap_workshops.md).
+
 
 ## Download and Installation
 
