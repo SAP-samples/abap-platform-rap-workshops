@@ -205,10 +205,18 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
       > ℹ **Info about Naming Conventions**     
       > The main aspects of the naming conventions of SAP S/4HANA's Virtual Data Model (VDM) are used in this exercise.  
       > More information on VDM can be found on the SAP Help portal: **[Here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/8a8cee943ef944fe8936f4cc60ba9bc1.html)**.
- 
+
+      <!-- 
       > ⚠ **Attention**  
       > If you receive the error message _**Invalid XML format of the response**_, this may be due to a bug in version 1.26 of the ADT tools.  
       > An update of your ADT plugin to the newer version will fix this issue.
+      -->
+      
+      > ⚠ **Attention** ⚠   
+      > Please make sure to **replace all the name proposals in the wizard** with the names provided below.    
+      > Doing this is important to ensure the correctness of the code snippets provided in the following exercises.
+      > 
+      
       
       | **RAP Layer**          |  **Artefacts**           | **Artefact Names**                                       |     
       |:---------------------- |:------------------------ |:-------------------------------------------------------- |
@@ -217,7 +225,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
       |                        |                          |  Alias Name:             **`Travel`**                    |   
       |                        |  **Behavior**            |  Implementation Class:   **`ZRAP100_BP_TravelTP_###`**   |
       |                        |                          |  Draft Table Name:       **`ZRAP100_DTRAV###`**          |
-      | **Service Projection** (BO Projection)  |         |  Name:                   **`ZRAP100_C_TravelTP_###`**    |   
+      | **Service Projection** | _(BO Projection)_        |  Name:                   **`ZRAP100_C_TravelTP_###`**    |   
       | **Business Services**  |                          |                                                          |          
       |                        |  **Service Definition**  |  Name:         **`ZRAP100_UI_Travel_###`**               |
       |                        |  **Service Binding**     |  Name:         **`ZRAP100_UI_Travel_O4_###`**            |
@@ -231,7 +239,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
 
       <img src="images/p7c.png" alt="table" width="50%">         
  
-   4. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
+   5. Go to the **Project Explorer**, select your package ![package](images/adt_package.png)**`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects 
 
       <!-- ![class](images/p7d.png) -->
       <img src="images/p7d.png" alt="table" width="50%">  
