@@ -20,7 +20,7 @@ In this exercise, you will ...
 
 - [Create a custom entity and implement the query implementation class](#create-a-custom-entity-and-implement-the-query-implementation-class)
   - [Create a custom entity](#create-a-custom-entity)
-  - [Implement the query implemenation class](#implement-the-query-implemenation-class-zrap260ceproducts)   
+  - [Implement the query implementation class](#implement-the-query-implemenation-class-zrap620_ce_products)   
 
 - [Add the custom entity as a value help](#add-the-custom-entity-as-a-value-help)
 - [Test the service](#test-the-service)
@@ -44,7 +44,7 @@ In our demo we will thus use an OData Service that is available in the SAP Gatew
 
 
 ## Create the Service Consumption Model
-[^Top of page](#)  
+[^Top of page](#toc)  
 
 In this step we will generate a so called **Service Consumption Model**. This type of object takes an external interface description as its input. Currently *OData*, *SOAP* and *RFC* are supported.   
 Based on the information found in the *$metadata* file or the *wsdl* file appropriate repository objects are generated (OData Client proxy or SOAP proxy objects). For RFC function modules the metadata file is created in the backend using the transaction *ACO_PROXY*.  
@@ -143,7 +143,7 @@ Click **Next**.
 </details>
 
 ## Create a console application to test the OData service
-[^Top of page](#)
+[^Top of page](#toc)
 
 We can now test the service consumption model by creating a small console application ````ZRAP620_CL_CE_PRODUCTS_###```` that implements the interface ````if_oo_adt_classrun````. 
 This is a useful additional step since this way it is easier to check whether the OData consumption works and debugging a console application is much easier than trying out your coding in the full fledged RAP business object.
@@ -190,7 +190,7 @@ This is a useful additional step since this way it is easier to check whether th
 ![Selection of transport request](images/console_app_0040.png)
 
 ## CLASS ZRAP620_CL_CE_PRODUCTS_### - Implementation
-[^Top of page](#)  
+[^Top of page](#toc)  
 
 1. Let's start with the implementation of our test class. 
 
@@ -345,7 +345,7 @@ ENDCLASS.
 </details>
 
 ## Create a custom entity and implement the query implementation class
-[^Top of page](#)
+[^Top of page](#toc)
 
 Since we want to use the results of the remote OData service in our managed inventory app we will create a custom entity. 
 The syntax of a custom entity differs from the one used in normal CDS views but is very similar to the syntax of an abstract entity and we can thus reuse most of the DDL source code of the abstract entity that has been generated when the service consumption model was created.
@@ -355,11 +355,11 @@ In order to leverage the remote OData service in our application we have to perf
 1.	We have to create a custom entity. 
 2.	We have to create a class that implements the query for the custom entity. (Here we will reuse the class that we have created earlier and that we have used to test the remote OData service).
 
+### Create a custom entity
+[^Top of page](#toc)
+
 <details>
 <summary>Click to expand</summary>
-
-### Create a custom entity
-[^Top of page](#)
 
 In contrast to "normal" CDS views that read data from the database from tables or other CDS views _custom entities_ act as a wrapper for a code based implementation that provides the data instead of a database table or a CDS view. 
 
@@ -376,7 +376,7 @@ Let’s start with creating a new data definition ````ZRAP620_CE_PRODUCTS_###```
    ![New data definition 1](images/custom_entity_0000.png)
 
 2. The **New Data Defintion** dialogue opens. Here you have to enter the following values:  
-   - Name: **`ZRAP260_CE_PRODUCTS_###`** 
+   - Name: **`ZRAP620_CE_PRODUCTS_###`** 
    - Description: **`Custom entity for products from ES5`**
    
    Press **Next**
@@ -428,16 +428,16 @@ define custom entity ZRAP620_CE_PRODUCTS_###
 
 </pre>
 
-   [Source code ZRAP260_CE_PRODUCTS_###](sources/ex2_DDLS_ZCE_RAP_PRODUCTS_%23%23%23%23.txt)
+   [Source code ZRAP620_CE_PRODUCTS_###](sources/ex2_DDLS_ZCE_RAP_PRODUCTS_%23%23%23%23.txt)
 
 7. Activate your changes ![Activate](images/activate.png)
 
-> You might get the warning that the class ` ZRAP260_CE_PRODUCTS_###` is not found. This is because our class does not yet implement the interface `IF_RAP_QUERY_PROVIDER`.  
+> You might get the warning that the class ` ZRAP620_CE_PRODUCTS_###` is not found. This is because our class does not yet implement the interface `IF_RAP_QUERY_PROVIDER`.  
 
 </details>
 
-### Implement the query implemenation class ZRAP260_CE_PRODUCTS_###
-[^Top of page](#)
+### Implement the query implemenation class ZRAP620_CE_PRODUCTS
+[^Top of page](#toc)
 
 After having created the custom entity `ZRAP620_CE_PRODUCTS_###` we now have to enhance the query implementation class `ZRAP620_CL_CE_PRODUCTS_###` that we have created earlier in this exercise.
 
@@ -524,7 +524,7 @@ We now have to add the custom entity to the service definition of our inventory 
 </details>
 
 ## Add the custom entity as a value help
-[^Top of page](#)
+[^Top of page](#toc)
 
 The custom entity can now be added as a value help.  
 
@@ -546,7 +546,7 @@ This will add the custom entity `ZRAP620_CE_PRODUCTS_###` as a value help for th
 </details>
 
 ## Test the service 
-[^Top of page](#)
+[^Top of page](#toc)
 
 We can now test our service implementation.
 
@@ -584,7 +584,7 @@ We can now test our service implementation.
   ![Product selected in object page](images/preview_service_0020.png)
 
 ## Test input Validation on the front end
-[^Top of page](#)
+[^Top of page](#toc)
 
 1. Edit the newly created inventory entry
 
@@ -606,7 +606,7 @@ We can now test our service implementation.
 </details>
 
 ## Summary
-[^Top of page](#)
+[^Top of page](#toc)
 
 You are now able to:
 

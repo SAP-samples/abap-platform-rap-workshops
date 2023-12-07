@@ -129,8 +129,7 @@ We will use the SOAP web service to retrieve the price of a product.
    
    > **Do not forget to search and replace the placeholder `###` with the unique number that you have chosen beforehand.**
 
-<pre>
-  
+```abap  
   METHOD GetPrice.
     DATA destination  TYPE REF TO if_soap_destination.
     DATA proxy TYPE REF TO zrap620###co_epm_product_soap.
@@ -218,9 +217,7 @@ We will use the SOAP web service to retrieve the price of a product.
     ENDLOOP.
 
   ENDMETHOD.
-
-
-</pre>
+```
 
 3. Activate your changes.
 
