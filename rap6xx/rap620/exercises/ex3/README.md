@@ -7,10 +7,10 @@
 In this exercise you will learn how to consume an OData Service from an on premise system.
 The data will be used to build a value help to fetch product master data for the Inventory entity.
 
-<span style="color:red">
+
 **Caution:
 Creating a service consumption model currently fails in the SAP BTP ABAP Trial systems. A fix will be imported with the next Hotfix Collection that is planned to be imported on December 23rd.**
-</span>
+
 
 In this exercise, you will ...
 
