@@ -97,48 +97,47 @@ We start by creating a service consumption model for an OData service that provi
 5. The $metadata file of the OData service that we want to consume must be uploaded in file format. If you have not yet downloaded the $metadata file you have to do this now.
 
    - Click **Browse** to select the $metadata file that you have downloaded earlier in this exercise
-   - Prefix: **`RAP620_###`** 
-
+   - Class Name: **`ZRAP620_SC_PRODUCTS_###`**    
+   
 > **Please note**
-
-> The prefix that you have entered will be added to the names of the repository objects that are generated, namely the **abstract entities**.  
-> If you don't select a prefix and if the wizard finds out that there would be name clashes the wizard will propse unique names by adding arbitrary characters to the repository object names.  
-> In any case you will be able to change the values that will be proposed by this wizard.
+> The wizard suggest the name of the service consumption model also as the name of the class that is going to be generated. Leave the defaulted value.
 
  ![OData consumption proxy](images/Service_Consumption_Model_0060.png)
 
-6. Check the **ABAP Artifact Name** and click **Next**.
+6. Check the **Components of the OData Service** and click **Next**.
 
-   You will notice that the name of the ABAP artifact has been set to `ZRAP620_###SEPMRA_I_PRODUCT_E` since we have provided the prefix `RAP620_###`. 
+   You will notice that the sample service provides just one entity set `SEPMRA_I_Product_E` and one entity type `SEPMRA_I_Product_EType`. 
+
+   ![Define Entity Set](images/Service_Consumption_Model_0065.png)
 
    Press **Next**.
 
-> Additional Information
+7. The wizard will now let you choose for which entity sets support for etags should be added.
 
-> If you have not provided a prefix the ABAP Artifact Name might contain several arbritray characters that have been added to the name **ZSEPMRA_I_PRODUCT**. This can happen if other users in the same system have already imported the same $metadata file. In order to avoid name clashes the wizard then adds arbitrary characters so that a unique name for the ABAP artifact is ensured.
+   ![Define Entity Set](images/Service_Consumption_Model_0070.png)
 
-![Define Entity Set](images/Service_Consumption_Model_0070.png)
-
-7. The wizard will now list the repository objects that will be generated, namely a service definition and an abstract entity in addition to the service consumption model.
-
-   - Service Definition: **ZRAP620_SC_RAP_PRODUCTS_###**
-   - Abstract Entity: **ZRAP620_###SEPMRA_I_PRODUCT_E**
-
-Click **Next**.
-
-![ABAP Artifact Genertion List](images/Service_Consumption_Model_0080.png)
+   Press **Next**.
 
 8. Selection of transport request
    - Select or create a transport request
    - Press **Finish**
 
-![ABAP Artifact Genertion List](images/Service_Consumption_Model_0090.png)
+   ![ABAP Artifact Genertion List](images/Service_Consumption_Model_0080.png)
 
-9. Let us briefly investigate the service consumption model.  
+ 9. When you check the content of your package you will notice that it contains two objects. 
+
+    -  The service consumption model
+    -  The service consumption model class
+
+    ![ABAP Artifacts](images/Service_Consumption_Model_0100.png)
+
+10. Select the Service Consumption Model and press the **Activate** button press or **Ctrl+F3**
+
+11. Let us briefly investigate the service consumption model.  
 
    For each operation (**Read List**, **Read**, **Create**, **Update** and **Delete**) some sample code has been created that you can use when you want to call the OData Service with one of these operations. Since we want to retrieve a list of Product-IDs, we will select the operation **Read List** and click on the button **Copy to Clipboard**. We will use this code in the following step where we create a console application to test the call to the remote OData service. 
   
- ![Code sample for entity access](images/Service_Consumption_Model_0100.png) 
+ ![Code sample](images/Service_Consumption_Model_0090.png)
 
 </details>
 
