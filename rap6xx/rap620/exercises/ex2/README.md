@@ -23,7 +23,7 @@ You can either open the source code editor from the Project Explorer or you can 
 <pre lang="ABAP">
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
-@EndUserText.label: 'Projection TEST BUG View for ZRAP620_R_INVENTORYTP_###'
+@EndUserText.label: '@EndUserText.label: 'Projection View for Inventory'
 define root view entity ZRAP620_C_INVENTORYTP_###
   provider contract transactional_query
   as projection on ZRAP620_R_INVENTORYTP_###
