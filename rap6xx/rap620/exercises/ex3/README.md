@@ -432,10 +432,13 @@ define custom entity ZRAP620_CE_PRODUCTS_###
 
 > You might get the warning that the class ` ZRAP620_CE_PRODUCTS_###` is not found. This is because our class does not yet implement the interface `IF_RAP_QUERY_PROVIDER`.  
 
+### Hints for creating the custom entity based on the type **`tys_sepmra_i_product_etype`**
+[^Top of page](#)
 
-> Hints for creating the custom entity based on the type **`tys_sepmra_i_product_etype`**
->  
-> When checking the source code of the *Service Consumption Provider Model* class we find in the public section the type defintion  **`tys_sepmra_i_product_etype`**.
+In the above code sample we just added three fields to our custom entity.
+
+When checking the source code of the *Service Consumption Provider Model* class we find in the public section the type defintion  
+**`tys_sepmra_i_product_etype`**.
 
 <pre>
   CLASS zrap620_sc_products_af3 DEFINITION
