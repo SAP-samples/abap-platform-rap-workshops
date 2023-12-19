@@ -601,6 +601,8 @@ It is mandatory that the response not only contains the retrieved data via the m
 
 </details>
 
+</details>
+
 ## Add the custom entity to your service definition
 
 We now have to add the custom entity to the service definition of our inventory application.   
