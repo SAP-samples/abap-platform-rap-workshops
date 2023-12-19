@@ -432,6 +432,92 @@ define custom entity ZRAP620_CE_PRODUCTS_###
 
 > You might get the warning that the class ` ZRAP620_CE_PRODUCTS_###` is not found. This is because our class does not yet implement the interface `IF_RAP_QUERY_PROVIDER`.  
 
+
+> Hints for creating the custom entity based on the type **`tys_sepmra_i_product_etype`**
+>  
+> When checking the source code of the *Service Consumption Provider Model* class we find in the public section the type defintion  **`tys_sepmra_i_product_etype`**.
+
+<pre>
+  CLASS zrap620_sc_products_af3 DEFINITION
+  PUBLIC
+  INHERITING FROM /iwbep/cl_v4_abs_pm_model_prov
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+
+    TYPES:
+      "! <p class="shorttext synchronized" lang="en">SEPMRA_I_Product_EType</p>
+      BEGIN OF tys_sepmra_i_product_etype,
+        "! <em>Key property</em> Product
+        product                 TYPE c LENGTH 10,
+        "! ProductType
+        product_type            TYPE c LENGTH 2,
+        "! ProductCategory
+        product_category        TYPE c LENGTH 40,
+        "! CreatedByUser
+        created_by_user         TYPE c LENGTH 10,
+        "! CreationDateTime
+        creation_date_time      TYPE timestampl,
+        "! LastChangedByUser
+        last_changed_by_user    TYPE c LENGTH 10,
+        "! LastChangedDateTime
+        last_changed_date_time  TYPE timestampl,
+        "! Price
+        price                   TYPE p LENGTH 9 DECIMALS 3,
+        "! Currency
+        currency                TYPE c LENGTH 5,
+        "! Height
+        height                  TYPE p LENGTH 7 DECIMALS 3,
+        "! Width
+        width                   TYPE p LENGTH 7 DECIMALS 3,
+        "! Depth
+        depth                   TYPE p LENGTH 7 DECIMALS 3,
+        "! DimensionUnit
+        dimension_unit          TYPE c LENGTH 3,
+        "! ProductPictureURL
+        product_picture_url     TYPE c LENGTH 255,
+        "! ProductValueAddedTax
+        product_value_added_tax TYPE int1,
+        "! Supplier
+        supplier                TYPE c LENGTH 10,
+        "! ProductBaseUnit
+        product_base_unit       TYPE c LENGTH 3,
+        "! Weight
+        weight                  TYPE p LENGTH 7 DECIMALS 3,
+        "! WeightUnit
+        weight_unit             TYPE c LENGTH 3,
+        "! OriginalLanguage
+        original_language       TYPE c LENGTH 2,
+      END OF tys_sepmra_i_product_etype,
+ 
+      "! <p class="shorttext synchronized" lang="en">List of SEPMRA_I_Product_EType</p>
+      tyt_sepmra_i_product_etype TYPE STANDARD TABLE OF tys_sepmra_i_product_etype WITH DEFAULT KEY.
+
+</pre>
+
+  >
+  > In addition we need the mapping information which can be found in the method **`def_sepmra_i_product_etype`**. 
+  > e.g. the mapping of `PRODUCT_TYPE` to the Edm Name `ProductType`.
+  >
+
+<pre>
+
+    lo_primitive_property = lo_entity_type->get_primitive_property( 'PRODUCT' ).
+    lo_primitive_property->set_edm_name( 'Product' ) ##NO_TEXT.
+    lo_primitive_property->set_edm_type( 'String' ) ##NO_TEXT.
+    lo_primitive_property->set_max_length( 10 ).
+    lo_primitive_property->set_scale_floating( ).
+    lo_primitive_property->set_is_key( ).
+
+    lo_primitive_property = lo_entity_type->get_primitive_property( 'PRODUCT_TYPE' ).
+    lo_primitive_property->set_edm_name( 'ProductType' ) ##NO_TEXT.
+    lo_primitive_property->set_edm_type( 'String' ) ##NO_TEXT.
+    lo_primitive_property->set_max_length( 2 ).
+    lo_primitive_property->set_scale_floating( ).
+    lo_primitive_property->set_is_nullable( ).
+  
+</pre>
+
 </details>
 
 ### Implement the query implemenation class ZRAP620_CE_PRODUCTS_###
