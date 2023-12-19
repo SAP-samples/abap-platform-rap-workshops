@@ -10,6 +10,7 @@ CLASS zrap620_cl_ce_products_### DEFINITION
 
     TYPES t_product_range TYPE RANGE OF zrap620_sc_products_###=>tys_sepmra_i_product_etype.
     TYPES t_business_data TYPE zrap620_sc_products_###=>tyt_sepmra_i_product_etype.
+    TYPES t_business_data_external TYPE TABLE OF zrap620_ce_products_###.
 
     METHODS get_products
       IMPORTING
@@ -111,6 +112,7 @@ CLASS zrap620_cl_ce_products_### IMPLEMENTATION.
 
   METHOD if_rap_query_provider~select.
     DATA business_data TYPE t_business_data.
+    DATA business_data_external TYPE t_business_data_external.
     DATA(top)     = io_request->get_paging( )->get_page_size( ).
     DATA(skip)    = io_request->get_paging( )->get_offset( ).
     DATA(requested_fields)  = io_request->get_requested_elements( ).
@@ -128,8 +130,14 @@ CLASS zrap620_cl_ce_products_### IMPLEMENTATION.
                    et_business_data  = business_data
                  ) .
 
-        io_response->set_total_number_of_records( lines( business_data ) ).
-        io_response->set_data( business_data ).
+        business_data_external = CORRESPONDING #( business_data
+                                          MAPPING Product = product
+                                                  ProductCategory = product_category
+                                                  Supplier = supplier
+                                                   ).
+
+        io_response->set_total_number_of_records( lines( business_data_external ) ).
+        io_response->set_data( business_data_external ).
 
       CATCH cx_root INTO DATA(exception).
         DATA(exception_message) = cl_message_helper=>get_latest_t100_exception( exception )->if_message~get_longtext( ).
