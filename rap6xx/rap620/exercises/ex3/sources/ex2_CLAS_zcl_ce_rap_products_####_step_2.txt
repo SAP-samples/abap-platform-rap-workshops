@@ -4,8 +4,12 @@ CLASS zrap620_cl_ce_products_### DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
-    TYPES t_product_range TYPE RANGE OF zrap620_###sepmra_i_product_e-Product.
-    TYPES t_business_data TYPE TABLE OF zrap620_###sepmra_i_product_e.
+
+    INTERFACES if_oo_adt_classrun .
+    INTERFACES if_rap_query_provider.
+
+    TYPES t_product_range TYPE RANGE OF zrap620_sc_products_###=>tys_sepmra_i_product_etype.
+    TYPES t_business_data TYPE zrap620_sc_products_###=>tyt_sepmra_i_product_etype.
 
     METHODS get_products
       IMPORTING
@@ -21,8 +25,6 @@ CLASS zrap620_cl_ce_products_### DEFINITION
         cx_http_dest_provider_error
       .
 
-    INTERFACES if_oo_adt_classrun .
-    INTERFACES if_rap_query_provider.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -33,7 +35,8 @@ CLASS zrap620_cl_ce_products_### IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
-    DATA business_data TYPE t_business_data." TABLE OF zrap620_###sepmra_i_product_e.
+
+    DATA business_data TYPE t_business_data.
     DATA filter_conditions  TYPE if_rap_query_filter=>tt_name_range_pairs .
     DATA ranges_table TYPE if_rap_query_filter=>tt_range_option .
     ranges_table = VALUE #( (  sign = 'I' option = 'GE' low = 'HT-1200' ) ).
@@ -52,6 +55,7 @@ CLASS zrap620_cl_ce_products_### IMPLEMENTATION.
       CATCH cx_root INTO DATA(exception).
         out->write( cl_message_helper=>get_latest_t100_exception( exception )->if_message~get_longtext( ) ).
     ENDTRY.
+
   ENDMETHOD.
   METHOD get_products.
     DATA: filter_factory   TYPE REF TO /iwbep/if_cp_filter_factory,
@@ -66,9 +70,11 @@ CLASS zrap620_cl_ce_products_### IMPLEMENTATION.
     DATA(http_destination) = cl_http_destination_provider=>create_by_url( i_url = 'https://sapes5.sapdevcenter.com' ).
     http_client = cl_web_http_client_manager=>create_by_http_destination( i_destination = http_destination ).
 
-    odata_client_proxy = cl_web_odata_client_factory=>create_v2_remote_proxy(
+    odata_client_proxy = /iwbep/cl_cp_factory_remote=>create_v2_remote_proxy(
       EXPORTING
-        iv_service_definition_name = 'ZRAP620_SC_PRODUCTS_###'
+         is_proxy_model_key       = VALUE #( repository_id       = 'DEFAULT'
+                                             proxy_model_id      = 'ZRAP620_SC_PRODUCTS_###'
+                                             proxy_model_version = '0001' )
         io_http_client             = http_client
         iv_relative_service_root   = '/sap/opu/odata/sap/ZPDCDS_SRV/' ).
 
@@ -100,10 +106,11 @@ CLASS zrap620_cl_ce_products_### IMPLEMENTATION.
     " Execute the request and retrieve the business data
     read_list_response = read_list_request->execute( ).
     read_list_response->get_business_data( IMPORTING et_business_data = et_business_data ).
+
   ENDMETHOD.
 
   METHOD if_rap_query_provider~select.
-    DATA business_data TYPE t_business_data. "TABLE OF zrap620_###sepmra_i_product_e.
+    DATA business_data TYPE t_business_data.
     DATA(top)     = io_request->get_paging( )->get_page_size( ).
     DATA(skip)    = io_request->get_paging( )->get_offset( ).
     DATA(requested_fields)  = io_request->get_requested_elements( ).
