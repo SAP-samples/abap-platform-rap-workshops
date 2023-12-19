@@ -367,6 +367,9 @@ In order to be able to retrieve the data from the remote OData service we have t
 
 The interface **if_rap_query_provider interface** only offers one method which is called **select**. Within this select method we will call the public **get_products( )** method. The select method also expects that the incoming requests provide certain OData specific query parameters. These we will set in our coding as well.
 
+<details>
+<summary>Click to expand</summary>
+
 Let’s start with creating a new data definition ````ZRAP620_CE_PRODUCTS_###```` using the template for a custom entity.
 
 1. Right-click on the folder **Data Definition** and select **New Data Definition.**   
