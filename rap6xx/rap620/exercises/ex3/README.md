@@ -20,7 +20,7 @@ In this exercise, you will ...
 
 - [Create a custom entity and implement the query implementation class](#create-a-custom-entity-and-implement-the-query-implementation-class)
   - [Create a custom entity](#create-a-custom-entity)
-  - [Implement the query implemenation class](#implement-the-query-implemenation-class-zrap260ceproducts)   
+  - [Implement the query implemenation class](#implement-the-query-implemenation-class-zrap620ceproducts)   
 
 - [Add the custom entity as a value help](#add-the-custom-entity-as-a-value-help)
 - [Test the service](#test-the-service)
@@ -374,7 +374,7 @@ Let’s start with creating a new data definition ````ZRAP620_CE_PRODUCTS_###```
    ![New data definition 1](images/custom_entity_0000.png)
 
 2. The **New Data Defintion** dialogue opens. Here you have to enter the following values:  
-   - Name: **`ZRAP260_CE_PRODUCTS_###`** 
+   - Name: **`ZRAP620_CE_PRODUCTS_###`** 
    - Description: **`Custom entity for products from ES5`**
    
    Press **Next**
@@ -426,15 +426,15 @@ define custom entity ZRAP620_CE_PRODUCTS_###
 
 </pre>
 
-   [Source code ZRAP260_CE_PRODUCTS_###](sources/ex2_DDLS_ZCE_RAP_PRODUCTS_%23%23%23%23.txt)
+   [Source code ZRAP620_CE_PRODUCTS_###](sources/ex2_DDLS_ZCE_RAP_PRODUCTS_%23%23%23%23.txt)
 
 7. Activate your changes ![Activate](images/activate.png)
 
-> You might get the warning that the class ` ZRAP260_CE_PRODUCTS_###` is not found. This is because our class does not yet implement the interface `IF_RAP_QUERY_PROVIDER`.  
+> You might get the warning that the class ` ZRAP620_CE_PRODUCTS_###` is not found. This is because our class does not yet implement the interface `IF_RAP_QUERY_PROVIDER`.  
 
 </details>
 
-### Implement the query implemenation class ZRAP260_CE_PRODUCTS_###
+### Implement the query implemenation class ZRAP620_CE_PRODUCTS_###
 [^Top of page](#)
 
 After having created the custom entity `ZRAP620_CE_PRODUCTS_###` we now have to enhance the query implementation class `ZRAP620_CL_CE_PRODUCTS_###` that we have created earlier in this exercise.
