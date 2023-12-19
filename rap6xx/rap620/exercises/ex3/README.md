@@ -175,7 +175,7 @@ This is a useful additional step since this way it is easier to check whether th
    
 3. Check the input and press **Next**
 
-![New ABAP class](images/console_app_0030.png)
+   ![New ABAP class](images/console_app_0030.png)
 
 4. Selection of transport request
 
@@ -209,8 +209,8 @@ CLASS zcl_ce_rap_products_#### DEFINITION
 
     INTERFACES if_oo_adt_classrun .
 
-    TYPES t_product_range TYPE RANGE OF zrap620_###sepmra_i_product_e-Product.
-    TYPES t_business_data TYPE TABLE OF zrap620_###sepmra_i_product_e.
+    TYPES t_product_range TYPE RANGE OF zrap620_sc_products_###=>tys_sepmra_i_product_etype.
+    TYPES t_business_data TYPE zrap620_sc_products_###=>tyt_sepmra_i_product_etype.
 
     METHODS get_products
       IMPORTING
@@ -240,7 +240,7 @@ ENDCLASS.
    The public method **get_products( )** is used to retrieve the data from the remote OData service. Since it is not possible to leverage the destination service in the trial systems, we will use the method **cl_http_destination_provider=>create_by_url** which allows us to create a http destination object based on the target URL. As the target URL we choose the root URL https://sapes5.sapdevcenter.com of the ES5 system since the relative URL that points to the OData service will be added when creating the OData client proxy.
 
    **Caution:**  
-   Do not forget to replace the placeholder **'####'** with your unique number.  
+   Do not forget to replace the placeholder **'###'** with your unique number.  
 
    > Please note
 
@@ -263,11 +263,13 @@ ENDCLASS.
     DATA(http_destination) = cl_http_destination_provider=>create_by_url( i_url = 'https://sapes5.sapdevcenter.com' ).
     http_client = cl_web_http_client_manager=>create_by_http_destination( i_destination = http_destination ).
 
-    odata_client_proxy = cl_web_odata_client_factory=>create_v2_remote_proxy(
-      EXPORTING
-        iv_service_definition_name = 'ZRAP620_SC_PRODUCTS_###'
-        io_http_client             = http_client
-        iv_relative_service_root   = '/sap/opu/odata/sap/ZPDCDS_SRV/' ).
+     odata_client_proxy = /iwbep/cl_cp_factory_remote=>create_v2_remote_proxy(
+       EXPORTING
+          is_proxy_model_key       = VALUE #( repository_id       = 'DEFAULT'
+                                              proxy_model_id      = 'ZRAP620_SC_PRODUCTS_###'
+                                              proxy_model_version = '0001' )
+         io_http_client             = http_client
+         iv_relative_service_root   = '/sap/opu/odata/sap/ZPDCDS_SRV/' ).
 
     " Navigate to the resource and create a request for the read operation
     read_list_request = odata_client_proxy->create_resource_for_entity_set( 'SEPMRA_I_PRODUCT_E' )->create_request_for_read( ).
@@ -297,7 +299,6 @@ ENDCLASS.
     " Execute the request and retrieve the business data
     read_list_response = read_list_request->execute( ).
     read_list_response->get_business_data( IMPORTING et_business_data = et_business_data ).
-
   ENDMETHOD.
 </pre>
 
