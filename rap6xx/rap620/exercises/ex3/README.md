@@ -168,14 +168,11 @@ This is a useful additional step since this way it is easier to check whether th
    
    - Start to type ````if_oo````
    - Select ````IF_OO_ADT_CLASSRUN```` from the list of matching items
-   - Press **OK** or double-click on ````IF_OO_ADT_CLASSRUN````
+   - Press **OK** or double-click on ````IF_OO_ADT_CLASSRUN````  
    
-   ![New ABAP class](images/console_app_0020.png)
-   
-   
-3. Check the input and press **Next**
+3. Check the input and press **Next**  
 
-   ![New ABAP class](images/console_app_0030.png)
+   ![New ABAP class](images/console_app_0020.png)
 
 4. Selection of transport request
 
@@ -193,8 +190,9 @@ This is a useful additional step since this way it is easier to check whether th
 
 1. Let's start with the implementation of our test class. 
 
-   In the public section we add two ````TYPES```` definitions. ````t_product_range```` is used to provide filter conditions for ProductIDs in form of ````SELECT-OPTIONS```` to the method ````get_products( )````.  
+   In the public section we add two ````TYPES```` definitions. ````t_product_range```` is used to provide filter conditions for ProductIDs in form of ````SELECT-OPTIONS```` to the method ````get_products( )````.    
    The second type ````t_business_data```` is used to retrieve the business data returned by our remote OData service.  
+   For both type defintions we reuse the public types definitions of our newly generated Service Consumption Model class **`zrap620_sc_products_###`**.  
    The  ````get_products( )```` method takes filter conditions in form of ````SELECT-OPTIONS```` via the importing parameter ````it_filter_cond````. In addition it is possible to provide values for ````top```` and ````skip```` to leverage client side paging.  
 
    So the ````DEFINITION```` section of your class should now look like follows:
