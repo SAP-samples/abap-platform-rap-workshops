@@ -409,7 +409,7 @@ Let’s start with creating a new data definition ````ZRAP620_CE_PRODUCTS_###```
 
 5. Edit the source code of the custom entity
 
-   - From the abstract entity that is used by the service consumption model we only use the following three fields for your value help: `Product`, `ProductCategory` and `Supplier`.
+   - From the remote OData service that is used by the service consumption model we only use the following three fields for your value help: `Product`, `ProductCategory` and `Supplier`.
    - We add the annotation `@ObjectModel.query.implementedBy: 'ABAP:ZRAP620_CL_CE_PRODUCTS_###'` right before the `define custom entity` statement.
 
 The DDL source code should now look like follows:
@@ -437,8 +437,7 @@ define custom entity ZRAP620_CE_PRODUCTS_###
 
 In the above code sample we just added three fields to our custom entity.
 
-When checking the source code of the *Service Consumption Provider Model* class we find in the public section the type defintion  
-**`tys_sepmra_i_product_etype`**.
+When checking the source code of the *Service Consumption Provider Model* class we find in the public section the type defintion **`tys_sepmra_i_product_etype`** which contains the ABAP internal representation of the data.
 
 <pre>
   CLASS zrap620_sc_products_af3 DEFINITION
@@ -556,6 +555,7 @@ It is mandatory that the response not only contains the retrieved data via the m
 
    METHOD if_rap_query_provider~select.
     DATA business_data TYPE t_business_data.
+    DATA business_data_external TYPE t_business_data_external.
     DATA(top)     = io_request->get_paging( )->get_page_size( ).
     DATA(skip)    = io_request->get_paging( )->get_offset( ).
     DATA(requested_fields)  = io_request->get_requested_elements( ).
@@ -573,8 +573,14 @@ It is mandatory that the response not only contains the retrieved data via the m
                    et_business_data  = business_data
                  ) .
 
-        io_response->set_total_number_of_records( lines( business_data ) ).
-        io_response->set_data( business_data ).
+        business_data_external = CORRESPONDING #( business_data
+                                          MAPPING Product = product
+                                                  ProductCategory = product_category
+                                                  Supplier = supplier
+                                                   ).
+
+        io_response->set_total_number_of_records( lines( business_data_external ) ).
+        io_response->set_data( business_data_external ).
 
       CATCH cx_root INTO DATA(exception).
         DATA(exception_message) = cl_message_helper=>get_latest_t100_exception( exception )->if_message~get_longtext( ).
