@@ -28,7 +28,8 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 
 1. You need a user on an SAP BTP ABAP environment, SAP S/4HANA Cloud, or SAP S/4HANA 2022 system where the [ABAP Flight Reference Scenario](https://github.com/SAP-samples/abap-platform-refscen-flight) is available - e.g. SAP BTP ABAP Environment Trial.
    
-   Please refer to the following tutorial if you do not already have an appropriate ABAP user: [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
+   Please refer to the following tutorial if you do not already have an appropriate ABAP user:  
+   🔗 [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
    ---
    > ⚠**Please note**⚠:    
@@ -37,9 +38,9 @@ This repository contains the material for the hands-on session **RAP100 - Buildi
 
 3. You also need the latest version of the ABAP Development Tools (ADT) plugin in the latest instalation version of the Eclipse platform.
    
-   Please check the following two short documents how to do this if you have not already done it:
-   - [Install the newest Eclipse platform and the newest ABAP Development Tools (ADT) plugin](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-latest-abap-development-tools-adt)
-   - [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)  
+   Please check the following two short documents how to do this if you have not already done it:   
+   🔗 [Install the newest Eclipse platform and the newest ABAP Development Tools (ADT) plugin](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#3-install-the-latest-abap-development-tools-adt)  
+   🔗 [Adapt the Web Browser settings in your ADT installation](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/requirements_rap_workshops.md#4-adapt-the-web-browser-settings-in-your-adt-installation)    
 
 <!--
 The requirements to follow the exercises in this repository are:
