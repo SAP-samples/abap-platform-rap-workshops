@@ -126,9 +126,9 @@ The exercises below are based on the exercise 1 to 5 from the _Beginner Level_ s
 | [Exercise 8: Write an ABAP Unit Test for the RAP BO](exercises/ex8/readme.md) | -- |
 | [Exercise 9: External API-based Access to the RAP BO with EML](exercises/ex9/readme.md) | -- |
 
-#### Additional Exercise: 
-The following exercise is based on the Exercise 1-9 from the _Beginner_ and _Intermediate Level_ sections.   
-However, you can perform this exercise already after _Exercise 1_ if you want to test the resut of the follow-up exercises directly in the actual proper SAP Fiori elements-based _Travel_ app instead of using the ADT preview.
+#### Additional Exercises: 
+The following exercises are based on the Exercise 1-9 from the _Beginner_ and _Intermediate Level_ sections.   
+However, you can perform these exercises in the given order already after _Exercise 1_ if you want to test the result of the following exercises directly in the real SAP Fiori elements-based _Travel_ app instead of using the ADT preview.
 
 | Exercises | -- |
 | ------------- |  -- |
@@ -136,14 +136,14 @@ However, you can perform this exercise already after _Exercise 1_ if you want to
 | [Exercise 11: Integrate an SAP Fiori App into the ABAP Fiori Launchpad](https://developers.sap.com/tutorials/abap-environment-integrate-app-into-flp.html) | -- |
 
    
-## Recording
+## ⏺️ Recordings
 [^Top of page](#)
 
 Watch the replay of the virtual workshop on RAP held SAP TechEd in 2022. It contains a compact introduction to RAP and a demonstration of the exercises 1 to 7.
 
 📹 <a href="http://www.youtube.com/watch?feature=player_embedded&v=BNoUYkizM30" target="_blank">Build and Extend Apps with the ABAP RESTful Application Programming Model</a> 
 
-## 🎧How to obtain support
+## 🆘How to obtain support
 [^Top of page](#)
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../../../issues) tab.
