@@ -247,8 +247,16 @@ The enablement of OData streams will give end-users the option to upload and dow
 
 
  1. Open your metadata extention ![metadataextension](images/adt_ddlx.png)**`ZRAP100_C_TRAVELTP_###`** and adjust the UI annotations to achieve the following changes on the Fiori elements based UI of the _Travel App_.
-  
-    - Enhance the **header info** - `TravelID` and the uploaded attachment (`Attachment`) should be displayed as standard description in the header of the _Travel_ object page.
+
+    For that, replace the generated source code of the metadata extension with the code provided in the source code document linked below and replace all occurences of the placeholder **`###`** with your group ID using **Ctrl+F**.
+     
+    ![document](images/doc.png) **Source code document**: ![ddlx icon](images/adt_ddlx.png)[CDS metadata extension ZRAP100_C_TRAVELTP_###](sources/EX2_DDLX_ZRAP100_C_TRAVELTP.txt)  
+
+     Your source code will look like this:
+     <!-- ![MetaDataExtension](images/new7.png) -->
+     <img src="images/new7.png" alt="Metadata extension" width="60%">
+
+      - Enhance the **header info** - `TravelID` and the uploaded attachment (`Attachment`) should be displayed as standard description in the header of the _Travel_ object page.
     - Element **`TravelID`** - should also be a selection criteria in the filter bar and have high display importance on small windows.
     - Element **`AgencyID`** - should also be a selection criteria in the filter bar and have high display importance on small windows.
     - Element **`CustomerID`** - should also be a selection criteria in the filter bar and have high display importance on small windows.
@@ -263,14 +271,6 @@ The enablement of OData streams will give end-users the option to upload and dow
     - Element **`Attachment`** - should only be displayed on the object page - not in the list table.
     - Element **`MimeType`** - should be hidden.
     - Element **`FileName`** - should be hidden.
-
-    For that, replace the generated source code of the metadata extension with the code provided in the source code document linked below and replace all occurences of the placeholder **`###`** with your group ID using **Ctrl+F**.
-     
-    ![document](images/doc.png) **Source code document**: ![ddlx icon](images/adt_ddlx.png)[CDS metadata extension ZRAP100_C_TRAVELTP_###](sources/EX2_DDLX_ZRAP100_C_TRAVELTP.txt)  
-
-     Your source code will look like this:
-     <!-- ![MetaDataExtension](images/new7.png) -->
-     <img src="images/new7.png" alt="Metadata extension" width="60%">
     
    2. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
