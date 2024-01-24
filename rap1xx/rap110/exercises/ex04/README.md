@@ -56,7 +56,7 @@ In the present exercise, you will define and implement the base BO behavior for 
            cl_numberrange_runtime=>number_get(
              EXPORTING
                nr_range_nr       = '01'
-               object            = '/DMO/TRV_M'  
+               object            = 'ZRAP110###'  "Fallback: '/DMO/TRV_M'  
                quantity          = CONV #( lines( mapped-travel ) )
              IMPORTING
                number            = DATA(number_range_key)
