@@ -4,7 +4,6 @@
 CLASS lsc_zrap110_r_traveltp_### DEFINITION INHERITING FROM cl_abap_behavior_saver.
 
   PROTECTED SECTION.
-
     METHODS adjust_numbers REDEFINITION.
 
 ENDCLASS.
@@ -12,7 +11,6 @@ ENDCLASS.
 CLASS lsc_zrap110_r_traveltp_### IMPLEMENTATION.
 
   METHOD adjust_numbers.
-
     DATA: travel_id_max TYPE /dmo/travel_id.
 
     "Root BO entity: Travel
