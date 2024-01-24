@@ -50,7 +50,7 @@ In this exercise, you will adjust the layout of the list reports and  object pag
 > - **Option 1️⃣**: **This is the recommended option**. Replace the complete source code of the metadata extension ![ddlx icon](../images/adt_ddlx.png)**`ZRAP110_C_TRAVELTP_###`** with the source code provided in the source code document linked below and replace the placeholder **`###`** with your assigned suffix. The changes are marked with an appropriate comment in the source code document. 
 Then **proceed directly with Exercise 5.2**.
 > 
->   ➡️📄 **Source code document**: ![ddlx icon](../images/adt_ddlx.png) [CDS Metadata extension ZRAP110_C_TravelTP_###](sources/EX05_DDLX_ZRAP110_C_TravelTP.txt) 
+>   📄 **Source code document**: ![ddlx icon](../images/adt_ddlx.png) [CDS Metadata extension ZRAP110_C_TravelTP_###](sources/EX05_DDLX_ZRAP110_C_TravelTP.txt) 
 >  
 > - **Option 2️⃣**: Carry out the steps described below in sequence. 
 
