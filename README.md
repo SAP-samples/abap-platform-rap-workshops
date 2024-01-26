@@ -7,8 +7,7 @@ In this repository we provide materials for customer and community facing sessio
 
 ## Workshops
 
-[RAP100 - \[Beginner\] Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)]([/rap1xx/rap100#readme](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap100)
-
+[RAP100 - \[Beginner\] Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)](https://github.com/SAP-samples/abap-platform-rap100)
 [RAP110 - \[Intermediate\] Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/rap1xx/rap110)
 
 [RAP400 - Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)](/rap4xx/rap400#readme)
