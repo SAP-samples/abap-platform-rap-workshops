@@ -1,4 +1,4 @@
-[Home - RAP Managed BO Runtime Implementation](../README.md)  
+[Home - Workshops about the ABAP RESTful Application Programming Model (RAP)](../README.md)  
 
 # RAP - Managed BO Runtime Implementation 
 
