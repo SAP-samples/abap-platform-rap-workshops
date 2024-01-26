@@ -12,7 +12,7 @@ Find hands-on exercises in the folder [RAP100](rap100).
 The application built in this exercise is based on a managed BO implementation with late numbering (semantic key). 
 It is based on a managed Business Object (BO) with two BO nodes or entities, _Travel_ and _Booking_, and uses features such as Odata stream, virtual elements in CDS-based data model, late numbering, internal and determine instance actions, static default factory actions, side effects, functions, business events, and additional save.
 
-Find hands-on exercises in the repository [RAP100](https://github.com/SAP-samples/abap-platform-rap110).
+Find hands-on exercises in the repository [RAP110](https://github.com/SAP-samples/abap-platform-rap110).
 
 <!--
 ## DEV260 - Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)
