@@ -7,7 +7,7 @@ Find hands-on exercises related to core functionalities when building greenfield
 ## RAP100 - Build a transactional Fiori elements App with the ABAP RESTful Application Programming Model (RAP) 
 The application built in this exercise is a managed Implementation with internal unmanaged early numbering (semantic key).
 
-Find hands-on exercises in the folder [RAP100](rap100).
+Find hands-on exercises in the folder [RAP100](https://github.com/SAP-samples/abap-platform-rap100).
 
 ## RAP110 - Build a transactional Fiori elements App with the RAP \[Intermediate Level\]
 The application built in this exercise is based on a managed BO implementation with late numbering (semantic key). 
