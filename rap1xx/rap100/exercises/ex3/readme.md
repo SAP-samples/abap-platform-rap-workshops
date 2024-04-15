@@ -58,7 +58,14 @@ A number range object will be used to determine the unique travel identifiers.
    read-only on further processing of these instances, the operation-dependent field access restrictions `field (mandatory:create)` and `field (read-only:update)` are 
    used respectively.
 
-3. Specify the field **`TravelID`** as read-only field since it will be set at runtime by the internal early numbering. 
+3. Delete following statement:
+   
+    ```ABAP 
+    field ( mandatory : create ) 
+    TravelID;
+    ```
+    
+4. Specify the field **`TravelID`** as read-only field since it will be set at runtime by the internal early numbering. 
    
    > **Info**: The **static field control** is used to restrict properties of particular fields. 
    
@@ -91,9 +98,9 @@ A number range object will be used to determine the unique travel identifiers.
  
 
    
-4. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
+5. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
    
-5. To complete the definition, you need to declare the required method in behavior implementation class. You can use the ADT Quick Fix to do that.
+6. To complete the definition, you need to declare the required method in behavior implementation class. You can use the ADT Quick Fix to do that.
      
    Set the cursor on the statement **`create;`** and press **Ctrl+1** to open the **Quick Assist** view. 
    
@@ -106,7 +113,7 @@ A number range object will be used to determine the unique travel identifiers.
    
    You are through with the definition of the early numbering and can now go ahead and implement its logic.     
 
-6. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
+7. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.
 
 </details>
 
