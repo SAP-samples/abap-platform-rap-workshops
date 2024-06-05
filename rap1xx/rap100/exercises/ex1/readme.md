@@ -221,14 +221,14 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
       | **RAP Layer**          |  **Artefacts**           | **Artefact Names**                                       |     
       |:---------------------- |:------------------------ |:-------------------------------------------------------- |
       | **Business Object**    |                          |                                                          |                        
-      |                        |  **Data Model**          |  Data Definition Name:   **`ZRAP100_R_TravelTP_###`**    |
+      |                        |  **Data Model**          |  Data Definition Name:   **`ZRAP100_R_TRAVELTP_###`**    |
       |                        |                          |  Alias Name:             **`Travel`**                    |   
-      |                        |  **Behavior**            |  Implementation Class:   **`ZRAP100_BP_TravelTP_###`**   |
+      |                        |  **Behavior**            |  Implementation Class:   **`ZRAP100_BP_TRAVELTP_###`**   |
       |                        |                          |  Draft Table Name:       **`ZRAP100_DTRAV###`**          |
-      | **Service Projection** | _(BO Projection)_        |  Name:                   **`ZRAP100_C_TravelTP_###`**    |   
+      | **Service Projection** | _(BO Projection)_        |  Name:                   **`ZRAP100_C_TRAVELTP_###`**    |   
       | **Business Services**  |                          |                                                          |          
-      |                        |  **Service Definition**  |  Name:         **`ZRAP100_UI_Travel_###`**               |
-      |                        |  **Service Binding**     |  Name:         **`ZRAP100_UI_Travel_O4_###`**            |
+      |                        |  **Service Definition**  |  Name:         **`ZRAP100_UI_TRAVEL_###`**               |
+      |                        |  **Service Binding**     |  Name:         **`ZRAP100_UI_TRAVEL_O4_###`**            |
       |                        |                          |  Binding Type: **`OData V4 - UI`**                       |
                        
       <!-- ![generator](images/p7a.png)  --> 
@@ -254,7 +254,7 @@ First you will create an ABAP package, a database table, and an ABAP class to fi
    | ![ddls icon](images/adt_ddls.png)**`ZRAP100_R_TravelTP_###`**     | (aka _Base BO view_): This **data definition** defines the data model of the root entity _Travel_ which is the only  node of our business object).  |                      
    | ![bdef icon](images/adt_bdef.png)**`ZRAP100_R_TravelTP_###`**   | (aka _Base BO behavior): This **behavior definition** contains the definition of the standard transactional behavior of the base _Travel_ BO entity. It is a _managed_ and _draft-enabled_ implementation.  |  
    | ![tabl icon](images/adt_tabl.png)**`ZRAP100_DTRAV###`**   | (aka _Draft table_): This **database table** is used to temporary store the data from draft _travel_ instances at runtime. It is managed by the RAP framework.    |     
-   | ![class icon](images/adt_class.png)**`ZRAP100_BP_TRAVELTP_###`**  | (aka _Behavior pool_): This **ABAP class** which provides the implementation of the behavior defined in the behavior definition `ZRAP100_R_TravelTP_###` of the base _Travel_ BO.   |  
+   | ![class icon](images/adt_class.png)**`ZRAP100_BP_TravelTP_###`**  | (aka _Behavior pool_): This **ABAP class** which provides the implementation of the behavior defined in the behavior definition `ZRAP100_R_TravelTP_###` of the base _Travel_ BO.   |  
   
 ---
   **BO Projection `ZRAP100_C_TRAVEL_###`** 
