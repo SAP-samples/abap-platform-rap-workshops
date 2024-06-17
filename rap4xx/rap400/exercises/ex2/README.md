@@ -130,7 +130,8 @@ You will implement both local test classes on the tab _**Test classes**_ of the 
   
     **<details><summary>Click here to expand the source code</summary>**
     <p>
-    <pre>
+    <pre>  
+     
         CLASS-DATA:
           class_under_test     TYPE REF TO lhc_travel,               " the class to be tested
           cds_test_environment TYPE REF TO if_cds_test_environment,  " cds test double framework
