@@ -13,7 +13,7 @@
    use action rejectTravel;
  }
 
- define behavior for ZRAP400_C_BOOKING_#### alias Booking
+ define behavior for ZRAP400_C_BOOK_#### alias Booking
  use etag
  {
    use update;
