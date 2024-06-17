@@ -52,7 +52,7 @@ early numbering
   }
 }
 
-define behavior for ZRAP400_I_BOOKING_#### alias Booking
+define behavior for ZRAP400_I_BOOK_#### alias Booking
 //implementation in class zrap400_bp_i_booking_#### unique
 persistent table zrap400_book####
 etag master LastChangedAt
