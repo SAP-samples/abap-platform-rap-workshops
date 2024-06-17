@@ -113,7 +113,8 @@ We want to enhance the standard transactional behavior with some app-specific lo
 5. Save ![save icon](images/adt_save.png) and activate ![activate icon](images/adt_activate.png) the changes.  
 
 
-## Exercise 1.3 - Create the behavior implementation class  
+## Exercise 1.3 - Change the behavior implementation class  
+<!--
 1. Create the _Travel_ behavior implementation (aka _behabvior pool_).
   
     For that, go to the behavior definition **`ZRAP400_I_RAP_TRAVEL_####`**, set the cursor on the specified behavior pool **`zrap400_bp_i_travel_####`**, where `####` is your group ID, and press **Ctrl+1** to open the ADT Quick Fix list. 
@@ -127,8 +128,8 @@ We want to enhance the standard transactional behavior with some app-specific lo
       The generated class skeleton on the **_Global class_** and the **_Local Types_** tabs should look as shown on the screenshot below. On the **_Local Types_** tab, you can see the signature of the different methods which need to be implemented to provided the enhanced travel BO specific business logic.
  
       ![Behavior Implementation Class](images/behaviorimplementation01.png)  
-      
-2. On the **_Local Types_** tab and replace the complete generated source code with the provided code snippet.
+ -->     
+1. On the **_Local Types_** tab and replace the complete generated source code with the provided code snippet.
   
     For that, delete the complete source code, insert the code snippet provided in the source code document **`ZRAP400_BP_I_TRAVEL_####`** linked below, and replace all occurrences of **`####`** with your group ID.
 
