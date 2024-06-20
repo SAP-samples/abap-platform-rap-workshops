@@ -16,18 +16,14 @@ In the ABAP trial systems we have provided the helper class **`ZDMO_gen_rap400_s
    ![Open ABAP Development Object](images/helperclass00_gen.png)
 
 2. Enter **`ZDMO_gen_rap400_single`** as search string, select the class and press **OK** in the apperaring dialog.      
-
-   ![Generate Data Model](images/helperclass01_gen.png)
-
-2. The class **`ZDMO_gen_rap400_single`** is displayed in the class editor.
-
-    ![Generate Data Model](images/helperclass02_gen.png)
   
-3. Press **F9** to run the ABAP class as a console application. As a result, you will see a success message in the Console.     
+3. The class **`ZDMO_gen_rap400_single`** is displayed in the class editor.
+  
+4. Press **F9** to run the ABAP class as a console application. As a result, you will see a success message in the Console.     
 
    ![Generate Data Model](images/helperclass03_gen.png)  
 
-4. Please note down your group ID **`####`** and copy the name of the newly created package **`ZRAP400_TRAVEL_####`**
+5. Please note down your group ID **`####`** and copy the name of the newly created package **`ZRAP400_TRAVEL_####`**
     <pre>
      **************************************************************************************************** 
      **                    Generation for the RAP400 Workshop (yyyymmdd hhmmss UTC)                    ** 
@@ -37,13 +33,13 @@ In the ABAP trial systems we have provided the helper class **`ZDMO_gen_rap400_s
       ...
      </pre>
    
-5. Go to the _Project Explorer_, right-click on the folder **Favorite Packages** and select **Add Package...** from the the context menu.  
+6. Go to the _Project Explorer_, right-click on the folder **Favorite Packages** and select **Add Package...** from the the context menu.  
     
     Enter the name of your package **`ZRAP400_TRAVEL_####`**, where `####`is your group ID, and press **OK**. 
 
    ![Open ABAP Development Object](images/helperclass04_gen.png)
    
-6. You can open your exercise package **`ZRAP400_TRAVEL_####`** and have a look at the generated artifacts.  
+7. You can open your exercise package **`ZRAP400_TRAVEL_####`** and have a look at the generated artifacts.  
        
     ![Generate RAP Service](images/projectexplorer01.png)  
     
@@ -60,13 +56,13 @@ In the ABAP trial systems we have provided the helper class **`ZDMO_gen_rap400_s
 
    You are through with the generation of your UI service. You can now publish the Local Service Endpoint and preview the SAP Fiori elements app.  
 
-7. Publish the Local Service Endpoint.  
+8. Publish the Local Service Endpoint.  
   
    Open the service binding **`ZRAP400_UI_TRAVEL_####_O2`** and click on the **`Publish`** button in the _**Service Version Details**_ area located on the right-hand side of the editor.
   
    ![activate Service Binding](images/servicebinding01.png)
     
-8. Preview the SAP Fiori elements app of the generated UI service: _Travel_ List Report App.  
+9. Preview the SAP Fiori elements app of the generated UI service: _Travel_ List Report App.  
    
    In the service binding **`ZRAP400_UI_TRAVEL_####_O2`**, go to the _**Entity Set and Association**_ area on the right-hand side and double-click on the **Travel** entity.
    
