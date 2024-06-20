@@ -9,17 +9,17 @@ The data model underlying the current UI service consists of two main entities *
 
 ## Exercise 1.1 - Generate the basic transactional UI Service 
 
-In the ABAP trial systems we have provided the helper class **`/dmo/cl_gen_rap400_artifacts`** to generate the different RAP artifacts of the basic UI service. The helper class will also fill some demo data into the generated _travel_ and _booking_ database tables using demo data provided by the _ABAP Flight Reference Scenario_.   
+In the ABAP trial systems we have provided the helper class **`ZDMO_gen_rap400_single`** to generate the different RAP artifacts of the basic UI service. The helper class will also fill some demo data into the generated _travel_ and _booking_ database tables using demo data provided by the _ABAP Flight Reference Scenario_.   
   
 1. Select the **Open ABAP Development Object** icon or press **Ctrl+Shift+A**. 
 
    ![Open ABAP Development Object](images/helperclass00_gen.png)
 
-2. Enter **`/dmo/cl_gen_rap400_artifacts`** as search string, select the class and press **OK** in the apperaring dialog.      
+2. Enter **`ZDMO_gen_rap400_single`** as search string, select the class and press **OK** in the apperaring dialog.      
 
    ![Generate Data Model](images/helperclass01_gen.png)
 
-2. The class **`/dmo/cl_gen_rap400_artifacts`** is displayed in the class editor.
+2. The class **`ZDMO_gen_rap400_single`** is displayed in the class editor.
 
     ![Generate Data Model](images/helperclass02_gen.png)
   
