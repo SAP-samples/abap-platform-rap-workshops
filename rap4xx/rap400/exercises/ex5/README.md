@@ -31,31 +31,37 @@ A detailed documentation can be found here:
 3. Check the local class `ltcl_mockemlapi_variant_demos`
 4. Open the method `isolate_read`. 
 
-![image](https://github.com/SAP-samples/abap-platform-rap-workshops/assets/22053314/0b1ab449-9b82-4537-85c7-c1972fbb6280)
+![image](https://github.com/SAP-samples/abap-platform-rap-workshops/assets/22053314/a17ffdde-188a-40e1-a63b-2c12605bf61f)
 
 5. Right click on the method `isolate_read` and select **run as Unit test**
 
-
-
 6. The result should be a success:
 
-![image](https://github.com/SAP-samples/abap-platform-rap-workshops/assets/22053314/8f488161-1f74-4ddf-9288-bebbb75e04ea)
+![image](https://github.com/SAP-samples/abap-platform-rap-workshops/assets/22053314/08c31284-5997-42b7-a1f5-6a47e7940061)
 
-7. Now change the code in line 1095
+7. Now change the code in line 1098
 
 <pre>
-    read_travel_instances = value #( (  Travel_ID = '987' ) "travel returned
-                                     (  Travel_ID = '988' ) ). "read should fail for 988 assuming the instance does not exist
+  "Step 2: Define and set up the response structures to be returned for Read EML in CUT
+    data result type table for read result /DMO/I_TRAVEL_M.
+    result = value #( (  Travel_ID = '987' %data-Booking_Fee = 10 Total_Price = 100 Overall_Status = 'A' ) ).
 
 </pre>
 
 such that the input is not searching for a Travel_ID with value `1987`.
 
+<pre>
+ "Step 2: Define and set up the response structures to be returned for Read EML in CUT
+    data result type table for read result /DMO/I_TRAVEL_M.
+    result = value #( (  Travel_ID = '1987' %data-Booking_Fee = 10 Total_Price = 100 Overall_Status = 'A' ) ).
+   
+</pre>
+
 Do not forget to activate your changes.
 
 8. Run the unit test again and verify that the test now fails.
 
-![image](https://github.com/SAP-samples/abap-platform-rap-workshops/assets/22053314/1c616e68-b834-4869-85af-57be1cf0a8e0)
+![image](https://github.com/SAP-samples/abap-platform-rap-workshops/assets/22053314/92afcf9f-1dd4-4bc6-ab5a-41bcb7e1318a)
 
  
 
