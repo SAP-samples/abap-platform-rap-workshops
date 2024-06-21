@@ -61,6 +61,7 @@ Follow these steps to build a RAP-based simple App with a helper class and write
 | [Exercise 2 - Write ABAP Unit Tests using Local Method Invocation](exercises/ex2/) | 
 | [Exercise 3 - Write ABAP Unit Tests using Entity Manipulation Language (EML)](exercises/ex3/) | 
 | [Exercise 4 - Write ABAP Unit Tests using the Local Proxy Client (LCP)](exercises/ex4/) | 
+| [Exercise 5 - EML Tests - Write ABAP Unit Tests and mock EML calls](exercises/ex5) |
 
 ## How to obtain support
 
