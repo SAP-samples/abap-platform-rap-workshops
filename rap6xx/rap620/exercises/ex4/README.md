@@ -1,6 +1,6 @@
 # TOC
 [Home](../../readme.md#exercises)
-# Exercise 4 - Consume a SOAP Web Service
+# Consume a SOAP Web Service
 
 - [Download the WSDL](#download-the-wsdl)
 - [Create the Service Consumption Model](#create-the-service-consumption-model)
