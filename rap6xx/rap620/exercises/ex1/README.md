@@ -1,6 +1,6 @@
 # TOC
 [Home](../../readme.md#exercises)
-# Exercise 1: Create Database Table and Generate UI Service
+# Create Database Table and Generate UI Service
 
 ## Introduction
 
