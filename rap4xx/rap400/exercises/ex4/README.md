@@ -28,6 +28,17 @@ In the present exercise, following service calls will be tested (CUT):
 > You can find information on the _OData Client Proxy_ (aka Local Client proxy; LCP for short) in the online documentation on the SAP Help.  
 > - Read more on [OData Client Proxy]( https://help.sap.com/viewer/68bf513362174d54b58cddec28794093/latest/en-US/bb778da49bf34e03a699eb476d4bb316.html)  
 
+> ⚠️ Different OData CLient proxies in public cloud and private cloud / on prem
+>
+> In on premise / private cloud systems there are three different factories for the OData Client Proxy:
+
+> - /iwbep/cl_cp_factory_remote  
+>   This factory should be used when you like call a remote service. This class is released and for Cloud development.  
+>- /iwbep/cl_cp_factory_unit_tst  
+>  This factory should be used when you like to create an unit test for your OData Service. This class is released and for Cloud development.  
+>- /iwbep/cl_cp_cp_factory
+>  Old factory. Not Cloud released. This class use if_http_client instead of if_web_http_client for remote consumption.  
+
 Let's get started!  
 
 Do not forget to always replace all occurrences of **`####`** with your chosen group ID in the exercise steps below.
