@@ -32,11 +32,11 @@ In the present exercise, following service calls will be tested (CUT):
 >
 > In on premise / private cloud systems there are three different factories for the OData Client Proxy:
 
-> - /iwbep/cl_cp_factory_remote  
+> - `/iwbep/cl_cp_factory_remote`  
 >   This factory should be used when you like call a remote service. This class is released and for Cloud development.  
->- /iwbep/cl_cp_factory_unit_tst  
+>- /`iwbep/cl_cp_factory_unit_tst`  
 >  This factory should be used when you like to create an unit test for your OData Service. This class is released and for Cloud development.  
->- /iwbep/cl_cp_cp_factory
+>- `/iwbep/cl_cp_cp_factory`  
 >  Old factory. Not Cloud released. This class use if_http_client instead of if_web_http_client for remote consumption.  
 
 Let's get started!  
