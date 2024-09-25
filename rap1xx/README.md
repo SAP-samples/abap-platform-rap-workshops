@@ -1,5 +1,7 @@
 [Home - Workshops about the ABAP RESTful Application Programming Model (RAP)](../README.md)  
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/abap-platform-rap100)](https://api.reuse.software/info/github.com/SAP-samples/abap-platform-rap100)
+
 # RAP - Managed BO Runtime Implementation 
 
 Find hands-on exercises related to core functionalities when building greenfield scenarios with the managed implementation of the ABAP RESTful Application Programming Model (RAP) in this folder.
