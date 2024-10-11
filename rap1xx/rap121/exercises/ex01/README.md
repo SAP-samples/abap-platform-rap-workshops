@@ -286,7 +286,11 @@ You will create an ABAP package, generate all development artifacts using the Ge
  
       <img src="images/p12b.png" alt="preview UI service mit demo data" width="70%">
      
-   3. Play around with the application to familiarize yourself. Generic CRUD operations are available out of the box since a managed RAP BO has been generated.
+   3. Play around with the application to familiarize yourself.
+     
+      Generic CRUD operations are available out of the box since a managed RAP BO has been generated.
+
+      You can now adjust your generated services, e.g. by adjusting the UI semantic in the CDS metadata extensions, enriching the projected model with value helps and additional elements.
  
 </details>
 
