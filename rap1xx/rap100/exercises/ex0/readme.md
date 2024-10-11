@@ -4,6 +4,8 @@
 
 ## Introduction
 
+>> ℹ️ Access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
 ---
 > ⚠ **PLEASE NOTE**:    
 >  
