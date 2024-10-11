@@ -2,6 +2,8 @@
 
 # Exercise 0: Getting Started
 
+>> ℹ️ Access the new RAP110 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap110).
+
 ## Introduction
 
 <!--
