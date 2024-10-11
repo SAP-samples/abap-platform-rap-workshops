@@ -1,3 +1,9 @@
+<!--
+[Home - Workshops about the ABAP RESTful Application Programming Model (RAP)](https://github.com/SAP-samples/abap-platform-rap-workshops/blob/main/README.md)
+-->
+
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/abap-platform-rap100)](https://api.reuse.software/info/github.com/SAP-samples/abap-platform-rap100)
+
 # RAP121 - Building SAP Fiori Apps in ABAP Cloud with GenAI
 
 ## Description
@@ -21,8 +27,8 @@ This hands-on tutorial applies to SAP BTP ABAP Environment systems with access t
 The requirements to follow the exercises in this repository are:
 1. [Install the latest Eclipse platform and the latest ABAP Development Tools (ADT) plugin](https://developers.sap.com/tutorials/abap-install-adt.html)
 2. Access to an SAP BTP ABAP Environment connected to [SAP AI Core](https://discovery-center.cloud.sap/serviceCatalog/sap-ai-core) (_Read Information about SAP-led events below_) 
-    > ℹ️ **Information about SAP-led events**:   
-    > A dedicated ABAP system for the hands-on workshop will be provided by the instructors. 
+    >> ℹ️ **Information about SAP-led events**:   
+    >> A dedicated ABAP system for the hands-on workshop will be provided by the instructors. 
 3. [Create an ABAP Cloud Project in ADT](https://developers.sap.com/tutorials/abap-environment-create-abap-cloud-project.html)
 4. Adapt the Web Browser settings in your ADT installation:   
     i) Choose _Window_ > _Preferences_ in the menu bar.   
@@ -31,19 +37,22 @@ The requirements to follow the exercises in this repository are:
     iv) Select one of the listed external web browsers that are available, e.g. _Default system web browser_.  
         ⚠️Please make sure that _Internet Explorer_ is **NOT** selected.   
   
+## 🔎Overview
+[^Top of page](#)
+
+> Learn to generate transactional and read-only SAP Fiori apps with ABAP Cloud assisted by Joule's ABAP developer capabilities. 
+
+In the first exercise, you will build a **transactional**, draft-enabled SAP Fiori app from scratch to manage _agency_ data using natural language description. In the second exercise, you will then play around with different suggested prompt and your own prompts.
+
+<details>
+   <summary>Exercise 1: Manage Agencies App > Click to expand!</summary>
+     <img src="exercises/ex01/images/p12b.png" alt="Manage Agencies App" width="80%">
+</details>  
+
 ## 🛠Exercises
 [^Top of page](#)
 
-### 🛠Exercises: Building Draft-enabled, Transactional SAP Fiori Apps
-
-> Learn to generate transactional and read-only SAP Fiori apps with ABAP Cloud fro scratch, assisted by Joule's ABAP developer capabilities. 
-> 
-> In the first exercise, you will build a **transactional**, draft-enabled SAP Fiori app from scratch to manage _agency_ data using natural language description. In the second exercise, you will then play around with different suggested prompt and your own prompts.
-
-<details>
-   <summary>Resulting SAP Fiori app 01: Manage Agencies App > Click to expand!</summary>
-     <img src="exercises/images/fioriapp01.png" alt="Manage Agencies App" width="100%">
-</details>  
+Building transactional and read-only SAP Fiori Apps with ABAP Cloud assisted by Joule's ABAP developer capabilities. 
 
 | Exercises | -- |
 | ------------- |  -- |
