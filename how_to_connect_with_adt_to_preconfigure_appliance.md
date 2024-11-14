@@ -39,4 +39,12 @@ The screen shots taken use a **SAP S/4HANA Fully-Activated Appliance** system.  
   
    ![Project Name](images/140_create_a_new_abap_project.png)
 
-6. Press **Finish**.   
+6. Press **Finish**.
+
+## For MAC users
+
+Please use a connection string  
+
+`?`conn=/H/<IP S4 Hana System>/S/3200</IP>```
+
+
