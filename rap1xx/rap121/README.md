@@ -8,6 +8,15 @@
 
 ## Description
 
+---
+> ℹ️**DISCLAIMER**:  
+> Please note that the RAP121 hands-on workshop of the current repository was offered in a testing environment at various SAP TechEd 2024 events. However, the setup and functionality have since been removed and **the exercises can no longer be completed**.   
+> The official delivery of AI capabilities in ABAP is planned for next year, with the first release planned for Q1 2025*.
+>
+>> *Please note that information about SAP‘s strategy and possible future developments is subject to change and may be changed by SAP at any time for any reason without prior notice. Check out the [SAP Road Map Explorer](https://roadmaps.sap.com/board?range=CURRENT-LAST&PRODUCT=73555000100800001164#Q4%202024) and the [ABAP Cloud Roadmap](https://help.sap.com/docs/abap-cross-product/roadmap-info/genai) for more details. 
+>> 
+---
+
 This repository contains the material for the hands-on session called **RAP121 - Building SAP Fiori Apps with ABAP Cloud and Joule's ABAP developer capabilities**.
 
 ABAP Cloud is the development model for building clean core compliant apps, services, and extensions on SAP S/4HANA Cloud, SAP S/4HANA, and SAP BTP ABAP Environment. ABAP Cloud covers different development scenarios such as transactional, analytical, integration, and enterprise search scenarios. The ABAP RESTful Application Programming Model (RAP) ist at the heart of ABAP Cloud for building transactional SAP Fiori apps, OData-based Web API, local APIs, and business events.
