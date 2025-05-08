@@ -1,9 +1,9 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/abap-platform-rap-workshops)](https://api.reuse.software/info/github.com/SAP-samples/abap-platform-rap-workshops)
 
-# Workshops about ABAP Cloud and the ABAP RESTful Application Programming Model (RAP)
+# Workshops about Development with ABAP Cloud 
 
 ## Description
-In this repository, we provide materials for hands-on sessions at  customer, partner, and community events related to ABAP Cloud and the ABAP RESTful Application Programming Model (RAP).
+In this repository, we provide materials for hands-on sessions at  customer, partner, and community events related to ABAP Cloud, incl. the ABAP RESTful Application Programming Model (RAP), which is the development model for building cloud-ready apps, services, and extensions that adhere to clean core principles. [Learn more about ABAP Cloud](https://help.sap.com/docs/abap-cloud)
 
 ## Available Workshops
 
