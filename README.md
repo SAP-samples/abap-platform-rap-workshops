@@ -30,13 +30,13 @@ In this repository, we provide materials for hands-on sessions at  customer, par
 
 ### Developer and Side-by-Side Extensibility with ABAP Cloud
 
-[RAP610 - \[Beginner\] Use ABAP Cloud for SAP S/4HANA Cloud and SAP S/4HANA (new app on stack)](/rap6xx/rap610#readme)
+[RAP610 - \[Beginner\] Use ABAP Cloud for SAP S/4HANA (Cloud) extensions](/rap6xx/rap610#readme)
 
-[RAP620 - Side-by-side Extensibility with SAP BTP ABAP environment](/rap6xx/rap620#readme)
+[RAP620 - Side-by-side extensibility with SAP BTP ABAP environment](/rap6xx/rap620#readme)
 
-[RAP630 - Use ABAP Cloud for Developer Extensibility (extend an SAP app using the RAP Extensibility Options)](https://github.com/SAP-samples/abap-platform-rap630)
+[RAP630 - Cloud ERP Extensibility, with focus on RAP extensibility options](https://github.com/SAP-samples/abap-platform-rap630)
 
-[RAP640 - Use ABAP Cloud to Build Extensions for SAP S/4HANA Cloud Private Edition and SAP S/4HANA - Mitigating Missing Released SAP APIs in the 3-tier Extensibility Model](https://github.com/SAP-samples/abap-platform-rap640)
+[RAP640 - Use ABAP Cloud to build extensions for SAP S/4HANA Cloud Private Edition and SAP S/4HANA - Mitigating missing released SAP APIs in the 3-tier extensibility model](https://github.com/SAP-samples/abap-platform-rap640)
 
 
 ## Requirements
