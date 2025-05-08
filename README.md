@@ -48,9 +48,11 @@ For general information, see [requirements document](requirements_rap_workshops.
 
 ## Download and Installation
 
-You have to download and install the ABAP Development Tools (ADT) as described in the [Prerequisites](#requirements) section.
+You need to download and install the lates ABAP development tools for Eclipse (ADT) as described in the [Prerequisites](#requirements) section.
 
-You can download the source code for the solutions of these hand-on workshops using ZABAPGIT or the abapGIT PlugIn as described here  [readme_source_code](/readme_source_code.md). 
+You can download the source code for the solution packages of the hand-on workshops  - if available - using ZABAPGIT or the abapGIT PlugIn as described here  [readme_source_code](/readme_source_code.md). 
+
+You can find workshop-specific information in the respective Git repository. Refer to the respective _**Solution Package**_ section.
 
 ## Known Issues
 
