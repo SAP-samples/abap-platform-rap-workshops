@@ -5,7 +5,14 @@
 ## Description
 In this repository, we provide materials for hands-on sessions at  customer, partner, and community events related to ABAP Cloud and the ABAP RESTful Application Programming Model (RAP).
 
-## Workshops
+## Available Workshops
+
+### 🆕ABAP Cloud development with Joule for Developers 
+
+[RAP120 - \[Beginner\] Build SAP Fiori Apps with ABAP Cloud and Joule for developers](https://github.com/SAP-samples/abap-platform-rap120) 
+
+
+### ABAP Cloud development
 
 [RAP100 - \[Beginner\] Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)](https://github.com/SAP-samples/abap-platform-rap100)  
 
@@ -13,13 +20,19 @@ In this repository, we provide materials for hands-on sessions at  customer, par
 
 [RAP400 - Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)](/rap4xx/rap400#readme)
 
+
+### Embedded Analytics with ABAP Cloud
+
 [RAP500 - \[Beginner\] Developing for Analytics with the SAP BTP ABAP Environment (long version, requires licensed system)](/rap5xx/rap500#readme)
 
 [RAP510 - \[Beginner\] Developing for Analytics with the SAP BTP ABAP Environment (short version, requires licensed system)](/rap5xx/rap510#readme)
 
+
+### Developer and Side-by-Side Extensibility with ABAP Cloud
+
 [RAP610 - \[Beginner\] Use ABAP Cloud for SAP S/4HANA Cloud and SAP S/4HANA (new app on stack)](/rap6xx/rap610#readme)
 
-[RAP620 - Side-by-side Extensibility with SAP BTP ABAP Environment](/rap6xx/rap620#readme)
+[RAP620 - Side-by-side Extensibility with SAP BTP ABAP environment](/rap6xx/rap620#readme)
 
 [RAP630 - Use ABAP Cloud for Developer Extensibility (extend an SAP app using the RAP Extensibility Options)](https://github.com/SAP-samples/abap-platform-rap630)
 
@@ -28,7 +41,9 @@ In this repository, we provide materials for hands-on sessions at  customer, par
 
 ## Requirements
 
-See [requirements document](requirements_rap_workshops.md).
+Please refer to the _**Requirements**_ section in each workshop for workshop-specific information.
+
+For general information, see [requirements document](requirements_rap_workshops.md).
 
 
 ## Download and Installation
