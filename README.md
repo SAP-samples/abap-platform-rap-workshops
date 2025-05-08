@@ -27,6 +27,8 @@ In this repository, we provide materials for hands-on sessions at  customer, par
 
 [RAP510 - \[Beginner\] Developing for Analytics with the SAP BTP ABAP Environment (short version, requires licensed system)](/rap5xx/rap510#readme)
 
+[DT187v - \[Beginner\] Build Analytical Applications with ABAP Cloud)](https://github.com/SAP-samples/teched2023-DT187v)
+
 
 ### Developer and Side-by-Side Extensibility with ABAP Cloud
 
