@@ -3,7 +3,12 @@
 # Workshops about Development with ABAP Cloud 
 
 ## Description
-In this repository, we provide materials for hands-on sessions at  customer, partner, and community events related to ABAP Cloud, incl. the ABAP RESTful Application Programming Model (RAP), which is the development model for building cloud-ready apps, services, and extensions that adhere to clean core principles. [Learn more about ABAP Cloud](https://help.sap.com/docs/abap-cloud)
+
+This page contains a colleations of materials for hands-on sessions at customer, partner, and community events focused on  ABAP Cloud, including the ABAP RESTful Application Programming Model (RAP). 
+
+ABAP Cloud is the development model for building lifecycle-stable and cloud-ready apps, services, and extensions that follow clean core principles by default. ABAP Cloud is available on SAP BTP ABAP environment, SAP S/4HANA Cloud Public Edition (3-system landscape required) , and as of Release 2022 of SAP S/4HANA Cloud Private Edition and SAP S/4HANA.
+
+[Learn more about ABAP Cloud](https://help.sap.com/docs/abap-cloud)
 
 ## Available Workshops
 
