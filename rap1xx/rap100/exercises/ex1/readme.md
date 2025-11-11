@@ -2,6 +2,11 @@
 
 # Exercise 1: Create Database Table and Generate UI Service
 
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+---
+
 ## Introduction
 
 In this exercise, you will create a transactional UI service along with the underlying RAP business object. 
