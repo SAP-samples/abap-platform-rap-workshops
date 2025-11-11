@@ -2,6 +2,11 @@
 
 # \[explore\] Exercises 9: External API-based Access to the RAP BO with the Entity Manipulation Language (EML)
 
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+---
+
 ## Introduction 
 So far, the Entity Manipulation Language (EML) was used in the so-called `IN LOCAL MODE` to implement the transactional behavior of the _Travel_ BO entity in the behavior pool. 
 
