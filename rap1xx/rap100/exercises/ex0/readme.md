@@ -4,7 +4,10 @@
 
 ## Introduction
 
->> ℹ️ Access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+<!--
 
 ---
 > ⚠ **PLEASE NOTE**:    
@@ -14,6 +17,7 @@
 > >
 > Please contact us during the event if you have not received the logon information. 
 ---
+-->
 
 <!--
 ---
@@ -27,15 +31,19 @@
 ---
 -->
 
+<!--
 You've already received user credentials from the SAP Team  **or** created an account on the SAP BTP ABAP environment Trial.
 
 You've eventually also created an **ABAP Cloud Project** or an **ABAP Project** in the ABAP Development Tools in Eclipse (ADT) depending on the used ABAP system. If not, then you will find an appropriate step-by-step description in the section _**Create an ABAP Cloud Project in ADT**_ or _**Create an ABAP Project in ADT**_ below.
+-->
 
 <!--
 In this exercise you will define a group ID that you will need in the course of this workshop to uniquely identify your repository artefacts and separate them from those of other users conducting the same workshop on this system.
 -->
 
+<!--
 Please note that ADT dialogs and views as well as Fiori UIs may change in upcoming releases.
+-->
 
 <!--
 - [Requirements](#requirements) 
@@ -49,6 +57,8 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
 - [Summary](#summary)
 -->
 
+<!--
+
 - [Group ID](#group-id)
 - [Create an _ABAP Cloud Project_ or _ABAP Project_ in ADT](#create-an-abap-cloud-project-or-abap-project-in-adt)
 - [Helpful Information](#helpful-information)
@@ -57,9 +67,10 @@ Please note that ADT dialogs and views as well as Fiori UIs may change in upcomi
   - Useful ADT Shortcuts
 - [Summary](#summary)
 
-
 > **Note:**    
 > The screenshots in this document have been taken using group ID **`000`** and system **`D22`**. We **do not recommend** using group ID **`000`**.
+
+-->
 
 <!--
 ## Requirements
