@@ -2,6 +2,11 @@
 
 # \[optional\] Exercises 6: Enhance the BO Behavior – Actions 
 
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+---
+
 ## Introduction
 
 In the previous exercise, you've defined and implemented two validations (see [Exercise 5](../ex5/readme.md)).
