@@ -2,6 +2,11 @@
 
 # Exercise 5: Enhance the BO Behavior – Validations 
 
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+---
+
 ## Introduction 
 
 In the previous exercise, you've defined and implemented a determination for setting the inital value of the field `OverallStatus` to `Open` (`O`) during the creation of new instances of BO entity _Travel_ (see [Exercise 4](../ex4/readme.md)).
