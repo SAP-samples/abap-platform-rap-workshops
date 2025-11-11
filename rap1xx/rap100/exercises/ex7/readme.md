@@ -3,6 +3,11 @@
 
 # \[optional\] Exercises 7: Enhance the BO Behavior – Dynamic Feature Control
 
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+---
+
 ## Introduction 
 In the previous exercise, you've defined and implemented different instance-bound actions for the BO entity _Travel_ (see [Exercise 6](../ex6/readme.md)).
 
