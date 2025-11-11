@@ -2,6 +2,11 @@
 
 # Exercise 3: Enhance the BO Behavior – Early Numbering  
 
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+---
+
 ## Introduction 
 
 In the previous exercise, you've enhanced the data model of the business object (BO) entity _Travel_ (see [Exercise 2](../ex2/readme.md)).
