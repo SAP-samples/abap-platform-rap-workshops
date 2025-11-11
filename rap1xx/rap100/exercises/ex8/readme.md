@@ -2,6 +2,11 @@
 
 # \[optional\] Exercises 8: Write an ABAP Unit Test for the RAP BO 
 
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+---
+
 ## Introduction 
 In the previous exercise, you've implemented the dynamic instance feature control for some of the standard and non-standard operations of the _Travel_ entity. (see [Exercise 7](../ex7/readme.md)).
 
