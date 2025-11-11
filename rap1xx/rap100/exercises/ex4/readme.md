@@ -2,6 +2,11 @@
 
 # Exercise 4: Enhance the BO Behavior – Determinations
 
+> [!IMPORTANT]
+> Kindly access the new RAP100 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap100).
+
+---
+
 ## Introduction
 
 In the previous exercise, you've defined and implemented the early numbering for assigning automatically an identifier (ID) for a new instance of the BO entity _Travel_ (see [Exercise 3](../ex3/readme.md)).
