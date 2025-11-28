@@ -13,7 +13,9 @@ https://docs.github.com/en/get-started/writing-on-github/getting-started-with-wr
 #### Description
 This repository contains the material for the hands-on session **RAP110 - Building Fiori Apps with the ABAP RESTful Application Programming Model (RAP)**. It includes a managed Business Object (BO) with two BO nodes or entities, and features such as virtual elements in dealing with BO projection views, late numbering, determine actions, static default factory actions, side effects, functions, business event exposure, and additional save. 
 
->> ℹ️ Access the new RAP110 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap110).
+> [!IMPORTANT]
+> **Kindly access the **new RAP110 GitHub repository** with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap110).**
+---
 
 #### Table of Content
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
