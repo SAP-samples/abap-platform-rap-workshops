@@ -6,16 +6,16 @@
 
 This page contains a colleations of materials for hands-on sessions at customer, partner, and community events focused on  ABAP Cloud, including the ABAP RESTful Application Programming Model (RAP). 
 
-ABAP Cloud is the development model for building lifecycle-stable and cloud-ready apps, services, and extensions that follow clean core principles by default. ABAP Cloud is available on SAP BTP ABAP environment, SAP S/4HANA Cloud Public Edition (3-system landscape required) , and as of Release 2022 of SAP S/4HANA Cloud Private Edition and SAP S/4HANA.
+ABAP Cloud is the development model for building lifecycle-stable and cloud-ready apps, services, and extensions that follow clean core principles by default. ABAP Cloud is available on SAP BTP ABAP environment, SAP S/4HANA Cloud Public Edition (3-system landscape required) , and as of Release 2022 of SAP S/4HANA Cloud Private Edition and SAP S/4HANA. RAP is at the heart of ABAP Cloud for transactional scenarios. 
 
-[Learn more about ABAP Cloud](https://help.sap.com/docs/abap-cloud)
+Learn more:  [ABAP Cloud Development Model](https://help.sap.com/docs/abap-cloud) | [ABAP RESTful Application Programming Model (RAP)](https://pages.community.sap.com/topics/abap/rap)
+<br/>
 
-## Available Workshops
+## Available Hands-On Workshops
 
 ### ABAP Cloud development with SAP Joule for Developers 
 
 [RAP120 - \[Beginner\] Build SAP Fiori Apps with ABAP Cloud and SAP Joule for Developers](https://github.com/SAP-samples/abap-platform-rap120) 
-
 
 ### ABAP Cloud development
 
@@ -29,7 +29,6 @@ ABAP Cloud is the development model for building lifecycle-stable and cloud-read
 
 [SAP Build and ABAP Cloud Basic Trial Offering](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-build-and-abap-cloud-basic-trial-offering/ba-p/14117116)
 
-
 ### Embedded Analytics with ABAP Cloud
 
 [RAP500 - \[Beginner\] Developing for Analytics with the SAP BTP ABAP Environment (long version, requires licensed system)](/rap5xx/rap500#readme)
@@ -37,7 +36,6 @@ ABAP Cloud is the development model for building lifecycle-stable and cloud-read
 [RAP510 - \[Beginner\] Developing for Analytics with the SAP BTP ABAP Environment (short version, requires licensed system)](/rap5xx/rap510#readme)
 
 [DT187v - \[Beginner\] Build Analytical Applications with ABAP Cloud)](https://github.com/SAP-samples/teched2023-DT187v)
-
 
 ### Developer and Side-by-Side Extensibility with ABAP Cloud
 
@@ -49,6 +47,7 @@ ABAP Cloud is the development model for building lifecycle-stable and cloud-read
 
 [RAP640 - Use ABAP Cloud to build extensions for SAP S/4HANA Cloud Private Edition and SAP S/4HANA - Mitigating missing released SAP APIs in the 3-tier extensibility model](https://github.com/SAP-samples/abap-platform-rap640)
 
+<br/>
 
 ## Requirements
 
