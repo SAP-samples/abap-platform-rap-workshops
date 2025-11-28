@@ -29,7 +29,7 @@ The Basic Trial offering for SAP Build has been extended with a new workbook cal
 Learn more about the [SAP Build and ABAP Cloud Basic Trial Offering](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-build-and-abap-cloud-basic-trial-offering/ba-p/14117116)
 
 <!--
-## DEV260 - Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP) --> >OBSOLETE
+## DEV260 - Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP) -- **OBSOLETE**
 The application built in this exercise is a managed Implementation with managed early numbering (uuid-based key). 
 This exercise was first offered at SAP TechEd in 2020.
 
