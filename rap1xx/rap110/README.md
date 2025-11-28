@@ -134,7 +134,8 @@ The illustration below shows the high-level end-to-end development stack when wo
 
 Follow these steps to enhance an existing OData UI service developed with RAP for a transactional SAP Fiori elements-based Travel Processing app.
 
->> ℹ️ Access the new RAP110 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap110).
+> [!IMPORTANT]
+> Kindly access the new RAP110 GitHub repository with the updated script 👉 [**here**](https://github.com/SAP-samples/abap-platform-rap110).
 
 | Exercises | Boosters |
 | ------------- | -- |
