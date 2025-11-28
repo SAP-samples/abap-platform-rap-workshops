@@ -12,9 +12,9 @@ ABAP Cloud is the development model for building lifecycle-stable and cloud-read
 
 ## Available Workshops
 
-### 🆕ABAP Cloud development with Joule for Developers 
+### ABAP Cloud development with SAP Joule for Developers 
 
-[RAP120 - \[Beginner\] Build SAP Fiori Apps with ABAP Cloud and Joule for developers](https://github.com/SAP-samples/abap-platform-rap120) 
+[RAP120 - \[Beginner\] Build SAP Fiori Apps with ABAP Cloud and SAP Joule for Developers](https://github.com/SAP-samples/abap-platform-rap120) 
 
 
 ### ABAP Cloud development
@@ -24,6 +24,10 @@ ABAP Cloud is the development model for building lifecycle-stable and cloud-read
 [RAP110 - \[Intermediate\] Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)](https://github.com/SAP-samples/abap-platform-rap110)
 
 [RAP400 - Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)](/rap4xx/rap400#readme)
+
+[AD164 - Get started with ABAP Cloud for classic ABAP developers](https://github.com/SAP-samples/teched2025-AD164)
+
+[SAP Build and ABAP Cloud Basic Trial Offering](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-build-and-abap-cloud-basic-trial-offering/ba-p/14117116)
 
 
 ### Embedded Analytics with ABAP Cloud
