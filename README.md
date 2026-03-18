@@ -27,6 +27,8 @@ Learn more:  [ABAP Cloud Development Model](https://help.sap.com/docs/abap-cloud
 
 [AD164 - Get started with ABAP Cloud for classic ABAP developers](https://github.com/SAP-samples/teched2025-AD164)
 
+[DT266 - Troubleshoot and Optimize ABAP Cloud Extensions in Cloud ERP](https://github.com/SAP-samples/teched2025-DT266)
+
 [SAP Build and ABAP Cloud Basic Trial Offering](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-build-and-abap-cloud-basic-trial-offering/ba-p/14117116)
 
 ### Embedded Analytics with ABAP Cloud
