@@ -203,8 +203,6 @@ Then add a **blank** behind the filter statement and and press again **Ctrl + sp
 
     SELECT * FROM  I_PURCHASEREQUISITIONITEMAPI01 WHERE PurchaseRequisition = '0010001516' INTO TABLE @DATA(purchase_req_data).
   ENDMETHOD.
-
-ENDCLASS.
  </pre>
 
       The ABAP class `zcl_test_i_purchase_req_###` in the screenshot underneath uses the ABAP Cloud development model (ABAP language version “ABAP for Cloud development”). The class cannot be compiled because of two ABAP statements containing syntax-errors:
