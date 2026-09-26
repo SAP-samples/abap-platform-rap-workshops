@@ -13,9 +13,10 @@ Learn more:  [ABAP Cloud Development Model](https://help.sap.com/docs/abap-cloud
 
 ## Available Hands-On Workshops
 
-### ABAP Cloud development with SAP Joule for Developers 
+### ABAP Cloud development with SAP Joule for Developers & Agentic AI
 
 [RAP120 - \[Beginner\] Build SAP Fiori Apps with ABAP Cloud and SAP Joule for Developers](https://github.com/SAP-samples/abap-platform-rap120) 
+[RAP130 - \[Beginner\] Build SAP Fiori Apps with ABAP Cloud and Agentic AI in Visual Studio Code](https://github.com/SAP-samples/abap-platform-rap130)
 
 ### ABAP Cloud development
 
