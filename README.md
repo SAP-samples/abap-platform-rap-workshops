@@ -13,44 +13,11 @@ Learn more:  [ABAP Cloud Development Model](https://help.sap.com/docs/abap-cloud
 
 ## Available Hands-On Workshops
 
-### ABAP Cloud development with SAP Joule for Developers 
+> [!NOTE]
+> 
+> Find the list of available Hands-On Workshops in this repository's Wiki: [Learning Resources](https://github.com/SAP-samples/abap-platform-rap-workshops/wiki).
 
-[RAP120 - \[Beginner\] Build SAP Fiori Apps with ABAP Cloud and SAP Joule for Developers](https://github.com/SAP-samples/abap-platform-rap120) 
-
-### ABAP Cloud development
-
-[RAP100 - \[Beginner\] Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)](https://github.com/SAP-samples/abap-platform-rap100)  
-
-[RAP110 - \[Intermediate\] Build SAP Fiori Apps with the ABAP RESTful Application Programming Model (RAP)](https://github.com/SAP-samples/abap-platform-rap110)
-
-[RAP400 - Writing ABAP Unit Tests for Apps built with the ABAP RESTful Application Programming Model (RAP)](/rap4xx/rap400#readme)
-
-[AD164 - Get started with ABAP Cloud for classic ABAP developers](https://github.com/SAP-samples/teched2025-AD164)
-
-[DT266 - Troubleshoot and Optimize ABAP Cloud Extensions in Cloud ERP](https://github.com/SAP-samples/teched2025-DT266)
-
-[SAP Build and ABAP Cloud Basic Trial Offering](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-build-and-abap-cloud-basic-trial-offering/ba-p/14117116)
-
-### Embedded Analytics with ABAP Cloud
-
-[RAP500 - \[Beginner\] Developing for Analytics with the SAP BTP ABAP Environment (long version, requires licensed system)](/rap5xx/rap500#readme)
-
-[RAP510 - \[Beginner\] Developing for Analytics with the SAP BTP ABAP Environment (short version, requires licensed system)](/rap5xx/rap510#readme)
-
-[DT187v - \[Beginner\] Build Analytical Applications with ABAP Cloud)](https://github.com/SAP-samples/teched2023-DT187v)
-
-### Developer and Side-by-Side Extensibility with ABAP Cloud
-
-[RAP610 - \[Beginner\] Use ABAP Cloud for SAP S/4HANA (Cloud) extensions](/rap6xx/rap610#readme)
-
-[RAP620 - Side-by-side extensibility with SAP BTP ABAP environment](/rap6xx/rap620#readme)
-
-[RAP630 - Cloud ERP Extensibility, with focus on RAP extensibility options](https://github.com/SAP-samples/abap-platform-rap630)
-
-[RAP640 - Use ABAP Cloud to build extensions for SAP S/4HANA Cloud Private Edition and SAP S/4HANA - Mitigating missing released SAP APIs in the 3-tier extensibility model](https://github.com/SAP-samples/abap-platform-rap640)
-
-<br/>
-
+<!--
 ## Requirements
 
 Please refer to the _**Requirements**_ section in each workshop for workshop-specific information.
@@ -79,6 +46,8 @@ Or you can [post a question](https://answers.sap.com/questions/ask.html) in the 
 ## Contributing
 
 This project is only updated by SAP employees.
+
+-->
 
 ## License
 Copyright (c) 2020-2026 SAP SE or an SAP affiliate company and abap-platform-rap-workshops contributors. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file; you may not use any file of this project except in compliance with the License.
