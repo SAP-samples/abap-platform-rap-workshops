@@ -51,7 +51,11 @@ Learn more:  [ABAP Cloud Development Model](https://help.sap.com/docs/abap-cloud
 [RAP640 - Use ABAP Cloud to build extensions for SAP S/4HANA Cloud Private Edition and SAP S/4HANA - Mitigating missing released SAP APIs in the 3-tier extensibility model](https://github.com/SAP-samples/abap-platform-rap640)
 
 <br/>
+> [!NOTE]
+> 
+> Find the list of available Hands-On Workshops in this repository's Wiki: [Learning Resources](https://github.com/SAP-samples/abap-platform-rap-workshops/wiki).
 
+<!--
 ## Requirements
 
 Please refer to the _**Requirements**_ section in each workshop for workshop-specific information.
@@ -80,6 +84,8 @@ Or you can [post a question](https://answers.sap.com/questions/ask.html) in the 
 ## Contributing
 
 This project is only updated by SAP employees.
+
+-->
 
 ## License
 Copyright (c) 2020-2026 SAP SE or an SAP affiliate company and abap-platform-rap-workshops contributors. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file; you may not use any file of this project except in compliance with the License.
